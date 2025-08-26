@@ -6,7 +6,6 @@ nav:
     - Secondes: Secondes/Secondes.md
     - Premières: Premieres/Premieres.md
     - Terminales: Terminales/Terminales.md
-  - Accueil: index.md
 
 theme:
   name: readthedocs
