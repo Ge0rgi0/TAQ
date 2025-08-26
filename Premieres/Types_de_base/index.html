@@ -195,6 +195,170 @@ Convertir en décimal, ces valeurs binaires :</p>
 <li><span class="arithmatex">\(4050_{10}\)</span></li>
 <li><span class="arithmatex">\(59400_{10}\)</span></li>
 </ul>
+<hr />
+<h3 id="lhexadecimal">L’hexadécimal</h3>
+<p>Un autre système de numération très utilisé en informatique est la <strong>base 16</strong>, appelée <strong>hexadécimal</strong>.<br />
+Pourquoi ? Parce qu’il est plus <strong>compact</strong> que le binaire : au lieu de manipuler des suites très longues de 0 et 1, on peut les regrouper par 4 bits (4 chiffres binaires) et les écrire avec un seul chiffre hexadécimal.  </p>
+<h4 id="les-chiffres-en-base-16">Les chiffres en base 16</h4>
+<p>La base 16 utilise <strong>16 symboles</strong> différents :<br />
+- de 0 à 9 (comme en décimal)<br />
+- puis les lettres A, B, C, D, E, F pour représenter les valeurs 10 à 15.  </p>
+<table>
+<thead>
+<tr>
+<th>Décimal</th>
+<th>Hexadécimal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>A</td>
+</tr>
+<tr>
+<td>11</td>
+<td>B</td>
+</tr>
+<tr>
+<td>12</td>
+<td>C</td>
+</tr>
+<tr>
+<td>13</td>
+<td>D</td>
+</tr>
+<tr>
+<td>14</td>
+<td>E</td>
+</tr>
+<tr>
+<td>15</td>
+<td>F</td>
+</tr>
+</tbody>
+</table>
+<p><span style="color:blue">exemple</span></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><span class="arithmatex">\(16^1\)</span></th>
+<th><span class="arithmatex">\(16^0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(A2_{16}\)</span></td>
+<td>A (= 10)</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<div class="arithmatex">\[
+A2_{16} = 10 \times 16^1 + 2 \times 16^0
+\]</div>
+<div class="arithmatex">\[
+= 160 + 2
+\]</div>
+<div class="arithmatex">\[
+= 162_{10}
+\]</div>
+<hr />
+<h4 id="lien-entre-binaire-et-hexadecimal">Lien entre binaire et hexadécimal</h4>
+<p>Chaque chiffre hexadécimal correspond à <strong>4 bits</strong> (car <span class="arithmatex">\(2^4 = 16\)</span>).  </p>
+<table>
+<thead>
+<tr>
+<th>Hexa</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binaire</td>
+<td>0000</td>
+<td>0001</td>
+<td>0010</td>
+<td>0011</td>
+<td>0100</td>
+<td>0101</td>
+<td>0110</td>
+<td>0111</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Hexa</th>
+<th>8</th>
+<th>9</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Binaire</td>
+<td>1000</td>
+<td>1001</td>
+<td>1010</td>
+<td>1011</td>
+<td>1100</td>
+<td>1101</td>
+<td>1110</td>
+<td>1111</td>
+</tr>
+</tbody>
+</table>
+<p>Cela permet de convertir facilement du <strong>binaire en hexadécimal</strong> en regroupant les bits par paquets de 4.  </p>
+<p><span style="color:blue">exemple</span>  </p>
+<p><span class="arithmatex">\(111011_{2}\)</span>  </p>
+<p>On regroupe par 4 bits (en partant de la droite) :  </p>
+<table>
+<thead>
+<tr>
+<th>0011</th>
+<th>1011</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+<p>Donc <span class="arithmatex">\(110010_2 = 32_{16}\)</span></p>
+<p><span style="color:red">Exercice</span>  </p>
+<p>Convertir en décimal :  </p>
+<ul>
+<li><span class="arithmatex">\(FF_{16}\)</span>  </li>
+<li><span class="arithmatex">\(1A3_{16}\)</span>  </li>
+</ul>
+<p>Convertir en binaire :  </p>
+<ul>
+<li><span class="arithmatex">\(7C4_{16}\)</span></li>
+<li><span class="arithmatex">\(FADA_{16}\)</span></li>
+</ul>
+<p>Convertir en hexadécimal :  </p>
+<ul>
+<li><span class="arithmatex">\(1999_{10}\)</span></li>
+<li><span class="arithmatex">\(59400_{10}\)</span></li>
+<li><span class="arithmatex">\(111100_{2}\)</span>  </li>
+<li><span class="arithmatex">\(110100101111_{2}\)</span>  </li>
+</ul>
               
             </div>
           </div><footer>
