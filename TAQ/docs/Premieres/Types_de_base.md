@@ -110,3 +110,91 @@ Convertir en binaire, ces valeurs décimales :
 - $2025_{10}$
 - $4050_{10}$
 - $59400_{10}$
+
+---
+### L’hexadécimal
+
+Un autre système de numération très utilisé en informatique est la **base 16**, appelée **hexadécimal**.  
+Pourquoi ? Parce qu’il est plus **compact** que le binaire : au lieu de manipuler des suites très longues de 0 et 1, on peut les regrouper par 4 bits (4 chiffres binaires) et les écrire avec un seul chiffre hexadécimal.  
+
+#### Les chiffres en base 16  
+
+La base 16 utilise **16 symboles** différents :  
+- de 0 à 9 (comme en décimal)  
+- puis les lettres A, B, C, D, E, F pour représenter les valeurs 10 à 15.  
+
+| Décimal | Hexadécimal |
+|---------|-------------|
+| 10      | A           |
+| 11      | B           |
+| 12      | C           |
+| 13      | D           |
+| 14      | E           |
+| 15      | F           |
+
+<span style="color:blue">exemple</span>
+
+|     | \(16^1\) | \(16^0\) |
+|-----|----------|----------|
+| \(A2_{16}\) | A (= 10) | 2 |
+
+\[
+A2_{16} = 10 \times 16^1 + 2 \times 16^0
+\]
+
+\[
+= 160 + 2
+\]
+
+\[
+= 162_{10}
+\]
+
+---
+
+#### Lien entre binaire et hexadécimal  
+
+Chaque chiffre hexadécimal correspond à **4 bits** (car \(2^4 = 16\)).  
+
+
+| Hexa    | 0    | 1    | 2    | 3    | 4    | 5    | 6    | 7    |
+|---------|------|------|------|------|------|------|------|------|
+| Binaire | 0000 | 0001 | 0010 | 0011 | 0100 | 0101 | 0110 | 0111 |
+
+
+| Hexa    | 8    | 9    | A    | B    | C    | D    | E    | F    |
+|---------|------|------|------|------|------|------|------|------|
+| Binaire | 1000 | 1001 | 1010 | 1011 | 1100 | 1101 | 1110 | 1111 |
+
+Cela permet de convertir facilement du **binaire en hexadécimal** en regroupant les bits par paquets de 4.  
+
+<span style="color:blue">exemple</span>  
+
+\(111011_{2}\)  
+
+On regroupe par 4 bits (en partant de la droite) :  
+
+|0011|1011|
+|-|-|
+|3|B|
+
+Donc $110010_2 = 32_{16}$
+
+<span style="color:red">Exercice</span>  
+
+Convertir en décimal :  
+
+   - \(FF_{16}\)  
+   - \(1A3_{16}\)  
+
+Convertir en binaire :  
+
+   - \(7C4_{16}\)
+   - \(FADA_{16}\)
+
+Convertir en hexadécimal :  
+
+   - \(1999_{10}\)
+   - \(59400_{10}\)
+   - \(111100_{2}\)  
+   - \(110100101111_{2}\)  

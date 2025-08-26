@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Types de base - TAQ</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Types de base";
+        var mkdocs_page_input_path = "Premieres/Types_de_base.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Secondes/Secondes/">Secondes</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Premieres/">Premières</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Terminales/Terminales/">Terminales</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Types de base</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="types-de-base">Types de base</h1>
+<h2 id="entier-positif">Entier positif</h2>
+<h3 id="le-decimal">Le décimal</h3>
+<p>Depuis toujours, nous utilisons la base 10, sûrement parce que nous avons… 10 doigts.<br />
+C'est ce que l'on appelle le système <strong>décimal</strong>, car nous utilisons 10 chiffres (de 0 à 9) pour représenter toutes les valeurs.<br />
+Dans un nombre décimal, chaque position correspond à une puissance de 10, de droite à gauche.  </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><span class="arithmatex">\(10^3\)</span></th>
+<th><span class="arithmatex">\(10^2\)</span></th>
+<th><span class="arithmatex">\(10^1\)</span></th>
+<th><span class="arithmatex">\(10^0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(2025_{10}\)</span></td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<div class="arithmatex">\[
+2025_{10} = 2 \times 10^3 + 0 \times 10^2 + 2 \times 10^1 + 5 \times 10^0
+\]</div>
+<div class="arithmatex">\[
+= 2 \times 1000 + 0 \times 100 + 2 \times 10 + 5 \times 1
+\]</div>
+<hr />
+<p><em>Rappel sur les puissances</em></p>
+<p>Une <strong>puissance</strong> est une façon d’écrire une multiplication répétée.  </p>
+<ul>
+<li><span class="arithmatex">\( a^n \)</span> se lit « a puissance n » et signifie que l’on multiplie <span class="arithmatex">\(a\)</span> par lui-même <span class="arithmatex">\(n\)</span> fois :<br />
+$$
+a^n = \underbrace{a \times a \times \dots \times a}_{n \text{ fois}}
+$$</li>
+</ul>
+<p><span style="color:blue">exemples</span><br />
+- <span class="arithmatex">\( 2^3 = 2 \times 2 \times 2 = 8 \)</span><br />
+- <span class="arithmatex">\( 5^0 = 1 \)</span> (par convention, toute base non nulle à la puissance 0 vaut 1)<br />
+- <span class="arithmatex">\( 10^4 = 10 \times 10 \times 10 \times 10 = 10000 \)</span></p>
+<hr />
+<h3 id="le-binaire">Le binaire</h3>
+<p>L’ordinateur utilise la base 2, appelée <strong>binaire</strong>, car les composants électroniques ne peuvent traiter que deux états :<br />
+- <strong>1</strong> : présence d’une tension électrique<br />
+- <strong>0</strong> : absence de tension électrique  </p>
+<p>Il a donc fallu représenter toutes les informations en binaire. Dans ce système, il n’existe que deux symboles : 0 et 1, que l’on appelle des <strong>bits</strong> (contraction de binary digit).  </p>
+<p>Chaque position dans un nombre binaire correspond à une <strong>puissance de 2</strong>, de droite à gauche.  </p>
+<p><em><span style="color:blue">exemple</span></em></p>
+<p>Prenons le nombre binaire : <span class="arithmatex">\(1011_2\)</span></p>
+<p>On peut le décomposer en puissances de 2 :</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><span class="arithmatex">\(2^3\)</span></th>
+<th><span class="arithmatex">\(2^2\)</span></th>
+<th><span class="arithmatex">\(2^1\)</span></th>
+<th><span class="arithmatex">\(2^0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(1011_2\)</span></td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Et le convertir en décimal</strong> :</p>
+<div class="arithmatex">\[
+1011_2 = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0
+\]</div>
+<div class="arithmatex">\[
+= 2^3 + 2^1 + 2^0
+\]</div>
+<div class="arithmatex">\[
+= 8 + 2 + 1
+\]</div>
+<div class="arithmatex">\[
+= 11
+\]</div>
+<p>donc <span class="arithmatex">\(1011_{2} = 11_{10}\)</span></p>
+<p><span style="color:red">Exercice</span><br />
+Convertir en décimal, ces valeurs binaires :</p>
+<ul>
+<li><span class="arithmatex">\(110010_{2}\)</span></li>
+<li><span class="arithmatex">\(1100100_{2}\)</span></li>
+<li><span class="arithmatex">\(100100101_{2}\)</span></li>
+</ul>
+<hr />
+<h3 id="conversion-du-decimal-vers-le-binaire">Conversion du décimal vers le binaire</h3>
+<p>On utilise la <strong>Méthode des divisions successives</strong></p>
+<ol>
+<li>On <strong>divise le nombre par 2</strong>.  </li>
+<li>On <strong>note le reste</strong> (0 ou 1).  </li>
+<li>On recommence avec le <strong>quotient</strong>, jusqu’à obtenir 0.  </li>
+<li>Le nombre binaire est obtenu en <strong>lisant les restes de bas en haut</strong>.</li>
+</ol>
+<p><span style="color:blue">exemple</span></p>
+<p>50 / 2 = 25 reste <strong>0</strong><br />
+25 / 2 = 12 reste <strong>1</strong><br />
+12 / 2 = 6 reste <strong>0</strong><br />
+6 / 2 = 3 reste <strong>0</strong><br />
+3 / 2 = 1 reste <strong>1</strong><br />
+1 / 2 = 0  reste <strong>1</strong></p>
+<p>donc <span class="arithmatex">\(50_{10} = 110010_{2}\)</span></p>
+<p><span style="color:red">Exercice</span>  </p>
+<p>Convertir en binaire, ces valeurs décimales :</p>
+<ul>
+<li><span class="arithmatex">\(2025_{10}\)</span></li>
+<li><span class="arithmatex">\(4050_{10}\)</span></li>
+<li><span class="arithmatex">\(59400_{10}\)</span></li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
