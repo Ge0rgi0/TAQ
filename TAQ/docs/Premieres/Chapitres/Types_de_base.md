@@ -416,6 +416,7 @@ Autrement dit, \(a^{-n}\) est l'inverse de \(a^n\).
 ---
 
 Ainsi, les puissances négatives sont très utiles pour représenter les **fractions et les nombres très petits**, notamment dans les nombres flottants.
+
 ---
 ### La norme IEEE 754
 
