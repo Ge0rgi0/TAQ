@@ -3,9 +3,15 @@ site_name: TAQ
 nav:
   - Accueil: index.md
   - Cours:
-    - Secondes: Secondes/Secondes.md
-    - Premières: Premieres/Premieres.md
-    - Terminales: Terminales/Terminales.md
+      - Secondes:
+          - Accueil: Secondes/Secondes.md
+          - Bases de Python: Secondes/bases_python.md
+      - Premières:
+          - Accueil: Premieres/Premieres.md
+          - Types de base: Premieres/Chapitres/Types_de_base.md
+      - Terminales:
+          - Accueil: Terminales/Terminales.md
+
 
 theme:
   name: readthedocs
@@ -14,7 +20,7 @@ theme:
 
 markdown_extensions:
   - pymdownx.arithmatex:
-      generic: true   # <--- ajoute ça pour que $$ ... $$ fonctionne
+      generic: true
 
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6

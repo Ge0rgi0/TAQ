@@ -14,3 +14,7 @@ Cet enseignement s’appuie sur quelques concepts fondamentaux :
 L’objectif est de mieux comprendre le numérique, ses enjeux scientifiques et sociétaux, et d’adopter un **usage réfléchi et responsable** des technologies.
 
 Chaque thème du programme (Internet, Web, réseaux sociaux, données, localisation, objets connectés, photographie numérique…) est accompagné de **projets, travaux pratiques et activités** pour mettre en pratique les connaissances.
+
+## Chapitres
+
+- [🔹 Les bases de Python](Chapitres/bases_python.md)

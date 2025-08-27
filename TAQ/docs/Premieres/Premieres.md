@@ -1,4 +1,4 @@
-# NSI - Premieres
+# NSI - Premières
 
 ## Chapitres
 
