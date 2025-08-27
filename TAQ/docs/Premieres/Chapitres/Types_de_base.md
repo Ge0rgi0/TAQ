@@ -405,17 +405,11 @@ Autrement dit, \(a^{-n}\) est l'inverse de \(a^n\).
 | $\frac{1}{2}$| $\frac{1}{4}$| $\frac{1}{8}$| $\frac{1}{16}$| $\frac{1}{32}$| $\frac{1}{64}$| $\frac{1}{128}$|
 | $0.5$   | $0.25$  | $0.125$  | $0.0625$  | $0.03125$  | $0.015625$  | $0.0078125$  |
 
----
-
 <span style="color:blue">Exemples</span>
 
 - \(2^{-3} = \frac{1}{2^3} = \frac{1}{8} = 0.125\)  
 - \(5^{-2} = \frac{1}{5^2} = \frac{1}{25} = 0.04\)  
 - \(10^{-4} = \frac{1}{10^4} = \frac{1}{10000} = 0.0001\)
-
----
-
-Ainsi, les puissances négatives sont très utiles pour représenter les **fractions et les nombres très petits**, notamment dans les nombres flottants.
 
 ---
 ### La norme IEEE 754
