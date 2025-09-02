@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Programmation Orientée Objet - TAQ</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Programmation Orient\u00e9e Objet";
+        var mkdocs_page_input_path = "Terminales/Chapitres/POO.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/bases_python/">Bases de Python</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Types_de_base/">Types de base</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Terminales</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Programmation Orientée Objet</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ecrire-une-classe-en-python">Écrire une classe en Python</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creer-une-instance-objet">Créer une instance (objet)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#acceder-aux-attributs-et-methodes">Accéder aux attributs et méthodes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemples-supplementaires">Exemples supplémentaires</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#etape-1-creation-de-la-classe">Étape 1 : Création de la classe</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#etape-2-creation-dinstances">Étape 2 : Création d’instances</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#etape-3-manipulation-des-objets">Étape 3 : Manipulation des objets</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#etape-4-personnalisation">Étape 4 : Personnalisation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#etape-5-implication-personnelle">Étape 5 : Implication personnelle</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#etape-6-creativite">Étape 6 : Créativité</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Terminales</li>
+      <li class="breadcrumb-item active">Programmation Orientée Objet</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="programmation-orientee-objet-poo">Programmation Orientée Objet (POO)</h1>
+<h2 id="introduction">Introduction</h2>
+<p>La <strong>programmation orientée objet (POO)</strong> est une manière d’organiser un programme en regroupant dans des structures appelées <strong>classes</strong> à la fois des données (attributs) et les actions qui peuvent être réalisées sur ces données (méthodes).  </p>
+<p>Cette approche permet de représenter des concepts de manière claire et structurée : chaque objet manipulé dans le programme est une instance d’une classe, c’est-à-dire une version concrète du modèle défini.  </p>
+<p>La POO facilite la lecture, la réutilisation et l’évolution du code, en rapprochant la logique du programme de la façon dont on décrit et organise les choses dans la vie courante.</p>
+<p>👉 Exemple concret :<br />
+- Une <strong>classe</strong> est comme un <em>modèle</em> ou un <em>plan</em>.<br />
+- Une <strong>instance (objet)</strong> est un <em>exemplaire concret</em> de ce modèle.</p>
+<p><span style="color:blue">Exemple</span></p>
+<ul>
+<li>La <strong>classe</strong> <code>Stylo</code> décrit ce qu’est un stylo en général : une couleur d’encre, une longueur, une marque…  </li>
+<li>Les <strong>instances</strong> sont des stylos précis :  </li>
+<li><code>stylo1</code> : Bic bleu de 15 cm  </li>
+<li><code>stylo2</code> : Pilot noir de 13 cm  </li>
+</ul>
+<p>En Python, on écrira une classe <code>Stylo</code>, puis on créera plusieurs objets <code>stylo1</code>, <code>stylo2</code>, etc.</p>
+<p>👉 <strong>À retenir : Une classe est un modèle, une instance est une utilisation concrète de ce modèle.</strong></p>
+<hr />
+<h2 id="ecrire-une-classe-en-python">Écrire une classe en Python</h2>
+<p>Exemple : un <strong>rectangle</strong>.</p>
+<pre><code class="language-python">class Rectangle:
+    def __init__(self, largeur, hauteur):
+        self.largeur = largeur   # attribut
+        self.hauteur = hauteur   # attribut
+
+    def aire(self):
+        return self.largeur * self.hauteur   # méthode
+
+    def perimetre(self):
+        return 2 * (self.largeur + self.hauteur)  # méthode
+</code></pre>
+<h2 id="creer-une-instance-objet">Créer une instance (objet)</h2>
+<pre><code class="language-python"># Création de deux rectangles (instances)
+rect1 = Rectangle(5, 2)
+rect2 = Rectangle(10, 3)
+
+print(rect1.aire())      # 10
+print(rect2.perimetre()) # 26
+</code></pre>
+<ul>
+<li>Rectangle est le plan (classe).</li>
+<li>rect1 et rect2 sont des rectangles concrets (instances).</li>
+<li>Chaque instance a ses propres valeurs d’attributs.</li>
+</ul>
+<h2 id="acceder-aux-attributs-et-methodes">Accéder aux attributs et méthodes</h2>
+<p>Attributs :</p>
+<pre><code class="language-python">print(rect1.largeur)   # 5
+print(rect2.hauteur)   # 3
+</code></pre>
+<p>Méthodes</p>
+<pre><code class="language-python">print(rect1.aire())       # 10
+print(rect2.perimetre())  # 26
+</code></pre>
+<h2 id="exemples-supplementaires">Exemples supplémentaires</h2>
+<pre><code class="language-python">class Livre:
+    def __init__(self, titre, auteur, pages):
+        self.titre = titre
+        self.auteur = auteur
+        self.pages = pages
+
+    def resume(self):
+        return f&quot;{self.titre}, écrit par {self.auteur} ({self.pages} pages)&quot;
+
+livre1 = Livre(&quot;1984&quot;, &quot;George Orwell&quot;, 328)
+print(livre1.resume())  
+# affiche : 1984, écrit par George Orwell (328 pages)
+</code></pre>
+<pre><code class="language-python">class Animal:
+    def __init__(self, nom, espece, age):
+        self.nom = nom
+        self.espece = espece
+        self.age = age
+
+    def presentation(self):
+        return f&quot;Je suis {self.nom}, un {self.espece} de {self.age} ans.&quot;
+
+animal1 = Animal(&quot;Milo&quot;, &quot;chat&quot;, 3)
+animal2 = Animal(&quot;Rex&quot;, &quot;chien&quot;, 5)
+
+print(animal1.presentation())  # Je suis Milo, un chat de 3 ans.
+print(animal2.presentation())  # Je suis Rex, un chien de 5 ans.
+</code></pre>
+<p><span style="color:red">Exercice</span>  </p>
+<p>On veut représenter des <strong>livres</strong> en Python à l’aide de la programmation orientée objet.</p>
+<h3 id="etape-1-creation-de-la-classe">Étape 1 : Création de la classe</h3>
+<p>Écrire une classe <code>Livre</code> qui possède :<br />
+- trois <strong>attributs</strong> : <code>titre</code>, <code>auteur</code>, <code>genre</code><br />
+- une <strong>méthode</strong> <code>resume()</code> qui renvoie une chaîne de caractères sous la forme :<br />
+<code>"Titre (Auteur) - genre"</code></p>
+<h3 id="etape-2-creation-dinstances">Étape 2 : Création d’instances</h3>
+<p>Choisissez au moins 3 livres que vous aimez, et pour chacun d'eux creer une instance de la classe 'Livre'.</p>
+<h3 id="etape-3-manipulation-des-objets">Étape 3 : Manipulation des objets</h3>
+<ol>
+<li>Afficher le résumé de chaque livre en utilisant la méthode <code>resume()</code>.  </li>
+<li>Accéder directement à l’attribut <code>titre</code> du premier livre et l’afficher.  </li>
+<li>Modifier l’attribut <code>genre</code> du deuxième livre (par exemple, remplacer <code>"roman"</code> par <code>"science-fiction"</code>) puis afficher à nouveau son résumé pour vérifier le changement.  </li>
+<li>Ranger les trois livres dans une liste <code>bibliotheque</code>, puis parcourir la liste pour afficher le résumé de chaque livre.</li>
+</ol>
+<h3 id="etape-4-personnalisation">Étape 4 : Personnalisation</h3>
+<p>Ajoutez une nouvelle méthode <code>est_du_genre(self, genre_recherche)</code> qui renvoie <strong>True</strong> si le livre appartient au genre demandé, et <strong>False</strong> sinon.  </p>
+<p>Testez-la en vérifiant si vos livres appartiennent au genre <code>"science-fiction"</code>.</p>
+<h3 id="etape-5-implication-personnelle">Étape 5 : Implication personnelle</h3>
+<ol>
+<li>Dans la liste <code>bibliotheque</code>, écrivez une boucle qui affiche uniquement les livres d’un genre que <strong>vous aimez</strong>.<br />
+   (par exemple, tous les <code>"fantasy"</code> ou <code>"roman"</code>)  </li>
+<li>Ajoutez un quatrième livre que vous n’aimez pas. Puis affichez tous les livres, mais en marquant ceux que vous n’aimez pas avec la mention <code>"(rejeté)"</code>.</li>
+</ol>
+<h3 id="etape-6-creativite">Étape 6 : Créativité</h3>
+<p>Imaginez une nouvelle méthode pour la classe <code>Livre</code>.<br />
+Quelques idées possibles :<br />
+- <code>changer_titre(self, nouveau_titre)</code> pour modifier le titre<br />
+- <code>presentation_longue(self)</code> qui donne une description plus détaillée<br />
+- <code>est_du_meme_auteur(self, autre_livre)</code> qui compare deux livres  </p>
+<p>Implémentez la méthode de votre choix, puis testez-la avec vos objets.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Terminales/" class="btn btn-neutral float-left" title="Accueil"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Terminales/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

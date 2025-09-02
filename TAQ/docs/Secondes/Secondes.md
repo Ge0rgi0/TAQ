@@ -15,6 +15,10 @@ L’objectif est de mieux comprendre le numérique, ses enjeux scientifiques et 
 
 Chaque thème du programme (Internet, Web, réseaux sociaux, données, localisation, objets connectés, photographie numérique…) est accompagné de **projets, travaux pratiques et activités** pour mettre en pratique les connaissances.
 
+## Exposés
+
+- [🔺 Les exposés](exposes.md)
+
 ## Chapitres
 
 - [🔹 Les bases de Python](Chapitres/bases_python.md)

@@ -1,0 +1,36 @@
+# Organisation des exposés SNT
+
+## Format
+- **Par groupe de 2** → durée **8 à 12 minutes**  
+- **Par groupe de 3** → durée **12 à 15 minutes**  
+- Sujet **libre**, tant qu’il a un lien avec le **numérique** ou **l’informatique**  
+- **Pas de doublons** entre les groupes  
+
+## Plan attendu
+Chaque exposé doit inclure au moins **une partie qui relie le numérique ou la technologie à des enjeux concrets dans le monde réel**.  
+
+## Pistes numériques possibles
+### Minecraft
+- Le jeu sur les réseaux sociaux  
+- La redstone et les opérations logiques  
+- Les différences dans le développement après le rachat  
+
+### TikTok
+- L’algorithme  
+- L’effet du *doomscrolling* sur les utilisateurs  
+- Les enjeux sur la vie privée  
+- Les nouveaux métiers et la rémunération  
+
+## Exemples de sujets
+- Les femmes dans le monde de l’informatique  
+- Le *doomscrolling*  
+- La régulation des plateformes de streaming (ex. : Kick)  
+- La vie et la mort d’Alan Turing  
+- Les *fake news*  
+- *World of Warcraft* : l’épidémie virtuelle  
+
+## Dates clés
+- **30 septembre** → tous les groupes sont créés  
+- **19 octobre** → chaque groupe a un **sujet et un plan validés**  
+- **7 novembre** → annonce de l’ordre de passage  
+- **Du 10 novembre au 19 décembre** → exposés en classe  
