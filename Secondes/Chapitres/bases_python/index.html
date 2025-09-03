@@ -53,19 +53,11 @@
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Bases de Python</a>
     <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
+    <li class="toctree-l3"><a class="reference internal" href="#print-afficher-dans-le-terminal">print — afficher dans le terminal</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#1-variables-et-affectations">1. Variables et affectations</a>
+    <li class="toctree-l3"><a class="reference internal" href="#les-variables-des-boites-nommees">Les variables — des boîtes nommées</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-sequences-chaines-listes">2. Séquences (chaînes, listes)</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#3-instructions-conditionnelles">3. Instructions conditionnelles</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#4-boucles">4. Boucles</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#5-fonctions">5. Fonctions</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a>
+    <li class="toctree-l3"><a class="reference internal" href="#input-demander-une-valeur-a-lutilisateur">input — demander une valeur à l’utilisateur</a>
     </li>
     </ul>
                 </li>
@@ -113,110 +105,85 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="bases-de-python">Bases de Python</h1>
-<h2 id="introduction">Introduction</h2>
-<p>Python est le langage choisi pour l’enseignement de la spécialité NSI.  </p>
-<p>Pourquoi Python ?<br />
-- Il est <strong>simple</strong> d’écriture et de lecture.<br />
-- Il est <strong>libre et gratuit</strong>, disponible sur toutes les plateformes.<br />
-- Il est <strong>interprété</strong> : pas besoin de compilation, on peut tester rapidement son code.<br />
-- Il possède de nombreuses <strong>bibliothèques</strong> utiles en mathématiques, sciences, économie, etc.  </p>
+                <h1 id="snt-base-de-python">SNT — Base de Python</h1>
+<p>Une page d’introduction pour débuter en Python : afficher du texte avec <code>print</code>, utiliser des variables (les « boîtes nommées ») et demander une saisie clavier avec <code>input()</code>.</p>
 <hr />
-<h2 id="1-variables-et-affectations">1. Variables et affectations</h2>
-<p>Une <strong>variable</strong> permet de stocker une valeur en mémoire.<br />
-L’opération qui associe une valeur à une variable s’appelle une <strong>affectation</strong>.  </p>
-<pre><code class="language-python">x = 5
-y = 3
-z = x + y
-print(z)  # affiche z
+<h2 id="print-afficher-dans-le-terminal"><code>print</code> — afficher dans le terminal</h2>
+<p><code>print()</code> sert à <strong>afficher</strong> un message ou une valeur à l’écran (dans le terminal/console).</p>
+<p>Quand on veut utiliser des valeurs textuelles (<strong>chaînes de caractères</strong>), on les écrit entre guillemets.<br />
+Comme ça, le programme fait la différence entre le code et les chaînes de caractères.</p>
+<pre><code class="language-python">print(&quot;Bonjour&quot;)
+print(2 + 3)
+message = &quot;Bienvenue en SNT !&quot;
+print(message)
 </code></pre>
-<p>👉 Ici, <code>x</code> et <code>y</code> contiennent des entiers, et <code>z</code> reçoit la somme.  </p>
-<p>⚠️ En Python, le signe <code>=</code> n’a pas le même sens qu’en mathématiques : il signifie <strong>« prend la valeur »</strong>.  </p>
-<p><strong>Exercice</strong><br />
-- Affecter la valeur 2025 à une variable <code>annee</code>, puis afficher <code>annee + 10</code>.  </p>
+<p>Ce programme affichera :</p>
+<pre><code>Bonjour
+5
+Bienvenue en SNT !
+</code></pre>
+<p><strong>Astuces</strong>
+On peut afficher <strong>plusieurs éléments</strong> séparés par des virgules :</p>
+<pre><code class="language-python">prenom = &quot;Ana&quot;
+age = 15
+print(&quot;Je m'appelle&quot;, prenom, &quot;et j'ai&quot;, age, &quot;ans.&quot;)
+</code></pre>
 <hr />
-<h2 id="2-sequences-chaines-listes">2. Séquences (chaînes, listes)</h2>
-<p>Une <strong>séquence</strong> est une collection ordonnée d’éléments.<br />
-Les deux séquences principales en Python sont :  </p>
-<ul>
-<li>La <strong>chaîne de caractères</strong> (<code>str</code>)  </li>
-</ul>
-<pre><code class="language-python">nom = &quot;Python&quot;
-print(nom[0])   # affiche 'P'
-print(len(nom)) # affiche 6
-</code></pre>
-<ul>
-<li>La <strong>liste</strong> (<code>list</code>)  </li>
-</ul>
-<pre><code class="language-python">notes = [15, 12, 18]
-print(notes[1])     # affiche 12
-notes.append(14)    # ajoute 14 à la liste
-</code></pre>
-<p><strong>Exercice</strong><br />
-Créer une liste contenant trois prénoms et afficher le deuxième.  </p>
-<hr />
-<h2 id="3-instructions-conditionnelles">3. Instructions conditionnelles</h2>
-<p>Elles permettent d’<strong>exécuter du code seulement si une condition est vraie</strong>.  </p>
-<pre><code class="language-python">age = 17
+<h2 id="les-variables-des-boites-nommees">Les variables — des boîtes nommées</h2>
+<p>Une <strong>variable</strong> est comme une <strong>boîte</strong> avec un <strong>nom</strong> dans laquelle on range une <strong>valeur</strong>.<br />
+On peut lire ou <strong>modifier</strong> cette valeur.</p>
+<pre><code class="language-python">a = 5
+b = 10
+c = a + b
+print(c)
 
-if age &gt;= 18:
-    print(&quot;Majeur&quot;)
-else:
-    print(&quot;Mineur&quot;)
-</code></pre>
-<p>On peut ajouter plusieurs cas avec <code>elif</code>.  </p>
-<pre><code class="language-python">note = 15
+a = 3
+print(c)
 
-if note &gt;= 16:
-    print(&quot;Très bien&quot;)
-elif note &gt;= 12:
-    print(&quot;Assez bien&quot;)
-else:
-    print(&quot;À améliorer&quot;)
+c = a + b
+print(c)
 </code></pre>
-<p><strong>Exercice</strong><br />
-Demander à l’utilisateur son âge avec <code>input()</code>, puis afficher :<br />
-- « Mineur » si l’âge est &lt; 18<br />
-- « Majeur » sinon  </p>
+<p>Ce programme affichera :</p>
+<pre><code>15
+15
+13
+</code></pre>
+<p><strong>Décortiquons-le :</strong></p>
+<p>On a créé 3 variables.</p>
+<p>a = 5<br />
+b = 10<br />
+c = a + b = 15</p>
+<p>Puis nous avons modifié la valeur de <code>a</code> par 3, désormais, <code>a = 3</code>.<br />
+Ce qui ne modifie pas la valeur de <code>c</code>, car ce que l'on stocke c'est la valeur et pas le calcul.<br />
+Donc <code>c = 15</code>.</p>
+<p>Si on veut que <code>c</code> soit de nouveau égal à <code>a+b</code>, il faut de nouveau le calculer : <code>c = a + b</code>.</p>
 <hr />
-<h2 id="4-boucles">4. Boucles</h2>
-<p>Les boucles permettent de <strong>répéter des instructions</strong>.  </p>
+<h2 id="input-demander-une-valeur-a-lutilisateur"><code>input</code> — demander une valeur à l’utilisateur</h2>
+<p><code>input()</code> <strong>pose une question</strong> et <strong>récupère une réponse</strong> au <strong>format texte</strong>.</p>
+<pre><code class="language-python">nom = input(&quot;Comment t appelles-tu ? &quot;)
+print(nom)
+</code></pre>
+<p>Ce programme affichera :  </p>
+<pre><code>Comment t appelles-tu ?
+</code></pre>
+<p>Il faudra alors écrire notre prénom, par exemple <code>Tom</code>.<br />
+La variable <code>nom</code> aura la valeur <code>"Tom"</code>.</p>
+<p>Il affichera ensuite :  </p>
+<pre><code>Tom
+</code></pre>
+<hr />
+<p>En Python, <strong><code>print</code></strong> et <strong><code>input</code></strong> sont ce qu’on appelle des <strong>fonctions</strong>.<br />
+Comme en mathématiques, une fonction peut <strong>prendre des valeurs en entrée</strong> et <strong>renvoyer un résultat</strong>.</p>
+<p><strong>Exemple en mathématiques</strong>
+Soit la fonction : <code>f(x) : 2x</code></p>
 <ul>
-<li><strong>Boucle bornée</strong> : on connaît à l’avance le nombre de répétitions.  </li>
+<li>La fonction <code>f</code> prend en <strong>entrée</strong> une valeur <code>x</code>.  </li>
+<li>Elle renvoie en <strong>sortie</strong> le résultat du calcul <code>2x</code>.</li>
 </ul>
-<pre><code class="language-python">for i in range(5):
-    print(&quot;Bonjour&quot;, i)
-</code></pre>
-<ul>
-<li><strong>Boucle non bornée</strong> : on répète tant qu’une condition est vraie.  </li>
-</ul>
-<pre><code class="language-python">n = 0
-while n &lt; 5:
-    print(&quot;n =&quot;, n)
-    n = n + 1
-</code></pre>
-<p><strong>Exercice</strong><br />
-Écrire un programme qui affiche les entiers de 1 à 10 avec une boucle <code>while</code>.  </p>
-<hr />
-<h2 id="5-fonctions">5. Fonctions</h2>
-<p>Une <strong>fonction</strong> permet de regrouper un ensemble d’instructions sous un nom.<br />
-On peut ensuite l’<strong>appeler</strong> autant de fois que nécessaire.  </p>
-<pre><code class="language-python">def carre(x):
-    return x * x
-
-print(carre(5))   # affiche 25
-</code></pre>
-<p>👉 <code>def</code> sert à définir la fonction. <code>return</code> renvoie le résultat.  </p>
-<p><strong>Exercice</strong><br />
-Écrire une fonction <code>aire_rectangle(longueur, largeur)</code> qui renvoie l’aire du rectangle.<br />
-Tester avec plusieurs valeurs.  </p>
-<hr />
-<h2 id="conclusion">Conclusion</h2>
-<p>Avec ces bases (variables, séquences, conditions, boucles, fonctions), on peut déjà :<br />
-- résoudre des problèmes concrets,<br />
-- modéliser des phénomènes,<br />
-- écrire des programmes utiles et réutilisables.  </p>
-<p>C’est la fondation de l’apprentissage en NSI.</p>
+<p><strong>En Python</strong><br />
+- <code>print(...)</code> prend en entrée ce que l’on veut <strong>afficher à l’écran</strong>.<br />
+- <code>input(...)</code> prend en entrée un <strong>texte à afficher</strong> (c’est optionnel) et renvoie ce que l’utilisateur <strong>tape au clavier</strong>.  </p>
+<p>On met toujours des <strong>parenthèses</strong> après le nom d’une fonction, même si elle n’a <strong>aucune valeur en entrée</strong>.  </p>
               
             </div>
           </div><footer>
