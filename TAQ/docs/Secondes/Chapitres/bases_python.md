@@ -1,146 +1,110 @@
-# Bases de Python
+# SNT — Base de Python
 
-## Introduction
-Python est le langage choisi pour l’enseignement de la spécialité NSI.  
-
-Pourquoi Python ?  
-- Il est **simple** d’écriture et de lecture.  
-- Il est **libre et gratuit**, disponible sur toutes les plateformes.  
-- Il est **interprété** : pas besoin de compilation, on peut tester rapidement son code.  
-- Il possède de nombreuses **bibliothèques** utiles en mathématiques, sciences, économie, etc.  
+Une page d’introduction pour débuter en Python : afficher du texte avec `print`, utiliser des variables (les « boîtes nommées ») et demander une saisie clavier avec `input()`.
 
 ---
 
-## 1. Variables et affectations
+## `print` — afficher dans le terminal
+`print()` sert à **afficher** un message ou une valeur à l’écran (dans le terminal/console).
 
-Une **variable** permet de stocker une valeur en mémoire.  
-L’opération qui associe une valeur à une variable s’appelle une **affectation**.  
+Quand on veut utiliser des valeurs textuelles (**chaînes de caractères**), on les écrit entre guillemets.  
+Comme ça, le programme fait la différence entre le code et les chaînes de caractères.
 
 ```python
-x = 5
-y = 3
-z = x + y
-print(z)  # affiche z
+print("Bonjour")
+print(2 + 3)
+message = "Bienvenue en SNT !"
+print(message)
 ```
 
-👉 Ici, `x` et `y` contiennent des entiers, et `z` reçoit la somme.  
+Ce programme affichera :
 
-⚠️ En Python, le signe `=` n’a pas le même sens qu’en mathématiques : il signifie **« prend la valeur »**.  
+    Bonjour
+    5
+    Bienvenue en SNT !
 
-**Exercice**  
-- Affecter la valeur 2025 à une variable `annee`, puis afficher `annee + 10`.  
+**Astuces**
+On peut afficher **plusieurs éléments** séparés par des virgules :
+
+```python
+prenom = "Ana"
+age = 15
+print("Je m'appelle", prenom, "et j'ai", age, "ans.")
+```
 
 ---
 
-## 2. Séquences (chaînes, listes)
-
-Une **séquence** est une collection ordonnée d’éléments.  
-Les deux séquences principales en Python sont :  
-
-- La **chaîne de caractères** (`str`)  
+## Les variables — des boîtes nommées
+Une **variable** est comme une **boîte** avec un **nom** dans laquelle on range une **valeur**.  
+On peut lire ou **modifier** cette valeur.
 
 ```python
-nom = "Python"
-print(nom[0])   # affiche 'P'
-print(len(nom)) # affiche 6
+a = 5
+b = 10
+c = a + b
+print(c)
+
+a = 3
+print(c)
+
+c = a + b
+print(c)
 ```
 
-- La **liste** (`list`)  
+Ce programme affichera :
 
-```python
-notes = [15, 12, 18]
-print(notes[1])     # affiche 12
-notes.append(14)    # ajoute 14 à la liste
-```
+    15
+    15
+    13 
 
-**Exercice**  
-Créer une liste contenant trois prénoms et afficher le deuxième.  
+**Décortiquons-le :**
+
+On a créé 3 variables.
+
+a = 5  
+b = 10  
+c = a + b = 15
+
+Puis nous avons modifié la valeur de `a` par 3, désormais, `a = 3`.  
+Ce qui ne modifie pas la valeur de `c`, car ce que l'on stocke c'est la valeur et pas le calcul.  
+Donc `c = 15`.
+
+Si on veut que `c` soit de nouveau égal à `a+b`, il faut de nouveau le calculer : `c = a + b`.
 
 ---
 
-## 3. Instructions conditionnelles
-
-Elles permettent d’**exécuter du code seulement si une condition est vraie**.  
-
-```python
-age = 17
-
-if age >= 18:
-    print("Majeur")
-else:
-    print("Mineur")
-```
-
-On peut ajouter plusieurs cas avec `elif`.  
+## `input` — demander une valeur à l’utilisateur
+`input()` **pose une question** et **récupère une réponse** au **format texte**.
 
 ```python
-note = 15
-
-if note >= 16:
-    print("Très bien")
-elif note >= 12:
-    print("Assez bien")
-else:
-    print("À améliorer")
+nom = input("Comment t appelles-tu ? ")
+print(nom)
 ```
 
-**Exercice**  
-Demander à l’utilisateur son âge avec `input()`, puis afficher :  
-- « Mineur » si l’âge est < 18  
-- « Majeur » sinon  
+Ce programme affichera :  
 
----
+    Comment t appelles-tu ?
 
-## 4. Boucles
+Il faudra alors écrire notre prénom, par exemple `Tom`.  
+La variable `nom` aura la valeur `"Tom"`.
 
-Les boucles permettent de **répéter des instructions**.  
+Il affichera ensuite :  
 
-- **Boucle bornée** : on connaît à l’avance le nombre de répétitions.  
+    Tom
 
-```python
-for i in range(5):
-    print("Bonjour", i)
-```
+-------
 
-- **Boucle non bornée** : on répète tant qu’une condition est vraie.  
+En Python, **`print`** et **`input`** sont ce qu’on appelle des **fonctions**.  
+Comme en mathématiques, une fonction peut **prendre des valeurs en entrée** et **renvoyer un résultat**.
 
-```python
-n = 0
-while n < 5:
-    print("n =", n)
-    n = n + 1
-```
+**Exemple en mathématiques**
+Soit la fonction : `f(x) : 2x`
 
-**Exercice**  
-Écrire un programme qui affiche les entiers de 1 à 10 avec une boucle `while`.  
+- La fonction `f` prend en **entrée** une valeur `x`.  
+- Elle renvoie en **sortie** le résultat du calcul `2x`.
 
----
+**En Python**  
+- `print(...)` prend en entrée ce que l’on veut **afficher à l’écran**.  
+- `input(...)` prend en entrée un **texte à afficher** (c’est optionnel) et renvoie ce que l’utilisateur **tape au clavier**.  
 
-## 5. Fonctions
-
-Une **fonction** permet de regrouper un ensemble d’instructions sous un nom.  
-On peut ensuite l’**appeler** autant de fois que nécessaire.  
-
-```python
-def carre(x):
-    return x * x
-
-print(carre(5))   # affiche 25
-```
-
-👉 `def` sert à définir la fonction. `return` renvoie le résultat.  
-
-**Exercice**  
-Écrire une fonction `aire_rectangle(longueur, largeur)` qui renvoie l’aire du rectangle.  
-Tester avec plusieurs valeurs.  
-
----
-
-## Conclusion
-
-Avec ces bases (variables, séquences, conditions, boucles, fonctions), on peut déjà :  
-- résoudre des problèmes concrets,  
-- modéliser des phénomènes,  
-- écrire des programmes utiles et réutilisables.  
-
-C’est la fondation de l’apprentissage en NSI.
+On met toujours des **parenthèses** après le nom d’une fonction, même si elle n’a **aucune valeur en entrée**.  
