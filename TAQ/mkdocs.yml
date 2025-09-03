@@ -5,7 +5,8 @@ nav:
   - Cours:
       - Secondes:
           - Accueil: Secondes/Secondes.md
-          - Bases de Python: Secondes/bases_python.md
+          - Exposés: Secondes/exposes.md
+          - Bases de Python: Secondes/Chapitres/bases_python.md
       - Premières:
           - Accueil: Premieres/Premieres.md
           - Types de base: Premieres/Chapitres/Types_de_base.md
