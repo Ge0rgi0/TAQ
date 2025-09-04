@@ -7,6 +7,7 @@ nav:
           - Accueil: Secondes/Secondes.md
           - Exposés: Secondes/exposes.md
           - Bases de Python: Secondes/Chapitres/bases_python.md
+          - Internet : Secondes/Chapitres/Internet - Protocoles et routage des paquets.md
       - Premières:
           - Accueil: Premieres/Premieres.md
           - Types de base: Premieres/Chapitres/Types_de_base.md

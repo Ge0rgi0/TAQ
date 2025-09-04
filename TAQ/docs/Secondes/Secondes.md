@@ -22,3 +22,4 @@ Chaque thème du programme (Internet, Web, réseaux sociaux, données, localisat
 ## Chapitres
 
 - [🔹 Les bases de Python](Chapitres/bases_python.md)
+- [🔹 Internet - Protocoles et routage des paquets](Chapitres/Internet - Protocoles et routage des paquets.md)
