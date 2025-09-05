@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Correction - TAQ</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Correction";
+        var mkdocs_page_input_path = "Terminales/correction.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Secondes/Chapitres/bases_python/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Secondes/Chapitres/Internet%20-%20Protocoles%20et%20routage%20des%20paquets/">Internet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Premieres/Chapitres/Types_de_base/">Types de base</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Correction</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="correction">Correction</h1>
+<h2 id="exercice-1-bonjour">Exercice 1 : Bonjour !</h2>
+<h3 id="objectif">Objectif</h3>
+<p>Demander le prénom de l’utilisateur et afficher un message de salutation.</p>
+<h3 id="explication-pas-a-pas">Explication pas à pas</h3>
+<ol>
+<li><code>input()</code> lit une chaîne tapée par l’utilisateur et la renvoie.  </li>
+<li><code>print()</code> affiche du texte à l'écran. On peut afficher plusieurs éléments séparés par des virgules ; Python insère des espaces automatiquement entre eux.</li>
+</ol>
+<h3 id="erreurs-frequentes">Erreurs fréquentes</h3>
+<ul>
+<li>Essayer de convertir le prénom en nombre (inutile).  </li>
+<li>Oublier les guillemets dans le message de <code>input()</code> (pas grave mais moins clair pour l'utilisateur).</li>
+</ul>
+<h3 id="code-corrige">Code corrigé</h3>
+<pre><code class="language-python"># On demande le prénom à l'utilisateur et on l'affiche dans une phrase
+prenom = input(&quot;Entrez votre prénom : &quot;)   # input() renvoie une chaîne (str)
+print(&quot;Bonjour,&quot;, prenom, &quot;!&quot;)             # print concatène avec des espaces automatiques
+</code></pre>
+<h3 id="exemple-dexecution">Exemple d'exécution</h3>
+<p>Si l'utilisateur tape <code>Alice</code>, le programme affiche :  </p>
+<pre><code>Bonjour, Alice !
+</code></pre>
+<hr />
+<h2 id="exercice-2-operations-simples">Exercice 2 : Opérations simples</h2>
+<h3 id="objectif_1">Objectif</h3>
+<p>Lire deux nombres et afficher leur somme, produit et différence.</p>
+<h3 id="explication-pas-a-pas_1">Explication pas à pas</h3>
+<ol>
+<li><code>input()</code> renvoie une chaîne. Pour faire des opérations numériques, on convertit avec <code>int()</code> (entiers) ou <code>float()</code> (nombres à virgule).  </li>
+<li>On stocke les deux nombres dans des variables <code>a</code> et <code>b</code>.  </li>
+<li>On utilise les opérateurs <code>+</code>, <code>*</code>, <code>-</code> pour les calculs.  </li>
+<li><code>print()</code> affiche les résultats.</li>
+</ol>
+<h3 id="erreurs-frequentes_1">Erreurs fréquentes</h3>
+<ul>
+<li>Oublier de convertir en <code>int</code>/<code>float</code> : concaténation au lieu d'addition (ex : <code>'2' + '3'</code> donne <code>'23'</code>).  </li>
+<li>Conversion en <code>int</code> alors que l'utilisateur tape <code>3.5</code> (provoque <code>ValueError</code>). Si on attend des décimaux, utiliser <code>float()</code>.</li>
+</ul>
+<h3 id="code-corrige_1">Code corrigé</h3>
+<pre><code class="language-python"># Lire deux nombres et afficher les résultats
+a = int(input(&quot;Entrez un premier nombre : &quot;))   # convertir en entier
+b = int(input(&quot;Entrez un deuxième nombre : &quot;))
+
+print(&quot;Somme :&quot;, a + b)        # addition
+print(&quot;Produit :&quot;, a * b)      # multiplication
+print(&quot;Différence :&quot;, a - b)   # soustraction
+</code></pre>
+<hr />
+<h2 id="exercice-4-tuple-et-liste">Exercice 4 : Tuple et liste</h2>
+<h3 id="objectif_2">Objectif</h3>
+<p>Utiliser un tuple pour stocker des matières (fixe) et une liste pour stocker des notes (modifiable). Calculer la moyenne.</p>
+<h3 id="explication-pas-a-pas_2">Explication pas à pas</h3>
+<ol>
+<li>Un <strong>tuple</strong> est défini avec des parenthèses <code>(...)</code> et est immuable : on ne peut pas ajouter d'éléments.  </li>
+<li>Une <strong>liste</strong> est définie avec des crochets <code>[...]</code> et on peut utiliser <code>append()</code> pour ajouter des éléments.  </li>
+<li><code>sum(notes)</code> calcule la somme des éléments d'une liste numérique. <code>len(notes)</code> donne le nombre d'éléments. La moyenne est <code>sum / len</code>.  </li>
+<li>Toujours vérifier que <code>len(notes)</code> n'est pas zéro avant de diviser (éviter division par zéro).</li>
+</ol>
+<h3 id="erreurs-frequentes_2">Erreurs fréquentes</h3>
+<ul>
+<li>Tenter d'utiliser <code>append()</code> sur un tuple (provoque une erreur).  </li>
+<li>Diviser par zéro si la liste est vide.  </li>
+</ul>
+<h3 id="code-corrige_2">Code corrigé</h3>
+<pre><code class="language-python"># Tuple fixe pour les matières
+matieres = (&quot;Maths&quot;, &quot;NSI&quot;, &quot;Physique&quot;)
+
+# Liste vide pour recueillir les notes
+notes = []
+
+# On demande 3 notes à l'utilisateur
+for i in range(3):
+    note = int(input(&quot;Entrez la note : &quot;))  # on convertit en int
+    notes.append(note)                              # on ajoute à la liste
+
+# Calcul de la moyenne (on sait qu'il y a 3 notes ici)
+moyenne = sum(notes) / len(notes)
+
+print(&quot;Vos matières :&quot;, matieres)
+print(&quot;Vos notes :&quot;, notes)
+print(&quot;Moyenne :&quot;, moyenne)
+</code></pre>
+<hr />
+<h2 id="exercice-5-boucles">Exercice 5 : Boucles</h2>
+<h3 id="objectif_3">Objectif</h3>
+<p>Afficher les carrés des nombres de 1 à 10.</p>
+<h3 id="explication-pas-a-pas_3">Explication pas à pas</h3>
+<ol>
+<li><code>range(1, 11)</code> génère les entiers 1,2,...,10 (le second argument est exclu).  </li>
+<li><code>i**2</code> calcule le carré de <code>i</code>.  </li>
+<li>Boucler permet d'éviter d'écrire 10 lignes répétitives.</li>
+</ol>
+<h3 id="code-corrige_3">Code corrigé</h3>
+<pre><code class="language-python">for i in range(1, 11):          # parcourt 1 à 10
+    print(i, &quot;au carré =&quot;, i**2)
+</code></pre>
+<h3 id="erreurs-frequentes_3">Erreurs fréquentes</h3>
+<ul>
+<li>Utiliser <code>range(10)</code> et penser que ça commence à 1 (i prendra les valeurs de 0 à 9).  </li>
+<li>Confondre <code>i*i</code> et <code>i**2</code> (les deux fonctionnent, mais <code>**</code> est l'opérateur d'exponentiation).</li>
+</ul>
+<hr />
+<h2 id="exercice-6-conditions">Exercice 6 : Conditions</h2>
+<h3 id="objectif_4">Objectif</h3>
+<p>Classer une personne en « enfant », « adolescent » ou « adulte » selon son âge.</p>
+<h3 id="explication-pas-a-pas_4">Explication pas à pas</h3>
+<ol>
+<li>On lit l'âge avec <code>int()</code>.  </li>
+<li><code>if</code> teste la première condition ; si elle est vraie, Python exécute le bloc associé et saute le reste.  </li>
+<li><code>elif</code> si la première condition était fausse, teste une autre condition, si elle est vraie, Python exécute le bloc associé et saute le reste. </li>
+<li><code>else</code> si toutes les autres conditions étaient fausses, Python exécute le bloc associé.</li>
+</ol>
+<h3 id="code-corrige_4">Code corrigé</h3>
+<pre><code class="language-python">age = int(input(&quot;Quel est ton âge ? &quot;))
+
+if age &lt; 12:               # moins de 12 ans =&gt; enfant
+    print(&quot;enfant&quot;)
+elif age &lt;= 17:            # entre 12 et 17 inclus =&gt; adolescent
+    print(&quot;adolescent&quot;)
+else:                      # 18 ans et plus =&gt; adulte
+    print(&quot;adulte&quot;)
+</code></pre>
+<h3 id="erreurs-frequentes_4">Erreurs fréquentes</h3>
+<ul>
+<li>Mettre les conditions dans le mauvais ordre : ici l'ordre présenté fonctionne (test du plus petit d'abord).  </li>
+<li>Utiliser plusieurs <code>if</code> indépendants au lieu de <code>elif</code> : cela pourrait afficher plusieurs lignes pour une même entrée.</li>
+</ul>
+<hr />
+<h2 id="exercice-7-mot-de-passe">Exercice 7 : Mot de passe</h2>
+<h3 id="objectif_5">Objectif</h3>
+<p>Demander un mot de passe et répéter la demande tant qu'il est incorrect.</p>
+<h3 id="explication-pas-a-pas_5">Explication pas à pas</h3>
+<ol>
+<li>On utilise une boucle <code>while</code> dont la condition reste vraie tant que le mot de passe n'est pas correct.  </li>
+<li>On met la saisie à l'intérieur de la boucle pour permettre plusieurs tentatives.  </li>
+<li>Une fois que la condition devient fausse (mot de passe correct), la boucle s'arrête.</li>
+</ol>
+<h3 id="code-corrige_5">Code corrigé</h3>
+<pre><code class="language-python">mdp = &quot;&quot;                       # initialisation
+while mdp != &quot;python123&quot;:      # tant que le mot de passe n'est pas égal à la chaîne attendue
+    mdp = input(&quot;Entrez le mot de passe : &quot;)
+
+print(&quot;Mot de passe correct !&quot;)
+</code></pre>
+<h3 id="erreurs-frequentes_5">Erreurs fréquentes</h3>
+<ul>
+<li>Oublier d'initialiser <code>mdp</code> avant la boucle (la première comparaison doit être possible).  </li>
+<li>Utiliser <code>==</code> à l'intérieur de la boucle sans mise à jour de <code>mdp</code> (boucle infinie).</li>
+</ul>
+<hr />
+<h2 id="exercice-8-fonction-simple">Exercice 8 : Fonction simple</h2>
+<h3 id="objectif_6">Objectif</h3>
+<p>Écrire une fonction <code>aire_rectangle(longueur, largeur)</code> qui renvoie l'aire.</p>
+<h3 id="explication-pas-a-pas_6">Explication pas à pas</h3>
+<ol>
+<li>Une fonction est définie avec <code>def nom(params):</code>.  </li>
+<li><code>return</code> renvoie la valeur calculée à l'appelant.  </li>
+<li>Pour accepter des nombres décimaux, on convertit les entrées en <code>float</code>.</li>
+</ol>
+<h3 id="code-corrige_6">Code corrigé</h3>
+<pre><code class="language-python">def aire_rectangle(longueur, largeur):
+    &quot;&quot;&quot;Retourne l'aire d'un rectangle.
+    longueur et largeur sont des nombres (float ou int).
+    &quot;&quot;&quot;
+    return longueur * largeur
+
+# Lecture des valeurs utilisateur
+L = float(input(&quot;Longueur : &quot;))
+l = float(input(&quot;Largeur : &quot;))
+
+# Appel de la fonction et affichage du résultat
+print(&quot;Aire =&quot;, aire_rectangle(L, l))
+</code></pre>
+<h3 id="erreurs-frequentes_6">Erreurs fréquentes</h3>
+<ul>
+<li>Oublier <code>return</code> dans la fonction (la fonction renverra <code>None</code>).  </li>
+<li>Convertir en <code>int</code> alors qu'on veut garder les décimales.</li>
+</ul>
+<hr />
+<h2 id="exercice-9-plus-grand-element">Exercice 9 : Plus grand élément</h2>
+<h3 id="objectif_7">Objectif</h3>
+<p>Écrire <code>max_liste(liste)</code> sans utiliser la fonction <code>max()</code> intégrée.</p>
+<h3 id="explication-pas-a-pas_7">Explication pas à pas</h3>
+<ol>
+<li>On suppose que le premier élément est le maximum initial.  </li>
+<li>On parcourt la liste et, si on trouve un élément plus grand, on met à jour <code>maximum</code>.  </li>
+<li>À la fin, on retourne <code>maximum</code>.</li>
+</ol>
+<h3 id="erreurs-frequentes_7">Erreurs fréquentes</h3>
+<ul>
+<li>Oublier que la liste peut être vide. Ici on teste sur une liste connue non vide.  </li>
+<li>Utiliser <code>max()</code> (ici l'objectif est d'écrire la logique soi-même).</li>
+</ul>
+<h3 id="code-corrige_7">Code corrigé</h3>
+<pre><code class="language-python">def max_liste(liste):
+    # On suppose que la liste contient au moins un élément
+    maximum = liste[0]
+    for element in liste:
+        if element &gt; maximum:
+            maximum = element
+    return maximum
+
+# Exemple de test
+nombres = [3, 17, 9, 25, 4]
+print(&quot;Liste :&quot;, nombres)
+print(&quot;Plus grand élément :&quot;, max_liste(nombres))
+</code></pre>
+<hr />
+<h2 id="exercice-10-petit-projet">Exercice 10 : Petit projet</h2>
+<h3 id="objectif_8">Objectif</h3>
+<p>Lire des notes jusqu'à ce que l'utilisateur tape <code>-1</code>, puis afficher la liste, la moyenne et le nombre de notes &gt;= moyenne.</p>
+<h3 id="explication-pas-a-pas_8">Explication pas à pas</h3>
+<ol>
+<li>On crée une liste <code>notes</code> vide.  </li>
+<li>On lit des notes dans une boucle <code>while</code> jusqu'à la valeur sentinelle <code>-1</code>.  </li>
+<li>On n'ajoute <code>-1</code> <strong>pas</strong> à la liste (contrôle nécessaire).  </li>
+<li>Si la liste est non vide, on calcule <code>moyenne = sum(notes) / len(notes)</code>.  </li>
+<li>On parcourt la liste pour compter les éléments supérieurs ou égaux à la moyenne.</li>
+</ol>
+<h3 id="erreurs-frequentes_8">Erreurs fréquentes</h3>
+<ul>
+<li>Oublier d'exclure <code>-1</code> (alors la moyenne est faussée).  </li>
+<li>Tenter de calculer la moyenne sur une liste vide (division par zéro).  </li>
+</ul>
+<h3 id="code-corrige_8">Code corrigé</h3>
+<pre><code class="language-python">notes = []
+note = 0  # valeur initiale (autre que -1)
+
+# Lecture des notes
+while note != -1:
+    # On convertit en int ; si l'utilisateur tape une valeur non numérique, il y aura une erreur
+    note = int(input(&quot;Entrez une note (-1 pour arrêter) : &quot;))
+    if note != -1:
+        notes.append(note)  # on n'ajoute pas -1
+
+# Affichage des notes saisies
+print(&quot;Toutes les notes :&quot;, notes)
+
+# Calculs seulement si la liste contient au moins une note
+if len(notes) &gt; 0:
+    moyenne = sum(notes) / len(notes)
+    print(&quot;Moyenne :&quot;, moyenne)
+
+    # Compter les notes &gt;= moyenne
+    nb_sup = 0
+    for n in notes:
+        if n &gt;= moyenne:
+            nb_sup += 1
+
+    print(&quot;Nombre de notes &gt;= moyenne :&quot;, nb_sup)
+else:
+    print(&quot;Aucune note entrée.&quot;)
+</code></pre>
+<h3 id="remarque">Remarque</h3>
+<ul>
+<li>Si tu veux ignorer les notes invalides (ex : négatives, supérieures à 20), ajoute des vérifications avant <code>append()</code>.</li>
+<li>On pourrait aussi afficher la médiane, l'écart-type, etc., mais cela dépasse l'exercice.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
