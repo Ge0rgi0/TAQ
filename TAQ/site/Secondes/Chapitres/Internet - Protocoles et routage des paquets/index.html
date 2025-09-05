@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Internet - TAQ</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Internet";
+        var mkdocs_page_input_path = "Secondes/Chapitres/Internet - Protocoles et routage des paquets.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Secondes</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../bases_python/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Internet</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#internet-un-reseau-de-reseaux">Internet = un réseau de réseaux</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#les-fournisseurs-dacces-a-internet-fai">Les Fournisseurs d’Accès à Internet (FAI)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#linterconnexion-mondiale">L’interconnexion mondiale</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reperes-historiques">Repères historiques</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#le-protocole-ip-et-ladressage">Le protocole IP et l’adressage</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#adresse-mac-adressage-local">📍 Adresse MAC (adressage local)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#adresse-ip-adressage-global">🌐 Adresse IP (adressage global)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#structure-dune-adresse-ip">🧩 Structure d’une adresse IP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ipv4-internet-protocol-version-4">IPv4 (Internet Protocol version 4)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ipv6-internet-protocol-version-6">IPv6 (Internet Protocol version 6)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#comparatif-ipv4-ipv6">Comparatif IPv4 / IPv6</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#a-retenir">📌 À retenir</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#resume-comparatif">📊 Résumé comparatif</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dns-domain-name-system">DNS – Domain Name System</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#role-de-tcp">📌 Rôle de TCP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#transmission-et-fiabilite">🔄 Transmission et fiabilité</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#limites-de-tcp">⚠️ Limites de TCP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#a-retenir_1">📌 À retenir</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#le-routage">Le routage</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#experience-pratique-nslookup">🔹 Expérience pratique : nslookup</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#les-composants-materiels-dun-reseau">Les composants matériels d’un réseau</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-machines">💻 1. Machines</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-switch">🔀 2. Switch</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-routeur">🌐 3. Routeur</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#4-supports-de-transmission">📡 4. Supports de transmission</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modele-en-couches-tcpip">Modèle en couches TCP/IP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#encapsulation-et-desencapsulation">Encapsulation et désencapsulation</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Types_de_base/">Types de base</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Secondes</li>
+      <li class="breadcrumb-item active">Internet</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="snt-internet">🌐 SNT – Internet</h1>
+<hr />
+<h2 id="internet-un-reseau-de-reseaux">Internet = un réseau de réseaux</h2>
+<p>Internet n’est pas une seule machine géante.<br />
+C’est en réalité <strong>un immense ensemble de réseaux interconnectés</strong> :  </p>
+<ul>
+<li><strong>Les réseaux locaux (LAN)</strong>  </li>
+<li>Exemple : votre maison (box Internet + ordinateurs + téléphones connectés en Wi-Fi ou en câble).  </li>
+<li>Exemple : le réseau du lycée (salles informatiques, imprimantes, serveurs pédagogiques).  </li>
+<li>Exemple : le réseau d’une entreprise.  </li>
+</ul>
+<p>Ces réseaux sont <strong>privés et limités dans l’espace</strong> (on les appelle des <strong>réseaux locaux</strong>).</p>
+<hr />
+<h3 id="les-fournisseurs-dacces-a-internet-fai">Les Fournisseurs d’Accès à Internet (FAI)</h3>
+<p>Pour communiquer avec le reste du monde, un réseau local doit se connecter à un <strong>Fournisseur d’Accès à Internet (FAI)</strong> :<br />
+- En France : Orange, SFR, Free, Bouygues, etc.<br />
+- Dans d’autres pays : AT&amp;T, Deutsche Telekom, etc.  </p>
+<p>Un FAI gère un <strong>réseau beaucoup plus vaste</strong> qui relie des millions de clients.  </p>
+<hr />
+<h3 id="linterconnexion-mondiale">L’interconnexion mondiale</h3>
+<ul>
+<li>Les réseaux des FAI sont eux-mêmes reliés <strong>entre eux</strong> par de très grandes lignes de communication (fibre optique, câbles sous-marins, satellites).  </li>
+<li>Les grandes entreprises (Google, Amazon, Microsoft, etc.) possèdent aussi leurs <strong>propres réseaux</strong> qui s’interconnectent avec les FAI.  </li>
+</ul>
+<p>📌 Résultat :<br />
+Quand vous envoyez un message, il sort d’abord de votre réseau local → passe par le réseau de votre FAI → traverse plusieurs autres réseaux → atteint le réseau du destinataire.  </p>
+<p>👉 <strong>Idée clé à retenir :</strong><br />
+Internet, c’est <strong>l’interconnexion de milliers de réseaux locaux et de fournisseurs d’accès</strong> à l’échelle mondiale, qui communiquent tous grâce à des <strong>protocoles communs</strong>.</p>
+<hr />
+<h2 id="reperes-historiques">Repères historiques</h2>
+<ul>
+<li><strong>1950s-1960s</strong> : premiers réseaux d’ordinateurs.  </li>
+<li><strong>1970</strong> : ArpaNet (USA).  </li>
+<li><strong>1971</strong> : Cyclades (France).  </li>
+<li><strong>1983</strong> : naissance officielle d’Internet avec le protocole <strong>TCP/IP</strong>.  </li>
+</ul>
+<hr />
+<h2 id="le-protocole-ip-et-ladressage">Le protocole IP et l’adressage</h2>
+<p>Chaque appareil connecté à Internet doit être identifiable de manière <strong>unique</strong>.<br />
+Pour cela, deux types d’adresses existent :</p>
+<hr />
+<h3 id="adresse-mac-adressage-local">📍 Adresse MAC (adressage local)</h3>
+<ul>
+<li>Chaque machine dispose d’une ou plusieurs <strong>cartes réseau</strong> (Wi-Fi, Ethernet…).  </li>
+<li>Chaque carte possède une <strong>adresse physique unique au monde</strong> : l’adresse <strong>MAC</strong>.  </li>
+<li>Utilisée uniquement <strong>dans le réseau local</strong> (LAN).  </li>
+</ul>
+<p><strong>Caractéristiques :</strong>
+- Format : 6 blocs de 2 caractères (ex. <code>a1:b2:c3:d4:e5:f6</code>).<br />
+- Base : hexadécimale (0-9 et A-F).<br />
+- Portée : limitée au réseau local.<br />
+- Unicité : chaque carte réseau possède une adresse MAC unique.  </p>
+<p>💡 Exemple :  </p>
+<p>Adresse MAC = 3C:97:0E:4B:62:A1</p>
+<hr />
+<h3 id="adresse-ip-adressage-global">🌐 Adresse IP (adressage global)</h3>
+<p>Pour communiquer sur Internet, chaque machine reçoit aussi une <strong>adresse IP</strong>.<br />
+C’est l’adresse <strong>logique</strong> qui permet de retrouver une machine parmi des milliards d’autres.  </p>
+<p><strong>Caractéristiques :</strong>
+- Format : 4 nombres entre 0 et 255 (ex. <code>192.168.1.12</code>).<br />
+- Base humaine : décimale (base 10).<br />
+- Base machine : binaire (0 et 1).<br />
+- Portée : mondiale (Internet).  </p>
+<p>💡 Exemples :<br />
+- <code>91.198.174.192</code> (serveur de Wikipedia en IPv4).<br />
+- <code>2a02:ec80:600:ed1a::1</code> (même serveur en IPv6).<br />
+- <code>127.0.0.1</code> → adresse spéciale « localhost » (votre propre machine).  </p>
+<hr />
+<h3 id="structure-dune-adresse-ip">🧩 Structure d’une adresse IP</h3>
+<p>Une <strong>adresse IP</strong> identifie une machine sur un réseau.<br />
+Elle se compose de deux parties principales :  </p>
+<ol>
+<li><strong>Partie Réseau</strong> → identifie le réseau auquel appartient la machine.  </li>
+<li><strong>Partie Machine (hôte)</strong> → identifie la machine dans ce réseau.  </li>
+</ol>
+<p>📌 Pour séparer ces deux parties, on utilise un <strong>masque de sous-réseau</strong>.</p>
+<hr />
+<h3 id="ipv4-internet-protocol-version-4">IPv4 (Internet Protocol version 4)</h3>
+<ul>
+<li>Format : <strong>32 bits</strong>, affichés en 4 nombres décimaux (0-255) séparés par des points.  </li>
+<li>Exemple : <code>128.40.94.3</code>  </li>
+<li>Masque : <code>/16</code> = <code>255.255.0.0</code>  </li>
+<li>
+<p>En binaire :  </p>
+<p>Adresse : 10000000.00101000.01011110.00000011<br />
+Masque : 11111111.11111111.00000000.00000000</p>
+</li>
+<li>
+<p>Partie réseau : <code>128.40.0.0</code>  </p>
+</li>
+<li>Partie machine : <code>94.3</code>  </li>
+<li>Portée : <strong>Internet mondial</strong>  </li>
+<li>Limitation : environ 4 milliards d’adresses → problème avec le nombre croissant d’appareils connectés.  </li>
+</ul>
+<hr />
+<h3 id="ipv6-internet-protocol-version-6">IPv6 (Internet Protocol version 6)</h3>
+<ul>
+<li>Créé pour résoudre la <strong>pénurie d’adresses IPv4</strong>.  </li>
+<li>Format : <strong>128 bits</strong>, représenté en <strong>8 groupes de 4 caractères hexadécimaux</strong> séparés par des deux-points.  </li>
+<li>Exemple : <code>2a02:ec80:600:ed1a::1</code>  </li>
+<li>Portée : mondiale, permet <strong>un nombre quasi infini d’adresses</strong>.  </li>
+<li>Partie réseau / partie machine : toujours présentes, mais sur un format plus long.  </li>
+</ul>
+<hr />
+<h3 id="comparatif-ipv4-ipv6">Comparatif IPv4 / IPv6</h3>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>IPv4</th>
+<th>IPv6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Taille</td>
+<td>32 bits</td>
+<td>128 bits</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>4 nombres décimaux</td>
+<td>8 blocs hexadécimaux</td>
+</tr>
+<tr>
+<td>Exemple</td>
+<td>192.168.1.25</td>
+<td>2a02:ec80:600:ed1a::1</td>
+</tr>
+<tr>
+<td>Nombre d’adresses</td>
+<td>~4 milliards</td>
+<td>340 undecillions (~3,4×10³⁸)</td>
+</tr>
+<tr>
+<td>Objectif</td>
+<td>Adressage mondial limité</td>
+<td>Résoudre la pénurie IPv4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>💻 Expérience : découvrir les adresses IP et le réseau local de ton ordinateur</p>
+<ul>
+<li>Ouvrir l’invite de commande.</li>
+<li>Taper : ipconfig</li>
+<li>Observer :</li>
+<li>Ton adresse IPv4 et IPv6</li>
+<li>L’adresse de la passerelle (routeur)</li>
+<li>Les serveurs DNS</li>
+</ul>
+<hr />
+<h3 id="a-retenir">📌 À retenir</h3>
+<ul>
+<li>Une machine peut avoir <strong>IPv4 et IPv6</strong> simultanément.  </li>
+<li>La <strong>partie réseau</strong> permet de savoir si deux machines sont dans le même réseau local.  </li>
+<li>Le <strong>masque de sous-réseau</strong> détermine quelle partie de l’adresse est réseau et quelle partie est machine.</li>
+</ul>
+<hr />
+<h3 id="resume-comparatif">📊 Résumé comparatif</h3>
+<table>
+<thead>
+<tr>
+<th>Caractéristique</th>
+<th>Adresse MAC</th>
+<th>Adresse IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nature</td>
+<td>Physique (gravée sur la carte)</td>
+<td>Logique (attribuée par le réseau)</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>6 blocs hexadécimaux (ex. A1:B2:...)</td>
+<td>4 nombres décimaux (IPv4) ou longs hexadécimaux (IPv6)</td>
+</tr>
+<tr>
+<td>Portée</td>
+<td>Réseau local</td>
+<td>Réseau mondial (Internet)</td>
+</tr>
+<tr>
+<td>Unicité</td>
+<td>Unique au monde</td>
+<td>Unique dans un réseau donné</td>
+</tr>
+<tr>
+<td>Exemple</td>
+<td>3C:97:0E:4B:62:A1</td>
+<td>192.168.1.12</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>📌 <strong>À retenir :</strong><br />
+- L’adresse <strong>MAC</strong> identifie la <strong>carte réseau dans un LAN</strong>.<br />
+- L’adresse <strong>IP</strong> identifie l’<strong>appareil sur Internet</strong>.<br />
+- Les deux sont nécessaires pour qu’un ordinateur puisse communiquer.</p>
+<hr />
+<h2 id="dns-domain-name-system">DNS – Domain Name System</h2>
+<p>Quand vous tapez un nom de site dans votre navigateur, par exemple <code>wikipedia.org</code>, votre ordinateur ne sait pas directement où envoyer les paquets.<br />
+Il a besoin de <strong>l’adresse IP</strong> correspondante.  </p>
+<p>Le <strong>DNS (Domain Name System)</strong> est un service qui fait la correspondance :  </p>
+<ul>
+<li>Nom symbolique → Adresse IP  </li>
+<li>Exemple : <code>wikipedia.org</code> → <code>91.198.174.192</code> (IPv4) ou <code>2a02:ec80:600:ed1a::1</code> (IPv6)</li>
+</ul>
+<p>Les <strong>serveurs DNS</strong> sont des ordinateurs spécialisés qui répondent aux requêtes des ordinateurs pour résoudre ces noms.<br />
+Chaque ordinateur dispose d’un <strong>serveur DNS configuré</strong> (souvent celui de votre FAI) pour interroger le réseau.</p>
+<p>📌 <strong>À retenir :</strong> sans DNS, il faudrait connaître l’adresse IP exacte de chaque site pour s’y connecter.</p>
+<hr />
+<h2 id="le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</h2>
+<p>Quand on envoie un message ou un fichier sur Internet, <strong>il n’est jamais envoyé d’un seul bloc</strong>, mais découpé en <strong>petits morceaux appelés paquets</strong>.  </p>
+<p>Chaque paquet contient :<br />
+- l’adresse de l’<strong>émetteur</strong> (source),<br />
+- l’adresse du <strong>destinataire</strong>,<br />
+- une partie des <strong>données</strong> (texte, image, son…).  </p>
+<table>
+<thead>
+<tr>
+<th>Adresse source</th>
+<th>Adresse destination</th>
+<th>Données</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="role-de-tcp">📌 Rôle de TCP</h3>
+<p>TCP est un <strong>protocole de communication fiable</strong>. Il s’assure que :<br />
+1. <strong>Tous les paquets arrivent à destination</strong>.<br />
+   - Si un paquet est perdu sur le chemin, TCP le redemande.<br />
+2. <strong>Les paquets sont remis dans le bon ordre</strong>.<br />
+   - Les paquets peuvent arriver dans le désordre, TCP les réorganise.<br />
+3. <strong>La congestion du réseau est gérée</strong>.<br />
+   - TCP ajuste la vitesse d’envoi pour ne pas saturer le réseau.  </p>
+<p>💡 <strong>Exemple concret :</strong><br />
+- Vous regardez une vidéo en streaming :<br />
+  - La vidéo est envoyée en milliers de paquets.<br />
+  - TCP s’assure que chaque image arrive et est <strong>reconstituée dans le bon ordre</strong>.  </p>
+<hr />
+<h3 id="transmission-et-fiabilite">🔄 Transmission et fiabilité</h3>
+<ul>
+<li>Chaque paquet contient un <strong>numéro d’ordre</strong> et un <strong>accusé de réception (ACK)</strong>.  </li>
+<li>Si un paquet n’est pas accusé dans un certain délai, il est <strong>renvoyé automatiquement</strong>.  </li>
+</ul>
+<p>Ordinateur A ---&gt; paquet #1 ---&gt; Ordinateur B<br />
+&lt;--- ACK #1 ----<br />
+Ordinateur A ---&gt; paquet #2 ---&gt; Ordinateur B<br />
+&lt;--- ACK #2 ----  </p>
+<ul>
+<li>Cela garantit que <strong>tout le message est complet</strong> à l’arrivée.  </li>
+</ul>
+<hr />
+<h3 id="limites-de-tcp">⚠️ Limites de TCP</h3>
+<ul>
+<li>TCP <strong>ne garantit pas le temps d’arrivée</strong> des paquets.  </li>
+<li>Utile pour mails ou fichiers.  </li>
+<li>Moins adapté pour les <strong>vidéos en direct ou jeux en ligne</strong>, car attendre les paquets manquants crée du <strong>lag</strong>.  </li>
+<li>Pour ces usages, on utilise souvent <strong>UDP (User Datagram Protocol)</strong>, qui envoie les paquets sans vérification ni réordonnancement → plus rapide mais moins fiable.</li>
+</ul>
+<hr />
+<p>💻 Expérience : tester si un autre appareil ou site est joignable</p>
+<ul>
+<li>Ouvrir l’invite de commande.</li>
+<li>Taper : ping wikipedia.org</li>
+<li>Observer :</li>
+<li>L’adresse IP de wikipedia.org</li>
+<li>Le temps aller-retour des paquets</li>
+<li>Si tous les paquets sont reçus</li>
+</ul>
+<hr />
+<h3 id="a-retenir_1">📌 À retenir</h3>
+<ul>
+<li>TCP découpe les données en <strong>paquets</strong>, les envoie et les réassemble.  </li>
+<li>Il assure <strong>la fiabilité</strong> : tout paquet perdu est renvoyé et les paquets sont remis dans le bon ordre.  </li>
+<li>TCP est le protocole utilisé pour la majorité des communications <strong>fiables</strong> sur Internet (mail, web, transfert de fichiers).  </li>
+<li>Pour les applications <strong>temps réel</strong> (streaming, jeux), UDP est utilisé à la place.</li>
+</ul>
+<hr />
+<h2 id="le-routage">Le routage</h2>
+<p>Les paquets ne vont pas directement de l’émetteur au destinataire.<br />
+Ils passent par plusieurs <strong>routeurs</strong>, qui choisissent à chaque étape le <strong>meilleur chemin possible</strong>.  </p>
+<p>Schéma simplifié :  </p>
+<p>Ordinateur A → [Routeur 1] → [Routeur 2] → [Routeur 3] → Ordinateur B</p>
+<ul>
+<li>Chaque routeur connaît seulement une <strong>carte locale</strong>.  </li>
+<li>Si un chemin est bloqué, le paquet est envoyé ailleurs.  </li>
+<li>Certains paquets peuvent être perdus → TCP les renvoie.  </li>
+</ul>
+<p>💻 Expérience : suivre le chemin des paquets sur Internet</p>
+<ul>
+<li>Ouvrir l’invite de commande.</li>
+<li>Taper : tracert wikipedia.org</li>
+<li>Observer :</li>
+<li>Les routeurs traversés</li>
+<li>Les temps de passage</li>
+<li>Les étoiles (*) pour routeurs qui ne répondent pas</li>
+</ul>
+<hr />
+<h3 id="experience-pratique-nslookup">🔹 Expérience pratique : nslookup</h3>
+<p>💻 <strong>Objectif :</strong> résoudre un nom de domaine en adresse IP et identifier le serveur DNS utilisé</p>
+<ol>
+<li>Ouvrir l’invite de commande sur Windows.  </li>
+<li>Taper la commande :</li>
+</ol>
+<p>nslookup wikipedia.org  </p>
+<ol>
+<li>Observer :</li>
+<li>L’<strong>adresse IP</strong> retournée pour wikipedia.org</li>
+<li>
+<p>Le <strong>serveur DNS</strong> qui a répondu</p>
+</li>
+<li>
+<p>Comparer avec l’adresse IP obtenue avec <code>ping wikipedia.org</code> pour voir que c’est la même.</p>
+</li>
+</ol>
+<p>💡 <strong>Lien avec le cours :</strong> cette expérience montre <strong>comment un nom de site est traduit en adresse IP</strong> avant que les paquets soient envoyés.</p>
+<h2 id="les-composants-materiels-dun-reseau">Les composants matériels d’un réseau</h2>
+<p>Pour qu’un réseau fonctionne, plusieurs <strong>éléments matériels</strong> sont nécessaires :  </p>
+<h3 id="1-machines">💻 1. Machines</h3>
+<ul>
+<li>Ce sont les appareils qui <strong>communiquent entre eux</strong> :  </li>
+<li>Ordinateurs, tablettes, smartphones, consoles de jeu, serveurs.  </li>
+<li>Elles envoient et reçoivent des données via le réseau.</li>
+</ul>
+<h3 id="2-switch">🔀 2. Switch</h3>
+<ul>
+<li>Dispositif qui <strong>relie plusieurs machines localement</strong> dans un réseau (LAN).  </li>
+<li>Exemple : un switch dans une salle informatique permet aux ordinateurs de communiquer entre eux rapidement.  </li>
+<li>Fonction : reçoit un paquet sur un port et l’envoie <strong>uniquement au port correspondant à la machine destinataire</strong>.</li>
+</ul>
+<h3 id="3-routeur">🌐 3. Routeur</h3>
+<ul>
+<li>Permet de <strong>connecter un réseau local à Internet</strong> ou à d’autres réseaux.  </li>
+<li>Exemple : la box Internet à la maison est un routeur.  </li>
+<li>Fonction : <strong>acheminer les paquets</strong> entre les différents réseaux selon leur adresse IP.</li>
+</ul>
+<h3 id="4-supports-de-transmission">📡 4. Supports de transmission</h3>
+<ul>
+<li>Permettent de <strong>transporter physiquement les données</strong> entre machines et équipements réseau.  </li>
+<li>Types :  </li>
+<li><strong>Câbles Ethernet</strong> (filaire, stable et rapide)  </li>
+<li><strong>Wi-Fi</strong> (sans fil, pratique mais plus sensible aux interférences)  </li>
+<li><strong>Fibre optique</strong> (très haut débit, longue distance)  </li>
+</ul>
+<hr />
+<h2 id="modele-en-couches-tcpip">Modèle en couches TCP/IP</h2>
+<p>Le protocole TCP/IP organise la communication en <strong>4 couches</strong>, chacune ayant un rôle spécifique :  </p>
+<p><strong>1 Couche Application</strong> 📱  </p>
+<p>Utilisée par les logiciels : navigateur web, messagerie, jeux en ligne.<br />
+Contient les <strong>données utilisateur</strong>.</p>
+<p><strong>2 Couche Transport</strong> 🚛  </p>
+<p>Assure le <strong>transport fiable des données</strong>.<br />
+Garantit que les paquets arrivent complets et dans le bon ordre (TCP).  </p>
+<p><strong>3 Couche Internet</strong> 🗺️  </p>
+<p>Gère <strong>l’adressage et le routage</strong>.<br />
+Détermine le <strong>chemin optimal</strong> pour les paquets vers leur destination.</p>
+<p><strong>4 Couche Accès Réseau</strong> 🔌  </p>
+<p>Assure la <strong>transmission physique des données</strong> : signaux électriques, optiques ou radio.<br />
+Utilise les supports de transmission (Ethernet, Wi-Fi, fibre).  </p>
+<hr />
+<h3 id="encapsulation-et-desencapsulation">Encapsulation et désencapsulation</h3>
+<p>Quand une machine envoie des données :  </p>
+<p>Les données descendent les couches <strong>en se faisant encapsuler</strong> → chaque couche ajoute son <strong>en-tête</strong>.  </p>
+<p>📱 Application : données utilisateur<br />
+⬇️<br />
+🚛 Transport : + en-tête TCP<br />
+⬇️<br />
+🗺️ Internet : + en-tête IP<br />
+⬇️<br />
+🔌 Accès réseau : + en-tête Ethernet  </p>
+<p>À la réception, les données remontent les couches <strong>en se faisant désencapsuler</strong> → chaque couche retire son en-tête pour récupérer les informations originales.  </p>
+<p>🔌 Accès réseau : - en-tête Ethernet<br />
+⬆️<br />
+🗺️ Internet : - en-tête IP<br />
+⬆️<br />
+🚛 Transport : - en-tête TCP<br />
+⬆️<br />
+📱 Application : données utilisateur  </p>
+<p>💡 <strong>À retenir :</strong><br />
+- L’encapsulation permet à chaque couche de <strong>gérer ses propres fonctions</strong> sans se préoccuper des autres.<br />
+- La désencapsulation permet de <strong>reconstituer les données correctement</strong> à l’arrivée.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../bases_python/" class="btn btn-neutral float-left" title="Bases de Python"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../Premieres/Premieres/" class="btn btn-neutral float-right" title="Accueil">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../bases_python/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../../Premieres/Premieres/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
