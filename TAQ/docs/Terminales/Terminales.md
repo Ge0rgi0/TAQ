@@ -2,7 +2,8 @@
 
 ## Révisions
 
-- [Révisions de premières](revisions.md)
+- [Rappels de premières](rappel.md)
+- [Exercices de révision](revisions.md)
 
 ## Chapitres
 

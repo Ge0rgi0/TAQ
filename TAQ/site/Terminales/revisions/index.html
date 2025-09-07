@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Accueil - TAQ</title>
+    <title>Exercices de pratique Python - Terminale - TAQ</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Accueil";
-        var mkdocs_page_input_path = "Terminales/Terminales.md";
+        var mkdocs_page_name = "Exercices de pratique Python - Terminale";
+        var mkdocs_page_input_path = "Terminales/revisions.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Cours</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" >Secondes</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Secondes/Secondes/">Accueil</a>
@@ -65,15 +65,9 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" >Terminales</a>
-    <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">Accueil</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#revisions">Révisions</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#chapitres">Chapitres</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Terminales/">Accueil</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Chapitres/POO/">Programmation Orientée Objet</a>
                 </li>
@@ -94,9 +88,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Cours</li>
-          <li class="breadcrumb-item">Terminales</li>
-      <li class="breadcrumb-item active">Accueil</li>
+      <li class="breadcrumb-item active">Exercices de pratique Python - Terminale</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -105,22 +97,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="nsi-terminales">NSI - Terminales</h1>
-<h2 id="revisions">Révisions</h2>
-<ul>
-<li><a href="../revisions/">Révisions de premières</a></li>
-</ul>
-<h2 id="chapitres">Chapitres</h2>
-<ul>
-<li><a href="../Chapitres/POO/">🔹 1 - Programmation Orienté Objet</a></li>
-</ul>
+                <h1 id="exercices-de-pratique-python-terminale">Exercices de pratique Python - Terminale</h1>
+<p>Avant de commencer :<br />
+- Si vous n'avez pas accés à un PC, voici un site en ligne : <a href="https://www.online-python.com/">https://www.online-python.com</a>. Il n'existe pas, à ma connaissance, d'app IOS pour compiler du Python qui soit totalement gratuite et qui ne nécessite pas de connexion internet.<br />
+- Si vous avez besoin de revoir les bases, retournez dans la section <strong>Rappel : Bases de Python</strong>.<br />
+- La correction est <a href="../correction/">ici</a>, évitez de regarder la correction avant d'essayer.</p>
+<hr />
+<h2 id="exercice-1-bonjour">Exercice 1 : Bonjour !</h2>
+<p>Écrivez un programme qui :<br />
+- Demande le prénom de l’utilisateur avec <code>input()</code>.<br />
+- Affiche un message du type : Bonjour, (prénom) !</p>
+<hr />
+<h2 id="exercice-2-operations-simples">Exercice 2 : Opérations simples</h2>
+<p>Demandez à l’utilisateur deux nombres et affichez :<br />
+- leur somme,<br />
+- leur produit,<br />
+- leur différence.  </p>
+<hr />
+<h2 id="exercice-4-tuple-et-liste">Exercice 4 : Tuple et liste</h2>
+<ol>
+<li>Créez un tuple contenant trois matières scolaires.  </li>
+<li>Créez une liste vide.  </li>
+<li>Demandez à l’utilisateur d’ajouter 3 notes (nombres entiers) dans la liste.  </li>
+<li>Affichez la moyenne des notes.  </li>
+</ol>
+<hr />
+<h2 id="exercice-5-boucles">Exercice 5 : Boucles</h2>
+<p>Écrivez un programme qui affiche les 10 premiers entiers (de 1 à 10) au carré.  </p>
+<hr />
+<h2 id="exercice-6-conditions">Exercice 6 : Conditions</h2>
+<p>Demandez l’âge d’un utilisateur :<br />
+- Si l’âge est inférieur à 12 : affichez « enfant »<br />
+- Si l’âge est entre 12 et 17 inclus : affichez « adolescent »<br />
+- Sinon : affichez « adulte ».  </p>
+<hr />
+<h2 id="exercice-7-mot-de-passe">Exercice 7 : Mot de passe</h2>
+<p>Demandez à l’utilisateur de saisir un mot de passe.<br />
+Tant que la saisie est différente de <code>"python123"</code>, redemandez.<br />
+Affichez ensuite :  Mot de passe correct !</p>
+<hr />
+<h2 id="exercice-8-fonction-simple">Exercice 8 : Fonction simple</h2>
+<p>Écrivez une fonction <code>aire_rectangle(longueur, largeur)</code> qui retourne l’aire d’un rectangle.<br />
+Demandez à l’utilisateur la longueur et la largeur, puis utilisez la fonction pour afficher l’aire.  </p>
+<hr />
+<h2 id="exercice-9-plus-grand-element">Exercice 9 : Plus grand élément</h2>
+<p>Écrivez une fonction <code>max_liste(liste)</code> qui retourne le plus grand élément d’une liste.<br />
+Testez-la sur une liste de nombres que vous aurez définie dans le code.  </p>
+<hr />
+<h2 id="exercice-10-petit-projet">Exercice 10 : Petit projet</h2>
+<p>Demandez à l’utilisateur de saisir une liste de notes (tant qu’il ne saisit pas <code>-1</code>).<br />
+Ensuite :<br />
+1. Affichez toutes les notes,<br />
+2. Calculez la moyenne,<br />
+3. Affichez le nombre de notes supérieures ou égales à la moyenne.  </p>
+<hr />
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../Premieres/Chapitres/Types_de_base/" class="btn btn-neutral float-left" title="Types de base"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Chapitres/POO/" class="btn btn-neutral float-right" title="Programmation Orientée Objet">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -142,10 +175,6 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../Premieres/Chapitres/Types_de_base/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../Chapitres/POO/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
