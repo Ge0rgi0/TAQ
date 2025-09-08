@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Révisions Python - Première - TAQ</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "R\u00e9visions Python - Premi\u00e8re";
+        var mkdocs_page_input_path = "Terminales/rappel.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Secondes/Chapitres/bases_python/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Secondes/Chapitres/Internet%20-%20Protocoles%20et%20routage%20des%20paquets/">Internet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Premieres/Chapitres/Types_de_base/">Types de base</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Révisions Python - Première</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="revisions-python-premiere">Révisions Python - Première</h1>
+<p>Ce document reprend les notions essentielles de Python vues en Première, avec explications, exemples et rappels importants.</p>
+<hr />
+<h2 id="1-affichage-avec-print">1. Affichage avec <code>print()</code></h2>
+<p>La fonction <code>print()</code> permet d’afficher du texte ou des résultats à l’écran.<br />
+On peut afficher plusieurs éléments en les séparant par des virgules.</p>
+<pre><code class="language-python">print(&quot;Bonjour&quot;)              # affiche : Bonjour
+print(3 + 5)                  # affiche : 8
+print(&quot;Résultat :&quot;, 3 * 4)    # affiche : Résultat : 12
+</code></pre>
+<p>👉 <strong>Astuce</strong> : <code>print()</code> ajoute automatiquement un retour à la ligne à la fin de l’affichage.</p>
+<hr />
+<h2 id="2-lire-une-valeur-avec-input">2. Lire une valeur avec <code>input()</code></h2>
+<p>La fonction <code>input()</code> permet de <strong>demander une saisie à l’utilisateur</strong>.<br />
+Le texte entre parenthèses est un message affiché à l’écran.  </p>
+<p>⚠️ Attention : la valeur saisie est toujours de type <strong>chaîne de caractères</strong> (<code>str</code>).</p>
+<pre><code class="language-python">nom = input(&quot;Quel est ton nom ? &quot;)
+print(&quot;Bonjour&quot;, nom)
+</code></pre>
+<hr />
+<h2 id="3-conversion-avec-int">3. Conversion avec <code>int()</code></h2>
+<p>Si l’on veut travailler avec des nombres, il faut convertir la chaîne saisie.<br />
+La fonction <code>int()</code> transforme une chaîne en <strong>entier</strong>.</p>
+<pre><code class="language-python">age = int(input(&quot;Quel est ton âge ? &quot;))
+print(&quot;Dans 10 ans tu auras&quot;, age + 10)
+</code></pre>
+<p>⚠️ Si l’utilisateur tape un texte qui n’est pas un nombre, <code>int()</code> provoque une erreur.</p>
+<hr />
+<h2 id="4-les-booleens-true-false">4. Les booléens (<code>True</code>, <code>False</code>)</h2>
+<p>Un <strong>booléen</strong> est un type de donnée qui peut avoir deux valeurs seulement :</p>
+<ul>
+<li><code>True</code> → vrai</li>
+<li><code>False</code> → faux</li>
+</ul>
+<p>Ils apparaissent souvent comme résultat d’une comparaison.</p>
+<pre><code class="language-python">a = 5
+b = 10
+print(a &lt; b)    # True  (car 5 est plus petit que 10)
+print(a == b)   # False (car 5 n’est pas égal à 10)
+print(a != b)   # True  (car 5 est différent de 10)
+</code></pre>
+<p>👉 On utilise beaucoup les booléens dans les conditions et les boucles.</p>
+<hr />
+<h2 id="5-les-chaines-de-caracteres-str">5. Les chaînes de caractères (<code>str</code>)</h2>
+<p>Une <strong>chaîne</strong> est un texte entre guillemets.</p>
+<pre><code class="language-python">mot = &quot;Python&quot;
+</code></pre>
+<h3 id="quelques-operations-utiles">Quelques opérations utiles :</h3>
+<ul>
+<li>Accéder à une lettre : <code>mot[0]</code> → <code>"P"</code></li>
+<li>Connaître la longueur : <code>len(mot)</code> → <code>6</code></li>
+<li>Transformer en majuscules : <code>mot.upper()</code> → <code>"PYTHON"</code></li>
+<li>Transformer en minuscules : <code>mot.lower()</code> → <code>"python"</code></li>
+</ul>
+<pre><code class="language-python">print(mot[0])      # P
+print(len(mot))    # 6
+print(mot.upper()) # PYTHON
+</code></pre>
+<p>⚠️ Les indices commencent à <code>0</code> en Python.</p>
+<hr />
+<h2 id="6-les-listes">6. Les listes</h2>
+<p>Une <strong>liste</strong> permet de stocker plusieurs valeurs.<br />
+Les listes sont <strong>modifiables</strong> : on peut ajouter, enlever ou remplacer des éléments.</p>
+<pre><code class="language-python">fruits = [&quot;pomme&quot;, &quot;banane&quot;, &quot;cerise&quot;]
+
+print(fruits[0])     # pomme
+fruits.append(&quot;kiwi&quot;) # ajoute à la fin
+print(fruits)        # ['pomme', 'banane', 'cerise', 'kiwi']
+
+fruits[1] = &quot;orange&quot; # remplace &quot;banane&quot; par &quot;orange&quot;
+print(fruits)        # ['pomme', 'orange', 'cerise', 'kiwi']
+</code></pre>
+<hr />
+<h2 id="7-les-tuples">7. Les tuples</h2>
+<p>Un <strong>tuple</strong> ressemble à une liste, mais il est <strong>immuable</strong> :<br />
+on ne peut pas modifier ses valeurs après sa création.</p>
+<pre><code class="language-python">coordonnees = (3, 5)
+print(coordonnees[0])  # 3
+</code></pre>
+<p>👉 Les tuples sont utiles pour stocker des données fixes (exemple : une position en 2D).</p>
+<hr />
+<h2 id="8-les-conditions-if-elif-else">8. Les conditions (<code>if</code>, <code>elif</code>, <code>else</code>)</h2>
+<p>Une condition permet de <strong>choisir entre plusieurs actions</strong> selon une expression booléenne.</p>
+<pre><code class="language-python">age = int(input(&quot;Ton âge ? &quot;))
+
+if age &lt; 18:
+    print(&quot;Tu es mineur&quot;)
+elif age == 18:
+    print(&quot;Tout juste majeur !&quot;)
+else:
+    print(&quot;Tu es majeur&quot;)
+</code></pre>
+<p>👉 Le mot-clé <code>elif</code> signifie « sinon si ».</p>
+<hr />
+<h2 id="9-la-boucle-for">9. La boucle <code>for</code></h2>
+<p>La boucle <code>for</code> permet de <strong>répéter une action</strong> sur une séquence (liste, chaîne, etc.)<br />
+ou un certain nombre de fois avec <code>range()</code>.</p>
+<pre><code class="language-python">for i in range(5):   # répète 5 fois (0 → 4)
+    print(&quot;i =&quot;, i)
+</code></pre>
+<pre><code class="language-python">fruits = [&quot;pomme&quot;, &quot;banane&quot;, &quot;cerise&quot;]
+for f in fruits:
+    print(&quot;J’aime&quot;, f)
+</code></pre>
+<hr />
+<h2 id="10-la-boucle-while">10. La boucle <code>while</code></h2>
+<p>La boucle <code>while</code> répète une action <strong>tant qu’une condition est vraie</strong>.<br />
+⚠️ Attention : si la condition n’est jamais fausse → boucle infinie !</p>
+<pre><code class="language-python">n = 0
+while n &lt; 3:
+    print(&quot;n =&quot;, n)
+    n = n + 1
+</code></pre>
+<hr />
+<h2 id="11-les-fonctions">11. Les fonctions</h2>
+<p>Une <strong>fonction</strong> est un bloc de code réutilisable.<br />
+On la définit avec <code>def</code>, et elle peut <strong>renvoyer un résultat</strong> avec <code>return</code>.</p>
+<pre><code class="language-python">def carre(x):
+    return x * x
+
+print(carre(5))   # 25
+print(carre(10))  # 100
+</code></pre>
+<p>👉 Avantages des fonctions :
+- Éviter les répétitions
+- Organiser le code
+- Le rendre plus lisible</p>
+<hr />
+<h1 id="a-retenir">📝 À retenir</h1>
+<ul>
+<li><strong>Entrées/sorties</strong> : <code>print()</code>, <code>input()</code>, <code>int()</code></li>
+<li><strong>Types</strong> : <code>str</code> (chaîne), <code>list</code> (liste modifiable), <code>tuple</code> (fixe), <code>bool</code> (vrai/faux)</li>
+<li><strong>Structures de contrôle</strong> : <code>if</code>, <code>for</code>, <code>while</code></li>
+<li><strong>Organisation du code</strong> : <code>def</code> pour créer des fonctions</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
