@@ -104,3 +104,48 @@ animal2 = Animal("Rex", "chien", 5)
 print(animal1.presentation())  # Je suis Milo, un chat de 3 ans.
 print(animal2.presentation())  # Je suis Rex, un chien de 5 ans.
 ```
+
+---
+<span style="color:red">Exercices</span>
+
+## Exercice 1
+
+1. Créez une classe **Point** qui possède deux attributs `x` et `y` correspondant aux coordonnées du point. Ces deux attributs doivent être affectés par le constructeur.  
+2. Ajoutez une méthode `affiche()` qui affiche les coordonnées du point comme ci-dessous (ici, x = 2 et y = 3) :  
+
+    Point | x : 2 | y : 3
+
+
+3. Ajoutez une méthode `translater(tx, ty)` qui ajoute `tx` à `x` et `ty` à `y`.
+
+---
+
+## Exercice 2
+
+1. Créez une classe **Compte** modélisant un compte en banque.  
+La classe possède deux attributs `somme` et `taux` correspondant à la somme placée sur le compte et au taux d'intérêt. Ces deux attributs doivent être affectés par le constructeur.  
+2. Ajoutez une méthode `affiche()` qui affiche la somme et le taux comme ci-dessous :  
+
+    Compte | somme : 2000€ | taux : 2%
+
+
+3. Ajoutez une méthode `depot(x)` qui ajoute `x` à la somme sur le compte.  
+4. Ajoutez une méthode `retrait(x)` qui enlève `x` à la somme sur le compte.  
+- Elle pourra renvoyer une erreur si la somme sur le compte devient négative et annuler alors l'opération.  
+5. Ajoutez une méthode `interets()` qui calcule les intérêts perçus en un an et les ajoute à la somme placée.  
+- Pour rappel, les intérêts se calculent avec la formule :  `interets = taux × somme / 10`
+
+---
+
+## Exercice 3
+
+1. En vue de faire un site web recensant des citations de films, créez une classe **Citation** permettant d'enregistrer le texte de la citation et son film.  
+2. Créez une méthode `affiche()` permettant d'afficher la citation de cette façon :  
+
+    Si je connaissais le con qu’a fait sauter le pont !  
+    -- On a retrouvé la 7e compagnie
+
+
+3. Ajoutez deux attributs `vote_plus` et `vote_moins` pour enregistrer les votes des utilisateurs sur chaque citation.  
+4. Ajoutez deux méthodes `vote_pour()` et `vote_contre()` qui permettent respectivement d'incrémenter `vote_plus` et `vote_moins`.  
+5. Enfin, ajoutez une méthode `affiche_votes()` qui affiche le nombre de votes pour et le nombre de votes contre la citation.  

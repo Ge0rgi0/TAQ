@@ -80,20 +80,6 @@
     <li class="toctree-l3"><a class="reference internal" href="#acceder-aux-attributs-et-methodes">Accéder aux attributs et méthodes</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#exemples-supplementaires">Exemples supplémentaires</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#etape-1-creation-de-la-classe">Étape 1 : Création de la classe</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#etape-2-creation-dinstances">Étape 2 : Création d’instances</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#etape-3-manipulation-des-objets">Étape 3 : Manipulation des objets</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#etape-4-personnalisation">Étape 4 : Personnalisation</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#etape-5-implication-personnelle">Étape 5 : Implication personnelle</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#etape-6-creativite">Étape 6 : Créativité</a>
-    </li>
-        </ul>
     </li>
     </ul>
                 </li>
@@ -207,38 +193,6 @@ animal2 = Animal(&quot;Rex&quot;, &quot;chien&quot;, 5)
 print(animal1.presentation())  # Je suis Milo, un chat de 3 ans.
 print(animal2.presentation())  # Je suis Rex, un chien de 5 ans.
 </code></pre>
-<p><span style="color:red">Exercice</span>  </p>
-<p>On veut représenter des <strong>livres</strong> en Python à l’aide de la programmation orientée objet.</p>
-<h3 id="etape-1-creation-de-la-classe">Étape 1 : Création de la classe</h3>
-<p>Écrire une classe <code>Livre</code> qui possède :<br />
-- trois <strong>attributs</strong> : <code>titre</code>, <code>auteur</code>, <code>genre</code><br />
-- une <strong>méthode</strong> <code>resume()</code> qui renvoie une chaîne de caractères sous la forme :<br />
-<code>"Titre (Auteur) - genre"</code></p>
-<h3 id="etape-2-creation-dinstances">Étape 2 : Création d’instances</h3>
-<p>Choisissez au moins 3 livres que vous aimez, et pour chacun d'eux creer une instance de la classe 'Livre'.</p>
-<h3 id="etape-3-manipulation-des-objets">Étape 3 : Manipulation des objets</h3>
-<ol>
-<li>Afficher le résumé de chaque livre en utilisant la méthode <code>resume()</code>.  </li>
-<li>Accéder directement à l’attribut <code>titre</code> du premier livre et l’afficher.  </li>
-<li>Modifier l’attribut <code>genre</code> du deuxième livre (par exemple, remplacer <code>"roman"</code> par <code>"science-fiction"</code>) puis afficher à nouveau son résumé pour vérifier le changement.  </li>
-<li>Ranger les trois livres dans une liste <code>bibliotheque</code>, puis parcourir la liste pour afficher le résumé de chaque livre.</li>
-</ol>
-<h3 id="etape-4-personnalisation">Étape 4 : Personnalisation</h3>
-<p>Ajoutez une nouvelle méthode <code>est_du_genre(self, genre_recherche)</code> qui renvoie <strong>True</strong> si le livre appartient au genre demandé, et <strong>False</strong> sinon.  </p>
-<p>Testez-la en vérifiant si vos livres appartiennent au genre <code>"science-fiction"</code>.</p>
-<h3 id="etape-5-implication-personnelle">Étape 5 : Implication personnelle</h3>
-<ol>
-<li>Dans la liste <code>bibliotheque</code>, écrivez une boucle qui affiche uniquement les livres d’un genre que <strong>vous aimez</strong>.<br />
-   (par exemple, tous les <code>"fantasy"</code> ou <code>"roman"</code>)  </li>
-<li>Ajoutez un quatrième livre que vous n’aimez pas. Puis affichez tous les livres, mais en marquant ceux que vous n’aimez pas avec la mention <code>"(rejeté)"</code>.</li>
-</ol>
-<h3 id="etape-6-creativite">Étape 6 : Créativité</h3>
-<p>Imaginez une nouvelle méthode pour la classe <code>Livre</code>.<br />
-Quelques idées possibles :<br />
-- <code>changer_titre(self, nouveau_titre)</code> pour modifier le titre<br />
-- <code>presentation_longue(self)</code> qui donne une description plus détaillée<br />
-- <code>est_du_meme_auteur(self, autre_livre)</code> qui compare deux livres  </p>
-<p>Implémentez la méthode de votre choix, puis testez-la avec vos objets.</p>
               
             </div>
           </div><footer>
