@@ -106,8 +106,8 @@ print(animal2.presentation())  # Je suis Rex, un chien de 5 ans.
 ```
 
 ---
-<span style="color:red">Exercices</span>
-(Les trois premiers exercices viennent du site [KXS](https://kxs.fr/cours/poo/exercices)
+<span style="color:red">Exercices</span>  
+(Les trois premiers exercices viennent du site [KXS](https://kxs.fr/cours/poo/exercices))
 
 ## Exercice 1
 
