@@ -96,7 +96,7 @@ class Animal:
         self.age = age
 
     def presentation(self):
-        return f"Je suis {self.nom}, un {self.espece} de {self.age} ans."
+        return "Je suis " + str(self.nom) + " un " print(self.espece) + " de " + str(self.age) + " ans."
 
 animal1 = Animal("Milo", "chat", 3)
 animal2 = Animal("Rex", "chien", 5)
@@ -118,8 +118,6 @@ print(animal2.presentation())  # Je suis Rex, un chien de 5 ans.
 
 3. Ajoutez une méthode `translater(tx, ty)` qui ajoute `tx` à `x` et `ty` à `y`.
 
----
-
 ## Exercice 2
 
 1. Créez une classe **Compte** modélisant un compte en banque.  
@@ -131,11 +129,9 @@ La classe possède deux attributs `somme` et `taux` correspondant à la somme pl
 
 3. Ajoutez une méthode `depot(x)` qui ajoute `x` à la somme sur le compte.  
 4. Ajoutez une méthode `retrait(x)` qui enlève `x` à la somme sur le compte.  
-- Elle pourra renvoyer une erreur si la somme sur le compte devient négative et annuler alors l'opération.  
+    Elle pourra renvoyer une erreur si la somme sur le compte devient négative et annuler alors l'opération.  
 5. Ajoutez une méthode `interets()` qui calcule les intérêts perçus en un an et les ajoute à la somme placée.  
-- Pour rappel, les intérêts se calculent avec la formule :  `interets = taux × somme / 10`
-
----
+    Pour rappel, les intérêts se calculent avec la formule :  `interets = taux × somme / 10`
 
 ## Exercice 3
 
@@ -149,3 +145,32 @@ La classe possède deux attributs `somme` et `taux` correspondant à la somme pl
 3. Ajoutez deux attributs `vote_plus` et `vote_moins` pour enregistrer les votes des utilisateurs sur chaque citation.  
 4. Ajoutez deux méthodes `vote_pour()` et `vote_contre()` qui permettent respectivement d'incrémenter `vote_plus` et `vote_moins`.  
 5. Enfin, ajoutez une méthode `affiche_votes()` qui affiche le nombre de votes pour et le nombre de votes contre la citation.  
+
+## Exercice 4 – Gestion d’une bibliothèque simplifiée
+
+1. Créez une classe **Livre** avec les attributs `titre` et `auteur`.  
+   Ajoutez une méthode `affiche()` qui affiche un livre de la forme :  
+
+   "Le Seigneur des Anneaux" de Tolkien
+
+2. Créez une classe **Bibliotheque** qui contient un attribut `livres` initialisé à une liste vide.  
+   Ajoutez une méthode `ajoute_livre(livre)` qui permet d’ajouter un objet `Livre` à la liste.  
+
+3. Ajoutez une méthode `affiche()` qui affiche tous les livres de la bibliothèque avec un numéro devant chacun. Exemple :  
+
+    1 - "Le Seigneur des Anneaux" de Tolkien
+    2 - "Vingt mille lieues sous les mers" de Jules Verne
+
+4. Ajoutez une méthode `recherche(titre)` qui affiche tous les livres dont le titre contient le mot recherché.  
+
+## Exercice 5 – Jeu de dés
+
+1. Créez une classe **De** avec un attribut `faces` (par défaut 6) et une méthode `lancer()` qui renvoie un nombre aléatoire entre 1 et `faces`.  
+
+2. Créez une classe **Joueur** avec les attributs `nom` et `score` (initialisé à 0).  
+Ajoutez une méthode `jouer(de)` qui lance le dé passé en paramètre et ajoute le résultat au score du joueur.  
+
+3. Créez une classe **Partie** avec les attributs `joueurs` (liste d’objets `Joueur`) et `de` (un objet `De`).  
+Ajoutez une méthode `tour()` qui fait jouer tous les joueurs une fois.  
+
+4. Ajoutez une méthode `vainqueur()` qui affiche le nom du joueur avec le plus grand score.  

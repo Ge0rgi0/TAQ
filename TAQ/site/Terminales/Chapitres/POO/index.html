@@ -81,6 +81,12 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#exemples-supplementaires">Exemples supplémentaires</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercice-1">Exercice 1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercice-2">Exercice 2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercice-3">Exercice 3</a>
+    </li>
     </ul>
                 </li>
     </ul>
@@ -193,6 +199,51 @@ animal2 = Animal(&quot;Rex&quot;, &quot;chien&quot;, 5)
 print(animal1.presentation())  # Je suis Milo, un chat de 3 ans.
 print(animal2.presentation())  # Je suis Rex, un chien de 5 ans.
 </code></pre>
+<hr />
+<p><span style="color:red">Exercices</span></p>
+<h2 id="exercice-1">Exercice 1</h2>
+<ol>
+<li>Créez une classe <strong>Point</strong> qui possède deux attributs <code>x</code> et <code>y</code> correspondant aux coordonnées du point. Ces deux attributs doivent être affectés par le constructeur.  </li>
+<li>
+<p>Ajoutez une méthode <code>affiche()</code> qui affiche les coordonnées du point comme ci-dessous (ici, x = 2 et y = 3) :  </p>
+<p>Point | x : 2 | y : 3</p>
+</li>
+<li>
+<p>Ajoutez une méthode <code>translater(tx, ty)</code> qui ajoute <code>tx</code> à <code>x</code> et <code>ty</code> à <code>y</code>.</p>
+</li>
+</ol>
+<hr />
+<h2 id="exercice-2">Exercice 2</h2>
+<ol>
+<li>Créez une classe <strong>Compte</strong> modélisant un compte en banque.<br />
+La classe possède deux attributs <code>somme</code> et <code>taux</code> correspondant à la somme placée sur le compte et au taux d'intérêt. Ces deux attributs doivent être affectés par le constructeur.  </li>
+<li>
+<p>Ajoutez une méthode <code>affiche()</code> qui affiche la somme et le taux comme ci-dessous :  </p>
+<p>Compte | somme : 2000€ | taux : 2%</p>
+</li>
+<li>
+<p>Ajoutez une méthode <code>depot(x)</code> qui ajoute <code>x</code> à la somme sur le compte.  </p>
+</li>
+<li>Ajoutez une méthode <code>retrait(x)</code> qui enlève <code>x</code> à la somme sur le compte.  </li>
+<li>Elle pourra renvoyer une erreur si la somme sur le compte devient négative et annuler alors l'opération.  </li>
+<li>Ajoutez une méthode <code>interets()</code> qui calcule les intérêts perçus en un an et les ajoute à la somme placée.  </li>
+<li>Pour rappel, les intérêts se calculent avec la formule :  <code>interets = taux × somme / 10</code></li>
+</ol>
+<hr />
+<h2 id="exercice-3">Exercice 3</h2>
+<ol>
+<li>En vue de faire un site web recensant des citations de films, créez une classe <strong>Citation</strong> permettant d'enregistrer le texte de la citation et son film.  </li>
+<li>
+<p>Créez une méthode <code>affiche()</code> permettant d'afficher la citation de cette façon :  </p>
+<p>Si je connaissais le con qu’a fait sauter le pont !<br />
+-- On a retrouvé la 7e compagnie</p>
+</li>
+<li>
+<p>Ajoutez deux attributs <code>vote_plus</code> et <code>vote_moins</code> pour enregistrer les votes des utilisateurs sur chaque citation.  </p>
+</li>
+<li>Ajoutez deux méthodes <code>vote_pour()</code> et <code>vote_contre()</code> qui permettent respectivement d'incrémenter <code>vote_plus</code> et <code>vote_moins</code>.  </li>
+<li>Enfin, ajoutez une méthode <code>affiche_votes()</code> qui affiche le nombre de votes pour et le nombre de votes contre la citation.  </li>
+</ol>
               
             </div>
           </div><footer>
