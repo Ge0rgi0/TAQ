@@ -59,6 +59,16 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#input-demander-une-valeur-a-lutilisateur">input — demander une valeur à l’utilisateur</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#structures-de-controle">Structures de contrôle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#logique-booleenne">Logique booléenne</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#les-operateurs-logiques">Les opérateurs logiques</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#comparaisons">Comparaisons</a>
+    </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Internet%20-%20Protocoles%20et%20routage%20des%20paquets/">Internet</a>
@@ -69,7 +79,11 @@
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Premieres/">Accueil</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Types_de_base/">Types de base</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Types_de_base_int/">Types de base (entiers)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Types_de_base_float/">Types de base (flottants)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Types_de_base_bool/">Types de base (booléens)</a>
                 </li>
     </ul>
                   </li>
@@ -186,6 +200,151 @@ Soit la fonction : <code>f(x) : 2x</code></p>
 - <code>print(...)</code> prend en entrée ce que l’on veut <strong>afficher à l’écran</strong>.<br />
 - <code>input(...)</code> prend en entrée un <strong>texte à afficher</strong> (c’est optionnel) et renvoie ce que l’utilisateur <strong>tape au clavier</strong>.  </p>
 <p>On met toujours des <strong>parenthèses</strong> après le nom d’une fonction, même si elle n’a <strong>aucune valeur en entrée</strong>.  </p>
+<hr />
+<h2 id="structures-de-controle">Structures de contrôle</h2>
+<p>Jusqu’ici, nous avons vu comment représenter et manipuler des nombres.<br />
+En programmation, il est souvent nécessaire de <strong>prendre des décisions</strong> :<br />
+exécuter certaines instructions seulement si une condition est vraie.  </p>
+<p>En Python, cela se fait avec les mots-clés <code>if</code>, <code>elif</code> et <code>else</code>.</p>
+<pre><code class="language-python">if condition1:
+    # instructions exécutées si la condition1 est vraie
+elif condition2 :
+    # instructions exécutées si la condition1 est fausse mais que la condition2 est vraie
+    # on peut enchaîner plusieurs elif
+else:
+    # instructions exécutées si les conditions 1 et 2 sont fausses
+</code></pre>
+<p>On peut le lire ainsi :</p>
+<ul>
+<li>Si <code>condition1</code> est vraie, je fais ça ...  </li>
+<li>Sinon, si <code>condition2</code> est vraie, je fais ça ...  </li>
+<li>Dans tous les autre cas, je fais ça ...  </li>
+</ul>
+<hr />
+<h2 id="logique-booleenne">Logique booléenne</h2>
+<h3 id="les-operateurs-logiques">Les opérateurs logiques</h3>
+<p>Le langage Python propose trois opérateurs logiques principaux :</p>
+<table>
+<thead>
+<tr>
+<th>Opérateur</th>
+<th>Syntaxe</th>
+<th>Signification</th>
+<th>Exemple</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NON</td>
+<td>not</td>
+<td>inverse la valeur</td>
+<td>not <span style="color:blue">True</span></td>
+<td><span style="color:red">False</span></td>
+</tr>
+<tr>
+<td>ET</td>
+<td>and</td>
+<td>vrai si les deux sont vrais</td>
+<td><span style="color:blue">True</span> and <span style="color:red">False</span></td>
+<td><span style="color:red">False</span></td>
+</tr>
+<tr>
+<td>OU</td>
+<td>or</td>
+<td>vrai si au moins un est vrai</td>
+<td><span style="color:blue">True</span> or <span style="color:red">False</span></td>
+<td><span style="color:blue">True</span></td>
+</tr>
+</tbody>
+</table>
+<p>Il existe aussi un opérateur important qui n'est pas naturel en python :</p>
+<table>
+<thead>
+<tr>
+<th>OU EXCLUSIF</th>
+<th>xor</th>
+<th>vrai si l'un est faux et l'autre est vraie</th>
+<th><span style="color:blue">True</span> xor <span style="color:blue">True</span></th>
+<th><span style="color:red">False</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="comparaisons">Comparaisons</h2>
+<p>Les booléens apparaissent très souvent à la suite de comparaisons.<br />
+Voici les principaux opérateurs en Python :</p>
+<table>
+<thead>
+<tr>
+<th>Opérateur</th>
+<th>Signification</th>
+<th>Exemple 1</th>
+<th>Résultat 1</th>
+<th>Exemple 2</th>
+<th>Résultat 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==</td>
+<td>égal à</td>
+<td>5 == 5</td>
+<td><span style="color:blue">True</span></td>
+<td>3 = 5</td>
+<td><span style="color:red">False</span></td>
+</tr>
+<tr>
+<td>!=</td>
+<td>différent de</td>
+<td>3 != 5</td>
+<td><span style="color:blue">True</span></td>
+<td>5 != 5</td>
+<td><span style="color:red">False</span></td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>strictement inférieur</td>
+<td>5 &lt; 10</td>
+<td><span style="color:blue">True</span></td>
+<td>5 &lt; 5</td>
+<td><span style="color:red">False</span></td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>inférieur</td>
+<td>5 &lt;= 10</td>
+<td><span style="color:blue">True</span></td>
+<td>5 &lt;= 5</td>
+<td><span style="color:blue">True</span></td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>strictement supérieur</td>
+<td>5 &gt; 10</td>
+<td><span style="color:red">False</span></td>
+<td>5 &gt; 5</td>
+<td><span style="color:red">False</span></td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>supérieur</td>
+<td>5 &gt;= 10</td>
+<td><span style="color:red">False</span></td>
+<td>5 &gt;= 5</td>
+<td><span style="color:blue">True</span></td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div><footer>

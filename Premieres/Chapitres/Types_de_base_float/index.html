@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Types de base (flottants) - TAQ</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Types de base (flottants)";
+        var mkdocs_page_input_path = "Premieres/Chapitres/Types_de_base_float.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/Chapitres/bases_python/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/Chapitres/Internet%20-%20Protocoles%20et%20routage%20des%20paquets/">Internet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_int/">Types de base (entiers)</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Types de base (flottants)</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#conversion-decimal-vers-binaire">Conversion décimal vers binaire</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#conversion-binaire-vers-decimal">Conversion binaire vers décimal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#la-norme-ieee-754">La norme IEEE 754</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#proprietes-importantes">Propriétés importantes</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_bool/">Types de base (booléens)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Premières</li>
+      <li class="breadcrumb-item active">Types de base (flottants)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="types-de-base-flottants">Types de base : flottants</h1>
+<p>Contrairement aux entiers, les <strong>nombres réels</strong> peuvent avoir une <strong>partie fractionnaire</strong>.<br />
+Pour les représenter en informatique, on utilise le format <strong>nombre à virgule flottante</strong> (<em>floating point</em>).  </p>
+<h3 id="conversion-decimal-vers-binaire">Conversion décimal vers binaire</h3>
+<p>Prenons <span class="arithmatex">\(6.34375_{10}\)</span><br />
+On peut séparer cette valeur en deux :<br />
+- la partie entiére : 6<br />
+- la partie fractionnaire : 0.34375  </p>
+<p>On sait déja transformer les valeurs entiére : <span class="arithmatex">\(6_{10} = 110_2\)</span></p>
+<p>Pour la partie fractionnaire, à l'inverse, on va effectuer des <strong>multiplications successives</strong> :
+On multiplie notre valeur par 2. Puis on recommence avec la partie fractionnaire du resultat. Et ainsi de suite jusqu'à ce que le resultat soit une valeur entiére.</p>
+<p><span class="arithmatex">\(0.34375 \times 2 = 0.6875\)</span><br />
+<span class="arithmatex">\(0.6875 \times 2 = 1.375\)</span><br />
+<span class="arithmatex">\(0.375 \times 2 = 0.75\)</span><br />
+<span class="arithmatex">\(0.75 \times 2 = 1.5\)</span><br />
+<span class="arithmatex">\(0.5 \times 2 = 1\)</span></p>
+<p>Pour finir on regarde les valeurs entiéres des resultats de haut en bas.<br />
+On a donc comme partie fractionnaire : <span class="arithmatex">\(0.01011_2\)</span>.</p>
+<p>Pour finir, il nous suffit d'additionner nos deux résultats : <span class="arithmatex">\(6.34375_{10} = 110.01011_2\)</span>.</p>
+<hr />
+<h3 id="conversion-binaire-vers-decimal">Conversion binaire vers décimal</h3>
+<p>Ici, nous utiliserons la même méthode que pour les valeurs entiéres.
+Les bits de la partie fractionnaire correspondent à des puissances négatives.</p>
+<p>Reprenons notre résultat précédent : <span class="arithmatex">\(110.01011_2\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(2^2\)</span></th>
+<th><span class="arithmatex">\(2^1\)</span></th>
+<th><span class="arithmatex">\(2^0\)</span></th>
+<th><span class="arithmatex">\(2^{-1}\)</span></th>
+<th><span class="arithmatex">\(2^{-2}\)</span></th>
+<th><span class="arithmatex">\(2^{-3}\)</span></th>
+<th><span class="arithmatex">\(2^{-4}\)</span></th>
+<th><span class="arithmatex">\(2^{-5}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Pour retrouver notre valeur décimal nous pouvons effectuer ce calcul :<br />
+$$
+2^2 + 2^1 + 2^{-2}+ 2^{-4}+ 2^{-5} =
+$$
+$$4 + 2 + 0.25 + 0.0625 + 0.03125 = 6.34375
+$$</p>
+<hr />
+<p><em>Rappel sur les puissances</em></p>
+<p>Une <strong>puissance négative</strong> permet de représenter la <strong>division répétée</strong>.  </p>
+<ul>
+<li>Pour tout nombre non nul <span class="arithmatex">\(a\)</span> et tout entier <span class="arithmatex">\(n &gt; 0\)</span> :<br />
+$$
+a^{-n} = \frac{1}{a^n}
+$$</li>
+</ul>
+<p>Autrement dit, <span class="arithmatex">\(a^{-n}\)</span> est l'inverse de <span class="arithmatex">\(a^n\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(2^-1\)</span></th>
+<th><span class="arithmatex">\(2^-2\)</span></th>
+<th><span class="arithmatex">\(2^-3\)</span></th>
+<th><span class="arithmatex">\(2^-4\)</span></th>
+<th><span class="arithmatex">\(2^-5\)</span></th>
+<th><span class="arithmatex">\(2^-6\)</span></th>
+<th><span class="arithmatex">\(2^-7\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\frac{1}{2^1}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{2^2}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{2^3}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{2^4}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{2^5}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{2^6}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{2^7}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\frac{1}{2}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{4}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{8}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{16}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{32}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{64}\)</span></td>
+<td><span class="arithmatex">\(\frac{1}{128}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(0.5\)</span></td>
+<td><span class="arithmatex">\(0.25\)</span></td>
+<td><span class="arithmatex">\(0.125\)</span></td>
+<td><span class="arithmatex">\(0.0625\)</span></td>
+<td><span class="arithmatex">\(0.03125\)</span></td>
+<td><span class="arithmatex">\(0.015625\)</span></td>
+<td><span class="arithmatex">\(0.0078125\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span style="color:blue">Exemples</span></p>
+<ul>
+<li><span class="arithmatex">\(2^{-3} = \frac{1}{2^3} = \frac{1}{8} = 0.125\)</span>  </li>
+<li><span class="arithmatex">\(5^{-2} = \frac{1}{5^2} = \frac{1}{25} = 0.04\)</span>  </li>
+<li><span class="arithmatex">\(10^{-4} = \frac{1}{10^4} = \frac{1}{10000} = 0.0001\)</span></li>
+</ul>
+<hr />
+<h3 id="la-norme-ieee-754">La norme IEEE 754</h3>
+<p>La norme <strong>IEEE 754</strong> définit comment représenter un réel sur un nombre fini de bits.<br />
+Elle utilise trois composants :  </p>
+<ol>
+<li><strong>Signe (1 bit)</strong> : 0 → positif, 1 → négatif  </li>
+<li><strong>Exposant</strong> : encode la puissance de 2  </li>
+<li><strong>Mantisse (ou fraction)</strong> : encode les chiffres significatifs  </li>
+</ol>
+<p>Le nombre réel est donc représenté comme :  </p>
+<div class="arithmatex">\[
+x = (-1)^{\text{signe}} \times 1.\text{mantisse} \times 2^{\text{exposant}-\text{biais}}
+\]</div>
+<ul>
+<li>Le <strong>biais</strong> est un nombre ajouté pour que l’exposant puisse être positif ou négatif.  </li>
+<li>La <strong>mantisse</strong> permet de représenter les chiffres significatifs.  </li>
+</ul>
+<hr />
+<h3 id="proprietes-importantes">Propriétés importantes</h3>
+<ul>
+<li>Certains nombres ne peuvent pas être représentés exactement.<br />
+  Exemple : <span class="arithmatex">\(0.1_{10}\)</span> n’a pas de représentation binaire exacte.  </li>
+<li>Les erreurs d’arrondi peuvent s’accumuler lors des calculs.  </li>
+<li>Il ne faut <strong>jamais tester l’égalité de deux flottants</strong> avec <code>==</code>.  </li>
+</ul>
+<p><span style="color:blue">Exemples</span>  </p>
+<ul>
+<li><span class="arithmatex">\(0.25_{10} = 0.01_2\)</span> exactement  </li>
+<li><span class="arithmatex">\(0.1_{10}\)</span> = une suite infinie en binaire → approximation  </li>
+<li><span class="arithmatex">\(1/3_{10} \approx 0.3333...\)</span> → approximation  </li>
+</ul>
+<p><span style="color:red">Exercices</span>  </p>
+<ol>
+<li>Convertir les nombres suivants en binaire flottant (approximatif sur 8 bits de mantisse) :  </li>
+<li>0.1  </li>
+<li>0.25  </li>
+<li>1/3  </li>
+<li>Vérifier pourquoi <code>0.2 + 0.1 != 0.3</code> en Python ou en pseudo-code.  </li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Types_de_base_int/" class="btn btn-neutral float-left" title="Types de base (entiers)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Types_de_base_bool/" class="btn btn-neutral float-right" title="Types de base (booléens)">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Types_de_base_int/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Types_de_base_bool/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
