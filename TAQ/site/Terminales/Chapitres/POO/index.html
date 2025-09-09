@@ -87,6 +87,10 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#exercice-3">Exercice 3</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercice-4-gestion-dune-bibliotheque-simplifiee">Exercice 4 – Gestion d’une bibliothèque simplifiée</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercice-5-jeu-de-des">Exercice 5 – Jeu de dés</a>
+    </li>
     </ul>
                 </li>
     </ul>
@@ -191,7 +195,7 @@ print(livre1.resume())
         self.age = age
 
     def presentation(self):
-        return f&quot;Je suis {self.nom}, un {self.espece} de {self.age} ans.&quot;
+        return &quot;Je suis &quot; + str(self.nom) + &quot; un &quot; print(self.espece) + &quot; de &quot; + str(self.age) + &quot; ans.&quot;
 
 animal1 = Animal(&quot;Milo&quot;, &quot;chat&quot;, 3)
 animal2 = Animal(&quot;Rex&quot;, &quot;chien&quot;, 5)
@@ -212,7 +216,6 @@ print(animal2.presentation())  # Je suis Rex, un chien de 5 ans.
 <p>Ajoutez une méthode <code>translater(tx, ty)</code> qui ajoute <code>tx</code> à <code>x</code> et <code>ty</code> à <code>y</code>.</p>
 </li>
 </ol>
-<hr />
 <h2 id="exercice-2">Exercice 2</h2>
 <ol>
 <li>Créez une classe <strong>Compte</strong> modélisant un compte en banque.<br />
@@ -224,12 +227,11 @@ La classe possède deux attributs <code>somme</code> et <code>taux</code> corres
 <li>
 <p>Ajoutez une méthode <code>depot(x)</code> qui ajoute <code>x</code> à la somme sur le compte.  </p>
 </li>
-<li>Ajoutez une méthode <code>retrait(x)</code> qui enlève <code>x</code> à la somme sur le compte.  </li>
-<li>Elle pourra renvoyer une erreur si la somme sur le compte devient négative et annuler alors l'opération.  </li>
-<li>Ajoutez une méthode <code>interets()</code> qui calcule les intérêts perçus en un an et les ajoute à la somme placée.  </li>
-<li>Pour rappel, les intérêts se calculent avec la formule :  <code>interets = taux × somme / 10</code></li>
+<li>Ajoutez une méthode <code>retrait(x)</code> qui enlève <code>x</code> à la somme sur le compte.<br />
+    Elle pourra renvoyer une erreur si la somme sur le compte devient négative et annuler alors l'opération.  </li>
+<li>Ajoutez une méthode <code>interets()</code> qui calcule les intérêts perçus en un an et les ajoute à la somme placée.<br />
+    Pour rappel, les intérêts se calculent avec la formule :  <code>interets = taux × somme / 10</code></li>
 </ol>
-<hr />
 <h2 id="exercice-3">Exercice 3</h2>
 <ol>
 <li>En vue de faire un site web recensant des citations de films, créez une classe <strong>Citation</strong> permettant d'enregistrer le texte de la citation et son film.  </li>
@@ -243,6 +245,43 @@ La classe possède deux attributs <code>somme</code> et <code>taux</code> corres
 </li>
 <li>Ajoutez deux méthodes <code>vote_pour()</code> et <code>vote_contre()</code> qui permettent respectivement d'incrémenter <code>vote_plus</code> et <code>vote_moins</code>.  </li>
 <li>Enfin, ajoutez une méthode <code>affiche_votes()</code> qui affiche le nombre de votes pour et le nombre de votes contre la citation.  </li>
+</ol>
+<h2 id="exercice-4-gestion-dune-bibliotheque-simplifiee">Exercice 4 – Gestion d’une bibliothèque simplifiée</h2>
+<ol>
+<li>Créez une classe <strong>Livre</strong> avec les attributs <code>titre</code> et <code>auteur</code>.<br />
+   Ajoutez une méthode <code>affiche()</code> qui affiche un livre de la forme :  </li>
+</ol>
+<p>"Le Seigneur des Anneaux" de Tolkien</p>
+<ol>
+<li>
+<p>Créez une classe <strong>Bibliotheque</strong> qui contient un attribut <code>livres</code> initialisé à une liste vide.<br />
+   Ajoutez une méthode <code>ajoute_livre(livre)</code> qui permet d’ajouter un objet <code>Livre</code> à la liste.  </p>
+</li>
+<li>
+<p>Ajoutez une méthode <code>affiche()</code> qui affiche tous les livres de la bibliothèque avec un numéro devant chacun. Exemple :  </p>
+<p>1 - "Le Seigneur des Anneaux" de Tolkien
+2 - "Vingt mille lieues sous les mers" de Jules Verne</p>
+</li>
+<li>
+<p>Ajoutez une méthode <code>recherche(titre)</code> qui affiche tous les livres dont le titre contient le mot recherché.  </p>
+</li>
+</ol>
+<h2 id="exercice-5-jeu-de-des">Exercice 5 – Jeu de dés</h2>
+<ol>
+<li>
+<p>Créez une classe <strong>De</strong> avec un attribut <code>faces</code> (par défaut 6) et une méthode <code>lancer()</code> qui renvoie un nombre aléatoire entre 1 et <code>faces</code>.  </p>
+</li>
+<li>
+<p>Créez une classe <strong>Joueur</strong> avec les attributs <code>nom</code> et <code>score</code> (initialisé à 0).<br />
+Ajoutez une méthode <code>jouer(de)</code> qui lance le dé passé en paramètre et ajoute le résultat au score du joueur.  </p>
+</li>
+<li>
+<p>Créez une classe <strong>Partie</strong> avec les attributs <code>joueurs</code> (liste d’objets <code>Joueur</code>) et <code>de</code> (un objet <code>De</code>).<br />
+Ajoutez une méthode <code>tour()</code> qui fait jouer tous les joueurs une fois.  </p>
+</li>
+<li>
+<p>Ajoutez une méthode <code>vainqueur()</code> qui affiche le nom du joueur avec le plus grand score.  </p>
+</li>
 </ol>
               
             </div>
