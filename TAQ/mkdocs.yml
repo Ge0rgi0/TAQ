@@ -10,7 +10,9 @@ nav:
           - Internet : Secondes/Chapitres/Internet - Protocoles et routage des paquets.md
       - Premières:
           - Accueil: Premieres/Premieres.md
-          - Types de base: Premieres/Chapitres/Types_de_base.md
+          - Types de base (entiers): Premieres/Chapitres/Types_de_base_int.md
+          - Types de base (flottants): Premieres/Chapitres/Types_de_base_float.md
+          - Types de base (booléens): Premieres/Chapitres/Types_de_base_bool.md
       - Terminales:
           - Accueil: Terminales/Terminales.md
           - Programmation Orientée Objet: Terminales/Chapitres/POO.md

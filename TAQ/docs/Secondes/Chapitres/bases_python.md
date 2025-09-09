@@ -108,3 +108,60 @@ Soit la fonction : `f(x) : 2x`
 - `input(...)` prend en entrée un **texte à afficher** (c’est optionnel) et renvoie ce que l’utilisateur **tape au clavier**.  
 
 On met toujours des **parenthèses** après le nom d’une fonction, même si elle n’a **aucune valeur en entrée**.  
+
+---
+## Structures de contrôle
+
+Jusqu’ici, nous avons vu comment représenter et manipuler des nombres.  
+En programmation, il est souvent nécessaire de **prendre des décisions** :  
+exécuter certaines instructions seulement si une condition est vraie.  
+
+En Python, cela se fait avec les mots-clés `if`, `elif` et `else`.
+
+```python
+if condition1:
+    # instructions exécutées si la condition1 est vraie
+elif condition2 :
+    # instructions exécutées si la condition1 est fausse mais que la condition2 est vraie
+    # on peut enchaîner plusieurs elif
+else:
+    # instructions exécutées si les conditions 1 et 2 sont fausses
+```
+
+On peut le lire ainsi :
+
+- Si `condition1` est vraie, je fais ça ...  
+- Sinon, si `condition2` est vraie, je fais ça ...  
+- Dans tous les autre cas, je fais ça ...  
+---
+## Logique booléenne
+
+### Les opérateurs logiques
+
+Le langage Python propose trois opérateurs logiques principaux :
+
+|Opérateur|	Syntaxe|	Signification|	Exemple|	Résultat|
+|--|--|--|--|--|
+|NON	|not	|inverse la valeur	|not <span style="color:blue">True</span>	|<span style="color:red">False</span>|
+|ET	|and	|vrai si les deux sont vrais	|<span style="color:blue">True</span> and <span style="color:red">False</span>	|<span style="color:red">False</span>|
+|OU	|or	|vrai si au moins un est vrai|	<span style="color:blue">True</span> or <span style="color:red">False</span>|	<span style="color:blue">True</span>|
+
+Il existe aussi un opérateur important qui n'est pas naturel en python :
+
+|OU EXCLUSIF| xor |vrai si l'un est faux et l'autre est vraie|<span style="color:blue">True</span> xor <span style="color:blue">True</span>| <span style="color:red">False</span>|
+|--|--|--|--|--|
+
+---
+## Comparaisons
+
+Les booléens apparaissent très souvent à la suite de comparaisons.  
+Voici les principaux opérateurs en Python :
+
+|Opérateur  |Signification |Exemple 1 |Résultat 1|Exemple 2|Résultat 2|
+|--|--|--|--|--|--|
+|==|égal à|5 == 5|<span style="color:blue">True</span>|3 = 5|<span style="color:red">False</span>|
+|!=|différent de|3 != 5|<span style="color:blue">True</span>|5 != 5|<span style="color:red">False</span>|
+|<|strictement inférieur|5 < 10|<span style="color:blue">True</span>|5 < 5|<span style="color:red">False</span>|
+|<=|inférieur|5 <= 10|<span style="color:blue">True</span>|5 <= 5|<span style="color:blue">True</span>|
+|>|strictement supérieur|5 > 10|<span style="color:red">False</span>|5 > 5|<span style="color:red">False</span>|
+|>=|supérieur|5 >= 10|<span style="color:red">False</span>|5 >= 5|<span style="color:blue">True</span>|
