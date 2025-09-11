@@ -37,13 +37,19 @@ Internet, c’est **l’interconnexion de milliers de réseaux locaux et de four
 
 ---
 
-## Repères historiques
-- **1950s-1960s** : premiers réseaux d’ordinateurs.  
-- **1970** : ArpaNet (USA).  
-- **1971** : Cyclades (France).  
-- **1983** : naissance officielle d’Internet avec le protocole **TCP/IP**.  
+## Modèle en couches TCP/IP
 
----
+La communication sur un réseau se fait grâce à des protocoles, qui sont des règles définissant comment les données sont envoyées, reçues et comprises par les machines.
+
+Le modéle TCP/IP organise la communication en **4 couches**, chacune ayant un rôle spécifique et ses protocoles.  
+
+Quand on envoie un message ou un fichier sur Internet, il n’est jamais envoyé en un seul bloc, mais découpé en petits morceaux appelés **paquets**.  
+Chaque couche y ajoute des informations spécifiques (adresse de destination, numéro du paquet, etc) avant de transmettre les données, c'est l'**encapsulation**.
+
+À la réception, chaque couche retire son en-tête pour reconstituer les données originales c’est la **désencapsulation**.
+
+![modele](model.jpg)
+
 
 ## Le protocole IP et l’adressage
 
@@ -60,128 +66,40 @@ Pour cela, deux types d’adresses existent :
 **Caractéristiques :**
 - Format : 6 blocs de 2 caractères (ex. `a1:b2:c3:d4:e5:f6`).  
 - Base : hexadécimale (0-9 et A-F).  
-- Portée : limitée au réseau local.  
-- Unicité : chaque carte réseau possède une adresse MAC unique.  
-
-💡 Exemple :  
-
-Adresse MAC = 3C:97:0E:4B:62:A1
-
+- Portée : limitée au réseau local. 
 
 ---
 
 ### 🌐 Adresse IP (adressage global)
-Pour communiquer sur Internet, chaque machine reçoit aussi une **adresse IP**.  
-C’est l’adresse **logique** qui permet de retrouver une machine parmi des milliards d’autres.  
+
+Chaque machine connectée à Internet reçoit une **adresse IP**, qui sert d’**identifiant logique** pour la retrouver parmi des milliards d’autres. Elle change réguliérement. 
 
 **Caractéristiques :**
-- Format : 4 nombres entre 0 et 255 (ex. `192.168.1.12`).  
-- Base humaine : décimale (base 10).  
-- Base machine : binaire (0 et 1).  
-- Portée : mondiale (Internet).  
+- Composée de deux parties :  
+  - **Réseau** → identifie le réseau auquel appartient la machine.  
+  - **Hôte (machine)** → identifie l’appareil dans ce réseau.  
+- Définie grâce à un **masque de sous-réseau**.  
+- Portée : **mondiale**.  
+- Peut être **IPv4** ou **IPv6**.  
 
-💡 Exemples :  
-- `91.198.174.192` (serveur de Wikipedia en IPv4).  
-- `2a02:ec80:600:ed1a::1` (même serveur en IPv6).  
-- `127.0.0.1` → adresse spéciale « localhost » (votre propre machine).  
+### IPv4
+- **32 bits**, écrits en 4 nombres décimaux (0-255).  
+- Exemple : `91.198.174.192` (serveur Wikipédia en IPv4) ou  `127.0.0.1` → adresse spéciale **localhost** (sa propre machine)
+- Limite : environ **4 milliards d’adresses**, insuffisant pour le nombre d’appareils connectés.  
 
----
-
-### 🧩 Structure d’une adresse IP
-
-Une **adresse IP** identifie une machine sur un réseau.  
-Elle se compose de deux parties principales :  
-
-1. **Partie Réseau** → identifie le réseau auquel appartient la machine.  
-2. **Partie Machine (hôte)** → identifie la machine dans ce réseau.  
-
-📌 Pour séparer ces deux parties, on utilise un **masque de sous-réseau**.
+### IPv6
+- **128 bits**, écrits en 8 groupes hexadécimaux.  
+- Exemple : `2a02:ec80:0600:ed1a` (Wikipédia en IPv6).  
+- Avantage : nombre **quasi illimité** d’adresses → résout la pénurie IPv4.  
 
 ---
 
-### IPv4 (Internet Protocol version 4)
-- Format : **32 bits**, affichés en 4 nombres décimaux (0-255) séparés par des points.  
-- Exemple : `128.40.94.3`  
-- Masque : `/16` = `255.255.0.0`  
-- En binaire :  
-
-    Adresse : 10000000.00101000.01011110.00000011  
-    Masque : 11111111.11111111.00000000.00000000
-
-- Partie réseau : `128.40.0.0`  
-- Partie machine : `94.3`  
-- Portée : **Internet mondial**  
-- Limitation : environ 4 milliards d’adresses → problème avec le nombre croissant d’appareils connectés.  
-
----
-
-### IPv6 (Internet Protocol version 6)
-- Créé pour résoudre la **pénurie d’adresses IPv4**.  
-- Format : **128 bits**, représenté en **8 groupes de 4 caractères hexadécimaux** séparés par des deux-points.  
-- Exemple : `2a02:ec80:600:ed1a::1`  
-- Portée : mondiale, permet **un nombre quasi infini d’adresses**.  
-- Partie réseau / partie machine : toujours présentes, mais sur un format plus long.  
-
----
-
-### Comparatif IPv4 / IPv6
-
-| Caractéristique   | IPv4                     | IPv6                               |
-|------------------|-------------------------|-----------------------------------|
-| Taille           | 32 bits                  | 128 bits                           |
-| Format           | 4 nombres décimaux       | 8 blocs hexadécimaux               |
-| Exemple          | 192.168.1.25             | 2a02:ec80:600:ed1a::1              |
-| Nombre d’adresses| ~4 milliards             | 340 undecillions (~3,4×10³⁸)       |
-| Objectif         | Adressage mondial limité | Résoudre la pénurie IPv4           |
-
----
-
-💻 Expérience : découvrir les adresses IP et le réseau local de ton ordinateur
-
-- Ouvrir l’invite de commande.
-- Taper : ipconfig
-- Observer :
-  - Ton adresse IPv4 et IPv6
-  - L’adresse de la passerelle (routeur)
-  - Les serveurs DNS
-
----
-
-### 📌 À retenir
-- Une machine peut avoir **IPv4 et IPv6** simultanément.  
-- La **partie réseau** permet de savoir si deux machines sont dans le même réseau local.  
-- Le **masque de sous-réseau** détermine quelle partie de l’adresse est réseau et quelle partie est machine.
-
----
-
-### 📊 Résumé comparatif
-| Caractéristique  | Adresse MAC                         | Adresse IP                        |
-|------------------|-------------------------------------|-----------------------------------|
-| Nature           | Physique (gravée sur la carte)      | Logique (attribuée par le réseau) |
-| Format           | 6 blocs hexadécimaux (ex. A1:B2:...)| 4 nombres décimaux (IPv4) ou longs hexadécimaux (IPv6) |
-| Portée           | Réseau local                        | Réseau mondial (Internet)         |
-| Unicité          | Unique au monde                     | Unique dans un réseau donné       |
-| Exemple          | 3C:97:0E:4B:62:A1                   | 192.168.1.12                      |
-
----
-
-📌 **À retenir :**  
-- L’adresse **MAC** identifie la **carte réseau dans un LAN**.  
-- L’adresse **IP** identifie l’**appareil sur Internet**.  
-- Les deux sont nécessaires pour qu’un ordinateur puisse communiquer.
-
-
----
-
-## DNS – Domain Name System
+### DNS – Domain Name System
 
 Quand vous tapez un nom de site dans votre navigateur, par exemple `wikipedia.org`, votre ordinateur ne sait pas directement où envoyer les paquets.  
 Il a besoin de **l’adresse IP** correspondante.  
 
-Le **DNS (Domain Name System)** est un service qui fait la correspondance :  
-
-- Nom symbolique → Adresse IP  
-- Exemple : `wikipedia.org` → `91.198.174.192` (IPv4) ou `2a02:ec80:600:ed1a::1` (IPv6)
+Le **DNS (Domain Name System)** est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP.
 
 Les **serveurs DNS** sont des ordinateurs spécialisés qui répondent aux requêtes des ordinateurs pour résoudre ces noms.  
 Chaque ordinateur dispose d’un **serveur DNS configuré** (souvent celui de votre FAI) pour interroger le réseau.
@@ -305,85 +223,15 @@ nslookup wikipedia.org
 💡 **Lien avec le cours :** cette expérience montre **comment un nom de site est traduit en adresse IP** avant que les paquets soient envoyés.
 
 
-## Les composants matériels d’un réseau
 
-Pour qu’un réseau fonctionne, plusieurs **éléments matériels** sont nécessaires :  
+## Repères historiques
 
-### 💻 1. Machines
-- Ce sont les appareils qui **communiquent entre eux** :  
-  - Ordinateurs, tablettes, smartphones, consoles de jeu, serveurs.  
-- Elles envoient et reçoivent des données via le réseau.
+- **1950s-1960s** : premiers réseaux d’ordinateurs.  
+- **1970** : ArpaNet (USA).
+- **1983** : naissance officielle d’Internet avec le protocole **TCP/IP**.  
 
-### 🔀 2. Switch
-- Dispositif qui **relie plusieurs machines localement** dans un réseau (LAN).  
-- Exemple : un switch dans une salle informatique permet aux ordinateurs de communiquer entre eux rapidement.  
-- Fonction : reçoit un paquet sur un port et l’envoie **uniquement au port correspondant à la machine destinataire**.
+## Réseau pair-à-pair
 
-### 🌐 3. Routeur
-- Permet de **connecter un réseau local à Internet** ou à d’autres réseaux.  
-- Exemple : la box Internet à la maison est un routeur.  
-- Fonction : **acheminer les paquets** entre les différents réseaux selon leur adresse IP.
+## Indépendance au support physique
 
-### 📡 4. Supports de transmission
-- Permettent de **transporter physiquement les données** entre machines et équipements réseau.  
-- Types :  
-  - **Câbles Ethernet** (filaire, stable et rapide)  
-  - **Wi-Fi** (sans fil, pratique mais plus sensible aux interférences)  
-  - **Fibre optique** (très haut débit, longue distance)  
-
----
-
-## Modèle en couches TCP/IP
-
-Le protocole TCP/IP organise la communication en **4 couches**, chacune ayant un rôle spécifique :  
-
-**1 Couche Application** 📱  
-
-Utilisée par les logiciels : navigateur web, messagerie, jeux en ligne.  
-Contient les **données utilisateur**.
-  
-**2 Couche Transport** 🚛  
-
-Assure le **transport fiable des données**.  
-Garantit que les paquets arrivent complets et dans le bon ordre (TCP).  
-  
-**3 Couche Internet** 🗺️  
-
-Gère **l’adressage et le routage**.  
-Détermine le **chemin optimal** pour les paquets vers leur destination.
-  
-**4 Couche Accès Réseau** 🔌  
-
-Assure la **transmission physique des données** : signaux électriques, optiques ou radio.  
-Utilise les supports de transmission (Ethernet, Wi-Fi, fibre).  
-
----
-
-### Encapsulation et désencapsulation
-
-Quand une machine envoie des données :  
-
-Les données descendent les couches **en se faisant encapsuler** → chaque couche ajoute son **en-tête**.  
-
-📱 Application : données utilisateur  
-⬇️  
-🚛 Transport : + en-tête TCP  
-⬇️  
-🗺️ Internet : + en-tête IP  
-⬇️  
-🔌 Accès réseau : + en-tête Ethernet  
-  
-
-À la réception, les données remontent les couches **en se faisant désencapsuler** → chaque couche retire son en-tête pour récupérer les informations originales.  
-
-🔌 Accès réseau : - en-tête Ethernet  
-⬆️  
-🗺️ Internet : - en-tête IP  
-⬆️  
-🚛 Transport : - en-tête TCP  
-⬆️  
-📱 Application : données utilisateur  
-
-💡 **À retenir :**  
-- L’encapsulation permet à chaque couche de **gérer ses propres fonctions** sans se préoccuper des autres.  
-- La désencapsulation permet de **reconstituer les données correctement** à l’arrivée.
+## Ordre de grandeur

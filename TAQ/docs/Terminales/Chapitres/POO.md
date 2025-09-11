@@ -175,3 +175,66 @@ Ajoutez une méthode `jouer(de)` qui lance le dé passé en paramètre et ajoute
 Ajoutez une méthode `tour()` qui fait jouer tous les joueurs une fois.  
 
 4. Ajoutez une méthode `vainqueur()` qui affiche le nom du joueur avec le plus grand score.  
+
+---
+
+## Exercice 6 – Gestion d’un Panier d’Achat
+
+1. Créez une classe **Article** avec les attributs `nom` et `prix`.  
+   Ajoutez une méthode `affiche()` qui affiche de la forme :  
+
+Pomme - 2€  
+
+
+2. Créez une classe **Panier** avec un attribut `articles` initialisé à une liste vide.  
+Ajoutez une méthode `ajoute_article(article)` qui ajoute un objet `Article` à la liste.  
+
+3. Ajoutez une méthode `total()` qui renvoie le prix total du panier.  
+
+---
+
+## Exercice 7 – Gestion d’un Étudiant
+
+1. Créez une classe **Etudiant** avec les attributs `nom`, `prenom` et `notes` (liste vide par défaut).  
+2. Ajoutez une méthode `ajoute_note(note)` qui ajoute une note à la liste.  
+3. Ajoutez une méthode `moyenne()` qui calcule et renvoie la moyenne des notes de l’étudiant.  
+4. Ajoutez une méthode `affiche()` qui affiche :  
+
+Dupont Jean | Moyenne : 14.5  
+
+
+---
+
+## Exercice 8 – Gestion d’une Playlist
+
+1. Créez une classe **Chanson** avec les attributs `titre` et `artiste`.  
+Ajoutez une méthode `affiche()` qui affiche de la forme :  
+
+Imagine - John Lennon  
+
+
+2. Créez une classe **Playlist** avec un attribut `chansons` initialisé à une liste vide.  
+Ajoutez une méthode `ajoute_chanson(chanson)` pour ajouter une chanson.  
+3. Ajoutez une méthode `affiche()` qui affiche toutes les chansons avec leur numéro.  
+4. Ajoutez une méthode `recherche(mot)` qui affiche toutes les chansons dont le titre contient le mot recherché.  
+
+---
+
+## Exercice 9 – Gestion d’un Compteur
+
+1. Créez une classe **Compteur** avec un attribut `valeur` initialisé à 0.  
+2. Ajoutez une méthode `incremente()` qui augmente la valeur de 1.  
+3. Ajoutez une méthode `decremente()` qui diminue la valeur de 1.  
+4. Ajoutez une méthode `raz()` qui remet la valeur à 0.  
+5. Ajoutez une méthode `affiche()` qui affiche la valeur actuelle du compteur.  
+
+---
+
+## Exercice 10 – Gestion d’un Thermomètre
+
+1. Créez une classe **Thermometre** avec un attribut `temperature` initialisé à 20 (degrés Celsius).  
+2. Ajoutez une méthode `augmente(x)` qui augmente la température de `x`.  
+3. Ajoutez une méthode `baisse(x)` qui diminue la température de `x`.  
+4. Ajoutez une méthode `affiche()` qui affiche :  
+
+Température actuelle : 22°C
