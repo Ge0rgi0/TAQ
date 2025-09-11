@@ -71,10 +71,6 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#adresse-ip-adressage-global">🌐 Adresse IP (adressage global)</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#ipv4">IPv4</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#ipv6">IPv6</a>
-    </li>
     <li class="toctree-l4"><a class="reference internal" href="#dns-domain-name-system">DNS – Domain Name System</a>
     </li>
         </ul>
@@ -195,11 +191,7 @@ Chaque couche y ajoute des informations spécifiques (adresse de destination, nu
 <p>Chaque appareil connecté à Internet doit être identifiable de manière <strong>unique</strong>.<br />
 Pour cela, deux types d’adresses existent :</p>
 <h3 id="adresse-mac-adressage-local">📍 Adresse MAC (adressage local)</h3>
-<ul>
-<li>Chaque machine dispose d’une ou plusieurs <strong>cartes réseau</strong> (Wi-Fi, Ethernet…).  </li>
-<li>Chaque carte possède une <strong>adresse physique unique au monde</strong> : l’adresse <strong>MAC</strong>.  </li>
-<li>Utilisée uniquement <strong>dans le réseau local</strong> (LAN).  </li>
-</ul>
+<p>Chaque machine dispose d’une ou plusieurs <strong>cartes réseau</strong> (Wi-Fi, Ethernet…) à laquelle est attrbuée une <strong>adresse physique unique au monde</strong> : l’adresse <strong>MAC</strong> qui n'est tilisée que <strong>dans le réseau local</strong>.  </p>
 <p>Format : 6 blocs de 2 caractères hexadecimal (0-&gt;9 + a-&gt;f) (ex. <code>a1:b2:c3:d4:e5:f6</code>).</p>
 <h3 id="adresse-ip-adressage-global">🌐 Adresse IP (adressage global)</h3>
 <p>Chaque machine connectée à Internet reçoit une <strong>adresse IP</strong>, qui sert d’<strong>identifiant logique</strong> pour la retrouver parmi des milliards d’autres. Elle change réguliérement. </p>
@@ -208,23 +200,17 @@ Pour cela, deux types d’adresses existent :</p>
 <li><strong>Réseau</strong> → identifie le réseau auquel appartient la machine.  </li>
 <li><strong>Hôte (machine)</strong> → identifie l’appareil dans ce réseau.  </li>
 </ul>
-<h3 id="ipv4">IPv4</h3>
-<ul>
-<li><strong>32 bits</strong>, écrits en 4 nombres décimaux (0-255).  </li>
-<li>Exemple : <code>91.198.174.192</code> (serveur Wikipédia en IPv4) ou  <code>127.0.0.1</code> → adresse spéciale <strong>localhost</strong> (sa propre machine)</li>
-<li>Limite : environ <strong>4 milliards d’adresses</strong>, insuffisant pour le nombre d’appareils connectés.  </li>
-</ul>
-<h3 id="ipv6">IPv6</h3>
-<ul>
-<li><strong>128 bits</strong>, écrits en 8 groupes hexadécimaux.  </li>
-<li>Exemple : <code>2a02:ec80:0600:ed1a</code> (Wikipédia en IPv6).  </li>
-<li>Avantage : 18 millions de milliards d’adresses → résout la pénurie IPv4.  </li>
-</ul>
+<p>Les premières adresses IP étaient au format <strong>IPv4</strong>, c'est-à-dire 4 nombres décimaux entre 0 et 255, comme ceci:</p>
+<p><code>91.198.174.192</code> (serveur Wikipédia)
+<code>127.0.0.1</code> → adresse spéciale <strong>localhost</strong> (sa propre machine)</p>
+<p>Cependant, ce format ne nous permet d'utiliser que <strong>4 milliards d’adresses</strong>, insuffisant pour le nombre d’appareils connectés.<br />
+Encore aujourd'hui, nous faisons la transition vers un nouveau format <strong>IPv6</strong> (16 caractéres hexadécimaux) :</p>
+<p><code>2a02:ec80:0600:ed1a</code> (Wikipédia en IPv6).  </p>
+<p>Nous avons désormais 18 millions de milliards d'adresses possibles.</p>
 <h3 id="dns-domain-name-system">DNS – Domain Name System</h3>
-<p>Quand vous tapez un nom de site dans votre navigateur, par exemple <code>wikipedia.org</code>, votre ordinateur ne sait pas directement où envoyer les paquets.<br />
-Il a besoin de <strong>l’adresse IP</strong> correspondante, pour éviter d'avoir à se souvenir des IPs de tous les sites nous utilisons le DNS.  </p>
-<p>Le <strong>DNS (Domain Name System)</strong> est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP.</p>
-<p>Les <strong>serveurs DNS</strong> sont des ordinateurs spécialisés qui répondent aux requêtes des ordinateurs pour résoudre ces noms.  </p>
+<p>Quand vous tapez un nom de site dans votre navigateur, par exemple <code>wikipedia.org</code>, votre ordinateur ne sait pas directement où envoyer les paquets, il a besoin de <strong>l’adresse IP</strong> correspondante.
+Pour éviter d'avoir à se souvenir des IPs de tous les sites, nous utilisons le DNS.  </p>
+<p>Le <strong>DNS (Domain Name System)</strong> est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP par le biais de serveurs DNS.</p>
 <hr />
 <h2 id="le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</h2>
 <p>Quand on envoie un message ou un fichier sur Internet, <strong>il n’est jamais envoyé d’un seul bloc</strong>, mais découpé en <strong>petits morceaux appelés paquets</strong>.  </p>
