@@ -63,7 +63,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#reperes-historiques">Repères historiques</a>
+    <li class="toctree-l3"><a class="reference internal" href="#modele-en-couches-tcpip">Modèle en couches TCP/IP</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#le-protocole-ip-et-ladressage">Le protocole IP et l’adressage</a>
         <ul>
@@ -71,21 +71,13 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#adresse-ip-adressage-global">🌐 Adresse IP (adressage global)</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#structure-dune-adresse-ip">🧩 Structure d’une adresse IP</a>
+    <li class="toctree-l4"><a class="reference internal" href="#ipv4">IPv4</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#ipv4-internet-protocol-version-4">IPv4 (Internet Protocol version 4)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#ipv6">IPv6</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#ipv6-internet-protocol-version-6">IPv6 (Internet Protocol version 6)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#comparatif-ipv4-ipv6">Comparatif IPv4 / IPv6</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#a-retenir">📌 À retenir</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#resume-comparatif">📊 Résumé comparatif</a>
+    <li class="toctree-l4"><a class="reference internal" href="#dns-domain-name-system">DNS – Domain Name System</a>
     </li>
         </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#dns-domain-name-system">DNS – Domain Name System</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</a>
         <ul>
@@ -95,7 +87,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#limites-de-tcp">⚠️ Limites de TCP</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#a-retenir_1">📌 À retenir</a>
+    <li class="toctree-l4"><a class="reference internal" href="#a-retenir">📌 À retenir</a>
     </li>
         </ul>
     </li>
@@ -105,23 +97,13 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#les-composants-materiels-dun-reseau">Les composants matériels d’un réseau</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#1-machines">💻 1. Machines</a>
+    <li class="toctree-l3"><a class="reference internal" href="#reperes-historiques">Repères historiques</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#2-switch">🔀 2. Switch</a>
+    <li class="toctree-l3"><a class="reference internal" href="#reseau-pair-a-pair">Réseau pair-à-pair</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#3-routeur">🌐 3. Routeur</a>
+    <li class="toctree-l3"><a class="reference internal" href="#independance-au-support-physique">Indépendance au support physique</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#4-supports-de-transmission">📡 4. Supports de transmission</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#modele-en-couches-tcpip">Modèle en couches TCP/IP</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#encapsulation-et-desencapsulation">Encapsulation et désencapsulation</a>
-    </li>
-        </ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ordre-de-grandeur">Ordre de grandeur</a>
     </li>
     </ul>
                 </li>
@@ -202,14 +184,13 @@ Quand vous envoyez un message, il sort d’abord de votre réseau local → pass
 <p>👉 <strong>Idée clé à retenir :</strong><br />
 Internet, c’est <strong>l’interconnexion de milliers de réseaux locaux et de fournisseurs d’accès</strong> à l’échelle mondiale, qui communiquent tous grâce à des <strong>protocoles communs</strong>.</p>
 <hr />
-<h2 id="reperes-historiques">Repères historiques</h2>
-<ul>
-<li><strong>1950s-1960s</strong> : premiers réseaux d’ordinateurs.  </li>
-<li><strong>1970</strong> : ArpaNet (USA).  </li>
-<li><strong>1971</strong> : Cyclades (France).  </li>
-<li><strong>1983</strong> : naissance officielle d’Internet avec le protocole <strong>TCP/IP</strong>.  </li>
-</ul>
-<hr />
+<h2 id="modele-en-couches-tcpip">Modèle en couches TCP/IP</h2>
+<p>La communication sur un réseau se fait grâce à des protocoles, qui sont des règles définissant comment les données sont envoyées, reçues et comprises par les machines.</p>
+<p>Le modéle TCP/IP organise la communication en <strong>4 couches</strong>, chacune ayant un rôle spécifique et ses protocoles.  </p>
+<p>Quand on envoie un message ou un fichier sur Internet, il n’est jamais envoyé en un seul bloc, mais découpé en petits morceaux appelés <strong>paquets</strong>.<br />
+Chaque couche y ajoute des informations spécifiques (adresse de destination, numéro du paquet, etc) avant de transmettre les données, c'est l'<strong>encapsulation</strong>.</p>
+<p>À la réception, chaque couche retire son en-tête pour reconstituer les données originales c’est la <strong>désencapsulation</strong>.</p>
+<p><img alt="modele" src="model.jpg" /></p>
 <h2 id="le-protocole-ip-et-ladressage">Le protocole IP et l’adressage</h2>
 <p>Chaque appareil connecté à Internet doit être identifiable de manière <strong>unique</strong>.<br />
 Pour cela, deux types d’adresses existent :</p>
@@ -223,166 +204,34 @@ Pour cela, deux types d’adresses existent :</p>
 <p><strong>Caractéristiques :</strong>
 - Format : 6 blocs de 2 caractères (ex. <code>a1:b2:c3:d4:e5:f6</code>).<br />
 - Base : hexadécimale (0-9 et A-F).<br />
-- Portée : limitée au réseau local.<br />
-- Unicité : chaque carte réseau possède une adresse MAC unique.  </p>
-<p>💡 Exemple :  </p>
-<p>Adresse MAC = 3C:97:0E:4B:62:A1</p>
+- Portée : limitée au réseau local. </p>
 <hr />
 <h3 id="adresse-ip-adressage-global">🌐 Adresse IP (adressage global)</h3>
-<p>Pour communiquer sur Internet, chaque machine reçoit aussi une <strong>adresse IP</strong>.<br />
-C’est l’adresse <strong>logique</strong> qui permet de retrouver une machine parmi des milliards d’autres.  </p>
+<p>Chaque machine connectée à Internet reçoit une <strong>adresse IP</strong>, qui sert d’<strong>identifiant logique</strong> pour la retrouver parmi des milliards d’autres. Elle change réguliérement. </p>
 <p><strong>Caractéristiques :</strong>
-- Format : 4 nombres entre 0 et 255 (ex. <code>192.168.1.12</code>).<br />
-- Base humaine : décimale (base 10).<br />
-- Base machine : binaire (0 et 1).<br />
-- Portée : mondiale (Internet).  </p>
-<p>💡 Exemples :<br />
-- <code>91.198.174.192</code> (serveur de Wikipedia en IPv4).<br />
-- <code>2a02:ec80:600:ed1a::1</code> (même serveur en IPv6).<br />
-- <code>127.0.0.1</code> → adresse spéciale « localhost » (votre propre machine).  </p>
-<hr />
-<h3 id="structure-dune-adresse-ip">🧩 Structure d’une adresse IP</h3>
-<p>Une <strong>adresse IP</strong> identifie une machine sur un réseau.<br />
-Elle se compose de deux parties principales :  </p>
-<ol>
-<li><strong>Partie Réseau</strong> → identifie le réseau auquel appartient la machine.  </li>
-<li><strong>Partie Machine (hôte)</strong> → identifie la machine dans ce réseau.  </li>
-</ol>
-<p>📌 Pour séparer ces deux parties, on utilise un <strong>masque de sous-réseau</strong>.</p>
-<hr />
-<h3 id="ipv4-internet-protocol-version-4">IPv4 (Internet Protocol version 4)</h3>
+- Composée de deux parties :<br />
+  - <strong>Réseau</strong> → identifie le réseau auquel appartient la machine.<br />
+  - <strong>Hôte (machine)</strong> → identifie l’appareil dans ce réseau.<br />
+- Définie grâce à un <strong>masque de sous-réseau</strong>.<br />
+- Portée : <strong>mondiale</strong>.<br />
+- Peut être <strong>IPv4</strong> ou <strong>IPv6</strong>.  </p>
+<h3 id="ipv4">IPv4</h3>
 <ul>
-<li>Format : <strong>32 bits</strong>, affichés en 4 nombres décimaux (0-255) séparés par des points.  </li>
-<li>Exemple : <code>128.40.94.3</code>  </li>
-<li>Masque : <code>/16</code> = <code>255.255.0.0</code>  </li>
-<li>
-<p>En binaire :  </p>
-<p>Adresse : 10000000.00101000.01011110.00000011<br />
-Masque : 11111111.11111111.00000000.00000000</p>
-</li>
-<li>
-<p>Partie réseau : <code>128.40.0.0</code>  </p>
-</li>
-<li>Partie machine : <code>94.3</code>  </li>
-<li>Portée : <strong>Internet mondial</strong>  </li>
-<li>Limitation : environ 4 milliards d’adresses → problème avec le nombre croissant d’appareils connectés.  </li>
+<li><strong>32 bits</strong>, écrits en 4 nombres décimaux (0-255).  </li>
+<li>Exemple : <code>91.198.174.192</code> (serveur Wikipédia en IPv4) ou  <code>127.0.0.1</code> → adresse spéciale <strong>localhost</strong> (sa propre machine)</li>
+<li>Limite : environ <strong>4 milliards d’adresses</strong>, insuffisant pour le nombre d’appareils connectés.  </li>
+</ul>
+<h3 id="ipv6">IPv6</h3>
+<ul>
+<li><strong>128 bits</strong>, écrits en 8 groupes hexadécimaux.  </li>
+<li>Exemple : <code>2a02:ec80:0600:ed1a</code> (Wikipédia en IPv6).  </li>
+<li>Avantage : nombre <strong>quasi illimité</strong> d’adresses → résout la pénurie IPv4.  </li>
 </ul>
 <hr />
-<h3 id="ipv6-internet-protocol-version-6">IPv6 (Internet Protocol version 6)</h3>
-<ul>
-<li>Créé pour résoudre la <strong>pénurie d’adresses IPv4</strong>.  </li>
-<li>Format : <strong>128 bits</strong>, représenté en <strong>8 groupes de 4 caractères hexadécimaux</strong> séparés par des deux-points.  </li>
-<li>Exemple : <code>2a02:ec80:600:ed1a::1</code>  </li>
-<li>Portée : mondiale, permet <strong>un nombre quasi infini d’adresses</strong>.  </li>
-<li>Partie réseau / partie machine : toujours présentes, mais sur un format plus long.  </li>
-</ul>
-<hr />
-<h3 id="comparatif-ipv4-ipv6">Comparatif IPv4 / IPv6</h3>
-<table>
-<thead>
-<tr>
-<th>Caractéristique</th>
-<th>IPv4</th>
-<th>IPv6</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Taille</td>
-<td>32 bits</td>
-<td>128 bits</td>
-</tr>
-<tr>
-<td>Format</td>
-<td>4 nombres décimaux</td>
-<td>8 blocs hexadécimaux</td>
-</tr>
-<tr>
-<td>Exemple</td>
-<td>192.168.1.25</td>
-<td>2a02:ec80:600:ed1a::1</td>
-</tr>
-<tr>
-<td>Nombre d’adresses</td>
-<td>~4 milliards</td>
-<td>340 undecillions (~3,4×10³⁸)</td>
-</tr>
-<tr>
-<td>Objectif</td>
-<td>Adressage mondial limité</td>
-<td>Résoudre la pénurie IPv4</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p>💻 Expérience : découvrir les adresses IP et le réseau local de ton ordinateur</p>
-<ul>
-<li>Ouvrir l’invite de commande.</li>
-<li>Taper : ipconfig</li>
-<li>Observer :</li>
-<li>Ton adresse IPv4 et IPv6</li>
-<li>L’adresse de la passerelle (routeur)</li>
-<li>Les serveurs DNS</li>
-</ul>
-<hr />
-<h3 id="a-retenir">📌 À retenir</h3>
-<ul>
-<li>Une machine peut avoir <strong>IPv4 et IPv6</strong> simultanément.  </li>
-<li>La <strong>partie réseau</strong> permet de savoir si deux machines sont dans le même réseau local.  </li>
-<li>Le <strong>masque de sous-réseau</strong> détermine quelle partie de l’adresse est réseau et quelle partie est machine.</li>
-</ul>
-<hr />
-<h3 id="resume-comparatif">📊 Résumé comparatif</h3>
-<table>
-<thead>
-<tr>
-<th>Caractéristique</th>
-<th>Adresse MAC</th>
-<th>Adresse IP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Nature</td>
-<td>Physique (gravée sur la carte)</td>
-<td>Logique (attribuée par le réseau)</td>
-</tr>
-<tr>
-<td>Format</td>
-<td>6 blocs hexadécimaux (ex. A1:B2:...)</td>
-<td>4 nombres décimaux (IPv4) ou longs hexadécimaux (IPv6)</td>
-</tr>
-<tr>
-<td>Portée</td>
-<td>Réseau local</td>
-<td>Réseau mondial (Internet)</td>
-</tr>
-<tr>
-<td>Unicité</td>
-<td>Unique au monde</td>
-<td>Unique dans un réseau donné</td>
-</tr>
-<tr>
-<td>Exemple</td>
-<td>3C:97:0E:4B:62:A1</td>
-<td>192.168.1.12</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p>📌 <strong>À retenir :</strong><br />
-- L’adresse <strong>MAC</strong> identifie la <strong>carte réseau dans un LAN</strong>.<br />
-- L’adresse <strong>IP</strong> identifie l’<strong>appareil sur Internet</strong>.<br />
-- Les deux sont nécessaires pour qu’un ordinateur puisse communiquer.</p>
-<hr />
-<h2 id="dns-domain-name-system">DNS – Domain Name System</h2>
+<h3 id="dns-domain-name-system">DNS – Domain Name System</h3>
 <p>Quand vous tapez un nom de site dans votre navigateur, par exemple <code>wikipedia.org</code>, votre ordinateur ne sait pas directement où envoyer les paquets.<br />
 Il a besoin de <strong>l’adresse IP</strong> correspondante.  </p>
-<p>Le <strong>DNS (Domain Name System)</strong> est un service qui fait la correspondance :  </p>
-<ul>
-<li>Nom symbolique → Adresse IP  </li>
-<li>Exemple : <code>wikipedia.org</code> → <code>91.198.174.192</code> (IPv4) ou <code>2a02:ec80:600:ed1a::1</code> (IPv6)</li>
-</ul>
+<p>Le <strong>DNS (Domain Name System)</strong> est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP.</p>
 <p>Les <strong>serveurs DNS</strong> sont des ordinateurs spécialisés qui répondent aux requêtes des ordinateurs pour résoudre ces noms.<br />
 Chaque ordinateur dispose d’un <strong>serveur DNS configuré</strong> (souvent celui de votre FAI) pour interroger le réseau.</p>
 <p>📌 <strong>À retenir :</strong> sans DNS, il faudrait connaître l’adresse IP exacte de chaque site pour s’y connecter.</p>
@@ -454,7 +303,7 @@ Ordinateur A ---&gt; paquet #2 ---&gt; Ordinateur B<br />
 <li>Si tous les paquets sont reçus</li>
 </ul>
 <hr />
-<h3 id="a-retenir_1">📌 À retenir</h3>
+<h3 id="a-retenir">📌 À retenir</h3>
 <ul>
 <li>TCP découpe les données en <strong>paquets</strong>, les envoie et les réassemble.  </li>
 <li>Il assure <strong>la fiabilité</strong> : tout paquet perdu est renvoyé et les paquets sont remis dans le bon ordre.  </li>
@@ -500,71 +349,15 @@ Ils passent par plusieurs <strong>routeurs</strong>, qui choisissent à chaque �
 </li>
 </ol>
 <p>💡 <strong>Lien avec le cours :</strong> cette expérience montre <strong>comment un nom de site est traduit en adresse IP</strong> avant que les paquets soient envoyés.</p>
-<h2 id="les-composants-materiels-dun-reseau">Les composants matériels d’un réseau</h2>
-<p>Pour qu’un réseau fonctionne, plusieurs <strong>éléments matériels</strong> sont nécessaires :  </p>
-<h3 id="1-machines">💻 1. Machines</h3>
+<h2 id="reperes-historiques">Repères historiques</h2>
 <ul>
-<li>Ce sont les appareils qui <strong>communiquent entre eux</strong> :  </li>
-<li>Ordinateurs, tablettes, smartphones, consoles de jeu, serveurs.  </li>
-<li>Elles envoient et reçoivent des données via le réseau.</li>
+<li><strong>1950s-1960s</strong> : premiers réseaux d’ordinateurs.  </li>
+<li><strong>1970</strong> : ArpaNet (USA).</li>
+<li><strong>1983</strong> : naissance officielle d’Internet avec le protocole <strong>TCP/IP</strong>.  </li>
 </ul>
-<h3 id="2-switch">🔀 2. Switch</h3>
-<ul>
-<li>Dispositif qui <strong>relie plusieurs machines localement</strong> dans un réseau (LAN).  </li>
-<li>Exemple : un switch dans une salle informatique permet aux ordinateurs de communiquer entre eux rapidement.  </li>
-<li>Fonction : reçoit un paquet sur un port et l’envoie <strong>uniquement au port correspondant à la machine destinataire</strong>.</li>
-</ul>
-<h3 id="3-routeur">🌐 3. Routeur</h3>
-<ul>
-<li>Permet de <strong>connecter un réseau local à Internet</strong> ou à d’autres réseaux.  </li>
-<li>Exemple : la box Internet à la maison est un routeur.  </li>
-<li>Fonction : <strong>acheminer les paquets</strong> entre les différents réseaux selon leur adresse IP.</li>
-</ul>
-<h3 id="4-supports-de-transmission">📡 4. Supports de transmission</h3>
-<ul>
-<li>Permettent de <strong>transporter physiquement les données</strong> entre machines et équipements réseau.  </li>
-<li>Types :  </li>
-<li><strong>Câbles Ethernet</strong> (filaire, stable et rapide)  </li>
-<li><strong>Wi-Fi</strong> (sans fil, pratique mais plus sensible aux interférences)  </li>
-<li><strong>Fibre optique</strong> (très haut débit, longue distance)  </li>
-</ul>
-<hr />
-<h2 id="modele-en-couches-tcpip">Modèle en couches TCP/IP</h2>
-<p>Le protocole TCP/IP organise la communication en <strong>4 couches</strong>, chacune ayant un rôle spécifique :  </p>
-<p><strong>1 Couche Application</strong> 📱  </p>
-<p>Utilisée par les logiciels : navigateur web, messagerie, jeux en ligne.<br />
-Contient les <strong>données utilisateur</strong>.</p>
-<p><strong>2 Couche Transport</strong> 🚛  </p>
-<p>Assure le <strong>transport fiable des données</strong>.<br />
-Garantit que les paquets arrivent complets et dans le bon ordre (TCP).  </p>
-<p><strong>3 Couche Internet</strong> 🗺️  </p>
-<p>Gère <strong>l’adressage et le routage</strong>.<br />
-Détermine le <strong>chemin optimal</strong> pour les paquets vers leur destination.</p>
-<p><strong>4 Couche Accès Réseau</strong> 🔌  </p>
-<p>Assure la <strong>transmission physique des données</strong> : signaux électriques, optiques ou radio.<br />
-Utilise les supports de transmission (Ethernet, Wi-Fi, fibre).  </p>
-<hr />
-<h3 id="encapsulation-et-desencapsulation">Encapsulation et désencapsulation</h3>
-<p>Quand une machine envoie des données :  </p>
-<p>Les données descendent les couches <strong>en se faisant encapsuler</strong> → chaque couche ajoute son <strong>en-tête</strong>.  </p>
-<p>📱 Application : données utilisateur<br />
-⬇️<br />
-🚛 Transport : + en-tête TCP<br />
-⬇️<br />
-🗺️ Internet : + en-tête IP<br />
-⬇️<br />
-🔌 Accès réseau : + en-tête Ethernet  </p>
-<p>À la réception, les données remontent les couches <strong>en se faisant désencapsuler</strong> → chaque couche retire son en-tête pour récupérer les informations originales.  </p>
-<p>🔌 Accès réseau : - en-tête Ethernet<br />
-⬆️<br />
-🗺️ Internet : - en-tête IP<br />
-⬆️<br />
-🚛 Transport : - en-tête TCP<br />
-⬆️<br />
-📱 Application : données utilisateur  </p>
-<p>💡 <strong>À retenir :</strong><br />
-- L’encapsulation permet à chaque couche de <strong>gérer ses propres fonctions</strong> sans se préoccuper des autres.<br />
-- La désencapsulation permet de <strong>reconstituer les données correctement</strong> à l’arrivée.</p>
+<h2 id="reseau-pair-a-pair">Réseau pair-à-pair</h2>
+<h2 id="independance-au-support-physique">Indépendance au support physique</h2>
+<h2 id="ordre-de-grandeur">Ordre de grandeur</h2>
               
             </div>
           </div><footer>
