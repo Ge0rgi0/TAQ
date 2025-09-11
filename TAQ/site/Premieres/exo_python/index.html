@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Accueil - TAQ</title>
+    <title>Série d’exercices sur les boucles (Première NSI) - TAQ</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Accueil";
-        var mkdocs_page_input_path = "Premieres/Premieres.md";
+        var mkdocs_page_name = "S\u00e9rie d\u2019exercices sur les boucles (Premi\u00e8re NSI)";
+        var mkdocs_page_input_path = "Premieres/exo_python.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Cours</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" >Secondes</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Secondes/Secondes/">Accueil</a>
@@ -57,15 +57,9 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
-    <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">Accueil</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#exercices">Exercices</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#chapitres">Chapitres</a>
-    </li>
-    </ul>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Premieres/">Accueil</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Chapitres/Types_de_base_int/">Types de base (entiers)</a>
                 </li>
@@ -98,9 +92,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Cours</li>
-          <li class="breadcrumb-item">Premières</li>
-      <li class="breadcrumb-item active">Accueil</li>
+      <li class="breadcrumb-item active">Série d’exercices sur les boucles (Première NSI)</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -109,24 +101,87 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="nsi-premieres">NSI - Premières</h1>
-<h2 id="exercices">Exercices</h2>
+                <h1 id="serie-dexercices-sur-les-boucles-premiere-nsi">Série d’exercices sur les boucles (Première NSI)</h1>
+<h2 id="1-boucles-simples">1. Boucles simples</h2>
+<ol>
+<li><strong>Affichage de nombres</strong></li>
+<li>Écrire un programme qui affiche les nombres de 1 à 10.</li>
+<li>
+<p>Modifier le programme pour afficher uniquement les nombres pairs entre 1 et 20.</p>
+</li>
+<li>
+<p><strong>Somme et produit</strong></p>
+</li>
+<li>Demander un entier <code>n</code> à l’utilisateur et afficher la somme des entiers de 1 à <code>n</code>.</li>
+<li>Bonus : afficher aussi le produit des entiers de 1 à <code>n</code>.</li>
+</ol>
+<hr />
+<h2 id="2-boucles-avec-conditions">2. Boucles avec conditions</h2>
+<ol>
+<li><strong>Tables de multiplication</strong></li>
+<li>
+<p>Écrire un programme qui affiche la table de multiplication d’un nombre donné par l’utilisateur (exemple : table de 7).</p>
+</li>
+<li>
+<p><strong>Nombre mystère (while)</strong></p>
+</li>
+<li>Le programme choisit un nombre aléatoire entre 1 et 100.</li>
+<li>L’utilisateur doit le deviner en proposant des valeurs.</li>
+<li>Le programme indique "trop grand" ou "trop petit" jusqu’à ce que la réponse soit trouvée.</li>
+</ol>
+<hr />
+<h2 id="3-boucles-imbriquees">3. Boucles imbriquées</h2>
+<ol>
+<li><strong>Carré d’étoiles</strong></li>
+<li>
+<p>Demander un entier <code>n</code> et afficher un carré de <code>n × n</code> étoiles.<br />
+     Exemple pour <code>n=3</code> :
+     <code>***
+     ***
+     ***</code></p>
+</li>
+<li>
+<p><strong>Triangle d’étoiles</strong></p>
+</li>
+<li>Même chose mais en triangle :
+     <code>*
+     **
+     ***</code></li>
+</ol>
+<hr />
+<h2 id="4-exercices-numeriques">4. Exercices numériques</h2>
+<ol>
+<li><strong>Puissance</strong></li>
+<li>Demander deux entiers <code>a</code> et <code>b</code>.  </li>
+<li>
+<p>Calculer <code>a^b</code> à l’aide d’une boucle (sans utiliser <code>**</code>).</p>
+</li>
+<li>
+<p><strong>Chiffres d’un nombre</strong></p>
+</li>
+<li>Demander un nombre entier.  </li>
+<li>Afficher la somme de ses chiffres.  </li>
+<li>Exemple : pour 1234 → somme = 10.</li>
+</ol>
+<hr />
+<h2 id="5-synthese">5. Synthèse</h2>
+<ol>
+<li><strong>Série de Fibonacci</strong></li>
+<li>
+<p>Afficher les <code>n</code> premiers termes de la suite de Fibonacci : 0, 1, 1, 2, 3, 5, 8…</p>
+</li>
+<li>
+<p><strong>Petit jeu du dé</strong></p>
 <ul>
-<li><a href="../exo_python/">🔸 Exercices Python</a></li>
+<li>Simuler 10 lancers d’un dé à 6 faces.</li>
+<li>Afficher les résultats.</li>
+<li>Bonus : compter combien de fois le 6 est sorti.</li>
 </ul>
-<h2 id="chapitres">Chapitres</h2>
-<ul>
-<li><a href="../Chapitres/Types_de_base_int/">🔹 1 - Types de base : Entiers</a></li>
-<li><a href="../Chapitres/Types_de_base_float/">🔹 2 - Types de base : Flottants</a></li>
-<li><a href="../Chapitres/Types_de_base_bool/">🔹 3 - Types de base : Booléens</a></li>
-</ul>
+</li>
+</ol>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../Secondes/Chapitres/Internet%20-%20Protocoles%20et%20routage%20des%20paquets/" class="btn btn-neutral float-left" title="Internet"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Chapitres/Types_de_base_int/" class="btn btn-neutral float-right" title="Types de base (entiers)">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -148,10 +203,6 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../Secondes/Chapitres/Internet%20-%20Protocoles%20et%20routage%20des%20paquets/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../Chapitres/Types_de_base_int/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
