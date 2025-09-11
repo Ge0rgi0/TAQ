@@ -50,16 +50,13 @@ Chaque couche y ajoute des informations spécifiques (adresse de destination, nu
 
 ![Modèle](./model.png)
 
-
 ## Le protocole IP et l’adressage
 
 Chaque appareil connecté à Internet doit être identifiable de manière **unique**.  
 Pour cela, deux types d’adresses existent :
 
 ### 📍 Adresse MAC (adressage local)
-- Chaque machine dispose d’une ou plusieurs **cartes réseau** (Wi-Fi, Ethernet…).  
-- Chaque carte possède une **adresse physique unique au monde** : l’adresse **MAC**.  
-- Utilisée uniquement **dans le réseau local** (LAN).  
+Chaque machine dispose d’une ou plusieurs **cartes réseau** (Wi-Fi, Ethernet…) à laquelle est attrbuée une **adresse physique unique au monde** : l’adresse **MAC** qui n'est tilisée que **dans le réseau local**.  
 
 Format : 6 blocs de 2 caractères hexadecimal (0->9 + a->f) (ex. `a1:b2:c3:d4:e5:f6`).
 
@@ -71,24 +68,24 @@ Chaque machine connectée à Internet reçoit une **adresse IP**, qui sert d’*
   - **Réseau** → identifie le réseau auquel appartient la machine.  
   - **Hôte (machine)** → identifie l’appareil dans ce réseau.  
 
-### IPv4
-- **32 bits**, écrits en 4 nombres décimaux (0-255).  
-- Exemple : `91.198.174.192` (serveur Wikipédia en IPv4) ou  `127.0.0.1` → adresse spéciale **localhost** (sa propre machine)
-- Limite : environ **4 milliards d’adresses**, insuffisant pour le nombre d’appareils connectés.  
+Les premières adresses IP étaient au format **IPv4**, c'est-à-dire 4 nombres décimaux entre 0 et 255, comme ceci:
 
-### IPv6
-- **128 bits**, écrits en 8 groupes hexadécimaux.  
-- Exemple : `2a02:ec80:0600:ed1a` (Wikipédia en IPv6).  
-- Avantage : 18 millions de milliards d’adresses → résout la pénurie IPv4.  
+`91.198.174.192` (serveur Wikipédia)
+`127.0.0.1` → adresse spéciale **localhost** (sa propre machine)
+
+Cependant, ce format ne nous permet d'utiliser que **4 milliards d’adresses**, insuffisant pour le nombre d’appareils connectés.  
+Encore aujourd'hui, nous faisons la transition vers un nouveau format **IPv6** (16 caractéres hexadécimaux) :
+
+`2a02:ec80:0600:ed1a` (Wikipédia en IPv6).  
+
+Nous avons désormais 18 millions de milliards d'adresses possibles.
 
 ### DNS – Domain Name System
 
-Quand vous tapez un nom de site dans votre navigateur, par exemple `wikipedia.org`, votre ordinateur ne sait pas directement où envoyer les paquets.  
-Il a besoin de **l’adresse IP** correspondante, pour éviter d'avoir à se souvenir des IPs de tous les sites nous utilisons le DNS.  
+Quand vous tapez un nom de site dans votre navigateur, par exemple `wikipedia.org`, votre ordinateur ne sait pas directement où envoyer les paquets, il a besoin de **l’adresse IP** correspondante.
+Pour éviter d'avoir à se souvenir des IPs de tous les sites, nous utilisons le DNS.  
 
-Le **DNS (Domain Name System)** est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP.
-
-Les **serveurs DNS** sont des ordinateurs spécialisés qui répondent aux requêtes des ordinateurs pour résoudre ces noms.  
+Le **DNS (Domain Name System)** est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP par le biais de serveurs DNS.
 
 ---
 
