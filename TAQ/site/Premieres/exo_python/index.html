@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Série d’exercices sur les boucles (Première NSI) - TAQ</title>
+    <title>Série d’exercices sur les boucles - TAQ</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "S\u00e9rie d\u2019exercices sur les boucles (Premi\u00e8re NSI)";
+        var mkdocs_page_name = "S\u00e9rie d\u2019exercices sur les boucles";
         var mkdocs_page_input_path = "Premieres/exo_python.md";
         var mkdocs_page_url = null;
       </script>
@@ -92,7 +92,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Série d’exercices sur les boucles (Première NSI)</li>
+      <li class="breadcrumb-item active">Série d’exercices sur les boucles</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -101,8 +101,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="serie-dexercices-sur-les-boucles-premiere-nsi">Série d’exercices sur les boucles (Première NSI)</h1>
-<h2 id="1-boucles-simples">1. Boucles simples</h2>
+                <h1 id="serie-dexercices-sur-les-boucles">Série d’exercices sur les boucles</h1>
+<h2 id="1-boucles-bornees">1. Boucles bornées</h2>
 <ol>
 <li>
 <p><strong>Affichage de nombres</strong><br />
@@ -114,24 +114,10 @@
     Demander un entier <code>n</code> à l’utilisateur et afficher la somme des entiers de 1 à <code>n</code>.
     Bonus : afficher aussi le produit des entiers de 1 à <code>n</code>.</p>
 </li>
-</ol>
-<hr />
-<h2 id="2-boucles-avec-conditions">2. Boucles avec conditions</h2>
-<ol>
 <li>
 <p><strong>Tables de multiplication</strong><br />
     Écrire un programme qui affiche la table de multiplication d’un nombre donné par l’utilisateur (exemple : table de 7).</p>
 </li>
-<li>
-<p><strong>Nombre mystère (while)</strong><br />
-    Le programme choisit un nombre aléatoire entre 1 et 100.
-    L’utilisateur doit le deviner en proposant des valeurs.
-    Le programme indique "trop grand" ou "trop petit" jusqu’à ce que la réponse soit trouvée.</p>
-</li>
-</ol>
-<hr />
-<h2 id="3-boucles-imbriquees">3. Boucles imbriquées</h2>
-<ol>
 <li>
 <p><strong>Carré d’étoiles</strong><br />
     Demander un entier <code>n</code> et afficher un carré de <code>n × n</code> étoiles.<br />
@@ -143,29 +129,13 @@
 <li>
 <p><strong>Triangle d’étoiles</strong><br />
     Même chose mais en triangle :<br />
-<code>*
-     **
-     ***</code></p>
-</li>
-</ol>
+     ```</p>
+<ul>
+<li>**</li>
+</ul>
 <hr />
-<h2 id="4-exercices-numeriques">4. Exercices numériques</h2>
-<ol>
-<li>
-<p><strong>Puissance</strong><br />
-    Demander deux entiers <code>a</code> et <code>b</code>.<br />
-    Calculer <code>a^b</code> à l’aide d’une boucle (sans utiliser <code>**</code>).</p>
+<p>```</p>
 </li>
-<li>
-<p><strong>Chiffres d’un nombre</strong><br />
-    Demander un nombre entier.<br />
-    Afficher la somme de ses chiffres.<br />
-    Exemple : pour 1234 → somme = 10.</p>
-</li>
-</ol>
-<hr />
-<h2 id="5-synthese">5. Synthèse</h2>
-<ol>
 <li>
 <p><strong>Série de Fibonacci</strong><br />
     Afficher les <code>n</code> premiers termes de la suite de Fibonacci : 0, 1, 1, 2, 3, 5, 8…</p>
@@ -175,6 +145,39 @@
      Simuler 10 lancers d’un dé à 6 faces.
      Afficher les résultats.
      Bonus : compter combien de fois le 6 est sorti.</p>
+</li>
+</ol>
+<hr />
+<h2 id="2-boucles-non-bornees">2. Boucles non bornées</h2>
+<ol>
+<li>
+<p><strong>Somme jusqu’à zéro</strong><br />
+   L’utilisateur saisit une suite de nombres entiers.<br />
+   La saisie s’arrête quand l’utilisateur entre <code>0</code>.<br />
+   Le programme affiche alors la somme de tous les nombres saisis (hors le zéro final).  </p>
+</li>
+<li>
+<p><strong>Compte à rebours</strong><br />
+   Demander à l’utilisateur un nombre entier positif <code>n</code>.<br />
+   Afficher un compte à rebours de <code>n</code> jusqu’à <code>0</code> inclus, en utilisant une boucle <code>while</code>.  </p>
+</li>
+<li>
+<p><strong>Mot de passe</strong><br />
+   Décider d'un mot de passe.
+   Demander à le l'utilisateur.<br />
+   Tant que le mot de passe saisi est incorrect, redemander à l’utilisateur.<br />
+   Quand le bon mot de passe est saisi, afficher <code>"Accès autorisé"</code>.  </p>
+</li>
+<li>
+<p><strong>Nombre mystère</strong><br />
+   Le programme choisit un nombre aléatoire entre 1 et 100.<br />
+   L’utilisateur doit le deviner en proposant des valeurs.<br />
+   Le programme indique <code>"trop grand"</code> ou <code>"trop petit"</code> jusqu’à ce que la réponse soit trouvée.  </p>
+</li>
+<li>
+<p><strong>Puissance</strong><br />
+   Demander deux entiers <code>a</code> et <code>b</code>.<br />
+   Calculer <code>a^b</code> à l’aide d’une boucle (sans utiliser <code>**</code>).  </p>
 </li>
 </ol>
               

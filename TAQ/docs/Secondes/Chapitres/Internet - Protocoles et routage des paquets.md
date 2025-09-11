@@ -48,7 +48,7 @@ Chaque couche y ajoute des informations spécifiques (adresse de destination, nu
 
 À la réception, chaque couche retire son en-tête pour reconstituer les données originales c’est la **désencapsulation**.
 
-![modele](model.jpg)
+![Modèle](./model.png)
 
 
 ## Le protocole IP et l’adressage
@@ -56,31 +56,20 @@ Chaque couche y ajoute des informations spécifiques (adresse de destination, nu
 Chaque appareil connecté à Internet doit être identifiable de manière **unique**.  
 Pour cela, deux types d’adresses existent :
 
----
-
 ### 📍 Adresse MAC (adressage local)
 - Chaque machine dispose d’une ou plusieurs **cartes réseau** (Wi-Fi, Ethernet…).  
 - Chaque carte possède une **adresse physique unique au monde** : l’adresse **MAC**.  
 - Utilisée uniquement **dans le réseau local** (LAN).  
 
-**Caractéristiques :**
-- Format : 6 blocs de 2 caractères (ex. `a1:b2:c3:d4:e5:f6`).  
-- Base : hexadécimale (0-9 et A-F).  
-- Portée : limitée au réseau local. 
-
----
+Format : 6 blocs de 2 caractères hexadecimal (0->9 + a->f) (ex. `a1:b2:c3:d4:e5:f6`).
 
 ### 🌐 Adresse IP (adressage global)
 
 Chaque machine connectée à Internet reçoit une **adresse IP**, qui sert d’**identifiant logique** pour la retrouver parmi des milliards d’autres. Elle change réguliérement. 
 
-**Caractéristiques :**
 - Composée de deux parties :  
   - **Réseau** → identifie le réseau auquel appartient la machine.  
   - **Hôte (machine)** → identifie l’appareil dans ce réseau.  
-- Définie grâce à un **masque de sous-réseau**.  
-- Portée : **mondiale**.  
-- Peut être **IPv4** ou **IPv6**.  
 
 ### IPv4
 - **32 bits**, écrits en 4 nombres décimaux (0-255).  
@@ -90,21 +79,16 @@ Chaque machine connectée à Internet reçoit une **adresse IP**, qui sert d’*
 ### IPv6
 - **128 bits**, écrits en 8 groupes hexadécimaux.  
 - Exemple : `2a02:ec80:0600:ed1a` (Wikipédia en IPv6).  
-- Avantage : nombre **quasi illimité** d’adresses → résout la pénurie IPv4.  
-
----
+- Avantage : 18 millions de milliards d’adresses → résout la pénurie IPv4.  
 
 ### DNS – Domain Name System
 
 Quand vous tapez un nom de site dans votre navigateur, par exemple `wikipedia.org`, votre ordinateur ne sait pas directement où envoyer les paquets.  
-Il a besoin de **l’adresse IP** correspondante.  
+Il a besoin de **l’adresse IP** correspondante, pour éviter d'avoir à se souvenir des IPs de tous les sites nous utilisons le DNS.  
 
 Le **DNS (Domain Name System)** est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP.
 
 Les **serveurs DNS** sont des ordinateurs spécialisés qui répondent aux requêtes des ordinateurs pour résoudre ces noms.  
-Chaque ordinateur dispose d’un **serveur DNS configuré** (souvent celui de votre FAI) pour interroger le réseau.
-
-📌 **À retenir :** sans DNS, il faudrait connaître l’adresse IP exacte de chaque site pour s’y connecter.
 
 ---
 
