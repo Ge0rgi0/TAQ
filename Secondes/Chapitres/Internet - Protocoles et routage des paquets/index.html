@@ -190,31 +190,24 @@ Internet, c’est <strong>l’interconnexion de milliers de réseaux locaux et d
 <p>Quand on envoie un message ou un fichier sur Internet, il n’est jamais envoyé en un seul bloc, mais découpé en petits morceaux appelés <strong>paquets</strong>.<br />
 Chaque couche y ajoute des informations spécifiques (adresse de destination, numéro du paquet, etc) avant de transmettre les données, c'est l'<strong>encapsulation</strong>.</p>
 <p>À la réception, chaque couche retire son en-tête pour reconstituer les données originales c’est la <strong>désencapsulation</strong>.</p>
-<p><img alt="modele" src="model.jpg" /></p>
+<p><img alt="Modèle" src="../model.png" /></p>
 <h2 id="le-protocole-ip-et-ladressage">Le protocole IP et l’adressage</h2>
 <p>Chaque appareil connecté à Internet doit être identifiable de manière <strong>unique</strong>.<br />
 Pour cela, deux types d’adresses existent :</p>
-<hr />
 <h3 id="adresse-mac-adressage-local">📍 Adresse MAC (adressage local)</h3>
 <ul>
 <li>Chaque machine dispose d’une ou plusieurs <strong>cartes réseau</strong> (Wi-Fi, Ethernet…).  </li>
 <li>Chaque carte possède une <strong>adresse physique unique au monde</strong> : l’adresse <strong>MAC</strong>.  </li>
 <li>Utilisée uniquement <strong>dans le réseau local</strong> (LAN).  </li>
 </ul>
-<p><strong>Caractéristiques :</strong>
-- Format : 6 blocs de 2 caractères (ex. <code>a1:b2:c3:d4:e5:f6</code>).<br />
-- Base : hexadécimale (0-9 et A-F).<br />
-- Portée : limitée au réseau local. </p>
-<hr />
+<p>Format : 6 blocs de 2 caractères hexadecimal (0-&gt;9 + a-&gt;f) (ex. <code>a1:b2:c3:d4:e5:f6</code>).</p>
 <h3 id="adresse-ip-adressage-global">🌐 Adresse IP (adressage global)</h3>
 <p>Chaque machine connectée à Internet reçoit une <strong>adresse IP</strong>, qui sert d’<strong>identifiant logique</strong> pour la retrouver parmi des milliards d’autres. Elle change réguliérement. </p>
-<p><strong>Caractéristiques :</strong>
-- Composée de deux parties :<br />
-  - <strong>Réseau</strong> → identifie le réseau auquel appartient la machine.<br />
-  - <strong>Hôte (machine)</strong> → identifie l’appareil dans ce réseau.<br />
-- Définie grâce à un <strong>masque de sous-réseau</strong>.<br />
-- Portée : <strong>mondiale</strong>.<br />
-- Peut être <strong>IPv4</strong> ou <strong>IPv6</strong>.  </p>
+<ul>
+<li>Composée de deux parties :  </li>
+<li><strong>Réseau</strong> → identifie le réseau auquel appartient la machine.  </li>
+<li><strong>Hôte (machine)</strong> → identifie l’appareil dans ce réseau.  </li>
+</ul>
 <h3 id="ipv4">IPv4</h3>
 <ul>
 <li><strong>32 bits</strong>, écrits en 4 nombres décimaux (0-255).  </li>
@@ -225,16 +218,13 @@ Pour cela, deux types d’adresses existent :</p>
 <ul>
 <li><strong>128 bits</strong>, écrits en 8 groupes hexadécimaux.  </li>
 <li>Exemple : <code>2a02:ec80:0600:ed1a</code> (Wikipédia en IPv6).  </li>
-<li>Avantage : nombre <strong>quasi illimité</strong> d’adresses → résout la pénurie IPv4.  </li>
+<li>Avantage : 18 millions de milliards d’adresses → résout la pénurie IPv4.  </li>
 </ul>
-<hr />
 <h3 id="dns-domain-name-system">DNS – Domain Name System</h3>
 <p>Quand vous tapez un nom de site dans votre navigateur, par exemple <code>wikipedia.org</code>, votre ordinateur ne sait pas directement où envoyer les paquets.<br />
-Il a besoin de <strong>l’adresse IP</strong> correspondante.  </p>
+Il a besoin de <strong>l’adresse IP</strong> correspondante, pour éviter d'avoir à se souvenir des IPs de tous les sites nous utilisons le DNS.  </p>
 <p>Le <strong>DNS (Domain Name System)</strong> est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP.</p>
-<p>Les <strong>serveurs DNS</strong> sont des ordinateurs spécialisés qui répondent aux requêtes des ordinateurs pour résoudre ces noms.<br />
-Chaque ordinateur dispose d’un <strong>serveur DNS configuré</strong> (souvent celui de votre FAI) pour interroger le réseau.</p>
-<p>📌 <strong>À retenir :</strong> sans DNS, il faudrait connaître l’adresse IP exacte de chaque site pour s’y connecter.</p>
+<p>Les <strong>serveurs DNS</strong> sont des ordinateurs spécialisés qui répondent aux requêtes des ordinateurs pour résoudre ces noms.  </p>
 <hr />
 <h2 id="le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</h2>
 <p>Quand on envoie un message ou un fichier sur Internet, <strong>il n’est jamais envoyé d’un seul bloc</strong>, mais découpé en <strong>petits morceaux appelés paquets</strong>.  </p>
