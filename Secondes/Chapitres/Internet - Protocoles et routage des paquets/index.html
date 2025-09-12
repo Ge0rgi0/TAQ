@@ -77,8 +77,6 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#role-de-tcp">📌 Rôle de TCP</a>
-    </li>
     <li class="toctree-l4"><a class="reference internal" href="#transmission-et-fiabilite">🔄 Transmission et fiabilité</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#limites-de-tcp">⚠️ Limites de TCP</a>
@@ -213,7 +211,6 @@ Pour éviter d'avoir à se souvenir des IPs de tous les sites, nous utilisons le
 <p>Le <strong>DNS (Domain Name System)</strong> est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP par le biais de serveurs DNS.</p>
 <hr />
 <h2 id="le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</h2>
-<p>Quand on envoie un message ou un fichier sur Internet, <strong>il n’est jamais envoyé d’un seul bloc</strong>, mais découpé en <strong>petits morceaux appelés paquets</strong>.  </p>
 <p>Chaque paquet contient :<br />
 - l’adresse de l’<strong>émetteur</strong> (source),<br />
 - l’adresse du <strong>destinataire</strong>,<br />
@@ -234,19 +231,15 @@ Pour éviter d'avoir à se souvenir des IPs de tous les sites, nous utilisons le
 </tr>
 </tbody>
 </table>
-<hr />
-<h3 id="role-de-tcp">📌 Rôle de TCP</h3>
-<p>TCP est un <strong>protocole de communication fiable</strong>. Il s’assure que :<br />
-1. <strong>Tous les paquets arrivent à destination</strong>.<br />
-   - Si un paquet est perdu sur le chemin, TCP le redemande.<br />
-2. <strong>Les paquets sont remis dans le bon ordre</strong>.<br />
-   - Les paquets peuvent arriver dans le désordre, TCP les réorganise.<br />
-3. <strong>La congestion du réseau est gérée</strong>.<br />
-   - TCP ajuste la vitesse d’envoi pour ne pas saturer le réseau.  </p>
-<p>💡 <strong>Exemple concret :</strong><br />
-- Vous regardez une vidéo en streaming :<br />
-  - La vidéo est envoyée en milliers de paquets.<br />
-  - TCP s’assure que chaque image arrive et est <strong>reconstituée dans le bon ordre</strong>.  </p>
+<p>TCP est un <strong>protocole de communication fiable</strong>. Il s’assure que :  </p>
+<ol>
+<li><strong>Tous les paquets arrivent à destination</strong>.  </li>
+<li>Si un paquet est perdu sur le chemin, TCP le redemande.  </li>
+<li><strong>Les paquets sont remis dans le bon ordre</strong>.  </li>
+<li>Les paquets peuvent arriver dans le désordre, TCP les réorganise.  </li>
+<li><strong>La congestion du réseau est gérée</strong>.  </li>
+<li>TCP ajuste la vitesse d’envoi pour ne pas saturer le réseau.  </li>
+</ol>
 <hr />
 <h3 id="transmission-et-fiabilite">🔄 Transmission et fiabilité</h3>
 <ul>
