@@ -91,8 +91,6 @@ Le **DNS (Domain Name System)** est un service qui fait la correspondance entre 
 
 ## Le protocole TCP (Transmission Control Protocol)
 
-Quand on envoie un message ou un fichier sur Internet, **il n’est jamais envoyé d’un seul bloc**, mais découpé en **petits morceaux appelés paquets**.  
-
 Chaque paquet contient :  
 - l’adresse de l’**émetteur** (source),  
 - l’adresse du **destinataire**,  
@@ -101,21 +99,14 @@ Chaque paquet contient :
 | Adresse source | Adresse destination | Données |  
 |----------------|---------|------------------|  
 
----
-
-### 📌 Rôle de TCP
 TCP est un **protocole de communication fiable**. Il s’assure que :  
+
 1. **Tous les paquets arrivent à destination**.  
    - Si un paquet est perdu sur le chemin, TCP le redemande.  
 2. **Les paquets sont remis dans le bon ordre**.  
    - Les paquets peuvent arriver dans le désordre, TCP les réorganise.  
 3. **La congestion du réseau est gérée**.  
    - TCP ajuste la vitesse d’envoi pour ne pas saturer le réseau.  
-
-💡 **Exemple concret :**  
-- Vous regardez une vidéo en streaming :  
-  - La vidéo est envoyée en milliers de paquets.  
-  - TCP s’assure que chaque image arrive et est **reconstituée dans le bon ordre**.  
 
 ---
 
