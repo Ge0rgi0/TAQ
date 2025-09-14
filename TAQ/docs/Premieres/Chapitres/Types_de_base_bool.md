@@ -213,5 +213,11 @@ Un circuit combinant plusieurs portes peut être représenté par un schéma.
 Exemple :  
 
 ![porte ET](porte_ET.png)
----
 
+<span style="color:red">Exercice</span> 
+
+Recopiez le circuit et indiquez ses états intermédiaires et son état final :
+
+![Unknown gate](unknown_gate.png)
+
+Utilisez les lois de Morgan pour simplifier l'expression.

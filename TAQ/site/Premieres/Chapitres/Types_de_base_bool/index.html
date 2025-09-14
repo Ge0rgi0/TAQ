@@ -71,6 +71,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#valeurs-booleennes">Valeurs booléennes</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#comparaisons">Comparaisons</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#logique-booleenne">Logique booléenne</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#les-operateurs-logiques">Les opérateurs logiques</a>
@@ -79,13 +81,21 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#comparaisons">Comparaisons</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#les-conditions">Les conditions</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#structure-de-base">Structure de base</a>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#circuits-logiques">Circuits logiques</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#symboles-des-principales-portes-logiques">Symboles des principales portes logiques</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exemple-de-circuit">Exemple de circuit</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_1"></a>
     </li>
     </ul>
                 </li>
@@ -147,120 +157,6 @@ C’est un type essentiel en programmation car il permet de <strong>prendre des 
 10 == 2  # False
 </code></pre>
 <hr />
-<h2 id="logique-booleenne">Logique booléenne</h2>
-<h3 id="les-operateurs-logiques">Les opérateurs logiques</h3>
-<p>Le langage Python propose trois opérateurs logiques principaux :</p>
-<table>
-<thead>
-<tr>
-<th>Opérateur</th>
-<th>Syntaxe</th>
-<th>Signification</th>
-<th>Exemple</th>
-<th>Résultat</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>NON</td>
-<td>not</td>
-<td>inverse la valeur</td>
-<td>not <span style="color:blue">True</span></td>
-<td><span style="color:red">False</span></td>
-</tr>
-<tr>
-<td>ET</td>
-<td>and</td>
-<td>vrai si les deux sont vrais</td>
-<td><span style="color:blue">True</span> and <span style="color:red">False</span></td>
-<td><span style="color:red">False</span></td>
-</tr>
-<tr>
-<td>OU</td>
-<td>or</td>
-<td>vrai si au moins un est vrai</td>
-<td><span style="color:blue">True</span> or <span style="color:red">False</span></td>
-<td><span style="color:blue">True</span></td>
-</tr>
-</tbody>
-</table>
-<p>Il existe aussi un opérateur important qui n'est pas naturel en python :</p>
-<table>
-<thead>
-<tr>
-<th>OU EXCLUSIF</th>
-<th>xor</th>
-<th>vrai si l'un est faux et l'autre est vraie</th>
-<th><span style="color:blue">True</span> xor <span style="color:blue">True</span></th>
-<th><span style="color:red">False</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Exemple :</p>
-<pre><code class="language-Python">a = True
-b = False
-
-print(not a)      # False
-print(a and b)    # False
-print(a or b)     # True
-</code></pre>
-<h3 id="les-tables-de-verite">Les tables de vérité</h3>
-<table>
-<thead>
-<tr>
-<th>a</th>
-<th>b</th>
-<th>a ET b</th>
-<th>a OU b</th>
-<th>NON a</th>
-<th>a XOR b</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span style="color:red">False</span></td>
-<td><span style="color:red">False</span></td>
-<td><span style="color:red">False</span></td>
-<td><span style="color:red">False</span></td>
-<td><span style="color:blue">True</span></td>
-<td><span style="color:red">False</span></td>
-</tr>
-<tr>
-<td><span style="color:red">False</span></td>
-<td><span style="color:blue">True</span></td>
-<td><span style="color:red">False</span></td>
-<td><span style="color:blue">True</span></td>
-<td><span style="color:blue">True</span></td>
-<td><span style="color:blue">True</span></td>
-</tr>
-<tr>
-<td><span style="color:blue">True</span></td>
-<td><span style="color:red">False</span></td>
-<td><span style="color:red">False</span></td>
-<td><span style="color:blue">True</span></td>
-<td><span style="color:red">False</span></td>
-<td><span style="color:blue">True</span></td>
-</tr>
-<tr>
-<td><span style="color:blue">True</span></td>
-<td><span style="color:blue">True</span></td>
-<td><span style="color:blue">True</span></td>
-<td><span style="color:blue">True</span></td>
-<td><span style="color:red">False</span></td>
-<td><span style="color:red">False</span></td>
-</tr>
-</tbody>
-</table>
-<hr />
 <h2 id="comparaisons">Comparaisons</h2>
 <p>Les booléens apparaissent très souvent à la suite de comparaisons.<br />
 Voici les principaux opérateurs en Python :</p>
@@ -281,7 +177,7 @@ Voici les principaux opérateurs en Python :</p>
 <td>égal à</td>
 <td>5 == 5</td>
 <td><span style="color:blue">True</span></td>
-<td>3 = 5</td>
+<td>3 == 5</td>
 <td><span style="color:red">False</span></td>
 </tr>
 <tr>
@@ -326,11 +222,353 @@ Voici les principaux opérateurs en Python :</p>
 </tr>
 </tbody>
 </table>
+<p>Ces comparaisons ne sont pas exclusives aux entiers, on peut les appliquer sur tous les types naturels :</p>
+<p>Exemples :</p>
+<p>3.5 &lt; 8.2 = <span style="color:blue">True</span><br />
+"abc" &gt; "def" = <span style="color:red">False</span><br />
+"a" &gt; "A" = <span style="color:blue">True</span><br />
+<span style="color:red">False</span> != <span style="color:red">False</span> = <span style="color:red">False</span><br />
+<span style="color:red">False</span> &lt; <span style="color:blue">True</span>  = <span style="color:blue">True</span>   </p>
+<p><span style="color:red">Exercice</span>  </p>
+<p>Évalue mentalement chaque comparaison ci-dessous puis vérifie avec Python.<br />
+Écris le résultat attendu (<strong>True</strong> ou <strong>False</strong>) dans la colonne vide.  </p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Résultat attendu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"z" &lt; "a"</td>
+<td></td>
+</tr>
+<tr>
+<td>"abc" &lt;= "abd"</td>
+<td></td>
+</tr>
+<tr>
+<td>"chat" &lt;= "Chat"</td>
+<td></td>
+</tr>
+<tr>
+<td>"bonjour" != "bonsoir"</td>
+<td></td>
+</tr>
+<tr>
+<td>7 &gt;= 7</td>
+<td></td>
+</tr>
+<tr>
+<td>12 != 15</td>
+<td></td>
+</tr>
+<tr>
+<td>3.14 == 3</td>
+<td></td>
+</tr>
+<tr>
+<td>10 &lt; 2</td>
+<td></td>
+</tr>
+<tr>
+<td>-5 &lt; 0</td>
+<td></td>
+</tr>
+<tr>
+<td>False != True</td>
+<td></td>
+</tr>
+<tr>
+<td>True == (5 &lt; 3)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="logique-booleenne">Logique booléenne</h2>
+<h3 id="les-operateurs-logiques">Les opérateurs logiques</h3>
+<p>Le langage Python propose trois opérateurs logiques principaux :</p>
+<table>
+<thead>
+<tr>
+<th>Opérateur</th>
+<th>Syntaxe python</th>
+<th>Syntaxe logique</th>
+<th>Signification</th>
+<th>Exemple</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NON</td>
+<td>not</td>
+<td><span class="arithmatex">\(\overline{a}\)</span> (non a)</td>
+<td>inverse la valeur</td>
+<td>not <span style="color:blue">True</span></td>
+<td><span style="color:red">False</span></td>
+</tr>
+<tr>
+<td>ET</td>
+<td>and</td>
+<td>.</td>
+<td>vrai si les deux sont vrais</td>
+<td><span style="color:blue">True</span> and <span style="color:red">False</span></td>
+<td><span style="color:red">False</span></td>
+</tr>
+<tr>
+<td>OU</td>
+<td>or</td>
+<td>+</td>
+<td>vrai si au moins un est vrai</td>
+<td><span style="color:blue">True</span> or <span style="color:red">False</span></td>
+<td><span style="color:blue">True</span></td>
+</tr>
+</tbody>
+</table>
+<p>Il existe aussi un opérateur important qui n'est pas naturel en python :</p>
+<table>
+<thead>
+<tr>
+<th>OU EXCLUSIF</th>
+<th>xor</th>
+<th>vrai si l'un est faux et l'autre est vraie</th>
+<th><span style="color:blue">True</span> xor <span style="color:blue">True</span></th>
+<th><span style="color:red">False</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Exemple :</p>
+<pre><code class="language-Python">a = True
+b = False
+
+print(not a)      # False
+print(a and b)    # False
+print(a or b)     # True
+</code></pre>
+<p><span style="color:red">Exercice</span>  </p>
+<p>Évalue mentalement chaque expression booléenne puis vérifie avec Python.<br />
+Écris le résultat attendu (<strong>True</strong> ou <strong>False</strong>) dans la colonne vide.  </p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Résultat attendu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>not (3 &lt; 5)</td>
+<td></td>
+</tr>
+<tr>
+<td>(7 &gt;= 7) and (2 != 3)</td>
+<td></td>
+</tr>
+<tr>
+<td>(3.14 == 3) or (10 &lt; 20)</td>
+<td></td>
+</tr>
+<tr>
+<td>("z" &lt; "a") or (4 == 4)</td>
+<td></td>
+</tr>
+<tr>
+<td>not (False) and (5 &gt; 2)</td>
+<td></td>
+</tr>
+<tr>
+<td>(6 &lt;= 6) xor (2 &gt; 10)</td>
+<td></td>
+</tr>
+<tr>
+<td>(True and (8 != 8)) or (1 &lt; 2)</td>
+<td></td>
+</tr>
+<tr>
+<td>not ("abc" == "def")</td>
+<td></td>
+</tr>
+<tr>
+<td>(False or (9 &gt;= 9)) and (3 &lt; 1)</td>
+<td></td>
+</tr>
+<tr>
+<td>(7 != 7) xor (not (2 &lt; 5))</td>
+<td></td>
+</tr>
+<tr>
+<td>("chat" &lt; "chien") or (not (4 &lt;= 4))</td>
+<td></td>
+</tr>
+<tr>
+<td>((5 &gt; 1) and (2 == 2)) or (False)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="les-tables-de-verite">Les tables de vérité</h3>
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>b</th>
+<th>a . b</th>
+<th>a + b</th>
+<th>! a</th>
+<th>a XOR b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="color:red">False</span></td>
+<td><span style="color:red">False</span></td>
+<td><span style="color:red">False</span></td>
+<td><span style="color:red">False</span></td>
+<td><span style="color:blue">True</span></td>
+<td><span style="color:red">False</span></td>
+</tr>
+<tr>
+<td><span style="color:red">False</span></td>
+<td><span style="color:blue">True</span></td>
+<td><span style="color:red">False</span></td>
+<td><span style="color:blue">True</span></td>
+<td><span style="color:blue">True</span></td>
+<td><span style="color:blue">True</span></td>
+</tr>
+<tr>
+<td><span style="color:blue">True</span></td>
+<td><span style="color:red">False</span></td>
+<td><span style="color:red">False</span></td>
+<td><span style="color:blue">True</span></td>
+<td><span style="color:red">False</span></td>
+<td><span style="color:blue">True</span></td>
+</tr>
+<tr>
+<td><span style="color:blue">True</span></td>
+<td><span style="color:blue">True</span></td>
+<td><span style="color:blue">True</span></td>
+<td><span style="color:blue">True</span></td>
+<td><span style="color:red">False</span></td>
+<td><span style="color:red">False</span></td>
+</tr>
+</tbody>
+</table>
+<p><span style="color:red">Exercice</span> </p>
+<p>Complétez ces tables de vérité.</p>
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>b</th>
+<th>a.b</th>
+<th><span class="arithmatex">\(\overline{a.b}\)</span></th>
+<th>a+b</th>
+<th><span class="arithmatex">\(\overline{a+b}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="color:red">False</span></td>
+<td><span style="color:red">False</span></td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td><span style="color:red">False</span></td>
+<td><span style="color:blue">True</span></td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td><span style="color:blue">True</span></td>
+<td><span style="color:red">False</span></td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td><span style="color:blue">True</span></td>
+<td><span style="color:blue">True</span></td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>b</th>
+<th><span class="arithmatex">\(\overline{a}\)</span></th>
+<th><span class="arithmatex">\(\overline{b}\)</span></th>
+<th><span class="arithmatex">\(\overline{b}\)</span>+<span class="arithmatex">\(\overline{b}\)</span></th>
+<th><span class="arithmatex">\(\overline{a}\)</span>.<span class="arithmatex">\(\overline{b}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span style="color:red">False</span></td>
+<td><span style="color:red">False</span></td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td><span style="color:red">False</span></td>
+<td><span style="color:blue">True</span></td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td><span style="color:blue">True</span></td>
+<td><span style="color:red">False</span></td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+<tr>
+<td><span style="color:blue">True</span></td>
+<td><span style="color:blue">True</span></td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
+<p>On remarque que : <br />
+<span class="arithmatex">\(\overline{a+b} = \overline a . \overline b\)</span><br />
+<span class="arithmatex">\(\overline{a.b} = \overline a + \overline b\)</span><br />
+C'est ce qu'on appelle les <strong>lois de Morgan</strong>.</p>
+<hr />
 <h2 id="les-conditions">Les conditions</h2>
 <p>En programmation, les <strong>conditions</strong> permettent de <strong>prendre des décisions</strong> :<br />
 le programme exécute certaines instructions seulement si une condition est vraie.<br />
 En Python, cela s’écrit avec les mots-clés <code>if</code>, <code>elif</code> et <code>else</code>.</p>
-<hr />
 <h3 id="structure-de-base">Structure de base</h3>
 <pre><code class="language-python">if condition1:
     # instructions exécutées si la condition1 est vraie
@@ -354,6 +592,18 @@ if age &gt;= 18:
 else:
     print(&quot;Mineur&quot;)
 </code></pre>
+<hr />
+<h2 id="circuits-logiques">Circuits logiques</h2>
+<p>Jusqu’ici, nous avons vu la logique booléenne <strong>dans le langage Python</strong>.<br />
+En électronique, ces mêmes opérations logiques sont réalisées grâce à des <strong>portes logiques</strong>.  </p>
+<p>Chaque porte est un petit circuit qui applique une opération logique (<code>ET</code>, <code>OU</code>, <code>NON</code>, etc.) sur ses entrées pour produire une sortie.  </p>
+<h3 id="symboles-des-principales-portes-logiques">Symboles des principales portes logiques</h3>
+<p>Voici les symboles normalisés utilisés en électronique :  </p>
+<p><img alt="Symboles des portes logiques" src="../gates-symbols.png" /></p>
+<h3 id="exemple-de-circuit">Exemple de circuit</h3>
+<p>Un circuit combinant plusieurs portes peut être représenté par un schéma.<br />
+Exemple :  </p>
+<h2 id="_1"><img alt="porte ET" src="../porte_ET.png" /></h2>
               
             </div>
           </div><footer>
