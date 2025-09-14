@@ -111,14 +111,13 @@ TCP est un **protocole de communication fiable**. Il s’assure que :
 ---
 
 ### 🔄 Transmission et fiabilité
-- Chaque paquet contient un **numéro d’ordre** et un **accusé de réception (ACK)**.  
+- Chaque paquet contient un **numéro d’ordre** et un **accusé de réception**.  
 - Si un paquet n’est pas accusé dans un certain délai, il est **renvoyé automatiquement**.  
 
 Ordinateur A ---> paquet #1 ---> Ordinateur B  
 <--- ACK #1 ----  
 Ordinateur A ---> paquet #2 ---> Ordinateur B  
 <--- ACK #2 ----  
-
 
 - Cela garantit que **tout le message est complet** à l’arrivée.  
 
