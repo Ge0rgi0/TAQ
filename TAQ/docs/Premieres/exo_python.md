@@ -17,17 +17,17 @@
     Demander un entier `n` et afficher un carré de `n × n` étoiles.  
      Exemple pour `n=3` :  
      ```
-     ***
-     ***
-     ***
+     ***  
+     ***  
+     ***  
      ```
 
 5. **Triangle d’étoiles**  
     Même chose mais en triangle :  
      ```
-     * 
-     **
-     ***
+     *  
+     **  
+     ***  
      ```
 
 6. **Série de Fibonacci**  
@@ -42,29 +42,26 @@
 
 ## 2. Boucles non bornées 
 
-1. **Somme jusqu’à zéro**  
+1. **Compte à rebours**  
+   Demander à l’utilisateur un nombre entier positif `n`.  
+   Afficher un compte à rebours de `n` jusqu’à `0` inclus, en utilisant une boucle `while`.  
+
+2. **Mot de passe**  
+   Créer une variable contenant un mot de passe.  
+   Demander à le l'utilisateur.  
+   Tant que le mot de passe saisi est incorrect, redemander à l’utilisateur.  
+   Quand le bon mot de passe est saisi, afficher `"Accès autorisé"`. 
+
+3. **Somme jusqu’à zéro**  
    L’utilisateur saisit une suite de nombres entiers.  
    La saisie s’arrête quand l’utilisateur entre `0`.  
    Le programme affiche alors la somme de tous les nombres saisis (hors le zéro final).  
  
-
-2. **Compte à rebours**  
-   Demander à l’utilisateur un nombre entier positif `n`.  
-   Afficher un compte à rebours de `n` jusqu’à `0` inclus, en utilisant une boucle `while`.  
-
-
-3. **Mot de passe**  
-   Décider d'un mot de passe.
-   Demander à le l'utilisateur.  
-   Tant que le mot de passe saisi est incorrect, redemander à l’utilisateur.  
-   Quand le bon mot de passe est saisi, afficher `"Accès autorisé"`.  
-
  
 4. **Nombre mystère**  
    Le programme choisit un nombre aléatoire entre 1 et 100.  
    L’utilisateur doit le deviner en proposant des valeurs.  
    Le programme indique `"trop grand"` ou `"trop petit"` jusqu’à ce que la réponse soit trouvée.  
-
 
 5. **Puissance**  
    Demander deux entiers `a` et `b`.  
