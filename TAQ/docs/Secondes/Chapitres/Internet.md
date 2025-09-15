@@ -56,7 +56,7 @@ Chaque appareil connecté à Internet doit être identifiable de manière **uniq
 Pour cela, deux types d’adresses existent :
 
 ### 📍 Adresse MAC (adressage local)
-Chaque machine dispose d’une ou plusieurs **cartes réseau** (Wi-Fi, Ethernet…) à laquelle est attrbuée une **adresse physique unique au monde** : l’adresse **MAC** qui n'est tilisée que **dans le réseau local**.  
+Chaque machine dispose d’une ou plusieurs **cartes réseau** (Wi-Fi, Ethernet…) à laquelle est attribuée une **adresse physique unique au monde** : l’adresse **MAC** qui n'est utilisée que **dans le réseau local**.  
 
 Format : 6 blocs de 2 caractères hexadecimal (0->9 + a->f) (ex. `a1:b2:c3:d4:e5:f6`).
 

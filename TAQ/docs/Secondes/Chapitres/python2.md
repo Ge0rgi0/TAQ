@@ -56,8 +56,8 @@ On peut ensuite faire des calculs avec.
 ---
 
 ### Exercice 2  
-1. Demande à l'utilisateur les valeurs des deux variables `x` et `y`.
-2. Affiche :
+Demande à l'utilisateur les valeurs des deux variables `x` et `y`.
+Affiche :
    - leur produit  
    - le reste de la division de `x` par `y`
 
@@ -96,17 +96,17 @@ Les conditions possibles : `<`, `<=`, `>`, `>=`, `==`, `!=`.
 
 ## 4. Série d’exercices
 
-1. Écris un programme qui demande un âge et affiche :  
+Écris un programme qui demande un âge et affiche :  
    - `"Tu es mineur"` si l’âge est strictement inférieur à 18,  
    - `"Tu es majeur"` sinon.  
 
-2. Écris un programme qui demande deux nombres et affiche le plus grand des deux.  
+Écris un programme qui demande deux nombres et affiche le plus grand des deux.  
 
-3. Écris un programme qui demande un nombre et affiche :  
+Écris un programme qui demande un nombre et affiche :  
    - `"Pair"` si le nombre est divisible par 2,  
    - `"Impair"` sinon.  
 
-4. Écris un programme qui demande une note sur 20 et affiche :  
+Écris un programme qui demande une note sur 20 et affiche :  
    - `"Insuffisant"` si la note est strictement inférieure à 10,  
    - `"Assez bien"` si la note est entre 10 et 13,  
    - `"Bien"` si la note est entre 14 et 16,  
@@ -116,21 +116,21 @@ Les conditions possibles : `<`, `<=`, `>`, `>=`, `==`, `!=`.
 
 ## 5. Exercices supplémentaires
 
-1. Demande à l’utilisateur deux nombres et affiche leur moyenne.  
+Demande à l’utilisateur deux nombres et affiche leur moyenne.  
 
-2. Demande un nombre à l’utilisateur et affiche :  
+Demande un nombre à l’utilisateur et affiche :  
    - `"Multiple de 3"` si le nombre est divisible par 3,  
    - `"Pas multiple de 3"` sinon.  
 
-3. Demande l’âge d’une personne et affiche :  
+Demande l’âge d’une personne et affiche :  
    - `"Enfant"` si l’âge est inférieur à 12,  
    - `"Adolescent"` si l’âge est entre 12 et 17 inclus,  
    - `"Adulte"` sinon.  
 
-4. Demande à l’utilisateur un nombre entier et affiche :  
+Demande à l’utilisateur un nombre entier et affiche :  
    - `"Divisible par 2 et par 3"` si c’est le cas,  
    - `"Pas divisible par 2 et 3 en même temps"` sinon.  
 
-5. Demande trois notes sur 20, calcule la moyenne et affiche :  
+Demande trois notes sur 20, calcule la moyenne et affiche :  
    - `"Admis"` si la moyenne est supérieure ou égale à 10,  
    - `"Refusé"` sinon.  

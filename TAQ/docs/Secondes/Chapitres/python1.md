@@ -77,8 +77,8 @@ On peut ensuite l’afficher avec `print`.
 
 ### Exercice 3  
 Écris un programme qui :  
-1. Demande ton prénom avec `input`.  
-2. Affiche :  
+Demande ton prénom avec `input`.  
+Affiche :  
 ```
 Enchanté, <ton prénom> !
 ```
@@ -89,18 +89,18 @@ Enchanté, <ton prénom> !
 
 ### Exercice 1  
 Écris un programme qui :  
-1. Demande ton prénom avec `input`.  
-2. Stocke la réponse dans une variable `prenom`.  
-3. Affiche : Bonjour `prenom`, bienvenue dans ton premier programme Python !
+Demande ton prénom avec `input`.  
+Stocke la réponse dans une variable `prenom`.  
+Affiche : Bonjour `prenom`, bienvenue dans ton premier programme Python !
 
 ### Exercice 2  
 Écris un programme qui :  
-1. Demande à l’utilisateur le nom d’un animal.  
-2. Stocke la réponse dans une variable `animal`.  
-3. Affiche une phrase du type :  J'aimerais avoir un `animal`.
+Demande à l’utilisateur le nom d’un animal.  
+Stocke la réponse dans une variable `animal`.  
+Affiche une phrase du type :  J'aimerais avoir un `animal`.
 
 ### Exercice 3  
 Écris un programme qui :  
-1. Demande à l’utilisateur son film préféré.  
-2. Stocke la réponse dans une variable `film`.  
-3. Affiche :  Ton film préféré est `film`.
+Demande à l’utilisateur son film préféré.  
+Stocke la réponse dans une variable `film`.  
+Affiche :  Ton film préféré est `film`.

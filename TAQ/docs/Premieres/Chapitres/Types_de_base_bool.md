@@ -144,7 +144,7 @@ Complétez ces tables de vérité.
 |<span style="color:blue">True</span>|<span style="color:red">False</span>|--|--|--|--|
 |<span style="color:blue">True</span>|<span style="color:blue">True</span>|--|--|--|--|
 
-|a|b|$\overline{a}$|$\overline{b}$|$\overline{b}$+$\overline{b}$|$\overline{a}$.$\overline{b}$|
+|a|b|$\overline{a}$|$\overline{b}$|$\overline{a}$+$\overline{b}$|$\overline{a}$.$\overline{b}$|
 |--|--|--|--|--|--|
 |<span style="color:red">False</span>|<span style="color:red">False</span>|--|--|--|--|
 |<span style="color:red">False</span>|<span style="color:blue">True</span>|--|--|--|--|
