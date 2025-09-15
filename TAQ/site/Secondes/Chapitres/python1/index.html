@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Cours 1 – Print, variables, input - TAQ</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Cours 1 \u2013 Print, variables, input";
+        var mkdocs_page_input_path = "Secondes/Chapitres/python1.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../bases_python.md">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../Internet - Protocoles et routage des paquets.md">Internet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Types_de_base_int/">Types de base (entiers)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Types_de_base_float/">Types de base (flottants)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Types_de_base_bool/">Types de base (booléens)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Cours 1 – Print, variables, input</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="cours-1-print-variables-input">Cours 1 – Print, variables, input</h1>
+<h2 id="1-afficher-du-texte-avec-print">1. Afficher du texte avec <code>print</code></h2>
+<p>En Python, la fonction <strong><code>print</code></strong> permet d’afficher du texte à l’écran.<br />
+Il faut écrire le texte <strong>entre guillemets</strong> (<code>"</code> ou <code>'</code>) et mettre des <strong>parenthèses</strong>.  </p>
+<p>Exemple :  </p>
+<pre><code class="language-python">print(&quot;Bonjour tout le monde !&quot;)
+print('Python est un langage simple.')
+</code></pre>
+<p>Les <strong>parenthèses</strong> indiquent ce qu’on veut afficher.<br />
+Les <strong>guillemets</strong> indiquent qu’il s’agit d’un texte (une chaîne de caractères, ou <em>string</em>).</p>
+<h3 id="exercice-1">Exercice 1</h3>
+<p>Écris un programme qui affiche une phrase vous présentant (prénom, âge, etc)...</p>
+<hr />
+<h2 id="2-les-variables">2. Les variables</h2>
+<p>Une <strong>variable</strong> permet de stocker une information et de la réutiliser.<br />
+On utilise le signe <strong><code>=</code></strong> pour donner une valeur à une variable.  </p>
+<p>Exemple :  </p>
+<pre><code class="language-python">prenom = &quot;Alice&quot;
+print(prenom)
+</code></pre>
+<p>Résultat :  </p>
+<pre><code>Alice
+</code></pre>
+<p>Ici, la variable <code>prenom</code> contient le texte <code>"Alice"</code>.<br />
+Quand on écrit <code>print(prenom)</code>, Python affiche la valeur stockée.  </p>
+<p>On peut aussi changer la valeur d’une variable :  </p>
+<pre><code class="language-python">prenom = &quot;Alice&quot;
+prenom = &quot;Bob&quot;
+print(prenom)
+</code></pre>
+<p>Résultat :  </p>
+<pre><code>Bob
+</code></pre>
+<h3 id="exercice-2">Exercice 2</h3>
+<ol>
+<li>Crée une variable <code>animal</code> contenant le texte <code>"chien"</code>.  </li>
+<li>Affiche son contenu avec <code>print</code>.  </li>
+<li>Change la valeur de <code>animal</code> en <code>"chat"</code> et affiche-la à nouveau.  </li>
+</ol>
+<hr />
+<h2 id="3-demander-une-valeur-a-lutilisateur-avec-input">3. Demander une valeur à l’utilisateur avec <code>input</code></h2>
+<p>La fonction <strong><code>input</code></strong> permet de poser une question à l’utilisateur et de récupérer ce qu’il écrit.  </p>
+<p>Exemple :  </p>
+<pre><code class="language-python">nom = input(&quot;Quel est ton nom ? &quot;)
+print(&quot;Bonjour &quot;, nom, &quot; !&quot;)
+</code></pre>
+<p>Le texte dans les parenthèses de <code>input</code> est affiché comme une question.<br />
+Ce que l’utilisateur écrit est stocké dans une variable (ici <code>nom</code>).<br />
+On peut ensuite l’afficher avec <code>print</code>.  </p>
+<h3 id="exercice-3">Exercice 3</h3>
+<p>Écris un programme qui :<br />
+1. Demande ton prénom avec <code>input</code>.<br />
+2. Affiche :  </p>
+<pre><code>Enchanté, &lt;ton prénom&gt; !
+</code></pre>
+<hr />
+<h2 id="4-exercices">4. Exercices</h2>
+<h3 id="exercice-1_1">Exercice 1</h3>
+<p>Écris un programme qui :<br />
+1. Demande ton prénom avec <code>input</code>.<br />
+2. Stocke la réponse dans une variable <code>prenom</code>.<br />
+3. Affiche : Bonjour <code>prenom</code>, bienvenue dans ton premier programme Python !</p>
+<h3 id="exercice-2_1">Exercice 2</h3>
+<p>Écris un programme qui :<br />
+1. Demande à l’utilisateur le nom d’un animal.<br />
+2. Stocke la réponse dans une variable <code>animal</code>.<br />
+3. Affiche une phrase du type :  J'aimerais avoir un <code>animal</code>.</p>
+<h3 id="exercice-3_1">Exercice 3</h3>
+<p>Écris un programme qui :<br />
+1. Demande à l’utilisateur son film préféré.<br />
+2. Stocke la réponse dans une variable <code>film</code>.<br />
+3. Affiche :  Ton film préféré est <code>film</code>.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
