@@ -16,19 +16,19 @@
 4. **Carré d’étoiles**  
     Demander un entier `n` et afficher un carré de `n × n` étoiles.  
      Exemple pour `n=3` :  
-     ```
-     ***  
-     ***  
-     ***  
-     ```
+     
+     `***`  
+     `***`  
+     `***`  
+     
 
 5. **Triangle d’étoiles**  
     Même chose mais en triangle :  
-     ```
-     *  
-     **  
-     ***  
-     ```
+    
+    `*`  
+    `**`  
+    `***`  
+     
 
 6. **Série de Fibonacci**  
     Afficher les `n` premiers termes de la suite de Fibonacci : 0, 1, 1, 2, 3, 5, 8…
