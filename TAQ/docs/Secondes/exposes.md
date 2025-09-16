@@ -68,3 +68,28 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 | Dynamisme et oral          | 2      | Capacité à capter l’attention, engagement, gestion du temps, contact public |
 | Répartition de la parole   | 1      | Participation équilibrée de tous les membres du groupe                      |
 | Variété des sources        | 1      | Utilisation de plusieurs sources fiables et pertinentes                     |
+
+## Groupes
+
+Groupes formées :
+- 2B : 56 %
+- 2D : 6 %
+- 2E : 29 %
+- 2F : 0 %
+
+**Pas de panique ! Ceci n'est pas l'ordre de passage.**
+
+|Groupes|Sujet|Recul|Classe|
+|--|--|--|--|
+|Emma P. Zeliz S.|||2E|
+|Nolhan D. Yelen P. Noe D.|||2E|
+|Sarah G. Llana B. Elize P.|Poupette Kenza||2E|
+|Anais B. Romane L.|||2E|
+|Emelyne F. Anne-rose B.|||2D|
+|Capucine G. Clivia V.|||2B|
+|Florent C. Hugo D. Nathael W.|||2B|
+|Camille D. Eloise D. Sharon B.|||2B|
+|Hatim Z. Emma L. Manel B.|||2B|
+|Ilyes T. Thomas L. Adrien L.|||2B|
+|Maissan E. Diana K.|||2B|
+|Laly E. Maelle V.|||2B|

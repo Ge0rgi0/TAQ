@@ -71,7 +71,13 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#dns-domain-name-system">DNS – Domain Name System</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice">Exercice</a>
+    </li>
         </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#consignes">Consignes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#liste-dadresses">Liste d’adresses</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</a>
         <ul>
@@ -200,14 +206,84 @@ Pour cela, deux types d’adresses existent :</p>
 <p><code>91.198.174.192</code> (serveur Wikipédia)
 <code>127.0.0.1</code> → adresse spéciale <strong>localhost</strong> (sa propre machine)</p>
 <p>Cependant, ce format ne nous permet d'utiliser que <strong>4 milliards d’adresses</strong>, insuffisant pour le nombre d’appareils connectés.<br />
-Encore aujourd'hui, nous faisons la transition vers un nouveau format <strong>IPv6</strong> (16 caractéres hexadécimaux) :</p>
-<p><code>2a02:ec80:0600:ed1a</code> (Wikipédia en IPv6).  </p>
+Encore aujourd'hui, nous faisons la transition vers un nouveau format <strong>IPv6</strong> composée de 8 groupes de 4 caractères hexadécimaux (0–9, a–f), séparés par des deux-points :</p>
+<p><code>2001:0db8:100f:f000:0000:0000:0000:0001</code>(Wikipédia en IPv6).  </p>
 <p>Nous avons désormais 18 millions de milliards d'adresses possibles.</p>
 <h3 id="dns-domain-name-system">DNS – Domain Name System</h3>
 <p>Quand vous tapez un nom de site dans votre navigateur, par exemple <code>wikipedia.org</code>, votre ordinateur ne sait pas directement où envoyer les paquets, il a besoin de <strong>l’adresse IP</strong> correspondante.
 Pour éviter d'avoir à se souvenir des IPs de tous les sites, nous utilisons le DNS.  </p>
 <p>Le <strong>DNS (Domain Name System)</strong> est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP par le biais de serveurs DNS.</p>
 <hr />
+<h3 id="exercice">Exercice</h3>
+<h2 id="consignes">Consignes</h2>
+<ol>
+<li>Observe attentivement les adresses ci-dessous.  </li>
+<li>Pour chaque adresse, indique si c’est une <strong>IP</strong> (IPv4 ou IPv6) ou une <strong>MAC</strong>.  </li>
+<li>Justifie brièvement ton choix en une phrase.</li>
+</ol>
+<hr />
+<h2 id="liste-dadresses">Liste d’adresses</h2>
+<table>
+<thead>
+<tr>
+<th>Adresse</th>
+<th>Type (IP / MAC)</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a1:b2:c3:d4:e5:f6</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192.168.0.15</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2a02:ec80:0600:ed1a</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11:22:33:44:55:66</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10.0.0.5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ff:ff:ff:ff:ff:ff</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2001:0db8:85a3:0000:0000:8a2e:0370:7334</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>00:11:22:33:44:55</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1234:5678:9abc:def0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>192:168:1:1</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</h2>
 <p>Chaque paquet contient :<br />
 - l’adresse de l’<strong>émetteur</strong> (source),<br />

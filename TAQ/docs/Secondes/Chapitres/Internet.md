@@ -28,11 +28,11 @@ Un FAI gère un **réseau beaucoup plus vaste** qui relie des millions de client
 - Les réseaux des FAI sont eux-mêmes reliés **entre eux** par de très grandes lignes de communication (fibre optique, câbles sous-marins, satellites).  
 - Les grandes entreprises (Google, Amazon, Microsoft, etc.) possèdent aussi leurs **propres réseaux** qui s’interconnectent avec les FAI.  
 
-📌 Résultat :  
+Résultat :  
 Quand vous envoyez un message, il sort d’abord de votre réseau local → passe par le réseau de votre FAI → traverse plusieurs autres réseaux → atteint le réseau du destinataire.  
 
 
-👉 **Idée clé à retenir :**  
+**Idée clé à retenir :**  
 Internet, c’est **l’interconnexion de milliers de réseaux locaux et de fournisseurs d’accès** à l’échelle mondiale, qui communiquent tous grâce à des **protocoles communs**.
 
 ---
@@ -55,12 +55,12 @@ Chaque couche y ajoute des informations spécifiques (adresse de destination, nu
 Chaque appareil connecté à Internet doit être identifiable de manière **unique**.  
 Pour cela, deux types d’adresses existent :
 
-### 📍 Adresse MAC (adressage local)
+### Adresse MAC (adressage local)
 Chaque machine dispose d’une ou plusieurs **cartes réseau** (Wi-Fi, Ethernet…) à laquelle est attribuée une **adresse physique unique au monde** : l’adresse **MAC** qui n'est utilisée que **dans le réseau local**.  
 
 Format : 6 blocs de 2 caractères hexadecimal (0->9 + a->f) (ex. `a1:b2:c3:d4:e5:f6`).
 
-### 🌐 Adresse IP (adressage global)
+### Adresse IP (adressage global)
 
 Chaque machine connectée à Internet reçoit une **adresse IP**, qui sert d’**identifiant logique** pour la retrouver parmi des milliards d’autres. Elle change réguliérement. 
 
@@ -72,6 +72,8 @@ Les premières adresses IP étaient au format **IPv4**, c'est-à-dire 4 nombres 
 
 `91.198.174.192` (serveur Wikipédia)
 `127.0.0.1` → adresse spéciale **localhost** (sa propre machine)
+
+
 
 Cependant, ce format ne nous permet d'utiliser que **4 milliards d’adresses**, insuffisant pour le nombre d’appareils connectés.  
 Encore aujourd'hui, nous faisons la transition vers un nouveau format **IPv6** composée de 8 groupes de 4 caractères hexadécimaux (0–9, a–f), séparés par des deux-points :
@@ -98,23 +100,6 @@ Le **DNS (Domain Name System)** est un service qui fait la correspondance entre 
 3. Justifie brièvement ton choix en une phrase.
 
 ---
-
-## Liste d’adresses
-
-| Adresse | Type (IP / MAC) | Justification |
-|---------|----------------|---------------|
-| a1:b2:c3:d4:e5:f6 |                |               |
-| 192.168.0.15       |                |               |
-| 2a02:ec80:0600:ed1a |                |               |
-| 11:22:33:44:55:66  |                |               |
-| 10.0.0.5           |                |               |
-| ff:ff:ff:ff:ff:ff  |                |               |
-| 2001:0db8:85a3:0000:0000:8a2e:0370:7334 |                |               |
-| 00:11:22:33:44:55   |                |               |
-| 1234:5678:9abc:def0 |                |               |
-| 192:168:1:1         |                |               |
-
-
 
 
 
@@ -162,7 +147,7 @@ TCP est un **protocole de communication fiable**. Il s’assure que :
 
 ---
 
-### 🔄 Transmission et fiabilité
+### Transmission et fiabilité
 - Chaque paquet contient un **numéro d’ordre** et un **accusé de réception**.  
 - Si un paquet n’est pas accusé dans un certain délai, il est **renvoyé automatiquement**.  
 
@@ -175,7 +160,7 @@ Ordinateur A ---> paquet #2 ---> Ordinateur B
 
 ---
 
-### ⚠️ Limites de TCP
+### Limites de TCP
 - TCP **ne garantit pas le temps d’arrivée** des paquets.  
   - Utile pour mails ou fichiers.  
   - Moins adapté pour les **vidéos en direct ou jeux en ligne**, car attendre les paquets manquants crée du **lag**.  
@@ -183,19 +168,7 @@ Ordinateur A ---> paquet #2 ---> Ordinateur B
 
 ---
 
-💻 Expérience : tester si un autre appareil ou site est joignable
-
-- Ouvrir l’invite de commande.
-- Taper : ping wikipedia.org
-- Observer :
-  - L’adresse IP de wikipedia.org
-  - Le temps aller-retour des paquets
-  - Si tous les paquets sont reçus
-
-
----
-
-### 📌 À retenir
+### À retenir
 - TCP découpe les données en **paquets**, les envoie et les réassemble.  
 - Il assure **la fiabilité** : tout paquet perdu est renvoyé et les paquets sont remis dans le bon ordre.  
 - TCP est le protocole utilisé pour la majorité des communications **fiables** sur Internet (mail, web, transfert de fichiers).  
@@ -216,7 +189,7 @@ Ordinateur A → [Routeur 1] → [Routeur 2] → [Routeur 3] → Ordinateur B
 - Si un chemin est bloqué, le paquet est envoyé ailleurs.  
 - Certains paquets peuvent être perdus → TCP les renvoie.  
 
-💻 Expérience : suivre le chemin des paquets sur Internet
+Expérience : suivre le chemin des paquets sur Internet
 
 - Ouvrir l’invite de commande.
 - Taper : tracert wikipedia.org
@@ -226,26 +199,6 @@ Ordinateur A → [Routeur 1] → [Routeur 2] → [Routeur 3] → Ordinateur B
   - Les étoiles (*) pour routeurs qui ne répondent pas
 
 ---
-
-### 🔹 Expérience pratique : nslookup
-
-💻 **Objectif :** résoudre un nom de domaine en adresse IP et identifier le serveur DNS utilisé
-
-1. Ouvrir l’invite de commande sur Windows.  
-2. Taper la commande :
-
-nslookup wikipedia.org  
-
-
-3. Observer :
-   - L’**adresse IP** retournée pour wikipedia.org
-   - Le **serveur DNS** qui a répondu
-
-4. Comparer avec l’adresse IP obtenue avec `ping wikipedia.org` pour voir que c’est la même.
-
-💡 **Lien avec le cours :** cette expérience montre **comment un nom de site est traduit en adresse IP** avant que les paquets soient envoyés.
-
-
 
 ## Repères historiques
 
