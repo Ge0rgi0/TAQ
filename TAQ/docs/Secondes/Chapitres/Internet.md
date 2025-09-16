@@ -74,9 +74,9 @@ Les premières adresses IP étaient au format **IPv4**, c'est-à-dire 4 nombres 
 `127.0.0.1` → adresse spéciale **localhost** (sa propre machine)
 
 Cependant, ce format ne nous permet d'utiliser que **4 milliards d’adresses**, insuffisant pour le nombre d’appareils connectés.  
-Encore aujourd'hui, nous faisons la transition vers un nouveau format **IPv6** (16 caractéres hexadécimaux) :
+Encore aujourd'hui, nous faisons la transition vers un nouveau format **IPv6** composée de 8 groupes de 4 caractères hexadécimaux (0–9, a–f), séparés par des deux-points :
 
-`2a02:ec80:0600:ed1a` (Wikipédia en IPv6).  
+`2001:0db8:100f:f000:0000:0000:0000:0001`(Wikipédia en IPv6).  
 
 Nous avons désormais 18 millions de milliards d'adresses possibles.
 
@@ -88,6 +88,58 @@ Pour éviter d'avoir à se souvenir des IPs de tous les sites, nous utilisons le
 Le **DNS (Domain Name System)** est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP par le biais de serveurs DNS.
 
 ---
+
+### Exercice
+
+## Consignes
+
+1. Observe attentivement les adresses ci-dessous.  
+2. Pour chaque adresse, indique si c’est une **IP** (IPv4 ou IPv6) ou une **MAC**.  
+3. Justifie brièvement ton choix en une phrase.
+
+---
+
+## Liste d’adresses
+
+| Adresse | Type (IP / MAC) | Justification |
+|---------|----------------|---------------|
+| a1:b2:c3:d4:e5:f6 |                |               |
+| 192.168.0.15       |                |               |
+| 2a02:ec80:0600:ed1a |                |               |
+| 11:22:33:44:55:66  |                |               |
+| 10.0.0.5           |                |               |
+| ff:ff:ff:ff:ff:ff  |                |               |
+| 2001:0db8:85a3:0000:0000:8a2e:0370:7334 |                |               |
+| 00:11:22:33:44:55   |                |               |
+| 1234:5678:9abc:def0 |                |               |
+| 192:168:1:1         |                |               |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Le protocole TCP (Transmission Control Protocol)
 
