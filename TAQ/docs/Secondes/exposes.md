@@ -72,12 +72,12 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 ## Groupes
 
 Groupes formées :
-- 2B : 56 %
-- 2D : 6 %
-- 2E : 29 %
-- 2F : 0 %
+- 2B : 56 %  
+- 2D : 6 %  
+- 2E : 29 %  
+- 2F : 0 %  
 
-**Pas de panique ! Ceci n'est pas l'ordre de passage.**
+**Pas de panique ! Ceci n'est pas l'ordre de passage.**  
 
 |Groupes|Sujet|Recul|Classe|
 |--|--|--|--|

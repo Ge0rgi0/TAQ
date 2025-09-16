@@ -65,9 +65,9 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#le-protocole-ip-et-ladressage">Le protocole IP et l’adressage</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#adresse-mac-adressage-local">📍 Adresse MAC (adressage local)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#adresse-mac-adressage-local">Adresse MAC (adressage local)</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#adresse-ip-adressage-global">🌐 Adresse IP (adressage global)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#adresse-ip-adressage-global">Adresse IP (adressage global)</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#dns-domain-name-system">DNS – Domain Name System</a>
     </li>
@@ -77,23 +77,17 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#consignes">Consignes</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#liste-dadresses">Liste d’adresses</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#transmission-et-fiabilite">🔄 Transmission et fiabilité</a>
+    <li class="toctree-l4"><a class="reference internal" href="#transmission-et-fiabilite">Transmission et fiabilité</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#limites-de-tcp">⚠️ Limites de TCP</a>
+    <li class="toctree-l4"><a class="reference internal" href="#limites-de-tcp">Limites de TCP</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#a-retenir">📌 À retenir</a>
+    <li class="toctree-l4"><a class="reference internal" href="#a-retenir">À retenir</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#le-routage">Le routage</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#experience-pratique-nslookup">🔹 Expérience pratique : nslookup</a>
-    </li>
-        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#reperes-historiques">Repères historiques</a>
     </li>
@@ -177,9 +171,9 @@ C’est en réalité <strong>un immense ensemble de réseaux interconnectés</st
 <li>Les réseaux des FAI sont eux-mêmes reliés <strong>entre eux</strong> par de très grandes lignes de communication (fibre optique, câbles sous-marins, satellites).  </li>
 <li>Les grandes entreprises (Google, Amazon, Microsoft, etc.) possèdent aussi leurs <strong>propres réseaux</strong> qui s’interconnectent avec les FAI.  </li>
 </ul>
-<p>📌 Résultat :<br />
+<p>Résultat :<br />
 Quand vous envoyez un message, il sort d’abord de votre réseau local → passe par le réseau de votre FAI → traverse plusieurs autres réseaux → atteint le réseau du destinataire.  </p>
-<p>👉 <strong>Idée clé à retenir :</strong><br />
+<p><strong>Idée clé à retenir :</strong><br />
 Internet, c’est <strong>l’interconnexion de milliers de réseaux locaux et de fournisseurs d’accès</strong> à l’échelle mondiale, qui communiquent tous grâce à des <strong>protocoles communs</strong>.</p>
 <hr />
 <h2 id="modele-en-couches-tcpip">Modèle en couches TCP/IP</h2>
@@ -192,10 +186,10 @@ Chaque couche y ajoute des informations spécifiques (adresse de destination, nu
 <h2 id="le-protocole-ip-et-ladressage">Le protocole IP et l’adressage</h2>
 <p>Chaque appareil connecté à Internet doit être identifiable de manière <strong>unique</strong>.<br />
 Pour cela, deux types d’adresses existent :</p>
-<h3 id="adresse-mac-adressage-local">📍 Adresse MAC (adressage local)</h3>
+<h3 id="adresse-mac-adressage-local">Adresse MAC (adressage local)</h3>
 <p>Chaque machine dispose d’une ou plusieurs <strong>cartes réseau</strong> (Wi-Fi, Ethernet…) à laquelle est attribuée une <strong>adresse physique unique au monde</strong> : l’adresse <strong>MAC</strong> qui n'est utilisée que <strong>dans le réseau local</strong>.  </p>
 <p>Format : 6 blocs de 2 caractères hexadecimal (0-&gt;9 + a-&gt;f) (ex. <code>a1:b2:c3:d4:e5:f6</code>).</p>
-<h3 id="adresse-ip-adressage-global">🌐 Adresse IP (adressage global)</h3>
+<h3 id="adresse-ip-adressage-global">Adresse IP (adressage global)</h3>
 <p>Chaque machine connectée à Internet reçoit une <strong>adresse IP</strong>, qui sert d’<strong>identifiant logique</strong> pour la retrouver parmi des milliards d’autres. Elle change réguliérement. </p>
 <ul>
 <li>Composée de deux parties :  </li>
@@ -222,68 +216,6 @@ Pour éviter d'avoir à se souvenir des IPs de tous les sites, nous utilisons le
 <li>Justifie brièvement ton choix en une phrase.</li>
 </ol>
 <hr />
-<h2 id="liste-dadresses">Liste d’adresses</h2>
-<table>
-<thead>
-<tr>
-<th>Adresse</th>
-<th>Type (IP / MAC)</th>
-<th>Justification</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>a1:b2:c3:d4:e5:f6</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>192.168.0.15</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>2a02:ec80:0600:ed1a</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>11:22:33:44:55:66</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>10.0.0.5</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>ff:ff:ff:ff:ff:ff</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>2001:0db8:85a3:0000:0000:8a2e:0370:7334</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>00:11:22:33:44:55</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>1234:5678:9abc:def0</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>192:168:1:1</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 <h2 id="le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</h2>
 <p>Chaque paquet contient :<br />
 - l’adresse de l’<strong>émetteur</strong> (source),<br />
@@ -315,7 +247,7 @@ Pour éviter d'avoir à se souvenir des IPs de tous les sites, nous utilisons le
 <li>TCP ajuste la vitesse d’envoi pour ne pas saturer le réseau.  </li>
 </ol>
 <hr />
-<h3 id="transmission-et-fiabilite">🔄 Transmission et fiabilité</h3>
+<h3 id="transmission-et-fiabilite">Transmission et fiabilité</h3>
 <ul>
 <li>Chaque paquet contient un <strong>numéro d’ordre</strong> et un <strong>accusé de réception</strong>.  </li>
 <li>Si un paquet n’est pas accusé dans un certain délai, il est <strong>renvoyé automatiquement</strong>.  </li>
@@ -328,7 +260,7 @@ Ordinateur A ---&gt; paquet #2 ---&gt; Ordinateur B<br />
 <li>Cela garantit que <strong>tout le message est complet</strong> à l’arrivée.  </li>
 </ul>
 <hr />
-<h3 id="limites-de-tcp">⚠️ Limites de TCP</h3>
+<h3 id="limites-de-tcp">Limites de TCP</h3>
 <ul>
 <li>TCP <strong>ne garantit pas le temps d’arrivée</strong> des paquets.  </li>
 <li>Utile pour mails ou fichiers.  </li>
@@ -336,17 +268,7 @@ Ordinateur A ---&gt; paquet #2 ---&gt; Ordinateur B<br />
 <li>Pour ces usages, on utilise souvent <strong>UDP (User Datagram Protocol)</strong>, qui envoie les paquets sans vérification ni réordonnancement → plus rapide mais moins fiable.</li>
 </ul>
 <hr />
-<p>💻 Expérience : tester si un autre appareil ou site est joignable</p>
-<ul>
-<li>Ouvrir l’invite de commande.</li>
-<li>Taper : ping wikipedia.org</li>
-<li>Observer :</li>
-<li>L’adresse IP de wikipedia.org</li>
-<li>Le temps aller-retour des paquets</li>
-<li>Si tous les paquets sont reçus</li>
-</ul>
-<hr />
-<h3 id="a-retenir">📌 À retenir</h3>
+<h3 id="a-retenir">À retenir</h3>
 <ul>
 <li>TCP découpe les données en <strong>paquets</strong>, les envoie et les réassemble.  </li>
 <li>Il assure <strong>la fiabilité</strong> : tout paquet perdu est renvoyé et les paquets sont remis dans le bon ordre.  </li>
@@ -364,7 +286,7 @@ Ils passent par plusieurs <strong>routeurs</strong>, qui choisissent à chaque �
 <li>Si un chemin est bloqué, le paquet est envoyé ailleurs.  </li>
 <li>Certains paquets peuvent être perdus → TCP les renvoie.  </li>
 </ul>
-<p>💻 Expérience : suivre le chemin des paquets sur Internet</p>
+<p>Expérience : suivre le chemin des paquets sur Internet</p>
 <ul>
 <li>Ouvrir l’invite de commande.</li>
 <li>Taper : tracert wikipedia.org</li>
@@ -374,24 +296,6 @@ Ils passent par plusieurs <strong>routeurs</strong>, qui choisissent à chaque �
 <li>Les étoiles (*) pour routeurs qui ne répondent pas</li>
 </ul>
 <hr />
-<h3 id="experience-pratique-nslookup">🔹 Expérience pratique : nslookup</h3>
-<p>💻 <strong>Objectif :</strong> résoudre un nom de domaine en adresse IP et identifier le serveur DNS utilisé</p>
-<ol>
-<li>Ouvrir l’invite de commande sur Windows.  </li>
-<li>Taper la commande :</li>
-</ol>
-<p>nslookup wikipedia.org  </p>
-<ol>
-<li>Observer :</li>
-<li>L’<strong>adresse IP</strong> retournée pour wikipedia.org</li>
-<li>
-<p>Le <strong>serveur DNS</strong> qui a répondu</p>
-</li>
-<li>
-<p>Comparer avec l’adresse IP obtenue avec <code>ping wikipedia.org</code> pour voir que c’est la même.</p>
-</li>
-</ol>
-<p>💡 <strong>Lien avec le cours :</strong> cette expérience montre <strong>comment un nom de site est traduit en adresse IP</strong> avant que les paquets soient envoyés.</p>
 <h2 id="reperes-historiques">Repères historiques</h2>
 <ul>
 <li><strong>1950s-1960s</strong> : premiers réseaux d’ordinateurs.  </li>
