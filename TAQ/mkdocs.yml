@@ -15,6 +15,7 @@ nav:
       - Terminales:
           - Accueil: Terminales/Terminales.md
           - Programmation Orientée Objet: Terminales/Chapitres/POO.md
+          - Base de données: Terminales/Chapitres/BDD.md
 
 
 theme:

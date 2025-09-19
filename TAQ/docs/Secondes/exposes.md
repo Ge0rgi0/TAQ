@@ -91,5 +91,5 @@ Groupes formées :
 |Emelyne F. Anne-rose B.|||2D|
 |Emma P. Zeliz S.|||2E|
 |Nolhan D. Yelen P. Noe D.|||2E|
-|Sarah G. Llana B. Elize P.|Poupette Kenza||2E|
+|Sarah G. Llana B. Elize P.|||2E|
 |Anais B. Romane L.|||2E|
