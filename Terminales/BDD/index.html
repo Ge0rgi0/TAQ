@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>🌐 Cours Terminale NSI – Bases de données - TAQ</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\ud83c\udf10 Cours Terminale NSI \u2013 Bases de donn\u00e9es";
+        var mkdocs_page_input_path = "Terminales/BDD.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Secondes/Chapitres/Internet/">Internet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Premieres/Chapitres/Types_de_base_int/">Types de base (entiers)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Premieres/Chapitres/Types_de_base_float/">Types de base (flottants)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Premieres/Chapitres/Types_de_base_bool/">Types de base (booléens)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Chapitres/BDD/">Base de données</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">🌐 Cours Terminale NSI – Bases de données</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="cours-terminale-nsi-bases-de-donnees">🌐 Cours Terminale NSI – Bases de données</h1>
+<h2 id="objectifs-du-chapitre">🎯 Objectifs du chapitre</h2>
+<p>À la fin de ce cours, vous devez être capables de :
+- Comprendre le modèle relationnel (tables, attributs, clés).
+- Distinguer structure et contenu d’une base de données.
+- Manipuler une base de données via SQL (interrogation et mise à jour).
+- Connaître le rôle d’un SGBD (sécurité, efficacité, persistance).
+- Porter un regard critique sur l’usage des données (confidentialité, RGPD).</p>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<p>Une <strong>base de données</strong> est un outil permettant de stocker, organiser et manipuler de grandes quantités de données.<br />
+Exemples :
+- Amazon → millions de commandes et utilisateurs.<br />
+- Spotify → catalogues de musiques, playlists personnelles.<br />
+- Un lycée → notes, emplois du temps, enseignants, salles.  </p>
+<p>👉 Les simples <strong>tableaux</strong> vus en Première ne suffisent plus : il faut un modèle plus robuste → <strong>le modèle relationnel</strong>.</p>
+<hr />
+<h2 id="2-le-modele-relationnel">2. Le modèle relationnel</h2>
+<h3 id="concepts-de-base">Concepts de base</h3>
+<ul>
+<li><strong>Relation</strong> = table.  </li>
+<li><strong>Attribut</strong> = colonne.  </li>
+<li><strong>Tuple</strong> = ligne.  </li>
+<li><strong>Domaine</strong> = type des valeurs d’une colonne.  </li>
+</ul>
+<h3 id="les-cles">Les clés</h3>
+<ul>
+<li><strong>Clé primaire</strong> : identifie de manière unique un enregistrement.  </li>
+<li><strong>Clé étrangère</strong> : fait le lien entre deux tables.  </li>
+</ul>
+<h3 id="exemple-base-lycee">Exemple : base Lycée</h3>
+<pre><code>Élèves(id_eleve, nom, prenom, classe)
+Professeurs(id_prof, nom, discipline)
+Cours(id_cours, matière, id_prof)
+Inscription(id_eleve, id_cours, note)
+</code></pre>
+<p>📌 <strong>À retenir :</strong><br />
+Un schéma relationnel décrit la <strong>structure</strong> de la base, pas encore son contenu.<br />
+Il impose des contraintes d’intégrité (unicité, références valides).</p>
+<hr />
+<h2 id="3-sgbd-systeme-de-gestion-de-base-de-donnees">3. SGBD (Système de Gestion de Base de Données)</h2>
+<p>Un <strong>SGBD</strong> (ex. MySQL, PostgreSQL, SQLite) assure :<br />
+- La <strong>persistance</strong> des données (elles survivent à l’arrêt du programme).<br />
+- La <strong>sécurité</strong> (contrôle des accès).<br />
+- La <strong>gestion des accès concurrents</strong> (plusieurs utilisateurs).<br />
+- L’<strong>optimisation des requêtes</strong> (rapidité).  </p>
+<p>⚠️ Enjeux citoyens : Big Data, confidentialité, RGPD.</p>
+<hr />
+<h2 id="4-le-langage-sql-requetes-dinterrogation">4. Le langage SQL – Requêtes d’interrogation</h2>
+<h3 id="structure-generale">Structure générale</h3>
+<pre><code class="language-sql">SELECT attributs
+FROM table
+WHERE condition;
+</code></pre>
+<h3 id="exemples">Exemples</h3>
+<ul>
+<li>Tous les films :</li>
+</ul>
+<pre><code class="language-sql">SELECT * FROM Films;
+</code></pre>
+<ul>
+<li>Films sortis après 2020 :</li>
+</ul>
+<pre><code class="language-sql">SELECT titre, annee
+FROM Films
+WHERE annee &gt; 2020;
+</code></pre>
+<ul>
+<li>Trier les films par date :</li>
+</ul>
+<pre><code class="language-sql">SELECT titre, annee
+FROM Films
+ORDER BY annee DESC;
+</code></pre>
+<ul>
+<li>Nombre de spectateurs pour un film :</li>
+</ul>
+<pre><code class="language-sql">SELECT COUNT(*) 
+FROM Reservations
+WHERE id_film = 3;
+</code></pre>
+<ul>
+<li>Jointure (films + réalisateurs) :</li>
+</ul>
+<pre><code class="language-sql">SELECT Films.titre, Realisateurs.nom
+FROM Films
+JOIN Realisateurs ON Films.id_realisateur = Realisateurs.id_realisateur;
+</code></pre>
+<p>📌 <strong>À retenir :</strong><br />
+Les clauses principales sont <code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>ORDER BY</code>, <code>JOIN</code>.</p>
+<hr />
+<h2 id="5-le-langage-sql-requetes-de-mise-a-jour">5. Le langage SQL – Requêtes de mise à jour</h2>
+<ul>
+<li><strong>Insertion</strong> :</li>
+</ul>
+<pre><code class="language-sql">INSERT INTO Films (id_film, titre, annee)
+VALUES (5, &quot;Inception&quot;, 2010);
+</code></pre>
+<ul>
+<li><strong>Mise à jour</strong> :</li>
+</ul>
+<pre><code class="language-sql">UPDATE Films
+SET annee = 2012
+WHERE id_film = 5;
+</code></pre>
+<ul>
+<li><strong>Suppression</strong> :</li>
+</ul>
+<pre><code class="language-sql">DELETE FROM Films
+WHERE id_film = 5;
+</code></pre>
+<hr />
+<h2 id="6-exercices-pour-sentrainer">6. Exercices pour s’entraîner</h2>
+<h3 id="exercice-1-schema-relationnel">Exercice 1 – Schéma relationnel</h3>
+<p>Proposez un schéma relationnel pour gérer une bibliothèque (livres, auteurs, emprunteurs, prêts).</p>
+<h3 id="exercice-2-interrogation">Exercice 2 – Interrogation</h3>
+<p>Sur la base Cinéma :
+1. Lister tous les films.<br />
+2. Trouver les films d’un réalisateur donné.<br />
+3. Donner le nombre de spectateurs pour chaque film.  </p>
+<h3 id="exercice-3-mise-a-jour">Exercice 3 – Mise à jour</h3>
+<p>Toujours sur la base Cinéma :
+1. Ajouter un nouveau film.<br />
+2. Mettre à jour la date d’une séance.<br />
+3. Supprimer un spectateur.  </p>
+<hr />
+<h2 id="7-synthese-et-ouverture">7. Synthèse et ouverture</h2>
+<ul>
+<li>Le <strong>modèle relationnel</strong> permet d’organiser les données en tables reliées par des clés.  </li>
+<li>Le <strong>SGBD</strong> garantit sécurité, rapidité et gestion multi-utilisateurs.  </li>
+<li>Le <strong>SQL</strong> est le langage universel pour interroger et modifier les bases.  </li>
+</ul>
+<p>🔎 <strong>Ouverture</strong> : les bases NoSQL (MongoDB, Cassandra…) apparaissent pour répondre aux besoins du Big Data.  </p>
+<hr />
+<h2 id="supports-et-outils">📚 Supports et outils</h2>
+<ul>
+<li>Exercices papier (schéma relationnel).  </li>
+<li>TP SQLite (local ou en ligne : <a href="https://sqliteonline.com/">SQLite Online</a>).  </li>
+<li>Études de cas réalistes : lycée, cinéma, bibliothèque.  </li>
+<li>Ressources RGPD : <a href="https://www.cnil.fr/">CNIL</a>.  </li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

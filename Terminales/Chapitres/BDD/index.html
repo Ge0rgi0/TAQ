@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Base de données - TAQ</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Base de donn\u00e9es";
+        var mkdocs_page_input_path = "Terminales/Chapitres/BDD.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/Chapitres/Internet/">Internet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Types_de_base_int/">Types de base (entiers)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Types_de_base_float/">Types de base (flottants)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Types_de_base_bool/">Types de base (booléens)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Terminales</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Base de données</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#objectifs-du-chapitre">Objectifs du chapitre</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1-introduction">1. Introduction</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-le-modele-relationnel">2. Le modèle relationnel</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#problemes-redondance-et-anomalies">Problèmes : Redondance et anomalies</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#representation-le-schema-relationnel">Représentation : Le schéma relationnel</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercice-base-de-donnees-pour-une-bibliotheque">Exercice : Base de données pour une bibliothèque</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#enonce">Énoncé</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Terminales</li>
+      <li class="breadcrumb-item active">Base de données</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="bases-de-donnees">Bases de données</h1>
+<h2 id="objectifs-du-chapitre">Objectifs du chapitre</h2>
+<p>À la fin de ce cours, vous devez être capables de :<br />
+- Comprendre le modèle relationnel (tables, attributs, clés).<br />
+- Distinguer structure et contenu d’une base de données.<br />
+- Manipuler une base de données via SQL (interrogation et mise à jour).<br />
+- Connaître le rôle d’un SGBD (sécurité, efficacité, persistance).<br />
+- Porter un regard critique sur l’usage des données (confidentialité, RGPD).  </p>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<p>Une <strong>donnée</strong> est une représentation élémentaire d'une information, 
+exprimée sous une forme interprétable par un système informatique.</p>
+<p>Une <strong>base de données</strong> est un outil permettant de stocker, organiser et manipuler de grandes quantités de données.<br />
+Exemples :<br />
+- Amazon → millions de commandes et utilisateurs.<br />
+- Spotify → catalogues de musiques, playlists personnelles.<br />
+- Un lycée → notes, emplois du temps, enseignants, salles.  </p>
+<p>Les simples <strong>tableaux</strong> vus en Première ne suffisent plus : il faut un modèle plus robuste → <strong>le modèle relationnel</strong>.</p>
+<hr />
+<h2 id="2-le-modele-relationnel">2. Le modèle relationnel</h2>
+<p>Une <strong>table</strong> est une structure qui permet de stocker des données dans une base de données relationnelle.
+Elle est composée :<br />
+- de colonnes (appelées <strong>attributs</strong>) qui décrivent la nature des données<br />
+- de lignes (appelées tuples ou <strong>enregistrements</strong>) qui contiennent les valeurs concrètes  </p>
+<p>Voici un exemple :
+La table : Eleve
+<img alt="table_eleve" src="../table_eleves.png" /></p>
+<p>Chaque attribut est défini sur un domaine de valeurs.<br />
+Le domaine n’est pas seulement le type de donnée (entier, texte, date), mais aussi parfois des contraintes supplémentaires (ex. : âge ≥ 0, email respectant un format particulier, etc).</p>
+<p>Pour identifier de manière unique chaque ligne (chaque enregistrement) d’une table, on utilisera ce qu'on appelle une <strong>clé primaire</strong> qui peut être un attribut ou un ensemble d’attributs.</p>
+<ul>
+<li>Elle doit être unique : deux lignes ne peuvent pas avoir la même valeur de clé primaire.</li>
+<li>Elle doit être non nulle (NOT NULL).</li>
+<li>Elle ne doit pas changer dans le temps (stabilité).</li>
+</ul>
+<p><span style="color:blue">Exercices</span> : Determiner la clé primaire ainsi que les domaines et contraintes des attributs de la classe Eleve.</p>
+<p>Très souvent, la clé primaire est constituée d’un unique attribut défini comme un identifiant numérique unique et auto-incrémenté, garantissant l’unicité et la stabilité des enregistrements.</p>
+<h3 id="problemes-redondance-et-anomalies">Problèmes : Redondance et anomalies</h3>
+<ul>
+<li>
+<p>Professeurs répétés :<br />
+Le professeur principal de la classe 1A (M. Beline) apparaît plusieurs fois (Alice et Cédric).<br />
+Si le professeur principal devait changer, il faudrait alors le corriger partout, sinon incohérence.  </p>
+</li>
+<li>
+<p>Années liées aux classes :<br />
+L’"Année" est implicitement liée à la "Classe". On stocke plusieur fois la même information : la 1A est une classe de première.</p>
+</li>
+</ul>
+<p><strong>Les anomalies :</strong><br />
+- d'<strong>insertion</strong> : si on a veut enregistrer une classe mais qu'on a pas encore d'élève dedans on ne peut pas<br />
+- de <strong>mise à jour</strong> : si un professeur change de nom, il faut le modifier partout dans la base sinon incohérence<br />
+- de <strong>suppression</strong> : Si on supprime tous les élèves de la classe 1A, on perd toute les informations sur cette dernière  </p>
+<p>Afin d’éviter les redondances et les anomalies, on sépare les informations dans plusieurs tables reliées entre elles par des clés étrangères.<br />
+Une <strong>clé étrangère</strong> est un attribut (ou un ensemble d’attributs) d’une table qui fait référence à la <strong>clé primaire d’une autre table</strong>.<br />
+Elle permet de <strong>lier deux tables entre elles</strong> et d’assurer la cohérence des données.  </p>
+<p>Dans notre exemple, il est pertinent d'utiliser deux classes : Eleve et Classe.
+<img alt="tables" src="../tables_eleves.png" /></p>
+<h3 id="representation-le-schema-relationnel">Représentation : Le schéma relationnel</h3>
+<p>Le <strong>schéma relationnel</strong> décrit la <strong>structure d’une base de données</strong> relationnelle de manière formelle.<br />
+Il précise pour chaque table :<br />
+- Le <strong>nom de la table</strong>.<br />
+- Les <strong>attributs</strong> (colonnes) avec leur domaine de valeurs et leurs contraintes (type, non null, valeurs autorisées).<br />
+- La <strong>clé primaire</strong>, qui identifie de manière unique chaque enregistrement.<br />
+- Les <strong>clés étrangères</strong>, qui établissent les liens avec d’autres tables.  </p>
+<p>Le schéma relationnel est indépendant des données réelles (contenu).<br />
+Il sert de <strong>plan directeur</strong> pour construire, maintenir et interroger la base de données tout en garantissant l’intégrité des informations et en évitant les redondances.  </p>
+<p>Exemple simple : 
+<img alt="Schema" src="../schema_relationnel.png" /></p>
+<p>Le symbole <code>#</code> sert à identifier les clés primaires, les attributs soulignés sont les clés étrangères référencant la clé primaire pointée par la flèche.</p>
+<p>Grâce à ce schéma, on sait <strong>quelles tables existent</strong>, <strong>comment elles sont reliées</strong>.</p>
+<hr />
+<h2 id="exercice-base-de-donnees-pour-une-bibliotheque">Exercice : Base de données pour une bibliothèque</h2>
+<h3 id="enonce">Énoncé</h3>
+<p>Vous devez concevoir une base de données pour gérer les informations suivantes :  </p>
+<p>Imaginez que vous travaillez dans une bibliothèque. Votre mission est de créer un système permettant de suivre toutes les informations importantes pour gérer les livres et leurs emprunts.  </p>
+<p>Chaque livre possède des caractéristiques comme le titre, l’auteur et la date de publication. Pour ne pas confondre deux livres identiques, chaque exemplaire dispose d’un ISBN. Les clients qui fréquentent la bibliothèque ont chacune un prénom, un nom, une date de naissance et une adresse mail. On doit pouvoir distinguer facilement chaque lecteur. Enfin, la bibliothèque souhaite suivre les emprunts : pour chaque livre prêté, on connaît la date à laquelle il a été emprunté, la date prévue de retour, le livre concerné et la personne qui l’a emprunté.  </p>
+<p>À partir de ce scénario, réfléchissez à la meilleure façon d’organiser ces informations pour éviter les répétitions et faciliter les recherches.</p>
+<p><strong>Consignes :</strong></p>
+<ol>
+<li>Identifiez les <strong>tables</strong> nécessaires.  </li>
+<li>Pour chaque table, indiquez les <strong>attributs</strong>, leur <strong>domaine de valeurs</strong> et les <strong>contraintes</strong>.  </li>
+<li>Déterminez la <strong>clé primaire</strong> pour chaque table.  </li>
+<li>Identifiez les <strong>clés étrangères</strong> pour relier les tables entre elles.  </li>
+<li>Dessinez le <strong>schéma relationnel</strong> correspondant.</li>
+</ol>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../POO/" class="btn btn-neutral float-left" title="Programmation Orientée Objet"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../POO/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
