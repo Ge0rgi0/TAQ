@@ -37,6 +37,19 @@ Internet, c’est **l’interconnexion de milliers de réseaux locaux et de four
 
 ---
 
+## Histoire de la création d'Internet
+
+Internet trouve ses origines dans le contexte de la Guerre froide, où les États-Unis cherchaient à développer un réseau de communication résilient capable de fonctionner même en cas de panne partielle ou d’attaque.  
+
+Dans les années 1960, les universités et laboratoires de recherche ont commencé à être reliés pour partager rapidement des informations et des ressources informatiques, ce qui a posé les bases des réseaux à grande échelle.  
+
+En 1970, ARPANET a été créé par l’agence américaine ARPA comme premier réseau à transmission par paquets, permettant de découper les messages en petites unités envoyées indépendamment, puis réassemblées à l’arrivée.  
+En parallèle, en France, le réseau expérimental Cyclades a été développé à partir de 1971 sous la direction de Louis Pouzin, apportant des idées fondamentales sur l’adressage des paquets et la logique de communication décentralisée.  
+
+Ces expérimentations ont conduit à l’adoption, en 1983, du modéle TCP/IP, qui a standardisé la façon dont les ordinateurs communiquent entre eux, marquant ainsi la naissance officielle d’Internet tel que nous le connaissons aujourd’hui. Cette évolution a ouvert la voie à la généralisation des réseaux interconnectés à l’échelle mondiale et à l’émergence du Web dans les années 90.
+
+---
+
 ## Modèle en couches TCP/IP
 
 La communication sur un réseau se fait grâce à des protocoles, qui sont des règles définissant comment les données sont envoyées, reçues et comprises par les machines.
@@ -44,6 +57,9 @@ La communication sur un réseau se fait grâce à des protocoles, qui sont des r
 Le modéle TCP/IP organise la communication en **4 couches**, chacune ayant un rôle spécifique et ses protocoles.  
 
 Quand on envoie un message ou un fichier sur Internet, il n’est jamais envoyé en un seul bloc, mais découpé en petits morceaux appelés **paquets**.  
+
+![Découpage](paquets.png)
+
 Chaque couche y ajoute des informations spécifiques (adresse de destination, numéro du paquet, etc) avant de transmettre les données, c'est l'**encapsulation**.
 
 À la réception, chaque couche retire son en-tête pour reconstituer les données originales c’est la **désencapsulation**.
@@ -91,123 +107,44 @@ Le **DNS (Domain Name System)** est un service qui fait la correspondance entre 
 
 ---
 
-### Exercice
+## TCP et UDP : deux façons de transmettre
 
-## Consignes
+Chaque message envoyé sur Internet est découpé en **paquets**.  
+Mais la manière de gérer leur transmission dépend du protocole choisi :  
 
-1. Observe attentivement les adresses ci-dessous.  
-2. Pour chaque adresse, indique si c’est une **IP** (IPv4 ou IPv6) ou une **MAC**.  
-3. Justifie brièvement ton choix en une phrase.
+### UDP (User Datagram Protocol)
+- **Rapide** : pas de vérification ni de réordonnancement.  
+- Si un paquet est perdu → pas renvoyé.  
+- Utilisé pour : visioconférence, streaming, jeux en ligne.  
 
----
+### TCP (Transmission Control Protocol)
+- **Fiable** : tous les paquets doivent arriver.  
+- **Contrôle** : accusés de réception (ACK), réordonnancement.  
+- Utilisé pour : mails, téléchargements, pages web.  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Le protocole TCP (Transmission Control Protocol)
-
-Chaque paquet contient :  
-- l’adresse de l’**émetteur** (source),  
-- l’adresse du **destinataire**,  
-- une partie des **données** (texte, image, son…).  
-
-| Adresse source | Adresse destination | Données |  
-|----------------|---------|------------------|  
-
-TCP est un **protocole de communication fiable**. Il s’assure que :  
-
-1. **Tous les paquets arrivent à destination**.  
-   - Si un paquet est perdu sur le chemin, TCP le redemande.  
-2. **Les paquets sont remis dans le bon ordre**.  
-   - Les paquets peuvent arriver dans le désordre, TCP les réorganise.  
-3. **La congestion du réseau est gérée**.  
-   - TCP ajuste la vitesse d’envoi pour ne pas saturer le réseau.  
+![TCP/UDP](TCP_UDP.png)
 
 ---
 
-### Transmission et fiabilité
-- Chaque paquet contient un **numéro d’ordre** et un **accusé de réception**.  
-- Si un paquet n’est pas accusé dans un certain délai, il est **renvoyé automatiquement**.  
+## 2. Routage : comment les paquets voyagent ?
 
-Ordinateur A ---> paquet #1 ---> Ordinateur B  
-<--- ACK #1 ----  
-Ordinateur A ---> paquet #2 ---> Ordinateur B  
-<--- ACK #2 ----  
+Un paquet ne va **jamais en ligne droite**. Il traverse plusieurs routeurs, chacun choisissant le « meilleur chemin » au moment T.  
 
-- Cela garantit que **tout le message est complet** à l’arrivée.  
+Un **routeur** est un appareil qui transmet les paquets de données d’un réseau à un autre.
 
----
+- Chaque routeur connaît une **carte locale** seulement.
+- Les paquets peuvent suivre des chemins différents.
+- Si un routeur tombe en panne, le trafic est réorienté automatiquement.
 
-### Limites de TCP
-- TCP **ne garantit pas le temps d’arrivée** des paquets.  
-  - Utile pour mails ou fichiers.  
-  - Moins adapté pour les **vidéos en direct ou jeux en ligne**, car attendre les paquets manquants crée du **lag**.  
-- Pour ces usages, on utilise souvent **UDP (User Datagram Protocol)**, qui envoie les paquets sans vérification ni réordonnancement → plus rapide mais moins fiable.
+Chaque routeur utilise une **table de routage** pour savoir où envoyer les paquets. Cette table liste toutes les destinations possibles et indique, pour chacune, vers quel appareil (routeur ou machine) envoyer le paquet afin de suivre le chemin le plus court jusqu’à sa destination.
 
----
+**Exercice 1 :** Remplir la table de routage suivante.
 
-### À retenir
-- TCP découpe les données en **paquets**, les envoie et les réassemble.  
-- Il assure **la fiabilité** : tout paquet perdu est renvoyé et les paquets sont remis dans le bon ordre.  
-- TCP est le protocole utilisé pour la majorité des communications **fiables** sur Internet (mail, web, transfert de fichiers).  
-- Pour les applications **temps réel** (streaming, jeux), UDP est utilisé à la place.
+![schéma routage](./routage.png)
+
+
+**Exercice 2 :** Le routeur 4 tombe en panne, les tables de routage sont mise à jour. Remplir les tables de routages des routeurs.
+
+![schéma routage panne](./routage2.png)
 
 ---
-
-## Le routage
-Les paquets ne vont pas directement de l’émetteur au destinataire.  
-Ils passent par plusieurs **routeurs**, qui choisissent à chaque étape le **meilleur chemin possible**.  
-
-Schéma simplifié :  
-
-Ordinateur A → [Routeur 1] → [Routeur 2] → [Routeur 3] → Ordinateur B
-
-
-- Chaque routeur connaît seulement une **carte locale**.  
-- Si un chemin est bloqué, le paquet est envoyé ailleurs.  
-- Certains paquets peuvent être perdus → TCP les renvoie.  
-
-Expérience : suivre le chemin des paquets sur Internet
-
-- Ouvrir l’invite de commande.
-- Taper : tracert wikipedia.org
-- Observer :
-  - Les routeurs traversés
-  - Les temps de passage
-  - Les étoiles (*) pour routeurs qui ne répondent pas
-
----
-
-## Repères historiques
-
-- **1950s-1960s** : premiers réseaux d’ordinateurs.  
-- **1970** : ArpaNet (USA).
-- **1983** : naissance officielle d’Internet avec le protocole **TCP/IP**.  
-
-## Réseau pair-à-pair
-
-## Indépendance au support physique
-
-## Ordre de grandeur

@@ -216,8 +216,40 @@ Exemple :
 
 <span style="color:red">Exercice</span> 
 
+**Exercice 1**
+
 Recopiez le circuit et indiquez ses états intermédiaires et son état final :
 
 ![Unknown gate](unknown_gate.png)
 
 Utilisez les lois de Morgan pour simplifier l'expression.
+
+**Exercice 2**
+
+On considère le schéma logique suivant :  
+
+![Exercice gate](exercice_gate.png)
+
+1. Donner la table de vérité de ce schéma logique (A, B, C ∈ {0,1}).  
+2. Traduire ce schéma en une expression Python utilisant `and` et `or`.  
+3. Vérifier en Python que votre expression donne les mêmes résultats que la table de vérité.
+
+**Exercice 3**
+
+On considère les expressions booléennes suivantes :  
+1. `(A or B) and (not C)`  
+2. `not(A and B) or C`  
+
+Pour chacune d’elles :  
+- Dessiner le schéma logique correspondant.  
+- Compléter la table de vérité.
+
+**Exercice 4**
+
+Un feu de circulation piéton s’allume en **vert** si :  
+- le bouton d’appel a été pressé (`bouton == True`),  
+- et **il n’y a pas de voiture détectée** (`voiture == False`) **ou** qu’il est minuit (`heure == 0`).  
+
+1. Dessiner le schéma logique correspondant.  
+2. Écrire en Python une fonction `feu_pieton(bouton, voiture, heure)` qui retourne `True` si le feu doit être vert.  
+3. Tester la fonction avec quelques cas concrets.

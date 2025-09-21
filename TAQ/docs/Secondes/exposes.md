@@ -72,8 +72,8 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 ## Groupes  
 
 Groupes formées :  
-- 2B : 56 %  
-- 2D : 6 %  
+- 2B : 72 %  
+- 2D : 83 %  
 - 2E : 29 %  
 - 2F : 0 %  
 
@@ -86,9 +86,22 @@ Groupes formées :
 |Camille D. Eloise D. Sharon B.|||2B|
 |Hatim Z. Emma L. Manel B.|||2B|
 |Ilyes T. Thomas L. Adrien L.|||2B|
+|Sacha D. Noah G. Gaston D.|||2B|
 |Maissan E. Diana K.|||2B|
+|Leo B. Lonny D.|||2B|
 |Laly E. Maelle V.|||2B|
 |Emelyne F. Anne-rose B.|||2D|
+|Camille C. Arthur P. Milo M.|||2D|
+|Donovan F. Lucas H. Lucas F.|||2D|
+|Altay K. Luca B. Maxence C.|||2D|
+|Coleen A. Karolina L. Maelle D.|||2D|
+|Camille B. Lena C.|||2D|
+|Valentin J. Lucas W.|||2D|
+|Lenaic D. Axel F.|||2D|
+|Laura G. Gwenaelle L.|||2D|
+|Zelie B. Emma M. Nina C.|||2D|
+|Charlotte D. Iris D.|||2D|
+|Alicia D. Leane D.|||2D|
 |Emma P. Zeliz S.|||2E|
 |Nolhan D. Yelen P. Noe D.|||2E|
 |Sarah G. Llana B. Elize P.|||2E|

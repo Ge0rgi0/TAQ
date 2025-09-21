@@ -59,7 +59,7 @@ Si le professeur principal devait changer, il faudrait alors le corriger partout
 L’"Année" est implicitement liée à la "Classe". On stocke plusieur fois la même information : la 1A est une classe de première.
 
 **Les anomalies :**  
-- d'**insertion** : si on a veut enregistrer une classe mais qu'on a pas encore d'élève dedans on ne peut pas  
+- d'**insertion** : si on veut enregistrer une classe qui n'a pas encore d'élève, on ne peut pas  
 - de **mise à jour** : si un professeur change de nom, il faut le modifier partout dans la base sinon incohérence  
 - de **suppression** : Si on supprime tous les élèves de la classe 1A, on perd toute les informations sur cette dernière  
 
@@ -112,4 +112,71 @@ Chaque livre possède des caractéristiques comme le titre, l’auteur et la dat
 4. Identifiez les **clés étrangères** pour relier les tables entre elles.  
 5. Dessinez le **schéma relationnel** correspondant.
 
+### Énoncé
+
+Vous devez concevoir une base de données pour gérer les informations d’un garage automobile.  
+Votre mission est de créer un système permettant de suivre toutes les informations nécessaires sur les véhicules, les clients et les réparations effectuées.  
+
+Chaque véhicule possède une immatriculation, un propriètaire, une marque, un modèle et une année de fabrication.  
+Chaque client a un prénom, un nom, une adresse et un numéro de téléphone.  
+Enfin, le garage souhaite suivre les réparations : pour chaque intervention, on doit enregistrer la date, la description des travaux réalisés, le véhicule concerné et le mécanicien responsable.  
+Les mécaniciens sont identifiés par un matricule et ont un nom ainsi qu’une spécialité (moteur, carrosserie, électronique…).  
+
+À partir de ce scénario, réfléchissez à la meilleure façon d’organiser ces informations pour éviter les répétitions et faciliter les recherches.
+
 ---
+
+**Consignes :**
+
+1. Identifiez les **tables** nécessaires.  
+2. Pour chaque table, indiquez les **attributs**, leur **domaine de valeurs** et les **contraintes**.  
+3. Déterminez la **clé primaire** pour chaque table.  
+4. Identifiez les **clés étrangères** pour relier les tables entre elles.  
+5. Dessinez le **schéma relationnel** correspondant.
+
+---
+
+## 7. Le Système de Gestion de Bases de Données Relationnelles (SGBDR)
+
+Jusqu’ici, nous avons étudié le **modèle relationnel** : tables, clés primaires, clés étrangères, schéma relationnel.  
+Mais pour exploiter concrètement ces concepts, il faut un logiciel capable de **créer, gérer et interroger** des bases de données : c’est le rôle d’un **Système de Gestion de Bases de Données Relationnelles (SGBDR)**.
+
+Un SGBDR (comme MySQL, PostgreSQL, SQLite, Oracle, SQL Server) rend plusieurs **services essentiels** :  
+
+---
+
+### 1. Persistance des données  
+Un SGBDR assure que les données sont **stockées durablement** sur un support non volatil (disque, SSD).  
+Contrairement aux simples structures en mémoire (listes, tableaux), les données sont conservées même après l’arrêt ou la panne du système.  
+Exemple : les commandes d’Amazon ou les playlists Spotify ne disparaissent pas quand on éteint son ordinateur.
+
+### 2. Gestion des accès concurrents  
+Plusieurs utilisateurs ou programmes peuvent accéder à la base **en même temps**.  
+Le SGBDR garantit que les données restent **cohérentes**, même si deux personnes modifient simultanément la même information.  
+Exemple : deux employés de banque qui consultent et modifient le solde d’un compte en parallèle.
+
+### 3. Efficacité du traitement des requêtes  
+Le SGBDR optimise automatiquement l’exécution des requêtes SQL (sélection, jointures, filtrages) grâce à des mécanismes comme les **index**.  
+L’utilisateur n’a pas besoin de savoir *comment* les données sont stockées physiquement : le système se charge d’obtenir la réponse **rapidement et efficacement**.  
+Exemple : retrouver un client précis parmi des millions d’enregistrements en une fraction de seconde.
+
+### 4. Sécurisation des accès  
+Le SGBDR contrôle **qui a le droit** de lire, modifier ou supprimer certaines données.  
+- Gestion des comptes utilisateurs.  
+- Attribution de **privilèges** (ex. : un élève peut consulter ses notes, mais pas celles des autres).  
+- Protection contre les accès non autorisés.  
+Exemple : dans une base de données d’un hôpital, seuls les médecins ont accès aux dossiers médicaux des patients.
+
+### 5. Bilan  
+Le SGBDR n’est pas seulement un outil de stockage :  
+- Il garantit la **durabilité** des données.  
+- Il gère les **conflits d’accès simultanés**.  
+- Il optimise l’**efficacité des recherches**.  
+- Il sécurise l’**accès aux informations sensibles**.  
+
+Ces services sont indispensables pour comprendre pourquoi les bases de données relationnelles sont utilisées partout dans le monde numérique.
+
+---
+
+**Exercice de réflexion** :  
+Donnez un exemple concret où chacun de ces services est indispensable (persistance, accès concurrents, efficacité, sécurité).
