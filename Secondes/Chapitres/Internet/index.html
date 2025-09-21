@@ -61,6 +61,8 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#histoire-de-la-creation-dinternet">Histoire de la création d'Internet</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#modele-en-couches-tcpip">Modèle en couches TCP/IP</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#le-protocole-ip-et-ladressage">Le protocole IP et l’adressage</a>
@@ -71,31 +73,17 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#dns-domain-name-system">DNS – Domain Name System</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#exercice">Exercice</a>
-    </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#consignes">Consignes</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#tcp-et-udp-deux-facons-de-transmettre">TCP et UDP : deux façons de transmettre</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#transmission-et-fiabilite">Transmission et fiabilité</a>
+    <li class="toctree-l4"><a class="reference internal" href="#udp-user-datagram-protocol">UDP (User Datagram Protocol)</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#limites-de-tcp">Limites de TCP</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#a-retenir">À retenir</a>
+    <li class="toctree-l4"><a class="reference internal" href="#tcp-transmission-control-protocol">TCP (Transmission Control Protocol)</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#le-routage">Le routage</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#reperes-historiques">Repères historiques</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#reseau-pair-a-pair">Réseau pair-à-pair</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#independance-au-support-physique">Indépendance au support physique</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ordre-de-grandeur">Ordre de grandeur</a>
+    <li class="toctree-l3"><a class="reference internal" href="#2-routage-comment-les-paquets-voyagent">2. Routage : comment les paquets voyagent ?</a>
     </li>
     </ul>
                 </li>
@@ -178,11 +166,19 @@ Quand vous envoyez un message, il sort d’abord de votre réseau local → pass
 <p><strong>Idée clé à retenir :</strong><br />
 Internet, c’est <strong>l’interconnexion de milliers de réseaux locaux et de fournisseurs d’accès</strong> à l’échelle mondiale, qui communiquent tous grâce à des <strong>protocoles communs</strong>.</p>
 <hr />
+<h2 id="histoire-de-la-creation-dinternet">Histoire de la création d'Internet</h2>
+<p>Internet trouve ses origines dans le contexte de la Guerre froide, où les États-Unis cherchaient à développer un réseau de communication résilient capable de fonctionner même en cas de panne partielle ou d’attaque.  </p>
+<p>Dans les années 1960, les universités et laboratoires de recherche ont commencé à être reliés pour partager rapidement des informations et des ressources informatiques, ce qui a posé les bases des réseaux à grande échelle.  </p>
+<p>En 1970, ARPANET a été créé par l’agence américaine ARPA comme premier réseau à transmission par paquets, permettant de découper les messages en petites unités envoyées indépendamment, puis réassemblées à l’arrivée.<br />
+En parallèle, en France, le réseau expérimental Cyclades a été développé à partir de 1971 sous la direction de Louis Pouzin, apportant des idées fondamentales sur l’adressage des paquets et la logique de communication décentralisée.  </p>
+<p>Ces expérimentations ont conduit à l’adoption, en 1983, du modéle TCP/IP, qui a standardisé la façon dont les ordinateurs communiquent entre eux, marquant ainsi la naissance officielle d’Internet tel que nous le connaissons aujourd’hui. Cette évolution a ouvert la voie à la généralisation des réseaux interconnectés à l’échelle mondiale et à l’émergence du Web dans les années 90.</p>
+<hr />
 <h2 id="modele-en-couches-tcpip">Modèle en couches TCP/IP</h2>
 <p>La communication sur un réseau se fait grâce à des protocoles, qui sont des règles définissant comment les données sont envoyées, reçues et comprises par les machines.</p>
 <p>Le modéle TCP/IP organise la communication en <strong>4 couches</strong>, chacune ayant un rôle spécifique et ses protocoles.  </p>
-<p>Quand on envoie un message ou un fichier sur Internet, il n’est jamais envoyé en un seul bloc, mais découpé en petits morceaux appelés <strong>paquets</strong>.<br />
-Chaque couche y ajoute des informations spécifiques (adresse de destination, numéro du paquet, etc) avant de transmettre les données, c'est l'<strong>encapsulation</strong>.</p>
+<p>Quand on envoie un message ou un fichier sur Internet, il n’est jamais envoyé en un seul bloc, mais découpé en petits morceaux appelés <strong>paquets</strong>.  </p>
+<p><img alt="Découpage" src="../paquets.png" /></p>
+<p>Chaque couche y ajoute des informations spécifiques (adresse de destination, numéro du paquet, etc) avant de transmettre les données, c'est l'<strong>encapsulation</strong>.</p>
 <p>À la réception, chaque couche retire son en-tête pour reconstituer les données originales c’est la <strong>désencapsulation</strong>.</p>
 <p><img alt="Modèle" src="../model.png" /></p>
 <h2 id="le-protocole-ip-et-ladressage">Le protocole IP et l’adressage</h2>
@@ -210,103 +206,37 @@ Encore aujourd'hui, nous faisons la transition vers un nouveau format <strong>IP
 Pour éviter d'avoir à se souvenir des IPs de tous les sites, nous utilisons le DNS.  </p>
 <p>Le <strong>DNS (Domain Name System)</strong> est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP par le biais de serveurs DNS.</p>
 <hr />
-<h3 id="exercice">Exercice</h3>
-<h2 id="consignes">Consignes</h2>
-<ol>
-<li>Observe attentivement les adresses ci-dessous.  </li>
-<li>Pour chaque adresse, indique si c’est une <strong>IP</strong> (IPv4 ou IPv6) ou une <strong>MAC</strong>.  </li>
-<li>Justifie brièvement ton choix en une phrase.</li>
-</ol>
+<h2 id="tcp-et-udp-deux-facons-de-transmettre">TCP et UDP : deux façons de transmettre</h2>
+<p>Chaque message envoyé sur Internet est découpé en <strong>paquets</strong>.<br />
+Mais la manière de gérer leur transmission dépend du protocole choisi :  </p>
+<h3 id="udp-user-datagram-protocol">UDP (User Datagram Protocol)</h3>
+<ul>
+<li><strong>Rapide</strong> : pas de vérification ni de réordonnancement.  </li>
+<li>Si un paquet est perdu → pas renvoyé.  </li>
+<li>Utilisé pour : visioconférence, streaming, jeux en ligne.  </li>
+</ul>
+<h3 id="tcp-transmission-control-protocol">TCP (Transmission Control Protocol)</h3>
+<ul>
+<li><strong>Fiable</strong> : tous les paquets doivent arriver.  </li>
+<li><strong>Contrôle</strong> : accusés de réception (ACK), réordonnancement.  </li>
+<li>Utilisé pour : mails, téléchargements, pages web.  </li>
+</ul>
+<p><img alt="TCP/UDP" src="../TCP_UDP.png" /></p>
 <hr />
-<h2 id="le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</h2>
-<p>Chaque paquet contient :<br />
-- l’adresse de l’<strong>émetteur</strong> (source),<br />
-- l’adresse du <strong>destinataire</strong>,<br />
-- une partie des <strong>données</strong> (texte, image, son…).  </p>
-<table>
-<thead>
-<tr>
-<th>Adresse source</th>
-<th>Adresse destination</th>
-<th>Données</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>TCP est un <strong>protocole de communication fiable</strong>. Il s’assure que :  </p>
-<ol>
-<li><strong>Tous les paquets arrivent à destination</strong>.  </li>
-<li>Si un paquet est perdu sur le chemin, TCP le redemande.  </li>
-<li><strong>Les paquets sont remis dans le bon ordre</strong>.  </li>
-<li>Les paquets peuvent arriver dans le désordre, TCP les réorganise.  </li>
-<li><strong>La congestion du réseau est gérée</strong>.  </li>
-<li>TCP ajuste la vitesse d’envoi pour ne pas saturer le réseau.  </li>
-</ol>
+<h2 id="2-routage-comment-les-paquets-voyagent">2. Routage : comment les paquets voyagent ?</h2>
+<p>Un paquet ne va <strong>jamais en ligne droite</strong>. Il traverse plusieurs routeurs, chacun choisissant le « meilleur chemin » au moment T.  </p>
+<p>Un <strong>routeur</strong> est un appareil qui transmet les paquets de données d’un réseau à un autre.</p>
+<ul>
+<li>Chaque routeur connaît une <strong>carte locale</strong> seulement.</li>
+<li>Les paquets peuvent suivre des chemins différents.</li>
+<li>Si un routeur tombe en panne, le trafic est réorienté automatiquement.</li>
+</ul>
+<p>Chaque routeur utilise une <strong>table de routage</strong> pour savoir où envoyer les paquets. Cette table liste toutes les destinations possibles et indique, pour chacune, vers quel appareil (routeur ou machine) envoyer le paquet afin de suivre le chemin le plus court jusqu’à sa destination.</p>
+<p><strong>Exercice 1 :</strong> Remplir la table de routage suivante.</p>
+<p><img alt="schéma routage" src="../routage.png" /></p>
+<p><strong>Exercice 2 :</strong> Le routeur 4 tombe en panne, les tables de routage sont mise à jour. Remplir les tables de routages des routeurs.</p>
+<p><img alt="schéma routage panne" src="../routage2.png" /></p>
 <hr />
-<h3 id="transmission-et-fiabilite">Transmission et fiabilité</h3>
-<ul>
-<li>Chaque paquet contient un <strong>numéro d’ordre</strong> et un <strong>accusé de réception</strong>.  </li>
-<li>Si un paquet n’est pas accusé dans un certain délai, il est <strong>renvoyé automatiquement</strong>.  </li>
-</ul>
-<p>Ordinateur A ---&gt; paquet #1 ---&gt; Ordinateur B<br />
-&lt;--- ACK #1 ----<br />
-Ordinateur A ---&gt; paquet #2 ---&gt; Ordinateur B<br />
-&lt;--- ACK #2 ----  </p>
-<ul>
-<li>Cela garantit que <strong>tout le message est complet</strong> à l’arrivée.  </li>
-</ul>
-<hr />
-<h3 id="limites-de-tcp">Limites de TCP</h3>
-<ul>
-<li>TCP <strong>ne garantit pas le temps d’arrivée</strong> des paquets.  </li>
-<li>Utile pour mails ou fichiers.  </li>
-<li>Moins adapté pour les <strong>vidéos en direct ou jeux en ligne</strong>, car attendre les paquets manquants crée du <strong>lag</strong>.  </li>
-<li>Pour ces usages, on utilise souvent <strong>UDP (User Datagram Protocol)</strong>, qui envoie les paquets sans vérification ni réordonnancement → plus rapide mais moins fiable.</li>
-</ul>
-<hr />
-<h3 id="a-retenir">À retenir</h3>
-<ul>
-<li>TCP découpe les données en <strong>paquets</strong>, les envoie et les réassemble.  </li>
-<li>Il assure <strong>la fiabilité</strong> : tout paquet perdu est renvoyé et les paquets sont remis dans le bon ordre.  </li>
-<li>TCP est le protocole utilisé pour la majorité des communications <strong>fiables</strong> sur Internet (mail, web, transfert de fichiers).  </li>
-<li>Pour les applications <strong>temps réel</strong> (streaming, jeux), UDP est utilisé à la place.</li>
-</ul>
-<hr />
-<h2 id="le-routage">Le routage</h2>
-<p>Les paquets ne vont pas directement de l’émetteur au destinataire.<br />
-Ils passent par plusieurs <strong>routeurs</strong>, qui choisissent à chaque étape le <strong>meilleur chemin possible</strong>.  </p>
-<p>Schéma simplifié :  </p>
-<p>Ordinateur A → [Routeur 1] → [Routeur 2] → [Routeur 3] → Ordinateur B</p>
-<ul>
-<li>Chaque routeur connaît seulement une <strong>carte locale</strong>.  </li>
-<li>Si un chemin est bloqué, le paquet est envoyé ailleurs.  </li>
-<li>Certains paquets peuvent être perdus → TCP les renvoie.  </li>
-</ul>
-<p>Expérience : suivre le chemin des paquets sur Internet</p>
-<ul>
-<li>Ouvrir l’invite de commande.</li>
-<li>Taper : tracert wikipedia.org</li>
-<li>Observer :</li>
-<li>Les routeurs traversés</li>
-<li>Les temps de passage</li>
-<li>Les étoiles (*) pour routeurs qui ne répondent pas</li>
-</ul>
-<hr />
-<h2 id="reperes-historiques">Repères historiques</h2>
-<ul>
-<li><strong>1950s-1960s</strong> : premiers réseaux d’ordinateurs.  </li>
-<li><strong>1970</strong> : ArpaNet (USA).</li>
-<li><strong>1983</strong> : naissance officielle d’Internet avec le protocole <strong>TCP/IP</strong>.  </li>
-</ul>
-<h2 id="reseau-pair-a-pair">Réseau pair-à-pair</h2>
-<h2 id="independance-au-support-physique">Indépendance au support physique</h2>
-<h2 id="ordre-de-grandeur">Ordre de grandeur</h2>
               
             </div>
           </div><footer>

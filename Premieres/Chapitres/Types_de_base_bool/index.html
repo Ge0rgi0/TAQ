@@ -603,9 +603,34 @@ En électronique, ces mêmes opérations logiques sont réalisées grâce à des
 Exemple :  </p>
 <p><img alt="porte ET" src="../porte_ET.png" /></p>
 <p><span style="color:red">Exercice</span> </p>
+<p><strong>Exercice 1</strong></p>
 <p>Recopiez le circuit et indiquez ses états intermédiaires et son état final :</p>
 <p><img alt="Unknown gate" src="../unknown_gate.png" /></p>
 <p>Utilisez les lois de Morgan pour simplifier l'expression.</p>
+<p><strong>Exercice 2</strong></p>
+<p>On considère le schéma logique suivant :  </p>
+<p><img alt="Exercice gate" src="../exercice_gate.png" /></p>
+<ol>
+<li>Donner la table de vérité de ce schéma logique (A, B, C ∈ {0,1}).  </li>
+<li>Traduire ce schéma en une expression Python utilisant <code>and</code> et <code>or</code>.  </li>
+<li>Vérifier en Python que votre expression donne les mêmes résultats que la table de vérité.</li>
+</ol>
+<p><strong>Exercice 3</strong></p>
+<p>On considère les expressions booléennes suivantes :<br />
+1. <code>(A or B) and (not C)</code><br />
+2. <code>not(A and B) or C</code>  </p>
+<p>Pour chacune d’elles :<br />
+- Dessiner le schéma logique correspondant.<br />
+- Compléter la table de vérité.</p>
+<p><strong>Exercice 4</strong></p>
+<p>Un feu de circulation piéton s’allume en <strong>vert</strong> si :<br />
+- le bouton d’appel a été pressé (<code>bouton == True</code>),<br />
+- et <strong>il n’y a pas de voiture détectée</strong> (<code>voiture == False</code>) <strong>ou</strong> qu’il est minuit (<code>heure == 0</code>).  </p>
+<ol>
+<li>Dessiner le schéma logique correspondant.  </li>
+<li>Écrire en Python une fonction <code>feu_pieton(bouton, voiture, heure)</code> qui retourne <code>True</code> si le feu doit être vert.  </li>
+<li>Tester la fonction avec quelques cas concrets.</li>
+</ol>
               
             </div>
           </div><footer>

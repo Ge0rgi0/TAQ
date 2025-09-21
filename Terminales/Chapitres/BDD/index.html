@@ -91,6 +91,22 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#enonce">Énoncé</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#enonce_1">Énoncé</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7-le-systeme-de-gestion-de-bases-de-donnees-relationnelles-sgbdr">7. Le Système de Gestion de Bases de Données Relationnelles (SGBDR)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-persistance-des-donnees">1. Persistance des données</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-gestion-des-acces-concurrents">2. Gestion des accès concurrents</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-efficacite-du-traitement-des-requetes">3. Efficacité du traitement des requêtes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#4-securisation-des-acces">4. Sécurisation des accès</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#5-bilan">5. Bilan</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -173,7 +189,7 @@ L’"Année" est implicitement liée à la "Classe". On stocke plusieur fois la 
 </li>
 </ul>
 <p><strong>Les anomalies :</strong><br />
-- d'<strong>insertion</strong> : si on a veut enregistrer une classe mais qu'on a pas encore d'élève dedans on ne peut pas<br />
+- d'<strong>insertion</strong> : si on veut enregistrer une classe qui n'a pas encore d'élève, on ne peut pas<br />
 - de <strong>mise à jour</strong> : si un professeur change de nom, il faut le modifier partout dans la base sinon incohérence<br />
 - de <strong>suppression</strong> : Si on supprime tous les élèves de la classe 1A, on perd toute les informations sur cette dernière  </p>
 <p>Afin d’éviter les redondances et les anomalies, on sépare les informations dans plusieurs tables reliées entre elles par des clés étrangères.<br />
@@ -209,7 +225,57 @@ Il sert de <strong>plan directeur</strong> pour construire, maintenir et interro
 <li>Identifiez les <strong>clés étrangères</strong> pour relier les tables entre elles.  </li>
 <li>Dessinez le <strong>schéma relationnel</strong> correspondant.</li>
 </ol>
+<h3 id="enonce_1">Énoncé</h3>
+<p>Vous devez concevoir une base de données pour gérer les informations d’un garage automobile.<br />
+Votre mission est de créer un système permettant de suivre toutes les informations nécessaires sur les véhicules, les clients et les réparations effectuées.  </p>
+<p>Chaque véhicule possède une immatriculation, un propriètaire, une marque, un modèle et une année de fabrication.<br />
+Chaque client a un prénom, un nom, une adresse et un numéro de téléphone.<br />
+Enfin, le garage souhaite suivre les réparations : pour chaque intervention, on doit enregistrer la date, la description des travaux réalisés, le véhicule concerné et le mécanicien responsable.<br />
+Les mécaniciens sont identifiés par un matricule et ont un nom ainsi qu’une spécialité (moteur, carrosserie, électronique…).  </p>
+<p>À partir de ce scénario, réfléchissez à la meilleure façon d’organiser ces informations pour éviter les répétitions et faciliter les recherches.</p>
 <hr />
+<p><strong>Consignes :</strong></p>
+<ol>
+<li>Identifiez les <strong>tables</strong> nécessaires.  </li>
+<li>Pour chaque table, indiquez les <strong>attributs</strong>, leur <strong>domaine de valeurs</strong> et les <strong>contraintes</strong>.  </li>
+<li>Déterminez la <strong>clé primaire</strong> pour chaque table.  </li>
+<li>Identifiez les <strong>clés étrangères</strong> pour relier les tables entre elles.  </li>
+<li>Dessinez le <strong>schéma relationnel</strong> correspondant.</li>
+</ol>
+<hr />
+<h2 id="7-le-systeme-de-gestion-de-bases-de-donnees-relationnelles-sgbdr">7. Le Système de Gestion de Bases de Données Relationnelles (SGBDR)</h2>
+<p>Jusqu’ici, nous avons étudié le <strong>modèle relationnel</strong> : tables, clés primaires, clés étrangères, schéma relationnel.<br />
+Mais pour exploiter concrètement ces concepts, il faut un logiciel capable de <strong>créer, gérer et interroger</strong> des bases de données : c’est le rôle d’un <strong>Système de Gestion de Bases de Données Relationnelles (SGBDR)</strong>.</p>
+<p>Un SGBDR (comme MySQL, PostgreSQL, SQLite, Oracle, SQL Server) rend plusieurs <strong>services essentiels</strong> :  </p>
+<hr />
+<h3 id="1-persistance-des-donnees">1. Persistance des données</h3>
+<p>Un SGBDR assure que les données sont <strong>stockées durablement</strong> sur un support non volatil (disque, SSD).<br />
+Contrairement aux simples structures en mémoire (listes, tableaux), les données sont conservées même après l’arrêt ou la panne du système.<br />
+Exemple : les commandes d’Amazon ou les playlists Spotify ne disparaissent pas quand on éteint son ordinateur.</p>
+<h3 id="2-gestion-des-acces-concurrents">2. Gestion des accès concurrents</h3>
+<p>Plusieurs utilisateurs ou programmes peuvent accéder à la base <strong>en même temps</strong>.<br />
+Le SGBDR garantit que les données restent <strong>cohérentes</strong>, même si deux personnes modifient simultanément la même information.<br />
+Exemple : deux employés de banque qui consultent et modifient le solde d’un compte en parallèle.</p>
+<h3 id="3-efficacite-du-traitement-des-requetes">3. Efficacité du traitement des requêtes</h3>
+<p>Le SGBDR optimise automatiquement l’exécution des requêtes SQL (sélection, jointures, filtrages) grâce à des mécanismes comme les <strong>index</strong>.<br />
+L’utilisateur n’a pas besoin de savoir <em>comment</em> les données sont stockées physiquement : le système se charge d’obtenir la réponse <strong>rapidement et efficacement</strong>.<br />
+Exemple : retrouver un client précis parmi des millions d’enregistrements en une fraction de seconde.</p>
+<h3 id="4-securisation-des-acces">4. Sécurisation des accès</h3>
+<p>Le SGBDR contrôle <strong>qui a le droit</strong> de lire, modifier ou supprimer certaines données.<br />
+- Gestion des comptes utilisateurs.<br />
+- Attribution de <strong>privilèges</strong> (ex. : un élève peut consulter ses notes, mais pas celles des autres).<br />
+- Protection contre les accès non autorisés.<br />
+Exemple : dans une base de données d’un hôpital, seuls les médecins ont accès aux dossiers médicaux des patients.</p>
+<h3 id="5-bilan">5. Bilan</h3>
+<p>Le SGBDR n’est pas seulement un outil de stockage :<br />
+- Il garantit la <strong>durabilité</strong> des données.<br />
+- Il gère les <strong>conflits d’accès simultanés</strong>.<br />
+- Il optimise l’<strong>efficacité des recherches</strong>.<br />
+- Il sécurise l’<strong>accès aux informations sensibles</strong>.  </p>
+<p>Ces services sont indispensables pour comprendre pourquoi les bases de données relationnelles sont utilisées partout dans le monde numérique.</p>
+<hr />
+<p><strong>Exercice de réflexion</strong> :<br />
+Donnez un exemple concret où chacun de ces services est indispensable (persistance, accès concurrents, efficacité, sécurité).</p>
               
             </div>
           </div><footer>
