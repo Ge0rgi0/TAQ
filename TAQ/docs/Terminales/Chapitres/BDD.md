@@ -175,8 +175,3 @@ Le SGBDR n’est pas seulement un outil de stockage :
 - Il sécurise l’**accès aux informations sensibles**.  
 
 Ces services sont indispensables pour comprendre pourquoi les bases de données relationnelles sont utilisées partout dans le monde numérique.
-
----
-
-**Exercice de réflexion** :  
-Donnez un exemple concret où chacun de ces services est indispensable (persistance, accès concurrents, efficacité, sécurité).

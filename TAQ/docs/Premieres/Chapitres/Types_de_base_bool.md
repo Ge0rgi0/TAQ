@@ -230,7 +230,7 @@ On considère le schéma logique suivant :
 
 ![Exercice gate](exercice_gate.png)
 
-1. Donner la table de vérité de ce schéma logique (A, B, C ∈ {0,1}).  
+1. Donner la table de vérité de ce schéma logique.  
 2. Traduire ce schéma en une expression Python utilisant `and` et `or`.  
 3. Vérifier en Python que votre expression donne les mêmes résultats que la table de vérité.
 
@@ -253,3 +253,22 @@ Un feu de circulation piéton s’allume en **vert** si :
 1. Dessiner le schéma logique correspondant.  
 2. Écrire en Python une fonction `feu_pieton(bouton, voiture, heure)` qui retourne `True` si le feu doit être vert.  
 3. Tester la fonction avec quelques cas concrets.
+
+## Exercices Python
+
+### Exercice 1 : Entrée gratuite ou payante ?
+On organise une soirée :  
+- L’entrée est gratuite si la personne a **moins de 12 ans** ou **plus de 65 ans**.  
+- Sinon, elle coûte 10 €.  
+
+Écrire un programme qui demande l’âge et affiche si l’entrée est gratuite ou payante.  
+
+### Exercice 2 : Accès réservé
+Un site web n’autorise l’accès que si l’utilisateur a au moins 13 ans, et a accepté les conditions d’utilisation (réponse `"oui"` ou `"non"`).  
+
+Écrire un programme qui affiche `"Accès autorisé"` ou `"Accès refusé"`.  
+
+### Exercice 3 : L’année bissextile
+Une année est bissextile si elle est divisible par 4 et non divisible par 100, ou si elle est divisible par 400.  
+
+Écrire un programme qui demande une année et affiche si elle est bissextile ou non.  

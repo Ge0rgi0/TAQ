@@ -6,7 +6,7 @@
 Internet n’est pas une seule machine géante.  
 C’est en réalité **un immense ensemble de réseaux interconnectés** :  
 
-- **Les réseaux locaux (LAN)**  
+- **Les réseaux locaux (LAN, Local Area Network)**  
   - Exemple : votre maison (box Internet + ordinateurs + téléphones connectés en Wi-Fi ou en câble).  
   - Exemple : le réseau du lycée (salles informatiques, imprimantes, serveurs pédagogiques).  
   - Exemple : le réseau d’une entreprise.  
