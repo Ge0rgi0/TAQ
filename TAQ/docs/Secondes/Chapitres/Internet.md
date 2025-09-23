@@ -117,12 +117,24 @@ Mais la manière de gérer leur transmission dépend du protocole choisi :
 - Si un paquet est perdu → pas renvoyé.  
 - Utilisé pour : visioconférence, streaming, jeux en ligne.  
 
+![UDP](UDP.png)
+
+La machine qui reçoit, envoie une requête, puis l'autre machine envoie les paquets à la chaîne.  
+Des pertes sont donc possibles.
+
 ### TCP (Transmission Control Protocol)
 - **Fiable** : tous les paquets doivent arriver.  
 - **Contrôle** : accusés de réception (ACK), réordonnancement.  
 - Utilisé pour : mails, téléchargements, pages web.  
 
-![TCP/UDP](TCP_UDP.png)
+![TCP](TCP.png)
+
+Les machines commencent par effectuer ce que l’on appelle une **triple poignée de main**.  
+La machine qui envoie partage un numéro pour se **synchroniser** (SYN).  
+L’autre répond avec un **accusé de réception** (ACK) et fournit à son tour un numéro pour se synchroniser.  
+La machine qui envoie transmet donc aussi un accusé de réception.
+
+Ensuite, pour chaque paquet envoyé, la machine qui reçoit renvoie un accusé de réception afin d’éviter les pertes.
 
 ---
 
