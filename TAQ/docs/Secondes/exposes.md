@@ -72,7 +72,7 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 ## Groupes  
 
 Groupes formées :  
-- 2B : 72 %  
+- 2B : 94 %  
 - 2D : 83 %  
 - 2E : 29 %  
 - 2F : 0 %  
@@ -81,7 +81,7 @@ Groupes formées :
 
 |Groupes|Sujet|Recul|Classe|
 |--|--|--|--|
-|Capucine G. Clivia V.|||2B|
+|Capucine G. Clivia V. Carla V.|||2B|
 |Florent C. Hugo D. Nathael W.|||2B|
 |Camille D. Eloise D. Sharon B.|||2B|
 |Hatim Z. Emma L. Manel B.|||2B|
@@ -90,6 +90,9 @@ Groupes formées :
 |Maissan E. Diana K.|||2B|
 |Leo B. Lonny D.|||2B|
 |Laly E. Maelle V.|||2B|
+|Kylian G. Ethan L.|||2B|
+|Kamron R. Arthur M.|||2B|
+|Martin B. Lucas S.|||2B|
 |Emelyne F. Anne-rose B.|||2D|
 |Camille C. Arthur P. Milo M.|||2D|
 |Donovan F. Lucas H. Lucas F.|||2D|
@@ -106,3 +109,4 @@ Groupes formées :
 |Nolhan D. Yelen P. Noe D.|||2E|
 |Sarah G. Llana B. Elize P.|||2E|
 |Anais B. Romane L.|||2E|
+|Zelie P-L. Pauline B. Naomie C.|||2F|

@@ -215,13 +215,21 @@ Mais la manière de gérer leur transmission dépend du protocole choisi :  </p>
 <li>Si un paquet est perdu → pas renvoyé.  </li>
 <li>Utilisé pour : visioconférence, streaming, jeux en ligne.  </li>
 </ul>
+<p><img alt="UDP" src="../UDP.png" /></p>
+<p>La machine qui reçoit, envoie une requête, puis l'autre machine envoie les paquets à la chaîne.<br />
+Des pertes sont donc possibles.</p>
 <h3 id="tcp-transmission-control-protocol">TCP (Transmission Control Protocol)</h3>
 <ul>
 <li><strong>Fiable</strong> : tous les paquets doivent arriver.  </li>
 <li><strong>Contrôle</strong> : accusés de réception (ACK), réordonnancement.  </li>
 <li>Utilisé pour : mails, téléchargements, pages web.  </li>
 </ul>
-<p><img alt="TCP/UDP" src="../TCP_UDP.png" /></p>
+<p><img alt="TCP" src="../TCP.png" /></p>
+<p>Les machines commencent par effectuer ce que l’on appelle une <strong>triple poignée de main</strong>.<br />
+La machine qui envoie partage un numéro pour se <strong>synchroniser</strong> (SYN).<br />
+L’autre répond avec un <strong>accusé de réception</strong> (ACK) et fournit à son tour un numéro pour se synchroniser.<br />
+La machine qui envoie transmet donc aussi un accusé de réception.</p>
+<p>Ensuite, pour chaque paquet envoyé, la machine qui reçoit renvoie un accusé de réception afin d’éviter les pertes.</p>
 <hr />
 <h2 id="2-routage-comment-les-paquets-voyagent">2. Routage : comment les paquets voyagent ?</h2>
 <p>Un paquet ne va <strong>jamais en ligne droite</strong>. Il traverse plusieurs routeurs, chacun choisissant le « meilleur chemin » au moment T.  </p>

@@ -12,3 +12,4 @@
 ## Chapitres
 
 - [🔹 1 - Programmation Orienté Objet](Chapitres/POO.md)
+- [🔹 2 - Bases de Données](Chapitres/BDD.md)

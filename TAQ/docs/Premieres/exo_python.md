@@ -66,3 +66,52 @@
 5. **Puissance**  
    Demander deux entiers `a` et `b`.  
    Calculer `a^b` à l’aide d’une boucle (sans utiliser `**`).  
+
+## Listes
+
+Ces exercices sont tirés du site [France-IOI](https://www.france-ioi.org/algo/chapters.php).
+
+### Exercice 1 : Quantité d’ingrédient
+
+Un onguent nécessite 10 ingrédients, avec les quantités suivantes (en grammes) :  
+```
+500, 180, 650, 25, 666, 42, 421, 1, 370, 211
+```
+
+Écrivez un programme qui lit un entier (numéro d’ingrédient entre 0 et 9) et affiche la quantité correspondante.
+
+### Exercice 2 : Calcul du coût des achats
+
+Les prix au kilo de 10 ingrédients sont :  
+```
+9, 5, 12, 15, 7, 42, 13, 10, 1, 20
+```
+
+Votre programme lit **10 entiers** (poids en kilos à acheter pour chaque ingrédient) et calcule le coût total.
+
+### Exercice 3 : Gestion de stock
+
+On gère 10 produits dont le stock initial est nul.  
+
+- La première ligne contient un entier `nbOperations`.  
+- Suivent `nbOperations` paires (numProduit, quantité).  
+  - quantité positive = achat  
+  - quantité négative = vente  
+
+Affichez le stock final de chaque produit (10 entiers).
+
+### Exercice 4 : Produits préférés
+
+On connaît les produits préférés d’un certain nombre de personnes.  
+
+Entrées : 
+- `nbProduits` et `nbPersonnes`  
+- puis `nbPersonnes` entiers (numéros des produits préférés).  
+
+Affichez pour chaque produit, le nombre de personnes qui le préfèrent.
+
+### Exercice 5 : Équilibrage de charrettes
+
+On lit un entier `nbCharrettes`, puis `nbCharrettes` nombres décimaux représentant leur poids.  
+
+Affichez, pour chaque charrette, le poids à ajouter (ou retirer) pour que toutes transportent la même charge, sans changer le total.

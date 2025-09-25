@@ -138,7 +138,7 @@ Ensuite, pour chaque paquet envoyé, la machine qui reçoit renvoie un accusé d
 
 ---
 
-## 2. Routage : comment les paquets voyagent ?
+## Routage : comment les paquets voyagent ?
 
 Un paquet ne va **jamais en ligne droite**. Il traverse plusieurs routeurs, chacun choisissant le « meilleur chemin » au moment T.  
 

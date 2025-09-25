@@ -257,7 +257,7 @@ Un feu de circulation piéton s’allume en **vert** si :
 ## Exercices Python
 
 ### Exercice 1 : Entrée gratuite ou payante ?
-On organise une soirée :  
+On organise une soirée :   
 - L’entrée est gratuite si la personne a **moins de 12 ans** ou **plus de 65 ans**.  
 - Sinon, elle coûte 10 €.  
 
@@ -266,9 +266,85 @@ On organise une soirée :
 ### Exercice 2 : Accès réservé
 Un site web n’autorise l’accès que si l’utilisateur a au moins 13 ans, et a accepté les conditions d’utilisation (réponse `"oui"` ou `"non"`).  
 
-Écrire un programme qui affiche `"Accès autorisé"` ou `"Accès refusé"`.  
+Écrire un programme qui affiche `"Accès autorisé"` ou `"Accès refusé"` en fonction des deux variables.
 
 ### Exercice 3 : L’année bissextile
 Une année est bissextile si elle est divisible par 4 et non divisible par 100, ou si elle est divisible par 400.  
 
 Écrire un programme qui demande une année et affiche si elle est bissextile ou non.  
+
+### Exercice 4 : Jeu de devinette
+On choisit un nombre secret aléatoire :
+
+```
+import random
+
+n = random.randint(0,1000)
+```
+
+L’utilisateur doit proposer un nombre, et le programme répond :  
+- `"Trop petit"`,  
+- `"Trop grand"`,  
+- ou `"Bravo !"`.  
+en fonction des tentatives du joueur jusqu'à ce qu'il trouve lé nombre secret.
+
+### Exercice 5 : Triangle possible ?
+Écrire un programme qui demande trois longueurs `a`, `b`, `c`.  
+On rappelle qu’un triangle est possible si **chaque côté est inférieur à la somme des deux autres**.  
+Le programme doit afficher `"Triangle valide"` ou `"Triangle impossible"`.  
+
+### Exercice 6 : Nombre premier (version booléens)
+Écrire un programme qui demande un entier `n` et affiche s’il est premier ou non.  
+On pourra utiliser une boucle `for` pour chercher un diviseur, mais le résultat final doit être stocké dans une variable booléenne `est_premier` qui est `True` ou `False`.  
+
+### Exercice 7 : Accès à la bibliothèque
+On donne accès à une salle de bibliothèque si :
+- la personne est **enseignant**,
+- ou bien **élève** mais avec une carte valide,
+- et **pas en retard** de plus de 3 jours.
+
+**Consignes :**
+1. Demander le rôle (`"enseignant"` ou `"élève"`).  
+2. Demander si la carte est valide (`"oui"/"non"`).  
+3. Demander le nombre de jours de retard.  
+4. Écrire l’expression booléenne.  
+5. Afficher `"Accès autorisé"` ou `"Accès refusé"`.  
+
+### Exercice 8 : Sécurité d’un coffre
+Un coffre s’ouvre si :
+- le **code est correct**  
+- et si **l’utilisateur est admin** ou qu’il a utilisé **sa clé physique**.
+
+**Consignes :**
+1. Définir une constante `code_secret = 1234`.  
+2. Demander le code entré.  
+3. Demander si l’utilisateur est `"admin"` ou `"utilisateur"`.  
+4. Demander s’il a une clé (`"oui"/"non"`).  
+5. Traduire la règle en Python avec `and` / `or`.  
+6. Afficher `"Coffre ouvert"` ou `"Accès refusé"`.  
+
+### Exercice 9 : Capteur de sécurité
+Une alarme se déclenche si :
+- **au moins une porte** est ouverte,
+- et **aucune fenêtre** n’est fermée correctement,
+- ou si le **capteur de mouvement** est activé.
+
+**Consignes :**
+1. Demander l’état de deux portes (ouverte/fermée).  
+2. Demander l’état de deux fenêtres (ouverte/fermée).  
+3. Demander si un mouvement est détecté (`"oui"/"non"`).  
+4. Construire une formule logique combinant ces trois conditions.  
+5. Afficher `"Alarme déclenchée"` ou `"Tout est normal"`.  
+
+### Exercice 10 : Admission en université
+Un étudiant est accepté si :
+- sa moyenne est **au moins 12**  
+- et il a **validé le bac**  
+- ou bien s’il a une **recommandation spéciale**.
+
+**Consignes :**
+1. Demander la moyenne (nombre).  
+2. Demander si le bac est validé (`"oui"/"non"`).  
+3. Demander si une recommandation est présente (`"oui"/"non"`).  
+4. Écrire une condition booléenne.  
+5. Afficher `"Admis"` ou `"Refusé"`.  
