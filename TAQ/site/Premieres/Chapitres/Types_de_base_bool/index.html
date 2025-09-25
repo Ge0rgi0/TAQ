@@ -101,9 +101,25 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#exercice-3-lannee-bissextile">Exercice 3 : L’année bissextile</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-4-jeu-de-devinette">Exercice 4 : Jeu de devinette</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-5-triangle-possible">Exercice 5 : Triangle possible ?</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-6-nombre-premier-version-booleens">Exercice 6 : Nombre premier (version booléens)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-7-acces-a-la-bibliotheque">Exercice 7 : Accès à la bibliothèque</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-8-securite-dun-coffre">Exercice 8 : Sécurité d’un coffre</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-9-capteur-de-securite">Exercice 9 : Capteur de sécurité</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-10-admission-en-universite">Exercice 10 : Admission en université</a>
+    </li>
         </ul>
     </li>
     </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_str/">Types de base (chaînes de caractéres)</a>
                 </li>
     </ul>
                   </li>
@@ -643,22 +659,84 @@ Exemple :  </p>
 </ol>
 <h2 id="exercices-python">Exercices Python</h2>
 <h3 id="exercice-1-entree-gratuite-ou-payante">Exercice 1 : Entrée gratuite ou payante ?</h3>
-<p>On organise une soirée :<br />
+<p>On organise une soirée : <br />
 - L’entrée est gratuite si la personne a <strong>moins de 12 ans</strong> ou <strong>plus de 65 ans</strong>.<br />
 - Sinon, elle coûte 10 €.  </p>
 <p>Écrire un programme qui demande l’âge et affiche si l’entrée est gratuite ou payante.  </p>
 <h3 id="exercice-2-acces-reserve">Exercice 2 : Accès réservé</h3>
 <p>Un site web n’autorise l’accès que si l’utilisateur a au moins 13 ans, et a accepté les conditions d’utilisation (réponse <code>"oui"</code> ou <code>"non"</code>).  </p>
-<p>Écrire un programme qui affiche <code>"Accès autorisé"</code> ou <code>"Accès refusé"</code>.  </p>
+<p>Écrire un programme qui affiche <code>"Accès autorisé"</code> ou <code>"Accès refusé"</code> en fonction des deux variables.</p>
 <h3 id="exercice-3-lannee-bissextile">Exercice 3 : L’année bissextile</h3>
 <p>Une année est bissextile si elle est divisible par 4 et non divisible par 100, ou si elle est divisible par 400.  </p>
 <p>Écrire un programme qui demande une année et affiche si elle est bissextile ou non.  </p>
+<h3 id="exercice-4-jeu-de-devinette">Exercice 4 : Jeu de devinette</h3>
+<p>On choisit un nombre secret aléatoire :</p>
+<pre><code>import random
+
+n = random.randint(0,1000)
+</code></pre>
+<p>L’utilisateur doit proposer un nombre, et le programme répond :<br />
+- <code>"Trop petit"</code>,<br />
+- <code>"Trop grand"</code>,<br />
+- ou <code>"Bravo !"</code>.<br />
+en fonction des tentatives du joueur jusqu'à ce qu'il trouve lé nombre secret.</p>
+<h3 id="exercice-5-triangle-possible">Exercice 5 : Triangle possible ?</h3>
+<p>Écrire un programme qui demande trois longueurs <code>a</code>, <code>b</code>, <code>c</code>.<br />
+On rappelle qu’un triangle est possible si <strong>chaque côté est inférieur à la somme des deux autres</strong>.<br />
+Le programme doit afficher <code>"Triangle valide"</code> ou <code>"Triangle impossible"</code>.  </p>
+<h3 id="exercice-6-nombre-premier-version-booleens">Exercice 6 : Nombre premier (version booléens)</h3>
+<p>Écrire un programme qui demande un entier <code>n</code> et affiche s’il est premier ou non.<br />
+On pourra utiliser une boucle <code>for</code> pour chercher un diviseur, mais le résultat final doit être stocké dans une variable booléenne <code>est_premier</code> qui est <code>True</code> ou <code>False</code>.  </p>
+<h3 id="exercice-7-acces-a-la-bibliotheque">Exercice 7 : Accès à la bibliothèque</h3>
+<p>On donne accès à une salle de bibliothèque si :
+- la personne est <strong>enseignant</strong>,
+- ou bien <strong>élève</strong> mais avec une carte valide,
+- et <strong>pas en retard</strong> de plus de 3 jours.</p>
+<p><strong>Consignes :</strong>
+1. Demander le rôle (<code>"enseignant"</code> ou <code>"élève"</code>).<br />
+2. Demander si la carte est valide (<code>"oui"/"non"</code>).<br />
+3. Demander le nombre de jours de retard.<br />
+4. Écrire l’expression booléenne.<br />
+5. Afficher <code>"Accès autorisé"</code> ou <code>"Accès refusé"</code>.  </p>
+<h3 id="exercice-8-securite-dun-coffre">Exercice 8 : Sécurité d’un coffre</h3>
+<p>Un coffre s’ouvre si :
+- le <strong>code est correct</strong><br />
+- et si <strong>l’utilisateur est admin</strong> ou qu’il a utilisé <strong>sa clé physique</strong>.</p>
+<p><strong>Consignes :</strong>
+1. Définir une constante <code>code_secret = 1234</code>.<br />
+2. Demander le code entré.<br />
+3. Demander si l’utilisateur est <code>"admin"</code> ou <code>"utilisateur"</code>.<br />
+4. Demander s’il a une clé (<code>"oui"/"non"</code>).<br />
+5. Traduire la règle en Python avec <code>and</code> / <code>or</code>.<br />
+6. Afficher <code>"Coffre ouvert"</code> ou <code>"Accès refusé"</code>.  </p>
+<h3 id="exercice-9-capteur-de-securite">Exercice 9 : Capteur de sécurité</h3>
+<p>Une alarme se déclenche si :
+- <strong>au moins une porte</strong> est ouverte,
+- et <strong>aucune fenêtre</strong> n’est fermée correctement,
+- ou si le <strong>capteur de mouvement</strong> est activé.</p>
+<p><strong>Consignes :</strong>
+1. Demander l’état de deux portes (ouverte/fermée).<br />
+2. Demander l’état de deux fenêtres (ouverte/fermée).<br />
+3. Demander si un mouvement est détecté (<code>"oui"/"non"</code>).<br />
+4. Construire une formule logique combinant ces trois conditions.<br />
+5. Afficher <code>"Alarme déclenchée"</code> ou <code>"Tout est normal"</code>.  </p>
+<h3 id="exercice-10-admission-en-universite">Exercice 10 : Admission en université</h3>
+<p>Un étudiant est accepté si :
+- sa moyenne est <strong>au moins 12</strong><br />
+- et il a <strong>validé le bac</strong><br />
+- ou bien s’il a une <strong>recommandation spéciale</strong>.</p>
+<p><strong>Consignes :</strong>
+1. Demander la moyenne (nombre).<br />
+2. Demander si le bac est validé (<code>"oui"/"non"</code>).<br />
+3. Demander si une recommandation est présente (<code>"oui"/"non"</code>).<br />
+4. Écrire une condition booléenne.<br />
+5. Afficher <code>"Admis"</code> ou <code>"Refusé"</code>.  </p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../Types_de_base_float/" class="btn btn-neutral float-left" title="Types de base (flottants)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../../Terminales/Terminales/" class="btn btn-neutral float-right" title="Accueil">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Types_de_base_str/" class="btn btn-neutral float-right" title="Types de base (chaînes de caractéres)">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -684,7 +762,7 @@ Exemple :  </p>
       <span><a href="../Types_de_base_float/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../../../Terminales/Terminales/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../Types_de_base_str/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
