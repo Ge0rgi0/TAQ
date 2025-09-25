@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Types de base (chaînes de caractéres) - TAQ</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Types de base (cha\u00eenes de caract\u00e9res)";
+        var mkdocs_page_input_path = "Premieres/Chapitres/Types_de_base_str.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/Chapitres/Internet/">Internet</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_int/">Types de base (entiers)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_float/">Types de base (flottants)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_bool/">Types de base (booléens)</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Types de base (chaînes de caractéres)</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#1-definition">1. Définition</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-caracteres-et-encodage">2. Caractères et encodage</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-1-conversion-binaire-texte">Exercice 1 : Conversion binaire → texte</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-2-conversion-hexadecimal-texte">Exercice 2 : Conversion hexadécimal → texte</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#iso-8859-1-et-manipulation-des-caracteres-en-python">ISO-8859-1 et manipulation des caractères en Python</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-operations-de-base">3. Opérations de base</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#a-concatenation">a) Concaténation (+)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#b-repetition">b) Répétition (*)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#c-longueur-len">c) Longueur (len)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#d-acces-par-indice">d) Accès par indice</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#e-tranches-slices">e) Tranches (slices)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-fonctions-utiles">4. Fonctions utiles</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-exemples-dexercices">5. Exemples d’exercices</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-1">Exercice 1</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-2">Exercice 2</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-3">Exercice 3</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-4">Exercice 4</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-5">Exercice 5</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#6-resume">6. Résumé</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/BDD/">Base de données</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Premières</li>
+      <li class="breadcrumb-item active">Types de base (chaînes de caractéres)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="les-chaines-de-caracteres-str">Les chaînes de caractères (<code>str</code>)</h1>
+<h2 id="1-definition">1. Définition</h2>
+<p>Une <strong>chaîne de caractères</strong> est une suite ordonnée de symboles (lettres, chiffres, ponctuation, espaces…).<br />
+En Python, une chaîne est de type <code>str</code>.<br />
+On peut l’écrire entre <strong>guillemets simples</strong> <code>'...'</code> ou <strong>guillemets doubles</strong> <code>"..."</code>.</p>
+<p>Exemples :</p>
+<pre><code class="language-python">mot = &quot;Bonjour&quot;
+lettre = 'A'
+phrase = &quot;Ceci est une phrase.&quot;
+</code></pre>
+<hr />
+<h2 id="2-caracteres-et-encodage">2. Caractères et encodage</h2>
+<p>ASCII signifie American Standard Code for Information Interchange
+(en français : Code américain standard pour l’échange d’informations).  </p>
+<p>C’est une norme de codage des caractères créée dans les années 1960.
+Elle associe chaque symbole (lettre, chiffre, ponctuation, contrôle) à un nombre entier.  </p>
+<ul>
+<li>L’idée : comme l’ordinateur ne comprend que des nombres (en binaire), il faut une correspondance caractère ↔ nombre.  </li>
+</ul>
+<p><img alt="ASCII" src="../ASCII.png" /></p>
+<p><span style="color:blue">Exemple</span>  </p>
+<p>Un texte encodé ressemeble donc à ce ceci :</p>
+<p>"NSI" -&gt; 4E 53 49 -&gt; 01001110 01010011 01001001</p>
+<p><span style="color:red">Exercices</span> </p>
+<h3 id="exercice-1-conversion-binaire-texte">Exercice 1 : Conversion binaire → texte</h3>
+<p>On te donne la suite binaire suivante (chaque octet correspond à un caractère ASCII) :</p>
+<p><code>0100100001100101011011000110110001101111</code></p>
+<ol>
+<li>Séparer chaque octet et convertis-le en décimal.  </li>
+<li>Trouver le caractère ASCII correspondant à chaque nombre.  </li>
+<li>Recomposer la chaîne de caractères.  </li>
+</ol>
+<p><strong>Question</strong> : Quelle est la chaîne finale ?</p>
+<h3 id="exercice-2-conversion-hexadecimal-texte">Exercice 2 : Conversion hexadécimal → texte</h3>
+<p>On te donne la suite hexadécimale suivante :</p>
+<p><code>54 75 74 6F 72</code></p>
+<ol>
+<li>Convertis chaque code hexadécimal en décimal.  </li>
+<li>Trouve le caractère ASCII correspondant.  </li>
+<li>Recompose le mot complet.  </li>
+</ol>
+<p><strong>Question</strong> : Quel est le mot obtenu ?</p>
+<h2 id="iso-8859-1-et-manipulation-des-caracteres-en-python">ISO-8859-1 et manipulation des caractères en Python</h2>
+<p>Après la norme ASCII, une extension appelée <strong>ISO-8859-1</strong> (ou Latin-1) a été créée pour représenter les caractères utilisés dans les langues européennes. Contrairement à ASCII qui utilise 7 bits (128 caractères), ISO-8859-1 utilise <strong>8 bits</strong> et peut coder <strong>256 caractères</strong>, incluant les lettres accentuées (é, à, ü, etc.), ainsi que certains symboles supplémentaires. Cette norme permet donc de gérer beaucoup plus de textes européens qu’ASCII.</p>
+<p>En Python, on peut manipuler facilement les codes des caractères grâce aux fonctions intégrées :  </p>
+<ul>
+<li><code>ord(caractère)</code> : retourne le code numérique du caractère (ASCII ou ISO-8859-1).<br />
+  ```python<blockquote>
+<blockquote>
+<blockquote>
+<p>ord('é')
+  233</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><code>chr(code)</code> : retourne le caractère correspondant à un code numérique.
+  ```python<blockquote>
+<blockquote>
+<blockquote>
+<p>ord(233)
+  é</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<hr />
+<h2 id="3-operations-de-base">3. Opérations de base</h2>
+<p>On peut appliquer différentes opérations sur une chaîne :</p>
+<h3 id="a-concatenation">a) Concaténation (<code>+</code>)</h3>
+<pre><code class="language-python">prenom = &quot;Ada&quot;
+nom = &quot;Lovelace&quot;
+print(prenom + &quot; &quot; + nom)  # Ada Lovelace
+</code></pre>
+<h3 id="b-repetition">b) Répétition (<code>*</code>)</h3>
+<pre><code class="language-python">rire = &quot;ha&quot;
+print(rire * 3)  # hahaha
+</code></pre>
+<h3 id="c-longueur-len">c) Longueur (<code>len</code>)</h3>
+<pre><code class="language-python">texte = &quot;Bonjour&quot;
+print(len(texte))  # 7
+</code></pre>
+<h3 id="d-acces-par-indice">d) Accès par indice</h3>
+<p>Chaque caractère est accessible par son <strong>indice</strong> (position, en commençant à 0) :</p>
+<pre><code class="language-python">mot = &quot;Python&quot;
+print(mot[0])  # P
+print(mot[3])  # h
+</code></pre>
+<h3 id="e-tranches-slices">e) Tranches (slices)</h3>
+<p>On peut extraire une partie de la chaîne :</p>
+<pre><code class="language-python">mot = &quot;Python&quot;
+print(mot[0:3])  # Pyt
+print(mot[2:])   # thon
+print(mot[:4])   # Pyth
+</code></pre>
+<hr />
+<h2 id="4-fonctions-utiles">4. Fonctions utiles</h2>
+<p>Quelques méthodes très utilisées :</p>
+<pre><code class="language-python">texte = &quot;bonjour&quot;
+print(texte.upper())   # BONJOUR
+print(texte.capitalize())  # Bonjour
+print(texte.isalpha()) # True si uniquement des lettres
+print(texte.isdigit()) # True si uniquement des chiffres
+print(&quot;123&quot;.isdigit()) # True
+</code></pre>
+<hr />
+<h2 id="5-exemples-dexercices">5. Exemples d’exercices</h2>
+<h3 id="exercice-1">Exercice 1</h3>
+<p>Demander un mot et afficher son premier et son dernier caractère.</p>
+<h3 id="exercice-2">Exercice 2</h3>
+<p>Demander une phrase et afficher sa longueur.</p>
+<h3 id="exercice-3">Exercice 3</h3>
+<p>Vérifier si une chaîne donnée contient uniquement des chiffres.</p>
+<h3 id="exercice-4">Exercice 4</h3>
+<p>Écrire un programme qui inverse une chaîne de caractères.</p>
+<pre><code class="language-python">mot = &quot;Python&quot;
+print(mot[::-1])  # nohtyP
+</code></pre>
+<h3 id="exercice-5">Exercice 5</h3>
+<p>Demander un mot et afficher <code>"Palindrome"</code> s’il se lit dans les deux sens.</p>
+<hr />
+<h2 id="6-resume">6. Résumé</h2>
+<ul>
+<li>Une chaîne est de type <code>str</code> et se note avec <code>'...'</code> ou <code>"..."</code>.  </li>
+<li>Chaque caractère est codé par un nombre (ASCII/Unicode).  </li>
+<li>On peut : concaténer, répéter, mesurer (<code>len</code>), extraire (<code>[]</code>).  </li>
+<li>Les méthodes permettent de transformer ou tester des chaînes.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Types_de_base_bool/" class="btn btn-neutral float-left" title="Types de base (booléens)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../Terminales/Terminales/" class="btn btn-neutral float-right" title="Accueil">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Types_de_base_bool/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../../Terminales/Terminales/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
