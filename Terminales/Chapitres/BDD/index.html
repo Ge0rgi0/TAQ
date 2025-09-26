@@ -111,6 +111,22 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sql">SQL</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#les-composants-dune-requete-sql">Les composants d’une requête SQL</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#requetes-dinterrogation">Requêtes d’interrogation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercices">Exercices</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#requetes-de-mise-a-jour">Requêtes de mise à jour</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#a-retenir">à retenir</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
     </ul>
@@ -275,6 +291,278 @@ Exemple : dans une base de données d’un hôpital, seuls les médecins ont acc
 - Il optimise l’<strong>efficacité des recherches</strong>.<br />
 - Il sécurise l’<strong>accès aux informations sensibles</strong>.  </p>
 <p>Ces services sont indispensables pour comprendre pourquoi les bases de données relationnelles sont utilisées partout dans le monde numérique.</p>
+<h2 id="sql">SQL</h2>
+<h3 id="introduction">Introduction</h3>
+<p>Le langage <strong>SQL</strong> (Structured Query Language) permet d’interroger et de modifier des bases de données relationnelles.<br />
+Nous allons voir les principales instructions pour <strong>sélectionner</strong>, <strong>ajouter</strong>, <strong>modifier</strong> ou <strong>supprimer</strong> des données.</p>
+<p>Pour illustrer les exemples, on utilisera la base suivante :</p>
+<p><strong>Table <code>Eleve</code></strong>  </p>
+<table>
+<thead>
+<tr>
+<th>id_eleve</th>
+<th>nom</th>
+<th>prenom</th>
+<th>classe</th>
+<th>age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Martin</td>
+<td>Alice</td>
+<td>TNSI</td>
+<td>17</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Dupont</td>
+<td>Lucas</td>
+<td>TNSI</td>
+<td>18</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Durand</td>
+<td>Emma</td>
+<td>TES</td>
+<td>17</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Bernard</td>
+<td>Hugo</td>
+<td>TNSI</td>
+<td>18</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table <code>Note</code></strong></p>
+<table>
+<thead>
+<tr>
+<th>id_note</th>
+<th>id_eleve</th>
+<th>matiere</th>
+<th>valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>NSI</td>
+<td>15</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>NSI</td>
+<td>12</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>Maths</td>
+<td>14</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>NSI</td>
+<td>17</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="les-composants-dune-requete-sql">Les composants d’une requête SQL</h3>
+<p>Une requête SQL est composée de plusieurs parties :<br />
+- <strong>SELECT</strong> : les colonnes à afficher<br />
+- <strong>FROM</strong> : les tables utilisées<br />
+- <strong>WHERE</strong> : condition(s) de filtrage (optionnel)<br />
+- <strong>JOIN</strong> : pour relier plusieurs tables (optionnel)  </p>
+<hr />
+<h3 id="requetes-dinterrogation">Requêtes d’interrogation</h3>
+<p><strong>Afficher toutes les colonnes</strong></p>
+<pre><code class="language-sql">SELECT * 
+FROM Eleve;
+</code></pre>
+<p>Affiche toutes les informations de la table <code>Eleve</code>.</p>
+<hr />
+<p><strong>Sélectionner certaines colonnes</strong></p>
+<pre><code class="language-sql">SELECT nom, prenom
+FROM Eleve;
+</code></pre>
+<p>Affiche uniquement le nom et le prénom des élèves.</p>
+<hr />
+<p><strong>Supprimer les doublons avec DISTINCT</strong></p>
+<pre><code class="language-sql">SELECT DISTINCT classe
+FROM Eleve;
+</code></pre>
+<p>Affiche la liste des classes sans répétition (<code>TNSI</code>, <code>TES</code>).</p>
+<hr />
+<p><strong>Filtrer avec WHERE</strong></p>
+<pre><code class="language-sql">SELECT nom, prenom 
+FROM Eleve
+WHERE age = 18;
+</code></pre>
+<p>Affiche les élèves ayant 18 ans.</p>
+<hr />
+<p><strong>Trier les résultats avec ORDER BY</strong></p>
+<pre><code class="language-sql">SELECT nom, prenom, age
+FROM Eleve
+ORDER BY age DESC;
+</code></pre>
+<p>Classe les élèves par âge décroissant.</p>
+<hr />
+<p><strong>Utiliser les fonctions d’agrégation</strong>
+- <strong>AVG()</strong> : moyenne<br />
+- <strong>MIN()</strong> / <strong>MAX()</strong> : minimum, maximum<br />
+- <strong>COUNT()</strong> : compter le nombre de valeurs<br />
+- <strong>SUM()</strong> : somme</p>
+<p>Exemple :  </p>
+<pre><code class="language-sql">SELECT AVG(valeur) 
+FROM Note
+WHERE matiere = 'NSI';
+</code></pre>
+<p>Moyenne des notes en NSI.</p>
+<hr />
+<h3 id="exercices">Exercices</h3>
+<p>Voici un base de données repertoriant les 151 premiers pokemons :<br />
+<a href="../pokemon151.db">💾 Télécharger pokemon.db</a></p>
+<table>
+<thead>
+<tr>
+<th>pokemon</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td># numero   (int)</td>
+</tr>
+<tr>
+<td>nom    (text)</td>
+</tr>
+<tr>
+<td>type1  (text)</td>
+</tr>
+<tr>
+<td>type2  (text)</td>
+</tr>
+<tr>
+<td>taille (float)</td>
+</tr>
+<tr>
+<td>poids  (float)</td>
+</tr>
+<tr>
+<td><u>evolution</u>   (int)</td>
+</tr>
+</tbody>
+</table>
+<p>L'attribut <code>evolution</code> est une clé étrangère qui référence l'attribut <code>numero</code>.</p>
+<p>Voici les différents types qui existent :</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Plante</td>
+<td>Feu</td>
+<td>Eau</td>
+<td>Insecte</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>Poison</td>
+<td>Électrik</td>
+<td>Sol</td>
+<td>Fée</td>
+<td>Combat</td>
+</tr>
+<tr>
+<td>Psy</td>
+<td>Roche</td>
+<td>Spectre</td>
+<td>Glace</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<p>Chaque pokemon a obligatoirement un <code>type1</code>, mais <code>type2</code> peut être égal à <code>null</code>.</p>
+<p>Pour vérifier qu'un élément est null on utilisera le mot clé <code>is</code> (exemple : evolution is null).</p>
+<p><strong>Requêtes</strong></p>
+<p>écrire en les requêtes SQL suivantes :</p>
+<ol>
+<li>Afficher tous la table <code>pokemon</code></li>
+<li>Afficher tous les <code>noms</code> et <code>numéro</code> des pokemons</li>
+<li>Afficher toutes les combinaisons de <code>types</code> présentes dans la table</li>
+<li>Problème : on a beaucoup de fois la même combinaison : afficher toutes les combinaisons différentes</li>
+<li>Afficher tous les pokemons de type <code>Eau</code> qui en sont à leur dernier stade d'évolution (c'est à dire que l'attribut <code>evolution</code> est à <code>null</code>)</li>
+<li>Afficher les pokemons du plus grand au plus petit</li>
+<li>Afficher les pokemons dans l'ordre alphabetique inverse</li>
+<li>Afficher la <code>taille</code> moyenne des pokemons de type <code>Insecte</code></li>
+<li>Afficher le plus petit des pokemons ainsi que le plus gros</li>
+<li>Afficher le nombre de pokemon de type <code>Spectre</code></li>
+<li>Afficher la somme des poids des pokemons de type <code>Feu</code> dont la <code>taille</code> dépasse le mètre</li>
+<li>Afficher les Pokémon dont le deuxième type est <code>Poison</code> et dont la <code>taille</code> est supérieure à 1 mètre</li>
+<li>Afficher les Pokémon dont le <code>poids</code> est supérieur à la moyenne du <code>poids</code> de tous les Pokémon</li>
+<li>Afficher le <code>nom</code> et le <code>type</code> des Pokémon dont la tai<code>lle est comprise entre 1 mètre et 2 mètres, triés par</code>taille`` décroissante</li>
+<li>Afficher les Pokémon dont la somme des <code>tailles</code> et des <code>poids</code> est supérieure à 50</li>
+</ol>
+<hr />
+<p><strong>Relier plusieurs tables avec JOIN</strong></p>
+<pre><code class="language-sql">SELECT Eleve.nom, Eleve.prenom, Note.matiere, Note.valeur
+FROM Eleve
+JOIN Note ON Eleve.id_eleve = Note.id_eleve;
+</code></pre>
+<p>Affiche le nom, le prénom et les notes des élèves.</p>
+<p><strong>Exercice</strong></p>
+<p>écrire en les requêtes SQL suivantes :</p>
+<ol>
+<li>Afficher le <code>nom</code> de chaque Pokémon ainsi que le <code>nom</code> de son <code>evolution</code> (si elle existe) en utilisant une auto-jointure sur la colonne <code>evolution</code>.</li>
+<li>Afficher tous les Pokémon dont le <code>type1</code> est le même que celui de leur <code>evolution</code>.</li>
+<li>Afficher le <code>nom</code> des Pokémon et les <code>types</code> de leur <code>evolution</code> lorsque le <code>type1</code> principal diffère.</li>
+<li>Afficher le <code>nom</code> et le <code>type</code> des Pokémon dont le type principal diffère de celui de l’evolution mais qui partagent le même type secondaire.</li>
+<li>Afficher les Pokémon et le <code>nom</code> de leur <code>evolution</code> uniquement si le <code>taille</code> de l’évolution est inférieur à celui du Pokémon initial.</li>
+</ol>
+<hr />
+<h3 id="requetes-de-mise-a-jour">Requêtes de mise à jour</h3>
+<p><strong>Ajouter une donnée (INSERT)</strong></p>
+<pre><code class="language-sql">INSERT INTO Eleve (id_eleve, nom, prenom, classe, age)
+VALUES (5, 'Lemoine', 'Clara', 'TES', 17);
+</code></pre>
+<p>Ajoute une nouvelle élève.</p>
+<hr />
+<p><strong>Modifier une donnée (UPDATE)</strong></p>
+<pre><code class="language-sql">UPDATE Eleve
+SET age = 19
+WHERE nom = 'Dupont' AND prenom = 'Lucas';
+</code></pre>
+<p>Met à jour l’âge de Lucas Dupont.</p>
+<hr />
+<p><strong>Supprimer une donnée (DELETE)</strong></p>
+<pre><code class="language-sql">DELETE FROM Eleve
+WHERE id_eleve = 4;
+</code></pre>
+<p>Supprime Hugo Bernard de la base.</p>
+<hr />
+<h3 id="a-retenir">à retenir</h3>
+<ul>
+<li><code>SELECT ... FROM ... WHERE ...</code> : interroger la base  </li>
+<li><code>JOIN</code> : croiser plusieurs tables  </li>
+<li><code>ORDER BY</code>, <code>DISTINCT</code> : trier et supprimer les doublons  </li>
+<li>Fonctions d’agrégation : <code>AVG</code>, <code>MIN</code>, <code>MAX</code>, <code>COUNT</code>, <code>SUM</code>  </li>
+<li><code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code> : modifier la base  </li>
+</ul>
               
             </div>
           </div><footer>
