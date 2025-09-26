@@ -175,3 +175,213 @@ Le SGBDR n’est pas seulement un outil de stockage :
 - Il sécurise l’**accès aux informations sensibles**.  
 
 Ces services sont indispensables pour comprendre pourquoi les bases de données relationnelles sont utilisées partout dans le monde numérique.
+
+## SQL
+
+### Introduction
+Le langage **SQL** (Structured Query Language) permet d’interroger et de modifier des bases de données relationnelles.  
+Nous allons voir les principales instructions pour **sélectionner**, **ajouter**, **modifier** ou **supprimer** des données.
+
+Pour illustrer les exemples, on utilisera la base suivante :
+
+**Table `Eleve`**  
+
+| id_eleve | nom      | prenom   | classe   | age |  
+|----------|----------|----------|----------|-----|  
+| 1        | Martin   | Alice    | TNSI     | 17  |  
+| 2        | Dupont   | Lucas    | TNSI     | 18  |  
+| 3        | Durand   | Emma     | TES      | 17  |  
+| 4        | Bernard  | Hugo     | TNSI     | 18  |  
+
+**Table `Note`**
+
+| id_note | id_eleve | matiere | valeur |  
+|---------|----------|---------|--------|  
+| 1       | 1        | NSI     | 15     |  
+| 2       | 2        | NSI     | 12     |  
+| 3       | 1        | Maths   | 14     |  
+| 4       | 3        | NSI     | 17     |  
+
+---
+
+### Les composants d’une requête SQL
+Une requête SQL est composée de plusieurs parties :  
+- **SELECT** : les colonnes à afficher  
+- **FROM** : les tables utilisées  
+- **WHERE** : condition(s) de filtrage (optionnel)  
+- **JOIN** : pour relier plusieurs tables (optionnel)  
+
+---
+
+### Requêtes d’interrogation
+
+**Afficher toutes les colonnes**
+```sql
+SELECT * 
+FROM Eleve;
+```
+Affiche toutes les informations de la table `Eleve`.
+
+---
+
+**Sélectionner certaines colonnes**
+```sql
+SELECT nom, prenom
+FROM Eleve;
+```
+Affiche uniquement le nom et le prénom des élèves.
+
+---
+
+**Supprimer les doublons avec DISTINCT**
+```sql
+SELECT DISTINCT classe
+FROM Eleve;
+```
+Affiche la liste des classes sans répétition (`TNSI`, `TES`).
+
+---
+
+**Filtrer avec WHERE**
+```sql
+SELECT nom, prenom 
+FROM Eleve
+WHERE age = 18;
+```
+Affiche les élèves ayant 18 ans.
+
+---
+
+**Trier les résultats avec ORDER BY**
+```sql
+SELECT nom, prenom, age
+FROM Eleve
+ORDER BY age DESC;
+```
+Classe les élèves par âge décroissant.
+
+---
+
+**Utiliser les fonctions d’agrégation**
+- **AVG()** : moyenne  
+- **MIN()** / **MAX()** : minimum, maximum  
+- **COUNT()** : compter le nombre de valeurs  
+- **SUM()** : somme
+
+Exemple :  
+```sql
+SELECT AVG(valeur) 
+FROM Note
+WHERE matiere = 'NSI';
+```
+Moyenne des notes en NSI.
+
+---
+
+### Exercices
+
+Voici un base de données repertoriant les 151 premiers pokemons :  
+[💾 Télécharger pokemon.db](pokemon151.db)
+
+|pokemon|
+|---|
+|# numero   (int)|
+|nom    (text)|
+|type1  (text)|
+|type2  (text)|
+|taille (float)|
+|poids  (float)|
+|<u>evolution</u>   (int)|
+
+L'attribut `evolution` est une clé étrangère qui référence l'attribut `numero`.
+
+Voici les différents types qui existent :
+
+||||||
+|--|--|--|--|--|
+|Plante|Feu|Eau|Insecte|Normal|
+|Poison|Électrik|Sol|Fée|Combat|
+|Psy|Roche|Spectre|Glace|null|
+
+Chaque pokemon a obligatoirement un ``type1``, mais ``type2`` peut être égal à `null`.
+
+Pour vérifier qu'un élément est null on utilisera le mot clé `is` (exemple : evolution is null).
+
+**Requêtes**
+
+écrire en les requêtes SQL suivantes :
+
+1. Afficher tous la table `pokemon`
+2. Afficher tous les ``noms`` et ``numéro`` des pokemons
+3. Afficher toutes les combinaisons de ``types`` présentes dans la table
+4. Problème : on a beaucoup de fois la même combinaison : afficher toutes les combinaisons différentes
+5. Afficher tous les pokemons de type ``Eau`` qui en sont à leur dernier stade d'évolution (c'est à dire que l'attribut ``evolution`` est à ``null``)
+6. Afficher les pokemons du plus grand au plus petit
+7. Afficher les pokemons dans l'ordre alphabetique inverse
+8. Afficher la ``taille`` moyenne des pokemons de type ``Insecte``
+9. Afficher le plus petit des pokemons ainsi que le plus gros
+10. Afficher le nombre de pokemon de type ``Spectre``
+11. Afficher la somme des poids des pokemons de type ``Feu`` dont la ``taille`` dépasse le mètre
+12. Afficher les Pokémon dont le deuxième type est ``Poison`` et dont la ``taille`` est supérieure à 1 mètre
+13. Afficher les Pokémon dont le ``poids`` est supérieur à la moyenne du ``poids`` de tous les Pokémon
+14. Afficher le ``nom`` et le ``type`` des Pokémon dont la tai``lle est comprise entre 1 mètre et 2 mètres, triés par ``taille`` décroissante
+15. Afficher les Pokémon dont la somme des ``tailles`` et des ``poids`` est supérieure à 50
+
+---
+
+**Relier plusieurs tables avec JOIN**
+```sql
+SELECT Eleve.nom, Eleve.prenom, Note.matiere, Note.valeur
+FROM Eleve
+JOIN Note ON Eleve.id_eleve = Note.id_eleve;
+```
+Affiche le nom, le prénom et les notes des élèves.
+
+**Exercice**
+
+écrire en les requêtes SQL suivantes :
+
+1. Afficher le ``nom`` de chaque Pokémon ainsi que le ``nom`` de son ``evolution`` (si elle existe) en utilisant une auto-jointure sur la colonne `evolution`.
+2. Afficher tous les Pokémon dont le ``type1`` est le même que celui de leur `evolution`.
+3. Afficher le ``nom`` des Pokémon et les ``types`` de leur ``evolution`` lorsque le ``type1`` principal diffère.
+4. Afficher le ``nom`` et le ``type`` des Pokémon dont le type principal diffère de celui de l’evolution mais qui partagent le même type secondaire.
+5. Afficher les Pokémon et le ``nom`` de leur ``evolution`` uniquement si le ``taille`` de l’évolution est inférieur à celui du Pokémon initial.
+
+---
+
+### Requêtes de mise à jour
+
+**Ajouter une donnée (INSERT)**
+```sql
+INSERT INTO Eleve (id_eleve, nom, prenom, classe, age)
+VALUES (5, 'Lemoine', 'Clara', 'TES', 17);
+```
+Ajoute une nouvelle élève.
+
+---
+
+**Modifier une donnée (UPDATE)**
+```sql
+UPDATE Eleve
+SET age = 19
+WHERE nom = 'Dupont' AND prenom = 'Lucas';
+```
+Met à jour l’âge de Lucas Dupont.
+
+---
+
+**Supprimer une donnée (DELETE)**
+```sql
+DELETE FROM Eleve
+WHERE id_eleve = 4;
+```
+Supprime Hugo Bernard de la base.
+
+---
+
+### à retenir
+- `SELECT ... FROM ... WHERE ...` : interroger la base  
+- `JOIN` : croiser plusieurs tables  
+- `ORDER BY`, `DISTINCT` : trier et supprimer les doublons  
+- Fonctions d’agrégation : `AVG`, `MIN`, `MAX`, `COUNT`, `SUM`  
+- `INSERT`, `UPDATE`, `DELETE` : modifier la base  

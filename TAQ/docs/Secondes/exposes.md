@@ -33,7 +33,7 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 - *World of Warcraft* : l’épidémie virtuelle comme modèle d’étude scientifique  
 
 ### Exemples de parties réflexives
-- Minecraft → le jeu sur les réseaux sociaux / la redstone et les opérations logiques / les changements après le rachat par Microsoft  
+- Minecraft → le jeu sur les réseaux sociaux / la tomatostone et les opérations logiques / les changements après le rachat par Microsoft  
 - TikTok → l’algorithme de recommandation / les effets du *doomscrolling* / la vie privée et l’exploitation des données / les nouveaux métiers liés à la plateforme  
 - Doomscrolling → enjeux psychologiques et sociétaux  
 - Fake news → impacts politiques et démocratiques  
@@ -72,41 +72,44 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 ## Groupes  
 
 Groupes formées :  
-- 2B : 94 %  
-- 2D : 83 %  
-- 2E : 29 %  
-- 2F : 0 %  
+- <span style="color:goldenrod">2B : 94 %</span>  
+- <span style="color:royalblue">2D : 83 %</span>  
+- <span style="color:seagreen">2E : 29 %</span>  
+- <span style="color:tomato">2F : 26 %</span>  
 
 **Pas de panique ! Ceci n'est pas l'ordre de passage.**  
 
 |Groupes|Sujet|Recul|Classe|
 |--|--|--|--|
-|Capucine G. Clivia V. Carla V.|||2B|
-|Florent C. Hugo D. Nathael W.|||2B|
-|Camille D. Eloise D. Sharon B.|||2B|
-|Hatim Z. Emma L. Manel B.|||2B|
-|Ilyes T. Thomas L. Adrien L.|||2B|
-|Sacha D. Noah G. Gaston D.|||2B|
-|Maissan E. Diana K.|||2B|
-|Leo B. Lonny D.|||2B|
-|Laly E. Maelle V.|||2B|
-|Kylian G. Ethan L.|||2B|
-|Kamron R. Arthur M.|||2B|
-|Martin B. Lucas S.|||2B|
-|Emelyne F. Anne-rose B.|||2D|
-|Camille C. Arthur P. Milo M.|||2D|
-|Donovan F. Lucas H. Lucas F.|||2D|
-|Altay K. Luca B. Maxence C.|||2D|
-|Coleen A. Karolina L. Maelle D.|||2D|
-|Camille B. Lena C.|||2D|
-|Valentin J. Lucas W.|||2D|
-|Lenaic D. Axel F.|||2D|
-|Laura G. Gwenaelle L.|||2D|
-|Zelie B. Emma M. Nina C.|||2D|
-|Charlotte D. Iris D.|||2D|
-|Alicia D. Leane D.|||2D|
-|Emma P. Zeliz S.|||2E|
-|Nolhan D. Yelen P. Noe D.|||2E|
-|Sarah G. Llana B. Elize P.|||2E|
-|Anais B. Romane L.|||2E|
-|Zelie P-L. Pauline B. Naomie C.|||2F|
+|<span style="color:goldenrod">Capucine G. Clivia V. Carla V.|||2B|
+|<span style="color:goldenrod">Florent C. Hugo D. Nathael W.|||2B|
+|<span style="color:goldenrod">Camille D. Eloise D. Sharon B.|||2B|
+|<span style="color:goldenrod">Hatim Z. Emma L. Manel B.|||2B|
+|<span style="color:goldenrod">Ilyes T. Thomas L. Adrien L.|||2B|
+|<span style="color:goldenrod">Sacha D. Noah G. Gaston D.|||2B|
+|<span style="color:goldenrod">Maissan E. Diana K.|||2B|
+|<span style="color:goldenrod">Leo B. Lonny D.|||2B|
+|<span style="color:goldenrod">Laly E. Maelle V.|||2B|
+|<span style="color:goldenrod">Kylian G. Ethan L.|||2B|
+|<span style="color:goldenrod">Kamron R. Arthur M.|||2B|
+|<span style="color:goldenrod">Martin B. Lucas S.|||2B|
+|<span style="color:royalblue">Emelyne F. Anne-rose B.|||2D|
+|<span style="color:royalblue">Camille C. Arthur P. Milo M.|||2D|
+|<span style="color:royalblue">Donovan F. Lucas H. Lucas F.|||2D|
+|<span style="color:royalblue">Altay K. Luca B. Maxence C.|||2D|
+|<span style="color:royalblue">Coleen A. Karolina L. Maelle D.|||2D|
+|<span style="color:royalblue">Camille B. Lena C.|||2D|
+|<span style="color:royalblue">Valentin J. Lucas W.|||2D|
+|<span style="color:royalblue">Lenaic D. Axel F.|||2D|
+|<span style="color:royalblue">Laura G. Gwenaelle L.|||2D|
+|<span style="color:royalblue">Zelie B. Emma M. Nina C.|||2D|
+|<span style="color:royalblue">Charlotte D. Iris D.|||2D|
+|<span style="color:royalblue">Alicia D. Leane D.|||2D|
+|<span style="color:seagreen">Emma P. Zeliz S.|||2E|
+|<span style="color:seagreen">Nolhan D. Yelen P. Noe D.|||2E|
+|<span style="color:seagreen">Sarah G. Llana B. Elize P.|||2E|
+|<span style="color:seagreen">Anais B. Romane L.|||2E|
+|<span style="color:tomato">Zelie P-L. Pauline B. Naomie C.|||2F|
+|<span style="color:tomato">Matteo B. Louis B.|||2F|
+|<span style="color:tomato">Yoan B. Luka D.|||2F|
+|<span style="color:tomato">Jules D. Flavien D.|||2F|
