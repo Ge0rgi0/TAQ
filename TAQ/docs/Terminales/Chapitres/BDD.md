@@ -136,7 +136,7 @@ Les mécaniciens sont identifiés par un matricule et ont un nom ainsi qu’une 
 
 ---
 
-## 7. Le Système de Gestion de Bases de Données Relationnelles (SGBDR)
+## Le Système de Gestion de Bases de Données Relationnelles (SGBDR)
 
 Jusqu’ici, nous avons étudié le **modèle relationnel** : tables, clés primaires, clés étrangères, schéma relationnel.  
 Mais pour exploiter concrètement ces concepts, il faut un logiciel capable de **créer, gérer et interroger** des bases de données : c’est le rôle d’un **Système de Gestion de Bases de Données Relationnelles (SGBDR)**.
