@@ -394,9 +394,9 @@ Application à notre problème
 
 Grâce à eval(), on peut écrire une expression booléenne sous forme de texte (par exemple "(A and not B)") et la faire évaluer automatiquement pour chaque combinaison de valeurs possibles de A et B.  
 
-⚠️ Attention : eval() exécute directement le texte donné, donc en pratique il faut l’utiliser avec prudence (jamais avec du texte écrit par un inconnu). Ici, dans un exercice scolaire, on peut l’utiliser en toute sécurité.  
+Attention : eval() exécute directement le texte donné, donc en pratique il faut l’utiliser avec prudence (jamais avec du texte écrit par un inconnu). Ici, dans un exercice scolaire, on peut l’utiliser en toute sécurité.  
 
-# Exercice : Générer une table de vérité en Python
+### Exercice : Générer une table de vérité en Python
 
 On souhaite écrire un programme qui génère la **table de vérité** d’un opérateur logique (`OR`, `AND` ou `NOT`) donné par l’utilisateur.
 
@@ -421,3 +421,32 @@ On souhaite écrire un programme qui génère la **table de vérité** d’un op
 
 ### Cas 1 : opérateur `AND`
 
+Choisissez un opérateur logique (OR, AND, NOT) : AND
+
+A | B | Résultat
+--+---+---------
+0 | 0 | 0
+0 | 1 | 0
+1 | 0 | 0
+1 | 1 | 1
+
+
+---
+
+### Cas 2 : opérateur `NOT`
+
+Choisissez un opérateur logique (OR, AND, NOT) : NOT
+
+A | Résultat
+--+---------
+0 | 1
+1 | 0
+
+
+---
+
+## Indications
+
+- Pour parcourir toutes les combinaisons de `0` et `1`, on peut utiliser une boucle sur `[0, 1]`.  
+- Selon le choix de l’utilisateur, on pourra utiliser une condition `if` pour décider quelle table afficher.  
+- On peut utiliser les opérateurs Python `and`, `or`, `not` pour calculer le résultat.  
