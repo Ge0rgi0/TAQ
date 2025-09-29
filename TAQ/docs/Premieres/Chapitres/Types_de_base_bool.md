@@ -351,16 +351,18 @@ Un étudiant est accepté si :
 
 ## Exercice avancé : Générateur de table de vérité
 
-On veut écrire un programme capable d’afficher automatiquement la **table de vérité** d’une expression booléenne, quel que soit le nombre de variables.
+On veut écrire un programme qui construit la **table de vérité** d’une expression booléenne donnée par l’utilisateur.
 
-### Objectif
-L’utilisateur doit pouvoir :
-1. Donner la liste des variables (par exemple `["A", "B", "C"]`).
-2. Donner une expression booléenne (par exemple `"(A or B) and (not C)"`).
-3. Le programme affiche toutes les combinaisons possibles des variables, et le résultat de l’expression pour chacune.
+L’utilisateur doit pouvoir :  
+1. Donner la liste des variables (par exemple `["A", "B", "C"]`).  
+2. Donner une expression booléenne en Python (par exemple `(A or B) and (not C)`).  
+3. Le programme affiche toutes les combinaisons possibles des variables, et le résultat de l’expression pour chacune.  
 
-### Exemple attendu
-Pour les variables `A, B` et l’expression `(A and not B)` :
+---
+
+## Exemple attendu
+
+Si l’utilisateur choisit les variables `A`, `B` et l’expression `(A and not B)`, le programme doit produire :  
 
 A | B | Résultat  
 --+---+---------  
@@ -368,3 +370,31 @@ A | B | Résultat
 0 | 1 | 0  
 1 | 0 | 1  
 1 | 1 | 0  
+
+
+---
+
+## La fonction `eval()` en Python
+
+- La fonction **`eval()`** signifie *evaluate* ("évaluer").  
+- Elle prend en paramètre une **chaîne de caractères** qui contient une expression Python valide.  
+- Python exécute alors cette expression **comme si elle avait été écrite directement dans le code**.  
+
+### Exemple simple  
+```python
+x = 2
+print(eval("x + 3"))  # affiche 5
+
+```
+Ici, "x + 3" est une chaîne de caractères. eval() va l’interpréter comme une expression Python et calculer 2 + 3.  
+
+---
+
+Application à notre problème  
+
+Grâce à eval(), on peut écrire une expression booléenne sous forme de texte (par exemple "(A and not B)") et la faire évaluer automatiquement pour chaque combinaison de valeurs possibles de A et B.  
+
+⚠️ Attention : eval() exécute directement le texte donné, donc en pratique il faut l’utiliser avec prudence (jamais avec du texte écrit par un inconnu). Ici, dans un exercice scolaire, on peut l’utiliser en toute sécurité.  
+
+
+Veux-tu que je t’écrive aussi la **version squelette de code** (en Markdown également), que tu pourrais donner directement aux élèves pour compléter ?
