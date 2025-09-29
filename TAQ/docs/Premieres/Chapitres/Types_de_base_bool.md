@@ -396,5 +396,28 @@ Grâce à eval(), on peut écrire une expression booléenne sous forme de texte 
 
 ⚠️ Attention : eval() exécute directement le texte donné, donc en pratique il faut l’utiliser avec prudence (jamais avec du texte écrit par un inconnu). Ici, dans un exercice scolaire, on peut l’utiliser en toute sécurité.  
 
+# Exercice : Générer une table de vérité en Python
 
-Veux-tu que je t’écrive aussi la **version squelette de code** (en Markdown également), que tu pourrais donner directement aux élèves pour compléter ?
+On souhaite écrire un programme qui génère la **table de vérité** d’un opérateur logique (`OR`, `AND` ou `NOT`) donné par l’utilisateur.
+
+---
+
+## Étapes de l’exercice
+
+1. Demander à l’utilisateur de saisir un opérateur logique (sous forme de texte) parmi :  
+   - `"OR"`
+   - `"AND"`
+   - `"NOT"`
+
+2. Selon l’opérateur choisi :  
+   - Si c’est **`OR`** ou **`AND`**, la table de vérité aura **deux variables** (`A` et `B`).  
+   - Si c’est **`NOT`**, la table de vérité aura **une seule variable** (`A`).  
+
+3. Le programme affiche la table de vérité correspondante.  
+
+---
+
+## Exemple d’exécution attendue
+
+### Cas 1 : opérateur `AND`
+
