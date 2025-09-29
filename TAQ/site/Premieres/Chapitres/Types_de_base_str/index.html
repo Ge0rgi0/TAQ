@@ -95,7 +95,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#4-fonctions-utiles">4. Fonctions utiles</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#5-exemples-dexercices">5. Exemples d’exercices</a>
+    <li class="toctree-l3"><a class="reference internal" href="#5-exercices">5. Exercices</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#exercice-1">Exercice 1</a>
     </li>
@@ -106,6 +106,8 @@
     <li class="toctree-l4"><a class="reference internal" href="#exercice-4">Exercice 4</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#exercice-5">Exercice 5</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-6">Exercice 6</a>
     </li>
         </ul>
     </li>
@@ -197,27 +199,17 @@ Elle associe chaque symbole (lettre, chiffre, ponctuation, contrôle) à un nomb
 <p>Après la norme ASCII, une extension appelée <strong>ISO-8859-1</strong> (ou Latin-1) a été créée pour représenter les caractères utilisés dans les langues européennes. Contrairement à ASCII qui utilise 7 bits (128 caractères), ISO-8859-1 utilise <strong>8 bits</strong> et peut coder <strong>256 caractères</strong>, incluant les lettres accentuées (é, à, ü, etc.), ainsi que certains symboles supplémentaires. Cette norme permet donc de gérer beaucoup plus de textes européens qu’ASCII.</p>
 <p>En Python, on peut manipuler facilement les codes des caractères grâce aux fonctions intégrées :  </p>
 <ul>
-<li><code>ord(caractère)</code> : retourne le code numérique du caractère (ASCII ou ISO-8859-1).<br />
-  ```python<blockquote>
-<blockquote>
-<blockquote>
-<p>ord('é')
-  233</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
-<li><code>chr(code)</code> : retourne le caractère correspondant à un code numérique.
-  ```python<blockquote>
-<blockquote>
-<blockquote>
-<p>ord(233)
-  é</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</li>
+<li><code>ord(caractère)</code> : retourne le code numérique du caractère (ASCII ou ISO-8859-1).  </li>
 </ul>
+<pre><code class="language-python">  &gt;&gt;&gt; ord('é')
+  233
+</code></pre>
+<ul>
+<li><code>chr(code)</code> : retourne le caractère correspondant à un code numérique.</li>
+</ul>
+<pre><code class="language-python">&gt;&gt;&gt; ord(233)
+é
+</code></pre>
 <hr />
 <h2 id="3-operations-de-base">3. Opérations de base</h2>
 <p>On peut appliquer différentes opérations sur une chaîne :</p>
@@ -243,9 +235,14 @@ print(mot[3])  # h
 <h3 id="e-tranches-slices">e) Tranches (slices)</h3>
 <p>On peut extraire une partie de la chaîne :</p>
 <pre><code class="language-python">mot = &quot;Python&quot;
-print(mot[0:3])  # Pyt
-print(mot[2:])   # thon
-print(mot[:4])   # Pyth
+
+print(mot[1:4])    # yth   (du 2e caractère inclus au 4e exclu)
+print(mot[-2:])    # on    (les 2 derniers caractères)
+print(mot[:-2])    # Pyth  (tout sauf les 2 derniers)
+print(mot[::2])    # Pto   (un caractère sur deux)
+print(mot[1::2])   # yhn   (un caractère sur deux en commençant à l’indice 1)
+print(mot[::-1])   # nohtyP (toute la chaîne à l’envers)
+print(mot[3:0:-1]) # hty   (du 4e caractère vers le 1er en sens inverse)
 </code></pre>
 <hr />
 <h2 id="4-fonctions-utiles">4. Fonctions utiles</h2>
@@ -258,7 +255,7 @@ print(texte.isdigit()) # True si uniquement des chiffres
 print(&quot;123&quot;.isdigit()) # True
 </code></pre>
 <hr />
-<h2 id="5-exemples-dexercices">5. Exemples d’exercices</h2>
+<h2 id="5-exercices">5. Exercices</h2>
 <h3 id="exercice-1">Exercice 1</h3>
 <p>Demander un mot et afficher son premier et son dernier caractère.</p>
 <h3 id="exercice-2">Exercice 2</h3>
@@ -267,11 +264,18 @@ print(&quot;123&quot;.isdigit()) # True
 <p>Vérifier si une chaîne donnée contient uniquement des chiffres.</p>
 <h3 id="exercice-4">Exercice 4</h3>
 <p>Écrire un programme qui inverse une chaîne de caractères.</p>
-<pre><code class="language-python">mot = &quot;Python&quot;
-print(mot[::-1])  # nohtyP
-</code></pre>
 <h3 id="exercice-5">Exercice 5</h3>
 <p>Demander un mot et afficher <code>"Palindrome"</code> s’il se lit dans les deux sens.</p>
+<h3 id="exercice-6">Exercice 6</h3>
+<p>Le code de César est une méthode de chiffrement très simple utilisée par Jules César dans ses correspondances secrètes (ce qui explique le nom).  L'idée est simple, nous choisissons une clé qui correspond à un décalage que nous allons appliquer sur chacun des caractéres du message.  </p>
+<p>Exemple :  </p>
+<p>Message : NSI<br />
+Clé : 1<br />
+Message codé : OTJ  </p>
+<p>Message : NSI<br />
+Clé : 25<br />
+Message codé : MRK  </p>
+<p>Imaginer un programme qui demande un message et une clé et qui affiche le message codé correspondant.  </p>
 <hr />
 <h2 id="6-resume">6. Résumé</h2>
 <ul>

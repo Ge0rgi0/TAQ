@@ -85,6 +85,24 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#routage-comment-les-paquets-voyagent">Routage : comment les paquets voyagent ?</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reseaux-pair-a-pair-p2p">Réseaux pair-à-pair (P2P)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#exemples">Exemples :</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#les-avantages">Les avantages</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#les-limites">Les limites</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#types-de-reseaux-physiques-et-trafic-internet">Types de réseaux physiques et trafic Internet</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#types-de-reseaux-physiques">Types de réseaux physiques</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trafic-internet-et-son-evolution">Trafic Internet et son évolution</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
     </ul>
@@ -247,6 +265,67 @@ La machine qui envoie transmet donc aussi un accusé de réception.</p>
 <p><strong>Exercice 2 :</strong> Le routeur 4 tombe en panne, les tables de routage sont mise à jour. Remplir les tables de routages des routeurs.</p>
 <p><img alt="schéma routage panne" src="../routage2.png" /></p>
 <hr />
+<h2 id="reseaux-pair-a-pair-p2p">Réseaux pair-à-pair (P2P)</h2>
+<p>Dans un réseau classique, les machines se connectent à un <strong>serveur central</strong> qui gère les données (ex. : Netflix, YouTube, un site web). C'est ce que l'on appelle le <strong>modele client/serveur</strong>.</p>
+<ul>
+<li>Au centre : un <strong>serveur</strong>.  </li>
+<li>Autour : plusieurs <strong>clients</strong> connectés uniquement au serveur.  </li>
+</ul>
+<p>Mais il existe un autre modèle : le <strong>réseau pair-à-pair (P2P)</strong>.  </p>
+<p>Dans un réseau <strong>P2P</strong>, chaque machine (appelée un <strong>pair</strong>) est à la fois <strong>client</strong> et <strong>serveur</strong> :<br />
+- Elle <strong>télécharge</strong> des données depuis d’autres pairs.<br />
+- Elle <strong>partage</strong> en même temps ses propres données avec d’autres.  </p>
+<p><img alt="P2P" src="../P2P.png" /></p>
+<h3 id="exemples">Exemples :</h3>
+<ul>
+<li>Certains logiciel (ex. Windows) ou jeux (ex. Blizzard avec Battle.net, ou Steam pour certaines fonctionnalités) utilisent le P2P pour distribuer les mises à jour aux joueurs.</li>
+<li>Les cryptomonnaies (ex. Bitcoin, Ethereum) fonctionnent en réseau pair-à-pair.</li>
+</ul>
+<h3 id="les-avantages">Les avantages</h3>
+<ul>
+<li>Très efficace pour partager de gros fichiers (les données sont réparties entre plusieurs sources).  </li>
+<li>Pas besoin d’un serveur central → le réseau est plus <strong>résilient</strong>.  </li>
+</ul>
+<h3 id="les-limites">Les limites</h3>
+<ul>
+<li>Certains usages <strong>légaux</strong> : distribution de mises à jour de jeux vidéo, partage scientifique, logiciels libres.  </li>
+<li>Mais aussi des usages <strong>illicites</strong> : piratage de films, musique, logiciels → ce qui pose des <strong>problèmes juridiques</strong>.  </li>
+</ul>
+<hr />
+<h2 id="types-de-reseaux-physiques-et-trafic-internet">Types de réseaux physiques et trafic Internet</h2>
+<h3 id="types-de-reseaux-physiques">Types de réseaux physiques</h3>
+<p>Les réseaux physiques désignent la <strong>façon dont les données circulent réellement</strong> entre les appareils. On peut les caractériser ainsi :  </p>
+<p><strong>Obsolètes / anciens :</strong><br />
+  - Modem RTC : ligne téléphonique, très lent (~56 kb/s)<br />
+  - Câble coaxial ou ADSL : vitesse limitée, adaptée pour un usage basique  </p>
+<p><strong>Actuels / rapides :</strong><br />
+  - Fibre optique : très haut débit, fiable, adaptée à la vidéo HD et aux jeux en ligne<br />
+  - Câble Ethernet moderne (CAT5e, CAT6) : stable, rapide, utilisé en LAN<br />
+  - Wi-Fi : sans fil, pratique mais sensible aux interférences et aux distances<br />
+  - 4G/5G : mobile, rapide et flexible mais dépendant de la couverture réseau  </p>
+<p><strong>Filaire vs Sans fil :</strong><br />
+- Filaire : plus stable, moins sujet aux perturbations, débit constant<br />
+- Sans fil : pratique, mobilité, mais débits et stabilité variables  </p>
+<hr />
+<h3 id="trafic-internet-et-son-evolution">Trafic Internet et son évolution</h3>
+<ul>
+<li>Internet transporte <strong>des milliards de données chaque seconde</strong> : emails, vidéos, jeux, fichiers, sites web.<br />
+<strong>Ordre de grandeur du trafic :</strong></li>
+<li>Années 1990 : quelques dizaines de Go/jour  </li>
+<li>Années 2000 : plusieurs To/jour  </li>
+<li>Aujourd'hui : plusieurs centaines de Po/jour (1 Po = 1 million de Go)<br />
+<strong>Évolution :</strong></li>
+<li>Forte augmentation avec le streaming vidéo, les réseaux sociaux, les objets connectés et le télétravail</li>
+<li>Nécessité de réseaux à haut débit et fiables pour suivre la demande croissante</li>
+</ul>
+<p><img alt="Data evolution" src="../data_evolution.png" /></p>
+<p>Rappel : <br />
+ko = kilooctet (1 000 octets)<br />
+Mo = mégaoctet (1 000 000 octets)<br />
+Go = gigaoctet (1 000 000 000 octets)<br />
+Zo = zettaoctet (1 000 000 000 000 000 000 000 000 octets)  </p>
+<p>Un mail fait environ 2 millions octets.
+1 minute de vidéo en HD (~1080p) équivaut à environ 100 Mo = 100 millions d’octets.</p>
               
             </div>
           </div><footer>
