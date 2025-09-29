@@ -63,13 +63,18 @@ Après la norme ASCII, une extension appelée **ISO-8859-1** (ou Latin-1) a ét�
 En Python, on peut manipuler facilement les codes des caractères grâce aux fonctions intégrées :  
 
 - `ord(caractère)` : retourne le code numérique du caractère (ASCII ou ISO-8859-1).  
-  ```python
+```python  
   >>> ord('é')
   233
+```
 - `chr(code)` : retourne le caractère correspondant à un code numérique.
-  ```python
-  >>> ord(233)
-  é
+
+
+```python
+>>> ord(233)
+é
+```
+
 ---
 
 ## 3. Opérations de base
@@ -106,9 +111,14 @@ print(mot[3])  # h
 On peut extraire une partie de la chaîne :
 ```python
 mot = "Python"
-print(mot[0:3])  # Pyt
-print(mot[2:])   # thon
-print(mot[:4])   # Pyth
+
+print(mot[1:4])    # yth   (du 2e caractère inclus au 4e exclu)
+print(mot[-2:])    # on    (les 2 derniers caractères)
+print(mot[:-2])    # Pyth  (tout sauf les 2 derniers)
+print(mot[::2])    # Pto   (un caractère sur deux)
+print(mot[1::2])   # yhn   (un caractère sur deux en commençant à l’indice 1)
+print(mot[::-1])   # nohtyP (toute la chaîne à l’envers)
+print(mot[3:0:-1]) # hty   (du 4e caractère vers le 1er en sens inverse)
 ```
 
 ---
@@ -127,7 +137,7 @@ print("123".isdigit()) # True
 
 ---
 
-## 5. Exemples d’exercices
+## 5. Exercices
 
 ### Exercice 1
 Demander un mot et afficher son premier et son dernier caractère.
@@ -140,13 +150,24 @@ Vérifier si une chaîne donnée contient uniquement des chiffres.
 
 ### Exercice 4
 Écrire un programme qui inverse une chaîne de caractères.
-```python
-mot = "Python"
-print(mot[::-1])  # nohtyP
-```
 
 ### Exercice 5
 Demander un mot et afficher `"Palindrome"` s’il se lit dans les deux sens.
+
+### Exercice 6
+Le code de César est une méthode de chiffrement très simple utilisée par Jules César dans ses correspondances secrètes (ce qui explique le nom).  L'idée est simple, nous choisissons une clé qui correspond à un décalage que nous allons appliquer sur chacun des caractéres du message.  
+
+Exemple :  
+
+Message : NSI  
+Clé : 1  
+Message codé : OTJ  
+
+Message : NSI  
+Clé : 25  
+Message codé : MRK  
+
+Imaginer un programme qui demande un message et une clé et qui affiche le message codé correspondant.  
 
 ---
 

@@ -348,3 +348,23 @@ Un étudiant est accepté si :
 3. Demander si une recommandation est présente (`"oui"/"non"`).  
 4. Écrire une condition booléenne.  
 5. Afficher `"Admis"` ou `"Refusé"`.  
+
+## Exercice avancé : Générateur de table de vérité
+
+On veut écrire un programme capable d’afficher automatiquement la **table de vérité** d’une expression booléenne, quel que soit le nombre de variables.
+
+### Objectif
+L’utilisateur doit pouvoir :
+1. Donner la liste des variables (par exemple `["A", "B", "C"]`).
+2. Donner une expression booléenne (par exemple `"(A or B) and (not C)"`).
+3. Le programme affiche toutes les combinaisons possibles des variables, et le résultat de l’expression pour chacune.
+
+### Exemple attendu
+Pour les variables `A, B` et l’expression `(A and not B)` :
+
+A | B | Résultat  
+--+---+---------  
+0 | 0 | 0  
+0 | 1 | 0  
+1 | 0 | 1  
+1 | 1 | 0  

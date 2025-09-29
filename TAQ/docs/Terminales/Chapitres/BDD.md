@@ -324,7 +324,7 @@ Pour vérifier qu'un élément est null on utilisera le mot clé `is` (exemple :
 11. Afficher la somme des poids des pokemons de type ``Feu`` dont la ``taille`` dépasse le mètre
 12. Afficher les Pokémon dont le deuxième type est ``Poison`` et dont la ``taille`` est supérieure à 1 mètre
 13. Afficher les Pokémon dont le ``poids`` est supérieur à la moyenne du ``poids`` de tous les Pokémon
-14. Afficher le ``nom`` et le ``type`` des Pokémon dont la tai``lle est comprise entre 1 mètre et 2 mètres, triés par ``taille`` décroissante
+14. Afficher le ``nom`` et le ``type`` des Pokémon dont la ``taille`` est comprise entre 1 mètre et 2 mètres, triés par ``taille`` décroissante
 15. Afficher les Pokémon dont la somme des ``tailles`` et des ``poids`` est supérieure à 50
 
 ---
@@ -377,11 +377,15 @@ WHERE id_eleve = 4;
 ```
 Supprime Hugo Bernard de la base.
 
+
+**Exercice**
+
+écrire en les requêtes SQL suivantes (pour chacune d'entre elle, vérifier que les mises à jour ont bien étées effectuées avec des requêtes d'interrogation):
+
+1. Ajouter les pokémons que vous voulez dans la table. Vous pouvez chercher les infos sur internet ou bien en inventer.
+2. Modifier ces données
+3. Afficher le nombre de pokémon de type `Eau`. Ensuite supprimer tous les pokémons de type `Eau` de la table. (Il y en a vraiment trop)
+
 ---
 
-### à retenir
-- `SELECT ... FROM ... WHERE ...` : interroger la base  
-- `JOIN` : croiser plusieurs tables  
-- `ORDER BY`, `DISTINCT` : trier et supprimer les doublons  
-- Fonctions d’agrégation : `AVG`, `MIN`, `MAX`, `COUNT`, `SUM`  
-- `INSERT`, `UPDATE`, `DELETE` : modifier la base  
+[Exercice type bac](https://www.lyceum.fr/tg/nsi/2-bases-de-donnees/3-langage-sql/exo/)

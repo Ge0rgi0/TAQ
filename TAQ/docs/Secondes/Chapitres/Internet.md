@@ -160,3 +160,76 @@ Chaque routeur utilise une **table de routage** pour savoir où envoyer les paqu
 ![schéma routage panne](./routage2.png)
 
 ---
+
+## Réseaux pair-à-pair (P2P)
+
+Dans un réseau classique, les machines se connectent à un **serveur central** qui gère les données (ex. : Netflix, YouTube, un site web). C'est ce que l'on appelle le **modele client/serveur**.
+
+- Au centre : un **serveur**.  
+- Autour : plusieurs **clients** connectés uniquement au serveur.  
+
+Mais il existe un autre modèle : le **réseau pair-à-pair (P2P)**.  
+
+Dans un réseau **P2P**, chaque machine (appelée un **pair**) est à la fois **client** et **serveur** :  
+- Elle **télécharge** des données depuis d’autres pairs.  
+- Elle **partage** en même temps ses propres données avec d’autres.  
+
+![P2P](P2P.png)
+
+### Exemples :
+
+- Certains logiciel (ex. Windows) ou jeux (ex. Blizzard avec Battle.net, ou Steam pour certaines fonctionnalités) utilisent le P2P pour distribuer les mises à jour aux joueurs.
+- Les cryptomonnaies (ex. Bitcoin, Ethereum) fonctionnent en réseau pair-à-pair.
+
+### Les avantages
+- Très efficace pour partager de gros fichiers (les données sont réparties entre plusieurs sources).  
+- Pas besoin d’un serveur central → le réseau est plus **résilient**.  
+
+### Les limites
+- Certains usages **légaux** : distribution de mises à jour de jeux vidéo, partage scientifique, logiciels libres.  
+- Mais aussi des usages **illicites** : piratage de films, musique, logiciels → ce qui pose des **problèmes juridiques**.  
+---
+
+## Types de réseaux physiques et trafic Internet
+
+### Types de réseaux physiques
+
+Les réseaux physiques désignent la **façon dont les données circulent réellement** entre les appareils. On peut les caractériser ainsi :  
+
+**Obsolètes / anciens :**  
+  - Modem RTC : ligne téléphonique, très lent (~56 kb/s)  
+  - Câble coaxial ou ADSL : vitesse limitée, adaptée pour un usage basique  
+
+**Actuels / rapides :**  
+  - Fibre optique : très haut débit, fiable, adaptée à la vidéo HD et aux jeux en ligne  
+  - Câble Ethernet moderne (CAT5e, CAT6) : stable, rapide, utilisé en LAN  
+  - Wi-Fi : sans fil, pratique mais sensible aux interférences et aux distances  
+  - 4G/5G : mobile, rapide et flexible mais dépendant de la couverture réseau  
+
+**Filaire vs Sans fil :**  
+- Filaire : plus stable, moins sujet aux perturbations, débit constant  
+- Sans fil : pratique, mobilité, mais débits et stabilité variables  
+
+---
+
+### Trafic Internet et son évolution
+
+- Internet transporte **des milliards de données chaque seconde** : emails, vidéos, jeux, fichiers, sites web.  
+**Ordre de grandeur du trafic :**
+  - Années 1990 : quelques dizaines de Go/jour  
+  - Années 2000 : plusieurs To/jour  
+  - Aujourd'hui : plusieurs centaines de Po/jour (1 Po = 1 million de Go)  
+**Évolution :**
+  - Forte augmentation avec le streaming vidéo, les réseaux sociaux, les objets connectés et le télétravail
+  - Nécessité de réseaux à haut débit et fiables pour suivre la demande croissante
+
+![Data evolution](data_evolution.png)
+
+Rappel :   
+ko = kilooctet (1 000 octets)  
+Mo = mégaoctet (1 000 000 octets)  
+Go = gigaoctet (1 000 000 000 octets)  
+Zo = zettaoctet (1 000 000 000 000 000 000 000 000 octets)  
+
+Un mail fait environ 2 millions octets.
+1 minute de vidéo en HD (~1080p) équivaut à environ 100 Mo = 100 millions d’octets.

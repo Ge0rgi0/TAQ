@@ -74,7 +74,7 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 Groupes formées :  
 - <span style="color:goldenrod">2B : 94 %</span>  
 - <span style="color:royalblue">2D : 83 %</span>  
-- <span style="color:seagreen">2E : 29 %</span>  
+- <span style="color:seagreen">2E : 43 %</span>  
 - <span style="color:tomato">2F : 26 %</span>  
 
 **Pas de panique ! Ceci n'est pas l'ordre de passage.**  
@@ -109,6 +109,8 @@ Groupes formées :
 |<span style="color:seagreen">Nolhan D. Yelen P. Noe D.|||2E|
 |<span style="color:seagreen">Sarah G. Llana B. Elize P.|||2E|
 |<span style="color:seagreen">Anais B. Romane L.|||2E|
+|<span style="color:seagreen">Lea C. Elyse N. Lana F.|||2E|
+|<span style="color:seagreen">Louis M. Tom C.|||2E|
 |<span style="color:tomato">Zelie P-L. Pauline B. Naomie C.|||2F|
 |<span style="color:tomato">Matteo B. Louis B.|||2F|
 |<span style="color:tomato">Yoan B. Luka D.|||2F|
