@@ -125,7 +125,21 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#exemple-simple">Exemple simple</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-generer-une-table-de-verite-en-python">Exercice : Générer une table de vérité en Python</a>
+    </li>
         </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#etapes-de-lexercice">Étapes de l’exercice</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemple-dexecution-attendue">Exemple d’exécution attendue</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cas-1-operateur-and">Cas 1 : opérateur AND</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cas-2-operateur-not">Cas 2 : opérateur NOT</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#indications">Indications</a>
     </li>
     </ul>
                 </li>
@@ -772,8 +786,8 @@ print(eval(&quot;x + 3&quot;))  # affiche 5
 <hr />
 <p>Application à notre problème  </p>
 <p>Grâce à eval(), on peut écrire une expression booléenne sous forme de texte (par exemple "(A and not B)") et la faire évaluer automatiquement pour chaque combinaison de valeurs possibles de A et B.  </p>
-<p>⚠️ Attention : eval() exécute directement le texte donné, donc en pratique il faut l’utiliser avec prudence (jamais avec du texte écrit par un inconnu). Ici, dans un exercice scolaire, on peut l’utiliser en toute sécurité.  </p>
-<h1 id="exercice-generer-une-table-de-verite-en-python">Exercice : Générer une table de vérité en Python</h1>
+<p>Attention : eval() exécute directement le texte donné, donc en pratique il faut l’utiliser avec prudence (jamais avec du texte écrit par un inconnu). Ici, dans un exercice scolaire, on peut l’utiliser en toute sécurité.  </p>
+<h3 id="exercice-generer-une-table-de-verite-en-python">Exercice : Générer une table de vérité en Python</h3>
 <p>On souhaite écrire un programme qui génère la <strong>table de vérité</strong> d’un opérateur logique (<code>OR</code>, <code>AND</code> ou <code>NOT</code>) donné par l’utilisateur.</p>
 <hr />
 <h2 id="etapes-de-lexercice">Étapes de l’exercice</h2>
@@ -798,6 +812,27 @@ print(eval(&quot;x + 3&quot;))  # affiche 5
 <hr />
 <h2 id="exemple-dexecution-attendue">Exemple d’exécution attendue</h2>
 <h3 id="cas-1-operateur-and">Cas 1 : opérateur <code>AND</code></h3>
+<p>Choisissez un opérateur logique (OR, AND, NOT) : AND</p>
+<p>A | B | Résultat
+--+---+---------
+0 | 0 | 0
+0 | 1 | 0
+1 | 0 | 0
+1 | 1 | 1</p>
+<hr />
+<h3 id="cas-2-operateur-not">Cas 2 : opérateur <code>NOT</code></h3>
+<p>Choisissez un opérateur logique (OR, AND, NOT) : NOT</p>
+<p>A | Résultat
+--+---------
+0 | 1
+1 | 0</p>
+<hr />
+<h2 id="indications">Indications</h2>
+<ul>
+<li>Pour parcourir toutes les combinaisons de <code>0</code> et <code>1</code>, on peut utiliser une boucle sur <code>[0, 1]</code>.  </li>
+<li>Selon le choix de l’utilisateur, on pourra utiliser une condition <code>if</code> pour décider quelle table afficher.  </li>
+<li>On peut utiliser les opérateurs Python <code>and</code>, <code>or</code>, <code>not</code> pour calculer le résultat.  </li>
+</ul>
               
             </div>
           </div><footer>

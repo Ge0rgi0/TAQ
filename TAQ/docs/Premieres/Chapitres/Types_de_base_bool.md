@@ -402,50 +402,47 @@ On souhaite écrire un programme qui génère la **table de vérité** d’un op
 
 ---
 
-## Étapes de l’exercice
+**Étapes de l’exercice**
 
-1. Demander à l’utilisateur de saisir un opérateur logique (sous forme de texte) parmi :  
+Demander à l’utilisateur de saisir un opérateur logique (sous forme de texte) parmi :  
    - `"OR"`
    - `"AND"`
    - `"NOT"`
 
-2. Selon l’opérateur choisi :  
+Selon l’opérateur choisi :  
    - Si c’est **`OR`** ou **`AND`**, la table de vérité aura **deux variables** (`A` et `B`).  
    - Si c’est **`NOT`**, la table de vérité aura **une seule variable** (`A`).  
 
-3. Le programme affiche la table de vérité correspondante.  
+Le programme affiche la table de vérité correspondante.  
 
 ---
 
-## Exemple d’exécution attendue
+**Exemple d’exécution attendue**
 
-### Cas 1 : opérateur `AND`
+Cas 1 : opérateur `AND`
 
-Choisissez un opérateur logique (OR, AND, NOT) : AND
+Choisissez un opérateur logique (OR, AND, NOT) : AND  
 
-A | B | Résultat
---+---+---------
-0 | 0 | 0
-0 | 1 | 0
-1 | 0 | 0
-1 | 1 | 1
-
+A | B | Résultat  
+--+---+---------  
+0 | 0 | 0  
+0 | 1 | 0  
+1 | 0 | 0  
+1 | 1 | 1  
 
 ---
 
-### Cas 2 : opérateur `NOT`
+Cas 2 : opérateur `NOT`
 
 Choisissez un opérateur logique (OR, AND, NOT) : NOT
 
-A | Résultat
---+---------
-0 | 1
-1 | 0
+A | Résultat  
+--+---------  
+0 | 1  
+1 | 0  
 
 
----
-
-## Indications
+**Indications**
 
 - Pour parcourir toutes les combinaisons de `0` et `1`, on peut utiliser une boucle sur `[0, 1]`.  
 - Selon le choix de l’utilisateur, on pourra utiliser une condition `if` pour décider quelle table afficher.  
