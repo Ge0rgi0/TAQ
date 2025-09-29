@@ -123,8 +123,6 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#requetes-de-mise-a-jour">Requêtes de mise à jour</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#a-retenir">à retenir</a>
-    </li>
         </ul>
     </li>
     </ul>
@@ -515,7 +513,7 @@ WHERE matiere = 'NSI';
 <li>Afficher la somme des poids des pokemons de type <code>Feu</code> dont la <code>taille</code> dépasse le mètre</li>
 <li>Afficher les Pokémon dont le deuxième type est <code>Poison</code> et dont la <code>taille</code> est supérieure à 1 mètre</li>
 <li>Afficher les Pokémon dont le <code>poids</code> est supérieur à la moyenne du <code>poids</code> de tous les Pokémon</li>
-<li>Afficher le <code>nom</code> et le <code>type</code> des Pokémon dont la tai<code>lle est comprise entre 1 mètre et 2 mètres, triés par</code>taille`` décroissante</li>
+<li>Afficher le <code>nom</code> et le <code>type</code> des Pokémon dont la <code>taille</code> est comprise entre 1 mètre et 2 mètres, triés par <code>taille</code> décroissante</li>
 <li>Afficher les Pokémon dont la somme des <code>tailles</code> et des <code>poids</code> est supérieure à 50</li>
 </ol>
 <hr />
@@ -554,15 +552,15 @@ WHERE nom = 'Dupont' AND prenom = 'Lucas';
 WHERE id_eleve = 4;
 </code></pre>
 <p>Supprime Hugo Bernard de la base.</p>
+<p><strong>Exercice</strong></p>
+<p>écrire en les requêtes SQL suivantes (pour chacune d'entre elle, vérifier que les mises à jour ont bien étées effectuées avec des requêtes d'interrogation):</p>
+<ol>
+<li>Ajouter les pokémons que vous voulez dans la table. Vous pouvez chercher les infos sur internet ou bien en inventer.</li>
+<li>Modifier ces données</li>
+<li>Afficher le nombre de pokémon de type <code>Eau</code>. Ensuite supprimer tous les pokémons de type <code>Eau</code> de la table. (Il y en a vraiment trop)</li>
+</ol>
 <hr />
-<h3 id="a-retenir">à retenir</h3>
-<ul>
-<li><code>SELECT ... FROM ... WHERE ...</code> : interroger la base  </li>
-<li><code>JOIN</code> : croiser plusieurs tables  </li>
-<li><code>ORDER BY</code>, <code>DISTINCT</code> : trier et supprimer les doublons  </li>
-<li>Fonctions d’agrégation : <code>AVG</code>, <code>MIN</code>, <code>MAX</code>, <code>COUNT</code>, <code>SUM</code>  </li>
-<li><code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code> : modifier la base  </li>
-</ul>
+<p><a href="https://www.lyceum.fr/tg/nsi/2-bases-de-donnees/3-langage-sql/exo/">Exercice type bac</a></p>
               
             </div>
           </div><footer>

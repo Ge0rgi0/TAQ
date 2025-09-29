@@ -117,6 +117,14 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercice-avance-generateur-de-table-de-verite">Exercice avancé : Générateur de table de vérité</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#objectif">Objectif</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exemple-attendu">Exemple attendu</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_str/">Types de base (chaînes de caractéres)</a>
@@ -731,6 +739,21 @@ On pourra utiliser une boucle <code>for</code> pour chercher un diviseur, mais l
 3. Demander si une recommandation est présente (<code>"oui"/"non"</code>).<br />
 4. Écrire une condition booléenne.<br />
 5. Afficher <code>"Admis"</code> ou <code>"Refusé"</code>.  </p>
+<h2 id="exercice-avance-generateur-de-table-de-verite">Exercice avancé : Générateur de table de vérité</h2>
+<p>On veut écrire un programme capable d’afficher automatiquement la <strong>table de vérité</strong> d’une expression booléenne, quel que soit le nombre de variables.</p>
+<h3 id="objectif">Objectif</h3>
+<p>L’utilisateur doit pouvoir :
+1. Donner la liste des variables (par exemple <code>["A", "B", "C"]</code>).
+2. Donner une expression booléenne (par exemple <code>"(A or B) and (not C)"</code>).
+3. Le programme affiche toutes les combinaisons possibles des variables, et le résultat de l’expression pour chacune.</p>
+<h3 id="exemple-attendu">Exemple attendu</h3>
+<p>Pour les variables <code>A, B</code> et l’expression <code>(A and not B)</code> :</p>
+<p>A | B | Résultat<br />
+--+---+---------<br />
+0 | 0 | 0<br />
+0 | 1 | 0<br />
+1 | 0 | 1<br />
+1 | 1 | 0  </p>
               
             </div>
           </div><footer>
