@@ -118,10 +118,12 @@
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#exercice-avance-generateur-de-table-de-verite">Exercice avancé : Générateur de table de vérité</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#objectif">Objectif</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#exemple-attendu">Exemple attendu</a>
+    <li class="toctree-l3"><a class="reference internal" href="#exemple-attendu">Exemple attendu</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#la-fonction-eval-en-python">La fonction eval() en Python</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#exemple-simple">Exemple simple</a>
     </li>
         </ul>
     </li>
@@ -740,20 +742,38 @@ On pourra utiliser une boucle <code>for</code> pour chercher un diviseur, mais l
 4. Écrire une condition booléenne.<br />
 5. Afficher <code>"Admis"</code> ou <code>"Refusé"</code>.  </p>
 <h2 id="exercice-avance-generateur-de-table-de-verite">Exercice avancé : Générateur de table de vérité</h2>
-<p>On veut écrire un programme capable d’afficher automatiquement la <strong>table de vérité</strong> d’une expression booléenne, quel que soit le nombre de variables.</p>
-<h3 id="objectif">Objectif</h3>
-<p>L’utilisateur doit pouvoir :
-1. Donner la liste des variables (par exemple <code>["A", "B", "C"]</code>).
-2. Donner une expression booléenne (par exemple <code>"(A or B) and (not C)"</code>).
-3. Le programme affiche toutes les combinaisons possibles des variables, et le résultat de l’expression pour chacune.</p>
-<h3 id="exemple-attendu">Exemple attendu</h3>
-<p>Pour les variables <code>A, B</code> et l’expression <code>(A and not B)</code> :</p>
+<p>On veut écrire un programme qui construit la <strong>table de vérité</strong> d’une expression booléenne donnée par l’utilisateur.</p>
+<p>L’utilisateur doit pouvoir :<br />
+1. Donner la liste des variables (par exemple <code>["A", "B", "C"]</code>).<br />
+2. Donner une expression booléenne en Python (par exemple <code>(A or B) and (not C)</code>).<br />
+3. Le programme affiche toutes les combinaisons possibles des variables, et le résultat de l’expression pour chacune.  </p>
+<hr />
+<h2 id="exemple-attendu">Exemple attendu</h2>
+<p>Si l’utilisateur choisit les variables <code>A</code>, <code>B</code> et l’expression <code>(A and not B)</code>, le programme doit produire :  </p>
 <p>A | B | Résultat<br />
 --+---+---------<br />
 0 | 0 | 0<br />
 0 | 1 | 0<br />
 1 | 0 | 1<br />
 1 | 1 | 0  </p>
+<hr />
+<h2 id="la-fonction-eval-en-python">La fonction <code>eval()</code> en Python</h2>
+<ul>
+<li>La fonction <strong><code>eval()</code></strong> signifie <em>evaluate</em> ("évaluer").  </li>
+<li>Elle prend en paramètre une <strong>chaîne de caractères</strong> qui contient une expression Python valide.  </li>
+<li>Python exécute alors cette expression <strong>comme si elle avait été écrite directement dans le code</strong>.  </li>
+</ul>
+<h3 id="exemple-simple">Exemple simple</h3>
+<pre><code class="language-python">x = 2
+print(eval(&quot;x + 3&quot;))  # affiche 5
+
+</code></pre>
+<p>Ici, "x + 3" est une chaîne de caractères. eval() va l’interpréter comme une expression Python et calculer 2 + 3.  </p>
+<hr />
+<p>Application à notre problème  </p>
+<p>Grâce à eval(), on peut écrire une expression booléenne sous forme de texte (par exemple "(A and not B)") et la faire évaluer automatiquement pour chaque combinaison de valeurs possibles de A et B.  </p>
+<p>⚠️ Attention : eval() exécute directement le texte donné, donc en pratique il faut l’utiliser avec prudence (jamais avec du texte écrit par un inconnu). Ici, dans un exercice scolaire, on peut l’utiliser en toute sécurité.  </p>
+<p>Veux-tu que je t’écrive aussi la <strong>version squelette de code</strong> (en Markdown également), que tu pourrais donner directement aux élèves pour compléter ?</p>
               
             </div>
           </div><footer>
