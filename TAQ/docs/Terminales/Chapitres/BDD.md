@@ -283,9 +283,8 @@ Moyenne des notes en NSI.
 Une **requête imbriquée** (ou *sous-requête*) est une requête SQL placée **à l’intérieur** d’une autre requête.  
 Elle permet de filtrer ou de calculer des résultats intermédiaires.
 
----
+Exemples :
 
-### 6.1 Exemple simple : condition avec une sous-requête
 ```sql
 SELECT nom, prenom
 FROM Eleve
