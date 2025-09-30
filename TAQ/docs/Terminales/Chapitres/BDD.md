@@ -278,6 +278,48 @@ Moyenne des notes en NSI.
 
 ---
 
+**Requêtes imbriquées (sous-requêtes)**
+
+Une **requête imbriquée** (ou *sous-requête*) est une requête SQL placée **à l’intérieur** d’une autre requête.  
+Elle permet de filtrer ou de calculer des résultats intermédiaires.
+
+---
+
+### 6.1 Exemple simple : condition avec une sous-requête
+```sql
+SELECT nom, prenom
+FROM Eleve
+WHERE id_eleve IN (
+    SELECT id_eleve
+    FROM Note
+    WHERE valeur > 15
+);
+
+SELECT nom, prenom
+FROM Eleve
+WHERE age = (
+    SELECT MAX(age)
+    FROM Eleve
+);
+
+SELECT nom, prenom,
+       (SELECT AVG(valeur)
+        FROM Note
+        WHERE Note.id_eleve = Eleve.id_eleve) AS moyenne
+FROM Eleve;
+
+SELECT nom, prenom
+FROM Eleve E
+WHERE age > (
+    SELECT AVG(age)
+    FROM Eleve
+    WHERE classe = E.classe
+);
+
+```
+
+---
+
 ### Exercices
 
 Voici un base de données repertoriant les 151 premiers pokemons :  
