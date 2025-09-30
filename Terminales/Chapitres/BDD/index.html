@@ -119,6 +119,8 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#requetes-dinterrogation">Requêtes d’interrogation</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#61-exemple-simple-condition-avec-une-sous-requete">6.1 Exemple simple : condition avec une sous-requête</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#exercices">Exercices</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#requetes-de-mise-a-jour">Requêtes de mise à jour</a>
@@ -425,6 +427,42 @@ FROM Note
 WHERE matiere = 'NSI';
 </code></pre>
 <p>Moyenne des notes en NSI.</p>
+<hr />
+<p><strong>Requêtes imbriquées (sous-requêtes)</strong></p>
+<p>Une <strong>requête imbriquée</strong> (ou <em>sous-requête</em>) est une requête SQL placée <strong>à l’intérieur</strong> d’une autre requête.<br />
+Elle permet de filtrer ou de calculer des résultats intermédiaires.</p>
+<hr />
+<h3 id="61-exemple-simple-condition-avec-une-sous-requete">6.1 Exemple simple : condition avec une sous-requête</h3>
+<pre><code class="language-sql">SELECT nom, prenom
+FROM Eleve
+WHERE id_eleve IN (
+    SELECT id_eleve
+    FROM Note
+    WHERE valeur &gt; 15
+);
+
+SELECT nom, prenom
+FROM Eleve
+WHERE age = (
+    SELECT MAX(age)
+    FROM Eleve
+);
+
+SELECT nom, prenom,
+       (SELECT AVG(valeur)
+        FROM Note
+        WHERE Note.id_eleve = Eleve.id_eleve) AS moyenne
+FROM Eleve;
+
+SELECT nom, prenom
+FROM Eleve E
+WHERE age &gt; (
+    SELECT AVG(age)
+    FROM Eleve
+    WHERE classe = E.classe
+);
+
+</code></pre>
 <hr />
 <h3 id="exercices">Exercices</h3>
 <p>Voici un base de données repertoriant les 151 premiers pokemons :<br />
