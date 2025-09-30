@@ -119,8 +119,6 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#requetes-dinterrogation">Requêtes d’interrogation</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#61-exemple-simple-condition-avec-une-sous-requete">6.1 Exemple simple : condition avec une sous-requête</a>
-    </li>
     <li class="toctree-l4"><a class="reference internal" href="#exercices">Exercices</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#requetes-de-mise-a-jour">Requêtes de mise à jour</a>
@@ -431,8 +429,7 @@ WHERE matiere = 'NSI';
 <p><strong>Requêtes imbriquées (sous-requêtes)</strong></p>
 <p>Une <strong>requête imbriquée</strong> (ou <em>sous-requête</em>) est une requête SQL placée <strong>à l’intérieur</strong> d’une autre requête.<br />
 Elle permet de filtrer ou de calculer des résultats intermédiaires.</p>
-<hr />
-<h3 id="61-exemple-simple-condition-avec-une-sous-requete">6.1 Exemple simple : condition avec une sous-requête</h3>
+<p>Exemples :</p>
 <pre><code class="language-sql">SELECT nom, prenom
 FROM Eleve
 WHERE id_eleve IN (
