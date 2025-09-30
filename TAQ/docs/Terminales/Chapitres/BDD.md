@@ -378,6 +378,19 @@ JOIN Note ON Eleve.id_eleve = Note.id_eleve;
 ```
 Affiche le nom, le prénom et les notes des élèves.
 
+**Alias avec AS et auto-jointures**
+
+- `AS` permet de donner un **nom temporaire** à une colonne ou une table.  
+- Utile pour simplifier les requêtes et faire des jointures sur soi-même.  
+
+Exemple d’**auto-jointure** : trouver les paires d’élèves d’une même classe.  
+
+```sql
+SELECT E1.nom AS Eleve1, E2.nom AS Eleve2
+FROM Eleve AS E1
+JOIN Eleve AS E2 ON E1.classe = E2.classe
+WHERE E1.id_eleve < E2.id_eleve;
+
 **Exercice**
 
 écrire en les requêtes SQL suivantes :
