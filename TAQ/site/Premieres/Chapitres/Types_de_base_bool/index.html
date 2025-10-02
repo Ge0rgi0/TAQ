@@ -117,18 +117,6 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#exercice-avance-generateur-de-table-de-verite">Exercice avancé : Générateur de table de vérité</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#exemple-attendu">Exemple attendu</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#la-fonction-eval-en-python">La fonction eval() en Python</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#exemple-simple">Exemple simple</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#exercice-generer-une-table-de-verite-en-python">Exercice : Générer une table de vérité en Python</a>
-    </li>
-        </ul>
-    </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_str/">Types de base (chaînes de caractéres)</a>
@@ -743,73 +731,6 @@ On pourra utiliser une boucle <code>for</code> pour chercher un diviseur, mais l
 3. Demander si une recommandation est présente (<code>"oui"/"non"</code>).<br />
 4. Écrire une condition booléenne.<br />
 5. Afficher <code>"Admis"</code> ou <code>"Refusé"</code>.  </p>
-<h2 id="exercice-avance-generateur-de-table-de-verite">Exercice avancé : Générateur de table de vérité</h2>
-<p>On veut écrire un programme qui construit la <strong>table de vérité</strong> d’une expression booléenne donnée par l’utilisateur.</p>
-<p>L’utilisateur doit pouvoir :<br />
-1. Donner la liste des variables (par exemple <code>["A", "B", "C"]</code>).<br />
-2. Donner une expression booléenne en Python (par exemple <code>(A or B) and (not C)</code>).<br />
-3. Le programme affiche toutes les combinaisons possibles des variables, et le résultat de l’expression pour chacune.  </p>
-<hr />
-<h2 id="exemple-attendu">Exemple attendu</h2>
-<p>Si l’utilisateur choisit les variables <code>A</code>, <code>B</code> et l’expression <code>(A and not B)</code>, le programme doit produire :  </p>
-<p>A | B | Résultat<br />
---+---+---------<br />
-0 | 0 | 0<br />
-0 | 1 | 0<br />
-1 | 0 | 1<br />
-1 | 1 | 0  </p>
-<hr />
-<h2 id="la-fonction-eval-en-python">La fonction <code>eval()</code> en Python</h2>
-<ul>
-<li>La fonction <strong><code>eval()</code></strong> signifie <em>evaluate</em> ("évaluer").  </li>
-<li>Elle prend en paramètre une <strong>chaîne de caractères</strong> qui contient une expression Python valide.  </li>
-<li>Python exécute alors cette expression <strong>comme si elle avait été écrite directement dans le code</strong>.  </li>
-</ul>
-<h3 id="exemple-simple">Exemple simple</h3>
-<pre><code class="language-python">x = 2
-print(eval(&quot;x + 3&quot;))  # affiche 5
-
-</code></pre>
-<p>Ici, "x + 3" est une chaîne de caractères. eval() va l’interpréter comme une expression Python et calculer 2 + 3.  </p>
-<hr />
-<p>Application à notre problème  </p>
-<p>Grâce à eval(), on peut écrire une expression booléenne sous forme de texte (par exemple "(A and not B)") et la faire évaluer automatiquement pour chaque combinaison de valeurs possibles de A et B.  </p>
-<p>Attention : eval() exécute directement le texte donné, donc en pratique il faut l’utiliser avec prudence (jamais avec du texte écrit par un inconnu). Ici, dans un exercice scolaire, on peut l’utiliser en toute sécurité.  </p>
-<h3 id="exercice-generer-une-table-de-verite-en-python">Exercice : Générer une table de vérité en Python</h3>
-<p>On souhaite écrire un programme qui génère la <strong>table de vérité</strong> d’un opérateur logique (<code>OR</code>, <code>AND</code> ou <code>NOT</code>) donné par l’utilisateur.</p>
-<hr />
-<p><strong>Étapes de l’exercice</strong></p>
-<p>Demander à l’utilisateur de saisir un opérateur logique (sous forme de texte) parmi :<br />
-   - <code>"OR"</code>
-   - <code>"AND"</code>
-   - <code>"NOT"</code></p>
-<p>Selon l’opérateur choisi :<br />
-   - Si c’est <strong><code>OR</code></strong> ou <strong><code>AND</code></strong>, la table de vérité aura <strong>deux variables</strong> (<code>A</code> et <code>B</code>).<br />
-   - Si c’est <strong><code>NOT</code></strong>, la table de vérité aura <strong>une seule variable</strong> (<code>A</code>).  </p>
-<p>Le programme affiche la table de vérité correspondante.  </p>
-<hr />
-<p><strong>Exemple d’exécution attendue</strong></p>
-<p>Cas 1 : opérateur <code>AND</code></p>
-<p>Choisissez un opérateur logique (OR, AND, NOT) : AND  </p>
-<p>A | B | Résultat<br />
---+---+---------<br />
-0 | 0 | 0<br />
-0 | 1 | 0<br />
-1 | 0 | 0<br />
-1 | 1 | 1  </p>
-<hr />
-<p>Cas 2 : opérateur <code>NOT</code></p>
-<p>Choisissez un opérateur logique (OR, AND, NOT) : NOT</p>
-<p>A | Résultat<br />
---+---------<br />
-0 | 1<br />
-1 | 0  </p>
-<p><strong>Indications</strong></p>
-<ul>
-<li>Pour parcourir toutes les combinaisons de <code>0</code> et <code>1</code>, on peut utiliser une boucle sur <code>[0, 1]</code>.  </li>
-<li>Selon le choix de l’utilisateur, on pourra utiliser une condition <code>if</code> pour décider quelle table afficher.  </li>
-<li>On peut utiliser les opérateurs Python <code>and</code>, <code>or</code>, <code>not</code> pour calculer le résultat.  </li>
-</ul>
               
             </div>
           </div><footer>

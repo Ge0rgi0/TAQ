@@ -67,9 +67,9 @@
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Types de base (chaînes de caractéres)</a>
     <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#1-definition">1. Définition</a>
+    <li class="toctree-l3"><a class="reference internal" href="#definition">Définition</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#2-caracteres-et-encodage">2. Caractères et encodage</a>
+    <li class="toctree-l3"><a class="reference internal" href="#ascii">ASCII</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#exercice-1-conversion-binaire-texte">Exercice 1 : Conversion binaire → texte</a>
     </li>
@@ -79,23 +79,33 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#iso-8859-1-et-manipulation-des-caracteres-en-python">ISO-8859-1 et manipulation des caractères en Python</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#3-operations-de-base">3. Opérations de base</a>
+    <li class="toctree-l3"><a class="reference internal" href="#codage-universel-utf-8">Codage universel : UTF-8</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#a-concatenation">a) Concaténation (+)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#b-repetition">b) Répétition (*)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#c-longueur-len">c) Longueur (len)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#d-acces-par-indice">d) Accès par indice</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#e-tranches-slices">e) Tranches (slices)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#conversion">Conversion</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#4-fonctions-utiles">4. Fonctions utiles</a>
+    <li class="toctree-l3"><a class="reference internal" href="#en-python">En python</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#concatenation">Concaténation (+)</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#5-exercices">5. Exercices</a>
+    <li class="toctree-l4"><a class="reference internal" href="#repetition">Répétition (*)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#longueur-len">Longueur (len)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#acces-par-indice">Accès par indice</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tranches-slices">Tranches (slices)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fonctions-utiles">Fonctions utiles</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#caracteres-speciaux">Caractéres spéciaux</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parcours">Parcours</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercices">Exercices</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#exercice-1">Exercice 1</a>
     </li>
@@ -109,9 +119,11 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#exercice-6">Exercice 6</a>
     </li>
-        </ul>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-7">Exercice 7</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#6-resume">6. Résumé</a>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-8">Exercice 8</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -154,17 +166,23 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="les-chaines-de-caracteres-str">Les chaînes de caractères (<code>str</code>)</h1>
-<h2 id="1-definition">1. Définition</h2>
+<h2 id="definition">Définition</h2>
 <p>Une <strong>chaîne de caractères</strong> est une suite ordonnée de symboles (lettres, chiffres, ponctuation, espaces…).<br />
 En Python, une chaîne est de type <code>str</code>.<br />
-On peut l’écrire entre <strong>guillemets simples</strong> <code>'...'</code> ou <strong>guillemets doubles</strong> <code>"..."</code>.</p>
+On peut l’écrire entre <strong>guillemets simples</strong> <code>'...'</code> ou <strong>guillemets doubles</strong> <code>"..."</code>.<br />
+Si la chaînes est sur plusieurs lignes on utilisera trois guillemets simples.  </p>
 <p>Exemples :</p>
 <pre><code class="language-python">mot = &quot;Bonjour&quot;
 lettre = 'A'
 phrase = &quot;Ceci est une phrase.&quot;
+
+multi-ligne = '''Ceci est  
+  une chaîne de caractéres  
+  très longue  
+'''
 </code></pre>
 <hr />
-<h2 id="2-caracteres-et-encodage">2. Caractères et encodage</h2>
+<h2 id="ascii">ASCII</h2>
 <p>ASCII signifie American Standard Code for Information Interchange
 (en français : Code américain standard pour l’échange d’informations).  </p>
 <p>C’est une norme de codage des caractères créée dans les années 1960.
@@ -201,38 +219,135 @@ Elle associe chaque symbole (lettre, chiffre, ponctuation, contrôle) à un nomb
 <ul>
 <li><code>ord(caractère)</code> : retourne le code numérique du caractère (ASCII ou ISO-8859-1).  </li>
 </ul>
-<pre><code class="language-python">  &gt;&gt;&gt; ord('é')
+<pre><code class="language-python">  &gt;&gt;&gt; ord('é') # str -&gt; int (décimal)
   233
 </code></pre>
 <ul>
 <li><code>chr(code)</code> : retourne le caractère correspondant à un code numérique.</li>
 </ul>
-<pre><code class="language-python">&gt;&gt;&gt; ord(233)
+<pre><code class="language-python">&gt;&gt;&gt; chr(233) # int (décimal) -&gt; str
 é
 </code></pre>
+<h2 id="codage-universel-utf-8">Codage universel : UTF-8</h2>
+<p>Les normes comme ASCII et ISO-8859-1 permettent de coder respectivement l’anglais et les langues d’Europe de l’Ouest.  </p>
+<p>Mais il ne s’agit là que d’une petite partie des besoins :  </p>
+<ul>
+<li>d’autres alphabets (grec, cyrillique, arabe, hébreu, chinois, japonais, coréen, etc.)  </li>
+<li>des symboles mathématiques,  </li>
+<li>des caractères techniques,  </li>
+<li>et, plus récemment, les émoticônes et emojis.  </li>
+</ul>
+<p>Avec seulement 1 octet (256 possibilités), il est impossible de représenter tous ces caractères.</p>
+<p>C’est pour répondre à ce problème qu’a été créée la norme Unicode, qui attribue à chaque caractère du monde un numéro unique (point de code).
+Cependant, il fallait également définir un mode de représentation en mémoire de ces points de code.</p>
+<p>À la fin des années 1990, un nouvel encodage s’impose progressivement : UTF-8.
+Il sera adopté massivement au cours des années 2000, devenant le standard du web et des systèmes modernes.</p>
+<p>UTF-8 s’appuie sur le point de code de chaque caractère.
+Un point de code est un identifiant numérique unique défini par la norme Unicode, qui répertorie aujourd’hui près de 138 000 caractères.</p>
+<p>Les 256 premiers points de code correspondent aux caractères de l’ISO-8859-1, assurant ainsi la compatibilité avec les alphabets occidentaux.
+On note un point de code sous la forme U+xxxx, où xxxx est la valeur en hexadécimal.</p>
+<p><span style="color:blue">Exemples</span></p>
+<ul>
+<li>U+00E0 correspond au caractère <code>à</code></li>
+<li>U+0052 correspond au caractère <code>R</code></li>
+</ul>
+<h3 id="conversion">Conversion</h3>
+<p>Les 127 premiers caractères (0 à 127) sont codés sur un seul octet : UTF-8 est donc totalement compatible avec ASCII.</p>
+<p>Les autres caractères nécessitent plusieurs octets (jusqu’à 4 octets).</p>
+<p><strong>Règles d’encodage</strong></p>
+<p>Cas ASCII (1 octet) :</p>
+<ul>
+<li>Si le bit de poids fort (le premier à gauche) vaut 0, l’octet correspond directement à un caractère ASCII (codé sur les 7 bits restants).</li>
+</ul>
+<p>Caractères sur plusieurs octets :</p>
+<ul>
+<li>Si le bit de poids fort vaut 1, alors la séquence de bits initiaux indique le nombre total d’octets utilisés pour représenter le caractère.</li>
+</ul>
+<p>Cette séquence se compose d’une série de 1 consécutifs suivis d’un 0.</p>
+<p><span style="color:blue">Exemples</span></p>
+<ul>
+<li>0xxxxxxx → le caractère est codé sur 1 octet</li>
+<li>110xxxxx → encodage sur 2 octets</li>
+<li>1110xxxx → encodage sur 3 octets</li>
+<li>11110xxx → encodage sur 4 octets</li>
+</ul>
+<p>Octets de continuation</p>
+<p>Dans un encodage sur k octets, les k − 1 octets suivants (appelés octets de continuation) commencent toujours par 10.</p>
+<p>Leur forme est donc 10xxxxxx.</p>
+<table>
+<thead>
+<tr>
+<th>Nombre d'octets</th>
+<th>Forme de la représentation binaire</th>
+<th>Caractères (points de code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span style="color:red">0</span><span style="color:blue">xxxxxxx</span></td>
+<td>U+0000 -&gt; U+007F</td>
+</tr>
+<tr>
+<td>2</td>
+<td><span style="color:red">110</span><span style="color:blue">xxxxx</span> <span style="color:red">10</span><span style="color:blue">xxxxxx</span></td>
+<td>U+0080 -&gt; U+07FF</td>
+</tr>
+<tr>
+<td>3</td>
+<td><span style="color:red">1110</span><span style="color:blue">xxxx</span> <span style="color:red">10</span><span style="color:blue">xxxxxx</span> <span style="color:red">10</span><span style="color:blue">xxxxxx</span></td>
+<td>U+0800 -&gt; U+FFFF</td>
+</tr>
+<tr>
+<td>4</td>
+<td><span style="color:red">11110</span><span style="color:blue">xxx</span> <span style="color:red">10</span><span style="color:blue">xxxxxx</span> <span style="color:red">10</span><span style="color:blue">xxxxxx</span> <span style="color:red">10</span><span style="color:blue">xxxxxx</span></td>
+<td>U+10000 -&gt; U+10FFFF</td>
+</tr>
+</tbody>
+</table>
+<p><span style="color:red">Exercices</span></p>
+<p>Vous aurez besoin des fonctions <code>ord()</code> et <code>chr()</code>.</p>
+<p>Convertir les caractères suivants en UTF-8 (donner la valeur binaire puis hexadécimale) :<br />
+- <code>A</code><br />
+- <code>z</code><br />
+- <code>0</code><br />
+- <code>?</code><br />
+- <code>é</code><br />
+- <code>ç</code><br />
+- <code>à</code>  </p>
+<p>Donner la représentation UTF-8 (binaire puis hexadécimale) des caractères suivants :<br />
+- <code>€</code> (U+20AC)<br />
+- <code>Ω</code> (U+03A9)<br />
+- <code>漢</code> (U+6F22)  </p>
+<p>On vous donne des séquences UTF-8. Donner le caractère correspondant.  </p>
+<ul>
+<li><code>01000001</code>  </li>
+<li><code>11000011 10101001</code>  </li>
+<li><code>11100010 10000010 10101101</code>  </li>
+<li><code>11100110 10111101 10100000</code>  </li>
+</ul>
 <hr />
-<h2 id="3-operations-de-base">3. Opérations de base</h2>
-<p>On peut appliquer différentes opérations sur une chaîne :</p>
-<h3 id="a-concatenation">a) Concaténation (<code>+</code>)</h3>
+<h2 id="en-python">En python</h2>
+<h3 id="concatenation">Concaténation (<code>+</code>)</h3>
 <pre><code class="language-python">prenom = &quot;Ada&quot;
 nom = &quot;Lovelace&quot;
 print(prenom + &quot; &quot; + nom)  # Ada Lovelace
 </code></pre>
-<h3 id="b-repetition">b) Répétition (<code>*</code>)</h3>
+<h3 id="repetition">Répétition (<code>*</code>)</h3>
 <pre><code class="language-python">rire = &quot;ha&quot;
 print(rire * 3)  # hahaha
 </code></pre>
-<h3 id="c-longueur-len">c) Longueur (<code>len</code>)</h3>
+<h3 id="longueur-len">Longueur (<code>len</code>)</h3>
 <pre><code class="language-python">texte = &quot;Bonjour&quot;
 print(len(texte))  # 7
 </code></pre>
-<h3 id="d-acces-par-indice">d) Accès par indice</h3>
+<h3 id="acces-par-indice">Accès par indice</h3>
 <p>Chaque caractère est accessible par son <strong>indice</strong> (position, en commençant à 0) :</p>
 <pre><code class="language-python">mot = &quot;Python&quot;
 print(mot[0])  # P
 print(mot[3])  # h
 </code></pre>
-<h3 id="e-tranches-slices">e) Tranches (slices)</h3>
+<h3 id="tranches-slices">Tranches (slices)</h3>
 <p>On peut extraire une partie de la chaîne :</p>
 <pre><code class="language-python">mot = &quot;Python&quot;
 
@@ -244,9 +359,7 @@ print(mot[1::2])   # yhn   (un caractère sur deux en commençant à l’indice 
 print(mot[::-1])   # nohtyP (toute la chaîne à l’envers)
 print(mot[3:0:-1]) # hty   (du 4e caractère vers le 1er en sens inverse)
 </code></pre>
-<hr />
-<h2 id="4-fonctions-utiles">4. Fonctions utiles</h2>
-<p>Quelques méthodes très utilisées :</p>
+<h3 id="fonctions-utiles">Fonctions utiles</h3>
 <pre><code class="language-python">texte = &quot;bonjour&quot;
 print(texte.upper())   # BONJOUR
 print(texte.capitalize())  # Bonjour
@@ -254,8 +367,30 @@ print(texte.isalpha()) # True si uniquement des lettres
 print(texte.isdigit()) # True si uniquement des chiffres
 print(&quot;123&quot;.isdigit()) # True
 </code></pre>
+<h3 id="caracteres-speciaux">Caractéres spéciaux</h3>
+<ul>
+<li><code>\n</code> : saut de ligne (newline)  </li>
+<li><code>\t</code> : tabulation (tab)  </li>
+<li><code>\\</code> : antislash  </li>
+<li><code>\'</code> : apostrophe simple  </li>
+<li><code>\"</code> : guillemet double</li>
+</ul>
+<h3 id="parcours">Parcours</h3>
+<p>On peut parcourir les chaînes de caractéres grâce à une boucle <code>for</code>.</p>
+<pre><code class="language-python">a = &quot;azerty&quot;
+for c in a:
+  print(c)
+</code></pre>
+<p>affichera :</p>
+<pre><code>a
+z
+e
+r
+t
+y
+</code></pre>
 <hr />
-<h2 id="5-exercices">5. Exercices</h2>
+<h2 id="exercices">Exercices</h2>
 <h3 id="exercice-1">Exercice 1</h3>
 <p>Demander un mot et afficher son premier et son dernier caractère.</p>
 <h3 id="exercice-2">Exercice 2</h3>
@@ -263,10 +398,19 @@ print(&quot;123&quot;.isdigit()) # True
 <h3 id="exercice-3">Exercice 3</h3>
 <p>Vérifier si une chaîne donnée contient uniquement des chiffres.</p>
 <h3 id="exercice-4">Exercice 4</h3>
-<p>Écrire un programme qui inverse une chaîne de caractères.</p>
+<p>Écrire un programme qui inverse une chaîne de caractères (sans utiliser un pas négatif).</p>
 <h3 id="exercice-5">Exercice 5</h3>
-<p>Demander un mot et afficher <code>"Palindrome"</code> s’il se lit dans les deux sens.</p>
+<p>Écrire un programme qui compte le nombre de fois qu'un caractére précis apparait dans une chaîne de caractéres.</p>
 <h3 id="exercice-6">Exercice 6</h3>
+<p>Demander un mot et afficher <code>"Palindrome"</code> s’il se lit dans les deux sens.</p>
+<h3 id="exercice-7">Exercice 7</h3>
+<p>Écrire un programme qui affiche une chaine de caractére en plusieurs parties distinctes. Chaque partie commence après une virgule.</p>
+<p><code>Salut, ça va ?</code></p>
+<p>donne donc :</p>
+<pre><code>Salut
+ca va ?
+</code></pre>
+<h3 id="exercice-8">Exercice 8</h3>
 <p>Le code de César est une méthode de chiffrement très simple utilisée par Jules César dans ses correspondances secrètes (ce qui explique le nom).  L'idée est simple, nous choisissons une clé qui correspond à un décalage que nous allons appliquer sur chacun des caractéres du message.  </p>
 <p>Exemple :  </p>
 <p>Message : NSI<br />
@@ -276,14 +420,6 @@ Message codé : OTJ  </p>
 Clé : 25<br />
 Message codé : MRK  </p>
 <p>Imaginer un programme qui demande un message et une clé et qui affiche le message codé correspondant.  </p>
-<hr />
-<h2 id="6-resume">6. Résumé</h2>
-<ul>
-<li>Une chaîne est de type <code>str</code> et se note avec <code>'...'</code> ou <code>"..."</code>.  </li>
-<li>Chaque caractère est codé par un nombre (ASCII/Unicode).  </li>
-<li>On peut : concaténer, répéter, mesurer (<code>len</code>), extraire (<code>[]</code>).  </li>
-<li>Les méthodes permettent de transformer ou tester des chaînes.</li>
-</ul>
               
             </div>
           </div><footer>
