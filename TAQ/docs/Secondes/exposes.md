@@ -72,10 +72,10 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 ## Groupes  
 
 Groupes formées :  
-- <span style="color:goldenrod">2B : 94 %</span>  
-- <span style="color:royalblue">2D : 83 %</span>  
-- <span style="color:seagreen">2E : 69 %</span>  
-- <span style="color:tomato">2F : 88 %</span>  
+- <span style="color:goldenrod">2B : 100 %</span>  
+- <span style="color:royalblue">2D : 82 %</span>  
+- <span style="color:seagreen">2E : 67 %</span>  
+- <span style="color:tomato">2F : 91 %</span>  
 
 **Pas de panique ! Ceci n'est pas l'ordre de passage.**  
 
@@ -89,17 +89,18 @@ Groupes formées :
 |<span style="color:goldenrod">Sacha D. Noah G. Gaston D.|||2B|
 |<span style="color:goldenrod">Maissan E. Diana K.|||2B|
 |<span style="color:goldenrod">Leo B. Lonny D.|||2B|
-|<span style="color:goldenrod">Laly E. Maelle V.|||2B|
+|<span style="color:goldenrod">Laly E. Maelle V. Lou D.|||2B|
 |<span style="color:goldenrod">Kylian G. Ethan L.|||2B|
 |<span style="color:goldenrod">Kamron R. Arthur M.|||2B|
 |<span style="color:goldenrod">Martin B. Lucas S.|||2B|
+|<span style="color:goldenrod">Elsa S. Manon V.|||2B|
 |<span style="color:royalblue">Emelyne F. Anne-rose B.|||2D|
 |<span style="color:royalblue">Camille C. Arthur P. Milo M.|||2D|
 |<span style="color:royalblue">Donovan F. Lucas H. Lucas F.|||2D|
 |<span style="color:royalblue">Altay K. Luca B. Maxence C.|||2D|
 |<span style="color:royalblue">Coleen A. Karolina L. Maelle D.|||2D|
 |<span style="color:royalblue">Camille B. Lena C.|||2D|
-|<span style="color:royalblue">Valentin J. Lucas W.|||2D|
+|<span style="color:royalblue">Valentin G. Lucas W.|||2D|
 |<span style="color:royalblue">Lenaic D. Axel F.|||2D|
 |<span style="color:royalblue">Laura G. Gwenaelle L.|||2D|
 |<span style="color:royalblue">Zelie B. Emma M. Nina C.|||2D|
@@ -112,7 +113,7 @@ Groupes formées :
 |<span style="color:seagreen">Lola C. Elyse N. Lana F.|||2E|
 |<span style="color:seagreen">Louis M. Tom C.|||2E|
 |<span style="color:seagreen">Melanie M. Suzanne M.|||2E|
-|<span style="color:seagreen">Lilian S. Simon M. Charlie S.|||2E|
+|<span style="color:seagreen">Lilian S. Simon M. Charly S.|||2E|
 |<span style="color:seagreen">Noeline B. Anais T.|||2E|
 |<span style="color:seagreen">Ines O. Tom O.|||2E|
 |<span style="color:tomato">Zelie P-L. Pauline B. Naomie C.|||2F|
@@ -120,12 +121,12 @@ Groupes formées :
 |<span style="color:tomato">Yoan B. Luka D.|||2F|
 |<span style="color:tomato">Jules D. Flavien D.|||2F|
 |<span style="color:tomato">Ilyes E. Nolan B|||2F|
-|<span style="color:tomato">Mattheo B. Hugo B.|||2F|
+|<span style="color:tomato">Matheo B. Hugo B.|||2F|
 |<span style="color:tomato">Nolan H. Alexis V.|||2F|
 |<span style="color:tomato">Maelys V. Louane H. Elora B.|||2F|
-|<span style="color:tomato">Timeo F. Axel P.|||2F|
+|<span style="color:tomato">Thimeo F. Axel P.|||2F|
 |<span style="color:tomato">Camille B. Noham J.|||2F|
 |<span style="color:tomato">Zelie M. Tess P.|||2F|
 |<span style="color:tomato">Souad M. Zoe P.|||2F|
-|<span style="color:tomato">Ocelia R. Chloe G.|||2F|
-|<span style="color:tomato">Giovanni C. Cyprien l.|||2F|
+|<span style="color:tomato">Ocelia R. Chloe G. Noa T.|||2F|
+|<span style="color:tomato">Giovanni C. Cyprien L.|||2F|

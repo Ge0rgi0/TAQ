@@ -10,7 +10,7 @@
 
 ---
 
-## 1. Introduction
+## Introduction
 
 Une **donnée** est une représentation élémentaire d'une information, 
 exprimée sous une forme interprétable par un système informatique.
@@ -25,7 +25,7 @@ Les simples **tableaux** vus en Première ne suffisent plus : il faut un modèle
 
 ---
 
-## 2. Le modèle relationnel
+## Le modèle relationnel
 
 Une **table** est une structure qui permet de stocker des données dans une base de données relationnelle.
 Elle est composée :  
