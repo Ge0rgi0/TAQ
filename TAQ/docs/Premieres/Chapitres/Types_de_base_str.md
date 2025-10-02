@@ -161,12 +161,9 @@ Convertir les caractères suivants en UTF-8 (donner la valeur binaire puis hexad
 - `é`  
 - `ç`  
 - `à`  
-
-
-Donner la représentation UTF-8 (binaire puis hexadécimale) des caractères suivants :  
-- `€` (U+20AC)  
-- `Ω` (U+03A9)  
-- `漢` (U+6F22)  
+- `€`
+- `Ω`
+- `漢` 
 
 On vous donne des séquences UTF-8. Donner le caractère correspondant.  
 
