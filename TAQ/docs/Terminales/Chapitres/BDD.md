@@ -322,7 +322,7 @@ WHERE age > (
 ### Exercices
 
 Voici un base de données repertoriant les 151 premiers pokemons :  
-[💾 Télécharger pokemon.db](pokemon151.db)
+[💾 Télécharger pokemon.db](pokemon151.sqbpro)
 
 |pokemon|
 |---|
