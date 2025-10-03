@@ -121,6 +121,8 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#exercices">Exercices</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#requetes-de-mise-a-jour">Requêtes de mise à jour</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -461,7 +463,7 @@ WHERE age &gt; (
 <hr />
 <h3 id="exercices">Exercices</h3>
 <p>Voici un base de données repertoriant les 151 premiers pokemons :<br />
-<a href="../pokemon151.db">💾 Télécharger pokemon.db</a></p>
+<a href="../pokemon151.sqbpro">💾 Télécharger pokemon.db</a></p>
 <table>
 <thead>
 <tr>
@@ -537,7 +539,7 @@ WHERE age &gt; (
 <li>Afficher tous les <code>noms</code> et <code>numéro</code> des pokemons</li>
 <li>Afficher toutes les combinaisons de <code>types</code> présentes dans la table</li>
 <li>Problème : on a beaucoup de fois la même combinaison : afficher toutes les combinaisons différentes</li>
-<li>Afficher tous les pokemons de type <code>Eau</code> qui en sont à leur dernier stade d'évolution (c'est à dire que l'attribut <code>evolution</code> est à <code>null</code>)</li>
+<li>Afficher tous les pokemons de type <code>Eau</code> qui en sont à leur premier stade d'évolution (c'est à dire que l'attribut <code>evolution</code> est à <code>null</code>)</li>
 <li>Afficher les pokemons du plus grand au plus petit</li>
 <li>Afficher les pokemons dans l'ordre alphabetique inverse</li>
 <li>Afficher la <code>taille</code> moyenne des pokemons de type <code>Insecte</code></li>
@@ -566,24 +568,20 @@ JOIN Note ON Eleve.id_eleve = Note.id_eleve;
 FROM Eleve AS E1
 JOIN Eleve AS E2 ON E1.classe = E2.classe
 WHERE E1.id_eleve &lt; E2.id_eleve;
-
-**Exercice**
-
-écrire en les requêtes SQL suivantes :
-
-1. Afficher le ``nom`` de chaque Pokémon ainsi que le ``nom`` de son ``evolution`` (si elle existe) en utilisant une auto-jointure sur la colonne `evolution`.
-2. Afficher tous les Pokémon dont le ``type1`` est le même que celui de leur `evolution`.
-3. Afficher le ``nom`` des Pokémon et les ``types`` de leur ``evolution`` lorsque le ``type1`` principal diffère.
-4. Afficher le ``nom`` et le ``type`` des Pokémon dont le type principal diffère de celui de l’evolution mais qui partagent le même type secondaire.
-5. Afficher les Pokémon et le ``nom`` de leur ``evolution`` uniquement si le ``taille`` de l’évolution est inférieur à celui du Pokémon initial.
-
----
-
-### Requêtes de mise à jour
-
-**Ajouter une donnée (INSERT)**
-```sql
-INSERT INTO Eleve (id_eleve, nom, prenom, classe, age)
+</code></pre>
+<p><strong>Exercice</strong></p>
+<p>écrire en les requêtes SQL suivantes :</p>
+<ol>
+<li>Afficher le <code>nom</code> de chaque Pokémon ainsi que le <code>nom</code> de son <code>evolution</code> (si elle existe) en utilisant une auto-jointure sur la colonne <code>evolution</code>.</li>
+<li>Afficher tous les Pokémon dont le <code>type1</code> est le même que celui de leur <code>evolution</code>.</li>
+<li>Afficher le <code>nom</code> des Pokémon et les <code>types</code> de leur <code>evolution</code> lorsque le <code>type1</code> principal diffère.</li>
+<li>Afficher le <code>nom</code> et le <code>type</code> des Pokémon dont le type principal diffère de celui de l’evolution mais qui partagent le même type secondaire.</li>
+<li>Afficher les Pokémon et le <code>nom</code> de leur <code>evolution</code> uniquement si le <code>taille</code> de l’évolution est inférieur à celui du Pokémon initial.</li>
+</ol>
+<hr />
+<h3 id="requetes-de-mise-a-jour">Requêtes de mise à jour</h3>
+<p><strong>Ajouter une donnée (INSERT)</strong></p>
+<pre><code class="language-sql">INSERT INTO Eleve (id_eleve, nom, prenom, classe, age)
 VALUES (5, 'Lemoine', 'Clara', 'TES', 17);
 </code></pre>
 <p>Ajoute une nouvelle élève.</p>
