@@ -356,7 +356,7 @@ Pour vérifier qu'un élément est null on utilisera le mot clé `is` (exemple :
 2. Afficher tous les ``noms`` et ``numéro`` des pokemons
 3. Afficher toutes les combinaisons de ``types`` présentes dans la table
 4. Problème : on a beaucoup de fois la même combinaison : afficher toutes les combinaisons différentes
-5. Afficher tous les pokemons de type ``Eau`` qui en sont à leur dernier stade d'évolution (c'est à dire que l'attribut ``evolution`` est à ``null``)
+5. Afficher tous les pokemons de type ``Eau`` qui en sont à leur premier stade d'évolution (c'est à dire que l'attribut ``evolution`` est à ``null``)
 6. Afficher les pokemons du plus grand au plus petit
 7. Afficher les pokemons dans l'ordre alphabetique inverse
 8. Afficher la ``taille`` moyenne des pokemons de type ``Insecte``
@@ -390,6 +390,7 @@ SELECT E1.nom AS Eleve1, E2.nom AS Eleve2
 FROM Eleve AS E1
 JOIN Eleve AS E2 ON E1.classe = E2.classe
 WHERE E1.id_eleve < E2.id_eleve;
+```
 
 **Exercice**
 

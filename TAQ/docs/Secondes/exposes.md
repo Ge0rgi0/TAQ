@@ -74,7 +74,7 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 Groupes formées :  
 - <span style="color:goldenrod">2B : 100 %</span>  
 - <span style="color:royalblue">2D : 82 %</span>  
-- <span style="color:seagreen">2E : 67 %</span>  
+- <span style="color:seagreen">2E : 97 %</span>  
 - <span style="color:tomato">2F : 91 %</span>  
 
 **Pas de panique ! Ceci n'est pas l'ordre de passage.**  
@@ -113,9 +113,15 @@ Groupes formées :
 |<span style="color:seagreen">Lola C. Elyse N. Lana F.|||2E|
 |<span style="color:seagreen">Louis M. Tom C.|||2E|
 |<span style="color:seagreen">Melanie M. Suzanne M.|||2E|
-|<span style="color:seagreen">Lilian S. Simon M. Charly S.|||2E|
+|<span style="color:seagreen">Lilian S. Simon M.|||2E|
 |<span style="color:seagreen">Noeline B. Anais T.|||2E|
 |<span style="color:seagreen">Ines O. Tom O.|||2E|
+|<span style="color:seagreen">Eliott L. Jules M.|||2E|
+|<span style="color:seagreen">Alice R. Lena B.|||2E|
+|<span style="color:seagreen">Charly S. Zoe C.|||2E|
+|<span style="color:seagreen">Izia P. Stécy C.|||2E|
+|<span style="color:seagreen">Rafaele L. Anna M.|||2E|
+|<span style="color:seagreen">Gabriel S.|||2E|
 |<span style="color:tomato">Zelie P-L. Pauline B. Naomie C.|||2F|
 |<span style="color:tomato">Matteo B. Louis B.|||2F|
 |<span style="color:tomato">Yoan B. Luka D.|||2F|

@@ -136,6 +136,14 @@ La machine qui envoie transmet donc aussi un accusé de réception.
 
 Ensuite, pour chaque paquet envoyé, la machine qui reçoit renvoie un accusé de réception afin d’éviter les pertes.
 
+<iframe width="400" height="300"
+        src="https://www.youtube.com/embed/R6WN4_bBB1Q"
+        title="YouTube Shorts video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+</iframe>
+
 ---
 
 ## Routage : comment les paquets voyagent ?
