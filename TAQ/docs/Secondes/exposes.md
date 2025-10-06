@@ -73,9 +73,9 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 
 Groupes formées :  
 - <span style="color:goldenrod">2B : 100 %</span>  
-- <span style="color:royalblue">2D : 82 %</span>  
-- <span style="color:seagreen">2E : 97 %</span>  
-- <span style="color:tomato">2F : 91 %</span>  
+- <span style="color:royalblue">2D : 100 %</span>  
+- <span style="color:seagreen">2E : 100 %</span>  
+- <span style="color:tomato">2F : 100% %</span>  
 
 **Pas de panique ! Ceci n'est pas l'ordre de passage.**  
 
@@ -106,6 +106,9 @@ Groupes formées :
 |<span style="color:royalblue">Zelie B. Emma M. Nina C.|||2D|
 |<span style="color:royalblue">Charlotte D. Iris D.|||2D|
 |<span style="color:royalblue">Alicia D. Leane D.|||2D|
+|<span style="color:royalblue">Tia R. Marie L.|||2D|
+|<span style="color:royalblue">Léo L. Lenny C.|||2D|
+|<span style="color:royalblue">Bastien P.|||2D|
 |<span style="color:seagreen">Emma P. Zelie S.|||2E|
 |<span style="color:seagreen">Nolhan D. Yelen P. Noe D.|||2E|
 |<span style="color:seagreen">Sarah G. Ilana B. Elize P.|||2E|
@@ -122,13 +125,14 @@ Groupes formées :
 |<span style="color:seagreen">Izia P. Stécy C.|||2E|
 |<span style="color:seagreen">Rafaele L. Anna M.|||2E|
 |<span style="color:seagreen">Gabriel S.|||2E|
+|<span style="color:seagreen">Marley B.|||2E|
 |<span style="color:tomato">Zelie P-L. Pauline B. Naomie C.|||2F|
 |<span style="color:tomato">Matteo B. Louis B.|||2F|
 |<span style="color:tomato">Yoan B. Luka D.|||2F|
 |<span style="color:tomato">Jules D. Flavien D.|||2F|
 |<span style="color:tomato">Ilyes E. Nolan B|||2F|
 |<span style="color:tomato">Matheo B. Hugo B.|||2F|
-|<span style="color:tomato">Nolan H. Alexis V.|||2F|
+|<span style="color:tomato">Nolan H. Alexis G.|||2F|
 |<span style="color:tomato">Maelys V. Louane H. Elora B.|||2F|
 |<span style="color:tomato">Thimeo F. Axel P.|||2F|
 |<span style="color:tomato">Camille B. Noham J.|||2F|
@@ -136,3 +140,4 @@ Groupes formées :
 |<span style="color:tomato">Souad M. Zoe P.|||2F|
 |<span style="color:tomato">Ocelia R. Chloe G. Noa T.|||2F|
 |<span style="color:tomato">Giovanni C. Cyprien L.|||2F|
+|<span style="color:tomato">Jade D. Eloi L.|||2F|

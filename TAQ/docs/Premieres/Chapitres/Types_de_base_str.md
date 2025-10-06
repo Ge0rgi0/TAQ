@@ -201,6 +201,8 @@ Chaque caractère est accessible par son **indice** (position, en commençant à
 mot = "Python"
 print(mot[0])  # P
 print(mot[3])  # h
+print(mot[-1]) # n
+print(mot[-2]) # o
 ```
 
 ### Tranches (slices)
