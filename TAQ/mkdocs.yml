@@ -7,6 +7,7 @@ nav:
           - Accueil: Secondes/Secondes.md
           - Exposés: Secondes/exposes.md
           - Internet : Secondes/Chapitres/Internet.md
+          - Réseaux sociaux : Secondes/Chapitres/RS.md
       - Premières:
           - Accueil: Premieres/Premieres.md
           - Types de base (entiers): Premieres/Chapitres/Types_de_base_int.md
