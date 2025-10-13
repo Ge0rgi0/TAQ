@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Série d’exercices sur les boucles - TAQ</title>
+    <title>Cours : Les fonctions en Python - TAQ</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "S\u00e9rie d\u2019exercices sur les boucles";
-        var mkdocs_page_input_path = "Premieres/exo_python.md";
+        var mkdocs_page_name = "Cours : Les fonctions en Python";
+        var mkdocs_page_input_path = "Premieres/fonctions.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -98,7 +98,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Série d’exercices sur les boucles</li>
+      <li class="breadcrumb-item active">Cours : Les fonctions en Python</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -107,112 +107,111 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="serie-dexercices-sur-les-boucles">Série d’exercices sur les boucles</h1>
-<h2 id="1-boucles-bornees">1. Boucles bornées</h2>
-<ol>
-<li>
-<p><strong>Affichage de nombres</strong><br />
-    Écrire un programme qui affiche les nombres de 1 à 10.
-    Modifier le programme pour afficher uniquement les nombres pairs entre 1 et 20.</p>
-</li>
-<li>
-<p><strong>Somme et produit</strong><br />
-    Demander un entier <code>n</code> à l’utilisateur et afficher la somme des entiers de 1 à <code>n</code>.
-    Bonus : afficher aussi le produit des entiers de 1 à <code>n</code>.</p>
-</li>
-<li>
-<p><strong>Tables de multiplication</strong><br />
-    Écrire un programme qui affiche la table de multiplication d’un nombre donné par l’utilisateur (exemple : table de 7).</p>
-</li>
-<li>
-<p><strong>Carré d’étoiles</strong><br />
-    Demander un entier <code>n</code> et afficher un carré de <code>n × n</code> étoiles.<br />
-     Exemple pour <code>n=3</code> :  </p>
-<p><code>***</code><br />
-<code>***</code><br />
-<code>***</code>  </p>
-</li>
-<li>
-<p><strong>Triangle d’étoiles</strong><br />
-    Même chose mais en triangle :  </p>
-<p><code>*</code><br />
-<code>**</code><br />
-<code>***</code>  </p>
-</li>
-<li>
-<p><strong>Série de Fibonacci</strong><br />
-    Afficher les <code>n</code> premiers termes de la suite de Fibonacci : 0, 1, 1, 2, 3, 5, 8…</p>
-</li>
-<li>
-<p><strong>Petit jeu du dé</strong><br />
-     Simuler 10 lancers d’un dé à 6 faces.
-     Afficher les résultats.
-     Bonus : compter combien de fois le 6 est sorti.</p>
-</li>
-</ol>
+                <h1 id="cours-les-fonctions-en-python">Cours : Les fonctions en Python</h1>
+<h2 id="1-pourquoi-utiliser-des-fonctions">1. Pourquoi utiliser des fonctions ?</h2>
+<p>Imagine un programme qui doit calculer plusieurs fois une même opération (par exemple, le périmètre d’un rectangle).<br />
+Sans fonction, tu devrais répéter le même code plusieurs fois :  </p>
+<pre><code class="language-python">longueur = 10
+largeur = 5
+perimetre1 = 2 * (longueur + largeur)
+
+longueur = 7
+largeur = 3
+perimetre2 = 2 * (longueur + largeur)
+</code></pre>
+<p>C’est répétitif, et si tu veux changer la formule, tu dois la modifier partout.</p>
+<p>Avec une fonction, tu peux <strong>regrouper</strong> le code dans un bloc réutilisable :</p>
+<pre><code class="language-python">def perimetre_rectangle(longueur, largeur):
+    return 2 * (longueur + largeur)
+
+print(perimetre_rectangle(10, 5))
+print(perimetre_rectangle(7, 3))
+</code></pre>
+<p>Les fonctions rendent le code :<br />
+- plus <strong>lisible</strong>,<br />
+- plus <strong>court</strong>,<br />
+- plus <strong>facile à corriger et à réutiliser</strong>.</p>
 <hr />
-<h2 id="2-boucles-non-bornees">2. Boucles non bornées</h2>
-<ol>
-<li>
-<p><strong>Compte à rebours</strong><br />
-   Demander à l’utilisateur un nombre entier positif <code>n</code>.<br />
-   Afficher un compte à rebours de <code>n</code> jusqu’à <code>0</code> inclus, en utilisant une boucle <code>while</code>.  </p>
-</li>
-<li>
-<p><strong>Mot de passe</strong><br />
-   Créer une variable contenant un mot de passe.<br />
-   Demander à le l'utilisateur.<br />
-   Tant que le mot de passe saisi est incorrect, redemander à l’utilisateur.<br />
-   Quand le bon mot de passe est saisi, afficher <code>"Accès autorisé"</code>. </p>
-</li>
-<li>
-<p><strong>Somme jusqu’à zéro</strong><br />
-   L’utilisateur saisit une suite de nombres entiers.<br />
-   La saisie s’arrête quand l’utilisateur entre <code>0</code>.<br />
-   Le programme affiche alors la somme de tous les nombres saisis (hors le zéro final).  </p>
-</li>
-<li>
-<p><strong>Nombre mystère</strong><br />
-   Le programme choisit un nombre aléatoire entre 1 et 100.<br />
-   L’utilisateur doit le deviner en proposant des valeurs.<br />
-   Le programme indique <code>"trop grand"</code> ou <code>"trop petit"</code> jusqu’à ce que la réponse soit trouvée.  </p>
-</li>
-<li>
-<p><strong>Puissance</strong><br />
-   Demander deux entiers <code>a</code> et <code>b</code>.<br />
-   Calculer <code>a^b</code> à l’aide d’une boucle (sans utiliser <code>**</code>).  </p>
-</li>
-</ol>
-<h2 id="listes">Listes</h2>
-<p>Ces exercices sont tirés du site <a href="https://www.france-ioi.org/algo/chapters.php">France-IOI</a>.</p>
-<h3 id="exercice-1-quantite-dingredient">Exercice 1 : Quantité d’ingrédient</h3>
-<p>Un onguent nécessite 10 ingrédients, avec les quantités suivantes (en grammes) :  </p>
-<pre><code>500, 180, 650, 25, 666, 42, 421, 1, 370, 211
+<h2 id="2-definir-une-fonction">2. Définir une fonction</h2>
+<p>En Python, on définit une fonction avec le mot-clé <code>def</code>.</p>
+<pre><code class="language-python">def nom_de_la_fonction(param1, param2, ...):
+    # bloc d'instructions
+    return resultat
 </code></pre>
-<p>Écrivez un programme qui lit un entier (numéro d’ingrédient entre 0 et 9) et affiche la quantité correspondante.</p>
-<h3 id="exercice-2-calcul-du-cout-des-achats">Exercice 2 : Calcul du coût des achats</h3>
-<p>Les prix au kilo de 10 ingrédients sont :  </p>
-<pre><code>9, 5, 12, 15, 7, 42, 13, 10, 1, 20
+<h3 id="exemple-simple">Exemple simple</h3>
+<pre><code class="language-python">def carre(x):
+    return x * x
 </code></pre>
-<p>Votre programme lit <strong>10 entiers</strong> (poids en kilos à acheter pour chaque ingrédient) et calcule le coût total.</p>
-<h3 id="exercice-3-gestion-de-stock">Exercice 3 : Gestion de stock</h3>
-<p>On gère 10 produits dont le stock initial est nul.  </p>
-<ul>
-<li>La première ligne contient un entier <code>nbOperations</code>.  </li>
-<li>Suivent <code>nbOperations</code> paires (numProduit, quantité).  </li>
-<li>quantité positive = achat  </li>
-<li>quantité négative = vente  </li>
-</ul>
-<p>Affichez le stock final de chaque produit (10 entiers).</p>
-<h3 id="exercice-4-produits-preferes">Exercice 4 : Produits préférés</h3>
-<p>On connaît les produits préférés d’un certain nombre de personnes.  </p>
-<p>Entrées : 
-- <code>nbProduits</code> et <code>nbPersonnes</code><br />
-- puis <code>nbPersonnes</code> entiers (numéros des produits préférés).  </p>
-<p>Affichez pour chaque produit, le nombre de personnes qui le préfèrent.</p>
-<h3 id="exercice-5-equilibrage-de-charrettes">Exercice 5 : Équilibrage de charrettes</h3>
-<p>On lit un entier <code>nbCharrettes</code>, puis <code>nbCharrettes</code> nombres décimaux représentant leur poids.  </p>
-<p>Affichez, pour chaque charrette, le poids à ajouter (ou retirer) pour que toutes transportent la même charge, sans changer le total.</p>
+<p>Appel de la fonction :</p>
+<pre><code class="language-python">print(carre(5))  # affiche 25
+</code></pre>
+<hr />
+<h2 id="3-parametres-et-arguments">3. Paramètres et arguments</h2>
+<p>Les <strong>paramètres</strong> sont les variables définies entre les parenthèses dans la définition.<br />
+Les <strong>arguments</strong> sont les valeurs passées lors de l’appel.</p>
+<pre><code class="language-python">def presentation(nom, age):
+    print(&quot;Je m'appelle&quot;, nom, &quot;et j'ai&quot;, age, &quot;ans.&quot;)
+
+presentation(&quot;Lina&quot;, 16)  # &quot;Lina&quot; et 16 sont les arguments
+</code></pre>
+<hr />
+<h2 id="4-fonctions-avec-ou-sans-valeur-de-retour">4. Fonctions avec ou sans valeur de retour</h2>
+<p>Certaines fonctions <strong>renvoient</strong> un résultat avec <code>return</code>, d’autres non.</p>
+<h3 id="avec-return">Avec <code>return</code></h3>
+<pre><code class="language-python">def somme(a, b):
+    return a + b
+
+x = somme(3, 4)
+print(x)  # 7
+</code></pre>
+<h3 id="sans-return">Sans <code>return</code></h3>
+<pre><code class="language-python">def afficher_bonjour():
+    print(&quot;Bonjour !&quot;)
+
+afficher_bonjour()
+</code></pre>
+<p>Une fonction sans <code>return</code> renvoie implicitement la valeur <code>None</code>.</p>
+<hr />
+<h2 id="exercices">Exercices</h2>
+<h3 id="exercice-1-comprehension">Exercice 1 : Compréhension</h3>
+<p>Écrire une fonction <code>salutation(nom)</code> qui affiche « Bonjour [nom] ! ».<br />
+Appeler la fonction avec plusieurs prénoms.</p>
+<hr />
+<h3 id="exercice-2-calculs-simples">Exercice 2 : Calculs simples</h3>
+<p>Écrire une fonction <code>cercle(r)</code> qui renvoie le <strong>périmètre</strong> et l’<strong>aire</strong> d’un cercle de rayon <code>r</code>.</p>
+<p>Rappel :<br />
+- Périmètre = 2 × π × r<br />
+- Aire = π × r²  </p>
+<p>Utiliser <code>math.pi</code> (penser à importer le module <code>math</code>).</p>
+<hr />
+<h3 id="exercice-3-moyenne">Exercice 3 : Moyenne</h3>
+<p>Écrire une fonction <code>moyenne(a, b, c)</code> qui renvoie la moyenne de trois nombres.<br />
+Tester la fonction avec différents ensembles de valeurs.</p>
+<hr />
+<h3 id="exercice-4-conversion">Exercice 4 : Conversion</h3>
+<p>Écrire une fonction <code>celsius_vers_fahrenheit(temp)</code> qui renvoie la température convertie.<br />
+Formule : <code>F = (9/5) * C + 32</code>.</p>
+<hr />
+<h3 id="exercice-5-mini-projet">Exercice 5 : Mini-projet</h3>
+<p>Créer un programme complet qui :
+1. Demande à l’utilisateur la longueur et la largeur d’un rectangle.<br />
+2. Utilise une fonction pour calculer l’aire.<br />
+3. Utilise une fonction pour calculer le périmètre.<br />
+4. Affiche les résultats.</p>
+<hr />
+<h3 id="exercice-6-defi-fonction-imbriquee">Exercice 6 : Défi – Fonction imbriquée</h3>
+<p>Écrire une fonction <code>distance(x1, y1, x2, y2)</code> qui calcule la distance entre deux points du plan.<br />
+Utiliser la fonction <code>racine_carree</code> que tu définiras toi-même.</p>
+<p>Formule :<br />
+<span class="arithmatex">\( d = \sqrt{(x2 - x1)^2 + (y2 - y1)^2} \)</span></p>
+<hr />
+<h2 id="7-pour-aller-plus-loin">7. Pour aller plus loin</h2>
+<p>Les fonctions sont la base de toute <strong>programmation modulaire</strong>.<br />
+Elles permettent de :<br />
+- clarifier les programmes,<br />
+- éviter les répétitions,<br />
+- faciliter les tests unitaires,<br />
+- préparer l’introduction des <strong>fonctions récursives</strong> et de la <strong>programmation orientée objet</strong>.</p>
               
             </div>
           </div><footer>

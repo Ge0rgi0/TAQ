@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Types construits (tableaux) - TAQ</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Types construits (tableaux)";
+        var mkdocs_page_input_path = "Premieres/Chapitres/Tableaux.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/Chapitres/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/Chapitres/RS/">Réseaux sociaux</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_int/">Types de base (entiers)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_float/">Types de base (flottants)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_bool/">Types de base (booléens)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_str/">Types de base (chaînes de caractéres)</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Types construits (tableaux)</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#quest-ce-quun-tableau">Qu’est-ce qu’un tableau ?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creer-et-modifier-un-tableau">Créer et modifier un tableau</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#creation">Création</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ajout-dun-element">Ajout d’un élément</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#suppression-dun-element">Suppression d’un élément</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#modification-dun-element">Modification d’un élément</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#taille-du-tableau">Taille du tableau</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#concatenation">Concaténation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#parcourir-un-tableau">Parcourir un tableau</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#avec-une-boucle-for">Avec une boucle for</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#avec-les-indices">Avec les indices</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exemple-dutilisation">Exemple d'utilisation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#listes-et-types-melanges">Listes et types mélangés</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercices">Exercices</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#somme-manuelle">Somme manuelle</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#recherche-du-plus-grand-element">Recherche du plus grand élément</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#recherche-du-plus-petit-element">Recherche du plus petit élément</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#compter-les-valeurs-superieures-a-un-seuil">Compter les valeurs supérieures à un seuil</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#recherche-dun-element">Recherche d’un élément</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#inversion-manuelle-dun-tableau">Inversion manuelle d’un tableau</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ecart-maximal">Écart maximal</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#suppression-dun-element-par-valeur">Suppression d’un élément par valeur</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#decalage-a-gauche">Décalage à gauche</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fusion-manuelle">Fusion manuelle</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#verifier-si-la-liste-est-triee">Vérifier si la liste est triée</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#doubles-consecutifs">Doubles consécutifs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#comptage-delements-pairs-et-impairs">Comptage d’éléments pairs et impairs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#comparaison-de-listes">Comparaison de listes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tableaux-a-deux-dimensions">Tableaux à deux dimensions</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/BDD/">Base de données</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Premières</li>
+      <li class="breadcrumb-item active">Types construits (tableaux)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="les-tableaux">Les Tableaux</h1>
+<h2 id="quest-ce-quun-tableau">Qu’est-ce qu’un tableau ?</h2>
+<p>Un tableau (ou <strong>liste</strong> en Python) est une structure de données qui permet de stocker plusieurs valeurs dans une seule variable.<br />
+On peut y accéder grâce à des <strong>indices</strong> commençant à 0.</p>
+<pre><code class="language-python">notes = [12, 15, 9, 18]
+print(notes[0])  # affiche 12
+print(notes[3])  # affiche 18
+</code></pre>
+<p>Les crochets <code>[]</code> servent à définir une liste.<br />
+Chaque élément peut être de n’importe quel type (entier, flottant, chaîne, booléen, etc.).</p>
+<hr />
+<h2 id="creer-et-modifier-un-tableau">Créer et modifier un tableau</h2>
+<h3 id="creation">Création</h3>
+<pre><code class="language-python">fruits = [&quot;pomme&quot;, &quot;banane&quot;, &quot;cerise&quot;]
+</code></pre>
+<h3 id="ajout-dun-element">Ajout d’un élément</h3>
+<pre><code class="language-python">fruits.append(&quot;orange&quot;)
+</code></pre>
+<h3 id="suppression-dun-element">Suppression d’un élément</h3>
+<pre><code class="language-python">fruits.remove(&quot;banane&quot;)
+</code></pre>
+<h3 id="modification-dun-element">Modification d’un élément</h3>
+<pre><code class="language-python">fruits[0] = &quot;kiwi&quot;
+</code></pre>
+<h3 id="taille-du-tableau">Taille du tableau</h3>
+<pre><code class="language-python">print(len(fruits))  # nombre d'éléments
+</code></pre>
+<h3 id="concatenation">Concaténation</h3>
+<pre><code class="language-Python">a = [1,2]
+b = [3,7]
+c = a + b #[1,2,3,7]
+</code></pre>
+<hr />
+<h2 id="parcourir-un-tableau">Parcourir un tableau</h2>
+<h3 id="avec-une-boucle-for">Avec une boucle <code>for</code></h3>
+<pre><code class="language-python">for fruit in fruits:
+    print(fruit)
+</code></pre>
+<h3 id="avec-les-indices">Avec les indices</h3>
+<pre><code class="language-python">for i in range(len(fruits)):
+    print(&quot;Indice&quot;, i, &quot;:&quot;, fruits[i])
+</code></pre>
+<h3 id="exemple-dutilisation">Exemple d'utilisation</h3>
+<pre><code class="language-python">notes = [10, 15, 12, 8, 17]
+somme = 0
+for note in notes:
+    somme += note
+
+m = somme / len(notes)
+print(m)
+</code></pre>
+<hr />
+<h2 id="listes-et-types-melanges">Listes et types mélangés</h2>
+<p>Python autorise les listes contenant plusieurs types de données, même si cela est rarement conseillé pour des programmes bien structurés.</p>
+<pre><code class="language-python">melange = [12, &quot;bonjour&quot;, 3.14, True]
+</code></pre>
+<p>Il est préférable d’utiliser des tableaux homogènes (tous les éléments du même type).</p>
+<hr />
+<h2 id="exercices">Exercices</h2>
+<h3 id="somme-manuelle">Somme manuelle</h3>
+<p>Crée une liste <code>nombres = [4, 7, 2, 9, 5]</code>.<br />
+Écris un programme qui calcule <strong>la somme des éléments</strong> sans utiliser la fonction <code>sum()</code>.<br />
+Utilise une boucle pour accumuler les valeurs dans une variable.</p>
+<hr />
+<h3 id="recherche-du-plus-grand-element">Recherche du plus grand élément</h3>
+<p>Crée une liste <code>notes = [10, 13, 7, 15, 9, 18]</code>.<br />
+Écris un programme qui trouve <strong>la plus grande note</strong> sans utiliser <code>max()</code>.<br />
+Le programme doit comparer les éléments un à un et conserver le plus grand dans une variable.</p>
+<hr />
+<h3 id="recherche-du-plus-petit-element">Recherche du plus petit élément</h3>
+<p>Crée une liste <code>notes = [10, 13, 7, 15, 9, 18]</code>.<br />
+Écris un programme qui trouve <strong>la plus petite note</strong> sans utiliser <code>min()</code>.</p>
+<hr />
+<h3 id="compter-les-valeurs-superieures-a-un-seuil">Compter les valeurs supérieures à un seuil</h3>
+<p>Crée une liste <code>temperatures</code> et un entier <code>seuil</code>.<br />
+Écris un programme qui compte <strong>combien de valeurs</strong> dans la liste sont <strong>strictement supérieures</strong> à ce seuil.<br />
+Exemple :<br />
+Pour <code>temperatures = [18, 22, 19, 25, 17, 21]</code> et <code>seuil = 20</code>, le programme doit afficher <code>3</code>.</p>
+<hr />
+<h3 id="recherche-dun-element">Recherche d’un élément</h3>
+<p>Crée une liste de chaînes <code>mots</code>.<br />
+Demande à l’utilisateur de saisir un mot.<br />
+Sans utiliser <code>in</code>, vérifie <strong>toi-même</strong> si le mot se trouve dans la liste.<br />
+Affiche un message indiquant s’il est présent ou non.</p>
+<hr />
+<h3 id="inversion-manuelle-dun-tableau">Inversion manuelle d’un tableau</h3>
+<p>Crée une liste <code>valeurs = [1, 2, 3, 4, 5]</code>.<br />
+Écris un programme qui construit <strong>une nouvelle liste contenant les mêmes éléments dans l’ordre inverse</strong>, sans utiliser <code>reverse()</code> ni la syntaxe <code>[::-1]</code>.<br />
+Utilise une boucle.</p>
+<hr />
+<h3 id="ecart-maximal">Écart maximal</h3>
+<p>Crée une liste <code>mesures</code> contenant des nombres.<br />
+Écris un programme qui calcule l’<strong>écart maximal</strong>, c’est-à-dire la différence entre la plus grande et la plus petite valeur, <strong>sans utiliser <code>max()</code> ni <code>min()</code></strong>.</p>
+<hr />
+<h3 id="suppression-dun-element-par-valeur">Suppression d’un élément par valeur</h3>
+<p>Crée une liste <code>valeurs = [3, 5, 2, 5, 7, 5, 1]</code>.<br />
+Demande à l’utilisateur un nombre.<br />
+Écris un programme qui <strong>supprime toutes les occurrences</strong> de ce nombre dans la liste sans utiliser <code>remove()</code> ni <code>count()</code>.<br />
+Tu pourras construire une <strong>nouvelle liste</strong> sans ce nombre.</p>
+<hr />
+<h3 id="decalage-a-gauche">Décalage à gauche</h3>
+<p>Crée une liste <code>donnees = [10, 20, 30, 40, 50]</code>.<br />
+Écris un programme qui <strong>décale tous les éléments d’une position vers la gauche</strong>, et place le premier élément à la fin.<br />
+Résultat attendu : <code>[20, 30, 40, 50, 10]</code>.</p>
+<hr />
+<h3 id="fusion-manuelle">Fusion manuelle</h3>
+<p>Crée deux listes de nombres déjà triées dans l’ordre croissant.<br />
+Écris un programme qui crée une <strong>nouvelle liste triée</strong> contenant tous les éléments des deux listes, <strong>sans utiliser <code>sort()</code></strong>.<br />
+(Indice : compare les premiers éléments de chaque liste à chaque étape.)</p>
+<hr />
+<h3 id="verifier-si-la-liste-est-triee">Vérifier si la liste est triée</h3>
+<p>Crée une liste de nombres et écris un programme qui vérifie si la liste est <strong>triée dans l’ordre croissant</strong>.<br />
+Le programme doit parcourir la liste et vérifier que chaque élément est inférieur ou égal au suivant.</p>
+<hr />
+<h3 id="doubles-consecutifs">Doubles consécutifs</h3>
+<p>Crée une liste d’entiers.<br />
+Écris un programme qui affiche <strong>True</strong> s’il existe au moins deux éléments identiques consécutifs, <strong>False</strong> sinon.  </p>
+<p>Exemple :<br />
+- <code>[1, 2, 2, 3]</code> → <code>True</code><br />
+- <code>[4, 5, 6, 7]</code> → <code>False</code></p>
+<hr />
+<h3 id="comptage-delements-pairs-et-impairs">Comptage d’éléments pairs et impairs</h3>
+<p>Crée une liste d’entiers et compte combien sont pairs et combien sont impairs, <strong>sans utiliser de compréhension ni de méthode avancée</strong>.<br />
+Affiche le résultat sous la forme :  </p>
+<pre><code>Nombre d’éléments pairs : X
+Nombre d’éléments impairs : Y
+</code></pre>
+<hr />
+<h3 id="comparaison-de-listes">Comparaison de listes</h3>
+<p>Crée deux listes de même taille, composées d’entiers.<br />
+Écris un programme qui compte <strong>le nombre de positions</strong> où les deux listes ont la <strong>même valeur</strong>.  </p>
+<p>Exemple :  </p>
+<pre><code>[1, 2, 3, 4]
+[1, 9, 3, 7]
+→ 2 positions identiques
+</code></pre>
+<hr />
+<h2 id="tableaux-a-deux-dimensions">Tableaux à deux dimensions</h2>
+<p>Une liste peut contenir d’autres listes. Cela permet de représenter des <strong>tableaux à deux dimensions</strong> (matrices).</p>
+<pre><code class="language-python">matrice = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print(matrice[1][2])  # affiche 6
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Types_de_base_str/" class="btn btn-neutral float-left" title="Types de base (chaînes de caractéres)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../Terminales/Terminales/" class="btn btn-neutral float-right" title="Accueil">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Types_de_base_str/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../../Terminales/Terminales/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
