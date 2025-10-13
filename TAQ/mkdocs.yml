@@ -14,6 +14,7 @@ nav:
           - Types de base (flottants): Premieres/Chapitres/Types_de_base_float.md
           - Types de base (booléens): Premieres/Chapitres/Types_de_base_bool.md
           - Types de base (chaînes de caractéres): Premieres/Chapitres/Types_de_base_str.md
+          - Types construits (tableaux): Premieres/Chapitres/Tableaux.md
       - Terminales:
           - Accueil: Terminales/Terminales.md
           - Programmation Orientée Objet: Terminales/Chapitres/POO.md

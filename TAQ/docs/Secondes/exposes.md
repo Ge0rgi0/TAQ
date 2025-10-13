@@ -75,7 +75,7 @@ Groupes formées :
 - <span style="color:goldenrod">2B : 100 %</span>  
 - <span style="color:royalblue">2D : 100 %</span>  
 - <span style="color:seagreen">2E : 100 %</span>  
-- <span style="color:tomato">2F : 100% %</span>  
+- <span style="color:tomato">2F : 100 %</span>  
 
 **Pas de panique ! Ceci n'est pas l'ordre de passage.**  
 
@@ -87,9 +87,9 @@ Groupes formées :
 |<span style="color:goldenrod">Hatim Z. Emma L. Manel B.|||2B|
 |<span style="color:goldenrod">Ilyes T. Thomas L. Adrien L.|||2B|
 |<span style="color:goldenrod">Sacha D. Noah G. Gaston D.|||2B|
-|<span style="color:goldenrod">Maissan E. Diana K.|||2B|
+|<span style="color:goldenrod">Maïssam E. Diana K.|||2B|
 |<span style="color:goldenrod">Leo B. Lonny D.|||2B|
-|<span style="color:goldenrod">Laly E. Maelle V. Lou D.|||2B|
+|<span style="color:goldenrod">Laly E. Maelle V.|||2B|
 |<span style="color:goldenrod">Kylian G. Ethan L.|||2B|
 |<span style="color:goldenrod">Kamron R. Arthur M.|||2B|
 |<span style="color:goldenrod">Martin B. Lucas S.|||2B|
@@ -131,7 +131,7 @@ Groupes formées :
 |<span style="color:tomato">Yoan B. Luka D.|||2F|
 |<span style="color:tomato">Jules D. Flavien D.|||2F|
 |<span style="color:tomato">Ilyes E. Nolan B|||2F|
-|<span style="color:tomato">Matheo B. Hugo B.|||2F|
+|<span style="color:tomato">Matheo B. Hugo B. Eloi L.|||2F|
 |<span style="color:tomato">Nolan H. Alexis G.|||2F|
 |<span style="color:tomato">Maelys V. Louane H. Elora B.|||2F|
 |<span style="color:tomato">Thimeo F. Axel P.|||2F|
@@ -140,4 +140,4 @@ Groupes formées :
 |<span style="color:tomato">Souad M. Zoe P.|||2F|
 |<span style="color:tomato">Ocelia R. Chloe G. Noa T.|||2F|
 |<span style="color:tomato">Giovanni C. Cyprien L.|||2F|
-|<span style="color:tomato">Jade D. Eloi L.|||2F|
+|<span style="color:tomato">Jade D.|||2F|
