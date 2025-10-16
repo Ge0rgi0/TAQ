@@ -43,6 +43,13 @@ fruits[0] = "kiwi"
 print(len(fruits))  # nombre d'éléments
 ```
 
+### Présence d'un élément
+```python
+l = [1,2,3]
+print(1 in l) # True
+print(4 in l) # False
+```
+
 ### Concaténation
 ```Python
 a = [1,2]
