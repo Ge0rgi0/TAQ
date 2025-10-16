@@ -101,6 +101,14 @@ Une clé de sécurité physique est un **petit appareil USB ou NFC** qui sert de
 
 \* Estimations selon Hive Systems (2024). Les vitesses dépendent de la puissance de calcul des ordinateurs.
 
+<iframe width="400" height="300"
+        src="https://www.youtube.com/embed/XM0jUsl_ke8"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+</iframe>
+
 ---
 
 # L’identité numérique

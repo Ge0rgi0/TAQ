@@ -202,6 +202,14 @@ Exemple :
 
 ---
 
+### Final
+Crée une liste vide. Tant que l'utilisateur rentre des valeurs, on les ajouter à notre liste. 
+
+- Si la valeur que nous souhaitons ajouter est deja présente, on retire l'autre occurence.  
+- Si l'utilisateur entre la valeur `0`, le programme affiche la liste et s'arrête.
+
+---
+
 ## Tableaux à deux dimensions
 
 Une liste peut contenir d’autres listes. Cela permet de représenter des **tableaux à deux dimensions** (matrices).
