@@ -6,19 +6,19 @@
 
 Les réseaux sociaux sont des **plateformes en ligne** qui permettent de créer un profil, d’échanger du contenu, et de se connecter à d’autres personnes.
 
-| Réseau | Type de contenu | Thème principal | Nombre d’utilisateurs (≈) |
+| Réseau | Type de contenu | Thème principal | Utilisateurs |
 |:--------|:----------------|:----------------|:--------------------------:|
-| **Facebook** | Textes, images, vidéos, événements | Vie sociale, actualités, groupes | ~3 milliards |
+| **Facebook** | Textes, médias, événements | Vie sociale, actualités, groupes | ~3 milliards |
 | **YouTube** | Vidéos longues | Divertissement, musique, tutoriels | ~2,5 milliards |
-| **Instagram** | Images, stories, vidéos courtes | Vie quotidienne, art, mode | ~2 milliards |
+| **Instagram** | Images, vidéos courtes | Vie quotidienne, art, mode | ~2 milliards |
 | **TikTok** | Vidéos courtes | Divertissement, musique, tendances | ~1,5 milliard |
 | **LinkedIn** | Textes, images, CV | Réseaux professionnels, emploi | ~1 milliard |
 | **Snapchat** | Photos et vidéos éphémères | Vie quotidienne, échanges rapides | ~800 millions |
 | **Twitter** | Textes courts, images, liens | Actualités, opinions, politique | ~600 millions |
-| **Pinterest** | Images, tableaux d’inspiration | Création, design, décoration, cuisine | ~450 millions |
-| **Discord** | Messages, salons vocaux | Communautés, jeux, discussions thématiques | ~500 millions |
-| **Reddit** | Textes, liens, images | Forums, échanges d’opinions, entraide | ~400 millions |
-| **Strava** | Données sportives, images | Activités physiques, défis, performance | ~100 millions |
+| **Discord** | Messages, salons vocaux | Jeux, forums de discussion | ~500 millions |
+| **Pinterest** | Images, Art | Création, design, décoration | ~450 millions |
+| **Reddit** | Textes, liens, images | Forums, échanges d’opinions | ~400 millions |
+| **Strava** | Données sportives, images | Activités physiques, défis | ~100 millions |
 | **BeReal** | Photos authentiques (1/jour) | Vie quotidienne, spontanéité | ~40 millions |
 
 ---
@@ -27,10 +27,11 @@ Les réseaux sociaux sont des **plateformes en ligne** qui permettent de créer 
 
 ### Définitions
 
-| Terme | **Identification** | **Authentification** | 
-|--|--|--|
-| Définition | Action de se faire connaître auprès d’un service |Action de prouver que l’on est bien la personne déclarée |
-| Exemple |Entrer son nom d’utilisateur ou son adresse mail | Entrer son mot de passe, un code reçu par SMS, ou utiliser une empreinte digitale |
+**Identification :**  Action de se faire connaître auprès d’un service
+  Exemple : Entrer son nom d’utilisateur ou son adresse mail
+
+**Authentification :** Action de prouver que l’on est bien la personne déclaré
+  Exemple : Entrer son mot de passe, un code reçu par SMS, ou utiliser une empreinte digitale
 
 ### Pourquoi s’authentifier ? 
 L’authentification permet :  
@@ -126,50 +127,29 @@ Ces informations peuvent provenir :
 > Tout ce que nous faisons en ligne laisse une **trace**.  
 > Une recherche sur notre nom, un pseudonyme ou une photo peut révéler beaucoup de choses.
 
-### Informations déclarées
-Ce que l’utilisateur **partage volontairement** :  
+![Iceberg](./iceberg.png)
 
-- Nom, prénom, pseudonyme  
-- Date de naissance, âge  
-- Photo de profil, avatar  
-- Adresse e-mail, numéro de téléphone  
-- Centres d’intérêt, loisirs  
-- Parcours scolaire ou professionnel  
-- Publications, commentaires, likes  
+Notre identité numérique dépasse largement ce que nous publions volontairement. Elle se construit à partir de nos propres publications, de ce que les autres partagent sur nous, et des traces invisibles laissées automatiquement lors de nos connexions.
 
-### Informations observées
-Ce que les sites **collectent automatiquement** lors de l’utilisation :  
-
-- Adresse IP, localisation géographique  
-- Historique de navigation  
-- Données de connexion (heures, durées, appareils)  
-- Cookies et traceurs  
-- Données issues des applications (GPS, caméra, micro…)  
-
-### Informations calculées ou déduites
-Ce que les plateformes **déduisent** de notre comportement :  
-
-- Profils publicitaires (centres d’intérêt, âge supposé, pouvoir d’achat…)  
-- Recommandations personnalisées (amis, vidéos, pubs, contenus)  
-- Score de confiance ou d’influence (algorithmes internes)  
-
-### Informations partagées par d’autres
-Ce que **d’autres publient à ton sujet** :  
-
-- Photos de groupe, stories, vidéos  
-- Mentions, identifications, tags  
-- Commentaires ou avis publics  
-- Articles, témoignages, citations  
-
-### Gérer son identité numérique
-
-#### Quelques outils utiles
-- **Paramètres de confidentialité** sur les réseaux sociaux.  
-- **Gestionnaire de mots de passe** (KeePass, Bitwarden…).  
-- **Sites de nettoyage d’e-réputation** (Signal Spam, CNIL, demandes de déréférencement Google).
+Tout ce que nous faisons ou laissons en ligne peut influencer notre image, même ce que nous ne voyons pas. Il est donc essentiel de réfléchir avant de publier, de gérer ses paramètres de confidentialité, et de garder à l’esprit que notre identité numérique nous échappe parfois partiellement.
 
 #### Le droit à l’oubli
-Depuis le **Règlement général sur la protection des données (RGPD)**, chacun peut demander la **suppression de données personnelles** qui lui portent préjudice.
+
+Le droit à l’oubli est un droit européen prévu par le RGPD. Il permet à toute personne de demander la suppression de certaines informations la concernant sur Internet, par exemple sur les moteurs de recherche ou les sites web.
+
+Objectif : permettre aux individus de reprendre un certain contrôle sur leur identité numérique et leur e‑réputation.
+
+Pourquoi ce droit n’est pas suffisant ?
+
+Même si le droit à l’oubli est puissant, il présente des limites :
+
+- Copies et archives : des informations peuvent rester accessibles via des captures d’écran, des sites tiers ou des archives (Wayback Machine, forums, etc.).
+
+- Hors juridiction européenne : le droit à l’oubli s’applique surtout aux entreprises et serveurs situés dans l’UE. Les contenus hors Europe peuvent rester en ligne.
+
+- Réactivité variable : la suppression demande des démarches et peut prendre du temps, sans garantie complète.
+
+Le droit à l’oubli aide à limiter l’exposition de certaines données, mais il ne remplace pas la prudence. Réfléchir avant de publier et bien gérer ses paramètres de confidentialité reste indispensable.
 
 ---
 
@@ -179,25 +159,14 @@ Depuis le **Règlement général sur la protection des données (RGPD)**, chacun
 L’e-réputation correspond à **l’image qu’une personne, une entreprise ou une organisation renvoie sur Internet**.  
 Elle se construit à partir de tout ce qui est publié ou partagé en ligne : messages, photos, commentaires, mentions, avis, etc.
 
-### Construction de l’e-réputation
-
-L’e-réputation se forme à partir de deux sources principales :
-
-| Source | Description | Exemple |
-|:--------|:-------------|:---------|
-| **Ce que je publie** | Les contenus que je mets moi-même en ligne | Photos, messages, vidéos, profils, commentaires |
-| **Ce que les autres publient sur moi** | Les contenus que d’autres partagent à mon sujet | Tags, publications d’amis, articles, avis, forums |
-
-L’ensemble de ces éléments constitue une **trace numérique** durable, souvent difficile à effacer complètement.
-
-### Importance de l’e-réputation
+### Conséquences
 
 - Elle influence la **confiance** que les autres accordent (amis, enseignants, recruteurs).  
 - Elle peut avoir un **impact professionnel** : les employeurs consultent souvent les profils publics.  
 - Une mauvaise e-réputation peut être **difficile à corriger** (captures d’écran, partages, archivages).  
-- Elle reflète une partie de **l’identité numérique**, mais souvent sans que l’on ait un contrôle total dessus.
+- Elle reflète une partie de **l’identité numérique**.
 
-### Bonnes pratiques pour gérer son e-réputation
+### Bonnes pratiques
 
 - **Paramétrer la confidentialité** de ses comptes sur les réseaux sociaux.  
 - **Réfléchir avant de publier** : tout contenu peut être sauvegardé ou diffusé à grande échelle.  
@@ -206,17 +175,23 @@ L’ensemble de ces éléments constitue une **trace numérique** durable, souve
 - **Supprimer ou signaler** les contenus inappropriés ou faux.  
 - **Demander le retrait** d’une information auprès d’un site (droit à l’oubli).
 
-### Outils et démarches utiles
+### Quelques outils utiles
+- **Paramètres de confidentialité** sur les réseaux sociaux.  
+- **Gestionnaire de mots de passe** (KeePass, Bitwarden…).  
+- **Sites de nettoyage d’e-réputation** (Signal Spam, CNIL, demandes de déréférencement Google).
 
-| Objectif | Outil ou démarche | Exemple |
-|:----------|:------------------|:---------|
-| Vérifier son image publique | Recherche du prénom + nom sur Google | Voir les résultats visibles par tous |
-| Paramétrer la confidentialité | Réglages des comptes (Instagram, TikTok, Facebook…) | Limiter l’accès au profil aux amis |
-| Supprimer des données | Droit à l’oubli (formulaire Google, CNIL) | Demander le retrait d’un contenu ancien |
-
-### Astuce
 Avant de publier un contenu, se poser la question :  
-**“Est-ce que j’accepterais que ce que je publie soit vu par un futur employeur ?”**
+**“Est-ce que j’accepterais que ce que je publie soit vu par un futur employeur, ma famille ou mes amis ?”**
+
+---
+
+## L'âge légal
+
+La majorité numérique correspond à l’âge à partir duquel un mineur peut consentir seul au traitement de ses données personnelles sur les plateformes numériques. Cette règle protège les mineurs mais ne supprime pas les risques liés à Internet. La sensibilisation et l’accompagnement restent essentiels à tout âge.
+
+- **Avant 15 ans :** Inscription seulement avec l’autorisation des parents. Le contrôle parental est conseillé.
+- **De 15 à 17 ans :** Inscription possible de manière autonome mais l'accompagnement parental est recommandé.
+- **Après 17 ans :** L'utilisateur est en autonomie complète. Il est considéré en responsabilité personnelle.
 
 ---
 

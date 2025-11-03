@@ -6,8 +6,8 @@ nav:
       - Secondes:
           - Accueil: Secondes/Secondes.md
           - Exposés: Secondes/exposes.md
-          - Internet : Secondes/Chapitres/Internet.md
-          - Réseaux sociaux : Secondes/Chapitres/RS.md
+          - Internet : Secondes/Chapitres/Internet/Internet.md
+          - Réseaux sociaux : Secondes/Chapitres/RS/RS.md
       - Premières:
           - Accueil: Premieres/Premieres.md
           - Types de base (entiers): Premieres/Chapitres/Types_de_base_int.md
@@ -15,6 +15,7 @@ nav:
           - Types de base (booléens): Premieres/Chapitres/Types_de_base_bool.md
           - Types de base (chaînes de caractéres): Premieres/Chapitres/Types_de_base_str.md
           - Types construits (tableaux): Premieres/Chapitres/Tableaux.md
+          - Réseaux: Premieres/Chapitres/Réseaux/Réseaux.md
       - Terminales:
           - Accueil: Terminales/Terminales.md
           - Programmation Orientée Objet: Terminales/Chapitres/POO.md

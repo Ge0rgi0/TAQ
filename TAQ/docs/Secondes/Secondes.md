@@ -26,5 +26,5 @@ Chaque thème du programme (Internet, Web, réseaux sociaux, données, localisat
 
 ## Chapitres
 
-- [🔹 Internet](Chapitres/Internet.md)
-- [🔹 Réseaux sociaux](Chapitres/RS.md)
+- [🔹 Internet](Chapitres/Internet/Internet.md)
+- [🔹 Réseaux sociaux](Chapitres/RS/RS.md)
