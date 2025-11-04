@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Réseaux - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "R\u00e9seaux";
+        var mkdocs_page_input_path = "Premieres/Chapitres/R\u00e9seaux/R\u00e9seaux.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Types_de_base_int/">Types de base (entiers)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Types_de_base_float/">Types de base (flottants)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Types_de_base_bool/">Types de base (booléens)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Types_de_base_str/">Types de base (chaînes de caractéres)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/">Types construits (tableaux)</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Réseaux</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#histoire-des-reseaux-de-communication">Histoire des réseaux de communication</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#les-tours-genoises">Les tours génoises</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#les-semaphores-et-le-telegraphe-optique">Les sémaphores et le télégraphe optique</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#le-telegraphe-electrique">Le télégraphe électrique</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#le-telephone">Le téléphone</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#arpanet">ARPANET</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#le-minitel">Le Minitel</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#internet">Internet</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#lan">LAN</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#les-fournisseurs-dacces-a-internet-fai">Les Fournisseurs d’Accès à Internet (FAI)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#linterconnexion-mondiale">L’interconnexion mondiale</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#conclusion">Conclusion</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modele-en-couches-tcpip">Modèle en couches TCP/IP</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#le-protocole-ip-et-ladressage">Le protocole IP et l’adressage</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#adresse-mac-adressage-local">Adresse MAC (adressage local)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#adresse-ip-adressage-global">Adresse IP (adressage global)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/BDD/">Base de données</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Premières</li>
+      <li class="breadcrumb-item active">Réseaux</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="les-reseaux">Les Réseaux</h1>
+<h2 id="histoire-des-reseaux-de-communication">Histoire des réseaux de communication</h2>
+<h3 id="les-tours-genoises">Les tours génoises</h3>
+<p>Au XVIᵉ siècle, sur les côtes méditerranéennes (notamment en Corse), on érigeait de grandes tours de pierre : les <strong>tours génoises</strong>. Leur rôle n’était pas décoratif, mais stratégique. Elles servaient à <strong>prévenir les attaques de pirates</strong>.</p>
+<p>Les guetteurs, postés au sommet, communiquaient entre tours grâce à <strong>des signaux visuels</strong> : de la <strong>fumée le jour</strong>, du <strong>feu la nuit</strong>. Ainsi, un message pouvait parcourir des dizaines de kilomètres en quelques minutes. C’était déjà une forme de <strong>réseau de communication</strong>.</p>
+<p>Mais ce réseau avait ses limites : il ne fonctionnait que <strong>si la visibilité était bonne</strong> et nécessitait <strong>une vigilance permanente</strong>. La communication restait donc lente, ponctuelle et tributaire de la météo.</p>
+<p><img alt="tour" src="../tour.png" /></p>
+<hr />
+<h3 id="les-semaphores-et-le-telegraphe-optique">Les sémaphores et le télégraphe optique</h3>
+<p>Deux siècles plus tard, en pleine Révolution française, un ingénieur nommé <strong>Claude Chappe</strong> imagine un système plus fiable : le <strong>télégraphe optique</strong>, ou <strong>sémaphore</strong>. Chaque tour est équipée d’un grand mât muni de bras articulés. Selon leur position, ils forment des lettres ou des symboles que les opérateurs lisent à la longue-vue avant de les reproduire sur la tour suivante.</p>
+<p>En 1794, Chappe parvient à transmettre un message de Paris à Lille en quelques minutes : une prouesse pour l’époque. La France se couvre alors d’un vaste réseau de tours, véritables ancêtres des relais de communication modernes.</p>
+<p>Mais le système reste dépendant du jour et du beau temps.</p>
+<p><img alt="sem" src="../sem.png" /></p>
+<hr />
+<h3 id="le-telegraphe-electrique">Le télégraphe électrique</h3>
+<p>Au milieu du XIXᵉ siècle, une révolution se prépare : l’électricité entre en scène. L’Américain <strong>Samuel Morse</strong> met au point un télégraphe capable d’envoyer des <strong>impulsions électriques</strong> à travers un fil métallique. Chaque impulsion correspond à un <strong>point</strong> ou un <strong>trait</strong> : c’est le <strong>code Morse</strong>. Grâce à lui, les messages peuvent être transmis <strong>en temps réel sur des centaines de kilomètres</strong>. En 1858, le premier <strong>câble transatlantique</strong> relie l’Europe à l’Amérique. Le monde commence à se rétrécir.</p>
+<p><img alt="tl" src="../tl.png" /></p>
+<hr />
+<h3 id="le-telephone">Le téléphone</h3>
+<p>En 1876, <strong>Alexander Graham Bell</strong> dépose le brevet du <strong>téléphone</strong>. Pour la première fois, la voix humaine traverse les fils électriques. Les signaux ne sont plus codés : ils deviennent <strong>sonores</strong>.</p>
+<p>Le téléphone change la société. Les distances s’effacent, les conversations deviennent immédiates, les relations commerciales s’accélèrent. C’est le premier véritable réseau mondial de communication <strong>interpersonnelle</strong>, celui des lignes téléphoniques.</p>
+<p><img alt="" src="../phone.png" /></p>
+<hr />
+<h3 id="arpanet">ARPANET</h3>
+<p>En 1969, au cœur de la guerre froide, les États-Unis cherchent un moyen de relier leurs ordinateurs pour <strong>échanger des informations même en cas d’attaque</strong>. La <strong>DARPA</strong>, agence du ministère de la Défense, crée <strong>ARPANET</strong>.</p>
+<p>Ce réseau relie quatre universités américaines : UCLA, Stanford, Santa Barbara et Utah. Les chercheurs y testent une idée nouvelle : <strong>la commutation de paquets</strong>, qui consiste à découper les données en petits morceaux indépendants. Ce principe, toujours utilisé aujourd’hui, est à la base d’<strong>Internet</strong>.</p>
+<p>Le premier message envoyé devait être « LOGIN »… mais le système s’est arrêté après deux lettres. Le premier mot d’Internet fut donc simplement <strong>“LO”</strong> .</p>
+<p><img alt="" src="../ARPANET.png" /></p>
+<hr />
+<h3 id="le-minitel">Le Minitel</h3>
+<p>Dans les années 1980, la France développe son propre réseau numérique : le <strong>Minitel</strong>. C’est un petit terminal branché sur la ligne téléphonique qui permet d’accéder à des services en ligne : annuaires, messageries, réservations, banques, petites annonces…</p>
+<p>Bien avant Internet, le Minitel met des millions de Français en contact avec le monde numérique. C’est un <strong>précurseur du Web</strong>, avec son interface textuelle et son système d’adresses, comme le fameux « 3615 ».</p>
+<p><img alt="" src="../minitel.png" /></p>
+<hr />
+<h2 id="internet">Internet</h2>
+<iframe width="400" height="300"
+        src="https://www.youtube.com/embed/NmSEJq4Mfk0"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+</iframe>
+
+<p>Dans les années 1990, ARPANET devient <strong>Internet</strong>, un vaste ensemble de réseaux interconnectés à l’échelle planétaire. Internet repose sur le modéle <strong>TCP/IP</strong>, qui permet à toutes les machines du monde de parler le même langage.</p>
+<p>Mais Internet n’est qu’une infrastructure. En 1989, <strong>Tim Berners-Lee</strong>, au CERN, invente le <strong>World Wide Web</strong>, un système qui permet de naviguer entre des documents reliés par des <strong>liens hypertextes</strong>. Grâce au Web et aux navigateurs comme <strong>Mosaic</strong>, <strong>Netscape</strong> ou plus tard <strong>Chrome</strong>, les informations deviennent accessibles à tous, en quelques clics.</p>
+<p>Le Web transforme Internet en un <strong>espace universel de partage, de savoir et de communication</strong>.</p>
+<p>Internet n’est pas une seule machine géante.<br />
+C’est en réalité <strong>un immense ensemble de réseaux interconnectés</strong> :  </p>
+<h3 id="lan">LAN</h3>
+<p>Les réseaux locaux (LAN, Local Area Network)</p>
+<ul>
+<li>Exemple : votre maison (box Internet + ordinateurs + téléphones connectés en Wi-Fi ou en câble).  </li>
+<li>Exemple : le réseau du lycée (salles informatiques, imprimantes, serveurs pédagogiques).  </li>
+<li>Exemple : le réseau d’une entreprise.  </li>
+</ul>
+<p>Ces réseaux sont <strong>privés et limités dans l’espace</strong> (on les appelle des <strong>réseaux locaux</strong>).</p>
+<p><img alt="" src="../LAN.png" /></p>
+<p>Les principaux composants d’un LAN incluent :<br />
+- le <strong>switch</strong>, qui permet de connecter plusieurs ordinateurs entre eux et de gérer le trafic interne du réseau<br />
+- le <strong>routeur</strong>, qui relie le LAN à d’autres réseaux, comme Internet <br />
+- les <strong>câbles Ethernet</strong> assurent une connexion filaire fiable entre les appareils<br />
+- le <strong>Wi-Fi</strong> permet aux appareils sans fil de se connecter au réseau  </p>
+<hr />
+<h3 id="les-fournisseurs-dacces-a-internet-fai">Les Fournisseurs d’Accès à Internet (FAI)</h3>
+<p>Pour communiquer avec le reste du monde, un réseau local doit se connecter à un <strong>Fournisseur d’Accès à Internet (FAI)</strong> :<br />
+- En France : Orange, SFR, Free, Bouygues, etc.<br />
+- Dans d’autres pays : AT&amp;T, Deutsche Telekom, etc.  </p>
+<p>Un FAI gère un <strong>réseau beaucoup plus vaste</strong> qui relie des millions de clients.  </p>
+<hr />
+<h3 id="linterconnexion-mondiale">L’interconnexion mondiale</h3>
+<ul>
+<li>Les réseaux des FAI sont eux-mêmes reliés <strong>entre eux</strong> par de très grandes lignes de communication (fibre optique, câbles sous-marins, satellites).  </li>
+<li>Les grandes entreprises (Google, Amazon, Microsoft, etc.) possèdent aussi leurs <strong>propres réseaux</strong> qui s’interconnectent avec les FAI.  </li>
+</ul>
+<p>Résultat :<br />
+Quand vous envoyez un message, il sort d’abord de votre réseau local → passe par le réseau de votre FAI → traverse plusieurs autres réseaux → atteint le réseau du destinataire.  </p>
+<p><strong>Idée clé à retenir :</strong><br />
+Internet, c’est <strong>l’interconnexion de milliers de réseaux locaux et de fournisseurs d’accès</strong> à l’échelle mondiale, qui communiquent tous grâce à des <strong>protocoles communs</strong>.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>En quelques siècles, l’humanité est passée des signaux de fumée aux flux d’informations mondiaux.<br />
+Chaque invention a rapproché les hommes, accéléré les échanges et repoussé les frontières de la communication.  </p>
+<hr />
+<h2 id="modele-en-couches-tcpip">Modèle en couches TCP/IP</h2>
+<p>La communication sur un réseau se fait grâce à des protocoles, qui sont des règles définissant comment les données sont envoyées, reçues et comprises par les machines.</p>
+<p>Le modéle TCP/IP organise la communication en <strong>4 couches</strong>, chacune ayant un rôle spécifique et ses protocoles.  </p>
+<p>Quand on envoie un message ou un fichier sur Internet, il n’est jamais envoyé en un seul bloc, mais découpé en petits morceaux appelés <strong>paquets</strong>.  </p>
+<p><img alt="Découpage" src="../../../../Secondes/Chapitres/Internet/paquets.png" /></p>
+<p>Chaque couche y ajoute des informations spécifiques (adresse de destination, numéro du paquet, etc) avant de transmettre les données, c'est l'<strong>encapsulation</strong>.</p>
+<p>À la réception, chaque couche retire son en-tête pour reconstituer les données originales c’est la <strong>désencapsulation</strong>.</p>
+<p><img alt="Modèle" src="../../../../Secondes/Chapitres/Internet/model.png" /></p>
+<h2 id="le-protocole-ip-et-ladressage">Le protocole IP et l’adressage</h2>
+<p>Chaque appareil connecté à Internet doit être identifiable de manière <strong>unique</strong>.<br />
+Pour cela, deux types d’adresses existent :</p>
+<h3 id="adresse-mac-adressage-local">Adresse MAC (adressage local)</h3>
+<p>Chaque appareil connecté à un réseau possède une <strong>carte réseau</strong> (ou interface réseau), qui permet d'envoyer et de recevoir des données. Chaque carte réseau possède une <strong>adresse MAC</strong> (Media Access Control), un identifiant unique attribué par le fabricant.</p>
+<p>Un PC peut posséder <strong>plusieurs cartes réseau</strong>, par exemple une pour le câble Ethernet et une autre pour le Wi-Fi. Chaque carte a sa propre adresse MAC, ce qui signifie qu’un même ordinateur peut être identifié différemment selon le type de connexion utilisée.</p>
+<p>L'adresse MAC est composée de <strong>12 chiffres hexadécimaux</strong>, souvent notés sous la forme <code>00:1A:2B:3C:4D:5E</code>. Elle permet d’identifier de manière unique chaque carte réseau sur un réseau local, un peu comme une <strong>plaque d'immatriculation</strong> pour une voiture.  </p>
+<p>Contrairement à l'adresse IP, qui peut changer selon le réseau, l'adresse MAC reste <strong>fixe et unique</strong> pour chaque carte réseau. Les <strong>switches</strong> utilisent ces adresses MAC pour <strong>diriger les données vers le bon appareil</strong> sur le réseau local.</p>
+<p><span style="color:red">Exercices</span>  </p>
+<pre><code class="language-text">1. Combien d'adresses MAC possibles existe-t'il ?
+2. Écrire 5 exemples d'adresses MAC différentes.
+</code></pre>
+<h3 id="adresse-ip-adressage-global">Adresse IP (adressage global)</h3>
+<p>Chaque appareil connecté à un réseau possède une <strong>adresse IP</strong> (Internet Protocol), qui sert à l’identifier et à échanger des données avec d’autres appareils. Contrairement à l’adresse MAC, qui est <strong>fixe et unique pour chaque carte réseau</strong>, l’adresse IP peut <strong>changer selon le réseau</strong> auquel l’appareil est connecté.</p>
+<h4 id="structure-dune-adresse-ip">Structure d’une adresse IP</h4>
+<p>Une adresse IP version 4 est composée de <strong>4 nombres entre 0 et 255</strong>, séparés par des points, par exemple <code>192.168.1.10</code>. Elle se divise en deux parties :</p>
+<ul>
+<li>La <strong>partie réseau</strong> : identifie le réseau auquel appartient l’appareil.</li>
+<li>La <strong>partie hôte</strong> : identifie l’appareil sur ce réseau.</li>
+</ul>
+<p>Le <strong>masque de sous-réseau</strong> (subnet mask) sert à déterminer quelles parties de l’adresse IP correspondent au réseau et lesquelles correspondent à l’hôte. Par exemple, avec une adresse IP <code>192.168.1.10</code> et un masque <code>255.255.255.0</code> :</p>
+<ul>
+<li>Le <strong>réseau</strong> est <code>192.168.1.0</code></li>
+<li>L’<strong>hôte</strong> est <code>10</code></li>
+</ul>
+<p><strong>La Notation CIDR</strong> (Classless Inter-Domain Routing)  </p>
+<p>Elle permet de représenter le réseau plus simplement. On écrit l’adresse suivie d’un <strong>slash</strong> et du nombre de bits utilisés pour la partie réseau.  </p>
+<p>Par exemple :  </p>
+<pre><code>192.168.1.10/24
+</code></pre>
+<p>Le <code>/24</code> signifie que les 24 premiers bits de l’adresse correspondent le réseau (soit <code>255.255.255.0</code>)
+et les 8 bits restants correspondent à l’hôte.</p>
+<pre><code>adresse en binaire : 11000000.10101000.00000001.00001010
+
+masque (24 bits ici) : 11111111.11111111.11111111.00000000
+
+donc la partie réseau est : 11000000.10101000.00000001.00000000
+</code></pre>
+<p>Il s'agit de l'adresse du réseau.</p>
+<p><span style="color:red">Exercices</span>  </p>
+<p><strong>1) Combien d'adresses IP possibles existe-t'il ?</strong></p>
+<p><strong>2) Écrire 5 exemples d'adresses IP différentes.</strong>  </p>
+<p><strong>3) Identifier le réseau et l’hôte</strong></p>
+<p>Pour chaque adresse IP donnée, indique la <strong>partie réseau</strong> et la <strong>partie hôte</strong> en utilisant le masque fourni.</p>
+<ul>
+<li>
+<p>Adresse : <code>192.168.1.25</code><br />
+   Masque : <code>255.255.255.0</code>  </p>
+</li>
+<li>
+<p>Adresse : <code>10.0.5.12</code><br />
+   Masque : <code>255.255.0.0</code>  </p>
+</li>
+<li>
+<p>Adresse : <code>172.16.7.34</code><br />
+   Masque : <code>255.255.255.240</code>  </p>
+</li>
+</ul>
+<p><strong>4) Déterminer si deux adresses sont sur le même réseau</strong></p>
+<p>Indique si les adresses suivantes appartiennent <strong>au même réseau</strong>. Justifie ta réponse.
+Si oui, donner 3 autres adresses possibles sur ce réseau.</p>
+<ul>
+<li><code>192.168.1.10/24</code> et <code>192.168.1.200/24</code>  </li>
+<li><code>10.1.5.7/16</code> et <code>10.2.3.10/16</code>  </li>
+<li><code>172.16.5.20/28</code> et <code>172.16.5.25/28</code>  </li>
+</ul>
+<p><strong>5) Conversion en binaire</strong></p>
+<p>Convertis les adresses IP suivantes et leurs masques en <strong>binaire</strong>. Puis identifie la partie réseau et la partie hôte.</p>
+<ul>
+<li><code>192.168.10.14/24</code>  </li>
+<li><code>10.0.20.5/8</code>  </li>
+<li><code>172.16.100.50/16</code>  </li>
+</ul>
+<p><strong>6) Calculer le nombre d’hôtes</strong></p>
+<p>Pour chaque réseau, calcule <strong>le nombre maximum d’hôtes</strong> possibles et indiquez la plage complète d’adresses.</p>
+<ul>
+<li>Réseau : <code>192.168.1.0/24</code>  </li>
+<li>Réseau : <code>10.0.0.0/16</code>  </li>
+<li>Réseau : <code>172.16.5.0/28</code>  </li>
+</ul>
+<p><strong>7) Identifier le masque</strong></p>
+<p>Pour chaque situation, propose le <strong>masque le plus approprié</strong> en notation CIDR pour le réseau.</p>
+<ul>
+<li>Un réseau doit contenir <strong>50 hôtes maximum</strong>.  </li>
+<li>Un réseau doit contenir <strong>500 hôtes maximum</strong>.  </li>
+<li>Un réseau doit contenir <strong>12 hôtes maximum</strong>.  </li>
+</ul>
+<p><strong>8) IP et sous-réseaux</strong></p>
+<p>Une entreprise possède le réseau <code>192.168.0.0/24</code>. Elle veut créer <strong>4 sous-réseaux égaux</strong>.<br />
+- Quelle sera la <strong>nouvelle notation CIDR</strong> pour chaque sous-réseau ?<br />
+- Donne l’<strong>adresse réseau</strong> de chaque sous-réseau.<br />
+- Indique le <strong>nombre d’hôtes possibles</strong> dans chaque sous-réseau.</p>
+<hr />
+<h4 id="ipv6">IPv6</h4>
+<p>Les adresses IP que nous avons utilisé jusque là correspondent au format IPv4. Utilisé depuis les débuts d’Internet, il ne permet pas d'avoir assez d'adresses pour palier à nos besoins actuels : avec la multiplication des ordinateurs, smartphones, objets connectés, consoles et serveurs, ce nombre est devenu insuffisant.  </p>
+<p>Pour répondre à ce problème, une nouvelle version du protocole Internet a été créée : <strong>IPv6</strong>.</p>
+<p>exemple d'adresse IPv6 : <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code></p>
+<p>Pour simplifier, on peut <strong>abréger</strong> une adresse IPv6 :
+- Les <strong>zéros initiaux</strong> d’un groupe peuvent être supprimés :<br />
+<code>2001:db8:85a3:0:0:8a2e:370:7334</code>
+- Une suite de groupes <code>0000</code> peut être remplacée par <code>::</code> (une seule fois par adresse) :<br />
+<code>2001:db8:85a3::8a2e:370:7334</code></p>
+<p><span style="color:red">Exercices</span>  </p>
+<pre><code class="language-text">1. Combien d'adresses IPv6 possibles existe-t'il ?
+2. Écrire 5 exemples d'adresses IPv6 différentes.
+</code></pre>
+<h4 id="dns-domain-name-system">DNS – Domain Name System</h4>
+<p>Quand vous tapez un nom de site dans votre navigateur, par exemple <code>wikipedia.org</code>, votre ordinateur ne sait pas directement où envoyer les paquets, il a besoin de <strong>l’adresse IP</strong> correspondante.
+Pour éviter d'avoir à se souvenir des IPs de tous les sites, nous utilisons le DNS.  </p>
+<p>Le <strong>DNS (Domain Name System)</strong> est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP par le biais de serveurs DNS.</p>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Tableaux/" class="btn btn-neutral float-left" title="Types construits (tableaux)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../../Terminales/Terminales/" class="btn btn-neutral float-right" title="Accueil">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Tableaux/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../../../Terminales/Terminales/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
