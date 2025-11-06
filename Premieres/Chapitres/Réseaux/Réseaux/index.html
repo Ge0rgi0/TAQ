@@ -87,15 +87,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#le-minitel">Le Minitel</a>
     </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#internet">Internet</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#lan">LAN</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#les-fournisseurs-dacces-a-internet-fai">Les Fournisseurs d’Accès à Internet (FAI)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#linterconnexion-mondiale">L’interconnexion mondiale</a>
+    <li class="toctree-l4"><a class="reference internal" href="#internet">Internet</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#conclusion">Conclusion</a>
     </li>
@@ -103,11 +95,31 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#modele-en-couches-tcpip">Modèle en couches TCP/IP</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#le-protocole-ip-et-ladressage">Le protocole IP et l’adressage</a>
+    <li class="toctree-l3"><a class="reference internal" href="#les-protocoles-mac-et-ip-ladressage">Les protocoles MAC et IP : l’adressage</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#adresse-mac-adressage-local">Adresse MAC (adressage local)</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#adresse-ip-adressage-global">Adresse IP (adressage global)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dns-domain-name-system">DNS – Domain Name System</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#les-protocoles-udp-et-tcp-le-routage">Les protocoles UDP et TCP : le routage</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#le-protocole-udp-user-datagram-protocol">Le protocole UDP (User Datagram Protocol)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#le-bit-alterne">Le bit alterné</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#le-routage-des-paquets">Le routage des paquets</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#le-role-des-routeurs">🔁 Le rôle des routeurs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exemple-simplifie">🌐 Exemple simplifié</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#visualiser-le-trajet-des-paquets">🕵️ Visualiser le trajet des paquets</a>
     </li>
         </ul>
     </li>
@@ -185,7 +197,7 @@
 <p>Bien avant Internet, le Minitel met des millions de Français en contact avec le monde numérique. C’est un <strong>précurseur du Web</strong>, avec son interface textuelle et son système d’adresses, comme le fameux « 3615 ».</p>
 <p><img alt="" src="../minitel.png" /></p>
 <hr />
-<h2 id="internet">Internet</h2>
+<h3 id="internet">Internet</h3>
 <iframe width="400" height="300"
         src="https://www.youtube.com/embed/NmSEJq4Mfk0"
         title="YouTube video player"
@@ -199,7 +211,7 @@
 <p>Le Web transforme Internet en un <strong>espace universel de partage, de savoir et de communication</strong>.</p>
 <p>Internet n’est pas une seule machine géante.<br />
 C’est en réalité <strong>un immense ensemble de réseaux interconnectés</strong> :  </p>
-<h3 id="lan">LAN</h3>
+<h4 id="lan">LAN</h4>
 <p>Les réseaux locaux (LAN, Local Area Network)</p>
 <ul>
 <li>Exemple : votre maison (box Internet + ordinateurs + téléphones connectés en Wi-Fi ou en câble).  </li>
@@ -213,14 +225,12 @@ C’est en réalité <strong>un immense ensemble de réseaux interconnectés</st
 - le <strong>routeur</strong>, qui relie le LAN à d’autres réseaux, comme Internet <br />
 - les <strong>câbles Ethernet</strong> assurent une connexion filaire fiable entre les appareils<br />
 - le <strong>Wi-Fi</strong> permet aux appareils sans fil de se connecter au réseau  </p>
-<hr />
-<h3 id="les-fournisseurs-dacces-a-internet-fai">Les Fournisseurs d’Accès à Internet (FAI)</h3>
+<h4 id="les-fournisseurs-dacces-a-internet-fai">Les Fournisseurs d’Accès à Internet (FAI)</h4>
 <p>Pour communiquer avec le reste du monde, un réseau local doit se connecter à un <strong>Fournisseur d’Accès à Internet (FAI)</strong> :<br />
 - En France : Orange, SFR, Free, Bouygues, etc.<br />
 - Dans d’autres pays : AT&amp;T, Deutsche Telekom, etc.  </p>
 <p>Un FAI gère un <strong>réseau beaucoup plus vaste</strong> qui relie des millions de clients.  </p>
-<hr />
-<h3 id="linterconnexion-mondiale">L’interconnexion mondiale</h3>
+<h4 id="linterconnexion-mondiale">L’interconnexion mondiale</h4>
 <ul>
 <li>Les réseaux des FAI sont eux-mêmes reliés <strong>entre eux</strong> par de très grandes lignes de communication (fibre optique, câbles sous-marins, satellites).  </li>
 <li>Les grandes entreprises (Google, Amazon, Microsoft, etc.) possèdent aussi leurs <strong>propres réseaux</strong> qui s’interconnectent avec les FAI.  </li>
@@ -229,6 +239,7 @@ C’est en réalité <strong>un immense ensemble de réseaux interconnectés</st
 Quand vous envoyez un message, il sort d’abord de votre réseau local → passe par le réseau de votre FAI → traverse plusieurs autres réseaux → atteint le réseau du destinataire.  </p>
 <p><strong>Idée clé à retenir :</strong><br />
 Internet, c’est <strong>l’interconnexion de milliers de réseaux locaux et de fournisseurs d’accès</strong> à l’échelle mondiale, qui communiquent tous grâce à des <strong>protocoles communs</strong>.</p>
+<hr />
 <h3 id="conclusion">Conclusion</h3>
 <p>En quelques siècles, l’humanité est passée des signaux de fumée aux flux d’informations mondiaux.<br />
 Chaque invention a rapproché les hommes, accéléré les échanges et repoussé les frontières de la communication.  </p>
@@ -241,7 +252,7 @@ Chaque invention a rapproché les hommes, accéléré les échanges et repoussé
 <p>Chaque couche y ajoute des informations spécifiques (adresse de destination, numéro du paquet, etc) avant de transmettre les données, c'est l'<strong>encapsulation</strong>.</p>
 <p>À la réception, chaque couche retire son en-tête pour reconstituer les données originales c’est la <strong>désencapsulation</strong>.</p>
 <p><img alt="Modèle" src="../../../../Secondes/Chapitres/Internet/model.png" /></p>
-<h2 id="le-protocole-ip-et-ladressage">Le protocole IP et l’adressage</h2>
+<h2 id="les-protocoles-mac-et-ip-ladressage">Les protocoles MAC et IP : l’adressage</h2>
 <p>Chaque appareil connecté à Internet doit être identifiable de manière <strong>unique</strong>.<br />
 Pour cela, deux types d’adresses existent :</p>
 <h3 id="adresse-mac-adressage-local">Adresse MAC (adressage local)</h3>
@@ -338,20 +349,159 @@ Si oui, donner 3 autres adresses possibles sur ce réseau.</p>
 <p>Les adresses IP que nous avons utilisé jusque là correspondent au format IPv4. Utilisé depuis les débuts d’Internet, il ne permet pas d'avoir assez d'adresses pour palier à nos besoins actuels : avec la multiplication des ordinateurs, smartphones, objets connectés, consoles et serveurs, ce nombre est devenu insuffisant.  </p>
 <p>Pour répondre à ce problème, une nouvelle version du protocole Internet a été créée : <strong>IPv6</strong>.</p>
 <p>exemple d'adresse IPv6 : <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code></p>
-<p>Pour simplifier, on peut <strong>abréger</strong> une adresse IPv6 :
+<p>Pour simplifier, on peut <strong>abréger</strong> une adresse IPv6 :<br />
 - Les <strong>zéros initiaux</strong> d’un groupe peuvent être supprimés :<br />
-<code>2001:db8:85a3:0:0:8a2e:370:7334</code>
+<code>2001:db8:85a3:0:0:8a2e:370:7334</code><br />
 - Une suite de groupes <code>0000</code> peut être remplacée par <code>::</code> (une seule fois par adresse) :<br />
 <code>2001:db8:85a3::8a2e:370:7334</code></p>
 <p><span style="color:red">Exercices</span>  </p>
 <pre><code class="language-text">1. Combien d'adresses IPv6 possibles existe-t'il ?
+
 2. Écrire 5 exemples d'adresses IPv6 différentes.
+
+3. Abrégez les adresses suivantes selon les règles IPv6 :
+
+- 2001:0db8:0000:0000:0000:0000:0000:0001  
+- fe80:0000:0000:0000:0202:b3ff:fe1e:8329  
+- 2001:0db8:85a3:0000:0000:8a2e:0370:7334  
+- 2001:0000:0000:0000:0000:0000:0000:0000  
+- 0000:0000:0000:0000:0000:0000:0000:0001
+
+4. Faites l’opération inverse :  
+Développez complètement les adresses abrégées suivantes (ajoutez tous les zéros manquants) :
+
+- 2001:db8::1  
+- fe80::202:b3ff:fe1e:8329  
+- ::1  
+- 2001:db8:85a3::8a2e:370:7334  
+- ::
 </code></pre>
-<h4 id="dns-domain-name-system">DNS – Domain Name System</h4>
-<p>Quand vous tapez un nom de site dans votre navigateur, par exemple <code>wikipedia.org</code>, votre ordinateur ne sait pas directement où envoyer les paquets, il a besoin de <strong>l’adresse IP</strong> correspondante.
-Pour éviter d'avoir à se souvenir des IPs de tous les sites, nous utilisons le DNS.  </p>
-<p>Le <strong>DNS (Domain Name System)</strong> est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP par le biais de serveurs DNS.</p>
+<h3 id="dns-domain-name-system">DNS – Domain Name System</h3>
+<p>Quand vous tapez un nom de site dans votre navigateur, par exemple <code>wikipedia.org</code>, votre ordinateur ne sait pas directement <strong>où envoyer les paquets de données</strong>.<br />
+En réalité, les ordinateurs communiquent entre eux uniquement grâce à leurs <strong>adresses IP</strong>.</p>
+<p>Mais comme il serait impossible de retenir toutes ces adresses, on utilise un système plus pratique : le <strong>DNS</strong>. Il s'agit d'un service qui fait la <strong>correspondance entre un nom de domaine et son adresse IP</strong>.</p>
+<blockquote>
+<p>Le DNS fonctionne comme un <strong>annuaire d’Internet</strong> :<br />
+On cherche un nom, il nous donne l’adresse numérique correspondante.</p>
+</blockquote>
+<p>Exemple :<br />
+<code>wikipedia.org</code> → <code>185.15.59.224</code><br />
+<code>google.fr</code> → <code>142.250.179.3</code></p>
+<ol>
+<li>On tape <code>wikipedia.org</code> dans le navigateur.  </li>
+<li>Notre ordinateur demande à un <strong>serveur DNS</strong> quelle est l’adresse IP de ce site.  </li>
+<li>Le serveur DNS répond avec l’adresse correspondante.  </li>
+<li>Notre ordinateur peut alors <strong>se connecter directement</strong> à cette adresse IP.</li>
+</ol>
+<h4 id="les-serveurs-dns">Les serveurs DNS</h4>
+<p>Le système DNS n’est pas un seul gros ordinateur magique qui connaît toutes les adresses du monde.<br />
+C’est un <strong>réseau mondial de milliers de serveurs</strong> répartis sur toute la planète, organisés de manière <strong>hiérarchique</strong> et <strong>coopérative</strong>.</p>
+<blockquote>
+<p>Grâce à ce système, la résolution d’un nom (comme <code>wikipedia.org</code>) se fait très rapidement, souvent en quelques millisecondes.</p>
+</blockquote>
+<p><strong>Ce système permet de :</strong><br />
+- <strong>simplifier la vie des utilisateurs</strong> : il est plus facile de retenir <code>lycee.fr</code> que <code>193.54.12.45</code>.<br />
+- <strong>pouvoir changer l’adresse IP d’un site</strong> sans changer son nom (pratique quand un site change de serveur).<br />
+- <strong>contrôler et sécuriser les accès</strong> à certains domaines (filtrage, redirection, etc.).<br />
+- <strong>accélérer la navigation</strong> grâce au cache des serveurs DNS locaux.</p>
 <hr />
+<h2 id="les-protocoles-udp-et-tcp-le-routage">Les protocoles UDP et TCP : le routage</h2>
+<p>Pour que les données circulent sur Internet, il faut <strong>plus qu'une adresse IP</strong> :<br />
+il faut aussi savoir <strong>comment</strong> les envoyer et les remettre dans le bon ordre.<br />
+C’est le rôle des protocoles de transport, principalement <strong>TCP</strong> et <strong>UDP</strong>.</p>
+<hr />
+<h3 id="le-protocole-udp-user-datagram-protocol">Le protocole UDP (User Datagram Protocol)</h3>
+<p>UDP est beaucoup plus <strong>rapide</strong>, mais <strong>non fiable</strong>.<br />
+Il envoie les paquets <strong>sans vérifier</strong> qu’ils sont bien reçus ni dans le bon ordre.  </p>
+<p>C’est un peu comme envoyer plusieurs lettres sans accusé de réception : certaines peuvent se perdre, mais le message global passe plus vite.</p>
+<p><img alt="Modèle" src="../../../../Secondes/Chapitres/Internet/UDP.png" /> </p>
+<h4 id="utilisations-typiques">Utilisations typiques :</h4>
+<ul>
+<li>Streaming vidéo ou audio (YouTube, Spotify)  </li>
+<li>Jeux en ligne  </li>
+<li>Appels vocaux (Visioconférence)</li>
+</ul>
+<hr />
+<h3 id="le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</h3>
+<p>TCP est un protocole <strong>fiable</strong> et <strong>orienté connexion</strong>.<br />
+Avant d’envoyer les données, l’expéditeur et le destinataire <strong>établissent une connexion</strong> (comme un appel téléphonique).  </p>
+<p>Chaque paquet envoyé reçoit un <strong>numéro d’ordre</strong> et une <strong>confirmation de réception</strong>.<br />
+S’il manque un paquet, il est <strong>renvoyé automatiquement</strong>.</p>
+<p>C’est donc un protocole <strong>lent mais sûr</strong> : il garantit que toutes les données arrivent <strong>complètes et dans le bon ordre</strong>.</p>
+<p><img alt="Modèle" src="../../../../Secondes/Chapitres/Internet/TCP.png" /> </p>
+<h4 id="utilisations-typiques_1">Utilisations typiques :</h4>
+<ul>
+<li>Navigation web (HTTP / HTTPS)  </li>
+<li>Envoi d’e-mails (SMTP, IMAP, POP3)  </li>
+<li>Transfert de fichiers (FTP, SFTP)</li>
+</ul>
+<h3 id="le-bit-alterne">Le bit alterné</h3>
+<p>Le <strong>bit alterné</strong> est un <strong>modèle simple</strong> pour comprendre comment assurer la <strong>fiabilité</strong> des échanges de données entre deux machines à travers un réseau.</p>
+<p>Il permet à un émetteur et un récepteur de <strong>communiquer sans erreur</strong>, même si certains paquets sont perdus.</p>
+<h4 id="principe-general">Principe général</h4>
+<p>L’idée est la suivante :
+- Chaque message envoyé est accompagné d’un <strong>bit</strong> (0 ou 1) appelé <strong>bit de séquence</strong>.
+- Le récepteur, lorsqu’il reçoit correctement le message, renvoie un <strong>accusé de réception (ACK)</strong> portant le même bit.
+- L’émetteur <strong>n’envoie le message suivant</strong> qu’après avoir reçu l’ACK du précédent.
+- Le bit <strong>alterne à chaque message</strong> : 0, 1, 0, 1, etc.</p>
+<p>C’est ce qui donne son nom au protocole : le <strong>bit alterné</strong>.</p>
+<p><strong>Cas 1 – Transmission sans erreur</strong></p>
+<p>Dans le cas idéal, tout se passe bien :
+1. L’émetteur envoie le message (bit = 0).<br />
+2. Le récepteur reçoit M0, l’acquitte avec un <strong>ACK</strong>.<br />
+3. L’émetteur reçoit l’ACK0 → il envoie <strong>M1</strong> (bit = 1).<br />
+4. Le récepteur reçoit M1, renvoie <strong>ACK1</strong>, et ainsi de suite.</p>
+<p>Le bit change à chaque échange, assurant la synchronisation entre les deux.</p>
+<p>📘 <em>C’est le fonctionnement normal, sans perte.</em></p>
+<p><img alt="" src="../bitalt1.png" /></p>
+<h4 id="cas-2-perte-dun-message">Cas 2 – Perte d’un message</h4>
+<p>Imaginons que le message soit perdu :</p>
+<ol>
+<li>L’émetteur envoie un paquet (bit = 0).  </li>
+<li>Le récepteur <strong>ne reçoit rien</strong>, donc <strong>ne répond pas</strong>.  </li>
+<li>Après un certain délai, l’émetteur <strong>réémet le paquet</strong> (même bit = 0).  </li>
+<li>Le récepteur le reçoit enfin, le reconnaît comme <strong>nouveau message</strong>, et répond avec un<strong>ACK</strong>.</li>
+</ol>
+<p>🕒 <em>La temporisation (le “time out”) permet de relancer le message perdu.</em></p>
+<p><img alt="" src="../bitalt2.png" /></p>
+<h4 id="cas-3-perte-dun-accuse-de-reception-ack">Cas 3 – Perte d’un accusé de réception (ACK)</h4>
+<p>Ici, le récepteur reçoit bien le message, mais l’ACK est perdu :</p>
+<ol>
+<li>L’émetteur envoie un paquet (bit = 0).  </li>
+<li>Le récepteur reçoit le paquet et envoie un <strong>ACK</strong>.  </li>
+<li>L’ACK est perdu sur le chemin.  </li>
+<li>L’émetteur, ne recevant rien, <strong>réémet M0</strong>.  </li>
+<li>Le récepteur le reçoit à nouveau, mais comme le bit est <strong>identique</strong>, il sait que c’est un <strong>doublon</strong>.  </li>
+<li>Il <strong>ignore le message</strong> et renvoie simplement <strong>ACK0</strong>.</li>
+</ol>
+<p>Ainsi, le protocole reste <strong>fiable</strong> : le récepteur ne traite pas deux fois le même message.</p>
+<p><img alt="" src="../bitalt3.png" /></p>
+<hr />
+<h3 id="le-routage-des-paquets">Le routage des paquets</h3>
+<p>Quand un message quitte ton ordinateur, il ne va <strong>pas directement</strong> à sa destination.<br />
+Il est <strong>découpé en paquets</strong>, qui vont <strong>traverser différents réseaux</strong> avant d’arriver à bon port.<br />
+Chaque paquet peut <strong>emprunter un chemin différent</strong>, selon la disponibilité et la rapidité des réseaux.</p>
+<h3 id="le-role-des-routeurs">🔁 Le rôle des routeurs</h3>
+<p>Les <strong>routeurs</strong> sont les "panneaux de signalisation" d’Internet.<br />
+Chaque routeur reçoit un paquet, <strong>lit son adresse IP de destination</strong>, et décide <strong>vers quel réseau l’envoyer ensuite</strong>.</p>
+<p>Le routage est souvent <strong>automatique et dynamique</strong> : les routeurs choisissent le <strong>meilleur chemin disponible</strong> à chaque instant.</p>
+<blockquote>
+<p>C’est comme un GPS : si une route est bouchée, le routeur cherche un autre itinéraire pour que le paquet arrive plus vite.</p>
+</blockquote>
+<hr />
+<h3 id="exemple-simplifie">🌐 Exemple simplifié</h3>
+<ol>
+<li>Ton PC envoie un message à un ami à l’autre bout du monde.  </li>
+<li>Le message est découpé en <strong>paquets IP</strong>.  </li>
+<li>Chaque paquet traverse plusieurs <strong>routeurs</strong> (par ton FAI, puis d’autres réseaux).  </li>
+<li>Tous les paquets arrivent chez ton ami, où le protocole TCP les <strong>réassemble dans le bon ordre</strong>.  </li>
+</ol>
+<hr />
+<h3 id="visualiser-le-trajet-des-paquets">🕵️ Visualiser le trajet des paquets</h3>
+<p>Sur un ordinateur, on peut observer le chemin emprunté par les paquets avec la commande :</p>
+<p>```bash
+traceroute wikipedia.org   # (Linux / macOS)
+tracert wikipedia.org      # (Windows)</p>
               
             </div>
           </div><footer>
