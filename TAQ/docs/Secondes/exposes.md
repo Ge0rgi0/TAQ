@@ -73,13 +73,12 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 
 <span style="color:goldenrod">**2B :**
 
-<span style="color:goldenrod">Kamron R. Arthur M.		
 <span style="color:goldenrod">Sacha D. Noah G. Gaston D.		
 <span style="color:goldenrod">Camille D. Eloise D. Sharon B.		
 <span style="color:goldenrod">Ilyes T. Thomas L. Adrien L.		
 <span style="color:goldenrod">Elsa S. Manon V.		
 <span style="color:goldenrod">Laly E. Maelle V.		
-<span style="color:goldenrod">Leo B. Lonny D.		
+<span style="color:goldenrod">Leo B. Lonny D.	Arthur M.  
 <span style="color:goldenrod">Maïssam E. Diana K.		
 <span style="color:goldenrod">Florent C. Hugo D. Nathael W.		
 <span style="color:goldenrod">Capucine G. Clivia V. Carla V.		

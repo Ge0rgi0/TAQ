@@ -66,7 +66,7 @@ Bien avant Internet, le Minitel met des millions de Français en contact avec le
 
 ---
 
-## Internet
+### Internet
 
 <iframe width="400" height="300"
         src="https://www.youtube.com/embed/NmSEJq4Mfk0"
@@ -85,7 +85,7 @@ Le Web transforme Internet en un **espace universel de partage, de savoir et de 
 Internet n’est pas une seule machine géante.  
 C’est en réalité **un immense ensemble de réseaux interconnectés** :  
 
-### LAN
+#### LAN
 
 Les réseaux locaux (LAN, Local Area Network)
 
@@ -103,18 +103,14 @@ Les principaux composants d’un LAN incluent :
 - les **câbles Ethernet** assurent une connexion filaire fiable entre les appareils  
 - le **Wi-Fi** permet aux appareils sans fil de se connecter au réseau  
 
----
-
-### Les Fournisseurs d’Accès à Internet (FAI)
+#### Les Fournisseurs d’Accès à Internet (FAI)
 Pour communiquer avec le reste du monde, un réseau local doit se connecter à un **Fournisseur d’Accès à Internet (FAI)** :  
 - En France : Orange, SFR, Free, Bouygues, etc.  
 - Dans d’autres pays : AT&T, Deutsche Telekom, etc.  
 
 Un FAI gère un **réseau beaucoup plus vaste** qui relie des millions de clients.  
 
----
-
-### L’interconnexion mondiale
+#### L’interconnexion mondiale
 - Les réseaux des FAI sont eux-mêmes reliés **entre eux** par de très grandes lignes de communication (fibre optique, câbles sous-marins, satellites).  
 - Les grandes entreprises (Google, Amazon, Microsoft, etc.) possèdent aussi leurs **propres réseaux** qui s’interconnectent avec les FAI.  
 
@@ -124,6 +120,8 @@ Quand vous envoyez un message, il sort d’abord de votre réseau local → pass
 
 **Idée clé à retenir :**  
 Internet, c’est **l’interconnexion de milliers de réseaux locaux et de fournisseurs d’accès** à l’échelle mondiale, qui communiquent tous grâce à des **protocoles communs**.
+
+---
 
 ### Conclusion
 
@@ -148,7 +146,7 @@ Chaque couche y ajoute des informations spécifiques (adresse de destination, nu
 
 ![Modèle](../../../Secondes/Chapitres/Internet/model.png)
 
-## Le protocole IP et l’adressage
+## Les protocoles MAC et IP : l’adressage
 
 Chaque appareil connecté à Internet doit être identifiable de manière **unique**.  
 Pour cela, deux types d’adresses existent :
@@ -274,23 +272,201 @@ Pour répondre à ce problème, une nouvelle version du protocole Internet a ét
 
 exemple d'adresse IPv6 : `2001:0db8:85a3:0000:0000:8a2e:0370:7334`
 
-Pour simplifier, on peut **abréger** une adresse IPv6 :
+Pour simplifier, on peut **abréger** une adresse IPv6 :  
 - Les **zéros initiaux** d’un groupe peuvent être supprimés :  
-  `2001:db8:85a3:0:0:8a2e:370:7334`
+  `2001:db8:85a3:0:0:8a2e:370:7334`  
 - Une suite de groupes `0000` peut être remplacée par `::` (une seule fois par adresse) :  
   `2001:db8:85a3::8a2e:370:7334`
 
 <span style="color:red">Exercices</span>  
+
 ```text
 1. Combien d'adresses IPv6 possibles existe-t'il ?
+
 2. Écrire 5 exemples d'adresses IPv6 différentes.
+
+3. Abrégez les adresses suivantes selon les règles IPv6 :
+
+- 2001:0db8:0000:0000:0000:0000:0000:0001  
+- fe80:0000:0000:0000:0202:b3ff:fe1e:8329  
+- 2001:0db8:85a3:0000:0000:8a2e:0370:7334  
+- 2001:0000:0000:0000:0000:0000:0000:0000  
+- 0000:0000:0000:0000:0000:0000:0000:0001
+
+4. Faites l’opération inverse :  
+Développez complètement les adresses abrégées suivantes (ajoutez tous les zéros manquants) :
+
+- 2001:db8::1  
+- fe80::202:b3ff:fe1e:8329  
+- ::1  
+- 2001:db8:85a3::8a2e:370:7334  
+- ::
 ```
 
-#### DNS – Domain Name System
+### DNS – Domain Name System
 
-Quand vous tapez un nom de site dans votre navigateur, par exemple `wikipedia.org`, votre ordinateur ne sait pas directement où envoyer les paquets, il a besoin de **l’adresse IP** correspondante.
-Pour éviter d'avoir à se souvenir des IPs de tous les sites, nous utilisons le DNS.  
+Quand vous tapez un nom de site dans votre navigateur, par exemple `wikipedia.org`, votre ordinateur ne sait pas directement **où envoyer les paquets de données**.  
+En réalité, les ordinateurs communiquent entre eux uniquement grâce à leurs **adresses IP**.
 
-Le **DNS (Domain Name System)** est un service qui fait la correspondance entre le Nom symbolique et l'Adresse IP par le biais de serveurs DNS.
+Mais comme il serait impossible de retenir toutes ces adresses, on utilise un système plus pratique : le **DNS**. Il s'agit d'un service qui fait la **correspondance entre un nom de domaine et son adresse IP**.
+
+> Le DNS fonctionne comme un **annuaire d’Internet** :  
+> On cherche un nom, il nous donne l’adresse numérique correspondante.
+
+Exemple :  
+`wikipedia.org` → `185.15.59.224`  
+`google.fr` → `142.250.179.3`
+
+
+1. On tape `wikipedia.org` dans le navigateur.  
+2. Notre ordinateur demande à un **serveur DNS** quelle est l’adresse IP de ce site.  
+3. Le serveur DNS répond avec l’adresse correspondante.  
+4. Notre ordinateur peut alors **se connecter directement** à cette adresse IP.
+
+#### Les serveurs DNS
+
+Le système DNS n’est pas un seul gros ordinateur magique qui connaît toutes les adresses du monde.  
+C’est un **réseau mondial de milliers de serveurs** répartis sur toute la planète, organisés de manière **hiérarchique** et **coopérative**.
+
+> Grâce à ce système, la résolution d’un nom (comme `wikipedia.org`) se fait très rapidement, souvent en quelques millisecondes.
+
+**Ce système permet de :**  
+- **simplifier la vie des utilisateurs** : il est plus facile de retenir `lycee.fr` que `193.54.12.45`.  
+- **pouvoir changer l’adresse IP d’un site** sans changer son nom (pratique quand un site change de serveur).  
+- **contrôler et sécuriser les accès** à certains domaines (filtrage, redirection, etc.).  
+- **accélérer la navigation** grâce au cache des serveurs DNS locaux.
 
 ---
+
+## Les protocoles UDP et TCP : le routage
+
+Pour que les données circulent sur Internet, il faut **plus qu'une adresse IP** :  
+il faut aussi savoir **comment** les envoyer et les remettre dans le bon ordre.  
+C’est le rôle des protocoles de transport, principalement **TCP** et **UDP**.
+
+---
+
+### Le protocole UDP (User Datagram Protocol)
+
+UDP est beaucoup plus **rapide**, mais **non fiable**.  
+Il envoie les paquets **sans vérifier** qu’ils sont bien reçus ni dans le bon ordre.  
+
+C’est un peu comme envoyer plusieurs lettres sans accusé de réception : certaines peuvent se perdre, mais le message global passe plus vite.
+
+![Modèle](../../../Secondes/Chapitres/Internet/UDP.png) 
+#### Utilisations typiques :
+- Streaming vidéo ou audio (YouTube, Spotify)  
+- Jeux en ligne  
+- Appels vocaux (Visioconférence)
+
+---
+
+### Le protocole TCP (Transmission Control Protocol)
+
+TCP est un protocole **fiable** et **orienté connexion**.  
+Avant d’envoyer les données, l’expéditeur et le destinataire **établissent une connexion** (comme un appel téléphonique).  
+
+Chaque paquet envoyé reçoit un **numéro d’ordre** et une **confirmation de réception**.  
+S’il manque un paquet, il est **renvoyé automatiquement**.
+
+C’est donc un protocole **lent mais sûr** : il garantit que toutes les données arrivent **complètes et dans le bon ordre**.
+
+![Modèle](../../../Secondes/Chapitres/Internet/TCP.png) 
+#### Utilisations typiques :
+- Navigation web (HTTP / HTTPS)  
+- Envoi d’e-mails (SMTP, IMAP, POP3)  
+- Transfert de fichiers (FTP, SFTP)
+
+### Le bit alterné
+
+Le **bit alterné** est un **modèle simple** pour comprendre comment assurer la **fiabilité** des échanges de données entre deux machines à travers un réseau.
+
+Il permet à un émetteur et un récepteur de **communiquer sans erreur**, même si certains paquets sont perdus.
+
+#### Principe général
+
+L’idée est la suivante :
+- Chaque message envoyé est accompagné d’un **bit** (0 ou 1) appelé **bit de séquence**.
+- Le récepteur, lorsqu’il reçoit correctement le message, renvoie un **accusé de réception (ACK)** portant le même bit.
+- L’émetteur **n’envoie le message suivant** qu’après avoir reçu l’ACK du précédent.
+- Le bit **alterne à chaque message** : 0, 1, 0, 1, etc.
+
+C’est ce qui donne son nom au protocole : le **bit alterné**.
+
+**Cas 1 – Transmission sans erreur**
+
+Dans le cas idéal, tout se passe bien :
+1. L’émetteur envoie le message (bit = 0).  
+2. Le récepteur reçoit M0, l’acquitte avec un **ACK**.  
+3. L’émetteur reçoit l’ACK0 → il envoie **M1** (bit = 1).  
+4. Le récepteur reçoit M1, renvoie **ACK1**, et ainsi de suite.
+
+Le bit change à chaque échange, assurant la synchronisation entre les deux.
+
+📘 *C’est le fonctionnement normal, sans perte.*
+
+![](bitalt1.png)
+
+#### Cas 2 – Perte d’un message
+
+Imaginons que le message soit perdu :
+
+1. L’émetteur envoie un paquet (bit = 0).  
+2. Le récepteur **ne reçoit rien**, donc **ne répond pas**.  
+3. Après un certain délai, l’émetteur **réémet le paquet** (même bit = 0).  
+4. Le récepteur le reçoit enfin, le reconnaît comme **nouveau message**, et répond avec un**ACK**.
+
+🕒 *La temporisation (le “time out”) permet de relancer le message perdu.*
+
+![](bitalt2.png)
+
+#### Cas 3 – Perte d’un accusé de réception (ACK)
+
+Ici, le récepteur reçoit bien le message, mais l’ACK est perdu :
+
+1. L’émetteur envoie un paquet (bit = 0).  
+2. Le récepteur reçoit le paquet et envoie un **ACK**.  
+3. L’ACK est perdu sur le chemin.  
+4. L’émetteur, ne recevant rien, **réémet M0**.  
+5. Le récepteur le reçoit à nouveau, mais comme le bit est **identique**, il sait que c’est un **doublon**.  
+6. Il **ignore le message** et renvoie simplement **ACK0**.
+
+Ainsi, le protocole reste **fiable** : le récepteur ne traite pas deux fois le même message.
+
+![](bitalt3.png)
+
+---
+
+### Le routage des paquets
+
+Quand un message quitte ton ordinateur, il ne va **pas directement** à sa destination.  
+Il est **découpé en paquets**, qui vont **traverser différents réseaux** avant d’arriver à bon port.  
+Chaque paquet peut **emprunter un chemin différent**, selon la disponibilité et la rapidité des réseaux.
+
+### 🔁 Le rôle des routeurs
+
+Les **routeurs** sont les "panneaux de signalisation" d’Internet.  
+Chaque routeur reçoit un paquet, **lit son adresse IP de destination**, et décide **vers quel réseau l’envoyer ensuite**.
+
+Le routage est souvent **automatique et dynamique** : les routeurs choisissent le **meilleur chemin disponible** à chaque instant.
+
+> C’est comme un GPS : si une route est bouchée, le routeur cherche un autre itinéraire pour que le paquet arrive plus vite.
+
+---
+
+### 🌐 Exemple simplifié
+
+1. Ton PC envoie un message à un ami à l’autre bout du monde.  
+2. Le message est découpé en **paquets IP**.  
+3. Chaque paquet traverse plusieurs **routeurs** (par ton FAI, puis d’autres réseaux).  
+4. Tous les paquets arrivent chez ton ami, où le protocole TCP les **réassemble dans le bon ordre**.  
+
+---
+
+### 🕵️ Visualiser le trajet des paquets
+
+Sur un ordinateur, on peut observer le chemin emprunté par les paquets avec la commande :
+
+```bash
+traceroute wikipedia.org   # (Linux / macOS)
+tracert wikipedia.org      # (Windows)
