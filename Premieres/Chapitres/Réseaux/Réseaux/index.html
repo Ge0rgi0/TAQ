@@ -105,7 +105,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#les-protocoles-udp-et-tcp-le-routage">Les protocoles UDP et TCP : le routage</a>
+    <li class="toctree-l3"><a class="reference internal" href="#les-protocoles-udp-et-tcp-le-transport">Les protocoles UDP et TCP : le transport</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#le-protocole-udp-user-datagram-protocol">Le protocole UDP (User Datagram Protocol)</a>
     </li>
@@ -113,13 +113,13 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#le-bit-alterne">Le bit alterné</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#le-routage-des-paquets">Le routage des paquets</a>
+        </ul>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#le-role-des-routeurs">🔁 Le rôle des routeurs</a>
+    <li class="toctree-l3"><a class="reference internal" href="#le-routage-des-paquets">Le routage des paquets</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#les-routeurs">Les routeurs</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#exemple-simplifie">🌐 Exemple simplifié</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#visualiser-le-trajet-des-paquets">🕵️ Visualiser le trajet des paquets</a>
+    <li class="toctree-l4"><a class="reference internal" href="#les-interfaces-du-routeur">Les interfaces du routeur</a>
     </li>
         </ul>
     </li>
@@ -402,10 +402,9 @@ C’est un <strong>réseau mondial de milliers de serveurs</strong> répartis su
 <p><strong>Ce système permet de :</strong><br />
 - <strong>simplifier la vie des utilisateurs</strong> : il est plus facile de retenir <code>lycee.fr</code> que <code>193.54.12.45</code>.<br />
 - <strong>pouvoir changer l’adresse IP d’un site</strong> sans changer son nom (pratique quand un site change de serveur).<br />
-- <strong>contrôler et sécuriser les accès</strong> à certains domaines (filtrage, redirection, etc.).<br />
 - <strong>accélérer la navigation</strong> grâce au cache des serveurs DNS locaux.</p>
 <hr />
-<h2 id="les-protocoles-udp-et-tcp-le-routage">Les protocoles UDP et TCP : le routage</h2>
+<h2 id="les-protocoles-udp-et-tcp-le-transport">Les protocoles UDP et TCP : le transport</h2>
 <p>Pour que les données circulent sur Internet, il faut <strong>plus qu'une adresse IP</strong> :<br />
 il faut aussi savoir <strong>comment</strong> les envoyer et les remettre dans le bon ordre.<br />
 C’est le rôle des protocoles de transport, principalement <strong>TCP</strong> et <strong>UDP</strong>.</p>
@@ -415,44 +414,50 @@ C’est le rôle des protocoles de transport, principalement <strong>TCP</strong
 Il envoie les paquets <strong>sans vérifier</strong> qu’ils sont bien reçus ni dans le bon ordre.  </p>
 <p>C’est un peu comme envoyer plusieurs lettres sans accusé de réception : certaines peuvent se perdre, mais le message global passe plus vite.</p>
 <p><img alt="Modèle" src="../../../../Secondes/Chapitres/Internet/UDP.png" /> </p>
-<h4 id="utilisations-typiques">Utilisations typiques :</h4>
-<ul>
-<li>Streaming vidéo ou audio (YouTube, Spotify)  </li>
-<li>Jeux en ligne  </li>
-<li>Appels vocaux (Visioconférence)</li>
-</ul>
+<p><strong>Utilisations typiques :</strong> <br />
+- Streaming vidéo ou audio (YouTube, Spotify)<br />
+- Jeux en ligne<br />
+- Appels vocaux (Visioconférence)</p>
 <hr />
 <h3 id="le-protocole-tcp-transmission-control-protocol">Le protocole TCP (Transmission Control Protocol)</h3>
-<p>TCP est un protocole <strong>fiable</strong> et <strong>orienté connexion</strong>.<br />
-Avant d’envoyer les données, l’expéditeur et le destinataire <strong>établissent une connexion</strong> (comme un appel téléphonique).  </p>
-<p>Chaque paquet envoyé reçoit un <strong>numéro d’ordre</strong> et une <strong>confirmation de réception</strong>.<br />
-S’il manque un paquet, il est <strong>renvoyé automatiquement</strong>.</p>
+<p>TCP est un protocole <strong>fiable</strong>.<br />
+Avant d’envoyer les données, l’expéditeur et le destinataire doivent d’abord s’assurer qu’ils peuvent communiquer correctement.
+C’est ce qu’on appelle la <strong>triple poignée de main</strong> :<br />
+- Chaque paquet envoyé reçoit un <strong>numéro d’ordre</strong> et une <strong>confirmation de réception</strong>.<br />
+- S’il manque un paquet, il est <strong>renvoyé automatiquement</strong>.</p>
+<p>Elle se déroule en 3 étapes :</p>
+<p><strong>1. SYN</strong> → Le client envoie une demande de connexion au serveur.
+→ Il envoie un paquet avec le drapeau SYN (synchronize) pour dire :
+« Je veux commencer une communication et initialiser un numéro de séquence. »</p>
+<p><strong>2. SYN-ACK</strong> → Le serveur répond :
+→ Il envoie un paquet avec SYN + ACK pour dire :
+« D’accord, j’ai reçu ta demande et je suis prêt à communiquer. »</p>
+<p><strong>3. ACK</strong> → Le client confirme :
+→ Il envoie un ACK final pour dire :
+« J’ai bien reçu ta confirmation, la connexion peut commencer. »</p>
 <p>C’est donc un protocole <strong>lent mais sûr</strong> : il garantit que toutes les données arrivent <strong>complètes et dans le bon ordre</strong>.</p>
 <p><img alt="Modèle" src="../../../../Secondes/Chapitres/Internet/TCP.png" /> </p>
-<h4 id="utilisations-typiques_1">Utilisations typiques :</h4>
-<ul>
-<li>Navigation web (HTTP / HTTPS)  </li>
-<li>Envoi d’e-mails (SMTP, IMAP, POP3)  </li>
-<li>Transfert de fichiers (FTP, SFTP)</li>
-</ul>
+<p><strong>Utilisations typiques :</strong><br />
+- Navigation web (HTTP / HTTPS)<br />
+- Envoi d’e-mails (SMTP, IMAP, POP3)<br />
+- Transfert de fichiers (FTP, SFTP)</p>
 <h3 id="le-bit-alterne">Le bit alterné</h3>
-<p>Le <strong>bit alterné</strong> est un <strong>modèle simple</strong> pour comprendre comment assurer la <strong>fiabilité</strong> des échanges de données entre deux machines à travers un réseau.</p>
+<p>Le <strong>bit alterné</strong> est un <strong>modèle simple</strong> pour comprendre comment assurer la <strong>fiabilité</strong> des échanges de données entre deux machines à travers un réseau en mode <strong>TCP</strong>.</p>
 <p>Il permet à un émetteur et un récepteur de <strong>communiquer sans erreur</strong>, même si certains paquets sont perdus.</p>
-<h4 id="principe-general">Principe général</h4>
-<p>L’idée est la suivante :
-- Chaque message envoyé est accompagné d’un <strong>bit</strong> (0 ou 1) appelé <strong>bit de séquence</strong>.
-- Le récepteur, lorsqu’il reçoit correctement le message, renvoie un <strong>accusé de réception (ACK)</strong> portant le même bit.
-- L’émetteur <strong>n’envoie le message suivant</strong> qu’après avoir reçu l’ACK du précédent.
+<p><strong>Principe général</strong></p>
+<p>L’idée est la suivante :<br />
+- Chaque message envoyé est accompagné d’un <strong>bit</strong> (0 ou 1) appelé <strong>bit de séquence</strong>.<br />
+- Le récepteur, lorsqu’il reçoit correctement le message, renvoie un <strong>accusé de réception (ACK)</strong> portant le même bit.<br />
+- L’émetteur <strong>n’envoie le message suivant</strong> qu’après avoir reçu l’ACK du précédent.<br />
 - Le bit <strong>alterne à chaque message</strong> : 0, 1, 0, 1, etc.</p>
 <p>C’est ce qui donne son nom au protocole : le <strong>bit alterné</strong>.</p>
 <p><strong>Cas 1 – Transmission sans erreur</strong></p>
-<p>Dans le cas idéal, tout se passe bien :
+<p>Dans le cas idéal, tout se passe bien :<br />
 1. L’émetteur envoie le message (bit = 0).<br />
-2. Le récepteur reçoit M0, l’acquitte avec un <strong>ACK</strong>.<br />
-3. L’émetteur reçoit l’ACK0 → il envoie <strong>M1</strong> (bit = 1).<br />
-4. Le récepteur reçoit M1, renvoie <strong>ACK1</strong>, et ainsi de suite.</p>
+2. Le récepteur le reçoit, l’acquitte avec un <strong>ACK</strong>.<br />
+3. L’émetteur reçoit l'ACK → il envoie le suivant (bit = 1).<br />
+4. Le récepteur le reçoit, renvoie un <strong>ACK</strong>, et ainsi de suite.</p>
 <p>Le bit change à chaque échange, assurant la synchronisation entre les deux.</p>
-<p>📘 <em>C’est le fonctionnement normal, sans perte.</em></p>
 <p><img alt="" src="../bitalt1.png" /></p>
 <h4 id="cas-2-perte-dun-message">Cas 2 – Perte d’un message</h4>
 <p>Imaginons que le message soit perdu :</p>
@@ -460,9 +465,8 @@ S’il manque un paquet, il est <strong>renvoyé automatiquement</strong>.</p>
 <li>L’émetteur envoie un paquet (bit = 0).  </li>
 <li>Le récepteur <strong>ne reçoit rien</strong>, donc <strong>ne répond pas</strong>.  </li>
 <li>Après un certain délai, l’émetteur <strong>réémet le paquet</strong> (même bit = 0).  </li>
-<li>Le récepteur le reçoit enfin, le reconnaît comme <strong>nouveau message</strong>, et répond avec un<strong>ACK</strong>.</li>
+<li>Le récepteur le reçoit enfin, le reconnaît comme <strong>nouveau message</strong>, et répond avec un <strong>ACK</strong>.</li>
 </ol>
-<p>🕒 <em>La temporisation (le “time out”) permet de relancer le message perdu.</em></p>
 <p><img alt="" src="../bitalt2.png" /></p>
 <h4 id="cas-3-perte-dun-accuse-de-reception-ack">Cas 3 – Perte d’un accusé de réception (ACK)</h4>
 <p>Ici, le récepteur reçoit bien le message, mais l’ACK est perdu :</p>
@@ -470,38 +474,93 @@ S’il manque un paquet, il est <strong>renvoyé automatiquement</strong>.</p>
 <li>L’émetteur envoie un paquet (bit = 0).  </li>
 <li>Le récepteur reçoit le paquet et envoie un <strong>ACK</strong>.  </li>
 <li>L’ACK est perdu sur le chemin.  </li>
-<li>L’émetteur, ne recevant rien, <strong>réémet M0</strong>.  </li>
+<li>L’émetteur, ne recevant rien, <strong>réenvoie le paquet</strong>.  </li>
 <li>Le récepteur le reçoit à nouveau, mais comme le bit est <strong>identique</strong>, il sait que c’est un <strong>doublon</strong>.  </li>
-<li>Il <strong>ignore le message</strong> et renvoie simplement <strong>ACK0</strong>.</li>
+<li>Il <strong>ignore le message</strong> et renvoie simplement l'<strong>ACK</strong>.</li>
 </ol>
 <p>Ainsi, le protocole reste <strong>fiable</strong> : le récepteur ne traite pas deux fois le même message.</p>
 <p><img alt="" src="../bitalt3.png" /></p>
 <hr />
-<h3 id="le-routage-des-paquets">Le routage des paquets</h3>
-<p>Quand un message quitte ton ordinateur, il ne va <strong>pas directement</strong> à sa destination.<br />
-Il est <strong>découpé en paquets</strong>, qui vont <strong>traverser différents réseaux</strong> avant d’arriver à bon port.<br />
-Chaque paquet peut <strong>emprunter un chemin différent</strong>, selon la disponibilité et la rapidité des réseaux.</p>
-<h3 id="le-role-des-routeurs">🔁 Le rôle des routeurs</h3>
-<p>Les <strong>routeurs</strong> sont les "panneaux de signalisation" d’Internet.<br />
-Chaque routeur reçoit un paquet, <strong>lit son adresse IP de destination</strong>, et décide <strong>vers quel réseau l’envoyer ensuite</strong>.</p>
-<p>Le routage est souvent <strong>automatique et dynamique</strong> : les routeurs choisissent le <strong>meilleur chemin disponible</strong> à chaque instant.</p>
-<blockquote>
-<p>C’est comme un GPS : si une route est bouchée, le routeur cherche un autre itinéraire pour que le paquet arrive plus vite.</p>
-</blockquote>
+<h2 id="le-routage-des-paquets">Le routage des paquets</h2>
+<p>Lorsqu’un ordinateur envoie des données sur un réseau, ces données circulent sous forme de paquets.
+Si la machine destinataire se trouve sur le même réseau local, les paquets peuvent être envoyés directement (en utilisant les adresses MAC).
+Mais si la destination est sur un autre réseau, le paquet doit passer par un ou plusieurs routeurs : c’est le routage.</p>
+<p>Le routage est donc le processus qui permet à un paquet de trouver le meilleur chemin pour atteindre sa destination IP à travers plusieurs réseaux interconnectés.</p>
 <hr />
-<h3 id="exemple-simplifie">🌐 Exemple simplifié</h3>
+<h3 id="les-routeurs">Les routeurs</h3>
+<p>Un routeur est un équipement réseau (physique ou virtuel) chargé de faire transiter les paquets de données d’un réseau vers un autre.
+Il agit comme un carrefour qui oriente chaque paquet en fonction de son adresse IP de destination.</p>
+<p><img alt="" src="../routeur.png" /></p>
+<p>Chaque routeur :</p>
+<ul>
+<li>reçoit des paquets sur une interface réseau,</li>
+<li>analyse l’adresse de destination,</li>
+<li>décide par quelle interface les transmettre,</li>
+<li>met à jour éventuellement les informations de liaison (adresses MAC),</li>
+<li>et envoie le paquet vers le prochain routeur ou la machine finale.</li>
+</ul>
+<p>Ainsi, les routeurs permettent la communication entre réseaux locaux distincts et sont essentiels au fonctionnement d’Internet.</p>
+<hr />
+<h3 id="les-interfaces-du-routeur">Les interfaces du routeur</h3>
+<p>Lorsqu’on relie deux routeurs, chacun dispose d’une interface connectée à cette liaison.</p>
+<ul>
+<li>Chaque interface doit appartenir au même réseau IP pour pouvoir communiquer.</li>
+<li>Cela signifie qu’elles partagent le même masque de sous-réseau et ont des adresses IP dans le même bloc réseau.</li>
+</ul>
+<p>De même lorsqu’un routeur est connecté à un switch, toutes les machines (PC, imprimantes…) reliées à ce switch doivent être dans le même réseau IP que l’interface du routeur à laquelle le switch est connecté.</p>
+<p><img alt="" src="../interface.png" /></p>
+<h4 id="la-table-de-routage">La table de routage</h4>
+<p>La table de routage est une liste de routes connues par le routeur (ou parfois par un ordinateur).
+Elle indique vers quelle interface ou vers quel routeur voisin envoyer un paquet selon sa destination.</p>
+<p><strong>Exemple de table du routeur A</strong></p>
+<table>
+<thead>
+<tr>
+<th>Réseau de destination</th>
+<th>Masque</th>
+<th>Passerelle (Prochain saut)</th>
+<th>Interface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>172.168.0.0</td>
+<td>255.255.0.0</td>
+<td>réseau local</td>
+<td>172.168.255.254</td>
+</tr>
+<tr>
+<td>192.168.7.0</td>
+<td>255.255.255.0</td>
+<td>réseau local</td>
+<td>172.168.7.1</td>
+</tr>
+<tr>
+<td>172.169.0.0</td>
+<td>255.255.0.0</td>
+<td>réseau local</td>
+<td>172.169.255.254</td>
+</tr>
+<tr>
+<td>10.0.0.0</td>
+<td>255.0.0.0</td>
+<td>192.168.7.2</td>
+<td>192.168.7.1</td>
+</tr>
+</tbody>
+</table>
+<p><span style="color:red">Exercice</span> : </p>
+<p><strong>1)</strong> Donner la table du routeur G</p>
+<p><strong>2)</strong> On suppose que la machine D de la figure fait office de serveur DNS sur ce réseau et que l'adresse IP associée au nom X est celle de l'interface X.a (i.e l'adresse IP que le serveur DNS renvoie pour le nom "B" est 129.175.31.37). On effectue depuis la machine A la commande ping. Dans chacun des cas suivants, indiquer si la commande est un succès ou un échec, en justifiant.</p>
+<p>(Note : La commande <strong>ping</strong> envoie des messages à une adresse pour vérifier si elle est joignable sur le réseau.)</p>
+<p><img alt="" src="../exo.png" /></p>
 <ol>
-<li>Ton PC envoie un message à un ami à l’autre bout du monde.  </li>
-<li>Le message est découpé en <strong>paquets IP</strong>.  </li>
-<li>Chaque paquet traverse plusieurs <strong>routeurs</strong> (par ton FAI, puis d’autres réseaux).  </li>
-<li>Tous les paquets arrivent chez ton ami, où le protocole TCP les <strong>réassemble dans le bon ordre</strong>.  </li>
+<li>ping F avec le lien B-D coupé</li>
+<li>ping F avec le lien B-C coupé</li>
+<li>ping 129.175.40.33 avec le lien B-D coupé</li>
+<li>ping 129.175.29.148 avec le lien B-D coupé</li>
 </ol>
-<hr />
-<h3 id="visualiser-le-trajet-des-paquets">🕵️ Visualiser le trajet des paquets</h3>
-<p>Sur un ordinateur, on peut observer le chemin emprunté par les paquets avec la commande :</p>
-<p>```bash
-traceroute wikipedia.org   # (Linux / macOS)
-tracert wikipedia.org      # (Windows)</p>
+<p><em>Cet exercice est tiré du livre NUMÉRIQUE ET SCIENCES INFORMATIQUES 1re aux éditions Ellipses.</em></p>
               
             </div>
           </div><footer>
