@@ -62,12 +62,12 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 
 | Critère                   | Points | Description                                                                 |
 |----------------------------|--------|-----------------------------------------------------------------------------|
-| Recul et analyse du sujet  | 2      | Mise en lien du thème avec des enjeux concrets, capacité à prendre du recul |
+| Recul et analyse du sujet  | 4      | Lien avec des enjeux concrets, capacité à prendre du recul |
 | Qualité du support visuel  | 2      | Support clair, lisible, bien construit et utile à l’exposé                   |
-| Clarté des propos          | 2      | Explications compréhensibles, vocabulaire adapté, bonne structuration       |
-| Dynamisme et oral          | 2      | Capacité à capter l’attention, engagement, gestion du temps, contact public |
-| Répartition de la parole   | 1      | Participation équilibrée de tous les membres du groupe                      |
-| Variété des sources        | 1      | Utilisation de plusieurs sources fiables et pertinentes                     |
+| Clarté des propos          | 2      | Explications claires, vocabulaire adapté, bonne structuration       |
+| Dynamisme et oral          | 2      | Capacité à capter l’attention, engagement, gestion du temps |
+| <span style="color:red">Parole mal ou non répartie                | - 2      | Participation déséquilibrée des membres du groupe                      |
+| <span style="color:red">Sources non satisfaisantes        | - 2      | Source non variées, inexistantes ou peu crédibles                    |
 
 ## Ordre de passage des groupes
 
@@ -89,7 +89,7 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 <span style="color:royalblue">**2D :**
 
 <span style="color:royalblue">Laura G. Gwenaelle L.		
-<span style="color:royalblue">Bastien P.
+<span style="color:royalblue">Bastien P.  
 <span style="color:royalblue">Altay K. Luca B. Maxence C.		
 <span style="color:royalblue">Charlotte D. Iris D.		
 <span style="color:royalblue">Alicia D. Leane D.		
