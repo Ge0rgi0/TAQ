@@ -506,7 +506,9 @@ Elle indique vers quelle interface ou vers quel routeur voisin envoyer un paquet
 
 **1)** Donner la table du routeur G
 
-**2)** On suppose que la machine D de la figure fait office de serveur DNS sur ce réseau et que l'adresse IP associée au nom X est celle de l'interface X.a (i.e l'adresse IP que le serveur DNS renvoie pour le nom "B" est 129.175.31.37). On effectue depuis la machine A la commande ping. Dans chacun des cas suivants, indiquer si la commande est un succès ou un échec, en justifiant.
+**2)** On suppose que la machine D de la figure fait office de serveur DNS sur ce réseau et que l'adresse IP associée au nom X est celle de l'interface X.a (i.e l'adresse IP que le serveur DNS renvoie pour le nom "B" est 129.175.31.37). On effectue depuis la machine A la commande ping. 
+
+Dans chacun des cas suivants, indiquer si la commande est un succès ou un échec, en justifiant.
 
 (Note : La commande **ping** envoie des messages à une adresse pour vérifier si elle est joignable sur le réseau.)
 
@@ -518,3 +520,17 @@ Elle indique vers quelle interface ou vers quel routeur voisin envoyer un paquet
 4. ping 129.175.29.148 avec le lien B-D coupé
 
 *Cet exercice est tiré du livre NUMÉRIQUE ET SCIENCES INFORMATIQUES 1re aux éditions Ellipses.*
+
+**3)** Donner les tables de routages de C et de B
+
+Table de routage de B :
+
+|Destination|Passerelle|Interface|
+|-|-|-|
+|A|||
+|B|||
+|C|C.a|B.c|
+|D|||
+|E|||
+|F|||
+|G|||
