@@ -106,8 +106,7 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 
 <span style="color:seagreen">**2E :**
 
-<span style="color:seagreen">Lola C. Elyse N. Lana F.		
-<span style="color:seagreen">Gabriel S.		
+<span style="color:seagreen">Lola C. Elyse N. Lana F.   
 <span style="color:seagreen">Alice R. Lena B.		
 <span style="color:seagreen">Anais B. Romane L.		
 <span style="color:seagreen">Emma P. Zelie S.		
@@ -121,7 +120,7 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 <span style="color:seagreen">Sarah G. Ilana B. Elize P.		
 <span style="color:seagreen">Nolhan D. Yelen P. Noe D.		
 <span style="color:seagreen">Melanie M. Suzanne M.		
-<span style="color:seagreen">Lilian S. Simon M.		
+<span style="color:seagreen">Lilian S. Simon M.	Gabriel S.  	
 <span style="color:seagreen">Marley B.
 
 <span style="color:tomato">**2F :**

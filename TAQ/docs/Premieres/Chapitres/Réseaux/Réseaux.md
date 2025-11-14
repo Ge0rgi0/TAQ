@@ -502,7 +502,7 @@ Elle indique vers quelle interface ou vers quel routeur voisin envoyer un paquet
 |172.169.0.0|255.255.0.0|réseau local|172.169.255.254|
 |10.0.0.0|255.0.0.0|192.168.7.2|192.168.7.1|
 
-<span style="color:red">Exercice</span> : 
+<span style="color:red">Exercices</span> : 
 
 **1)** Donner la table du routeur G
 
@@ -528,7 +528,6 @@ Table de routage de B :
 |Destination|Passerelle|Interface|
 |-|-|-|
 |A|||
-|B|||
 |C|C.a|B.c|
 |D|||
 |E|||
