@@ -90,7 +90,6 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 
 <span style="color:royalblue">Laura G. Gwenaelle L.		
 <span style="color:royalblue">Bastien P.  
-<span style="color:royalblue">Altay K. Luca B. Maxence C.		
 <span style="color:royalblue">Charlotte D. Iris D.		
 <span style="color:royalblue">Alicia D. Leane D.		
 <span style="color:royalblue">Camille C. Arthur P. Milo M.		
@@ -105,8 +104,7 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 <span style="color:royalblue">Lenaic D. Axel F.	
 
 <span style="color:seagreen">**2E :**
-
-<span style="color:seagreen">Lola C. Elyse N. Lana F.   
+ 
 <span style="color:seagreen">Alice R. Lena B.		
 <span style="color:seagreen">Anais B. Romane L.		
 <span style="color:seagreen">Emma P. Zelie S.		
@@ -124,9 +122,7 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 <span style="color:seagreen">Marley B.
 
 <span style="color:tomato">**2F :**
-
-<span style="color:tomato">Giovanni C. Cyprien L.		
-<span style="color:tomato">Ocelia R. Chloe G. Noa T.		
+	
 <span style="color:tomato">Nolan H. Alexis G.		
 <span style="color:tomato">Jules D. Flavien D.		
 <span style="color:tomato">Jade D.		
@@ -135,7 +131,6 @@ Choisissez un sujet qui vous intéresse ou qui vous passionne : un jeu, un film,
 <span style="color:tomato">Matteo B. Louis B.		
 <span style="color:tomato">Ilyes E. Nolan B		
 <span style="color:tomato">Zelie M. Tess P.		
-<span style="color:tomato">Matheo B. Hugo V. Eloi L.		
 <span style="color:tomato">Camille B. Elora B.	
 <span style="color:tomato">Zelie P-L. Pauline B. Naomie C.		
 <span style="color:tomato">Souad M. Zoe P.		

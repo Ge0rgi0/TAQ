@@ -491,7 +491,8 @@ De même lorsqu’un routeur est connecté à un switch, toutes les machines (PC
 #### La table de routage
 
 La table de routage est une liste de routes connues par le routeur (ou parfois par un ordinateur).
-Elle indique vers quelle interface ou vers quel routeur voisin envoyer un paquet selon sa destination.
+Elle indique vers quelle interface ou vers quel routeur voisin envoyer un paquet selon sa destination.  
+Elles sont mises à jour à chaque changement de topologie.
 
 **Exemple de table du routeur A**
 
@@ -533,3 +534,5 @@ Table de routage de B :
 |E|||
 |F|||
 |G|||
+
+Le lien entre C et G subit un problème technique, donner la nouvelle table de routage de C ?

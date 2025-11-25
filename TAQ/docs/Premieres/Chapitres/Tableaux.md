@@ -28,15 +28,26 @@ fruits = ["pomme", "banane", "cerise"]
 fruits.append("orange")
 ```
 
+|Avant|Après|
+|-|-|
+|["pomme", "banane", "cerise"]|["pomme", "banane", "cerise", <span style="color:green">"orange"</span>]|
+
 ### Suppression d’un élément
 ```python
 fruits.remove("banane")
 ```
+|Avant|Après|
+|-|-|
+|["pomme", <span style="color:red">"banane"</span>, "cerise","orange"]|["pomme", "cerise","orange"]|
 
 ### Modification d’un élément
 ```python
 fruits[0] = "kiwi"
 ```
+
+|Avant|Après|
+|-|-|
+|[<span style="color:red">"pomme"</span>, "cerise","orange"]|[<span style="color:green">"kiwi"</span>, "cerise","orange"]|
 
 ### Taille du tableau
 ```python
@@ -67,15 +78,33 @@ for fruit in fruits:
     print(fruit)
 ```
 
+Affichera : 
+
+```
+kiwi
+cerise
+orange
+```
+
 ### Avec les indices
 ```python
 for i in range(len(fruits)):
     print("Indice", i, ":", fruits[i])
 ```
 
+Affichera :
+
+```
+Indice 0 : kiwi
+Indice 1 : cerise
+Indice 2 : orange
+```
+
 ### Exemple d'utilisation
 
 ```python
+# Ce programme calcul la moyenne d'une liste de notes
+
 notes = [10, 15, 12, 8, 17]
 somme = 0
 for note in notes:
