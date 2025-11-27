@@ -199,12 +199,54 @@ Chaque élément peut être de n’importe quel type (entier, flottant, chaîne,
 <h3 id="ajout-dun-element">Ajout d’un élément</h3>
 <pre><code class="language-python">fruits.append(&quot;orange&quot;)
 </code></pre>
+<table>
+<thead>
+<tr>
+<th>Avant</th>
+<th>Après</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>["pomme", "banane", "cerise"]</td>
+<td>["pomme", "banane", "cerise", <span style="color:green">"orange"</span>]</td>
+</tr>
+</tbody>
+</table>
 <h3 id="suppression-dun-element">Suppression d’un élément</h3>
 <pre><code class="language-python">fruits.remove(&quot;banane&quot;)
 </code></pre>
+<table>
+<thead>
+<tr>
+<th>Avant</th>
+<th>Après</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>["pomme", <span style="color:red">"banane"</span>, "cerise","orange"]</td>
+<td>["pomme", "cerise","orange"]</td>
+</tr>
+</tbody>
+</table>
 <h3 id="modification-dun-element">Modification d’un élément</h3>
 <pre><code class="language-python">fruits[0] = &quot;kiwi&quot;
 </code></pre>
+<table>
+<thead>
+<tr>
+<th>Avant</th>
+<th>Après</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[<span style="color:red">"pomme"</span>, "cerise","orange"]</td>
+<td>[<span style="color:green">"kiwi"</span>, "cerise","orange"]</td>
+</tr>
+</tbody>
+</table>
 <h3 id="taille-du-tableau">Taille du tableau</h3>
 <pre><code class="language-python">print(len(fruits))  # nombre d'éléments
 </code></pre>
@@ -224,12 +266,24 @@ c = a + b #[1,2,3,7]
 <pre><code class="language-python">for fruit in fruits:
     print(fruit)
 </code></pre>
+<p>Affichera : </p>
+<pre><code>kiwi
+cerise
+orange
+</code></pre>
 <h3 id="avec-les-indices">Avec les indices</h3>
 <pre><code class="language-python">for i in range(len(fruits)):
     print(&quot;Indice&quot;, i, &quot;:&quot;, fruits[i])
 </code></pre>
+<p>Affichera :</p>
+<pre><code>Indice 0 : kiwi
+Indice 1 : cerise
+Indice 2 : orange
+</code></pre>
 <h3 id="exemple-dutilisation">Exemple d'utilisation</h3>
-<pre><code class="language-python">notes = [10, 15, 12, 8, 17]
+<pre><code class="language-python"># Ce programme calcul la moyenne d'une liste de notes
+
+notes = [10, 15, 12, 8, 17]
 somme = 0
 for note in notes:
     somme += note

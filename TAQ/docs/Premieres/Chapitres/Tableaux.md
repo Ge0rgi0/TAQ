@@ -246,16 +246,151 @@ Crée une liste vide. Tant que l'utilisateur rentre des valeurs, on les ajouter 
 
 ---
 
-## Tableaux à deux dimensions
+## Liste à deux dimensions (Matrices)
 
-Une liste peut contenir d’autres listes. Cela permet de représenter des **tableaux à deux dimensions** (matrices).
+En Python, une liste peut contenir d’autres listes.
+On parle alors de tableau à deux dimensions, ou matrice.
 
-```python
+```Python
 matrice = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
+    [1, 2, 3],   # ligne 0
+    [4, 5, 6],   # ligne 1
+    [7, 8, 9]    # ligne 2
 ]
+```
 
+Pour accéder à un élément, il faut deux indices :
+
+- le premier : numéro de la ligne
+- le second : numéro de la colonne
+
+```Python
 print(matrice[1][2])  # affiche 6
+```
+
+<span style="color:red">Exercices :</span>  
+
+### Affichage formaté
+
+Créer une matrice 3×3 et l’afficher sous forme de grille :
+
+```
+1  2  3  
+4  5  6  
+7  8  9
+```
+
+---
+
+### Somme des éléments
+
+Écris un programme qui affiche la somme de tous les éléments de cette matrice.
+
+---
+
+### Recherche dans un tableau 2D
+
+Demander un nombre à l’utilisateur et vérifier s’il est présent dans la matrice (sans utiliser `in`).
+
+---
+
+### Maximum et minimum
+
+Trouver le plus grand et le plus petit élément (sans max() ni min()) de la matrice.
+
+---
+
+### Transposer une matrice
+
+Construire une fonction qui prend en paramètre une matrice et qui en renvoit une nouvelle où les lignes sont devenus les colonnes.
+
+Exemple :
+```
+1  2  3        1  4  7
+4  5  6   ->   2  5  8
+7  8  9        3  6  9
+```
+
+---
+
+## Listes par compréhension
+
+Les listes par compréhension sont une manière rapide et élégante de créer des listes à partir d’une autre liste.
+
+Elles permettent :
+
+- de transformer les valeurs
+- de filtrer certaines valeurs
+- de créer directement des tableaux 2D
+
+Elles remplacent souvent une boucle simple.
+
+**Syntaxe générale**
+
+[expression for element in tuple/liste/range if condition]
+
+- expression : ce que l’on met dans la nouvelle liste
+- element : variable qui prend chaque valeur
+- condition (facultative) : filtre les éléments
+
+**Exemples simples**
+
+- **Doubler chaque nombre**  
+nombres = [1, 2, 3, 4]  
+doubles = [x * 2 for x in nombres]  
+`[2, 4, 6, 8]`  
+
+- **Garder uniquement les nombres pairs**  
+pairs = [x for x in nombres if x % 2 == 0]  
+`[2, 4]`  
+
+- **Lire les lettres d’une chaîne**  
+mot = "bonjour"  
+lettres = [c for c in mot]  
+`['b', 'o', 'n', 'j', 'o', 'u', 'r']`  
+
+**Listes par compréhension imbriquées**
+
+Les compréhensions peuvent créer des matrices :
+
+matrice = [[i * j for j in range(5)] for i in range(5)]
+
+```
+[[0, 0, 0, 0, 0],
+[0, 1, 2, 3, 4],
+[0, 2, 4, 6, 8],
+[0, 3, 6, 9, 12],
+[0, 4, 8, 12, 16]]
+
+```
+
+<span style="color:red">Exercices :</span>  
+
+**Doubles**
+
+Créer une liste contenant chaque élément d’une liste donnée divisés par 2.
+
+**Filtrer les nombres**
+
+Créer une liste contenant uniquement les nombres strictement supérieurs à 10 et inférieur à 20.
+
+**Carrés**
+
+Créer une liste contenant les carrés des entiers de 1 à 20.
+
+**Lettres sans voyelles**
+
+À partir d’un mot, créer une liste contenant uniquement ses consonnes.
+
+**Matrice identité 5×5**
+
+Créer une matrice de taille 5 où les diagonales valent 1 et le reste 0.
+
+**Produit de deux listes**
+
+Étant données deux listes A et B, créer la liste de tous les produits a*b.
+
+```
+a = [1, 2]  ->  2 3
+b = [2, 3]      4 6
 ```
