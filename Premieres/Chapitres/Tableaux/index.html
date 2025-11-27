@@ -137,7 +137,21 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#tableaux-a-deux-dimensions">Tableaux à deux dimensions</a>
+    <li class="toctree-l3"><a class="reference internal" href="#liste-a-deux-dimensions-matrices">Liste à deux dimensions (Matrices)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#affichage-formate">Affichage formaté</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#somme-des-elements">Somme des éléments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#recherche-dans-un-tableau-2d">Recherche dans un tableau 2D</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#maximum-et-minimum">Maximum et minimum</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#transposer-une-matrice">Transposer une matrice</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#listes-par-comprehension">Listes par compréhension</a>
     </li>
     </ul>
                 </li>
@@ -384,15 +398,108 @@ Nombre d’éléments impairs : Y
 <li>Si l'utilisateur entre la valeur <code>0</code>, le programme affiche la liste et s'arrête.</li>
 </ul>
 <hr />
-<h2 id="tableaux-a-deux-dimensions">Tableaux à deux dimensions</h2>
-<p>Une liste peut contenir d’autres listes. Cela permet de représenter des <strong>tableaux à deux dimensions</strong> (matrices).</p>
-<pre><code class="language-python">matrice = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
+<h2 id="liste-a-deux-dimensions-matrices">Liste à deux dimensions (Matrices)</h2>
+<p>En Python, une liste peut contenir d’autres listes.
+On parle alors de tableau à deux dimensions, ou matrice.</p>
+<pre><code class="language-Python">matrice = [
+    [1, 2, 3],   # ligne 0
+    [4, 5, 6],   # ligne 1
+    [7, 8, 9]    # ligne 2
 ]
+</code></pre>
+<p>Pour accéder à un élément, il faut deux indices :</p>
+<ul>
+<li>le premier : numéro de la ligne</li>
+<li>le second : numéro de la colonne</li>
+</ul>
+<pre><code class="language-Python">print(matrice[1][2])  # affiche 6
+</code></pre>
+<p><span style="color:red">Exercices :</span>  </p>
+<h3 id="affichage-formate">Affichage formaté</h3>
+<p>Créer une matrice 3×3 et l’afficher sous forme de grille :</p>
+<pre><code>1  2  3  
+4  5  6  
+7  8  9
+</code></pre>
+<hr />
+<h3 id="somme-des-elements">Somme des éléments</h3>
+<p>Écris un programme qui affiche la somme de tous les éléments de cette matrice.</p>
+<hr />
+<h3 id="recherche-dans-un-tableau-2d">Recherche dans un tableau 2D</h3>
+<p>Demander un nombre à l’utilisateur et vérifier s’il est présent dans la matrice (sans utiliser <code>in</code>).</p>
+<hr />
+<h3 id="maximum-et-minimum">Maximum et minimum</h3>
+<p>Trouver le plus grand et le plus petit élément (sans max() ni min()) de la matrice.</p>
+<hr />
+<h3 id="transposer-une-matrice">Transposer une matrice</h3>
+<p>Construire une fonction qui prend en paramètre une matrice et qui en renvoit une nouvelle où les lignes sont devenus les colonnes.</p>
+<p>Exemple :</p>
+<pre><code>1  2  3        1  4  7
+4  5  6   -&gt;   2  5  8
+7  8  9        3  6  9
+</code></pre>
+<hr />
+<h2 id="listes-par-comprehension">Listes par compréhension</h2>
+<p>Les listes par compréhension sont une manière rapide et élégante de créer des listes à partir d’une autre liste.</p>
+<p>Elles permettent :</p>
+<ul>
+<li>de transformer les valeurs</li>
+<li>de filtrer certaines valeurs</li>
+<li>de créer directement des tableaux 2D</li>
+</ul>
+<p>Elles remplacent souvent une boucle simple.</p>
+<p><strong>Syntaxe générale</strong></p>
+<p>[expression for element in tuple/liste/range if condition]</p>
+<ul>
+<li>expression : ce que l’on met dans la nouvelle liste</li>
+<li>element : variable qui prend chaque valeur</li>
+<li>condition (facultative) : filtre les éléments</li>
+</ul>
+<p><strong>Exemples simples</strong></p>
+<ul>
+<li>
+<p><strong>Doubler chaque nombre</strong><br />
+nombres = [1, 2, 3, 4]<br />
+doubles = [x * 2 for x in nombres]<br />
+<code>[2, 4, 6, 8]</code>  </p>
+</li>
+<li>
+<p><strong>Garder uniquement les nombres pairs</strong><br />
+pairs = [x for x in nombres if x % 2 == 0]<br />
+<code>[2, 4]</code>  </p>
+</li>
+<li>
+<p><strong>Lire les lettres d’une chaîne</strong><br />
+mot = "bonjour"<br />
+lettres = [c for c in mot]<br />
+<code>['b', 'o', 'n', 'j', 'o', 'u', 'r']</code>  </p>
+</li>
+</ul>
+<p><strong>Listes par compréhension imbriquées</strong></p>
+<p>Les compréhensions peuvent créer des matrices :</p>
+<p>matrice = [[i * j for j in range(5)] for i in range(5)]</p>
+<pre><code>[[0, 0, 0, 0, 0],
+[0, 1, 2, 3, 4],
+[0, 2, 4, 6, 8],
+[0, 3, 6, 9, 12],
+[0, 4, 8, 12, 16]]
 
-print(matrice[1][2])  # affiche 6
+</code></pre>
+<p><span style="color:red">Exercices :</span>  </p>
+<p><strong>Doubles</strong></p>
+<p>Créer une liste contenant chaque élément d’une liste donnée divisés par 2.</p>
+<p><strong>Filtrer les nombres</strong></p>
+<p>Créer une liste contenant uniquement les nombres strictement supérieurs à 10 et inférieur à 20.</p>
+<p><strong>Carrés</strong></p>
+<p>Créer une liste contenant les carrés des entiers de 1 à 20.</p>
+<p><strong>Lettres sans voyelles</strong></p>
+<p>À partir d’un mot, créer une liste contenant uniquement ses consonnes.</p>
+<p><strong>Matrice identité 5×5</strong></p>
+<p>Créer une matrice de taille 5 où les diagonales valent 1 et le reste 0.</p>
+<p><strong>Produit de deux listes</strong></p>
+<p>Étant données deux listes A et B, créer la liste de tous les produits a*b.</p>
+<pre><code>a = [1, 2]  -&gt;  2 3
+b = [2, 3]      4 6
 </code></pre>
               
             </div>
