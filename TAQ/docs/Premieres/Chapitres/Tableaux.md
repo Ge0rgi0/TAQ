@@ -116,6 +116,58 @@ print(m)
 
 ---
 
+## Les tranches
+
+En Python, un **slice** permet d’extraire une portion d’une séquence.
+
+La syntaxe générale est : `nom_de_la_liste[debut : fin]`
+
+- debut correspond à l'indice du premier élément que l'on veut prendre (si on le l'indique pas, on commencera à l'indice 0)
+- fin correspond à l'indice du premier élément que l'on ne veut peux plus (si on ne l'indique pas, on ira juqu'au dernier indice)
+
+`liste[1:5]` crée une nouvelle liste avec les éléments de *liste* en partant de l'indice 1 à 4 (inclus).
+
+exemples :
+```
+
+liste = [0,1,2,3,4,5,6,7,8,9,10]
+
+print(liste[1:5]) # [1,2,3,4]
+
+print(liste(5:)) # [5,6,7,8,9,10]
+
+print(liste(:5)) # [0,1,2,3,4]
+
+```
+
+On peut également ajouter un **pas**.
+On utilise alors la syntaxe : `nom_de_la_liste[debut : fin : pas]`
+ou bien : `nom_de_la_liste [::pas]` si on ne veut indiquer que le pas
+
+- pas indique de combien on avance dans la liste à chaque étape
+- si le pas est négatif, on parcourt la liste à l’envers
+
+exemple :
+```
+
+print(liste[::2]) # prendre un élément sur deux [0, 2, 4, 6, 8, 10]
+
+print(liste[::3])  # prendre un élément sur trois [0, 3, 6, 9]
+
+print(liste[1::2])  # prendre un élément sur deux en commençant à l’indice 1 [1, 3, 5, 7, 9]
+
+print(liste[::-1])  # à l'envers [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+print(liste[::-2])  # à l’envers en prenant un élément sur deux [10, 8, 6, 4, 2, 0]
+
+print(liste[2:9:2])  # [2, 4, 6, 8]
+
+print(liste[8:2:-1])  # [8, 7, 6, 5, 4, 3]
+
+```
+
+---
+
 ## Listes et types mélangés
 
 Python autorise les listes contenant plusieurs types de données, même si cela est rarement conseillé pour des programmes bien structurés.
