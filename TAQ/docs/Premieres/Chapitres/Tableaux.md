@@ -125,8 +125,6 @@ La syntaxe générale est : `nom_de_la_liste[debut : fin]`
 - debut correspond à l'indice du premier élément que l'on veut prendre (si on le l'indique pas, on commencera à l'indice 0)
 - fin correspond à l'indice du premier élément que l'on ne veut peux plus (si on ne l'indique pas, on ira juqu'au dernier indice)
 
-`liste[1:5]` crée une nouvelle liste avec les éléments de *liste* en partant de l'indice 1 à 4 (inclus).
-
 exemples :
 ```
 
@@ -147,7 +145,7 @@ ou bien : `nom_de_la_liste [::pas]` si on ne veut indiquer que le pas
 - pas indique de combien on avance dans la liste à chaque étape
 - si le pas est négatif, on parcourt la liste à l’envers
 
-exemple :
+exemples :
 ```
 
 print(liste[::2]) # prendre un élément sur deux [0, 2, 4, 6, 8, 10]
@@ -187,6 +185,13 @@ Crée une liste `nombres = [4, 7, 2, 9, 5]`.
 Écris un programme qui calcule **la somme des éléments** sans utiliser la fonction `sum()`.  
 Utilise une boucle pour accumuler les valeurs dans une variable.
 
+Correction : 
+```Python
+somme = 0
+for elt in nombres :
+    somme = somme + elt
+```
+
 ---
 
 ### Recherche du plus grand élément
@@ -194,11 +199,29 @@ Crée une liste `notes = [10, 13, 7, 15, 9, 18]`.
 Écris un programme qui trouve **la plus grande note** sans utiliser `max()`.  
 Le programme doit comparer les éléments un à un et conserver le plus grand dans une variable.
 
+Correction : 
+```Python
+plus_grande_note = notes[0]
+
+for elt in notes :
+    if elt > plus_grande_note :
+        plus_grande_note = elt
+```
+
 ---
 
 ### Recherche du plus petit élément
 Crée une liste `notes = [10, 13, 7, 15, 9, 18]`.  
 Écris un programme qui trouve **la plus petite note** sans utiliser `min()`.
+
+Correction : 
+```Python
+plus_petite_note = notes[0]
+
+for elt in notes :
+    if elt < plus_petite_note :
+        plus_petite_note = elt
+```
 
 ---
 
@@ -208,6 +231,15 @@ Crée une liste `temperatures` et un entier `seuil`.
 Exemple :  
 Pour `temperatures = [18, 22, 19, 25, 17, 21]` et `seuil = 20`, le programme doit afficher `3`.
 
+Correction : 
+```Python
+compteur = 0
+
+for elt in temperatures :
+    if elt > seuil :
+        compteur = compteur + 1
+```
+
 ---
 
 ### Recherche d’un élément
@@ -215,6 +247,17 @@ Crée une liste de chaînes `mots`.
 Demande à l’utilisateur de saisir un mot.  
 Sans utiliser `in`, vérifie **toi-même** si le mot se trouve dans la liste.  
 Affiche un message indiquant s’il est présent ou non.
+
+Correction : 
+```Python
+mots = ["Alain", "Bob", "Chris"]
+mot = input("Entrez un mot à rechercher : ")
+present = False
+
+for elt in mots :
+    if elt == mot :
+        present = True
+```
 
 ---
 
