@@ -118,16 +118,16 @@ print(m)
 
 ------------------------------------------------------------------------
 
-# Exercices
+## Exercices
 
-## 1. Accès et ajout
+### 1. Accès et ajout
 
 Créer un dictionnaire `eleve = {"nom": "Lena", "classe": "1ère"}`  
 Ajouter une clé `"age"` avec la valeur 16.
 
 ------------------------------------------------------------------------
 
-## 2. Mise à jour
+### 2. Mise à jour
 
 Créer un dictionnaire représentant un produit :  
 `produit = {"nom": "Stylo", "prix": 2.5}`  
@@ -135,28 +135,28 @@ Augmenter le prix de 10%.
 
 ------------------------------------------------------------------------
 
-## 3. Comptage
+### 3. Comptage
 
 Créer un dictionnaire `scores` avec plusieurs joueurs.  
 Écrire un programme qui affiche le nombre total de points.
 
 ------------------------------------------------------------------------
 
-## 4. Recherche d'une clé (sans `in`)
+### 4. Recherche d'une clé (sans `in`)
 
 Demander un nom à l'utilisateur.  
 Vérifier manuellement s'il existe dans le dictionnaire des notes.
 
 ------------------------------------------------------------------------
 
-## 5. Trouver la valeur max/min
+### 5. Trouver la valeur max/min
 
 Sans `max()` ni `min()`, trouver la plus grande et la plus petite valeur
 d'un dictionnaire numérique.
 
 ------------------------------------------------------------------------
 
-## 6. Inversion clé/valeur
+### 6. Inversion clé/valeur
 
 Créer un dictionnaire puis construire un **nouveau dictionnaire** où les
 clés deviennent les valeurs et inversement.  
@@ -164,26 +164,26 @@ clés deviennent les valeurs et inversement.
 
 ------------------------------------------------------------------------
 
-## 7. Fusion manuelle
+### 7. Fusion manuelle
 
 Fusionner deux dictionnaires **sans utiliser l'opérateur `|`**.
 
 ------------------------------------------------------------------------
 
-## 8. Filtrer un dictionnaire
+### 8. Filtrer un dictionnaire
 
 Créer un dictionnaire de températures par ville.  
 Écrire un programme qui construit un nouveau dictionnaire ne contenant que les villes dont la température est \> 20 à partir du premier dictionnaire.
 
 ------------------------------------------------------------------------
 
-## 9. Comptage de valeurs
+### 9. Comptage de valeurs
 
 Compter combien de valeurs d'un dictionnaire sont paires / impaires.
 
 ------------------------------------------------------------------------
 
-## 10. Final
+### 10. Final
 
 Créer un dictionnaire vide.  
 
@@ -196,7 +196,7 @@ Entrer `stop` → afficher le dictionnaire et arrêter.
 
 ------------------------------------------------------------------------
 
-# Dictionnaires imbriqués
+## Dictionnaires imbriqués
 
 Un dictionnaire peut contenir d'autres dictionnaires.
 
@@ -215,25 +215,25 @@ print(classe["eleve1"]["nom"])  # Alice
 
 ------------------------------------------------------------------------
 
-## Exercices dictionnaires imbriqués
+### Exercices dictionnaires imbriqués
 
-### 1. Affichage formaté
+#### 1. Affichage formaté
 
 Créer un dictionnaire de personnes et afficher leurs informations ligne
 par ligne.
 
-### 2. Somme sur dictionnaire 2D
+#### 2. Somme sur dictionnaire 2D
 
 Calculer la somme de tous les âges.
 
-### 3. Recherche
+#### 3. Recherche
 
 Demander un nom et vérifier s'il est dans l'un des sous-dictionnaires.
 
-### 4. Max/min
+#### 4. Max/min
 
 Trouver la personne la plus âgée.
 
-### 5. Transformation
+#### 5. Transformation
 
 Créer un nouveau dictionnaire ne contenant que les noms.
