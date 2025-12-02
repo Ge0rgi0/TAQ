@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Types construits (dictionnaires) - TAQ</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Types construits (dictionnaires)";
+        var mkdocs_page_input_path = "Premieres/Chapitres/Dictionnaires.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_int/">Types de base (entiers)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_float/">Types de base (flottants)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_bool/">Types de base (booléens)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_str/">Types de base (chaînes de caractéres)</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../Tuples.md">Types construits (tuples)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Tableaux/">Types construits (tableaux)</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Types construits (dictionnaires)</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#quest-ce-quun-dictionnaire">Qu'est-ce qu'un dictionnaire ?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creer-et-modifier-un-dictionnaire">Créer et modifier un dictionnaire</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#creation">Création</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ajouter-une-cle">Ajouter une clé</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#modifier-une-valeur">Modifier une valeur</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#supprimer-une-cle">Supprimer une clé</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#verifier-la-presence-dune-cle">Vérifier la présence d'une clé</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#longueur">Longueur</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#parcourir-un-dictionnaire">Parcourir un dictionnaire</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parcourir-les-cles">Parcourir les clés</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parcourir-les-valeurs">Parcourir les valeurs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parcourir-cles-valeurs">Parcourir clés + valeurs</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemple-dutilisation">Exemple d'utilisation</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/BDD/">Base de données</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Premières</li>
+      <li class="breadcrumb-item active">Types construits (dictionnaires)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="les-dictionnaires">Les Dictionnaires</h1>
+<h2 id="quest-ce-quun-dictionnaire">Qu'est-ce qu'un dictionnaire ?</h2>
+<p>Un <strong>dictionnaire</strong> est une structure de données permettant d'associer des <strong>clés</strong> à des <strong>valeurs</strong>.<br />
+Contrairement aux listes, où on accède aux éléments par un indice, ici on accède par une clé.</p>
+<p>Exemple :</p>
+<pre><code class="language-python">notes = {&quot;Alice&quot;: 15, &quot;Bob&quot;: 12, &quot;Claire&quot;: 18}
+
+print(notes[&quot;Bob&quot;])    # affiche 12
+print(notes[&quot;Claire&quot;]) # affiche 18
+</code></pre>
+<p>Les accolades <code>{}</code> permettent de définir un dictionnaire.<br />
+<em>Les clés doivent être uniques et immuables</em> (entiers, flottants, chaînes, booléens, tuples, par exemples).</p>
+<hr />
+<h2 id="creer-et-modifier-un-dictionnaire">Créer et modifier un dictionnaire</h2>
+<h3 id="creation">Création</h3>
+<pre><code class="language-python">personne = {&quot;nom&quot;: &quot;Dupont&quot;, &quot;age&quot;: 30}
+</code></pre>
+<h3 id="ajouter-une-cle">Ajouter une clé</h3>
+<pre><code class="language-python">personne[&quot;ville&quot;] = &quot;Paris&quot;
+</code></pre>
+<h3 id="modifier-une-valeur">Modifier une valeur</h3>
+<pre><code class="language-python">personne[&quot;age&quot;] = 31
+</code></pre>
+<h3 id="supprimer-une-cle">Supprimer une clé</h3>
+<pre><code class="language-python">del personne[&quot;ville&quot;]
+</code></pre>
+<h3 id="verifier-la-presence-dune-cle">Vérifier la présence d'une clé</h3>
+<pre><code class="language-python">print(&quot;nom&quot; in personne)  # True
+print(&quot;adresse&quot; in personne)  # False
+</code></pre>
+<h3 id="longueur">Longueur</h3>
+<pre><code class="language-python">print(len(personne))  # nombre de paires clé/valeur
+</code></pre>
+<hr />
+<h2 id="parcourir-un-dictionnaire">Parcourir un dictionnaire</h2>
+<h3 id="parcourir-les-cles">Parcourir les clés</h3>
+<pre><code class="language-python">for cle in personne:
+    print(cle)
+</code></pre>
+<p>ou bien</p>
+<pre><code class="language-python">for cle in personne.keys():
+    print(cle)
+</code></pre>
+<p><em>la methode <code>keys()</code> renvoit la liste des clés du dictionnaires</em>
+<em><code>personne.keys()</code> renvoit <code>["nom", "age"]</code></em></p>
+<h3 id="parcourir-les-valeurs">Parcourir les valeurs</h3>
+<pre><code class="language-python">for valeur in personne.values():
+    print(valeur)
+</code></pre>
+<p><em>la methode <code>values()</code> renvoit la liste des valeurs du dictionnaires</em>
+<em><code>personne.values()</code> renvoit <code>["Dupont", 30]</code></em></p>
+<h3 id="parcourir-cles-valeurs">Parcourir clés + valeurs</h3>
+<pre><code class="language-python">for cle, valeur in personne.items():
+    print(cle, &quot;:&quot;, valeur)
+</code></pre>
+<p><em>la methode <code>items()</code> renvoit la liste couples (clé, valeur) du dictionnaires</em>
+<em><code>personne.items()</code> renvoit <code>[("nom", "Dupont"), ("age", 30)]</code></em></p>
+<hr />
+<h2 id="exemple-dutilisation">Exemple d'utilisation</h2>
+<pre><code class="language-python">notes = {&quot;Alice&quot;: 10, &quot;Bob&quot;: 15, &quot;Claire&quot;: 12}
+
+somme = 0
+for n in notes.values():
+    somme += n
+
+m = somme / len(notes)
+print(m)
+</code></pre>
+<p><em>Que fait ce programme ?</em></p>
+<hr />
+<h1 id="exercices">Exercices</h1>
+<h2 id="1-acces-et-ajout">1. Accès et ajout</h2>
+<p>Créer un dictionnaire <code>eleve = {"nom": "Lena", "classe": "1ère"}</code><br />
+Ajouter une clé <code>"age"</code> avec la valeur 16.</p>
+<hr />
+<h2 id="2-mise-a-jour">2. Mise à jour</h2>
+<p>Créer un dictionnaire représentant un produit :<br />
+<code>produit = {"nom": "Stylo", "prix": 2.5}</code><br />
+Augmenter le prix de 10%.</p>
+<hr />
+<h2 id="3-comptage">3. Comptage</h2>
+<p>Créer un dictionnaire <code>scores</code> avec plusieurs joueurs.<br />
+Écrire un programme qui affiche le nombre total de points.</p>
+<hr />
+<h2 id="4-recherche-dune-cle-sans-in">4. Recherche d'une clé (sans <code>in</code>)</h2>
+<p>Demander un nom à l'utilisateur.<br />
+Vérifier manuellement s'il existe dans le dictionnaire des notes.</p>
+<hr />
+<h2 id="5-trouver-la-valeur-maxmin">5. Trouver la valeur max/min</h2>
+<p>Sans <code>max()</code> ni <code>min()</code>, trouver la plus grande et la plus petite valeur
+d'un dictionnaire numérique.</p>
+<hr />
+<h2 id="6-inversion-clevaleur">6. Inversion clé/valeur</h2>
+<p>Créer un dictionnaire puis construire un <strong>nouveau dictionnaire</strong> où les
+clés deviennent les valeurs et inversement.<br />
+( ! Les valeurs doivent être uniques. ! )</p>
+<hr />
+<h2 id="7-fusion-manuelle">7. Fusion manuelle</h2>
+<p>Fusionner deux dictionnaires <strong>sans utiliser l'opérateur <code>|</code></strong>.</p>
+<hr />
+<h2 id="8-filtrer-un-dictionnaire">8. Filtrer un dictionnaire</h2>
+<p>Créer un dictionnaire de températures par ville.<br />
+Écrire un programme qui construit un nouveau dictionnaire ne contenant que les villes dont la température est &gt; 20 à partir du premier dictionnaire.</p>
+<hr />
+<h2 id="9-comptage-de-valeurs">9. Comptage de valeurs</h2>
+<p>Compter combien de valeurs d'un dictionnaire sont paires / impaires.</p>
+<hr />
+<h2 id="10-final">10. Final</h2>
+<p>Créer un dictionnaire vide.  </p>
+<p>Tant que l'utilisateur entre une clé :  </p>
+<ul>
+<li>si la clé existe déjà, supprimer sa valeur  </li>
+<li>sinon ajouter une valeur demandée  </li>
+</ul>
+<p>Entrer <code>stop</code> → afficher le dictionnaire et arrêter.</p>
+<hr />
+<h1 id="dictionnaires-imbriques">Dictionnaires imbriqués</h1>
+<p>Un dictionnaire peut contenir d'autres dictionnaires.</p>
+<pre><code class="language-python">classe = {
+    &quot;eleve1&quot;: {&quot;nom&quot;: &quot;Alice&quot;, &quot;age&quot;: 15},
+    &quot;eleve2&quot;: {&quot;nom&quot;: &quot;Bob&quot;, &quot;age&quot;: 16}
+}
+</code></pre>
+<p>Accès :</p>
+<pre><code class="language-python">print(classe[&quot;eleve1&quot;][&quot;nom&quot;])  # Alice
+</code></pre>
+<hr />
+<h2 id="exercices-dictionnaires-imbriques">Exercices dictionnaires imbriqués</h2>
+<h3 id="1-affichage-formate">1. Affichage formaté</h3>
+<p>Créer un dictionnaire de personnes et afficher leurs informations ligne
+par ligne.</p>
+<h3 id="2-somme-sur-dictionnaire-2d">2. Somme sur dictionnaire 2D</h3>
+<p>Calculer la somme de tous les âges.</p>
+<h3 id="3-recherche">3. Recherche</h3>
+<p>Demander un nom et vérifier s'il est dans l'un des sous-dictionnaires.</p>
+<h3 id="4-maxmin">4. Max/min</h3>
+<p>Trouver la personne la plus âgée.</p>
+<h3 id="5-transformation">5. Transformation</h3>
+<p>Créer un nouveau dictionnaire ne contenant que les noms.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Tableaux/" class="btn btn-neutral float-left" title="Types construits (tableaux)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../R%C3%A9seaux/R%C3%A9seaux/" class="btn btn-neutral float-right" title="Réseaux">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Tableaux/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../R%C3%A9seaux/R%C3%A9seaux/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
