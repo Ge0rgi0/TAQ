@@ -315,7 +315,6 @@ print(m)
 <li>debut correspond à l'indice du premier élément que l'on veut prendre (si on le l'indique pas, on commencera à l'indice 0)</li>
 <li>fin correspond à l'indice du premier élément que l'on ne veut peux plus (si on ne l'indique pas, on ira juqu'au dernier indice)</li>
 </ul>
-<p><code>liste[1:5]</code> crée une nouvelle liste avec les éléments de <em>liste</em> en partant de l'indice 1 à 4 (inclus).</p>
 <p>exemples :</p>
 <pre><code>
 liste = [0,1,2,3,4,5,6,7,8,9,10]
@@ -334,7 +333,7 @@ ou bien : <code>nom_de_la_liste [::pas]</code> si on ne veut indiquer que le pas
 <li>pas indique de combien on avance dans la liste à chaque étape</li>
 <li>si le pas est négatif, on parcourt la liste à l’envers</li>
 </ul>
-<p>exemple :</p>
+<p>exemples :</p>
 <pre><code>
 print(liste[::2]) # prendre un élément sur deux [0, 2, 4, 6, 8, 10]
 
@@ -363,27 +362,62 @@ print(liste[8:2:-1])  # [8, 7, 6, 5, 4, 3]
 <p>Crée une liste <code>nombres = [4, 7, 2, 9, 5]</code>.<br />
 Écris un programme qui calcule <strong>la somme des éléments</strong> sans utiliser la fonction <code>sum()</code>.<br />
 Utilise une boucle pour accumuler les valeurs dans une variable.</p>
+<p>Correction : </p>
+<pre><code class="language-Python">somme = 0
+for elt in nombres :
+    somme = somme + elt
+</code></pre>
 <hr />
 <h3 id="recherche-du-plus-grand-element">Recherche du plus grand élément</h3>
 <p>Crée une liste <code>notes = [10, 13, 7, 15, 9, 18]</code>.<br />
 Écris un programme qui trouve <strong>la plus grande note</strong> sans utiliser <code>max()</code>.<br />
 Le programme doit comparer les éléments un à un et conserver le plus grand dans une variable.</p>
+<p>Correction : </p>
+<pre><code class="language-Python">plus_grande_note = notes[0]
+
+for elt in notes :
+    if elt &gt; plus_grande_note :
+        plus_grande_note = elt
+</code></pre>
 <hr />
 <h3 id="recherche-du-plus-petit-element">Recherche du plus petit élément</h3>
 <p>Crée une liste <code>notes = [10, 13, 7, 15, 9, 18]</code>.<br />
 Écris un programme qui trouve <strong>la plus petite note</strong> sans utiliser <code>min()</code>.</p>
+<p>Correction : </p>
+<pre><code class="language-Python">plus_petite_note = notes[0]
+
+for elt in notes :
+    if elt &lt; plus_petite_note :
+        plus_petite_note = elt
+</code></pre>
 <hr />
 <h3 id="compter-les-valeurs-superieures-a-un-seuil">Compter les valeurs supérieures à un seuil</h3>
 <p>Crée une liste <code>temperatures</code> et un entier <code>seuil</code>.<br />
 Écris un programme qui compte <strong>combien de valeurs</strong> dans la liste sont <strong>strictement supérieures</strong> à ce seuil.<br />
 Exemple :<br />
 Pour <code>temperatures = [18, 22, 19, 25, 17, 21]</code> et <code>seuil = 20</code>, le programme doit afficher <code>3</code>.</p>
+<p>Correction : </p>
+<pre><code class="language-Python">compteur = 0
+
+for elt in temperatures :
+    if elt &gt; seuil :
+        compteur = compteur + 1
+</code></pre>
 <hr />
 <h3 id="recherche-dun-element">Recherche d’un élément</h3>
 <p>Crée une liste de chaînes <code>mots</code>.<br />
 Demande à l’utilisateur de saisir un mot.<br />
 Sans utiliser <code>in</code>, vérifie <strong>toi-même</strong> si le mot se trouve dans la liste.<br />
 Affiche un message indiquant s’il est présent ou non.</p>
+<p>Correction : </p>
+<pre><code class="language-Python">mots = [&quot;Alain&quot;, &quot;Bob&quot;, &quot;Chris&quot;]
+mot = input(&quot;Entrez un mot à rechercher : &quot;)
+present = False
+
+for elt in mots :
+    if elt == mot :
+        present = True
+</code></pre>
 <hr />
 <h3 id="inversion-manuelle-dun-tableau">Inversion manuelle d’un tableau</h3>
 <p>Crée une liste <code>valeurs = [1, 2, 3, 4, 5]</code>.<br />

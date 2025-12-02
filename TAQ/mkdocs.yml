@@ -14,7 +14,9 @@ nav:
           - Types de base (flottants): Premieres/Chapitres/Types_de_base_float.md
           - Types de base (booléens): Premieres/Chapitres/Types_de_base_bool.md
           - Types de base (chaînes de caractéres): Premieres/Chapitres/Types_de_base_str.md
+          - Types construits (tuples): Premieres/Chapitres/Tuples.md
           - Types construits (tableaux): Premieres/Chapitres/Tableaux.md
+          - Types construits (dictionnaires): Premieres/Chapitres/Dictionnaires.md
           - Réseaux: Premieres/Chapitres/Réseaux/Réseaux.md
       - Terminales:
           - Accueil: Terminales/Terminales.md
