@@ -15,3 +15,7 @@
 - [🟦 5 - Types construits : Tableaux](Chapitres/Tableaux.md)
 - [🟦 5 - Types construits : Dictionnaires](Chapitres/Dictionnaires.md)
 - [🟩 6 - Réseaux](Chapitres/Réseaux/Réseaux.md)
+
+## Projets
+
+- [🟥 Puissance 4](https://kxs.fr/cours/projets/puissance-4)
