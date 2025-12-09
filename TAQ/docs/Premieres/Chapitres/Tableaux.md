@@ -24,8 +24,16 @@ fruits = ["pomme", "banane", "cerise"]
 ```
 
 ### Ajout d’un élément
+
+**à la fin**
 ```python
 fruits.append("orange")
+```
+
+**à l'indice choisi**
+
+```python
+fruits.insert(-1,"kiwi")
 ```
 
 |Avant|Après|
@@ -33,9 +41,26 @@ fruits.append("orange")
 |["pomme", "banane", "cerise"]|["pomme", "banane", "cerise", <span style="color:green">"orange"</span>]|
 
 ### Suppression d’un élément
+
+**par valeur**
+
 ```python
 fruits.remove("banane")
 ```
+
+**par indice**
+
+```python
+fruits.pop(1)
+```
+
+La fonction pop renvoie la valeur supprimer, nous pouvons donc l'utiliser après sa supression grâce à une variable.
+
+```python
+a = fruits.pop(1)
+print(a) #affiche "banane"
+```
+
 |Avant|Après|
 |-|-|
 |["pomme", <span style="color:red">"banane"</span>, "cerise","orange"]|["pomme", "cerise","orange"]|

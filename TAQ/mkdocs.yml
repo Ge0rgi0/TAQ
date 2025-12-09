@@ -21,6 +21,7 @@ nav:
       - Terminales:
           - Accueil: Terminales/Terminales.md
           - Programmation Orientée Objet: Terminales/Chapitres/POO.md
+          - Piles et Files: Terminales/Chapitres/Piles&Files/Piles&Files.md
           - Base de données: Terminales/Chapitres/BDD.md
 
 
