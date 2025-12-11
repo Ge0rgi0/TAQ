@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Piles et Files - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Piles et Files";
+        var mkdocs_page_input_path = "Terminales/Chapitres/Piles\u0026Files/Piles\u0026Files.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Types_de_base_int/">Types de base (entiers)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Types_de_base_float/">Types de base (flottants)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Types_de_base_bool/">Types de base (booléens)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Types_de_base_str/">Types de base (chaînes de caractéres)</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../../Premieres/Chapitres/Tuples.md">Types construits (tuples)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Tableaux/">Types construits (tableaux)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Dictionnaires/">Types construits (dictionnaires)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Terminales</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Piles et Files</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#la-pile">La pile</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#la-file">La file</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#vers-la-programmation-orientee-objet-poo">Vers la Programmation Orientée Objet (POO)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#creer-ses-propres-objets-classes-pile-et-file">Créer ses propres objets : classes Pile et File</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../BDD/">Base de données</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Terminales</li>
+      <li class="breadcrumb-item active">Piles et Files</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="piles-et-files">Piles et Files</h1>
+<p>Les structures de données permettent d'organiser, de stocker et de manipuler des informations efficacement.</p>
+<p>Dans ce chapitre, nous étudions deux structures fondamentales :</p>
+<ul>
+<li>Pile (stack) : structure LIFO (Last In, First Out).</li>
+<li>File (queue) : structure FIFO (First In, First Out).</li>
+</ul>
+<h2 id="la-pile">La pile</h2>
+<p>Une <strong>pile (stack)</strong> est une collection d'élément (comme les tuples ou les listes) qui suit le principe suivant: <strong>LIFO -- Last In, First Out</strong>.<br />
+C'est-à-dire : le dernier élément ajouté est le premier retiré.</p>
+<p>Exemples :  </p>
+<ul>
+<li>Pile d'assiettes  </li>
+<li>Historique de navigation  </li>
+<li>Appels de fonctions (pile d'exécution)</li>
+</ul>
+<p>Il y a donc deux actions principales qu'elles doient pouvoir effectuer :  </p>
+<ul>
+<li>empiler : ajouter un élement à la fin  </li>
+<li>dépiler : enlever le dernier élément  </li>
+</ul>
+<p><img alt="" src="../Pile.png" /></p>
+<p><span style="color:red">Exercices papier</span>  </p>
+<p>Pour tous les exercices on considérera que le sommet de la pile se trouve à la fin de la liste.</p>
+<p><strong>Trace d'execution</strong></p>
+<p>On part d’une pile vide. On effectue les opérations suivantes :</p>
+<ul>
+<li>empiler(3)</li>
+<li>empiler(7)</li>
+<li>depiler()</li>
+<li>empiler(4)</li>
+<li>empiler(9)</li>
+<li>depiler()</li>
+<li>depiler()</li>
+</ul>
+<p>Questions :</p>
+<ul>
+<li>Donner le contenu de la pile après chaque opération.</li>
+<li>Quelle valeur a été retirée à l’étape 3 ?</li>
+<li>Quelle est la valeur au sommet de la pile à la fin ?</li>
+<li>Combien d’éléments contient la pile à la fin ?</li>
+</ul>
+<p><strong>Reconstitution</strong></p>
+<p>On sait qu’après une suite d'opérations, la pile contient : [ 4, 12, 7 ].<br />
+Et il est indiqué que 5 valeurs ont été empilées au total et 2 dépilées.  </p>
+<p>Proposer une suite possible d’opérations <code>empiler()</code> et <code>depiler()</code> qui produit ce résultat.</p>
+<p><span style="color:red">Exercices python</span></p>
+<p>On souhaite représenter une pile en Python en utilisant une liste vide au départ.
+Écrire les fonctions permettant de manipuler cette pile.</p>
+<ul>
+<li>Écrire une fonction qui renvoie une nouvelle pile vide (une liste vide).</li>
+<li>Écrire une fonction qui renvoie True si la pile est vide, sinon False.</li>
+<li>Écrire une fonction qui empile un élément.</li>
+<li>Écrire une fonction qui dépile un élément avant de le renvoyer (renvoie None si la pile est vide).</li>
+</ul>
+<h2 id="la-file">La file</h2>
+<p>Une <strong>file (queue)</strong> est une collection d’éléments (comme les tuples ou les listes) qui suit le principe suivant : <strong>FIFO — First In, First Out</strong>.<br />
+C’est-à-dire : le premier élément ajouté est le premier retiré.</p>
+<p>Exemples :</p>
+<ul>
+<li>File d'attente à la caisse  </li>
+<li>File d’impression  </li>
+<li>Gestion des tâches dans un système d'exploitation  </li>
+</ul>
+<p>Il y a donc deux actions principales qu’elle doit pouvoir effectuer :</p>
+<ul>
+<li>insérer : ajouter un élément à la fin  </li>
+<li>retirer : enlever l’élément au début  </li>
+</ul>
+<p><img alt="" src="../File.png" /></p>
+<p><span style="color:red">Exercices papier</span></p>
+<p>Pour tous les exercices on considérera que la fin de la file se trouve à la fin de la liste.</p>
+<p><strong>Trace d'exécution</strong></p>
+<p>On part d’une file vide. On effectue les opérations suivantes :</p>
+<ul>
+<li>insérer("A")</li>
+<li>insérer("B")</li>
+<li>insérer("C")</li>
+<li>retirer()</li>
+<li>insérer("D")</li>
+<li>retirer()</li>
+</ul>
+<p>Questions :</p>
+<ul>
+<li>Donner le contenu de la file après chaque opération.  </li>
+<li>Quelle valeur a été retirée à l’étape 4 ?  </li>
+<li>Quel est l’élément en tête de file à la fin ?  </li>
+<li>Combien d’éléments contient la file à la fin ?</li>
+</ul>
+<p><strong>Reconstitution</strong></p>
+<p>On sait qu’après une suite d’opérations, la file contient : [ 10, 15, 3, 8 ].</p>
+<p>On sait aussi que <strong>6 valeurs ont été insérées</strong> au total.</p>
+<p>Proposer une suite possible d’opérations <code>insérer()</code> et <code>retirer()</code> qui produit ce résultat.</p>
+<p><span style="color:red">Exercices python</span></p>
+<p>On souhaite représenter une file en Python en utilisant une liste vide au départ.<br />
+Écrire les fonctions permettant de manipuler cette file.</p>
+<ul>
+<li>Écrire une fonction qui renvoie une nouvelle file vide (une liste vide).  </li>
+<li>Écrire une fonction qui renvoie True si la file est vide, sinon False.  </li>
+<li>Écrire une fonction qui insére un élément.  </li>
+<li>Écrire une fonction qui retire un élément avant de le renvoyer (renvoie None si la file est vide).</li>
+</ul>
+<h2 id="vers-la-programmation-orientee-objet-poo">Vers la Programmation Orientée Objet (POO)</h2>
+<p>Jusqu’ici, nous avons manipulé les piles et les files en Python à l’aide de <strong>listes</strong> et de <strong>fonctions séparées</strong>.<br />
+Cela fonctionne, mais présente quelques limites :</p>
+<ul>
+<li>Si l’on utilise plusieurs piles ou plusieurs files, il faut bien choisir la bonne liste.  </li>
+<li>N’importe qui peut modifier directement la liste, ce qui peut « casser » la structure.  </li>
+<li>Les fonctions ne sont pas rattachées à la structure qu'elles manipulent.</li>
+</ul>
+<p>Pour résoudre ces problèmes, nous devons regrouper <strong>les données</strong> et <strong>les fonctions qui agissent sur ces données</strong>. Ça tombe bien, c'est justement ce que nous permet de faire la <strong>programmation orientée objet</strong>.</p>
+<h3 id="creer-ses-propres-objets-classes-pile-et-file">Créer ses propres objets : classes Pile et File</h3>
+<p>Nous allons créer deux classes :</p>
+<ul>
+<li><code>Pile</code></li>
+<li><code>File</code></li>
+</ul>
+<p>Chaque classe devra contenir :</p>
+<ul>
+<li><strong>un attribut</strong> : la liste interne (privée)  </li>
+<li><strong>des méthodes</strong> : opérations sur la structure</li>
+</ul>
+<p>Nous donnons ci-dessous uniquement <strong>les noms des méthodes et des attributs nécessaires</strong>.</p>
+<p>Pour bien commencer, voici le squelette de la classe <code>Pile</code> à compléter.</p>
+<pre><code class="language-python">class Pile:
+    def __init__(self):
+        pass
+
+    def __len__(self):
+        &quot;&quot;&quot;Renvoie la longueur de la pile.&quot;&quot;&quot;
+        pass
+
+    def __str__(self):
+        &quot;&quot;&quot;Renvoie ce que doit affiche le compilateur quand on appelle la fonction print() sur l'objet&quot;&quot;&quot;
+        return str(self.t)
+
+    def est_vide(self):
+        &quot;&quot;&quot;Renvoie True si la pile est vide.&quot;&quot;&quot;
+        pass
+__
+    def empiler(self, element):
+        &quot;&quot;&quot;Ajoute element au sommet de la pile.&quot;&quot;&quot;
+        pass
+
+    def depiler(self):
+        &quot;&quot;&quot;Retire et renvoie l'élément au sommet.
+           Renvoie None si la pile est vide.&quot;&quot;&quot;
+        pass
+
+    def sommet(self):
+        &quot;&quot;&quot;Renvoie l'élément au sommet sans le retirer.
+           Renvoie None si la pile est vide.&quot;&quot;&quot;
+        pass
+</code></pre>
+<p>Faisons la même chose pour la classe <code>File</code> et testons les.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../POO/" class="btn btn-neutral float-left" title="Programmation Orientée Objet"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../BDD/" class="btn btn-neutral float-right" title="Base de données">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../POO/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../BDD/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

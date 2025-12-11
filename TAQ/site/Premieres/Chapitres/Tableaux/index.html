@@ -171,6 +171,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/BDD/">Base de données</a>
                 </li>
     </ul>
@@ -217,7 +219,11 @@ Chaque élément peut être de n’importe quel type (entier, flottant, chaîne,
 <pre><code class="language-python">fruits = [&quot;pomme&quot;, &quot;banane&quot;, &quot;cerise&quot;]
 </code></pre>
 <h3 id="ajout-dun-element">Ajout d’un élément</h3>
+<p><strong>à la fin</strong></p>
 <pre><code class="language-python">fruits.append(&quot;orange&quot;)
+</code></pre>
+<p><strong>à l'indice choisi</strong></p>
+<pre><code class="language-python">fruits.insert(-1,&quot;kiwi&quot;)
 </code></pre>
 <table>
 <thead>
@@ -234,7 +240,15 @@ Chaque élément peut être de n’importe quel type (entier, flottant, chaîne,
 </tbody>
 </table>
 <h3 id="suppression-dun-element">Suppression d’un élément</h3>
+<p><strong>par valeur</strong></p>
 <pre><code class="language-python">fruits.remove(&quot;banane&quot;)
+</code></pre>
+<p><strong>par indice</strong></p>
+<pre><code class="language-python">fruits.pop(1)
+</code></pre>
+<p>La fonction pop renvoie la valeur supprimer, nous pouvons donc l'utiliser après sa supression grâce à une variable.</p>
+<pre><code class="language-python">a = fruits.pop(1)
+print(a) #affiche &quot;banane&quot;
 </code></pre>
 <table>
 <thead>
