@@ -1,8 +1,8 @@
-# Les Tableaux
+# Les Listes
 
-## Qu’est-ce qu’un tableau ?
+## Qu’est-ce qu’un Liste ?
 
-Un tableau (ou **liste** en Python) est une structure de données qui permet de stocker plusieurs valeurs dans une seule variable.  
+Une liste est une structure de données qui permet de stocker plusieurs valeurs dans une seule variable.  
 On peut y accéder grâce à des **indices** commençant à 0.
 
 ```python
@@ -16,7 +16,7 @@ Chaque élément peut être de n’importe quel type (entier, flottant, chaîne,
 
 ---
 
-## Créer et modifier un tableau
+## Créer et modifier une liste
 
 ### Création
 ```python
@@ -74,7 +74,7 @@ fruits[0] = "kiwi"
 |-|-|
 |[<span style="color:red">"pomme"</span>, "cerise","orange"]|[<span style="color:green">"kiwi"</span>, "cerise","orange"]|
 
-### Taille du tableau
+### Taille d'une liste
 ```python
 print(len(fruits))  # nombre d'éléments
 ```
@@ -95,7 +95,7 @@ c = a + b #[1,2,3,7]
 
 ---
 
-## Parcourir un tableau
+## Parcourir une liste
 
 ### Avec une boucle `for`
 ```python
@@ -199,7 +199,7 @@ Python autorise les listes contenant plusieurs types de données, même si cela 
 melange = [12, "bonjour", 3.14, True]
 ```
 
-Il est préférable d’utiliser des tableaux homogènes (tous les éléments du même type).
+Il est préférable d’utiliser des listes homogènes (tous les éléments du même type).
 
 ---
 
@@ -286,7 +286,7 @@ for elt in mots :
 
 ---
 
-### Inversion manuelle d’un tableau
+### Inversion manuelle d’un Liste
 Crée une liste `valeurs = [1, 2, 3, 4, 5]`.  
 Écris un programme qui construit **une nouvelle liste contenant les mêmes éléments dans l’ordre inverse**, sans utiliser `reverse()` ni la syntaxe `[::-1]`.  
 Utilise une boucle.
@@ -369,7 +369,7 @@ Crée une liste vide. Tant que l'utilisateur rentre des valeurs, on les ajouter 
 ## Liste à deux dimensions (Matrices)
 
 En Python, une liste peut contenir d’autres listes.
-On parle alors de tableau à deux dimensions, ou matrice.
+On parle alors de Liste à deux dimensions, ou matrice.
 
 ```Python
 matrice = [
@@ -408,7 +408,7 @@ Créer une matrice 3×3 et l’afficher sous forme de grille :
 
 ---
 
-### Recherche dans un tableau 2D
+### Recherche dans un Liste 2D
 
 Demander un nombre à l’utilisateur et vérifier s’il est présent dans la matrice (sans utiliser `in`).
 
@@ -441,7 +441,7 @@ Elles permettent :
 
 - de transformer les valeurs
 - de filtrer certaines valeurs
-- de créer directement des tableaux 2D
+- de créer directement des Listes 2D
 
 Elles remplacent souvent une boucle simple.
 
