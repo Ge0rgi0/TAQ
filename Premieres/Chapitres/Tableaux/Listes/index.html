@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Les Tableaux - TAQ</title>
+    <title>Types construits (listes) - TAQ</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Les Tableaux";
+        var mkdocs_page_name = "Types construits (listes)";
         var mkdocs_page_input_path = "Premieres/Chapitres/Tableaux/Listes.md";
         var mkdocs_page_url = null;
       </script>
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Cours</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" >Secondes</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
@@ -57,8 +57,8 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
-    <ul>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
+    <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/">Accueil</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base_int/">Types de base (entiers)</a>
@@ -71,7 +71,93 @@
                 </li>
                 <li class="toctree-l2"><a class="" href="../Tuples.md">Types construits (tuples)</a>
                 </li>
-                <li class="toctree-l2"><a class="" href="../Tableaux.md">Types construits (tableaux)</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Types construits (listes)</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#quest-ce-quun-liste">Qu’est-ce qu’un Liste ?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creer-et-modifier-une-liste">Créer et modifier une liste</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#creation">Création</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ajout-dun-element">Ajout d’un élément</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#suppression-dun-element">Suppression d’un élément</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#modification-dun-element">Modification d’un élément</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#taille-dune-liste">Taille d'une liste</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#presence-dun-element">Présence d'un élément</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#concatenation">Concaténation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#parcourir-une-liste">Parcourir une liste</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#avec-une-boucle-for">Avec une boucle for</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#avec-les-indices">Avec les indices</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exemple-dutilisation">Exemple d'utilisation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#les-tranches">Les tranches</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#listes-et-types-melanges">Listes et types mélangés</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercices">Exercices</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#somme-manuelle">Somme manuelle</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#recherche-du-plus-grand-element">Recherche du plus grand élément</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#recherche-du-plus-petit-element">Recherche du plus petit élément</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#compter-les-valeurs-superieures-a-un-seuil">Compter les valeurs supérieures à un seuil</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#recherche-dun-element">Recherche d’un élément</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#inversion-manuelle-dun-liste">Inversion manuelle d’un Liste</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ecart-maximal">Écart maximal</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#suppression-dun-element-par-valeur">Suppression d’un élément par valeur</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#decalage-a-gauche">Décalage à gauche</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fusion-manuelle">Fusion manuelle</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#verifier-si-la-liste-est-triee">Vérifier si la liste est triée</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#doubles-consecutifs">Doubles consécutifs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#comptage-delements-pairs-et-impairs">Comptage d’éléments pairs et impairs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#comparaison-de-listes">Comparaison de listes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#final">Final</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#liste-a-deux-dimensions-matrices">Liste à deux dimensions (Matrices)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#affichage-formate">Affichage formaté</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#somme-des-elements">Somme des éléments</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#recherche-dans-un-liste-2d">Recherche dans un Liste 2D</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#maximum-et-minimum">Maximum et minimum</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#transposer-une-matrice">Transposer une matrice</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#listes-par-comprehension">Listes par compréhension</a>
+    </li>
+    </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../Dictionnaires/">Types construits (dictionnaires)</a>
                 </li>
@@ -106,7 +192,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Les Tableaux</li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Premières</li>
+      <li class="breadcrumb-item active">Types construits (listes)</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -115,9 +203,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="les-tableaux">Les Tableaux</h1>
-<h2 id="quest-ce-quun-tableau">Qu’est-ce qu’un tableau ?</h2>
-<p>Un tableau (ou <strong>liste</strong> en Python) est une structure de données qui permet de stocker plusieurs valeurs dans une seule variable.<br />
+                <h1 id="les-listes">Les Listes</h1>
+<h2 id="quest-ce-quun-liste">Qu’est-ce qu’un Liste ?</h2>
+<p>Une liste est une structure de données qui permet de stocker plusieurs valeurs dans une seule variable.<br />
 On peut y accéder grâce à des <strong>indices</strong> commençant à 0.</p>
 <pre><code class="language-python">notes = [12, 15, 9, 18]
 print(notes[0])  # affiche 12
@@ -126,7 +214,7 @@ print(notes[3])  # affiche 18
 <p>Les crochets <code>[]</code> servent à définir une liste.<br />
 Chaque élément peut être de n’importe quel type (entier, flottant, chaîne, booléen, etc.).</p>
 <hr />
-<h2 id="creer-et-modifier-un-tableau">Créer et modifier un tableau</h2>
+<h2 id="creer-et-modifier-une-liste">Créer et modifier une liste</h2>
 <h3 id="creation">Création</h3>
 <pre><code class="language-python">fruits = [&quot;pomme&quot;, &quot;banane&quot;, &quot;cerise&quot;]
 </code></pre>
@@ -193,7 +281,7 @@ print(a) #affiche &quot;banane&quot;
 </tr>
 </tbody>
 </table>
-<h3 id="taille-du-tableau">Taille du tableau</h3>
+<h3 id="taille-dune-liste">Taille d'une liste</h3>
 <pre><code class="language-python">print(len(fruits))  # nombre d'éléments
 </code></pre>
 <h3 id="presence-dun-element">Présence d'un élément</h3>
@@ -207,7 +295,7 @@ b = [3,7]
 c = a + b #[1,2,3,7]
 </code></pre>
 <hr />
-<h2 id="parcourir-un-tableau">Parcourir un tableau</h2>
+<h2 id="parcourir-une-liste">Parcourir une liste</h2>
 <h3 id="avec-une-boucle-for">Avec une boucle <code>for</code></h3>
 <pre><code class="language-python">for fruit in fruits:
     print(fruit)
@@ -285,7 +373,7 @@ print(liste[8:2:-1])  # [8, 7, 6, 5, 4, 3]
 <p>Python autorise les listes contenant plusieurs types de données, même si cela est rarement conseillé pour des programmes bien structurés.</p>
 <pre><code class="language-python">melange = [12, &quot;bonjour&quot;, 3.14, True]
 </code></pre>
-<p>Il est préférable d’utiliser des tableaux homogènes (tous les éléments du même type).</p>
+<p>Il est préférable d’utiliser des listes homogènes (tous les éléments du même type).</p>
 <hr />
 <h2 id="exercices">Exercices</h2>
 <h3 id="somme-manuelle">Somme manuelle</h3>
@@ -349,7 +437,7 @@ for elt in mots :
         present = True
 </code></pre>
 <hr />
-<h3 id="inversion-manuelle-dun-tableau">Inversion manuelle d’un tableau</h3>
+<h3 id="inversion-manuelle-dun-liste">Inversion manuelle d’un Liste</h3>
 <p>Crée une liste <code>valeurs = [1, 2, 3, 4, 5]</code>.<br />
 Écris un programme qui construit <strong>une nouvelle liste contenant les mêmes éléments dans l’ordre inverse</strong>, sans utiliser <code>reverse()</code> ni la syntaxe <code>[::-1]</code>.<br />
 Utilise une boucle.</p>
@@ -410,7 +498,7 @@ Nombre d’éléments impairs : Y
 <hr />
 <h2 id="liste-a-deux-dimensions-matrices">Liste à deux dimensions (Matrices)</h2>
 <p>En Python, une liste peut contenir d’autres listes.
-On parle alors de tableau à deux dimensions, ou matrice.</p>
+On parle alors de Liste à deux dimensions, ou matrice.</p>
 <pre><code class="language-Python">matrice = [
     [1, 2, 3],   # ligne 0
     [4, 5, 6],   # ligne 1
@@ -435,7 +523,7 @@ On parle alors de tableau à deux dimensions, ou matrice.</p>
 <h3 id="somme-des-elements">Somme des éléments</h3>
 <p>Écris un programme qui affiche la somme de tous les éléments de cette matrice.</p>
 <hr />
-<h3 id="recherche-dans-un-tableau-2d">Recherche dans un tableau 2D</h3>
+<h3 id="recherche-dans-un-liste-2d">Recherche dans un Liste 2D</h3>
 <p>Demander un nombre à l’utilisateur et vérifier s’il est présent dans la matrice (sans utiliser <code>in</code>).</p>
 <hr />
 <h3 id="maximum-et-minimum">Maximum et minimum</h3>
@@ -455,7 +543,7 @@ On parle alors de tableau à deux dimensions, ou matrice.</p>
 <ul>
 <li>de transformer les valeurs</li>
 <li>de filtrer certaines valeurs</li>
-<li>de créer directement des tableaux 2D</li>
+<li>de créer directement des Listes 2D</li>
 </ul>
 <p>Elles remplacent souvent une boucle simple.</p>
 <p><strong>Syntaxe générale</strong></p>
@@ -514,6 +602,10 @@ b = [2, 3]      4 6
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Types/Types_de_base_str/" class="btn btn-neutral float-left" title="Types de base (chaînes de caractéres)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Dictionnaires/" class="btn btn-neutral float-right" title="Types construits (dictionnaires)">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -535,6 +627,10 @@ b = [2, 3]      4 6
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../../Types/Types_de_base_str/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Dictionnaires/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
