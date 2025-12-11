@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Les fonctions Python - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Les fonctions Python";
+        var mkdocs_page_input_path = "Premieres/Chapitres/Bases/fonctions.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../Types_de_base_int.md">Types de base (entiers)</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../Types_de_base_float.md">Types de base (flottants)</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../Types_de_base_bool.md">Types de base (booléens)</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../Types_de_base_str.md">Types de base (chaînes de caractéres)</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../Tuples.md">Types construits (tuples)</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../Tableaux.md">Types construits (tableaux)</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../Dictionnaires.md">Types construits (dictionnaires)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/BDD/">Base de données</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Les fonctions Python</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="les-fonctions-python">Les fonctions Python</h1>
+<p>Une fonction est un bloc de code réutilisable qui réalise une tâche
+précise.  </p>
+<p>Elle permet : </p>
+<ul>
+<li>d'éviter les répétitions, </li>
+<li>de rendre le code plus lisible, </li>
+<li>de structurer un programme en sous‑problèmes.</li>
+</ul>
+<hr />
+<h2 id="definir-et-appeler-une-fonction">Définir et appeler une fonction</h2>
+<p>En Python, on définit une fonction avec le mot clé <code>def</code>. Lors de la définition, le nom de la fonction doit toujours être suivi par des parenthèses.</p>
+<p>Quand une fonction termine son travail, elle peut renvoyer un résultat.<br />
+Ce résultat est appelé valeur de retour et est précédée par le mot clé <code>return</code>.  </p>
+<pre><code class="language-python">def nom_de_la_fonction():
+    # bloc d’instructions
+    return resultat
+</code></pre>
+<p>Une fois définie, on peut l'utiliser autant de fois que nécessaire, on dit que l'on appelle la fonction, pour cela il suffit d'écrire le nom de la fonction (toujours suivi de parenthéses).</p>
+<p>La valeur renvoyée peut alors être utilisée :</p>
+<pre><code class="language-python">print(nom_de_la_fonction())
+</code></pre>
+<p>ou bien stockée dans une variable pour s'en servir plus tard :</p>
+<pre><code class="language-python">variable = nom_de_la_fonction()
+...
+print(variable)
+</code></pre>
+<h3 id="aucune-valeur-de-retour">Aucune valeur de retour</h3>
+<p>Une fonction peut ne rien renvoyer (pas de <code>return</code>).<br />
+Python renvoie alors automatiquement la valeur : <code>None</code>.</p>
+<pre><code class="language-python">def afficher(x):
+    print(x)
+</code></pre>
+<p>Cette fonction affiche un résultat mais ne revoie rien.</p>
+<h3 id="placement-du-return">Placement du return</h3>
+<p>Quand l'instruction <code>return</code> est effectuée l'execution de la fonction s'arrête. Toutes les instructions qui suivent ne seront donc pas exécutée.</p>
+<pre><code class="language-Python">
+def f1():
+  ...
+  return ...
+  # bloc d'instructions jamais exécuté
+
+def f2():
+  ...
+  if ... :
+    ...
+    return ...
+    # bloc d'instructions jamais exécuté
+
+  else :
+    ...
+    return ...
+    # bloc d'instructions jamais exécuté
+
+</code></pre>
+<hr />
+<h2 id="parametres-et-arguments">Paramètres et arguments</h2>
+<p>Lorsqu’on utilise une fonction, on distingue deux notions importantes : les paramètres et les arguments.<br />
+Elles se ressemblent, mais leur rôle est différent.</p>
+<p>Les <strong>paramètres</strong> sont les variables écrites dans la définition de la fonction.
+Alors que les <strong>arguments</strong> sont les valeurs envoyées lors de l'appel.</p>
+<pre><code class="language-python">def addition(a, b):  # a et b sont des paramètres
+    return a + b
+
+print(addition(3, 5))  # 3 et 5 sont des arguments
+</code></pre>
+<p>Dans cette fonction, <code>a</code> prendra la valeur <code>3</code>, et <code>b</code> la valeur <code>5</code>.</p>
+<p><strong>Fonction sans paramètre</strong></p>
+<p>Une fonction ne nécessite pas forcement de paramètre, exemple :</p>
+<pre><code class="language-python">def bonjour():
+    print(&quot;Bonjour !&quot;)
+</code></pre>
+<p><strong>Paramètres par défaut</strong></p>
+<p>On peut donner une valeur par défaut à un paramètre, qui sera utilisée si aucun argument n’est fourni.</p>
+<pre><code class="language-python">def saluer(nom=&quot;élève&quot;):
+    print(&quot;Bonjour&quot;, nom)
+
+saluer()        # Bonjour élève
+saluer(&quot;Alice&quot;) # Bonjour Alice
+
+</code></pre>
+<hr />
+<h2 id="portee-des-variables">Portée des variables</h2>
+<ul>
+<li>Une variable définie <strong>dans</strong> une fonction est <strong>locale</strong>.</li>
+<li>Les variables définies <strong>hors</strong> d'une fonction sont <strong>globales</strong>.</li>
+</ul>
+<p>Une variable globale est accessible dans une fonction (si elle est définie avant l'appel).<br />
+Une variable locale n'est pas accessible en dehors de la définition de la fonction.</p>
+<pre><code class="language-python">x = 10  # variable globale
+
+def f():
+    y = 5  # variable locale
+    print(y)
+
+f()
+print(x)
+</code></pre>
+<hr />
+<h2 id="exemple-complet">Exemple complet</h2>
+<pre><code class="language-python">def moyenne(notes):
+    '''
+    Renvoie la moyenne d’une liste de notes.
+    '''
+    total = sum(notes)
+    return total / len(notes)
+
+eleve = [15, 12, 18]
+print(&quot;Moyenne :&quot;, moyenne(eleve))
+</code></pre>
+<hr />
+<h2 id="exercices-de-decouverte">Exercices de découverte</h2>
+<h3 id="fonction-simple">Fonction simple</h3>
+<p>Écris une fonction <code>salutation()</code> qui affiche <code>Salut !</code><br />
+Appelle-la deux fois.</p>
+<hr />
+<h3 id="fonction-avec-parametre">Fonction avec paramètre</h3>
+<p>Écris une fonction <code>accueil(prenom)</code> qui affiche <code>Salut &lt;prenom&gt; !</code>  </p>
+<hr />
+<h3 id="fonction-avec-parametre-par-defaut">Fonction avec paramètre par défaut</h3>
+<p>Écris une fonction <code>accueil_defaut(prenom="ami")</code><br />
+Teste avec et sans argument.</p>
+<h3 id="carre-dun-nombre">Carré d’un nombre</h3>
+<p>Écris une fonction <code>puissance2(nombre)</code> qui renvoie le carré d’un nombre.  </p>
+<hr />
+<h3 id="somme-de-deux-nombres">Somme de deux nombres</h3>
+<p>Écris une fonction <code>somme(a, b)</code> qui renvoie la somme.  </p>
+<hr />
+<h3 id="moyenne-de-trois-nombres">Moyenne de trois nombres</h3>
+<p>Écris une fonction <code>calcul_moyenne(x, y, z)</code> qui renvoie la moyenne.  </p>
+<hr />
+<h3 id="affichage-multiple">Affichage multiple</h3>
+<p>Écris une fonction <code>repeter_mot(mot, n)</code> qui affiche le mot <code>mot</code> <code>n</code> fois, sans <code>return</code>.</p>
+<h3 id="comparaison">Comparaison</h3>
+<p>Écris une fonction <code>plus_grand(a, b)</code> qui renvoie le plus grand des deux nombres.  </p>
+<hr />
+<h3 id="verifier-si-pair">Vérifier si pair</h3>
+<p>Écris une fonction <code>est_pair(n)</code> qui renvoie <code>True</code> si <code>n</code> est pair, sinon <code>False</code>.  </p>
+<hr />
+<h2 id="exercices-avances">Exercices avancés</h2>
+<h3 id="exercice-1-somme-des-carres">Exercice 1 : Somme des carrés</h3>
+<p>Écris une fonction <code>somme_carres(a, b)</code> qui renvoie la somme des carrés des deux nombres <code>a</code> et <code>b</code>.<br />
+Exemple : <code>somme_carres(3, 4)</code> → <code>25</code>.</p>
+<hr />
+<h3 id="exercice-2-comparaison-chaines">Exercice 2 : Comparaison chaînes</h3>
+<p>Écris une fonction <code>plus_long(s1, s2)</code> qui renvoie la chaîne la plus longue entre <code>s1</code> et <code>s2</code>.<br />
+Si elles sont de même longueur, renvoie <code>"Égal"</code>.</p>
+<hr />
+<h3 id="exercice-3-maximum-de-trois-nombres">Exercice 3 : Maximum de trois nombres</h3>
+<p>Écris une fonction <code>max3(a, b, c)</code> qui renvoie le plus grand des trois nombres <strong>sans utiliser de listes</strong>.  </p>
+<hr />
+<h3 id="exercice-4-conversion-heuresminutes">Exercice 4 : Conversion heures/minutes</h3>
+<p>Écris une fonction <code>convertir_minutes(heures, minutes)</code> qui renvoie le total en minutes.<br />
+Exemple : <code>(2, 30)</code> → <code>150</code>.</p>
+<hr />
+<h3 id="exercice-5-table-de-multiplication">Exercice 5 : Table de multiplication</h3>
+<p>Écris une fonction <code>table(n)</code> qui affiche la table de multiplication de <code>n</code> jusqu’à 10.  </p>
+<hr />
+<h3 id="exercice-6-verifier-palindrome">Exercice 6 : Vérifier palindrome</h3>
+<p>Écris une fonction <code>est_palindrome(s)</code> qui renvoie <code>True</code> si la chaîne <code>s</code> est un palindrome, sinon <code>False</code>.<br />
+Exemple : <code>"radar"</code> → <code>True</code>, <code>"python"</code> → <code>False</code>.</p>
+<hr />
+<h3 id="exercice-7-compter-les-chiffres-dun-nombre">Exercice 7 : Compter les chiffres d’un nombre</h3>
+<p>Écris une fonction <code>nb_chiffres(n)</code> qui renvoie le nombre de chiffres dans un nombre entier positif.<br />
+Exemple : <code>nb_chiffres(12345)</code> → <code>5</code>.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
