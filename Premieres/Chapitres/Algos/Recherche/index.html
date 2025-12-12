@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Algos - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Algos";
+        var mkdocs_page_input_path = "Premieres/Chapitres/Algos/Recherche.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base_int/">Types de base (entiers)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base_float/">Types de base (flottants)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base_bool/">Types de base (booléens)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base_str/">Types de base (chaînes de caractéres)</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../Tableaux/Tuples.md">Types construits (tuples)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/Listes/">Types construits (listes)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/Dictionnaires/">Types construits (dictionnaires)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Bases/fonctions/">Fonctions</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Algos</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#la-recherche-sequentielle">La recherche séquentielle</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#specifier-un-algorithme">Spécifier un algorithme</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#les-types">Les types</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#documentation">Documentation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#correction-de-lalgorithme">Correction de l’algorithme</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#invariant-de-boucle">Invariant de boucle</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#terminaison">Terminaison</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#boucle-for">Boucle for</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#boucle-while">Boucle while</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#complexite">Complexité</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercice">Exercice</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/BDD/">Base de données</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Premières</li>
+      <li class="breadcrumb-item active">Algos</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="notions-algorithmiques">Notions algorithmiques</h1>
+<h2 id="introduction">Introduction</h2>
+<p>L’algorithmique étudie les méthodes permettant de résoudre un problème de manière
+systématique. Un <strong>algorithme</strong> est une suite d’instructions permettant d’obtenir un
+résultat à partir d’entrées données.</p>
+<p>Dans ce chapitre, nous étudions un algorithme classique : <strong>la recherche séquentielle</strong>.<br />
+Il nous servira d’exemple pour introduire :</p>
+<ul>
+<li>la notion de <strong>spécification</strong> </li>
+<li>la <strong>correction</strong> d’un algorithme </li>
+<li>la notion d’<strong>invariant</strong> </li>
+<li>la <strong>terminaison</strong> </li>
+<li>la <strong>complexité</strong> temporelle.</li>
+</ul>
+<hr />
+<h2 id="la-recherche-sequentielle">La recherche séquentielle</h2>
+<p>On souhaite savoir si une valeur <code>x</code> est présente dans une liste <code>t</code>.<br />
+L’idée de la recherche séquentielle est simple :</p>
+<blockquote>
+<p>On examine les éléments de la liste un par un, dans l’ordre, jusqu’à trouver la valeur recherchée (ou pas).</p>
+</blockquote>
+<p><strong>Exemple</strong></p>
+<p>Liste : <code>[4, 7, 2, 9]</code><br />
+Valeur recherchée : <code>9</code></p>
+<p>On compare successivement :</p>
+<ul>
+<li>4 ≠ 9  </li>
+<li>7 ≠ 9</li>
+<li>2 ≠ 9</li>
+<li>9 = 9 → trouvé</li>
+</ul>
+<p>L'algorithme de la recherche séquentielle en python :</p>
+<pre><code class="language-python">def recherche_sequentielle(t, x):
+    for e in t :
+        if e == x :
+            return True
+    return False
+</code></pre>
+<hr />
+<h2 id="specifier-un-algorithme">Spécifier un algorithme</h2>
+<h3 id="les-types">Les types</h3>
+<p>La première étape pour étudier un algorithme consiste à définir précisément ce qu’il est censé faire.</p>
+<p>Pour commencer nous pouvons préciser de quels types sont les paramètres ainsi que les valeurs de retour :</p>
+<pre><code class="language-python">def recherche_sequentielle(t : list[any], x : any) -&gt; bool:
+    for e in t :
+        if e == x :
+            return True
+    return False
+</code></pre>
+<p>Les noms des types sont les suivants : <code>int</code>, <code>float</code>, <code>bool</code>, <code>str</code>, <code>tuple</code>, <code>list</code>, <code>dict</code>, <code>None</code>, ...  </p>
+<p>Le type <code>any</code> précise que cette valeur peut être de n’importe quel type.</p>
+<p>Quelques exemples concernant :</p>
+<ul>
+<li>les tuples : <code>tuple</code>, <code>tuple[int]</code>, <code>tuple[int, str]</code>, <code>(int)</code></li>
+<li>les listes : <code>list</code>, <code>list[int]</code>, <code>[int]</code>, <code>list[list[int]]</code></li>
+<li>les dictionnaires : <code>dict</code>, <code>dict[str : int]</code></li>
+</ul>
+<h3 id="documentation">Documentation</h3>
+<p>Une <code>docstring</code> est un texte placé juste sous la définition d’une fonction (ou d’une classe) qui explique son rôle, ses paramètres et sa valeur de retour.<br />
+En Python, c’est le moyen officiel de documenter du code.</p>
+<pre><code class="language-python">def recherche_sequentielle(t : list, x : any) -&gt; bool:
+    &quot;&quot;&quot;
+    Renvoie True si x est présent dans la liste L, False sinon.
+    &quot;&quot;&quot;
+    for e in t :
+        if e == x :
+            return True
+    return False
+</code></pre>
+<hr />
+<h2 id="correction-de-lalgorithme">Correction de l’algorithme</h2>
+<p>Un algorithme est correct s’il réalise exactement ce que dit sa spécification.</p>
+<h3 id="invariant-de-boucle">Invariant de boucle</h3>
+<p>Pour prouver la correction, on utilise un invariant : une propriété qui reste vraie pendant toute l’exécution d’une boucle, à chaque itération.
+C’est un outil essentiel en algorithmique pour montrer qu’un programme est correct, c’est-à-dire qu’il fait bien ce qu’il est censé faire.</p>
+<blockquote>
+<p>Avant chaque itération, tous les éléments déjà parcourus ont été testés et aucun n’est égal à x.</p>
+</blockquote>
+<p>Cet invariant reste vrai :</p>
+<ul>
+<li>au début de la boucle ;</li>
+<li>après chaque itération ;</li>
+<li>jusqu’à la fin.</li>
+</ul>
+<p>Quand la boucle se termine, si rien n’a été trouvé, alors <code>x</code> n’est pas dans <code>L</code>, et l’algorithme renvoie <code>False</code>.<br />
+S’il est trouvé en cours de route, l’algorithme renvoie <code>True</code>.</p>
+<blockquote>
+<p>On ne vous demandera pas de prouver la correction d'un algorithme au <strong>bac</strong>.<br />
+Cependant il est possible que l'on vous demande de trouver un invariant correct.</p>
+</blockquote>
+<hr />
+<h2 id="terminaison">Terminaison</h2>
+<p>L’algorithme doit garantir qu’il se termine toujours.<br />
+La terminaison repose sur un variant de boucle : <strong>le nombre d’éléments restants à parcourir</strong>.</p>
+<h3 id="boucle-for">Boucle <code>for</code></h3>
+<p>Concernant les boucles <code>for</code>, il n'est pas nécessaire de prouver que ce soit. Il faut simplement retenir et rappeler qu'une boucle <code>for</code> (c'est à dire une boucle bornée) se termine toujours.</p>
+<p>À chaque itération :</p>
+<ul>
+<li>on avance d’un élément dans la liste,  </li>
+<li>donc ce nombre diminue,  </li>
+<li>et finit à 0.</li>
+</ul>
+<p>La boucle bornée se termine donc forcément.</p>
+<h3 id="boucle-while">Boucle <code>while</code></h3>
+<p>Contrairement à une boucle for, une boucle while n’est pas automatiquement terminante.<br />
+Il faut donc montrer qu’elle s’arrête, en utilisant un variant de boucle.</p>
+<p>Un variant est une valeur :  </p>
+<ul>
+<li>entière  </li>
+<li>positive ou au moins bornée inférieurement  </li>
+<li>qui diminue strictement à chaque itération</li>
+</ul>
+<p>Si cette valeur ne peut pas descendre indéfiniment, alors la boucle doit terminer.</p>
+<p>Voici notre même algorithme, cette fois écrit avecc une boucle non bornée.</p>
+<pre><code class="language-python">def recherche_sequentielle(t, x):
+    i = 0
+    while i &lt; len(t):
+        if t[i] == x:
+            return True
+        i = i + 1
+    return False
+</code></pre>
+<p>Variant possible : <code>len(t) - i</code></p>
+<ul>
+<li>Au début, il vaut <code>len(t)</code> (toujour strictement positif)</li>
+<li>À chaque tour, <code>i</code> augmente de <code>1</code> ⇒ <code>len(t) - i</code> diminue strictement</li>
+<li>Il devient <code>0</code> lorsque <code>i == len(t)</code></li>
+</ul>
+<p>Il ne peut pas devenir négatif ⇒ la boucle ne peut pas tourner indéfiniment.<br />
+Donc la boucle se termine toujours.</p>
+<p>Cette preuve repose sur le même principe que celui des preuves par réccurence en mathématique.</p>
+<hr />
+<h2 id="complexite">Complexité</h2>
+<p>La complexité mesure le coût d’un algorithme (temps, mémoire…).<br />
+Nous étudions ici la complexité temporelle.</p>
+<p>L'interêt de ce genre de mesure est multiple :
+- comparer deux algorithmes qui résolvent le même problème (on veut des algorithmes rapides)
+- anticiper si un programme restera rapide quand on augmente la taille des données
+- choisir la bonne méthode selon le contexte (données nombreuses, contraintes de temps…)</p>
+<p>La complexité donne donc une idée de l’évolution du temps d’exécution en fonction de la taille n de l’entrée.</p>
+<p>Pour l'estimer on cherche quel serait le pire scénario (celui où l'éxecution serait la plus longue, par exemple pour la recherche séquentielle ce serait que l'élément recherché ne soit pas dans la liste ou bien uniquement à la dernière place).
+On calcule le nombre de tour de boucle nécessaire à son exécution puis nous ne regardons que l'ordre de grandeur.</p>
+<p><img alt="" src="../time-complexity.png" /></p>
+<p>Voici les ordres les plus courants :</p>
+<p><strong>O(1) : temps constant</strong></p>
+<p>Le temps ne dépend pas de la taille des données.
+Exemples : accéder à un élément d’une liste par son index, affecter une variable.</p>
+<p>Exemple : </p>
+<pre><code class="language-python">def f(a,b):
+    return a + b
+
+</code></pre>
+<p><strong>O(log n) : logarithmique</strong></p>
+<p>Très rapide même pour de grandes valeurs. Le temps augmente très lentement.
+Exemple : recherche dichotomique (en terminale).</p>
+<p><strong>O(n) : linéaire</strong></p>
+<p>Le temps augmente proportionnellement à n.
+Exemple : parcourir une liste du début à la fin.</p>
+<p>Exemple : </p>
+<pre><code class="language-python">def f(t):
+    s = 0
+    for e in t :
+        s += e
+    return s
+</code></pre>
+<p><strong>O(n log n)</strong></p>
+<p>Typique des algorithmes de tri efficaces (terminal).
+Rapide même pour de grandes données.</p>
+<p><strong>O(n²) : quadratique</strong></p>
+<p>Beaucoup plus lent ; augmente très vite.</p>
+<pre><code class="language-python">def f(t):
+    res = []
+    for i in t:
+        for j in t:
+            res.append(i*j)
+    return res
+</code></pre>
+<p><strong>O(2ⁿ), O(n!)</strong></p>
+<p>Très coûteux. Impraticables pour n un peu grand.
+On ne les rencontre pas en classe, sauf pour montrer qu’ils sont impossibles à utiliser.</p>
+<h2 id="exercice">Exercice</h2>
+<p>Récuperer les fonctions que vous avez programmé durant les exercices avancés dans le chapitre <a href="../../Bases/fonctions/#exercices-avances">fonctions</a>.</p>
+<p>Pour chacunes de ces fontions :</p>
+<ul>
+<li>ajouter une spécification</li>
+<li>trouver un variant de boucle (si vous avez utilisé une boucle <code>while</code>) qui prouve la terminaison</li>
+<li>trouver l'ordre de grandeur de sa complexité</li>
+</ul>
+<p>Si vous avez de l'avance et que vous voulez un défi, essayer de prouver la correction (même de manière simpliste).<br />
+Cela permettra de developper votre compréhension des algorithmes.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../R%C3%A9seaux/R%C3%A9seaux/" class="btn btn-neutral float-left" title="Réseaux"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../../Terminales/Terminales/" class="btn btn-neutral float-right" title="Accueil">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../R%C3%A9seaux/R%C3%A9seaux/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../../../Terminales/Terminales/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
