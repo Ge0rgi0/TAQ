@@ -1,6 +1,6 @@
 # Les Listes
 
-## Qu’est-ce qu’un Liste ?
+## Qu’est-ce qu’une liste ?
 
 Une liste est une structure de données qui permet de stocker plusieurs valeurs dans une seule variable.  
 On peut y accéder grâce à des **indices** commençant à 0.

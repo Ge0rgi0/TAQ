@@ -17,7 +17,9 @@ nav:
           - Types construits (tuples): Premieres/Chapitres/Tableaux/Tuples.md
           - Types construits (listes): Premieres/Chapitres/Tableaux/Listes.md
           - Types construits (dictionnaires): Premieres/Chapitres/Tableaux/Dictionnaires.md
+          - Fonctions: Premieres/Chapitres/Bases/fonctions.md
           - Réseaux: Premieres/Chapitres/Réseaux/Réseaux.md
+          - Algos: Premieres/Chapitres/Algos/Recherche.md
       - Terminales:
           - Accueil: Terminales/Terminales.md
           - Programmation Orientée Objet: Terminales/Chapitres/POO.md
