@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Types de base (chaînes de caractéres) - TAQ</title>
+    <title>Les chaînes de caractères (str) - TAQ</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Types de base (cha\u00eenes de caract\u00e9res)";
+        var mkdocs_page_name = "Les cha\u00eenes de caract\u00e8res (str)";
         var mkdocs_page_input_path = "Premieres/Chapitres/Types/Types_de_base_str.md";
         var mkdocs_page_url = null;
       </script>
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Cours</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" >Secondes</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
@@ -57,89 +57,19 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
-    <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/">Accueil</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_int/">Types de base (entiers)</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base/">Types de base</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_float/">Types de base (flottants)</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Bases/bases/">Bases de Python</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Types_de_base_bool/">Types de base (booléens)</a>
-                </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">Types de base (chaînes de caractéres)</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#definition">Définition</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ascii">ASCII</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#exercice-1-conversion-binaire-texte">Exercice 1 : Conversion binaire → texte</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#exercice-2-conversion-hexadecimal-texte">Exercice 2 : Conversion hexadécimal → texte</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#iso-8859-1-et-manipulation-des-caracteres-en-python">ISO-8859-1 et manipulation des caractères en Python</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#codage-universel-utf-8">Codage universel : UTF-8</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#conversion">Conversion</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#en-python">En python</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#concatenation">Concaténation (+)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#repetition">Répétition (*)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#longueur-len">Longueur (len)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#acces-par-indice">Accès par indice</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#tranches-slices">Tranches (slices)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#fonctions-utiles">Fonctions utiles</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#caracteres-speciaux">Caractéres spéciaux</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#parcours">Parcours</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#exercices">Exercices</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#exercice-1">Exercice 1</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#exercice-2">Exercice 2</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#exercice-3">Exercice 3</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#exercice-4">Exercice 4</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#exercice-5">Exercice 5</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#exercice-6">Exercice 6</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#exercice-7">Exercice 7</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#exercice-8">Exercice 8</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="" href="../../Tableaux/Tuples.md">Types construits (tuples)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/Listes/">Types construits (listes)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/Dictionnaires/">Types construits (dictionnaires)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Bases/fonctions/">Fonctions</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Algos/Recherche/">Algos</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Algos/Algos/">Algorithmes</a>
                 </li>
     </ul>
                   </li>
@@ -170,9 +100,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Cours</li>
-          <li class="breadcrumb-item">Premières</li>
-      <li class="breadcrumb-item active">Types de base (chaînes de caractéres)</li>
+      <li class="breadcrumb-item active">Les chaînes de caractères (str)</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -440,10 +368,6 @@ Message codé : MRK  </p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Types_de_base_bool/" class="btn btn-neutral float-left" title="Types de base (booléens)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../Tableaux/Listes/" class="btn btn-neutral float-right" title="Types construits (listes)">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -465,10 +389,6 @@ Message codé : MRK  </p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Types_de_base_bool/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../../Tableaux/Listes/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

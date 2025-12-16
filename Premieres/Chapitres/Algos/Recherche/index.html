@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Algos - TAQ</title>
+    <title>Notions algorithmiques - TAQ</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Algos";
+        var mkdocs_page_name = "Notions algorithmiques";
         var mkdocs_page_input_path = "Premieres/Chapitres/Algos/Recherche.md";
         var mkdocs_page_url = null;
       </script>
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Cours</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" >Secondes</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
@@ -57,61 +57,19 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
-    <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/">Accueil</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base_int/">Types de base (entiers)</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base/">Types de base</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base_float/">Types de base (flottants)</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Bases/bases/">Bases de Python</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base_bool/">Types de base (booléens)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base_str/">Types de base (chaînes de caractéres)</a>
-                </li>
-                <li class="toctree-l2"><a class="" href="../../Tableaux/Tuples.md">Types construits (tuples)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/Listes/">Types construits (listes)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/Dictionnaires/">Types construits (dictionnaires)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Bases/fonctions/">Fonctions</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">Algos</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#la-recherche-sequentielle">La recherche séquentielle</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#specifier-un-algorithme">Spécifier un algorithme</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#les-types">Les types</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#documentation">Documentation</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#correction-de-lalgorithme">Correction de l’algorithme</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#invariant-de-boucle">Invariant de boucle</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#terminaison">Terminaison</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#boucle-for">Boucle for</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#boucle-while">Boucle while</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#complexite">Complexité</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#exercice">Exercice</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Algos/">Algorithmes</a>
                 </li>
     </ul>
                   </li>
@@ -142,9 +100,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Cours</li>
-          <li class="breadcrumb-item">Premières</li>
-      <li class="breadcrumb-item active">Algos</li>
+      <li class="breadcrumb-item active">Notions algorithmiques</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -334,22 +290,80 @@ Rapide même pour de grandes données.</p>
 <p>Très coûteux. Impraticables pour n un peu grand.
 On ne les rencontre pas en classe, sauf pour montrer qu’ils sont impossibles à utiliser.</p>
 <h2 id="exercice">Exercice</h2>
-<p>Récuperer les fonctions que vous avez programmé durant les exercices avancés dans le chapitre <a href="../../Bases/fonctions/#exercices-avances">fonctions</a>.</p>
-<p>Pour chacunes de ces fontions :</p>
-<ul>
-<li>ajouter une spécification</li>
-<li>trouver un variant de boucle (si vous avez utilisé une boucle <code>while</code>) qui prouve la terminaison</li>
-<li>trouver l'ordre de grandeur de sa complexité</li>
-</ul>
-<p>Si vous avez de l'avance et que vous voulez un défi, essayer de prouver la correction (même de manière simpliste).<br />
-Cela permettra de developper votre compréhension des algorithmes.</p>
+<h2 id="exercices-approfondir-les-notions-algorithmiques">Exercices : approfondir les notions algorithmiques</h2>
+<p>Les exercices suivants permettent de s’entraîner à :
+- écrire une spécification claire,
+- identifier un invariant de boucle,
+- justifier la terminaison à l’aide d’un variant,
+- estimer la complexité temporelle.</p>
+<hr />
+<h3 id="exercice-1-test-dappartenance-borne">Exercice 1 — Test d’appartenance borné</h3>
+<p>Écrire une fonction <code>contient_jusqua(t, x, k)</code> qui renvoie <code>True</code> si la valeur <code>x</code>
+est présente dans les <code>k</code> premiers éléments de la liste <code>t</code>, et <code>False</code> sinon.</p>
+<p>Contraintes :
+- on suppose que <code>0 ≤ k ≤ len(t)</code>.</p>
+<p>Questions :
+1. Donner une spécification (types + docstring).
+2. Proposer un invariant de boucle.
+3. Identifier un variant si une boucle <code>while</code> est utilisée.
+4. Donner la complexité dans le pire cas.</p>
+<hr />
+<h3 id="exercice-2-compter-des-occurrences">Exercice 2 — Compter des occurrences</h3>
+<p>Écrire une fonction <code>compte(t, x)</code> qui renvoie le nombre de fois où <code>x</code>
+apparaît dans la liste <code>t</code>.</p>
+<p>Questions :
+1. Quel est l’invariant de la boucle ?
+2. Pourquoi l’algorithme est-il correct ?
+3. Donner la complexité temporelle.</p>
+<p>Indication : on parcourt toute la liste, même si <code>x</code> est trouvé rapidement.</p>
+<hr />
+<h3 id="exercice-3-recherche-avec-arret-anticipe">Exercice 3 — Recherche avec arrêt anticipé</h3>
+<p>On suppose que la liste <code>t</code> est triée dans l’ordre croissant.</p>
+<p>Écrire une fonction <code>recherche_ordonnee(t, x)</code> qui :
+- parcourt la liste,
+- s’arrête dès que l’élément courant est strictement supérieur à <code>x</code>.</p>
+<p>Questions :
+1. Quelle est la spécification ?
+2. Proposer un invariant.
+3. Dans quels cas l’algorithme est-il plus rapide que la recherche séquentielle classique ?
+4. Donner la complexité dans le pire cas et dans le meilleur cas.</p>
+<hr />
+<h3 id="exercice-4-minimum-dune-liste-boucle-while">Exercice 4 — Minimum d’une liste (boucle while)</h3>
+<p>Écrire une fonction <code>minimum(t)</code> qui renvoie la plus petite valeur de la liste <code>t</code>.</p>
+<p>Contraintes :
+- la liste contient au moins un élément,
+- utiliser une boucle <code>while</code>.</p>
+<p>Questions :
+1. Donner le variant de boucle.
+2. Formuler un invariant expliquant pourquoi le minimum trouvé est correct.
+3. Donner la complexité temporelle.</p>
+<hr />
+<h3 id="exercice-5-somme-partielle">Exercice 5 — Somme partielle</h3>
+<p>Écrire une fonction <code>somme_jusqua(t, k)</code> qui renvoie la somme des <code>k</code>
+premiers éléments de la liste <code>t</code>.</p>
+<p>Questions :
+1. Donner la spécification complète.
+2. Proposer un invariant.
+3. Quelle est la complexité en fonction de <code>k</code> ?</p>
+<hr />
+<h3 id="exercice-6-verifier-si-une-liste-est-croissante">Exercice 6 — Vérifier si une liste est croissante</h3>
+<p>Écrire une fonction <code>est_croissante(t)</code> qui renvoie <code>True</code> si la liste est
+triée dans l’ordre croissant, et <code>False</code> sinon.</p>
+<p>Questions :
+1. Quel invariant permet d’expliquer la correction ?
+2. Pourquoi la fonction peut-elle s’arrêter avant la fin de la liste ?
+3. Donner la complexité dans le pire cas.</p>
+<hr />
+<h3 id="exercice-7-produit-de-deux-listes-double-boucle">Exercice 7 — Produit de deux listes (double boucle)</h3>
+<p>Écrire une fonction <code>produit(t1, t2)</code> qui affiche tous les produits <code>a × b</code>
+avec <code>a</code> dans <code>t1</code> et <code>b</code> dans <code>t2</code>.</p>
+<p>Questions :
+1. Donner la complexité en fonction de <code>n = len(t1)</code> et <code>m = len(t2)</code>.
+2. Pourquoi la complexité devient-elle quadratique si <code>n = m</code> ?
+3. Existe-t-il un invariant utile ici ? Pourquoi (ou pourquoi pas) ?</p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../R%C3%A9seaux/R%C3%A9seaux/" class="btn btn-neutral float-left" title="Réseaux"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../../../Terminales/Terminales/" class="btn btn-neutral float-right" title="Accueil">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -371,10 +385,6 @@ Cela permettra de developper votre compréhension des algorithmes.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../R%C3%A9seaux/R%C3%A9seaux/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../../../../Terminales/Terminales/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
