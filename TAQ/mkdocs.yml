@@ -10,16 +10,11 @@ nav:
           - Réseaux sociaux : Secondes/Chapitres/RS/RS.md
       - Premières:
           - Accueil: Premieres/Premieres.md
-          - Types de base (entiers): Premieres/Chapitres/Types/Types_de_base_int.md
-          - Types de base (flottants): Premieres/Chapitres/Types/Types_de_base_float.md
-          - Types de base (booléens): Premieres/Chapitres/Types/Types_de_base_bool.md
-          - Types de base (chaînes de caractéres): Premieres/Chapitres/Types/Types_de_base_str.md
-          - Types construits (tuples): Premieres/Chapitres/Tableaux/Tuples.md
-          - Types construits (listes): Premieres/Chapitres/Tableaux/Listes.md
-          - Types construits (dictionnaires): Premieres/Chapitres/Tableaux/Dictionnaires.md
-          - Fonctions: Premieres/Chapitres/Bases/fonctions.md
+          - Types de base: Premieres/Chapitres/Types/Types_de_base.md
+          - Bases de Python: Premieres/Chapitres/Bases/bases.md
+          - Tuples, Listes et Dictionnaires: Premieres/Chapitres/Tableaux/Tableaux.md
           - Réseaux: Premieres/Chapitres/Réseaux/Réseaux.md
-          - Algos: Premieres/Chapitres/Algos/Recherche.md
+          - Algorithmes: Premieres/Chapitres/Algos/Algos.md 
       - Terminales:
           - Accueil: Terminales/Terminales.md
           - Programmation Orientée Objet: Terminales/Chapitres/POO.md

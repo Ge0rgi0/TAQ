@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Les fonctions Python - TAQ</title>
+    <title>Fonctions - TAQ</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Les fonctions Python";
+        var mkdocs_page_name = "Fonctions";
         var mkdocs_page_input_path = "Premieres/Chapitres/Bases/fonctions.md";
         var mkdocs_page_url = null;
       </script>
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Cours</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" >Secondes</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
@@ -57,8 +57,8 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
-    <ul>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
+    <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/">Accueil</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base_int/">Types de base (entiers)</a>
@@ -75,7 +75,67 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/Dictionnaires/">Types construits (dictionnaires)</a>
                 </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Fonctions</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#definir-et-appeler-une-fonction">Définir et appeler une fonction</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#aucune-valeur-de-retour">Aucune valeur de retour</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#placement-du-return">Placement du return</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#parametres-et-arguments">Paramètres et arguments</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#portee-des-variables">Portée des variables</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemple-complet">Exemple complet</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercices-de-decouverte">Exercices de découverte</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#fonction-simple">Fonction simple</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fonction-avec-parametre">Fonction avec paramètre</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fonction-avec-parametre-par-defaut">Fonction avec paramètre par défaut</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#carre-dun-nombre">Carré d’un nombre</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#somme-de-deux-nombres">Somme de deux nombres</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#moyenne-de-trois-nombres">Moyenne de trois nombres</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#affichage-multiple">Affichage multiple</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#comparaison">Comparaison</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#verifier-si-pair">Vérifier si pair</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercices-avances">Exercices avancés</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-1-somme-des-carres">Exercice 1 : Somme des carrés</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-2-comparaison-chaines">Exercice 2 : Comparaison chaînes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-3-maximum-de-trois-nombres">Exercice 3 : Maximum de trois nombres</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-4-conversion-heuresminutes">Exercice 4 : Conversion heures/minutes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-5-table-de-multiplication">Exercice 5 : Table de multiplication</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-6-verifier-palindrome">Exercice 6 : Vérifier palindrome</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-7-compter-les-chiffres-dun-nombre">Exercice 7 : Compter les chiffres d’un nombre</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Algos/Recherche/">Algos</a>
                 </li>
     </ul>
                   </li>
@@ -106,7 +166,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Les fonctions Python</li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Premières</li>
+      <li class="breadcrumb-item active">Fonctions</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -283,6 +345,10 @@ Exemple : <code>nb_chiffres(12345)</code> → <code>5</code>.</p>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Tableaux/Dictionnaires/" class="btn btn-neutral float-left" title="Types construits (dictionnaires)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../R%C3%A9seaux/R%C3%A9seaux/" class="btn btn-neutral float-right" title="Réseaux">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -304,6 +370,10 @@ Exemple : <code>nb_chiffres(12345)</code> → <code>5</code>.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../../Tableaux/Dictionnaires/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../R%C3%A9seaux/R%C3%A9seaux/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
