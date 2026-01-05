@@ -185,8 +185,13 @@ En Python, c’est le moyen officiel de documenter du code.</p>
 <p>Pour prouver la correction, on utilise un invariant : une propriété qui reste vraie pendant toute l’exécution d’une boucle, à chaque itération.
 C’est un outil essentiel en algorithmique pour montrer qu’un programme est correct, c’est-à-dire qu’il fait bien ce qu’il est censé faire.</p>
 <blockquote>
-<p>Avant chaque itération, tous les éléments déjà parcourus ont été testés et aucun n’est égal à x.</p>
+<p>Avant chaque itération de la boucle for, tous les éléments déjà parcourus dans la liste ont été testés et aucun n’est égal à x.</p>
 </blockquote>
+<p>Autrement dit, tant que l’on continue la boucle, on est sûr que :</p>
+<ul>
+<li>x n’a pas été trouvé dans les éléments déjà examinés ;</li>
+<li>s’il apparaît dans la liste, il ne peut être que dans les éléments restants à parcourir.</li>
+</ul>
 <p>Cet invariant reste vrai :</p>
 <ul>
 <li>au début de la boucle ;</li>
