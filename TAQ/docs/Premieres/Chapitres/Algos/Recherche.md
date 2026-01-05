@@ -100,7 +100,12 @@ Un algorithme est correct s’il réalise exactement ce que dit sa spécificatio
 Pour prouver la correction, on utilise un invariant : une propriété qui reste vraie pendant toute l’exécution d’une boucle, à chaque itération.
 C’est un outil essentiel en algorithmique pour montrer qu’un programme est correct, c’est-à-dire qu’il fait bien ce qu’il est censé faire.
 
-> Avant chaque itération, tous les éléments déjà parcourus ont été testés et aucun n’est égal à x.
+> Avant chaque itération de la boucle for, tous les éléments déjà parcourus dans la liste ont été testés et aucun n’est égal à x.
+
+Autrement dit, tant que l’on continue la boucle, on est sûr que :
+
+- x n’a pas été trouvé dans les éléments déjà examinés ;
+- s’il apparaît dans la liste, il ne peut être que dans les éléments restants à parcourir.
 
 Cet invariant reste vrai :
 

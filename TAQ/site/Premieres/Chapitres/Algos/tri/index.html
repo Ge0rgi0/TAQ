@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Bases de Python - TAQ</title>
+    <title>Les algorithmes de tri - TAQ</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Bases de Python";
-        var mkdocs_page_input_path = "Premieres/Chapitres/Bases/bases.md";
+        var mkdocs_page_name = "Les algorithmes de tri";
+        var mkdocs_page_input_path = "Premieres/Chapitres/Algos/tri.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Cours</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" >Secondes</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
@@ -57,21 +57,19 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
-    <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/">Accueil</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base/">Types de base</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">Bases de Python</a>
-    <ul class="current">
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Bases/bases/">Bases de Python</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Algos/Algos/">Algorithmes</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Algos/">Algorithmes</a>
                 </li>
     </ul>
                   </li>
@@ -102,9 +100,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Cours</li>
-          <li class="breadcrumb-item">Premières</li>
-      <li class="breadcrumb-item active">Bases de Python</li>
+      <li class="breadcrumb-item active">Les algorithmes de tri</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -113,18 +109,92 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="bases-de-python">Bases de Python</h1>
-<p><a href="séq.md">🟨 1 - Séquences et affectations</a><br />
-<a href="conditions.md">🟨 2 - Conditions</a><br />
-<a href="boucles.md">🟨 3 - Boucles</a><br />
-<a href="../fonctions/">🟨 4 - Fonctions</a>  </p>
+                <h1 id="les-algorithmes-de-tri">Les algorithmes de tri</h1>
+<blockquote>
+<p>"Un algorithme de tri est, en informatique ou en mathématiques, un algorithme qui permet d'organiser une collection d'objets selon une relation d'ordre déterminée."<br />
+- <a href="https://fr.wikipedia.org/wiki/Algorithme_de_tri">Wikipedia</a></p>
+</blockquote>
+<p>Trier des données consiste à les organiser selon un ordre donné (croissant ou décroissant).
+Cette opération est essentielle en informatique car elle permet :</p>
+<ul>
+<li>de faciliter la recherche d’une valeur,</li>
+<li>d’améliorer la lisibilité des données,</li>
+<li>d’optimiser certains traitements.</li>
+</ul>
+<p>Exemples de données à trier :  </p>
+<ul>
+<li>notes d’élèves,  </li>
+<li>noms par ordre alphabétique,  </li>
+<li>résultats sportifs,  </li>
+<li>données issues de bases ouvertes.</li>
+</ul>
+<p>Trier manuellement est simple pour quelques valeurs, mais devient fastidieux pour de grandes quantités de données.<br />
+Il est donc nécessaire de <strong>concevoir des algorithmes de tri</strong>.</p>
+<p>Pour cette première année, nous allons nous concentrer sur deux algorithmes de tri simples.</p>
+<h2 id="decouverte">Découverte</h2>
+<p>Les algorithmes de tri ne seront <strong>pas présentés immédiatement</strong> afin de laisser place à la réflexion.</p>
+<h3 id="activite-de-recherche">Activité de recherche</h3>
+<p>1) Votre professeur préféré aura pensé à ramener un jeu de cartes (normalement).  </p>
+<blockquote>
+<p>Mettez-vous par groupes. Chaque groupe reçoit plusieurs cartes à trier.</p>
+<p>Triez-les <strong>comme vous le feriez spontanément</strong>, sans consigne particulière.</p>
+</blockquote>
+<p>2) Observez votre méthode :  </p>
+<blockquote>
+<p>Que faites-vous en premier ?<br />
+Que répétez-vous ?<br />
+Quand savez-vous que le tri est terminé ?  </p>
+<p>Essayez de décrire votre méthode <strong>avec vos propres mots</strong>.<br />
+L’objectif n’est pas d’être parfait, mais de formaliser une idée.</p>
+</blockquote>
+<p>3) Mise en commun :  </p>
+<blockquote>
+<p>comparaison des méthodes utilisées,<br />
+mise en évidence de deux grandes stratégies de tri,<br />
+écriture collective d’un algorithme en Python au tableau.</p>
+</blockquote>
+<p>4) Et en Python alors ? :
+    &gt;Essayer d'écrire une fonction Python pour chacun de ses algorithmes.</p>
+<hr />
+<h2 id="correction-dun-algorithme-de-tri">Correction d’un algorithme de tri</h2>
+<p>Un algorithme est <strong>correct</strong> s’il respecte ce qui est attendu pour <strong>toutes les entrées valides</strong>.</p>
+<h3 id="specification-attendue">Spécification attendue</h3>
+<p>En sortie, la liste doit être triée dans l’ordre croissant et contenir exactement les mêmes éléments qu’au départ.</p>
+<h3 id="invariant-de-boucle">Invariant de boucle</h3>
+<p>Pour prouver la correction, on introduit un <strong>invariant de boucle</strong>.</p>
+<p>Un invariant est une propriété qui :
+- est vraie avant la première itération,
+- reste vraie à chaque itération,
+- permet de conclure à la fin de l’algorithme.</p>
+<p>L’invariant dépend de l’algorithme étudié (sélection ou insertion) et sera formulé précisément pour chacun d’eux.</p>
+<p>Trouvons les invariants de nos deux algorithmes.</p>
+<hr />
+<h2 id="terminaison">Terminaison</h2>
+<p>Un algorithme doit toujours se terminer.</p>
+<ul>
+<li>Les boucles <code>for</code> sont <strong>bornées</strong> : elles parcourent un nombre fini d’éléments.</li>
+<li>Pour les boucles <code>while</code>, on identifie un <strong>variant</strong> :</li>
+<li>une valeur entière,</li>
+<li>positive,</li>
+<li>qui diminue strictement à chaque itération.</li>
+</ul>
+<p>Lorsque le variant atteint sa borne minimale, la boucle s’arrête.</p>
+<p>Prouvons la terminaison de nos deux algorithmes.</p>
+<hr />
+<h2 id="complexite">Complexité</h2>
+<p>La complexité permet d’estimer le <strong>coût temporel</strong> d’un algorithme en fonction de la taille des données.</p>
+<p>On s’intéressera notamment :
+- au meilleur cas,
+- au pire cas,
+- et au cas moyen.</p>
+<p>Calculez la complexité pour chaque algorithme de tri étudié.
+Lequel est le plus efficace.</p>
+<hr />
+<h2 id="dautres-algos-de-tri">D'autres algos de tri !</h2>
+<p>[work in progress]</p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../Types/Types_de_base/" class="btn btn-neutral float-left" title="Types de base"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../Tableaux/Tableaux/" class="btn btn-neutral float-right" title="Tuples, Listes et Dictionnaires">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -146,10 +216,6 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../Types/Types_de_base/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../../Tableaux/Tableaux/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

@@ -33,7 +33,7 @@ fruits.append("orange")
 **à l'indice choisi**
 
 ```python
-fruits.insert(-1,"kiwi")
+fruits.insert(-1,"orange")
 ```
 
 |Avant|Après|
@@ -148,7 +148,7 @@ En Python, un **slice** permet d’extraire une portion d’une séquence.
 La syntaxe générale est : `nom_de_la_liste[debut : fin]`
 
 - debut correspond à l'indice du premier élément que l'on veut prendre (si on le l'indique pas, on commencera à l'indice 0)
-- fin correspond à l'indice du premier élément que l'on ne veut peux plus (si on ne l'indique pas, on ira juqu'au dernier indice)
+- fin correspond à l'indice du premier élément que l'on ne veut plus (si on ne l'indique pas, on ira juqu'au dernier indice)
 
 exemples :
 ```

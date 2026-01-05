@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Types construits (dictionnaires) - TAQ</title>
+    <title>Les Dictionnaires - TAQ</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Types construits (dictionnaires)";
+        var mkdocs_page_name = "Les Dictionnaires";
         var mkdocs_page_input_path = "Premieres/Chapitres/Tableaux/Dictionnaires.md";
         var mkdocs_page_url = null;
       </script>
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Cours</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" >Secondes</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
@@ -57,91 +57,19 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
-    <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/">Accueil</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base_int/">Types de base (entiers)</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base/">Types de base</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base_float/">Types de base (flottants)</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Bases/bases/">Bases de Python</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base_bool/">Types de base (booléens)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base_str/">Types de base (chaînes de caractéres)</a>
-                </li>
-                <li class="toctree-l2"><a class="" href="../Tuples.md">Types construits (tuples)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Listes/">Types construits (listes)</a>
-                </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">Types construits (dictionnaires)</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#quest-ce-quun-dictionnaire">Qu'est-ce qu'un dictionnaire ?</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#creer-et-modifier-un-dictionnaire">Créer et modifier un dictionnaire</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#creation">Création</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#ajouter-une-cle">Ajouter une clé</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#modifier-une-valeur">Modifier une valeur</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#supprimer-une-cle">Supprimer une clé</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#verifier-la-presence-dune-cle">Vérifier la présence d'une clé</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#longueur">Longueur</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#parcourir-un-dictionnaire">Parcourir un dictionnaire</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#parcourir-les-cles">Parcourir les clés</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#parcourir-les-valeurs">Parcourir les valeurs</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#parcourir-cles-valeurs">Parcourir clés + valeurs</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#exemple-dutilisation">Exemple d'utilisation</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#exercices">Exercices</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#1-acces-et-ajout">1. Accès et ajout</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#2-mise-a-jour">2. Mise à jour</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#3-comptage">3. Comptage</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#4-recherche-dune-cle-sans-in">4. Recherche d'une clé (sans in)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#5-trouver-la-valeur-maxmin">5. Trouver la valeur max/min</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#6-inversion-clevaleur">6. Inversion clé/valeur</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#7-fusion-manuelle">7. Fusion manuelle</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#8-filtrer-un-dictionnaire">8. Filtrer un dictionnaire</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#9-comptage-de-valeurs">9. Comptage de valeurs</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#10-final">10. Final</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#dictionnaires-imbriques">Dictionnaires imbriqués</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#exercices-dictionnaires-imbriques">Exercices dictionnaires imbriqués</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Bases/fonctions/">Fonctions</a>
+                <li class="toctree-l2"><a class="reference internal" href="../Tableaux/">Tuples, Listes et Dictionnaires</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Algos/Recherche/">Algos</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Algos/Algos/">Algorithmes</a>
                 </li>
     </ul>
                   </li>
@@ -172,9 +100,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Cours</li>
-          <li class="breadcrumb-item">Premières</li>
-      <li class="breadcrumb-item active">Types construits (dictionnaires)</li>
+      <li class="breadcrumb-item active">Les Dictionnaires</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -325,10 +251,6 @@ par ligne.</p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../Listes/" class="btn btn-neutral float-left" title="Types construits (listes)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../Bases/fonctions/" class="btn btn-neutral float-right" title="Fonctions">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -350,10 +272,6 @@ par ligne.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../Listes/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../../Bases/fonctions/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
