@@ -199,3 +199,13 @@ La majorité numérique correspond à l’âge à partir duquel un mineur peut c
 - [CNIL – L’identité numérique expliquée aux jeunes](https://www.cnil.fr/fr/maitriser-mon-identite-numerique)  
 - [nonauharcelement.education.gouv.fr](https://www.nonauharcelement.education.gouv.fr)  
 - [RGPD – Droit à l’effacement (article 17)](https://eur-lex.europa.eu/eli/reg/2016/679/oj)
+
+---
+
+## Graphes
+
+Pour cette partie, nous allons travailler sur une activité disponible sur le site : ![https://kxs.fr/cours/reseaux-sociaux/graphes-reseaux-sociaux].
+
+Au programme de cette activité :
+- les différentes manières de décrire / reprèsenter les liaisons entre les utilisateurs d'un réseau social
+- découverte des propriètès et caractéristiques des graphes
