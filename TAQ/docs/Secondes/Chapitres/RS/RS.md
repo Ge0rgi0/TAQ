@@ -112,9 +112,7 @@ Une clé de sécurité physique est un **petit appareil USB ou NFC** qui sert de
 
 ---
 
-# L’identité numérique
-
-## Qu’est-ce que l’identité numérique ?
+## L’identité numérique
 
 L’**identité numérique** est l’**ensemble des informations** disponibles sur une personne sur Internet.
 
@@ -133,7 +131,7 @@ Notre identité numérique dépasse largement ce que nous publions volontairemen
 
 Tout ce que nous faisons ou laissons en ligne peut influencer notre image, même ce que nous ne voyons pas. Il est donc essentiel de réfléchir avant de publier, de gérer ses paramètres de confidentialité, et de garder à l’esprit que notre identité numérique nous échappe parfois partiellement.
 
-#### Le droit à l’oubli
+### Le droit à l’oubli
 
 Le droit à l’oubli est un droit européen prévu par le RGPD. Il permet à toute personne de demander la suppression de certaines informations la concernant sur Internet, par exemple sur les moteurs de recherche ou les sites web.
 
@@ -204,7 +202,7 @@ La majorité numérique correspond à l’âge à partir duquel un mineur peut c
 
 ## Graphes
 
-Pour cette partie, nous allons travailler sur une activité disponible sur le site : ![KXS.fr](https://kxs.fr/cours/reseaux-sociaux/graphes-reseaux-sociaux).
+Pour cette partie, nous allons travailler sur une activité disponible sur le site : [KXS.fr](https://kxs.fr/cours/reseaux-sociaux/graphes-reseaux-sociaux).
 
 Au programme de cette activité :
 - les différentes manières de décrire / reprèsenter les liaisons entre les utilisateurs d'un réseau social
