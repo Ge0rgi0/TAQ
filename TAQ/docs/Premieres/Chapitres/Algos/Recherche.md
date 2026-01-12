@@ -261,97 +261,154 @@ Les exercices suivants permettent de s’entraîner à :
 
 ---
 
-### Exercice 1 — Test d’appartenance borné
+### Exercice 1
 
-Écrire une fonction `contient_jusqua(t, x, k)` qui renvoie `True` si la valeur `x`
-est présente dans les `k` premiers éléments de la liste `t`, et `False` sinon.
-
-Contraintes :
-- on suppose que `0 ≤ k ≤ len(t)`.
+```python
+def f1(t, x, k):
+    for i in t[:k]
+        if i == x :
+            return True
+    return False
+```
+On suppose que `0 ≤ k ≤ len(t)`.
 
 Questions :
-1. Donner une spécification (types + docstring).
-2. Proposer un invariant de boucle.
-3. Identifier un variant si une boucle `while` est utilisée.
-4. Donner la complexité dans le pire cas.
+
+1. Que fait cette fonction ?  
+2. Donner une spécification (nom + types + docstring).  
+2. Proposer un invariant de boucle.  
+3. Identifier un variant pour la boucle ``while``.  
+4. Donner la complexité dans le pire cas.  
 
 ---
 
-### Exercice 2 — Compter des occurrences
+### Exercice 2
 
-Écrire une fonction `compte(t, x)` qui renvoie le nombre de fois où `x`
-apparaît dans la liste `t`.
+```python
+def f2(t, x):
+    c = 0
+    for e in t:
+        if e == x:
+            c = c + 1
+    return c
+```
 
 Questions :
-1. Quel est l’invariant de la boucle ?
-2. Pourquoi l’algorithme est-il correct ?
-3. Donner la complexité temporelle.
 
-Indication : on parcourt toute la liste, même si `x` est trouvé rapidement.
+1. Que fait cette fonction ?  
+2. Donner une spécification (nom + types + docstring).  
+3. Proposer un invariant de boucle.  
+4. Le programme se termine-t'il à coup sûr ?
+5. Donner la complexité dans le pire cas.  
 
 ---
 
-### Exercice 3 — Recherche avec arrêt anticipé
+### Exercice 3
 
 On suppose que la liste `t` est triée dans l’ordre croissant.
 
-Écrire une fonction `recherche_ordonnee(t, x)` qui :
-- parcourt la liste,
-- s’arrête dès que l’élément courant est strictement supérieur à `x`.
+```python
+def f3(t, x):
+    for e in t:
+        if e == x:
+            return True
+        if e > x:
+            return False
+    return False
+```
 
 Questions :
-1. Quelle est la spécification ?
-2. Proposer un invariant.
-3. Dans quels cas l’algorithme est-il plus rapide que la recherche séquentielle classique ?
-4. Donner la complexité dans le pire cas et dans le meilleur cas.
+
+1. Que fait cette fonction ?  
+2. Donner une spécification (nom + types + docstring). 
+3. Proposer un invariant.
+4. Le programme se termine-t'il à coup sûr ?
+5. Donner la complexité dans le pire cas.
 
 ---
 
-### Exercice 4 — Minimum d’une liste (boucle while)
+### Exercice 4
 
-Écrire une fonction `minimum(t)` qui renvoie la plus petite valeur de la liste `t`.
+```python
+def f4(t):
+    i = 1
+    m = t[0]
+    while i < len(t):
+        if t[i] < m:
+            m = t[i]
+        i = i + 1
+    return m
+```
 
 Contraintes :
-- la liste contient au moins un élément,
-- utiliser une boucle `while`.
+- la liste contient au moins un élément
 
 Questions :
-1. Donner le variant de boucle.
-2. Formuler un invariant expliquant pourquoi le minimum trouvé est correct.
-3. Donner la complexité temporelle.
+
+1. Que fait cette fonction ?  
+2. Donner une spécification (nom + types + docstring). 
+3. Proposer un invariant.
+4. Le programme se termine-t'il à coup sûr ? Proposer un variant.
+5. Donner la complexité dans le pire cas.
 
 ---
 
-### Exercice 5 — Somme partielle
+### Exercice 5
 
-Écrire une fonction `somme_jusqua(t, k)` qui renvoie la somme des `k`
-premiers éléments de la liste `t`.
+```python
+def f5(t, k):
+    s = 0
+    i = 0
+    while i < k:
+        s = s + t[i]
+        i = i + 1
+    return s
+```
 
 Questions :
-1. Donner la spécification complète.
-2. Proposer un invariant.
-3. Quelle est la complexité en fonction de `k` ?
+
+1. Que fait cette fonction ?  
+2. Donner une spécification (nom + types + docstring). 
+3. Proposer un invariant.
+4. Le programme se termine-t'il à coup sûr ? Proposer un variant.
+5. Donner la complexité dans le pire cas.
 
 ---
 
-### Exercice 6 — Vérifier si une liste est croissante
+### Exercice 6
 
-Écrire une fonction `est_croissante(t)` qui renvoie `True` si la liste est
-triée dans l’ordre croissant, et `False` sinon.
+```python
+def f6(t):
+    i = 0
+    while i < len(t) - 1:
+        if t[i] > t[i + 1]:
+            return False
+        i = i + 1
+    return True
+```
 
 Questions :
-1. Quel invariant permet d’expliquer la correction ?
-2. Pourquoi la fonction peut-elle s’arrêter avant la fin de la liste ?
-3. Donner la complexité dans le pire cas.
+
+1. Que fait cette fonction ?  
+2. Donner une spécification (nom + types + docstring). 
+3. Proposer un invariant.
+4. Le programme se termine-t'il à coup sûr ? Proposer un variant.
+5. Donner la complexité dans le pire cas.
 
 ---
 
-### Exercice 7 — Produit de deux listes (double boucle)
+### Exercice 7
 
-Écrire une fonction `produit(t1, t2)` qui affiche tous les produits `a × b`
-avec `a` dans `t1` et `b` dans `t2`.
+```python
+def f7(t1, t2):
+    for a in t1:
+        for b in t2:
+            print(a * b)
+```
 
 Questions :
-1. Donner la complexité en fonction de `n = len(t1)` et `m = len(t2)`.
-2. Pourquoi la complexité devient-elle quadratique si `n = m` ?
-3. Existe-t-il un invariant utile ici ? Pourquoi (ou pourquoi pas) ?
+
+1. Que fait cette fonction ?  
+2. Donner une spécification (nom + types + docstring).
+3. Le programme se termine-t'il à coup sûr ?
+4. Donner la complexité dans le pire cas.

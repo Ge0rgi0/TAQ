@@ -5,10 +5,6 @@
 - [Rappels de premières](rappel.md)
 - [Exercices de révision](revisions.md)
 
-## Projets
-
-- [📂 Dessine ta rue](dtr.zip)
-
 ## Chapitres
 
 - [🟦 1 - Programmation Orienté Objet](Chapitres/POO.md)
@@ -17,4 +13,4 @@
 
 ## Annales du BACCALAURÉAT GÉNÉRAL de NSI
 
-![sujetdebac.fr](https://www.sujetdebac.fr/annales/specialites/spe-numerique-informatique/)
+Les annales du bac de nsi sont disponibles sur le site [sujetdebac.fr](https://www.sujetdebac.fr/annales/specialites/spe-numerique-informatique/).

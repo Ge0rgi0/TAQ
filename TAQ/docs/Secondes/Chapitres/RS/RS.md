@@ -202,7 +202,7 @@ La majorité numérique correspond à l’âge à partir duquel un mineur peut c
 
 ## Graphes
 
-Pour cette partie, nous allons travailler sur une activité disponible sur le site : [KXS.fr](https://kxs.fr/cours/reseaux-sociaux/graphes-reseaux-sociaux).
+Pour cette partie, nous allons travailler sur une [activité](snt_graphes.pdf) en grandepartie reprise de celle disponible sur le site : [KXS.fr](https://kxs.fr/cours/reseaux-sociaux/graphes-reseaux-sociaux).
 
 Au programme de cette activité :
 - les différentes manières de décrire / reprèsenter les liaisons entre les utilisateurs d'un réseau social
