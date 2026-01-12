@@ -302,70 +302,129 @@ On ne les rencontre pas en classe, sauf pour montrer qu’ils sont impossibles �
 - justifier la terminaison à l’aide d’un variant,
 - estimer la complexité temporelle.</p>
 <hr />
-<h3 id="exercice-1-test-dappartenance-borne">Exercice 1 — Test d’appartenance borné</h3>
-<p>Écrire une fonction <code>contient_jusqua(t, x, k)</code> qui renvoie <code>True</code> si la valeur <code>x</code>
-est présente dans les <code>k</code> premiers éléments de la liste <code>t</code>, et <code>False</code> sinon.</p>
-<p>Contraintes :
-- on suppose que <code>0 ≤ k ≤ len(t)</code>.</p>
-<p>Questions :
-1. Donner une spécification (types + docstring).
-2. Proposer un invariant de boucle.
-3. Identifier un variant si une boucle <code>while</code> est utilisée.
-4. Donner la complexité dans le pire cas.</p>
+<h3 id="exercice-1">Exercice 1</h3>
+<pre><code class="language-python">def f1(t, x, k):
+    for i in t[:k]
+        if i == x :
+            return True
+    return False
+</code></pre>
+<p>On suppose que <code>0 ≤ k ≤ len(t)</code>.</p>
+<p>Questions :</p>
+<ol>
+<li>Que fait cette fonction ?  </li>
+<li>Donner une spécification (nom + types + docstring).  </li>
+<li>Proposer un invariant de boucle.  </li>
+<li>Identifier un variant pour la boucle <code>while</code>.  </li>
+<li>Donner la complexité dans le pire cas.  </li>
+</ol>
 <hr />
-<h3 id="exercice-2-compter-des-occurrences">Exercice 2 — Compter des occurrences</h3>
-<p>Écrire une fonction <code>compte(t, x)</code> qui renvoie le nombre de fois où <code>x</code>
-apparaît dans la liste <code>t</code>.</p>
-<p>Questions :
-1. Quel est l’invariant de la boucle ?
-2. Pourquoi l’algorithme est-il correct ?
-3. Donner la complexité temporelle.</p>
-<p>Indication : on parcourt toute la liste, même si <code>x</code> est trouvé rapidement.</p>
+<h3 id="exercice-2">Exercice 2</h3>
+<pre><code class="language-python">def f2(t, x):
+    c = 0
+    for e in t:
+        if e == x:
+            c = c + 1
+    return c
+</code></pre>
+<p>Questions :</p>
+<ol>
+<li>Que fait cette fonction ?  </li>
+<li>Donner une spécification (nom + types + docstring).  </li>
+<li>Proposer un invariant de boucle.  </li>
+<li>Le programme se termine-t'il à coup sûr ?</li>
+<li>Donner la complexité dans le pire cas.  </li>
+</ol>
 <hr />
-<h3 id="exercice-3-recherche-avec-arret-anticipe">Exercice 3 — Recherche avec arrêt anticipé</h3>
+<h3 id="exercice-3">Exercice 3</h3>
 <p>On suppose que la liste <code>t</code> est triée dans l’ordre croissant.</p>
-<p>Écrire une fonction <code>recherche_ordonnee(t, x)</code> qui :
-- parcourt la liste,
-- s’arrête dès que l’élément courant est strictement supérieur à <code>x</code>.</p>
-<p>Questions :
-1. Quelle est la spécification ?
-2. Proposer un invariant.
-3. Dans quels cas l’algorithme est-il plus rapide que la recherche séquentielle classique ?
-4. Donner la complexité dans le pire cas et dans le meilleur cas.</p>
+<pre><code class="language-python">def f3(t, x):
+    for e in t:
+        if e == x:
+            return True
+        if e &gt; x:
+            return False
+    return False
+</code></pre>
+<p>Questions :</p>
+<ol>
+<li>Que fait cette fonction ?  </li>
+<li>Donner une spécification (nom + types + docstring). </li>
+<li>Proposer un invariant.</li>
+<li>Le programme se termine-t'il à coup sûr ?</li>
+<li>Donner la complexité dans le pire cas.</li>
+</ol>
 <hr />
-<h3 id="exercice-4-minimum-dune-liste-boucle-while">Exercice 4 — Minimum d’une liste (boucle while)</h3>
-<p>Écrire une fonction <code>minimum(t)</code> qui renvoie la plus petite valeur de la liste <code>t</code>.</p>
+<h3 id="exercice-4">Exercice 4</h3>
+<pre><code class="language-python">def f4(t):
+    i = 1
+    m = t[0]
+    while i &lt; len(t):
+        if t[i] &lt; m:
+            m = t[i]
+        i = i + 1
+    return m
+</code></pre>
 <p>Contraintes :
-- la liste contient au moins un élément,
-- utiliser une boucle <code>while</code>.</p>
-<p>Questions :
-1. Donner le variant de boucle.
-2. Formuler un invariant expliquant pourquoi le minimum trouvé est correct.
-3. Donner la complexité temporelle.</p>
+- la liste contient au moins un élément</p>
+<p>Questions :</p>
+<ol>
+<li>Que fait cette fonction ?  </li>
+<li>Donner une spécification (nom + types + docstring). </li>
+<li>Proposer un invariant.</li>
+<li>Le programme se termine-t'il à coup sûr ? Proposer un variant.</li>
+<li>Donner la complexité dans le pire cas.</li>
+</ol>
 <hr />
-<h3 id="exercice-5-somme-partielle">Exercice 5 — Somme partielle</h3>
-<p>Écrire une fonction <code>somme_jusqua(t, k)</code> qui renvoie la somme des <code>k</code>
-premiers éléments de la liste <code>t</code>.</p>
-<p>Questions :
-1. Donner la spécification complète.
-2. Proposer un invariant.
-3. Quelle est la complexité en fonction de <code>k</code> ?</p>
+<h3 id="exercice-5">Exercice 5</h3>
+<pre><code class="language-python">def f5(t, k):
+    s = 0
+    i = 0
+    while i &lt; k:
+        s = s + t[i]
+        i = i + 1
+    return s
+</code></pre>
+<p>Questions :</p>
+<ol>
+<li>Que fait cette fonction ?  </li>
+<li>Donner une spécification (nom + types + docstring). </li>
+<li>Proposer un invariant.</li>
+<li>Le programme se termine-t'il à coup sûr ? Proposer un variant.</li>
+<li>Donner la complexité dans le pire cas.</li>
+</ol>
 <hr />
-<h3 id="exercice-6-verifier-si-une-liste-est-croissante">Exercice 6 — Vérifier si une liste est croissante</h3>
-<p>Écrire une fonction <code>est_croissante(t)</code> qui renvoie <code>True</code> si la liste est
-triée dans l’ordre croissant, et <code>False</code> sinon.</p>
-<p>Questions :
-1. Quel invariant permet d’expliquer la correction ?
-2. Pourquoi la fonction peut-elle s’arrêter avant la fin de la liste ?
-3. Donner la complexité dans le pire cas.</p>
+<h3 id="exercice-6">Exercice 6</h3>
+<pre><code class="language-python">def f6(t):
+    i = 0
+    while i &lt; len(t) - 1:
+        if t[i] &gt; t[i + 1]:
+            return False
+        i = i + 1
+    return True
+</code></pre>
+<p>Questions :</p>
+<ol>
+<li>Que fait cette fonction ?  </li>
+<li>Donner une spécification (nom + types + docstring). </li>
+<li>Proposer un invariant.</li>
+<li>Le programme se termine-t'il à coup sûr ? Proposer un variant.</li>
+<li>Donner la complexité dans le pire cas.</li>
+</ol>
 <hr />
-<h3 id="exercice-7-produit-de-deux-listes-double-boucle">Exercice 7 — Produit de deux listes (double boucle)</h3>
-<p>Écrire une fonction <code>produit(t1, t2)</code> qui affiche tous les produits <code>a × b</code>
-avec <code>a</code> dans <code>t1</code> et <code>b</code> dans <code>t2</code>.</p>
-<p>Questions :
-1. Donner la complexité en fonction de <code>n = len(t1)</code> et <code>m = len(t2)</code>.
-2. Pourquoi la complexité devient-elle quadratique si <code>n = m</code> ?
-3. Existe-t-il un invariant utile ici ? Pourquoi (ou pourquoi pas) ?</p>
+<h3 id="exercice-7">Exercice 7</h3>
+<pre><code class="language-python">def f7(t1, t2):
+    for a in t1:
+        for b in t2:
+            print(a * b)
+</code></pre>
+<p>Questions :</p>
+<ol>
+<li>Que fait cette fonction ?  </li>
+<li>Donner une spécification (nom + types + docstring).</li>
+<li>Le programme se termine-t'il à coup sûr ?</li>
+<li>Donner la complexité dans le pire cas.</li>
+</ol>
               
             </div>
           </div><footer>
