@@ -49,61 +49,8 @@ Les algorithmes de tri ne seront **pas présentés immédiatement** afin de lais
    >écriture collective d’un algorithme en Python au tableau.
 
 4) Et en Python alors ? :
-    >Essayer d'écrire une fonction Python pour chacun de ses algorithmes.
----
-
-## Correction d’un algorithme de tri
-
-Un algorithme est **correct** s’il respecte ce qui est attendu pour **toutes les entrées valides**.
-
-### Spécification attendue
-
-En sortie, la liste doit être triée dans l’ordre croissant et contenir exactement les mêmes éléments qu’au départ.
-
-### Invariant de boucle
-
-Pour prouver la correction, on introduit un **invariant de boucle**.
-
-Un invariant est une propriété qui :
-- est vraie avant la première itération,
-- reste vraie à chaque itération,
-- permet de conclure à la fin de l’algorithme.
-
-L’invariant dépend de l’algorithme étudié (sélection ou insertion) et sera formulé précisément pour chacun d’eux.
-
-Trouvons les invariants de nos deux algorithmes.
-
----
-
-## Terminaison
-
-Un algorithme doit toujours se terminer.
-
-- Les boucles `for` sont **bornées** : elles parcourent un nombre fini d’éléments.
-- Pour les boucles `while`, on identifie un **variant** :
-  - une valeur entière,
-  - positive,
-  - qui diminue strictement à chaque itération.
-
-Lorsque le variant atteint sa borne minimale, la boucle s’arrête.
-
-Prouvons la terminaison de nos deux algorithmes.
-
----
-
-## Complexité
-
-La complexité permet d’estimer le **coût temporel** d’un algorithme en fonction de la taille des données.
-
-On s’intéressera notamment :
-- au meilleur cas,
-- au pire cas,
-- et au cas moyen.
-
-Calculez la complexité pour chaque algorithme de tri étudié.
-Lequel est le plus efficace.
-
----
+   
+   >Essayer d'écrire une fonction Python pour chacun de ses algorithmes.
 
 ## D'autres algos de tri !
 

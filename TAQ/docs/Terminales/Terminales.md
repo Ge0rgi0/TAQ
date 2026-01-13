@@ -14,3 +14,7 @@
 ## Annales du BACCALAURÉAT GÉNÉRAL de NSI
 
 Les annales du bac de nsi sont disponibles sur le site [sujetdebac.fr](https://www.sujetdebac.fr/annales/specialites/spe-numerique-informatique/).
+
+## Plan des chapitres
+
+![plan](../plan.png)
