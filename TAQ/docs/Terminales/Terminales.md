@@ -11,9 +11,9 @@
 - [🟦 2 - Piles & Files](Chapitres/Piles&Files/Piles&Files.md)
 - [🟨 3 - Bases de Données](Chapitres/BDD.md)
 
-## Annales du BACCALAURÉAT GÉNÉRAL de NSI
+## BACCALAURÉAT GÉNÉRAL de NSI
 
-Les annales du bac de nsi sont disponibles sur le site [sujetdebac.fr](https://www.sujetdebac.fr/annales/specialites/spe-numerique-informatique/).
+- [🧑‍🏫 Annales de l'épreuve écrite](bac.md)
 
 ## Plan des chapitres
 
