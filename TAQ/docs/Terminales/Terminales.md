@@ -7,9 +7,10 @@
 
 ## Chapitres
 
-- [🟦 1 - Programmation Orienté Objet](Chapitres/POO.md)
-- [🟦 2 - Piles & Files](Chapitres/Piles&Files/Piles&Files.md)
-- [🟨 3 - Bases de Données](Chapitres/BDD.md)
+- [🟨 1 - Programmation Orienté Objet](Chapitres/POO.md)
+- [🟨 2 - Piles & Files](Chapitres/Piles&Files/Piles&Files.md)
+- [🟥 3 - Bases de Données](Chapitres/BDD.md)
+- [🟩 4 - Algorithmes de Routage](Chapitres/Routage/routage.md)
 
 ## BACCALAURÉAT GÉNÉRAL de NSI
 

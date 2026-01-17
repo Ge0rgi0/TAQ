@@ -20,6 +20,7 @@ nav:
           - Programmation Orientée Objet: Terminales/Chapitres/POO.md
           - Piles et Files: Terminales/Chapitres/Piles&Files/Piles&Files.md
           - Base de données: Terminales/Chapitres/BDD.md
+          - Algorithmes de Routage: Terminales/Chapitres/Routage/routage.md
 
 
 theme:
