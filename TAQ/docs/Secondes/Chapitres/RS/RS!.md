@@ -200,6 +200,15 @@ La majorité numérique correspond à l’âge à partir duquel un mineur peut c
 
 ---
 
+## Modèle économique
+
+Les réseaux sociaux sont des entreprises privées dont l’objectif principal est de générer des revenus.
+
+Si un service est gratuit, c’est souvent l’utilisateur ou ses données qui financent le service.
+>> "Si c'est gratuit, c'est toi le produit."
+
+---
+
 ## Graphes
 
 Pour cette partie, nous allons travailler sur une [activité](snt_graphes.pdf) en grandepartie reprise de celle disponible sur le site : [KXS.fr](https://kxs.fr/cours/reseaux-sociaux/graphes-reseaux-sociaux).

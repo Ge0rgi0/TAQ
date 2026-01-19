@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Algorithmes de Routage - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Algorithmes de Routage";
+        var mkdocs_page_input_path = "Terminales/Chapitres/Routage/routage.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../../../Secondes/Chapitres/RS/RS.md">Réseaux sociaux</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Types/Types_de_base/">Types de base</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Bases/bases/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Algos/Algos/">Algorithmes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Terminales</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../BDD/">Base de données</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Algorithmes de Routage</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#rappel-quest-ce-que-le-routage">Rappel : qu'est-ce que le routage ?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modelisation-dun-reseau">Modélisation d'un réseau</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#protocole-rip-routing-information-protocol">Protocole RIP (Routing Information Protocol)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#principe">Principe</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exemple">Exemple</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice">Exercice</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#limites">Limites</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#protocole-ospf-open-shortest-path-first">Protocole OSPF (Open Shortest Path First)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#la-metrique-utilisee">La métrique utilisée</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lalgorithme-de-dikstra">L'algorithme de Dikstra</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercices">Exercices</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#avantages">Avantages</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lien-avec-les-algorithmes-de-graphes">Lien avec les algorithmes de graphes</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Terminales</li>
+      <li class="breadcrumb-item active">Algorithmes de Routage</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="algorithmes-de-routage">Algorithmes de routage</h1>
+<p>Ce chapitre est une courte extension du chapitre de première sur <a href="./../../../../Premieres/Chapitres/Réseaux/Réseaux">les réseaux</a></p>
+<hr />
+<h2 id="rappel-quest-ce-que-le-routage">Rappel : qu'est-ce que le routage ?</h2>
+<p>Sur Internet, les données sont découpées en <strong>paquets</strong>. Chaque paquet doit être acheminé depuis un <strong>ordinateur source</strong> vers un <strong>ordinateur destination</strong>, en passant par plusieurs <strong>routeurs intermédiaires</strong>.</p>
+<blockquote>
+<p>Le <strong>routage</strong> correspond au choix du <strong>chemin</strong> suivi par les paquets dans un réseau.</p>
+</blockquote>
+<p>Chaque routeur prend une décision locale : <em>vers quel routeur voisin envoyer le paquet ensuite ?</em></p>
+<hr />
+<h2 id="modelisation-dun-reseau">Modélisation d'un réseau</h2>
+<p>Pour étudier le routage, on modélise souvent un réseau sous la forme d’un <strong>graphe</strong>.</p>
+<ul>
+<li>Les <strong>sommets</strong> représentent les routeurs  </li>
+<li>Les <strong>arêtes</strong> représentent les liaisons entre routeurs  </li>
+</ul>
+<p><img alt="graphe" src="../graphe.png" /></p>
+<blockquote>
+<p>Le routage revient donc à un <strong>problème de recherche de chemin dans un graphe</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="protocole-rip-routing-information-protocol">Protocole RIP (Routing Information Protocol)</h2>
+<h3 id="principe">Principe</h3>
+<p>Le protocole <strong>RIP</strong> (Routing Information Protocol) est un protocole de routage basé sur l’algorithme de <strong>Bellman-Ford</strong>.</p>
+<ul>
+<li>Les routeurs échangent leur <strong>table de routage toutes les 30 secondes</strong></li>
+<li>Chaque routeur envoie sa table à ses <strong>voisins directs</strong></li>
+<li>La métrique utilisée est le <strong>nombre de sauts</strong> (<em>hops</em>)</li>
+</ul>
+<blockquote>
+<p>Un <strong>saut</strong> correspond à un <strong>lien</strong> entre deux routeurs.</p>
+</blockquote>
+<p>Chaque routeur met à jour sa table en ne conservant, pour chaque destination, que le <strong>chemin avec le plus petit nombre de sauts</strong>.</p>
+<ul>
+<li>Au départ, un routeur ne connaît que ses <strong>voisins</strong></li>
+<li>Progressivement, les tables s’enrichissent</li>
+<li>Le réseau <strong>converge</strong> vers un état stable</li>
+</ul>
+<hr />
+<h3 id="exemple">Exemple</h3>
+<p>Remplissons la table de routage de <strong>A</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Graphe</th>
+<th>Table</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="graphe1" src="../graphe1.png" /></td>
+<td><img alt="table1" src="../table1.png" /></td>
+<td>On part de <strong>A</strong>, connecté à <strong>B</strong> et <strong>C</strong>.</td>
+</tr>
+<tr>
+<td><img alt="graphe2" src="../graphe2.png" /></td>
+<td><img alt="table1" src="../table2.png" /></td>
+<td>On continue avec <strong>B</strong>.</td>
+</tr>
+<tr>
+<td><img alt="graphe3" src="../graphe3.png" /></td>
+<td><img alt="table1" src="../table3.png" /></td>
+<td>Puis <strong>C</strong>.</td>
+</tr>
+<tr>
+<td><img alt="graphe4" src="../graphe4.png" /></td>
+<td><img alt="table1" src="../table4.png" /></td>
+<td>On a deja vu <strong>F</strong>.</td>
+</tr>
+<tr>
+<td><img alt="graphe5" src="../graphe5.png" /></td>
+<td><img alt="table1" src="../table5.png" /></td>
+<td></td>
+</tr>
+<tr>
+<td><img alt="graphe6" src="../graphe6.png" /></td>
+<td><img alt="table1" src="../table6.png" /></td>
+<td><strong>Fini !</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>On pourrait continuer, mais on voit bien qu'on a deja exploré tout le graphe. On ne trouvera pas de chemin plus court pour <strong>G</strong> et <strong>H</strong>.</p>
+</blockquote>
+<p>Pour trouver <strong>le plus court chemin vers un routeur en partant de A</strong>, on va utiliser notre table de routage.</p>
+<p>Par exemple pour atteindre le routeur <strong>H</strong> :</p>
+<p><img alt="chemin" src="../chemin.png" /></p>
+<blockquote>
+<p>Le plus court chemin de <strong>A</strong> vers <strong>H</strong> est : <strong>A -&gt; C -&gt; F -&gt; H</strong>.</p>
+</blockquote>
+<hr />
+<h3 id="exercice">Exercice</h3>
+<p>Trouver le plus court chemin de <strong>A</strong> vers <strong>H</strong> en utilisant l'algorithme du protocole <strong>RIP</strong>.</p>
+<p><img alt="exo" src="../exo.png" /></p>
+<hr />
+<h3 id="limites">Limites</h3>
+<p>Le protocole RIP limite le nombre de sauts à <strong>15</strong> :<br />
+- <strong>jusqu'à 15 sauts</strong> : destination <strong>atteignable</strong><br />
+- <strong>à partir de 16 sauts</strong> : destination <strong>injoignable</strong>  </p>
+<p>RIP est un protocole <strong>simple</strong>, mais il ne prend pas en compte la qualité des liens.</p>
+<hr />
+<h2 id="protocole-ospf-open-shortest-path-first">Protocole OSPF (Open Shortest Path First)</h2>
+<p>Le protocole <strong>OSPF</strong> est un protocole de routage plus récent que RIP, conçu pour corriger ses limitations.<br />
+Il est <strong>largement utilisé sur Internet</strong>.</p>
+<p>OSPF est basé sur l’algorithme de <strong>Dijkstra</strong>, qui permet de déterminer le <strong>chemin de coût minimal</strong>.</p>
+<ul>
+<li>Les routeurs échangent des informations avec leurs <strong>voisins</strong></li>
+<li>Chaque routeur <strong>conserve ces informations en mémoire</strong></li>
+<li>Il calcule ensuite les meilleures routes à l’aide de l’algorithme de <strong>Dijkstra</strong></li>
+</ul>
+<blockquote>
+<p>Contrairement à RIP, les routeurs ont une <strong>vision plus globale du réseau</strong>.</p>
+</blockquote>
+<hr />
+<h3 id="la-metrique-utilisee">La métrique utilisée</h3>
+<p>Avec OSPF, la métrique n’est <strong>pas le nombre de sauts</strong>, mais un <strong>coût</strong> :</p>
+<ul>
+<li>Le coût dépend de la <strong>qualité de la liaison</strong></li>
+<li>En pratique, il est lié au <strong>débit</strong> de la connexion</li>
+<li>Le coût total d’un chemin est la <strong>somme des coûts des liaisons</strong></li>
+</ul>
+<blockquote>
+<p>OSPF choisit donc le <strong>chemin le plus rapide</strong>, pas forcément le plus court en nombre de routeurs.</p>
+</blockquote>
+<p>Par exemple, on pourrait representer un réseau (avec les débits des liaisons) comme ceci :</p>
+<p><img alt="debit" src="../debit.png" /></p>
+<h3 id="lalgorithme-de-dikstra">L'algorithme de Dikstra</h3>
+<table>
+<thead>
+<tr>
+<th>Graphe</th>
+<th>Table</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="graphe1" src="../dij1.png" /></td>
+<td><img alt="table1" src="../tabl1.png" /></td>
+<td>On part de <strong>A</strong>.</td>
+</tr>
+<tr>
+<td><img alt="graphe2" src="../dij2.png" /></td>
+<td><img alt="table1" src="../tabl2.png" /></td>
+<td>Le plus court chemin part vers <strong>C</strong>.</td>
+</tr>
+<tr>
+<td><img alt="graphe3" src="../dij3.png" /></td>
+<td><img alt="table1" src="../tabl3.png" /></td>
+<td>On remplace chemin vers <strong>D</strong>.</td>
+</tr>
+<tr>
+<td><img alt="graphe4" src="../dij4.png" /></td>
+<td><img alt="table1" src="../tabl4.png" /></td>
+<td></td>
+</tr>
+<tr>
+<td><img alt="graphe5" src="../dij5.png" /></td>
+<td><img alt="table1" src="../tabl5.png" /></td>
+<td><strong>Fini!</strong></td>
+</tr>
+</tbody>
+</table>
+<p>On peut alors retrouver la table de routage de <strong>A</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Destination</th>
+<th>Moyen</th>
+<th>Coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>B</td>
+<td>7</td>
+</tr>
+<tr>
+<td>C</td>
+<td>C</td>
+<td>5</td>
+</tr>
+<tr>
+<td>D</td>
+<td>B</td>
+<td>8</td>
+</tr>
+<tr>
+<td>E</td>
+<td>D</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exercices">Exercices</h3>
+<p>1) Rapeler les combiens il y a de <strong>bits</strong> dans un <strong>kb</strong>, un <strong>Mb</strong> et un <strong>Gb</strong> (avec des puissaces de 10).</p>
+<p>Pour calculer le coût d'une liaison, par convention, on utilisera la formule suivante :</p>
+<blockquote>
+<p><span class="arithmatex">\(coût = 10^8 / débit\)</span>.</p>
+</blockquote>
+<p><img alt="debit" src="../debit.png" /></p>
+<p>2) Modifier le graphe précedent en raplaçant les débits par les coûts des liaisons.</p>
+<p>3) Appliquer l'algorithmes de Dijkstra pour faire la table de routage de <strong>A</strong>.</p>
+<p>4) Comparer avec celle trouvée pour le protocole RIP. Expliquer les changements.</p>
+<hr />
+<h3 id="avantages">Avantages</h3>
+<ul>
+<li>Prend en compte la qualité des liens</li>
+<li>Adapté aux grands réseaux</li>
+<li>Les tables de routage ne sont recalculées que lorsqu'un changement de topologie est observé.</li>
+</ul>
+<hr />
+<h2 id="lien-avec-les-algorithmes-de-graphes">Lien avec les algorithmes de graphes</h2>
+<p>Le routage est une application directe des <strong>algorithmes de recherche de chemin</strong> du chapitre sur <a href="./../../Graphes/graphes">les graphes</a> que l'on verra plus tard dans l'année.</p>
+<table>
+<thead>
+<tr>
+<th>Protocole</th>
+<th>Type de graphe</th>
+<th>Algorithme associé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RIP</td>
+<td>Graphe non pondéré</td>
+<td>Parcours en largeur (BFS)</td>
+</tr>
+<tr>
+<td>OSPF</td>
+<td>Graphe pondéré</td>
+<td>Algorithme de Dijkstra</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Les protocoles de routage sont des <strong>applications concrètes</strong> des algorithmes de graphes.</p>
+</blockquote>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../BDD/" class="btn btn-neutral float-left" title="Base de données"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../BDD/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
