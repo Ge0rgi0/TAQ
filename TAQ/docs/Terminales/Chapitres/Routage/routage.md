@@ -60,11 +60,13 @@ Remplissons la table de routage de **A** :
 |![graphe5](graphe5.png)|![table1](table5.png)|moyen de **G** = moyen de **E**.|
 |![graphe6](graphe6.png)|![table1](table6.png)|**Fini !**|
 
+**Attention**, il faut traiter les sommets dans l'ordre de leur nombre de sauts.
+
 > On pourrait continuer, mais on voit bien qu'on a deja exploré tout le graphe. On ne trouvera pas de chemin plus court pour **G** et **H**.
 
-Pour trouver **le plus court chemin vers un routeur en partant de A**, on va utiliser toutes les tables de routage.
+Pour trouver **le plus court chemin entre deux routeurs**, on aura besoin de toutes les tables de routage.
 
-Par exemple pour atteindre le routeur **H** :
+Par exemple pour atteindre le routeur **H** en partant de **A** :
 
 ![chemin](chemin.png)
 
