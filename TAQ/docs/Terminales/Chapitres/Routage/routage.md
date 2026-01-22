@@ -57,12 +57,12 @@ Remplissons la table de routage de **A** :
 |![graphe2](graphe2.png)|![table1](table2.png)|On continue avec **B**.|
 |![graphe3](graphe3.png)|![table1](table3.png)|Puis **C**.|
 |![graphe4](graphe4.png)|![table1](table4.png)|On a deja vu **F**.|
-|![graphe5](graphe5.png)|![table1](table5.png)||
+|![graphe5](graphe5.png)|![table1](table5.png)|moyen de **G** = moyen de **E**.|
 |![graphe6](graphe6.png)|![table1](table6.png)|**Fini !**|
 
 > On pourrait continuer, mais on voit bien qu'on a deja exploré tout le graphe. On ne trouvera pas de chemin plus court pour **G** et **H**.
 
-Pour trouver **le plus court chemin vers un routeur en partant de A**, on va utiliser notre table de routage.
+Pour trouver **le plus court chemin vers un routeur en partant de A**, on va utiliser toutes les tables de routage.
 
 Par exemple pour atteindre le routeur **H** :
 

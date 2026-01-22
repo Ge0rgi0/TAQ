@@ -264,11 +264,31 @@ Le non-respect de ces règles peut entraîner des sanctions pour l’influenceur
 
 ## Graphes
 
+### Acitivé
+
 Pour cette partie, nous allons travailler sur une [activité](snt_graphes.pdf) en grandepartie reprise de celle disponible sur le site : [KXS.fr](https://kxs.fr/cours/reseaux-sociaux/graphes-reseaux-sociaux).
 
 Au programme de cette activité :
 - les différentes manières de décrire / reprèsenter les liaisons entre les utilisateurs d'un réseau social
 - découverte des propriètès et caractéristiques des graphes
+
+### Pourquoi les graphes ?
+
+Nous avons modélisé un réseau social à l’aide de graphes et représenté les utilisateurs par des sommets et leurs relations par des arêtes, ce qui nous a permis d’étudier :
+
+- les distances entre personnes ;
+- les sommets centraux ;
+- la rapidité de circulation d’une information dans un réseau.
+
+>Cette modélisation montre que, dans un réseau social, tout le monde n’a pas la même place et pas la même influence.
+
+Cependant, dans les réseaux sociaux réels, la circulation de l’information ne dépend pas uniquement des relations entre utilisateurs.
+Elle est aussi fortement influencée par des choix techniques faits par les plateformes.
+
+En effet, les réseaux sociaux ne se contentent pas de relayer automatiquement les contenus entre amis ou abonnés.
+Ils sélectionnent, trient et hiérarchisent les informations visibles par chaque utilisateur.
+
+Pour comprendre pourquoi deux personnes, pourtant proches dans le réseau, peuvent voir des contenus très différents, il faut maintenant s’intéresser au rôle des algorithmes et aux effets de filtrage de l’information.
 
 ---
 
