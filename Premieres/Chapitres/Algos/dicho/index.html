@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Algorithmes - TAQ</title>
+    <title>Recherche par dichotomie - TAQ</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Algorithmes";
-        var mkdocs_page_input_path = "Premieres/Chapitres/Algos/Algos.md";
+        var mkdocs_page_name = "Recherche par dichotomie";
+        var mkdocs_page_input_path = "Premieres/Chapitres/Algos/dicho.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Cours</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" >Secondes</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
@@ -57,8 +57,8 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
-    <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/">Accueil</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base/">Types de base</a>
@@ -69,9 +69,7 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">Algorithmes</a>
-    <ul class="current">
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Algos/">Algorithmes</a>
                 </li>
     </ul>
                   </li>
@@ -104,9 +102,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Cours</li>
-          <li class="breadcrumb-item">Premières</li>
-      <li class="breadcrumb-item active">Algorithmes</li>
+      <li class="breadcrumb-item active">Recherche par dichotomie</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -115,19 +111,52 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="algorithmique">Algorithmique</h1>
-<p><a href="../Recherche/">🟨 1 - Notions de base ( + parcours séquentielle )</a><br />
-<a href="../tri/">🟨 2 - Tri</a><br />
-<a href="knn.md">🟨 3 - K plus proches voisins</a><br />
-<a href="../dicho/">🟨 4 - Recherche dichotomique</a><br />
-<a href="gloutons.md">🟨 5 - Algorithmes gloutons</a>  </p>
+                <h1 id="recherche-par-dichotomie">Recherche par dichotomie</h1>
+<h2 id="situation">Situation</h2>
+<p>On dispose d'une <strong>liste triée de nombres</strong> contenant plusieurs milliers de valeurs.<br />
+On cherche à savoir si un nombre donné est présent dans cette liste.</p>
+<blockquote>
+<ul>
+<li><strong>Comment faire ?</strong> </li>
+<li>Combien de valeurs allons-nous devoir regarder pour savoir si la valeur est présente, <strong>dans le pire des cas</strong> ?</li>
+</ul>
+</blockquote>
+<h2 id="activite-de-recherche">Activité de recherche</h2>
+<p>1) Votre professeur préféré aura pensé à ramener un jeu de cartes (normalement).  </p>
+<blockquote>
+<p>Mettez-vous par groupes. Chaque groupe reçoit un paquet de cartes.</p>
+<p><strong>Commencez par trier les cartes</strong> (par valeur croissante, par exemple).</p>
+<p>Une carte est ensuite choisie secrètement par le professeur :<br />
+votre objectif est de <strong>déterminer si cette carte est présente dans le paquet</strong>.</p>
+</blockquote>
+<hr />
+<p>2) Recherche "spontanée" :</p>
+<blockquote>
+<p>Sans consigne particulière, cherchez la carte choisie.  </p>
+<p>Observez votre méthode :<br />
+- Par quelle carte commencez-vous ?<br />
+- Comment décidez-vous où chercher ensuite ?<br />
+- Quand savez-vous que la recherche est terminée ?  </p>
+<p>Essayez de décrire votre méthode <strong>avec vos propres mots</strong>.<br />
+L’objectif n’est pas d’être parfait, mais de formaliser une idée.</p>
+</blockquote>
+<hr />
+<p>3) Mise en commun :</p>
+<blockquote>
+<p>Comparaison des méthodes utilisées
+Discussion sur les avantages et limites de chaque méthode.</p>
+<p>Écriture collective au tableau d’un algorithme de recherche.</p>
+</blockquote>
+<hr />
+<p>4) Et en Python alors ? :</p>
+<blockquote>
+<p>Écrire une fonction Python correspondant à la stratégie émergente.</p>
+<p>Tester ces fonctions sur des listes de tailles différentes.</p>
+<p>Conseil : vous pouvez faire un code qui génére une liste aléatoire pour tester votre code.</p>
+</blockquote>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../R%C3%A9seaux/R%C3%A9seaux/" class="btn btn-neutral float-left" title="Réseaux"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../../../../Terminales/Terminales/" class="btn btn-neutral float-right" title="Accueil">Next <span class="icon icon-circle-arrow-right"></span></a>
-    </div>
 
   <hr/>
 
@@ -149,10 +178,6 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../R%C3%A9seaux/R%C3%A9seaux/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../../../../Terminales/Terminales/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
