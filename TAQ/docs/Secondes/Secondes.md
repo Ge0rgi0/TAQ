@@ -17,14 +17,16 @@ Chaque thème du programme (Internet, Web, réseaux sociaux, données, localisat
 
 ## Exposés 
 
-- [🔺 Les exposés](exposes.md)
+- [🟥 Les exposés](exposes.md)
 
 ## Python
 
-- [🔸 Print, variables et input](Chapitres/python1.md)
-- [🔸 Entiers et conditions](Chapitres/python2.md)
+- [🟧 Créer un compte sur France-IOI](IOI/ioi.md)
+
+- [🟧 Print, variables et input](Chapitres/python1.md)
+- [🟧 Entiers et conditions](Chapitres/python2.md)
 
 ## Chapitres
 
-- [🔹 Internet](Chapitres/Internet/Internet.md)
-- [🔹 Réseaux sociaux](Chapitres/RS/RS.md)
+- [🟦 Internet](Chapitres/Internet/Internet.md)
+- [🟦 Réseaux sociaux](Chapitres/RS/RS.md)
