@@ -21,6 +21,7 @@ nav:
           - Piles et Files: Terminales/Chapitres/Piles&Files/Piles&Files.md
           - Base de données: Terminales/Chapitres/BDD.md
           - Algorithmes de Routage: Terminales/Chapitres/Routage/routage.md
+          - Récursivité: Terminales/Chapitres/Recursivité/rec.md
 
 
 theme:

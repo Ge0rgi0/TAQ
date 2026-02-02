@@ -187,9 +187,9 @@ Avant de publier un contenu, se poser la question :
 
 La majorité numérique correspond à l’âge à partir duquel un mineur peut consentir seul au traitement de ses données personnelles sur les plateformes numériques. Cette règle protège les mineurs mais ne supprime pas les risques liés à Internet. La sensibilisation et l’accompagnement restent essentiels à tout âge.
 
-- **Avant 15 ans :** Inscription seulement avec l’autorisation des parents. Le contrôle parental est conseillé.
+- **Avant 15 ans :** Même si certains réseaux acceptent des adolescents plus jeunes il est interdit d'y avoir un compte avant ses 15 ans.
 - **De 15 à 17 ans :** Inscription possible de manière autonome mais l'accompagnement parental est recommandé.
-- **Après 17 ans :** L'utilisateur est en autonomie complète. Il est considéré en responsabilité personnelle.
+- **À partir de 18 ans :** L'utilisateur est en autonomie complète. Il est considéré en responsabilité personnelle.
 
 ---
 
