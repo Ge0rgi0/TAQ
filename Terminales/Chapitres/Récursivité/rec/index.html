@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>La récursivité - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "La r\u00e9cursivit\u00e9";
+        var mkdocs_page_input_path = "Terminales/Chapitres/R\u00e9cursivit\u00e9/rec.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Types/Types_de_base/">Types de base</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Bases/bases/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Algos/Algos/">Algorithmes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../BDD/">Base de données</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Routage/routage/">Algorithmes de Routage</a>
+                </li>
+                <li class="toctree-l2"><a class="" href="../../Recursivité/rec.md">Récursivité</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">La récursivité</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="la-recursivite">La récursivité</h1>
+<h2 id="introduction-pourquoi-parler-de-recursivite">Introduction – Pourquoi parler de récursivité ?</h2>
+<p>En programmation, certains problèmes sont naturellement <strong>auto-similaires</strong> : ils peuvent être décrits comme une version plus simple d’eux-mêmes. C’est le cas, par exemple :</p>
+<ul>
+<li>d’un calcul mathématique (factorielle) ;</li>
+<li>d’une structure hiérarchique (arbre, dossiers) ;</li>
+<li>d’un parcours de graphe.</li>
+</ul>
+<p>La <strong>récursivité</strong> est une manière élégante et puissante de résoudre ce type de problèmes. Elle est très utilisée en informatique, mais aussi délicate : une récursion mal conçue peut provoquer des erreurs graves (boucles infinies, dépassement de pile).</p>
+<hr />
+<h2 id="definition-de-la-recursivite">Définition de la récursivité</h2>
+<p>Une <strong>fonction récursive</strong> est une fonction qui <strong>s’appelle elle-même</strong>.</p>
+<p>Cependant, une fonction récursive correcte repose obligatoirement sur <strong>deux éléments fondamentaux</strong> :</p>
+<ol>
+<li>un <strong>cas de base</strong> ;</li>
+<li>un <strong>appel récursif</strong> sur un problème plus simple.</li>
+</ol>
+<blockquote>
+<p>⚠️ Sans cas de base, la fonction s’appelle indéfiniment.</p>
+</blockquote>
+<h3 id="le-cas-de-base">Le cas de base</h3>
+<p>Le <strong>cas de base</strong> est la situation la plus simple du problème, celle pour laquelle la réponse est connue immédiatement.</p>
+<p>Exemples :</p>
+<ul>
+<li>pour une factorielle : <code>0! = 1</code></li>
+<li>pour une somme de liste : la somme d’une liste vide est <code>0</code></li>
+</ul>
+<p>Le cas de base permet à la récursion de <strong>s’arrêter</strong>.</p>
+<h3 id="lappel-recursif">L’appel récursif</h3>
+<p>L’appel récursif correspond à l’appel de la fonction sur une version <strong>plus simple</strong> du problème initial.</p>
+<p>Exemples :  </p>
+<ul>
+<li><code>factorielle(n)</code> appelle <code>factorielle(n-1)</code></li>
+<li><code>somme(L)</code> appelle <code>somme(L[1:])</code></li>
+</ul>
+<p>Condition essentielle : à chaque appel récursif, on doit <strong>se rapprocher du cas de base</strong>.</p>
+<hr />
+<h2 id="exemple-fondamental-la-factorielle">Exemple fondamental : la factorielle</h2>
+<h3 id="definition-mathematique">Définition mathématique</h3>
+<ul>
+<li><code>0! = 1</code></li>
+<li><code>n! = n × (n − 1)!</code></li>
+</ul>
+<p>Cette définition est <strong>naturellement récursive</strong>.</p>
+<h3 id="implementation-en-python">Implémentation en Python</h3>
+<pre><code class="language-python">def factorielle(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorielle(n - 1)
+</code></pre>
+<p>Analyse :</p>
+<ul>
+<li>le cas de base est <code>n == 0</code> ;</li>
+<li>l’appel récursif est <code>factorielle(n - 1)</code>.</li>
+</ul>
+<hr />
+<h2 id="la-pile-dappels-stack">La pile d’appels (stack)</h2>
+<p>À chaque appel de fonction, Python empile les informations nécessaires à son exécution dans une <strong>pile d’appels</strong>.</p>
+<p>Pour <code>factorielle(3)</code> :</p>
+<ul>
+<li><code>factorielle(3)</code></li>
+<li><code>factorielle(2)</code></li>
+<li><code>factorielle(1)</code></li>
+<li><code>factorielle(0)</code></li>
+</ul>
+<p>Puis les retours se font dans l’ordre inverse.</p>
+<p><img alt="" src="../appels.png" /></p>
+<hr />
+<h2 id="recursion-infinie-et-erreurs">Récursion infinie et erreurs</h2>
+<p>Une récursion mal conçue peut provoquer :</p>
+<ul>
+<li>une <strong>récursion infinie</strong> ;</li>
+<li>une erreur de type <code>RecursionError</code> (dépassement de pile).</li>
+</ul>
+<p>Causes fréquentes :</p>
+<ul>
+<li>oubli du cas de base ;</li>
+<li>cas de base jamais atteint ;</li>
+<li>problème qui ne se simplifie pas.</li>
+</ul>
+<h2 id="recursivite-vs-iteration">Récursivité vs itération</h2>
+<table>
+<thead>
+<tr>
+<th>Récursivité</th>
+<th>Itération</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code souvent plus lisible</td>
+<td>Plus efficace en mémoire</td>
+</tr>
+<tr>
+<td>Proche de la définition du problème</td>
+<td>Plus simple à exécuter</td>
+</tr>
+<tr>
+<td>Risque de récursion infinie</td>
+<td>Risque de boucle infinie</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="bonnes-pratiques">Bonnes pratiques</h2>
+<ul>
+<li>Toujours identifier le cas de base avant de coder ;</li>
+<li>Vérifier que le problème se simplifie ;</li>
+<li>Tester sur de petites valeurs ;</li>
+<li>Éviter les récursions trop profondes.</li>
+</ul>
+<hr />
+<h2 id="exercices">Exercices</h2>
+<h3 id="niveau-1-comprendre-le-mecanisme">Niveau 1 – Comprendre le mécanisme</h3>
+<h3 id="exercice-1-compter-jusqua-zero">Exercice 1 – Compter jusqu’à zéro</h3>
+<p>Écrire une fonction récursive <code>compte(n)</code> qui affiche les nombres de <code>n</code> jusqu’à <code>0</code>.</p>
+<p>Exemple :</p>
+<p>compte(3)</p>
+<ul>
+<li>3</li>
+<li>2</li>
+<li>1</li>
+<li>0</li>
+</ul>
+<hr />
+<h3 id="exercice-2-somme-des-entiers">Exercice 2 – Somme des entiers</h3>
+<p>Écrire une fonction récursive <code>somme_entiers(n)</code> qui calcule la somme des entiers de <code>1</code> à <code>n</code>.</p>
+<hr />
+<h3 id="exercice-3-puissance">Exercice 3 – Puissance</h3>
+<p>Écrire une fonction récursive <code>puissance(a, n)</code> qui calcule <span class="arithmatex">\(a^n\)</span> (avec <code>n ≥ 0</code>).</p>
+<hr />
+<h3 id="exercice-4-longueur-dune-liste">Exercice 4 – Longueur d’une liste</h3>
+<p>Écrire une fonction récursive <code>taille(L)</code> qui renvoie le nombre d’éléments de la liste <code>L</code>.</p>
+<hr />
+<h3 id="niveau-2-recursion-et-structures-simples">Niveau 2 – Récursion et structures simples</h3>
+<h3 id="exercice-5-somme-dune-liste">Exercice 5 – Somme d’une liste</h3>
+<p>Écrire une fonction récursive qui calcule la somme des éléments d’une liste.</p>
+<hr />
+<h3 id="exercice-6-maximum-dune-liste">Exercice 6 – Maximum d’une liste</h3>
+<p>Écrire une fonction récursive <code>maximum(L)</code> qui renvoie le plus grand élément de <code>L</code>.
+(On supposera la liste non vide.)</p>
+<hr />
+<h3 id="exercice-7-recherche-dans-une-liste">Exercice 7 – Recherche dans une liste</h3>
+<p>Écrire une fonction récursive <code>appartient(x, L)</code> qui indique si <code>x</code> est présent dans <code>L</code>.</p>
+<hr />
+<h3 id="exercice-8-compter-selon-un-critere">Exercice 8 – Compter selon un critère</h3>
+<p>Écrire une fonction récursive qui compte le nombre d’éléments <strong>positifs</strong> dans une liste.</p>
+<hr />
+<h3 id="niveau-3-nombres-et-decomposition">Niveau 3 – Nombres et décomposition</h3>
+<h3 id="exercice-9-somme-des-chiffres">Exercice 9 – Somme des chiffres</h3>
+<p>Écrire une fonction récursive <code>somme_chiffres(n)</code> qui calcule la somme des chiffres de <code>n</code>.</p>
+<p>Exemple :</p>
+<p>somme_chiffres(2034)</p>
+<ul>
+<li>9</li>
+</ul>
+<hr />
+<h3 id="exercice-10-nombre-de-chiffres">Exercice 10 – Nombre de chiffres</h3>
+<p>Écrire une fonction récursive qui renvoie le nombre de chiffres d’un entier strictement positif.</p>
+<p>Exemple :</p>
+<p>somme_chiffres(2034)</p>
+<ul>
+<li>4</li>
+</ul>
+<hr />
+<h3 id="exercice-11-conversion-en-binaire">Exercice 11 – Conversion en binaire</h3>
+<p>Écrire une fonction récursive qui affiche l’écriture binaire d’un entier positif.</p>
+<p>Exemple :</p>
+<p>binaire(13)</p>
+<ul>
+<li>"1101"</li>
+</ul>
+<hr />
+<h3 id="niveau-4-fibonacci-et-efficacite">Niveau 4 – Fibonacci et efficacité</h3>
+<h3 id="exercice-12-suite-de-fibonacci">Exercice 12 – Suite de Fibonacci</h3>
+<p>La suite de Fibonacci est définie par :</p>
+<ul>
+<li><span class="arithmatex">\(F(0) = 0\)</span></li>
+<li><span class="arithmatex">\(F(1) = 1\)</span></li>
+<li><span class="arithmatex">\(F(n) = F(n-1) + F(n-2)\)</span></li>
+</ul>
+<p>Travail à faire :</p>
+<ol>
+<li>Écrire une fonction récursive <code>fibonacci(n)</code>.</li>
+<li>Tester la fonction pour des valeurs de plus en plus grandes.</li>
+<li>Faire le schéma des appels récursifs.</li>
+</ol>
+<hr />
+<h3 id="niveau-5-recursion-sur-les-chaines-et-listes">Niveau 5 – Récursion sur les chaînes et listes</h3>
+<h3 id="exercice-13-palindrome">Exercice 13 – Palindrome</h3>
+<p>Écrire une fonction récursive <code>est_palindrome(mot)</code> qui indique si une chaîne est un palindrome.</p>
+<p>Exemples :</p>
+<p>"radar"</p>
+<ul>
+<li>True</li>
+</ul>
+<p>"python"</p>
+<ul>
+<li>False</li>
+</ul>
+<hr />
+<h3 id="exercice-14-inverser-une-liste">Exercice 14 – Inverser une liste</h3>
+<p>Écrire une fonction récursive qui renvoie une nouvelle liste contenant les éléments de <code>L</code> dans l’ordre inverse.</p>
+<hr />
+<h3 id="niveau-6">Niveau 6</h3>
+<h3 id="exercice-15-recherche-dichotomique">Exercice 15 – Recherche dichotomique</h3>
+<p>On suppose la liste triée.</p>
+<p>Écrire une fonction récursive qui recherche un élément dans une liste par <strong>dichotomie</strong>.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
