@@ -12,6 +12,7 @@
 - [🟥 3 - Bases de Données](Chapitres/BDD.md)
 - [🟩 4 - Algorithmes de Routage](Chapitres/Routage/routage.md)
 - [🟨 5 - Récursivité](Chapitres/Récursivité/rec.md)
+- [🟦 6 - Sécurité](Chapitres/Sécurité/secu.md)
 
 ## BACCALAURÉAT GÉNÉRAL de NSI
 

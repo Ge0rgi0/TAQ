@@ -17,11 +17,13 @@ nav:
           - Algorithmes: Premieres/Chapitres/Algos/Algos.md 
       - Terminales:
           - Accueil: Terminales/Terminales.md
+          - Baccalauréat : Terminales/bac.md
           - Programmation Orientée Objet: Terminales/Chapitres/POO.md
           - Piles et Files: Terminales/Chapitres/Piles&Files/Piles&Files.md
           - Base de données: Terminales/Chapitres/BDD.md
           - Algorithmes de Routage: Terminales/Chapitres/Routage/routage.md
-          - Récursivité: Terminales/Chapitres/Recursivité/rec.md
+          - Récursivité: Terminales/Chapitres/Récursivité/rec.md
+          - Sécurité: Terminales/Chapitres/Sécurité/secu.md
 
 
 theme:
