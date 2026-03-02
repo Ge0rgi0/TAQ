@@ -57,6 +57,8 @@ Message chiffré : `ERQMRXU`
 
 #### Exercices
 
+Pour les exercices du chapitre, voici un fichier à compléter : [fichier python](sécurité_exo.py)
+
 1. Chiffrer le mot `SECURITE` avec un décalage de 5.
 2. Déchiffrer le message `CPGJID R THI BXTJM FJT DCT EXTRT` avec un décalage de 15.
 3. Réaliser deux fonctions python, une pour chiffrer, l'autre pour déchiffrer, utilisant le chiffrement de César.
@@ -98,7 +100,7 @@ Chaque lettre de la clé correspond à un décalage différent.
 
 #### Exercices
 1. Chiffrer `MESSAGE` avec la clé `CLE`.
-2. Dechiffrer `TN NFAAC PVIVBHR PAPYHQBS DR FRHBDRR RLGPBMSHPIYHTLG` avec la clè `BATMAN`.
+2. Dechiffrer `EE ZDAAES IAUIPIKE IZQLBCUROT WQ GEBNWQS EFSIANFBBBXIGFS` avec la clè `BATMAN`.
 3. Réaliser deux fonctions python, une pour chiffrer, l'autre pour déchiffrer, utilisant le chiffrement de Vigenère.
 
 > Si la clé est `A,B`, les décalages seront `1,2`.  
@@ -146,7 +148,7 @@ Principe :
 #### Exercice
 
 Coder en python une fonction pour chiffrer un message en utilisant cette méthode.
->> Coder une fonction python réalisant l'opération `XOR` pourrait être utile.
+>> L'opération `XOR` en Python s'écrit avec le symbole `^`. 
 
 ### 1.4 Pourquoi le chiffrement symétrique est problématique
 

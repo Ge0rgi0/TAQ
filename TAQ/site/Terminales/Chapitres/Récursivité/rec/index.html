@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>La récursivité - TAQ</title>
+    <title>Récursivité - TAQ</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "La r\u00e9cursivit\u00e9";
+        var mkdocs_page_name = "R\u00e9cursivit\u00e9";
         var mkdocs_page_input_path = "Terminales/Chapitres/R\u00e9cursivit\u00e9/rec.md";
         var mkdocs_page_url = null;
       </script>
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Cours</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" >Secondes</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
@@ -73,9 +73,11 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
-    <ul>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Terminales</a>
+    <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../bac/">Baccalauréat</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../POO/">Programmation Orientée Objet</a>
                 </li>
@@ -85,7 +87,83 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../Routage/routage/">Algorithmes de Routage</a>
                 </li>
-                <li class="toctree-l2"><a class="" href="../../Recursivité/rec.md">Récursivité</a>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Récursivité</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#introduction-pourquoi-parler-de-recursivite">Introduction – Pourquoi parler de récursivité ?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#definition-de-la-recursivite">Définition de la récursivité</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#le-cas-de-base">Le cas de base</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lappel-recursif">L’appel récursif</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemple-fondamental-la-factorielle">Exemple fondamental : la factorielle</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#definition-mathematique">Définition mathématique</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#implementation-en-python">Implémentation en Python</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#la-pile-dappels-stack">La pile d’appels (stack)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recursion-infinie-et-erreurs">Récursion infinie et erreurs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#recursivite-vs-iteration">Récursivité vs itération</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bonnes-pratiques">Bonnes pratiques</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercices">Exercices</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#niveau-1-comprendre-le-mecanisme">Niveau 1 – Comprendre le mécanisme</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-1-compter-jusqua-zero">Exercice 1 – Compter jusqu’à zéro</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-2-somme-des-entiers">Exercice 2 – Somme des entiers</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-3-puissance">Exercice 3 – Puissance</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-4-longueur-dune-liste">Exercice 4 – Longueur d’une liste</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#niveau-2-recursion-et-structures-simples">Niveau 2 – Récursion et structures simples</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-5-somme-dune-liste">Exercice 5 – Somme d’une liste</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-6-maximum-dune-liste">Exercice 6 – Maximum d’une liste</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-7-recherche-dans-une-liste">Exercice 7 – Recherche dans une liste</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-8-compter-selon-un-critere">Exercice 8 – Compter selon un critère</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#niveau-3-nombres-et-decomposition">Niveau 3 – Nombres et décomposition</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-9-somme-des-chiffres">Exercice 9 – Somme des chiffres</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-10-nombre-de-chiffres">Exercice 10 – Nombre de chiffres</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-11-conversion-en-binaire">Exercice 11 – Conversion en binaire</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#niveau-4-fibonacci-et-efficacite">Niveau 4 – Fibonacci et efficacité</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-12-suite-de-fibonacci">Exercice 12 – Suite de Fibonacci</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#niveau-5-recursion-sur-les-chaines-et-listes">Niveau 5 – Récursion sur les chaînes et listes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-13-palindrome">Exercice 13 – Palindrome</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-14-inverser-une-liste">Exercice 14 – Inverser une liste</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#niveau-6">Niveau 6</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-15-recherche-dichotomique">Exercice 15 – Recherche dichotomique</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S%C3%A9curit%C3%A9/secu/">Sécurité</a>
                 </li>
     </ul>
                   </li>
@@ -104,7 +182,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">La récursivité</li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Terminales</li>
+      <li class="breadcrumb-item active">Récursivité</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -325,6 +405,10 @@
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Routage/routage/" class="btn btn-neutral float-left" title="Algorithmes de Routage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../S%C3%A9curit%C3%A9/secu/" class="btn btn-neutral float-right" title="Sécurité">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -346,6 +430,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../../Routage/routage/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../S%C3%A9curit%C3%A9/secu/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

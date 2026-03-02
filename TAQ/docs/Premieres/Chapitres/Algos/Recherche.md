@@ -265,7 +265,7 @@ Les exercices suivants permettent de s’entraîner à :
 
 ```python
 def f1(t, x, k):
-    for i in t[:k]
+    for i in t[:k] :
         if i == x :
             return True
     return False

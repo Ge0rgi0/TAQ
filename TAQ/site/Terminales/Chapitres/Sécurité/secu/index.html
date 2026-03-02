@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Sécurité - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "S\u00e9curit\u00e9";
+        var mkdocs_page_input_path = "Terminales/Chapitres/S\u00e9curit\u00e9/secu.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Types/Types_de_base/">Types de base</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Bases/bases/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Algos/Algos/">Algorithmes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Terminales</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../bac/">Baccalauréat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../BDD/">Base de données</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Routage/routage/">Algorithmes de Routage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9cursivit%C3%A9/rec/">Récursivité</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Sécurité</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#1-chiffrement-symetrique">1. Chiffrement symétrique</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#11-chiffrement-de-cesar">1.1 Chiffrement de César</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#12-chiffrement-de-vigenere">1.2 Chiffrement de Vigenère</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#13-le-chiffrement-par-xor">1.3 Le chiffrement par XOR</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#14-pourquoi-le-chiffrement-symetrique-est-problematique">1.4 Pourquoi le chiffrement symétrique est problématique</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-chiffrement-asymetrique">2. Chiffrement asymétrique</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#21-rsa">2.1 RSA</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-https-et-securisation-du-web">3. HTTPS et sécurisation du Web</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-exercices-de-programmation-python">4. Exercices de programmation (Python)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#41-cesar-en-python">4.1 César en Python</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#42-vigenere-en-python">4.2 Vigenère en Python</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Terminales</li>
+      <li class="breadcrumb-item active">Sécurité</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="securisation-des-communications">Sécurisation des communications</h1>
+<h2 id="introduction">Introduction</h2>
+<p>La sécurisation des communications vise à protéger les informations échangées entre deux entités (personnes, machines, serveurs) contre :</p>
+<ul>
+<li>l’écoute (confidentialité),</li>
+<li>la modification (intégrité),</li>
+<li>l’usurpation d’identité (authentification).</li>
+</ul>
+<p>La cryptographie est l’outil principal permettant d’atteindre ces objectifs.  </p>
+<p><strong>Définitions :</strong></p>
+<ul>
+<li><strong>Chiffrer :</strong> consiste à transformer un message clair en un message illisible à l’aide d’un algorithme et d’une clé : <code>Message clair → message chiffré</code></li>
+<li><strong>Déchiffrer :</strong> consiste à retrouver le message clair en connaissant la clé utilisée pour le chiffrement : <code>Message chiffré + clé → message clair</code></li>
+<li><strong>Décrypter :</strong> Décrypter consiste à retrouver le message clair sans connaître la clé. <code>C’est le travail du cryptanalyste.</code></li>
+</ul>
+<p>Dans le langage courant, <strong>crypter</strong> est souvent utilisé comme synonyme de chiffrer. Cependant, ce terme est impropre en cryptographie. <code>On chiffre un message, on ne le “crypte” pas.</code></p>
+<p>On distingue principalement deux grandes familles de chiffrement :</p>
+<ul>
+<li>le <strong>chiffrement symétrique</strong></li>
+<li>le <strong>chiffrement asymétrique</strong></li>
+</ul>
+<hr />
+<h2 id="1-chiffrement-symetrique">1. Chiffrement symétrique</h2>
+<p>Le chiffrement symétrique repose sur <strong>une clé unique</strong>, utilisée à la fois pour chiffrer et pour déchiffrer le message.  </p>
+<h3 id="11-chiffrement-de-cesar">1.1 Chiffrement de César</h3>
+<p>Le chiffrement de César est l’un des plus anciens algorithmes de chiffrement.</p>
+<p><strong>Principe :</strong></p>
+<ul>
+<li>chaque lettre est décalée d’un nombre fixe de positions dans l’alphabet.</li>
+</ul>
+<p>Exemple avec un décalage de 3 :</p>
+<ul>
+<li>A → D  </li>
+<li>B → E  </li>
+<li>Z → C  </li>
+</ul>
+<p>Message clair : <code>BONJOUR</code><br />
+Message chiffré : <code>ERQMRXU</code></p>
+<p><strong>Avantages :</strong></p>
+<ul>
+<li>très simple à comprendre</li>
+</ul>
+<p><strong>Inconvénients :</strong></p>
+<ul>
+<li>extrêmement faible</li>
+<li>facilement cassable par force brute</li>
+</ul>
+<h4 id="exercices">Exercices</h4>
+<ol>
+<li>Chiffrer le mot <code>SECURITE</code> avec un décalage de 5.</li>
+<li>Déchiffrer le message <code>CPGJID R THI BXTJM FJT DCT EXTRT</code> avec un décalage de 15.</li>
+<li>Réaliser deux fonctions python, une pour chiffrer, l'autre pour déchiffrer, utilisant le chiffrement de César.</li>
+<li>Réaliser une fonction permettant de déchiffrer un messange <strong>sans connaître la clé</strong>.</li>
+</ol>
+<blockquote>
+<p>On pourra utiliser les fonctions <code>ord()</code> et <code>chr()</code>.<br />
+Rappel :  </p>
+<ul>
+<li><code>ord(c : chr) -&gt; int</code>, prend en paramètre un caractère et renvoie son code associé par la norme ISO.</li>
+<li><code>chr(n : int) -&gt; chr</code>, prend en paramètre un entier et renvoie le caractère associé par la norme ISO.</li>
+<li>Dans la norme ISO, les lettres majuscules sont encodées de 65 à 90 inclus.</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="12-chiffrement-de-vigenere">1.2 Chiffrement de Vigenère</h3>
+<p>Le chiffrement de Vigenère est une amélioration du chiffrement de César.</p>
+<p><strong>Principe :</strong></p>
+<ul>
+<li>on utilise un mot-clé</li>
+<li>chaque lettre du message est chiffrée avec un décalage dépendant de la lettre du mot-clé</li>
+</ul>
+<p>Exemple :</p>
+<ul>
+<li>Message : BONJOUR</li>
+<li>Clé : CLE</li>
+</ul>
+<p>Chaque lettre de la clé correspond à un décalage différent.</p>
+<p><strong>Avantages :</strong></p>
+<ul>
+<li>plus résistant que César</li>
+<li>clé plus difficile à deviner</li>
+</ul>
+<p><strong>Inconvénients :</strong></p>
+<ul>
+<li>vulnérable à certaines analyses statistiques si la clé est courte</li>
+</ul>
+<h4 id="exercices_1">Exercices</h4>
+<ol>
+<li>Chiffrer <code>MESSAGE</code> avec la clé <code>CLE</code>.</li>
+<li>Dechiffrer <code>TN NFAAC PVIVBHR PAPYHQBS DR FRHBDRR RLGPBMSHPIYHTLG</code> avec la clè <code>BATMAN</code>.</li>
+<li>Réaliser deux fonctions python, une pour chiffrer, l'autre pour déchiffrer, utilisant le chiffrement de Vigenère.</li>
+</ol>
+<blockquote>
+<p>Si la clé est <code>A,B</code>, les décalages seront <code>1,2</code>.<br />
+Pour retrouver les message originial il faudrait appliquer les décalages <code>-1,-2</code>.</p>
+</blockquote>
+<hr />
+<h3 id="13-le-chiffrement-par-xor">1.3 Le chiffrement par XOR</h3>
+<p>Il repose sur une opération logique binaire du même nom.</p>
+<p>Principe :</p>
+<ul>
+<li>chaque caractère du message est converti en code numérique</li>
+<li>ce code est combiné avec une clé à l’aide de l’opérateur XOR</li>
+<li>l’opération XOR possède une propriété fondamentale : chiffrer et déchiffrer utilisent la même opération</li>
+</ul>
+<p><em>Exemple :</em></p>
+<ul>
+<li>message = "BONJOUR"</li>
+<li>
+<p>clé = "HI"</p>
+</li>
+<li>
+<p>B -&gt; 66 -&gt; 1000010</p>
+</li>
+<li>H -&gt; 72 -&gt; 1001000</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>1</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+<th>0</th>
+<th>1</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XOR</td>
+<td></td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Résultat</td>
+<td></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>0001010 -&gt; 10</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Caractère du message</th>
+<th>Unicode</th>
+<th>Caractère de la clé</th>
+<th>Unicode</th>
+<th>XOR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>66</td>
+<td>H</td>
+<td>72</td>
+<td>10</td>
+</tr>
+<tr>
+<td>O</td>
+<td>79</td>
+<td>I</td>
+<td>73</td>
+<td>6</td>
+</tr>
+<tr>
+<td>N</td>
+<td>78</td>
+<td>H</td>
+<td>72</td>
+<td>6</td>
+</tr>
+<tr>
+<td>J</td>
+<td>74</td>
+<td>I</td>
+<td>73</td>
+<td>3</td>
+</tr>
+<tr>
+<td>O</td>
+<td>79</td>
+<td>H</td>
+<td>72</td>
+<td>7</td>
+</tr>
+<tr>
+<td>U</td>
+<td>85</td>
+<td>I</td>
+<td>73</td>
+<td>28</td>
+</tr>
+<tr>
+<td>R</td>
+<td>82</td>
+<td>H</td>
+<td>72</td>
+<td>26</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<p>message code : <code>10 6 6 3 7 28 26</code></p>
+</blockquote>
+</blockquote>
+<h4 id="exercice">Exercice</h4>
+<p>Coder en python une fonction pour chiffrer un message en utilisant cette méthode.</p>
+<blockquote>
+<blockquote>
+<p>Coder une fonction python réalisant l'opération <code>XOR</code> pourrait être utile.</p>
+</blockquote>
+</blockquote>
+<h3 id="14-pourquoi-le-chiffrement-symetrique-est-problematique">1.4 Pourquoi le chiffrement symétrique est problématique</h3>
+<h4 id="securite">Sécurité</h4>
+<p>Le chiffrement symétrique repose sur une clé unique, utilisée à la fois pour chiffrer et déchiffrer le message.</p>
+<blockquote>
+<blockquote>
+<p>Les deux personnes doivent donc posséder la même clé.</p>
+</blockquote>
+</blockquote>
+<p>Pour communiquer de manière sécurisée :</p>
+<ul>
+<li>il faut transmettre la clé</li>
+<li>mais transmettre la clé nécessite déjà un canal sécurisé</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>Si un attaquant intercepte la clé, tous les messages passés et futurs sont compromis</p>
+</blockquote>
+</blockquote>
+<h4 id="taille-de-la-cle">Taille de la clé</h4>
+<p>Un chiffrement symétrique est <strong>théoriquement inviolable</strong> uniquement si toutes les conditions suivantes sont réunies :</p>
+<ul>
+<li>la clé a <strong>exactement la même longueur que le message</strong> (resiste aux analyses statistiques)</li>
+<li>la clé est <strong>totalement aléatoire</strong></li>
+<li>la clé n’est utilisée <strong>qu’une seule fois</strong></li>
+<li>la clé reste <strong>strictement secrète</strong></li>
+</ul>
+<p>Ce type de chiffrement est appelé <strong>chiffrement de Vernam</strong> ou <strong>One-Time Pad</strong>.</p>
+<p>Dans ce cas, il est impossible, même avec une puissance de calcul infinie, de distinguer le message chiffré d’un message aléatoire.</p>
+<h4 id="pourquoi-les-chiffrements-symetriques-classiques-restent-utilises">Pourquoi les chiffrements symétriques classiques restent utilisés</h4>
+<p>Dans la pratique :</p>
+<ul>
+<li>la clé est beaucoup plus courte que le message</li>
+<li>la clé est réutilisée</li>
+<li>le chiffrement produit des motifs exploitables statistiquement</li>
+</ul>
+<p>Cela signifie que ces chiffrements ne sont pas parfaitement sûrs <strong>en théorie</strong>, mais qu’ils restent <strong>très efficaces en pratique</strong>.</p>
+<p>Par exemple, des algorithmes modernes comme AES utilisent des clés courtes (128, 192 ou 256 bits) mais sont considérés comme sûrs car leur attaque nécessiterait un temps de calcul irréaliste.</p>
+<iframe width="400" height="300"
+        src="https://www.youtube.com/embed/5ZEYKk8BHcE?start=65"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+</iframe>
+
+<hr />
+<h2 id="2-chiffrement-asymetrique">2. Chiffrement asymétrique</h2>
+<p>Le chiffrement asymétrique repose sur <strong>une paire de clés</strong> :
+- une clé publique (diffusée)
+- une clé privée (secrète)</p>
+<h3 id="21-rsa">2.1 RSA</h3>
+<p>RSA est l’un des algorithmes asymétriques les plus connus.</p>
+<p><strong>Principe simplifié :</strong>
+- la clé publique sert à chiffrer
+- la clé privée sert à déchiffrer
+- la sécurité repose sur la difficulté de factoriser de grands nombres premiers</p>
+<p><strong>Avantages :</strong>
+- permet l’échange sécurisé de clés
+- pas besoin de partager une clé secrète à l’avance</p>
+<p><strong>Inconvénients :</strong>
+- plus lent que le chiffrement symétrique
+- utilisé surtout pour chiffrer de petites données (ex : clés)</p>
+<h4 id="exercice-papier-rsa">Exercice papier – RSA</h4>
+<ol>
+<li>Pourquoi RSA utilise-t-il de très grands nombres premiers ?</li>
+<li>Quelle est la différence fondamentale entre clé publique et clé privée ?</li>
+</ol>
+<hr />
+<h2 id="3-https-et-securisation-du-web">3. HTTPS et sécurisation du Web</h2>
+<p>HTTPS est la version sécurisée de HTTP.</p>
+<p>Lorsqu’un navigateur se connecte à un site HTTPS :
+1. le serveur envoie son <strong>certificat</strong> (clé publique)
+2. le navigateur vérifie l’authenticité du certificat
+3. une clé symétrique est échangée grâce au chiffrement asymétrique
+4. la communication se poursuit en <strong>chiffrement symétrique</strong></p>
+<p>👉 HTTPS combine donc :
+- le chiffrement asymétrique (RSA, ECDHE…)
+- le chiffrement symétrique (AES)</p>
+<p>Objectifs :
+- confidentialité des données
+- intégrité des échanges
+- authentification du serveur</p>
+<hr />
+<h2 id="4-exercices-de-programmation-python">4. Exercices de programmation (Python)</h2>
+<p>L’objectif est de produire un programme capable de <strong>chiffrer et déchiffrer</strong> des messages avec différentes stratégies.</p>
+<h3 id="41-cesar-en-python">4.1 César en Python</h3>
+<pre><code class="language-python">def chiffre_cesar(message, decalage):
+    resultat = &quot;&quot;
+    for c in message:
+        if c.isalpha():
+            base = ord('A') if c.isupper() else ord('a')
+            resultat += chr((ord(c) - base + decalage) % 26 + base)
+        else:
+            resultat += c
+    return resultat
+
+def dechiffre_cesar(message, decalage):
+    return chiffre_cesar(message, -decalage)
+</code></pre>
+<p>Exercice :</p>
+<p>adapter le programme pour accepter une clé saisie par l’utilisateur</p>
+<hr />
+<h3 id="42-vigenere-en-python">4.2 Vigenère en Python</h3>
+<pre><code class="language-python">
+def chiffre_vigenere(message, cle):
+    resultat = &quot;&quot;
+    cle = cle.lower()
+    j = 0
+
+    for c in message:
+        if c.isalpha():
+            base = ord('A') if c.isupper() else ord('a')
+            decalage = ord(cle[j % len(cle)]) - ord('a')
+            resultat += chr((ord(c) - base + decalage) % 26 + base)
+            j += 1
+        else:
+            resultat += c
+    return resultat
+
+</code></pre>
+<p>Exercice :</p>
+<p>écrire la fonction de déchiffrement</p>
+<p>gérer les caractères spéciaux</p>
+<p>4.3 Mini-projet</p>
+<p>Créer un programme qui :</p>
+<p>propose le choix de l’algorithme (César, Vigenère, RSA simplifié)</p>
+<p>chiffre ou déchiffre un message</p>
+<p>affiche clairement les étapes</p>
+<p>Bonus :</p>
+<p>ajouter une interface texte</p>
+<p>stocker les messages chiffrés dans un fichier</p>
+<p>Conclusion</p>
+<p>La sécurisation des communications repose sur :</p>
+<p>des algorithmes mathématiquement robustes</p>
+<p>une bonne gestion des clés</p>
+<p>la combinaison intelligente de méthodes symétriques et asymétriques</p>
+<p>Ces principes sont aujourd’hui au cœur d’Internet, des messageries et des systèmes informatiques modernes.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../R%C3%A9cursivit%C3%A9/rec/" class="btn btn-neutral float-left" title="Récursivité"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../R%C3%A9cursivit%C3%A9/rec/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
