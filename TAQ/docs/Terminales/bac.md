@@ -75,7 +75,7 @@ Les annales du bac de nsi sont disponibles sur le site [sujetdebac.fr](https://w
 |Amérique du Nord 2 bis|Dynamique|Arbres<br>Binaire|POO<br>Graphes<br>BDD|
 |Amérique du Sud 1|BDD<br>Arbres|Processus<br>Listes|POO|
 |Amérique du Sud 2|BDD<br>Listes|Piles / Files<br>POO<br>Algos|Graphes<br>Routage<br>Systèmes|
-|Asie 1|Calculabilité / Décidabilité<br>Algos|Arbres|Dicos<br>Table<br>Sécurisation|
+|Asie 1|Calculabilité / Décidabilité<br>Algos|Arbres|Dicos<br>Table|
 |Asie 2|POO<br>Algos|Processus|Dicos<br>Récursivité<br>POO<br>BDD<br>Arbres|
 |Afrique 1|Graphes<br>POO|Algos<br>Récursivité<br>Piles / Files|Listes<br>Dicos<br>Arbres<br>BDD|
 |Afrique 2|BDD|Listes<br>Dicos<br>Récursivité|Graphes<br>POO<br>Récursivité|

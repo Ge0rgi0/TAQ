@@ -85,7 +85,7 @@ Le chiffrement de Vigenère est une amélioration du chiffrement de César.
 Exemple :
 
 - Message : BONJOUR
-- Clé : CLE
+- Clé : CLE ( c'est à dire les décalages successifs : 2, 11, 4)
 
 Chaque lettre de la clé correspond à un décalage différent.
 
@@ -152,42 +152,30 @@ Coder en python une fonction pour chiffrer un message en utilisant cette méthod
 
 ### 1.4 Pourquoi le chiffrement symétrique est problématique
 
-#### Sécurité
-
-Le chiffrement symétrique repose sur une clé unique, utilisée à la fois pour chiffrer et déchiffrer le message.
->> Les deux personnes doivent donc posséder la même clé.
-
-Pour communiquer de manière sécurisée :
-
-- il faut transmettre la clé
-- mais transmettre la clé nécessite déjà un canal sécurisé
-
->> Si un attaquant intercepte la clé, tous les messages passés et futurs sont compromis
-
-#### Taille de la clé
+#### Le chiffrement parfait : One-Time Pad
 
 Un chiffrement symétrique est **théoriquement inviolable** uniquement si toutes les conditions suivantes sont réunies :
 
-- la clé a **exactement la même longueur que le message** (resiste aux analyses statistiques)
+- la clé a **exactement la même longueur que le message** (résiste aux analyses statistiques)
 - la clé est **totalement aléatoire**
-- la clé n’est utilisée **qu’une seule fois**
+- la clé n'est utilisée **qu'une seule fois**
 - la clé reste **strictement secrète**
 
-Ce type de chiffrement est appelé **chiffrement de Vernam** ou **One-Time Pad**.
+Ce type de chiffrement est appelé **chiffrement de Vernam** ou **One-Time Pad**.  
+Dans ce cas, il est impossible, même avec une puissance de calcul infinie, de distinguer le message chiffré d'un message aléatoire.
 
-Dans ce cas, il est impossible, même avec une puissance de calcul infinie, de distinguer le message chiffré d’un message aléatoire.
+Cependant c'est très couteux de l'appliquer ainsi aujourd'hui, surtout avec des transmissions aussi grandes.
 
 #### Pourquoi les chiffrements symétriques classiques restent utilisés
 
-Dans la pratique :
+Dans la pratique, ces conditions idéales ne sont jamais réunies :
 
 - la clé est beaucoup plus courte que le message
 - la clé est réutilisée
 - le chiffrement produit des motifs exploitables statistiquement
 
-Cela signifie que ces chiffrements ne sont pas parfaitement sûrs **en théorie**, mais qu’ils restent **très efficaces en pratique**.
-
-Par exemple, des algorithmes modernes comme AES utilisent des clés courtes (128, 192 ou 256 bits) mais sont considérés comme sûrs car leur attaque nécessiterait un temps de calcul irréaliste.
+Cela signifie que ces chiffrements ne sont pas parfaitement sûrs **en théorie**, mais qu'ils restent **très efficaces en pratique**.  
+Des algorithmes modernes comme **AES** utilisent des clés courtes (128, 192 ou 256 bits) mais sont considérés comme sûrs car leur attaque nécessiterait un temps de calcul irréaliste.
 
 <iframe width="400" height="300"
         src="https://www.youtube.com/embed/5ZEYKk8BHcE?start=65"
@@ -197,136 +185,341 @@ Par exemple, des algorithmes modernes comme AES utilisent des clés courtes (128
         allowfullscreen>
 </iframe>
 
+    
+
+#### Le problème de l'échange de clé
+
+Le chiffrement symétrique repose sur une clé unique, utilisée à la fois pour chiffrer et déchiffrer le message.
+Les deux personnes doivent donc posséder la même clé.
+
+> **Le paradoxe de l'échange de clé :**  
+> Pour communiquer de façon sécurisée, il faut d'abord partager une clé.  
+> Mais partager cette clé nécessite déjà un canal sécurisé... qu'on n'a pas encore.
+
+Si un attaquant intercepte la clé, **tous les messages passés et futurs sont compromis**.
+
+**La solution : combiner les deux chiffrements**
+
+Le problème de l'échange de clé est précisément ce que résout le **chiffrement asymétrique**.  
+L'idée : utiliser RSA **uniquement pour transmettre la clé symétrique**, puis basculer sur AES pour la communication.
+
+1. Bob génère une paire de clés **(publique / privée)**
+2. Bob envoie sa **clé publique** à Alice — sans risque, elle peut être interceptée
+3. Alice génère une **clé symétrique** (ex : clé AES)
+4. Alice **chiffre cette clé AES** avec la clé publique de Bob
+5. Bob **déchiffre** avec sa clé privée → il obtient la clé AES
+6. Alice et Bob communiquent ensuite en **chiffrement symétrique**
+```
+Alice                          Bob
+  |                             |
+  |   ←——— clé publique ——————— |   (étape 2, non secrète)
+  |                             |
+  |   ——— clé AES chiffrée ———→ |   (étape 4, illisible sans clé privée)
+  |                             |
+  |   ←———— AES ————————————→   |   (étape 6, communication rapide)
+```
+
+> Eve peut intercepter la clé publique et la clé AES chiffrée,  
+> mais **sans la clé privée de Bob, elle ne peut pas retrouver la clé AES**.
+
+Cette combinaison donne le **meilleur des deux mondes** :
+
+| | Symétrique (AES) | Asymétrique (RSA) |
+|---|---|---|
+| Vitesse | ✅ Rapide | ❌ Lent |
+| Échange de clé | ❌ Problématique | ✅ Sécurisé |
+| Rôle | Chiffrer les données | Transmettre la clé AES |
+
+C'est exactement le fonctionnement de **HTTPS**, le protocole qui sécurise le Web.
+
 ---
 
 ## 2. Chiffrement asymétrique
 
-Le chiffrement asymétrique repose sur **une paire de clés** :
-- une clé publique (diffusée)
-- une clé privée (secrète)
+### 2.1 Définition et principe
 
-### 2.1 RSA
+Le chiffrement asymétrique repose sur une paire de clés mathématiquement liées :
 
-RSA est l’un des algorithmes asymétriques les plus connus.
+- une **clé publique** : diffusée librement, utilisée pour chiffrer
+- une **clé privée** : gardée secrète, utilisée pour déchiffrer
 
-**Principe simplifié :**
-- la clé publique sert à chiffrer
-- la clé privée sert à déchiffrer
-- la sécurité repose sur la difficulté de factoriser de grands nombres premiers
+> Ce qui est chiffré avec la clé publique ne peut être déchiffré qu'avec la clé privée correspondante.
 
-**Avantages :**
-- permet l’échange sécurisé de clés
-- pas besoin de partager une clé secrète à l’avance
+Contrairement au chiffrement symétrique, il n'est plus nécessaire de partager une clé secrète au préalable. Cela résout le problème fondamental de l'échange de clés sur un canal non sécurisé.
 
-**Inconvénients :**
-- plus lent que le chiffrement symétrique
-- utilisé surtout pour chiffrer de petites données (ex : clés)
+### 2.2 Chiffrement RSA
 
-#### Exercice papier – RSA
-1. Pourquoi RSA utilise-t-il de très grands nombres premiers ?
-2. Quelle est la différence fondamentale entre clé publique et clé privée ?
+RSA (du nom de ses inventeurs Rivest, Shamir et Adleman en 1977) est l'algorithme asymétrique le plus célèbre.
+Sa sécurité repose sur un problème mathématique simple à poser mais extrêmement difficile à résoudre : la **factorisation de grands nombres entiers**.
 
----
+> Multiplier deux grands nombres premiers est facile.
+Retrouver ces deux facteurs à partir du produit est, en pratique, impossible en un temps raisonnable.
 
-## 3. HTTPS et sécurisation du Web
+#### Fonctionnement
 
-HTTPS est la version sécurisée de HTTP.
+**1ère étape :** Choisir deux nombres premiers
 
-Lorsqu’un navigateur se connecte à un site HTTPS :
-1. le serveur envoie son **certificat** (clé publique)
-2. le navigateur vérifie l’authenticité du certificat
-3. une clé symétrique est échangée grâce au chiffrement asymétrique
-4. la communication se poursuit en **chiffrement symétrique**
+On choisit deux nombres premiers ``p`` et ``q``, distincts et gardés secrets, puis on calcule leur produit :
 
-👉 HTTPS combine donc :
-- le chiffrement asymétrique (RSA, ECDHE…)
-- le chiffrement symétrique (AES)
+> $n = p \times q$
 
-Objectifs :
-- confidentialité des données
-- intégrité des échanges
-- authentification du serveur
+``n`` est rendu publique (il fera partie de la clé), alors que ``p`` et ``q`` sont secrets.
 
----
+> En pratique, on préférera que n soit très très grand.
 
-## 4. Exercices de programmation (Python)
+**2ème étape :** calculer l'indicatrice d'Euler
 
-L’objectif est de produire un programme capable de **chiffrer et déchiffrer** des messages avec différentes stratégies.
+On calcule : $φ(n) = (p - 1) \times (q - 1)$
 
-### 4.1 César en Python
+Cette valeur est ``secrète`` et sert à construire les clés.
 
-```python
-def chiffre_cesar(message, decalage):
-    resultat = ""
-    for c in message:
-        if c.isalpha():
-            base = ord('A') if c.isupper() else ord('a')
-            resultat += chr((ord(c) - base + decalage) % 26 + base)
-        else:
-            resultat += c
-    return resultat
+**3ème étape :** choisir l'exposant public ``e``
 
-def dechiffre_cesar(message, decalage):
-    return chiffre_cesar(message, -decalage)
+On choisit un entier ``e`` tel que :
+
+- $1 < e < φ(n)$
+- ``e`` et ``φ(n)`` sont premiers entre eux (leur PGCD vaut 1)
+
+`e` fait partie de la clé ``publique``.
+
+**4ème étape :**  Calculer l'exposant privé ``d``
+
+On calcule d, l'inverse modulaire de e modulo ``φ(n)`` :
+
+$d \times e ≡ 1 \mod φ(n)$
+
+``d`` c'est la clé ``privée`` ! 
+
+Le calculer sans connaître ``φ(n)`` (et donc sans connaître ``p`` et ``q``) est un problème très difficile (quasi impossible dans un temps raisonnable).
+
+**Résumé de clés**
+
+- publique : ( e , n )  
+- privée : ( d , n )
+
+**Pour chiffrer** un message ``M`` (représenté par un entier, avec ``M < n``) :
+
+- $C = M^e \mod n$
+
+**Pour déchiffrer** le message `C` :
+
+- $M = C^d \mod n$
+
+#### Exemple
+
+**Objectif :** Alice veut envoyer le message ``M = 7`` à Bob de façon sécurisée.
+
+**Étape 1 – Bob choisit ``p`` et ``q``**
+
+- $p = 3$
+- $q = 11$
+- $n = p \times q = 33$
+
+**Étape 2 – Bob calcule ``φ(n``)**
+
+$φ(n) = (p − 1) \times (q − 1) = 20$  
+
+**Étape 3 – Bob choisit ``e``**
+
+On cherche ``e`` tel que ``PGCD(e, 20) = 1`` :
+
+par exemple :  $e = 3$  
+
+$PGCD(3, 20) = 1$ donc c'est bon !
+
+>>>Clé publique de Bob : ``(e=3, n=33)``
+
+**Étape 4 – Bob calcule ``d``**
+
+On cherche ``d`` tel que $3\times d ≡ 1 \mod 20$ :
+
+par exemple : $d = 7$  
+$3 \times 7 = 21 ≡ 1 \mod 20$
+
+>>>Clé privée de Bob : ``(d=7, n=33)``
+
+**Étape 5 – Alice chiffre le message**
+
+Alice utilise la clé publique de Bob ``(e=3, n=33)`` pour chiffrer ``M=7`` :
+
+$C = M^e \mod n$  
+>$= 7^3 \mod 33$  
+>$= 343 \mod 33$  
+>$= 13$  
+
+Alice envoie ``C = 13`` à Bob.
+
+**Étape 6 – Bob déchiffre**
+
+Bob utilise sa clé privée ``(d=7, n=33)`` :
+
+$M = C^d \mod n$  
+>$= 13^7 \mod 33$  
+>$= 62 748 517 \mod 33$  
+>$= 7$  
+
+Bob retrouve bien le message original.
+
+### Activité – Chiffrement RSA en binôme
+
+Vous allez jouer le rôle d'**Alice** et **Bob** (et éventuellement **Eve**) pour échanger un vrai message chiffré en RSA.
+
+**Étape 1 – Bob génère ses clés**
+
+Choisir deux nombres premiers `p` et `q`, puis compléter :
+
+| | Valeur |
+|---|---|
+| `p` = | |
+| `q` = | |
+| `n = p × q` = | |
+| `φ(n) = (p-1) × (q-1)` = | |
+
+Choisir `e` tel que `1 < e < φ(n)` et `PGCD(e, φ(n)) = 1`.  
+Calculer le PGCD à la main :
+```
+PGCD( ___ , ___ ) :
 ```
 
-Exercice :
+Calculer `d` avec : [https://www.dcode.fr/inverse-modulaire](https://www.dcode.fr/inverse-modulaire)  
+$d \times e ≡ 1 \mod φ(n)$ 
 
-adapter le programme pour accepter une clé saisie par l’utilisateur
+| Clé publique | Clé privée |
+|---|---|
+| `(e = __ , n = __)` | `(d = __ , n = __)` |
+
+**Étape 2 – Alice chiffre un message**
+
+Choisir `M` un entier tel que `M < n`, puis chiffrer avec la clé publique de Bob :
+
+$C = M^e \mod n$
+
+**Étape 3 – Bob déchiffre**
+
+$M = C^d \mod n$
+
+### 2.3 Pourquoi RSA est sûr
+
+La sécurité de RSA repose sur l'asymétrie entre deux opérations :
+
+|Opération|Difficulté|
+|--|--|
+|Calculer ``n = p × q``|Facile (quelques microsecondes)|
+|Retrouver ``p`` et ``q`` à partir de ``n``|Extrêmement difficile (années de calcul pour 2048 bits)|
+
+Sans ``p`` et ``q``, il est impossible de calculer ``φ(n)``, donc impossible de trouver d à partir de ``e`` et ``n`` seuls.
+
+**Avantages :** 
+
+- Pas besoin de partager une clé secrète à l'avance  
+- Permet l'authentification (signature numérique)
+
+**Inconvénients :**  
+
+- Beaucoup plus lent que le chiffrement symétrique  
+- Utilisé uniquement pour chiffrer de petites données (ex : une clé AES)
+
+## 3. HTTPS – Sécuriser le Web
+
+### 3.1 Le problème de l'authentification
+
+Jusqu'ici, nous avons supposé qu'Alice connaît avec certitude la clé publique de Bob.  
+Mais comment s'en assurer sur Internet ?
+
+> **Attaque de l'homme du milieu (Man-in-the-Middle) :**  
+
+>Eve intercepte la clé publique de Bob avant qu'elle n'arrive à Alice, et la remplace par sa propre clé publique. Alice chiffre alors son message avec la clé d'Eve sans le savoir. Eve déchiffre le message, peut le lire ou le modifier, puis le rechiffre avec la vraie clé de Bob et le transmet. Bob reçoit le message normalement — ni Alice ni Bob ne détectent l'intrusion.
+```
+Alice                    Eve                     Bob
+  |                       |                       |
+  |  ←— clé publique Eve  |  ←— clé publique Bob  |
+  |                       |                       |
+  |  —— message chiffré → |  —— re-chiffré ——————→|
+  |       (pour Eve)      |                       |
+```
+
+> Alice croit parler à Bob, mais Eve lit tout.
+
+Pour résoudre ce problème, il faut un **tiers de confiance** capable de certifier que la clé publique appartient bien à son propriétaire.
 
 ---
 
-### 4.2 Vigenère en Python
+### 3.2 Les certificats numériques
 
-```python
+Un **certificat numérique** est un document électronique qui associe :
 
-def chiffre_vigenere(message, cle):
-    resultat = ""
-    cle = cle.lower()
-    j = 0
+- une **clé publique**
+- à une **identité** (nom de domaine, organisation…)
+- signé par une **autorité de certification (CA)** de confiance
 
-    for c in message:
-        if c.isalpha():
-            base = ord('A') if c.isupper() else ord('a')
-            decalage = ord(cle[j % len(cle)]) - ord('a')
-            resultat += chr((ord(c) - base + decalage) % 26 + base)
-            j += 1
-        else:
-            resultat += c
-    return resultat
+> **Analogie :** C'est comme une carte d'identité délivrée par l'État.  
+> Vous faites confiance à la carte non pas parce que vous connaissez la personne,  
+> mais parce que vous faites confiance à l'État qui l'a délivrée.
 
+Les autorités de certification (DigiCert, Let's Encrypt, GlobalSign…) sont des organismes dont les clés publiques sont **pré-installées dans votre navigateur**.
+
+Quand vous visitez `wikipedia.org`, le serveur envoie son certificat.  
+Votre navigateur vérifie que ce certificat a bien été signé par une CA de confiance.  
+Si oui, la clé publique est authentique. Eve ne peut pas falsifier ce certificat sans accès à la clé privée de la CA.
+
+---
+
+### 3.3 Déroulé d'une connexion HTTPS
+
+HTTPS = HTTP + **TLS** (Transport Layer Security), le protocole qui sécurise la communication.
+
+Voici les étapes d'une connexion HTTPS simplifiée :
+
+**1. Le client demande une connexion sécurisée**
+
+Votre navigateur contacte le serveur et indique qu'il veut communiquer en HTTPS.
+
+**2. Le serveur envoie son certificat**
+
+Le serveur transmet son certificat, qui contient sa **clé publique** et est signé par une CA.
+
+**3. Le navigateur vérifie le certificat**
+
+- La signature de la CA est-elle valide ?
+- Le nom de domaine correspond-il ?
+- Le certificat est-il encore valide (non expiré) ?
+
+Si tout est bon, le cadenas s'affiche.
+
+**4. Échange de clé symétrique**
+
+Le navigateur génère une **clé de session** (clé AES aléatoire) et la chiffre avec la **clé publique du serveur**, et l'envoie.
+
+**5. Le serveur déchiffre la clé de session**
+
+Le serveur utilise sa **clé privée** pour obtenir la clé AES.  
+Les deux parties possèdent maintenant la même clé symétrique.
+
+**6. Communication chiffrée en AES**
+
+Toute la suite de la communication est chiffrée en **AES**, rapide et sûr.
+```
+Navigateur                            Serveur
+    |                                    |
+    |  ——— "Je veux du HTTPS" ————————→  |
+    |                                    |
+    |  ←——— certificat (clé publique) —— |
+    |                                    |
+    |  [vérification du certificat]      |
+    |                                    |
+    |  ——— clé AES chiffrée (RSA) ——————→|
+    |                                    |
+    |  ←————— AES ————————————————————→  |
+    |       (toute la communication)     |
 ```
 
-Exercice :
+---
 
-écrire la fonction de déchiffrement
+### 3.4 Ce que garantit HTTPS
 
-gérer les caractères spéciaux
+- **Confidentialité :** Chiffrement AES de toute la communication  
+- **Intégrité :** Détection de toute modification des données  
+- **Authentification :** Certificat signé par une autorité de confiance  
 
-4.3 Mini-projet
-
-Créer un programme qui :
-
-propose le choix de l’algorithme (César, Vigenère, RSA simplifié)
-
-chiffre ou déchiffre un message
-
-affiche clairement les étapes
-
-Bonus :
-
-ajouter une interface texte
-
-stocker les messages chiffrés dans un fichier
-
-Conclusion
-
-La sécurisation des communications repose sur :
-
-des algorithmes mathématiquement robustes
-
-une bonne gestion des clés
-
-la combinaison intelligente de méthodes symétriques et asymétriques
-
-Ces principes sont aujourd’hui au cœur d’Internet, des messageries et des systèmes informatiques modernes.
+> HTTPS ne garantit **pas** que le site est honnête ou légitime.
+> Il garantit uniquement que **vous communiquez bien avec ce site** et que **personne n'intercepte l'échange**. Un site de phishing peut très bien avoir un certificat HTTPS valide.
