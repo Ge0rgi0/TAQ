@@ -13,6 +13,7 @@
 - [🟩 4 - Algorithmes de Routage](Chapitres/Routage/routage.md)
 - [🟨 5 - Récursivité](Chapitres/Récursivité/rec.md)
 - [🟦 6 - Sécurité](Chapitres/Sécurité/secu.md)
+- [🟨 7 - Arbres binaires et Graphes](Chapitres/Arbres&Graphes/Arbres&Graphes.md)
 
 ## BACCALAURÉAT GÉNÉRAL de NSI
 

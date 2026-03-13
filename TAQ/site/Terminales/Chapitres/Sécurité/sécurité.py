@@ -95,8 +95,7 @@ def dechiffrement_vigenere(m: str, k: str) -> str:
 # Tests ex 1 & 2
 print("\n=== Vigenère ===")
 print(chiffrement_vigenere("message", "cle"))   # → oiuwycc
-print(dechiffrement_vigenere("tn nfaac pvivbhr papyhqbs dr frhbdrr rlgpbmshpiyhtlg", "batman"))
-
+print(dechiffrement_vigenere("vn zdaae phgvbjr bypyjqnq dr hrtzdrt rxepbostniyjtxe", "batman"))
 
 # ============================================================
 # 1.3 CHIFFREMENT XOR
