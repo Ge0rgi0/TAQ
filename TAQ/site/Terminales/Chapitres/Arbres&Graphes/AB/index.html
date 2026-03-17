@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Arbres binaires - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Arbres binaires";
+        var mkdocs_page_input_path = "Terminales/Chapitres/Arbres\u0026Graphes/AB.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Types/Types_de_base/">Types de base</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Bases/bases/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Algos/Algos/">Algorithmes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../bac/">Baccalauréat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../BDD/">Base de données</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Routage/routage/">Algorithmes de Routage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9cursivit%C3%A9/rec/">Récursivité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S%C3%A9curit%C3%A9/secu/">Sécurité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Arbres%26Graphes/">Arbres & Graphes</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Arbres binaires</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="arbres-binaires">Arbres binaires</h1>
+<h2 id="introduction">Introduction</h2>
+<h3 id="definitions">Définitions</h3>
+<p>Un arbre est une structure de données hiérarchique composée de <strong>nœuds</strong> reliés entre eux par des <strong>arêtes</strong>.
+Chaque nœud suit deux règles simples :</p>
+<ul>
+<li>il peut donner accès à plusieurs nœuds <strong>enfants</strong></li>
+<li>il n'est accessible que par au maximum un seul nœud <strong>parent</strong></li>
+</ul>
+<p>On retrouve cette structure partout :</p>
+<ul>
+<li>l'arborescence d'un système de fichiers</li>
+<li>le DOM d'une page HTML</li>
+<li>l'arbre généalogique d'une famille</li>
+</ul>
+<p><img alt="" src="../applications.png" /></p>
+<p>On ne s'interessera ici qu'aux <strong>arbres binaires</strong>, c'est à dire des arbres dont les noeuds ne peuvent avoir qu'<strong>au maximum deux enfants</strong>.</p>
+<p><img alt="" src="../ex_AB.png" /></p>
+<h3 id="vocabulaire">Vocabulaire</h3>
+<p><strong>Racine</strong> : Le nœud <strong>tout en haut</strong> de l'arbre. Il est <strong>unique</strong> et n'a pas de parent.</p>
+<p><strong>Feuille</strong> : Un nœud <strong>sans enfant</strong>. C'est un nœud terminal, au bas de l'arbre.</p>
+<p>La <strong>hauteur</strong> correspond au plus grand nombre de noeuds rencontrés en descendant de la racine jusqu'à une feuille (4 dans notre exemple).</p>
+<p>La <strong>taille</strong> d'un arbre correspond au nombre de noeuds dont il est composé.</p>
+<h3 id="arbres-particulier">Arbres particulier</h3>
+<p>Un arbre <strong>vide</strong> ne contient aucun noeud.</p>
+<p>Tous les noeuds d'un <strong>peigne</strong> n'ont pas plus d'un fils. Si tous les noeuds (sauf la racine) sont des fils gauche, on dira que c'est un <strong>peigne droit</strong> (idem pour le <strong>peigne gauche</strong>).</p>
+<p>Tous les niveaux d'un arbre <strong>complet</strong> sont entièrement remplis, sauf éventuellement le dernier niveau, et ce dernier niveau est rempli à partir de la gauche.</p>
+<p>Tous les noeuds d'un arbre <strong>parfait</strong> ont exactement deux enfants sauf les racines qui sont toutes au même niveau.</p>
+<table>
+<thead>
+<tr>
+<th>peigne</th>
+<th>complet</th>
+<th>parfait</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="../peigne.png" /></td>
+<td><img alt="" src="../complet.png" /></td>
+<td><img alt="" src="../parfait.png" /></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="exercice">Exercice</h3>
+<p>1) Dessiner tous les arbres binaires ayant :</p>
+<ul>
+<li>1 noeud</li>
+<li>2 noeuds</li>
+<li>3 noeuds</li>
+<li>4 noeuds</li>
+</ul>
+<p>2) Indiquer pour chacun d'eux si ils appartient à une catégorie particulière d'arbre.</p>
+<p>3) En déduire le nombre d'arbres possibles en fonctions du nombres de noeuds.</p>
+<hr />
+<h2 id="representation-python">Représentation Python</h2>
+<p>Un arbre binaire est défini <strong>par lui-même</strong> :</p>
+<blockquote>
+<p>Un arbre binaire est :</p>
+<ul>
+<li><strong>soit un arbre vide</strong></li>
+<li>soit composé d'un <strong>nœud racine</strong> qui pointe vers <strong>deux sous-arbres binaires</strong> : un sous-arbre gauche et un sous-arbre droit.</li>
+</ul>
+</blockquote>
+<p>C'est ce qu'on appelle une <strong>définition récursive</strong> : on définit un arbre en termes d'arbres plus petits.</p>
+<p><img alt="" src="../ex_AB_rec.png" /></p>
+<p>La définition récursive vue précédemment se traduit <strong>directement</strong> en Python par une classe. Chaque nœud porte trois informations : son fils gauche, sa valeur, et son fils droit.</p>
+<pre><code class="language-Python">
+class Noeud:
+    &quot;&quot;&quot;un noeud d'un arbre binaire&quot;&quot;&quot;
+
+    def __init__(self, g : 'Noeud | None', v : any, d : 'Noeud | None'):
+        self.gauche = g
+        self.valeur = v
+        self.droite = d
+
+</code></pre>
+<h3 id="construire-un-arbre">Construire un arbre</h3>
+<p>On construit un arbre <strong>de bas en haut</strong> : on commence par les feuilles, puis on remonte vers la racine.</p>
+<pre><code>        A
+       / \
+      B   C
+     / \
+    D   E
+</code></pre>
+<pre><code class="language-python"># Les feuilles en premier (pas d'enfants → None, None)
+D = Noeud(None, 'D', None)
+E = Noeud(None, 'E', None)
+C = Noeud(None, 'C', None)
+
+# Puis les nœuds internes
+B = Noeud(D, 'B', E)
+
+# Enfin la racine
+A = Noeud(B, 'A', C)
+</code></pre>
+<hr />
+<h3 id="lire-un-arbre">Lire un arbre</h3>
+<p>Une fois l'arbre construit, on accède aux nœuds via les attributs :</p>
+<pre><code class="language-python">print(A.valeur)          # 'A'
+print(A.gauche.valeur)   # 'B'
+print(A.droite.valeur)   # 'C'
+
+print(A.gauche.gauche.valeur)   # 'D'
+print(A.gauche.droite.valeur)   # 'E'
+
+print(A.droite.gauche)   # None  ← C n'a pas d'enfant gauche
+</code></pre>
+<hr />
+<h3 id="exercice_1">Exercice</h3>
+<p>1) Programmer les fonctions suivantes : </p>
+<pre><code class="language-python">
+def est_vide(a):
+    &quot; Renvoie True si l'arbre a est vide, False sinon &quot;
+    # à remplir
+
+def est_feuille(a):
+    &quot; Renvoie True si l'arbre a une feuille, False sinon &quot;
+    # à remplir
+
+def taille(a : 'Noeud') -&gt; int :
+    &quot; Renvoie le nombre de noeuds l'arbre a &quot;
+    # à remplir
+
+def hauteur(a : 'Noeud') -&gt; int :
+    &quot; Renvoie la hauteur de l'arbre a &quot;
+    # à remplir
+
+def racine(a):
+    &quot; Renvoie la racine de l'arbre a &quot;
+    # à remplir
+
+def feuilles(a):
+    &quot; Renvoie la liste des feuilles de l'arbre a &quot;
+    # à remplir
+
+def est_peigne(a):
+    &quot; Renvoie True si l'arbre a est un peigne, False sinon &quot;
+    # à remplir
+
+def est_parfait(a):
+    &quot; Renvoie True si l'arbre a est parfait, False sinon &quot;
+    # à remplir
+
+</code></pre>
+<h3 id="parcours">Parcours</h3>
+<p>Un <strong>parcours</strong> consiste à visiter <strong>tous les nœuds</strong> d'un arbre exactement une fois, dans un ordre défini. Il existe deux grandes familles de parcours.</p>
+<hr />
+<h4 id="parcours-en-profondeur">Parcours en profondeur</h4>
+<p>On descend le plus loin possible dans l'arbre avant de revenir en arrière. Il existe <strong>3 variantes</strong>, selon le moment où l'on traite la racine par rapport à ses sous-arbres.</p>
+<p>L'arbre utilisé pour tous les exemples :</p>
+<pre><code>        A
+       / \
+      B   C
+     / \   \
+    D   E   F
+</code></pre>
+<hr />
+<p><strong>Parcours préfixe</strong></p>
+<blockquote>
+<p>Racine → Gauche → Droite</p>
+</blockquote>
+<p>On traite le nœud <strong>avant</strong> de descendre dans ses enfants.</p>
+<p>Résultat sur notre arbre : <strong>A, B, D, E, C, F</strong></p>
+<p><strong>Parcours infixe</strong></p>
+<blockquote>
+<p>Gauche → Racine → Droite</p>
+</blockquote>
+<p>On traite le nœud <strong>entre</strong> ses deux sous-arbres.</p>
+<p>Résultat sur notre arbre : <strong>D, B, E, A, C, F</strong></p>
+<p><strong>Parcours suffixe</strong></p>
+<blockquote>
+<p>Gauche → Droite → Racine</p>
+</blockquote>
+<p>On traite le nœud <strong>après</strong> ses deux sous-arbres.</p>
+<p>Résultat sur notre arbre : <strong>D, E, B, F, C, A</strong></p>
+<h3 id="recapitulatif-des-3-parcours-en-profondeur">Récapitulatif des 3 parcours en profondeur</h3>
+<p><img alt="" src="../parcours.png" /></p>
+<p><span style="color:red">Parcours préfixe : F B A D C E G I H</span><br />
+<span style="color:#cc9900">Parcours infixe : A B C D E F G H I</span><br />
+<span style="color:green">Parcours postfixe : A C E D B H I G F</span>  </p>
+<hr />
+<h4 id="parcours-en-largeur">Parcours en largeur</h4>
+<p>Au lieu de descendre en profondeur, on visite les nœuds <strong>niveau par niveau</strong>, de gauche à droite.</p>
+<pre><code>        A
+       / \
+      B   C
+     / \   \
+    D   E   F
+</code></pre>
+<p>Résultat : <strong>A, B, C, D, E, F</strong></p>
+<hr />
+<h4 id="exercice_2">Exercice</h4>
+<p>1) Donner l'odre des noeuds de cet arbre en respectant les 4 parcours vus précédemment.</p>
+<p><img alt="" src="../exo.png" /></p>
+<p>2) Programmer ensuite des fonctions Python qui affichent les noeuds d'un arbre pour chacun de ces parcours.</p>
+<hr />
+<h2 id="outils">Outils</h2>
+<p><a href="https://vgarciasc.github.io/tree-renderer/">Site de création d'arbres</a></p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

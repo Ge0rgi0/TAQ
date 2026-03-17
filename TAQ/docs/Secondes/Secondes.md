@@ -30,3 +30,4 @@ Chaque thème du programme (Internet, Web, réseaux sociaux, données, localisat
 
 - [🟦 Internet](Chapitres/Internet/Internet.md)
 - [🟦 Réseaux sociaux](Chapitres/RS/RS.md)
+- [🟦 Géolocalisation](Chapitres/Geo/Geo.md)
