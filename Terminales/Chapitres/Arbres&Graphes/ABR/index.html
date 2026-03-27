@@ -136,14 +136,132 @@
 <p><img alt="" src="../ABR.png" /></p>
 <p>On remarque que pour <strong>chaque nœud</strong> :
 - toutes les valeurs dans son sous-arbre <strong>gauche</strong> lui sont <strong>inférieures</strong>
-- toutes les valeurs dans son sous-arbre <strong>droit</strong> lui sont <strong>supérieures</strong>.</p>
-<p><strong>Exercices</strong></p>
+- toutes les valeurs dans son sous-arbre <strong>droit</strong> lui sont <strong>supérieures ou égales</strong>.</p>
+<p><strong>Exercice</strong></p>
 <p>1) Donner tous les ABR formés de trois nœuds et contenant les entiers 1, 2 et 3.</p>
-<p>2) Proposer une fonction permettant d'insérer un élément dans un ABR. Quelle est la complexité de cette fonction ?</p>
-<p>3) En déduire une fonction permettant de créer un ABR à partir de la liste des éléments qui le composera.</p>
-<p>4) Proposer une variante de la fonction d'insertion qui n'ajoute pas l'élément x à l'arbre a s'il est déjà dedans.</p>
-<p>5) Dans un ABR, où se trouve le plus petit élément? En déduire une fonction minimum(a) qui renvoie le plus petit élément de l'ABR a. Si l'arbre a est vide, alors cette fonction renvoie None.</p>
-<p>6) Écrire une fonction compte(x, a) qui renvoie le nombre d'oсcurrences de x dans l'ABR a.</p>
+<p>2) Dans un ABR, où se trouve le plus petit élément? En déduire une fonction minimum(a) qui renvoie le plus petit élément de l'ABR a. Si l'arbre a est vide, alors cette fonction renvoie None.</p>
+<p>3) Écrire une fonction compte(x, a) qui renvoie le nombre d'oсcurrences de x dans l'ABR a.</p>
+<h2 id="insertion-dun-element">Insertion d'un élément</h2>
+<p>Un nouvel élément inséré dans un ABR sera toujours une feuille.
+En partant de la racine, nous allons chercher sa place :</p>
+<ul>
+<li>S'il est plus petit, nous allons à droite</li>
+<li>S'il est plus grand ou égal, nous allons à gauche</li>
+<li>Si nous tombons sur un arbre vide, c'est que nous pouvons l'insérer ici</li>
+</ul>
+<p><em>Exemple</em> : nous voulons insérer un Noeud contenant la valeur <code>23</code>.</p>
+<ul>
+<li><code>23 &gt;= 20</code> : nous allons à droite</li>
+<li><code>23 &lt; 25</code> : nous allons à gauche</li>
+<li><code>23 &gt;= 21</code> : nous allons à droite</li>
+<li>C'est un arbre <strong>vide</strong>, nous pouvons ajouter notre noeud.</li>
+</ul>
+<p><img alt="" src="../insertion.png" /></p>
+<p><strong>Exercices</strong></p>
+<p>1) Proposer une fonction permettant d'insérer un élément dans un ABR. Quelle est la complexité de cette fonction ?</p>
+<p>2) En déduire une fonction permettant de créer un ABR à partir de la liste des éléments qui le composera.</p>
+<p>3) Proposer une variante de la fonction d'insertion qui n'ajoute pas l'élément x à l'arbre a s'il est déjà dedans.</p>
+<h2 id="suppression-dun-element">Suppression d'un élément</h2>
+<p>La suppression d'un noeud est un petit peu plus délicate à effectuer que l'insertion.</p>
+<p>Trois situations sont possibles :</p>
+<h3 id="le-noeud-na-pas-denfant">Le Noeud n'a pas d'enfant</h3>
+<p>Facile : il suffit de le supprimer, il n'a pas d'enfant donc pas de problème.</p>
+<p><em>Exemple</em> : On veut supprimer la valeur <code>6</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Avant</th>
+<th>Après</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="../ABR.png" /></td>
+<td><img alt="" src="../supp_feuille.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="le-noeud-a-un-enfant">Le noeud a un enfant</h3>
+<p>Facile également : il suffit de remplacer le noeud à supprimer par son seul enfant.</p>
+<p><em>Exemple</em> : On veut supprimer la valeur <code>8</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Avant</th>
+<th>Après</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="../ABR.png" /></td>
+<td><img alt="" src="../supp_parent.png" /></td>
+</tr>
+</tbody>
+</table>
+<h3 id="le-noeud-a-deux-enfants">Le noeud a deux enfants</h3>
+<p>C'est le cas le plus délicat : on doit remplacer notre noeud par celui qui a la plus petite valeur <strong>parmis son sous-arbre droit</strong>.</p>
+<p>Si on a de la chance, cela se fait assez vite :</p>
+<p><em>Exemple</em> : On veut supprimer la valeur <code>25</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Avant</th>
+<th>Après</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="../ABR.png" /></td>
+<td><img alt="" src="../supp_racine_facile.png" /></td>
+</tr>
+</tbody>
+</table>
+<p>Si on a moins cela impliquera un ou plusieurs appels récursifs :</p>
+<p><em>Exemple</em> : On veut supprimer la valeur <code>5</code>.<br />
+On va le remplacer par <code>8</code>, ce qui implique de supprimer <code>8</code>.<br />
+On va donc impliquer le même raisonnement (récursivement) : ici <code>8</code> n'a qu'un enfant donc on le remplace par celui-ci.  </p>
+<table>
+<thead>
+<tr>
+<th>Avant</th>
+<th>Après</th>
+<th>Final</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="../supp_racine_diff_1.png" /></td>
+<td><img alt="" src="../supp_racine_diff_2.png" /></td>
+<td><img alt="" src="../supp_racine_diff_3.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exercices</strong></p>
+<p>Voici un nouvel ABR : </p>
+<p><img alt="" src="../exo_supp.png" /></p>
+<p>1) Sur papier, appliquer les suppressions suivantes sur l'ABR : <code>1</code>, <code>6</code> et <code>10</code>.</p>
+<p>2) Lors de la suppression d'un nœud à deux enfants, on choisit de le remplacer par le minimum du sous-arbre droit. Aurait-on pu choisir une autre valeur ? Laquelle, et pourquoi serait-elle également valide ?</p>
+<p>3) Voici une ébauche de la fonction de suppression. Compléter les ... sans rédiger les fonctions appelées :</p>
+<pre><code class="language-Python">def supprime(x, a):
+
+    if est_vide(a):
+        return a
+
+    if x &lt; a.valeur:
+        return Noeud(supprime(x, a.gauche), a.valeur, a.droite)
+    elif x &gt; a.valeur:
+        return Noeud(a.gauche, a.valeur, supprime(x, a.droite))
+
+    else:  # x == a.valeur : c'est ce nœud qu'on supprime
+
+        if est_vide(a.gauche):
+            return ...          # cas : pas d'enfant gauche
+        elif est_vide(a.droite):
+            return ...          # cas : pas d'enfant droit
+        else:
+            m = minimum(...)    # minimum du sous-arbre droit
+            return Noeud(a.gauche, m, supprime(m, ...))
+</code></pre>
               
             </div>
           </div><footer>
