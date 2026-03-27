@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../../img/favicon.ico" />
-    <title>Arbres & Graphes - TAQ</title>
+    <title>Arbres Binaires de Recherche - TAQ</title>
     <link rel="stylesheet" href="../../../../css/theme.css" />
     <link rel="stylesheet" href="../../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Arbres \u0026 Graphes";
-        var mkdocs_page_input_path = "Terminales/Chapitres/Arbres\u0026Graphes/Arbres\u0026Graphes.md";
+        var mkdocs_page_name = "Arbres Binaires de Recherche";
+        var mkdocs_page_input_path = "Terminales/Chapitres/Arbres\u0026Graphes/ABR.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Cours</span></p>
-              <ul class="current">
+              <ul>
                   <li class="toctree-l1"><a class="reference internal" >Secondes</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
@@ -75,8 +75,8 @@
                 </li>
     </ul>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" >Terminales</a>
-    <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/">Accueil</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../../bac/">Baccalauréat</a>
@@ -93,9 +93,7 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../S%C3%A9curit%C3%A9/secu/">Sécurité</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">Arbres & Graphes</a>
-    <ul class="current">
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../Arbres%26Graphes/">Arbres & Graphes</a>
                 </li>
     </ul>
                   </li>
@@ -114,9 +112,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Cours</li>
-          <li class="breadcrumb-item">Terminales</li>
-      <li class="breadcrumb-item active">Arbres & Graphes</li>
+      <li class="breadcrumb-item active">Arbres Binaires de Recherche</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -125,18 +121,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="arbres-binaires-et-graphes">Arbres binaires et Graphes</h1>
+                <h1 id="arbres-binaires-de-recherche">Arbres Binaires de Recherche</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Supposons qu'on dispose d'une liste de 1 000 000 d'entiers et qu'on cherche à savoir si la valeur <code>42</code> en fait partie.</p>
 <ul>
-<li><a href="../AB/">🟨 1 - Arbres binaires</a></li>
-<li><a href="../ABR/">🟨 2 - Arbres binaires de recherche</a></li>
-<li><a href="Graphes.md">🟨 3 - Graphes</a></li>
+<li>Dans une <strong>liste non triée</strong>, on est obligé de parcourir tous les éléments un par un → <strong>O(n)</strong></li>
+<li>Dans une <strong>liste triée</strong>, on peut utiliser la recherche dichotomique → <strong>O(log n)</strong><ul>
+<li>Mais insérer dans une liste triée reste coûteux, puisqu'il faudrait décaler tous les éléments plus grands → <strong>O(n)</strong></li>
 </ul>
+</li>
+</ul>
+<p>Il nous faudrait donc une structure qui permette à la fois une recherche et une insertion efficaces.</p>
+<p>Pour cela, nous allons utiliser un type particulier d'<strong>arbre binaire</strong> : l'<strong>arbre binaire de recherche (ABR)</strong>.</p>
+<p><img alt="" src="../ABR.png" /></p>
+<p>On remarque que pour <strong>chaque nœud</strong> :
+- toutes les valeurs dans son sous-arbre <strong>gauche</strong> lui sont <strong>inférieures</strong>
+- toutes les valeurs dans son sous-arbre <strong>droit</strong> lui sont <strong>supérieures</strong>.</p>
+<p><strong>Exercices</strong></p>
+<p>1) Donner tous les ABR formés de trois nœuds et contenant les entiers 1, 2 et 3.</p>
+<p>2) Proposer une fonction permettant d'insérer un élément dans un ABR. Quelle est la complexité de cette fonction ?</p>
+<p>3) En déduire une fonction permettant de créer un ABR à partir de la liste des éléments qui le composera.</p>
+<p>4) Proposer une variante de la fonction d'insertion qui n'ajoute pas l'élément x à l'arbre a s'il est déjà dedans.</p>
+<p>5) Dans un ABR, où se trouve le plus petit élément? En déduire une fonction minimum(a) qui renvoie le plus petit élément de l'ABR a. Si l'arbre a est vide, alors cette fonction renvoie None.</p>
+<p>6) Écrire une fonction compte(x, a) qui renvoie le nombre d'oсcurrences de x dans l'ABR a.</p>
               
             </div>
           </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../S%C3%A9curit%C3%A9/secu/" class="btn btn-neutral float-left" title="Sécurité"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-    </div>
 
   <hr/>
 
@@ -157,8 +167,6 @@
   <div class="rst-versions" role="note" aria-label="Versions">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
-    
-      <span><a href="../../S%C3%A9curit%C3%A9/secu/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>

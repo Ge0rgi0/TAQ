@@ -38,6 +38,8 @@ Un arbre **vide** ne contient aucun noeud.
 
 Tous les noeuds d'un **peigne** n'ont pas plus d'un fils. Si tous les noeuds (sauf la racine) sont des fils gauche, on dira que c'est un **peigne droit** (idem pour le **peigne gauche**).
 
+Tous les niveaux d'un arbre **équilibré** sont entièrement remplis, sauf éventuellement le dernier niveau.
+
 Tous les niveaux d'un arbre **complet** sont entièrement remplis, sauf éventuellement le dernier niveau, et ce dernier niveau est rempli à partir de la gauche.
 
 Tous les noeuds d'un arbre **parfait** ont exactement deux enfants sauf les racines qui sont toutes au même niveau.
