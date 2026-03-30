@@ -134,8 +134,7 @@ rendu_monnaie(6, [4, 3, 1])
 
 2. Quels sont leurs **inconvénients** ?
 
-3. Comment pourrait-on résoudre le problème du rendu de monnaie de façon **toujours optimale** ?  
-   *(Piste : imaginez tester toutes les combinaisons possibles… mais est-ce raisonnable ?)*
+3. Comment pourrait-on résoudre le problème du rendu de monnaie de façon **toujours optimale** ?
 
 ---
 

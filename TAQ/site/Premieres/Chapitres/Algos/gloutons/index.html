@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Algorithmes Gloutons - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Algorithmes Gloutons";
+        var mkdocs_page_input_path = "Premieres/Chapitres/Algos/gloutons.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Geo/Geo/">Géolocalisation</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base/">Types de base</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Bases/bases/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Algos/">Algorithmes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/bac/">Baccalauréat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/BDD/">Base de données</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Routage/routage/">Algorithmes de Routage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/R%C3%A9cursivit%C3%A9/rec/">Récursivité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/S%C3%A9curit%C3%A9/secu/">Sécurité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Arbres%26Graphes/Arbres%26Graphes/">Arbres & Graphes</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Algorithmes Gloutons</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="algorithmes-gloutons">Algorithmes Gloutons</h1>
+<h2 id="probleme-le-rendu-de-monnaie">Problème : le Rendu de Monnaie</h2>
+<p>Vous êtes caissier. Un client doit recevoir <strong>48 centimes</strong> de monnaie.<br />
+Vous disposez de pièces de : <strong>50c, 20c, 10c, 5c, 2c, 1c</strong> (quantités illimitées).</p>
+<p><strong>Questions :</strong></p>
+<ol>
+<li>
+<p>Quelle est la décomposition que vous feriez naturellement ? Combien de pièces utilisez-vous ?</p>
+</li>
+<li>
+<p>Décrivez en français la <strong>stratégie</strong> que vous avez utilisée, étape par étape.</p>
+</li>
+<li>
+<p>Pensez-vous que votre stratégie donne <strong>toujours</strong> le moins de pièces possible ? Pourquoi ?</p>
+</li>
+</ol>
+<hr />
+<p>La stratégie naturelle consiste à, à chaque étape, <strong>prendre la plus grande pièce qui ne dépasse pas le montant restant</strong>.</p>
+<p>On appelle cette approche une <strong>stratégie gloutonne</strong> (<em>greedy</em> en anglais) : à chaque étape, on fait le choix localement optimal, sans revenir en arrière.</p>
+<h3 id="exercice-1-formalisons-la-strategie">Exercice 1 — Formalisons la stratégie</h3>
+<table>
+<thead>
+<tr>
+<th>Étape</th>
+<th>Montant restant</th>
+<th>Pièce choisie</th>
+<th>Montant restant après</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>63c</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>2</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>
+<p>Appliquez cette stratégie pour rendre <strong>63 centimes</strong>. Détaillez chaque étape dans le tableau.</p>
+</li>
+<li>
+<p>Combien d'étapes a nécessité cet algorithme ? Est-ce prévisible ?</p>
+</li>
+<li>
+<p>Que se passe-t-il si une pièce d'une certaine valeur est <strong>absente</strong> du système ? Essayez de rendre 30c sans pièce de 20c.</p>
+</li>
+<li>
+<p>L'algorithme se termine-t'il toujours ? Pourquoi ? (Sans utiliser de variant)</p>
+</li>
+</ol>
+<hr />
+<h3 id="exercice-2-coder-lalgorithme-glouton">Exercice 2 — Coder l'algorithme glouton</h3>
+<p>Voici la spécification de la fonction à écrire :</p>
+<pre><code class="language-python">def rendu_monnaie(montant: int, pieces: list[int]) -&gt; list[int]:
+    &quot;&quot;&quot;
+    Calcule le rendu de monnaie par algorithme glouton.
+
+    Stratégie : à chaque étape, on choisit la pièce de plus grande valeur
+    qui ne dépasse pas le montant restant à rendre.
+
+    Préconditions :
+        - montant &gt;= 0 (entier en centimes)
+        - pieces est une liste d'entiers strictement positifs,
+          triée par ordre décroissant
+        - 1 doit figurer dans pieces pour garantir la terminaison
+
+    Postconditions :
+        - La somme des éléments de la liste retournée est égale à montant
+        - La liste retournée contient uniquement des valeurs présentes dans pieces
+
+    Paramètres :
+        montant (int) : somme à rendre en centimes
+        pieces  (list[int]) : valeurs des pièces disponibles, ordre décroissant
+
+    Retourne :
+        list[int] : liste des pièces utilisées (avec répétitions possibles)
+
+    Exemples :
+        &gt;&gt;&gt; rendu_monnaie(41, [50, 20, 10, 5, 2, 1])
+        [20, 20, 1]
+        &gt;&gt;&gt; rendu_monnaie(0, [50, 20, 10, 5, 2, 1])
+        []
+        &gt;&gt;&gt; rendu_monnaie(6, [4, 3, 1])
+        [4, 1, 1]
+    &quot;&quot;&quot;
+    # À compléter
+    ...
+</code></pre>
+<p><strong>Travail demandé :</strong></p>
+<ol>
+<li>
+<p>Complétez la fonction <code>rendu_monnaie</code>.</p>
+</li>
+<li>
+<p>Testez-la avec les exemples de la docstring. Les résultats sont-ils ceux attendus ?</p>
+</li>
+<li>
+<p>Proposer un invariant de boucle pour ce programme.</p>
+</li>
+<li>
+<p>La fonction se termine-t'elle toujours ? Pourquoi ? (Avec un variant cette fois)</p>
+</li>
+</ol>
+<hr />
+<h3 id="exercice-3-analyser-la-complexite">Exercice 3 — Analyser la complexité</h3>
+<p>La <strong>complexité temporelle</strong> mesure le nombre d'opérations en fonction de la taille de l'entrée.</p>
+<p><strong>Questions :</strong></p>
+<ol>
+<li>
+<p>Dans le pire cas (montant = N, uniquement des pièces de 1c), combien d'itérations effectue la boucle principale ?</p>
+</li>
+<li>
+<p>Donnez la complexité en notation O(...) en fonction de <code>montant</code> et de <code>len(pieces)</code>.</p>
+</li>
+<li>
+<p>Pour un montant de 10 000€ (1 000 000 centimes), estimez le nombre d'itérations dans le pire cas. Est-ce raisonnable ?</p>
+<blockquote>
+<p><em>Un ordinateur moderne effectue ~100 millions d'opérations par seconde.</em></p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<h3 id="exercice-4-optimal">Exercice 4 - Optimal ?</h3>
+<p>Reprenez le résultat du dernier test de votre fonction Python :</p>
+<pre><code class="language-python">rendu_monnaie(6, [4, 3, 1])
+</code></pre>
+<p><strong>Questions :</strong></p>
+<ol>
+<li>
+<p>Quelle réponse a donné votre algorithme ? Combien de pièces ?</p>
+</li>
+<li>
+<p>Trouvez <strong>à la main</strong> une meilleure décomposition de 6 avec les pièces {4, 3, 1}.</p>
+</li>
+<li>
+<p>L'algorithme glouton a-t-il trouvé la solution optimale ? Expliquez pourquoi il échoue ici.</p>
+</li>
+<li>
+<p>Testez aussi <code>rendu_monnaie(30, [25, 10, 1])</code> et <code>rendu_monnaie(12, [10, 6, 1])</code>.<br />
+   Dans chaque cas, trouvez la solution optimale à la main et comparez.</p>
+</li>
+</ol>
+<hr />
+<h3 id="conclusion">Conclusion</h3>
+<p><strong>Questions :</strong></p>
+<ol>
+<li>
+<p>Quels sont les <strong>avantages</strong> des algorithmes gloutons ?</p>
+</li>
+<li>
+<p>Quels sont leurs <strong>inconvénients</strong> ?</p>
+</li>
+<li>
+<p>Comment pourrait-on résoudre le problème du rendu de monnaie de façon <strong>toujours optimale</strong> ?<br />
+<em>(Piste : imaginez tester toutes les combinaisons possibles… mais est-ce raisonnable ?)</em></p>
+</li>
+</ol>
+<hr />
+<h2 id="pour-les-eleves-qui-terminent-tot">Pour les élèves qui terminent tôt</h2>
+<h3 id="defi-1-glouton-optimal-preuve-empirique">Défi 1 — Glouton optimal : preuve empirique</h3>
+<p>Écrivez une fonction <code>tester_optimalite(pieces: list[int], montant_max: int) -&gt; bool</code> qui :
+- teste le glouton pour <strong>tous</strong> les montants de 1 à <code>montant_max</code>
+- pour chaque montant, compare le résultat du glouton avec une recherche exhaustive (force brute)
+- retourne <code>True</code> si le glouton est optimal sur tous ces montants, <code>False</code> sinon</p>
+<p>Testez-la sur le système euro et sur {1, 3, 4}.</p>
+<hr />
+<h3 id="defi-2-rendu-de-monnaie-par-force-brute">Défi 2 — Rendu de monnaie par force brute</h3>
+<p>Implémentez une fonction <code>rendu_optimal(montant: int, pieces: list[int]) -&gt; list[int]</code> qui trouve la solution avec le <strong>moins de pièces possible</strong>, en explorant toutes les combinaisons (récursivité ou boucles imbriquées).</p>
+<ul>
+<li>Spécifiez les types et écrivez la docstring complète.</li>
+<li>Analysez sa complexité. Pourquoi est-elle beaucoup plus élevée que le glouton ?</li>
+<li>À partir de quel montant devient-elle inutilisable en pratique ?</li>
+</ul>
+<hr />
+<h3 id="defi-3-visualisation">Défi 3 — Visualisation</h3>
+<p>Écrivez un programme qui affiche, pour un montant donné et un système de pièces donné, un <strong>tableau comparatif</strong> :</p>
+<p>Montant : 6c 
+Pièces : [4, 3, 1]</p>
+<table>
+<thead>
+<tr>
+<th>Algorithme</th>
+<th>Pièces</th>
+<th>Optimal ?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Glouton</td>
+<td>[4,1,1]</td>
+<td>NON</td>
+</tr>
+<tr>
+<td>Optimal</td>
+<td>[3,3]</td>
+<td>OUI</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
