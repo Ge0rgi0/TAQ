@@ -182,6 +182,14 @@ Le **masque de sous-réseau** (subnet mask) sert à déterminer quelles parties 
 - Le **réseau** est `192.168.1.0`
 - L’**hôte** est `10`
 
+**L'adresse broadcast**
+
+C'est une adresse qui est utilisée lorsque l'on veut communiquer avec toutes les machines d'un réseau.
+
+Il est facile de la retrouver, il s'agit de l'adresse dont tous les bits de la partie hôte sont à 1.
+
+>*Par exemple, dans le réseau décrit plus haut, ce serait : 192.168.1.255.*
+
 **La Notation CIDR** (Classless Inter-Domain Routing)  
 
 Elle permet de représenter le réseau plus simplement. On écrit l’adresse suivie d’un **slash** et du nombre de bits utilisés pour la partie réseau.  
