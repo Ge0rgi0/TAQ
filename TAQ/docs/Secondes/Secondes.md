@@ -24,7 +24,7 @@ Chaque thème du programme (Internet, Web, réseaux sociaux, données, localisat
 - [🟧 Créer un compte sur France-IOI](IOI/ioi.md)
 
 - [🟧 Print, variables et input](Chapitres/python1.md)
-- [🟧 Entiers et conditions](Chapitres/python2.md)
+- [🟧 Les boucles for](Chapitres/for.md)
 
 ## Chapitres
 
