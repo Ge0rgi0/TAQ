@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Coordonnées géographiques &amp; protocole NMEA - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Coordonn\u00e9es g\u00e9ographiques \u0026amp; protocole NMEA";
+        var mkdocs_page_input_path = "Secondes/Chapitres/Geo/NMEA.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../RS/RS/">Réseaux sociaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Geo/">Géolocalisation</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Types/Types_de_base/">Types de base</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Bases/bases/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Algos/Algos/">Algorithmes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/bac/">Baccalauréat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/BDD/">Base de données</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Routage/routage/">Algorithmes de Routage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/R%C3%A9cursivit%C3%A9/rec/">Récursivité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/S%C3%A9curit%C3%A9/secu/">Sécurité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Arbres%26Graphes/Arbres%26Graphes/">Arbres & Graphes</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Coordonnées géographiques &amp; protocole NMEA</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="coordonnees-geographiques-protocole-nmea">Coordonnées géographiques &amp; protocole NMEA</h1>
+<hr />
+<h2 id="coordonnees-geographiques">Coordonnées géographiques</h2>
+<p>La position d'un point sur Terre est définie par deux angles, lus sur deux familles de cercles imaginaires tracés sur le globe.</p>
+<h3 id="les-paralleles-et-la-latitude">Les parallèles et la latitude</h3>
+<p>Les <strong>parallèles</strong> sont des cercles horizontaux parallèles à l'équateur.<br />
+L'<strong>équateur</strong> est le parallèle de référence (0°).</p>
+<p><img alt="" src="../latitude.png" /></p>
+<p>On les numérote par leur <strong>latitude</strong> : l'angle entre le parallèle et l'équateur, mesuré depuis le centre de la Terre.</p>
+<ul>
+<li>de <strong>0°</strong> (équateur) à <strong>+90°</strong> (pôle Nord)</li>
+<li>de <strong>0°</strong> (équateur) à <strong>-90°</strong> (pôle Sud)</li>
+</ul>
+<p>Plus on monte vers le <strong>Nord</strong>, plus la latitude augmente (valeurs <strong>positives</strong>).<br />
+Plus on descend vers le <strong>Sud</strong>, plus la latitude diminue (valeurs <strong>négatives</strong>).</p>
+<p><em>Exemple :</em> Rio se trouve environ à 22° au Sud.<br />
+<strong>Question 1 :</strong> À quel degré se situe Marrakech ?</p>
+<h3 id="les-meridiens-et-la-longitude">Les méridiens et la longitude</h3>
+<p>Les <strong>méridiens</strong> sont des demi-cercles verticaux reliant les deux pôles.
+Le <strong>méridien de Greenwich</strong> (qui passe par Londres) est le méridien de référence (0°).</p>
+<p><img alt="" src="../longitude.png" /></p>
+<p>On les numérote par leur <strong>longitude</strong> : l'angle entre le méridien et celui de Greenwich, mesuré depuis le centre de la Terre.</p>
+<ul>
+<li>de <strong>0°</strong> à <strong>+180°</strong> vers l'Est</li>
+<li>de <strong>0°</strong> à <strong>-180°</strong> vers l'Ouest</li>
+</ul>
+<p><em>Exemple :</em> Rome se trouve environ à 12° à l'Est.<br />
+<strong>Question 2 :</strong> À quel degré se situe New York ?</p>
+<h3 id="reperer-un-point">Repérer un point</h3>
+<p>Un point sur Terre est repéré par le <strong>parallèle</strong> et le <strong>méridien</strong> qui se croisent en ce point :</p>
+<p><img alt="" src="../meridian.png" /></p>
+<hr />
+<p><strong>Question 3 :</strong></p>
+<p>Rendez-vous sur le site <a href="https://earth.google.com/web/@10.74818091,150.61538624,0a,28883840.88575363d,35y,356.71520704h,0t,0r/data=CgRCAggCOgMKATBCAggASg0I____________ARAA">Google Earth</a> puis appuyez simultanément sur <strong>CTRL</strong> et <strong>G</strong> pour afficher les paralléles et les méridiens.</p>
+<p>Donner les coordonnées approximatives des villes suivantes :</p>
+<ul>
+<li>Osaka (Japon)</li>
+<li>Alger (Algérie)</li>
+<li>Montréal (Canada)</li>
+</ul>
+<blockquote>
+<p><em>On se contentera de donner les degrés et des minutes approchées.</em></p>
+</blockquote>
+<p>Indiquer quelle ville se trouve à ces coordonnées :</p>
+<ul>
+<li>34° 36′ 29″ S 58° 22′ 13″ O</li>
+<li>1° 17′ 00″ S 36° 49′ 00″ E</li>
+<li>6° 10′ 31″ S 106° 49′ 37″ E</li>
+</ul>
+<hr />
+<p>On peut y ajouter l'<strong>altitude</strong> (en mètres par rapport au niveau de la mer) pour une position en 3D.</p>
+<p>Le système de référence utilisé par le GPS et Galileo s'appelle <strong>WGS84</strong>.</p>
+<hr />
+<h3 id="deux-notations">Deux notations</h3>
+<p>1) La notation <strong>DMS (Degré Minute Seconde)</strong> est la notation traditionnelle, encore utilisée sur les cartes papier et les GPS de randonnée. </p>
+<p>Comme pour les heures, les degrés peuvent être subdivisés en <strong>minutes</strong> et <strong>secondes</strong> :</p>
+<ul>
+<li>1 degré = 60 minutes</li>
+<li>1 minute = 60 secondes</li>
+</ul>
+<p>Ce n'est pas du temps, c'est juste le même système de subdivision, appliqué aux angles.</p>
+<table>
+<thead>
+<tr>
+<th>Notation</th>
+<th>Exemple (Paris)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Degrés / minutes / secondes (DMS)</td>
+<td>48° 51' 24" N, 2° 21' 03" E</td>
+</tr>
+<tr>
+<td>Degrés décimaux (DD)</td>
+<td>48.8567° N, 2.3508° E</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>2) La notation <strong>DD (Degré Décimal)</strong> est la notation numérique, utilisée par les logiciels et les trames NMEA.</p>
+<p>Formule de conversion DMS → DD :</p>
+<p>On ramène tout en degrés :</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p><span class="arithmatex">\(DD = \text{degrés} + \frac{\text{minutes}}{60} + \frac{\text{secondes}}{3600}\)</span></p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p><strong>Exemple :</strong><br />
+<span class="arithmatex">\(48° \ 51' \ 24'' N = 48 + \frac{51}{60} + \frac{24}{3600} = 48{,}8567° N\)</span></p>
+<p><em>On divise les minutes par 60 car 1 minute = 1/60 de degré, et les secondes par 3600 car 1 seconde = 1/3600 de degré.</em></p>
+<p><strong>Question 4 :</strong></p>
+<p>Convertir les coordonnées suivantes au format <strong>DD</strong> :</p>
+<ul>
+<li>75° 40' N 2° 0' E</li>
+<li>35° 30' N 127° 15' W</li>
+<li>13° 12' S 73° 48' W</li>
+</ul>
+<hr />
+<h2 id="le-protocole-nmea-0183">Le protocole NMEA 0183</h2>
+<p>Le protocole <strong>NMEA 0183</strong> (National Marine Electronics Association) est le format standard utilisé par les récepteurs GPS pour transmettre les données de position à un ordinateur ou une application.</p>
+<p>Les données sont transmises sous forme de <strong>trames</strong> — des lignes de texte commençant par <code>$</code>.</p>
+<h3 id="la-trame-gpgga">La trame $GPGGA</h3>
+<p>C'est la trame principale contenant la position. Sa structure :</p>
+<p><img alt="" src="../trame.png" /></p>
+<h3 id="exemple-de-trame-complete">Exemple de trame complète</h3>
+<blockquote>
+<p>$GPGGA,<strong>123519.00</strong>,<strong>4851.24,N</strong>,<strong>00221.03,E</strong>,1,<strong>08</strong>,0.9,<strong>545.4,M</strong>,46.9,M,,*47</p>
+</blockquote>
+<p>Lecture :</p>
+<ul>
+<li>Heure : 12h 35min 19s UTC</li>
+<li>Latitude : 48° 51' 24'' N → <strong>48.854° N</strong></li>
+<li>Longitude : 2° 21' 03'' E → <strong>2.3505° E</strong></li>
+<li>8 satellites</li>
+<li>altitude 545.4 m</li>
+</ul>
+<p><strong>Question 5 :</strong></p>
+<p>Voici une trame :</p>
+<blockquote>
+<p><code>$GPGGA,143022.00,4913.37,N,00105.82,E,1,07,1.1,18.3,M,47.6,M</code></p>
+</blockquote>
+<p>Quelle ville se situe à ces coordonnées ?<br />
+(Utilisez <a href="https://earth.google.com/web/@10.74818091,150.61538624,0a,28883840.88575363d,35y,356.71520704h,0t,0r/data=CgRCAggCOgMKATBCAggASg0I____________ARAA">Google Earth</a> et expliquez comment vous avez fait en quelques lignes).</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

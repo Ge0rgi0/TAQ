@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Les boucles for en Python - TAQ</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Les boucles for en Python";
+        var mkdocs_page_input_path = "Secondes/Chapitres/for.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../RS/RS/">Réseaux sociaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Geo/Geo/">Géolocalisation</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Types/Types_de_base/">Types de base</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Bases/bases/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/Chapitres/Algos/Algos/">Algorithmes</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/bac/">Baccalauréat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/BDD/">Base de données</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/Routage/routage/">Algorithmes de Routage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/R%C3%A9cursivit%C3%A9/rec/">Récursivité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/S%C3%A9curit%C3%A9/secu/">Sécurité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/Chapitres/Arbres%26Graphes/Arbres%26Graphes/">Arbres & Graphes</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Les boucles for en Python</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="les-boucles-for-en-python">Les boucles <code>for</code> en Python</h1>
+<hr />
+<h2 id="1-cest-quoi-une-boucle">1. C'est quoi une boucle ?</h2>
+<p>Imagine que tu dois écrire 5 fois "Bonjour !" à la main :</p>
+<pre><code class="language-python">print(&quot;Bonjour !&quot;)
+print(&quot;Bonjour !&quot;)
+print(&quot;Bonjour !&quot;)
+print(&quot;Bonjour !&quot;)
+print(&quot;Bonjour !&quot;)
+</code></pre>
+<p>C'est répétitif. Et si tu devais le faire 1000 fois ? Une <strong>boucle</strong> permet de répéter automatiquement des instructions autant de fois qu'on le souhaite.</p>
+<hr />
+<h2 id="2-la-boucle-for-avec-loop">2. La boucle <code>for</code> avec <code>loop</code></h2>
+<p>En Python, on écrit une boucle <code>for</code> de cette façon :</p>
+<pre><code class="language-python">for loop in range(5):
+    print(&quot;Bonjour !&quot;)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>Bonjour !
+Bonjour !
+Bonjour !
+Bonjour !
+Bonjour !
+</code></pre>
+<ul>
+<li><code>for</code> démarre la boucle</li>
+<li><code>loop</code> est la variable de boucle (on verra son utilité plus tard)</li>
+<li><code>range(5)</code> indique qu'on fait 5 tours</li>
+<li><code>:</code> est obligatoire à la fin de la ligne <code>for</code></li>
+<li>La ligne du dessous est <strong>indentée</strong> (décalée) : c'est elle qui est répétée</li>
+</ul>
+<p>La variable <code>loop</code> prend une nouvelle valeur à chaque tour. On peut l'afficher :</p>
+<hr />
+<h2 id="3-lindentation-la-regle-la-plus-importante">3. L'indentation : la règle la plus importante</h2>
+<p>En Python, l'indentation (le décalage vers la droite d'une ligne) <strong>définit ce qui est à l'intérieur de la boucle</strong>.</p>
+<p>Tout ce qui est indenté après le <code>for</code> sera répété à chaque tour.<br />
+Tout ce qui ne l'est pas s'exécute une seule fois, après la fin de la boucle.</p>
+<h3 id="une-seule-ligne-indentee">Une seule ligne indentée</h3>
+<pre><code class="language-python">for loop in range(3):
+    print(&quot;Je suis dans la boucle&quot;)
+print(&quot;Je suis en dehors de la boucle&quot;)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>Je suis dans la boucle
+Je suis dans la boucle
+Je suis dans la boucle
+Je suis en dehors de la boucle
+</code></pre>
+<p>Le dernier <code>print</code> n'est pas décalé : il ne s'exécute qu'une seule fois, après les 3 tours.</p>
+<hr />
+<h3 id="plusieurs-lignes-indentees">Plusieurs lignes indentées</h3>
+<p>On peut mettre autant de lignes qu'on veut à l'intérieur d'une boucle :</p>
+<pre><code class="language-python">for loop in range(3):
+    print(&quot;Je suis toujours dans la boucle&quot;)
+    print(&quot;Moi aussi&quot;)
+print(&quot;La boucle est terminee&quot;)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>Je suis toujours dans la boucle
+Moi aussi
+Je suis toujours dans la boucle
+Moi aussi
+Je suis toujours dans la boucle
+Moi aussi
+La boucle est terminee
+</code></pre>
+<p>Les deux premiers <code>print</code> sont indentés : ils se répètent 3 fois.<br />
+Le dernier ne l'est pas : il ne s'exécute qu'une fois.</p>
+<hr />
+<h3 id="avant-pendant-apres">Avant, pendant, après</h3>
+<pre><code class="language-python">print(&quot;Avant la boucle&quot;)
+
+for loop in range(4):
+    print(&quot;Debut du tour&quot;)
+    print(&quot;Fin du tour&quot;)
+
+print(&quot;Apres la boucle&quot;)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>Avant la boucle
+Debut du tour
+Fin du tour
+Debut du tour
+Fin du tour
+Debut du tour
+Fin du tour
+Debut du tour
+Fin du tour
+Apres la boucle
+</code></pre>
+<hr />
+<h3 id="lindentation-change-tout-au-resultat">L'indentation change tout au résultat</h3>
+<p>Observe bien la différence entre ces deux programmes qui ne différent que par l'indentation d'une ligne :</p>
+<p><strong>Programme A — le <code>print</code> est dans la boucle :</strong></p>
+<pre><code class="language-python">total = 0
+for loop in range(5):
+    total = total + 1
+    print(&quot;Total :&quot;, total)
+</code></pre>
+<p><strong>Résultat A :</strong></p>
+<pre><code>Total : 1
+Total : 2
+Total : 3
+Total : 4
+Total : 5
+</code></pre>
+<p><strong>Programme B — le <code>print</code> est en dehors de la boucle :</strong></p>
+<pre><code class="language-python">total = 0
+for loop in range(5):
+    total = total + 1
+print(&quot;Total :&quot;, total)
+</code></pre>
+<p><strong>Résultat B :</strong></p>
+<pre><code>Total : 5
+</code></pre>
+<p>Un seul espace de différence, et le résultat est complètement différent.</p>
+<hr />
+<h3 id="lerreur-classique-oublier-lindentation">L'erreur classique : oublier l'indentation</h3>
+<pre><code class="language-python">for loop in range(3):
+print(&quot;Bonjour&quot;)   # ERREUR : cette ligne n'est pas indentée
+</code></pre>
+<p>Python retourne immédiatement une erreur : <code>IndentationError: expected an indented block</code>. Il faut toujours indenter au moins une ligne à l'intérieur d'une boucle.</p>
+<hr />
+<h2 id="4-utiliser-loop-pour-faire-des-calculs">4. Utiliser <code>loop</code> pour faire des calculs</h2>
+<p>La variable de boucle (<code>loop</code> dans notre cas) est une véritable variable qui évolue au fur et à mesure des tours.</p>
+<pre><code class="language-python">for loop in range(5):
+    print(loop)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>0
+1
+2
+3
+4
+</code></pre>
+<p>On remarque que l'on affiche bien 5 valeurs, mais puisque l'on commence à 0 on s'arrêtera à 4.</p>
+<hr />
+<h3 id="range-avec-deux-valeurs-choisir-la-valeur-de-depart"><code>range()</code> avec deux valeurs : choisir la valeur de départ</h3>
+<p>Pour ne pas démarrer à 0, on peut donner deux valeurs à <code>range()</code> : un début et une fin.</p>
+<pre><code class="language-python">for loop in range(1, 6):
+    print(loop)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>1
+2
+3
+4
+5
+</code></pre>
+<p>La syntaxe est <code>range(début, fin)</code>.
+La valeur de fin n'est <strong>jamais atteinte</strong> : ici <code>range(1, 6)</code> s'arrête à 5.</p>
+<pre><code class="language-python">for loop in range(3, 8):
+    print(loop)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>3
+4
+5
+6
+7
+</code></pre>
+<hr />
+<h3 id="range-avec-trois-valeurs-choisir-le-pas"><code>range()</code> avec trois valeurs : choisir le pas</h3>
+<p>On peut aussi indiquer un <strong>pas</strong>, c'est-à-dire de combien <code>loop</code> avance à chaque tour. La syntaxe devient <code>range(début, fin, pas)</code>.</p>
+<pre><code class="language-python">for loop in range(0, 20, 5):
+    print(loop)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>0
+5
+10
+15
+</code></pre>
+<p>On avance de 5 en 5. La valeur 20 n'est pas atteinte.</p>
+<pre><code class="language-python">for loop in range(0, 11, 2):
+    print(loop)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>0
+2
+4
+6
+8
+10
+</code></pre>
+<p>On avance de 2 en 2 : on obtient tous les nombres pairs entre 0 et 10.</p>
+<p>Le pas peut aussi être <strong>négatif</strong> pour compter à rebours. Dans ce cas, le début doit être plus grand que la fin :</p>
+<pre><code class="language-python">for loop in range(5, 0, -1):
+    print(loop)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>5
+4
+3
+2
+1
+</code></pre>
+<p>On avance de -1 en -1, la valeur 0 n'est jamais atteinte.</p>
+<hr />
+<h2 id="5-les-boucles-imbriquees">5. Les boucles imbriquées</h2>
+<p>On peut placer une boucle à l'intérieur d'une autre boucle. On parle alors de boucles <strong>imbriquées</strong>. L'indentation prend alors encore plus d'importance : il y a deux niveaux.</p>
+<pre><code class="language-python">for loop in range(2):
+    print(&quot;a&quot;)
+    for loop2 in range(3):
+        print(&quot;b&quot;)
+    print(&quot;c&quot;)
+
+print(&quot;d&quot;)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>a
+b
+b
+b
+c
+a
+b
+b
+b
+c
+d
+</code></pre>
+<h3 id="exemple-dessiner-un-rectangle">Exemple : dessiner un rectangle</h3>
+<pre><code class="language-python">for loop in range(4):
+    for loop2 in range(6):
+        print(&quot;*&quot;, end=&quot;&quot;)
+    print()
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>******
+******
+******
+******
+</code></pre>
+<ul>
+<li>La boucle extérieure gère les lignes (4 lignes)</li>
+<li>La boucle intérieure gère les colonnes (6 étoiles par ligne)</li>
+<li><code>print()</code> est indenté d'un seul niveau : il s'exécute après chaque ligne complète pour passer à la suivante</li>
+</ul>
+<hr />
+<h2 id="6-les-erreurs-frequentes">6. Les erreurs fréquentes</h2>
+<table>
+<thead>
+<tr>
+<th>Erreur</th>
+<th>Conséquence</th>
+<th>Correction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Oublier <code>:</code> après <code>for loop in range(...)</code></td>
+<td><code>SyntaxError</code></td>
+<td>Toujours mettre <code>:</code></td>
+</tr>
+<tr>
+<td>Ne pas indenter le bloc</td>
+<td><code>IndentationError</code></td>
+<td>Décaler de 4 espaces</td>
+</tr>
+<tr>
+<td>Mal indenter une ligne</td>
+<td>Le programme tourne mais donne un mauvais résultat</td>
+<td>Vérifier chaque niveau d'indentation</td>
+</tr>
+<tr>
+<td>Utiliser le même nom pour deux boucles imbriquées</td>
+<td>La variable extérieure est écrasée</td>
+<td>Utiliser <code>loop</code> et <code>loop2</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="exercices">Exercices</h2>
+<ol>
+<li>Affiche 10 fois la phrase "Python c'est bien".</li>
+<li>Affiche les nombres de 1 à 20. Pour chaque nombre, indique s'il est pair ou impair. A la fin, affiche "Fin du programme".</li>
+<li>Calcule et affiche la somme des entiers de 1 à 100. Affiche uniquement le résultat final.</li>
+<li>Affiche un triangle d'étoiles de 5 lignes (1 étoile sur la premiere ligne, 2 sur la deuxieme, etc.) en utilisant des boucles imbriquées.</li>
+<li>Affiche les tables de multiplication de 1 à 5 (de 1 à 10 pour chaque table). Entre chaque table, affiche une ligne de séparation.</li>
+</ol>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

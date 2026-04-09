@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Cours 1 – Print, variables, input - TAQ</title>
+    <title>Les bases : print, variables, input - TAQ</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Cours 1 \u2013 Print, variables, input";
+        var mkdocs_page_name = "Les bases : print, variables, input";
         var mkdocs_page_input_path = "Secondes/Chapitres/python1.md";
         var mkdocs_page_url = null;
       </script>
@@ -112,7 +112,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Cours 1 – Print, variables, input</li>
+      <li class="breadcrumb-item active">Les bases : print, variables, input</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -121,78 +121,150 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="cours-1-print-variables-input">Cours 1 – Print, variables, input</h1>
+                <h1 id="les-bases-print-variables-input">Les bases : <code>print</code>, variables, <code>input</code></h1>
+<hr />
 <h2 id="1-afficher-du-texte-avec-print">1. Afficher du texte avec <code>print</code></h2>
-<p>En Python, la fonction <strong><code>print</code></strong> permet d’afficher du texte à l’écran.<br />
-Il faut écrire le texte <strong>entre guillemets</strong> (<code>"</code> ou <code>'</code>) et mettre des <strong>parenthèses</strong>.  </p>
-<p>Exemple :  </p>
+<p>En Python, la fonction <code>print</code> permet d'afficher du texte à l'écran.<br />
+Il faut écrire le texte <strong>entre guillemets</strong> (<code>"</code> ou <code>'</code>) et l'entourer de <strong>parenthèses</strong>.</p>
 <pre><code class="language-python">print(&quot;Bonjour tout le monde !&quot;)
 print('Python est un langage simple.')
 </code></pre>
-<p>Les <strong>parenthèses</strong> indiquent ce qu’on veut afficher.<br />
-Les <strong>guillemets</strong> indiquent qu’il s’agit d’un texte (une chaîne de caractères, ou <em>string</em>).</p>
+<p><strong>Résultat :</strong></p>
+<pre><code>Bonjour tout le monde !
+Python est un langage simple.
+</code></pre>
+<p>Les <strong>parenthèses</strong> indiquent ce qu'on veut afficher.<br />
+Les <strong>guillemets</strong> indiquent qu'il s'agit d'un texte (on appelle ça une <em>chaîne de caractères</em>, ou <em>string</em> en anglais).</p>
+<p>On peut afficher plusieurs éléments sur la même ligne en les séparant par des virgules :</p>
+<pre><code class="language-python">print(&quot;Mon prenom est&quot;, &quot;Alice&quot;, &quot;et j'ai&quot;, 15, &quot;ans.&quot;)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>Mon prenom est Alice et j'ai 15 ans.
+</code></pre>
+<p>Python ajoute automatiquement un espace entre chaque élément séparé par une virgule.</p>
+<hr />
+<h3 id="end-controler-la-fin-dun-affichage"><code>end=""</code> : contrôler la fin d'un affichage</h3>
+<p>Par défaut, <code>print</code> passe toujours à la ligne suivante après avoir affiché le texte. On peut changer ce comportement avec le paramètre <code>end</code>.</p>
+<pre><code class="language-python">print(&quot;Bonjour&quot;)
+print(&quot;tout le monde&quot;)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>Bonjour
+tout le monde
+</code></pre>
+<p>Avec <code>end=""</code>, on supprime ce retour à la ligne automatique :</p>
+<pre><code class="language-python">print(&quot;Bonjour&quot;, end=&quot;&quot;)
+print(&quot;tout le monde&quot;)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>Bonjourtout le monde
+</code></pre>
+<p>Les deux textes sont collés. On peut mettre ce qu'on veut entre les guillemets de <code>end</code> :</p>
+<pre><code class="language-python">print(&quot;Bonjour&quot;, end=&quot; &quot;)
+print(&quot;tout le monde&quot;)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>Bonjour tout le monde
+</code></pre>
+<pre><code class="language-python">print(&quot;un&quot;, end=&quot; - &quot;)
+print(&quot;deux&quot;, end=&quot; - &quot;)
+print(&quot;trois&quot;)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>un - deux - trois
+</code></pre>
+<p><code>end=""</code> est utile quand on veut construire une ligne morceau par morceau, au lieu d'afficher chaque <code>print</code> sur sa propre ligne.</p>
+<hr />
 <h3 id="exercice-1">Exercice 1</h3>
-<p>Écris un programme qui affiche une phrase vous présentant (prénom, âge, etc)...</p>
+<p>Écris un programme qui affiche sur <strong>une seule ligne</strong>, en utilisant plusieurs <code>print</code> avec <code>end</code> :</p>
+<pre><code>Lundi - Mardi - Mercredi
+</code></pre>
 <hr />
 <h2 id="2-les-variables">2. Les variables</h2>
-<p>Une <strong>variable</strong> permet de stocker une information et de la réutiliser.<br />
-On utilise le signe <strong><code>=</code></strong> pour donner une valeur à une variable.  </p>
-<p>Exemple :  </p>
+<p>Une <strong>variable</strong> permet de stocker une information et de la réutiliser plus tard dans le programme.<br />
+On utilise le signe <code>=</code> pour donner une valeur à une variable.</p>
 <pre><code class="language-python">prenom = &quot;Alice&quot;
 print(prenom)
 </code></pre>
-<p>Résultat :  </p>
+<p><strong>Résultat :</strong></p>
 <pre><code>Alice
 </code></pre>
-<p>Ici, la variable <code>prenom</code> contient le texte <code>"Alice"</code>.<br />
-Quand on écrit <code>print(prenom)</code>, Python affiche la valeur stockée.  </p>
-<p>On peut aussi changer la valeur d’une variable :  </p>
+<p>La variable <code>prenom</code> contient le texte <code>"Alice"</code>. Quand on écrit <code>print(prenom)</code>, Python affiche la valeur stockée dedans — sans guillemets cette fois, car <code>prenom</code> est une variable, pas du texte brut.</p>
+<p>On peut changer la valeur d'une variable à tout moment :</p>
 <pre><code class="language-python">prenom = &quot;Alice&quot;
+print(prenom)
 prenom = &quot;Bob&quot;
 print(prenom)
 </code></pre>
-<p>Résultat :  </p>
-<pre><code>Bob
+<p><strong>Résultat :</strong></p>
+<pre><code>Alice
+Bob
 </code></pre>
+<p>La deuxième ligne <code>prenom = "Bob"</code> <strong>écrase</strong> la valeur précédente. La variable ne retient que la dernière valeur qui lui a été assignée.</p>
+<p>On peut aussi stocker des nombres dans une variable :</p>
+<pre><code class="language-python">age = 15
+print(&quot;J'ai&quot;, age, &quot;ans.&quot;)
+</code></pre>
+<p><strong>Résultat :</strong></p>
+<pre><code>J'ai 15 ans.
+</code></pre>
+<p>Les nombres ne prennent pas de guillemets. <code>age = 15</code> stocke le nombre 15, alors que <code>age = "15"</code> stockerait le texte <code>"15"</code> — ce n'est pas la même chose pour Python.</p>
+<hr />
 <h3 id="exercice-2">Exercice 2</h3>
 <ol>
-<li>Crée une variable <code>animal</code> contenant le texte <code>"chien"</code>.  </li>
-<li>Affiche son contenu avec <code>print</code>.  </li>
-<li>Change la valeur de <code>animal</code> en <code>"chat"</code> et affiche-la à nouveau.  </li>
+<li>Crée une variable <code>animal</code> contenant le texte <code>"chien"</code>.</li>
+<li>Affiche son contenu avec <code>print</code>.</li>
+<li>Change la valeur de <code>animal</code> en <code>"chat"</code> et affiche-la à nouveau.</li>
 </ol>
 <hr />
-<h2 id="3-demander-une-valeur-a-lutilisateur-avec-input">3. Demander une valeur à l’utilisateur avec <code>input</code></h2>
-<p>La fonction <strong><code>input</code></strong> permet de poser une question à l’utilisateur et de récupérer ce qu’il écrit.  </p>
-<p>Exemple :  </p>
+<h2 id="3-demander-une-valeur-a-lutilisateur-avec-input">3. Demander une valeur à l'utilisateur avec <code>input</code></h2>
+<p>La fonction <code>input</code> permet de poser une question à l'utilisateur et de récupérer ce qu'il écrit au clavier.</p>
 <pre><code class="language-python">nom = input(&quot;Quel est ton nom ? &quot;)
-print(&quot;Bonjour &quot;, nom, &quot; !&quot;)
+print(&quot;Bonjour&quot;, nom, &quot;!&quot;)
 </code></pre>
-<p>Le texte dans les parenthèses de <code>input</code> est affiché comme une question.<br />
-Ce que l’utilisateur écrit est stocké dans une variable (ici <code>nom</code>).<br />
-On peut ensuite l’afficher avec <code>print</code>.  </p>
+<p><strong>Exemple d'exécution :</strong></p>
+<pre><code>Quel est ton nom ? Alice
+Bonjour Alice !
+</code></pre>
+<p>Le texte entre parenthèses de <code>input</code> est affiché comme une question.<br />
+Ce que l'utilisateur tape est stocké dans une variable — ici <code>nom</code>.<br />
+On peut ensuite l'utiliser comme n'importe quelle autre variable.</p>
+<p>On peut combiner <code>input</code> et <code>end</code> pour afficher la question et la réponse sur la même ligne :</p>
+<pre><code class="language-python">prenom = input(&quot;Entre ton prenom : &quot;)
+print(&quot;Enchante, &quot;, end=&quot;&quot;)
+print(prenom, end=&quot;&quot;)
+print(&quot; !&quot;)
+</code></pre>
+<p><strong>Exemple d'exécution :</strong></p>
+<pre><code>Entre ton prenom : Alice
+Enchante, Alice !
+</code></pre>
+<hr />
 <h3 id="exercice-3">Exercice 3</h3>
-<p>Écris un programme qui :<br />
-Demande ton prénom avec <code>input</code>.<br />
-Affiche :  </p>
-<pre><code>Enchanté, &lt;ton prénom&gt; !
+<p>Écris un programme qui demande le prénom de l'utilisateur et affiche :</p>
+<pre><code>Enchante, &lt;prenom&gt; !
 </code></pre>
 <hr />
 <h2 id="4-exercices">4. Exercices</h2>
 <h3 id="exercice-1_1">Exercice 1</h3>
-<p>Écris un programme qui :<br />
-Demande ton prénom avec <code>input</code>.<br />
-Stocke la réponse dans une variable <code>prenom</code>.<br />
-Affiche : Bonjour <code>prenom</code>, bienvenue dans ton premier programme Python !</p>
+<p>Écris un programme qui :
+- demande le prénom de l'utilisateur avec <code>input</code>
+- stocke la réponse dans une variable <code>prenom</code>
+- affiche : <code>Bonjour &lt;prenom&gt;, bienvenue dans ton premier programme Python !</code></p>
 <h3 id="exercice-2_1">Exercice 2</h3>
-<p>Écris un programme qui :<br />
-Demande à l’utilisateur le nom d’un animal.<br />
-Stocke la réponse dans une variable <code>animal</code>.<br />
-Affiche une phrase du type :  J'aimerais avoir un <code>animal</code>.</p>
+<p>Écris un programme qui :
+- demande à l'utilisateur le nom d'un animal
+- stocke la réponse dans une variable <code>animal</code>
+- affiche : <code>J'aimerais avoir un &lt;animal&gt;.</code></p>
 <h3 id="exercice-3_1">Exercice 3</h3>
-<p>Écris un programme qui :<br />
-Demande à l’utilisateur son film préféré.<br />
-Stocke la réponse dans une variable <code>film</code>.<br />
-Affiche :  Ton film préféré est <code>film</code>.</p>
+<p>Écris un programme qui :
+- demande à l'utilisateur son film préféré
+- stocke la réponse dans une variable <code>film</code>
+- affiche sur une seule ligne en utilisant <code>end</code> : <code>Ton film prefere est &lt;film&gt;.</code></p>
+<h3 id="exercice-4">Exercice 4</h3>
+<p>Écris un programme qui demande le prénom et l'âge de l'utilisateur, puis affiche :</p>
+<pre><code>&lt;prenom&gt; a &lt;age&gt; ans.
+</code></pre>
               
             </div>
           </div><footer>
