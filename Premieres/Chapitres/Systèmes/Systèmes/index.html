@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Systèmes d'exploitation - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Syst\u00e8mes d\u0027exploitation";
+        var mkdocs_page_input_path = "Premieres/Chapitres/Syst\u00e8mes/Syst\u00e8mes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Geo/Geo/">Géolocalisation</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base/">Types de base</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Bases/bases/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Algos/Algos/">Algorithmes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../A%26S/">Architecture & Systèmes d'exploitation</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/bac/">Baccalauréat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/BDD/">Base de données</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Routage/routage/">Algorithmes de Routage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/R%C3%A9cursivit%C3%A9/rec/">Récursivité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/S%C3%A9curit%C3%A9/secu/">Sécurité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Arbres%26Graphes/Arbres%26Graphes/">Arbres & Graphes</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Systèmes d'exploitation</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="systemes-dexploitation">Systèmes d'exploitation</h1>
+<h2 id="quest-ce-quun-systeme-dexploitation">Qu'est-ce qu'un système d'exploitation ?</h2>
+<h3 id="un-peu-dhistoire">Un peu d'histoire</h3>
+<p>Dans les années 1950, les premiers ordinateurs n'avaient <strong>pas de système
+d'exploitation</strong>. Les programmeurs devaient tout gérer eux-mêmes : charger
+leur programme en mémoire, piloter les composants, gérer les erreurs...
+C'était long, fastidieux et réservé à des spécialistes.</p>
+<p>Peu à peu, des programmes utilitaires ont été créés pour automatiser ces
+tâches répétitives. Ces programmes se sont regroupés pour former ce qu'on
+appelle aujourd'hui un <strong>système d'exploitation</strong>.</p>
+<p>Les premiers systèmes d'exploitation apparaissent dans les années 1960 avec
+les mainframes d'IBM. Dans les années 1980, l'arrivée des ordinateurs
+personnels popularise des systèmes comme <strong>MS-DOS</strong> (Microsoft) puis
+<strong>Windows</strong>. En 1991, un étudiant finlandais nommé <strong>Linus Torvalds</strong> publie
+le noyau <strong>Linux</strong>, qui deviendra la base de nombreux systèmes libres.</p>
+<p><img alt="" src="history.png" /></p>
+<hr />
+<h3 id="role-dun-systeme-dexploitation">Rôle d'un système d'exploitation</h3>
+<p>Un <strong>système d'exploitation</strong> (ou OS, de l'anglais <em>Operating System</em>) est
+un ensemble de programmes qui fait l'<strong>intermédiaire entre le matériel et
+les logiciels</strong>.</p>
+<p>Sans lui, impossible de lancer une application, d'enregistrer un fichier ou
+même d'afficher quelque chose à l'écran.</p>
+<p>Ses principales fonctions sont :</p>
+<ul>
+<li><strong>Gérer les fichiers et répertoires</strong> : organiser, lire, écrire, supprimer
+les données sur les disques</li>
+<li><strong>Gérer les processus</strong> : lancer, suspendre, arrêter les programmes en
+cours d'exécution</li>
+<li><strong>Gérer les utilisateurs et les droits</strong> : définir qui a accès à quoi</li>
+<li><strong>Gérer la mémoire</strong> : allouer la RAM aux programmes qui en ont besoin</li>
+<li><strong>Gérer les entrées/sorties</strong> : faire communiquer les programmes avec le
+clavier, l'écran, le réseau...</li>
+</ul>
+<blockquote>
+<p><strong>Idée clé :</strong> Sans OS, un ordinateur ne sait rien faire. C'est lui qui
+rend la machine utilisable.</p>
+</blockquote>
+<hr />
+<h2 id="logiciels-libres-et-logiciels-proprietaires">Logiciels libres et logiciels propriétaires</h2>
+<h3 id="logiciels-proprietaires">Logiciels propriétaires</h3>
+<p>Un <strong>logiciel propriétaire</strong> est un logiciel dont le <strong>code source est
+fermé</strong>. Seule l'entreprise qui l'a créé peut le modifier. L'utilisateur
+achète une <strong>licence</strong> qui lui donne le droit de l'utiliser, mais pas de le
+modifier ni de le redistribuer.</p>
+<p>Exemples : <strong>Windows</strong>, <strong>macOS</strong>, <strong>Microsoft Office</strong>, <strong>Photoshop</strong></p>
+<h3 id="logiciels-libres">Logiciels libres</h3>
+<p>Un <strong>logiciel libre</strong> est un logiciel dont le <strong>code source est ouvert</strong>,
+accessible à tous. N'importe qui peut le lire, le modifier et le
+redistribuer librement.</p>
+<p>Les 4 libertés fondamentales d'un logiciel libre (définies par la Free
+Software Foundation) :
+- Liberté d'<strong>utiliser</strong> le programme
+- Liberté d'<strong>étudier</strong> son fonctionnement
+- Liberté de le <strong>modifier</strong>
+- Liberté de le <strong>redistribuer</strong></p>
+<p>Exemples : <strong>Linux</strong>, <strong>LibreOffice</strong>, <strong>Firefox</strong>, <strong>VLC</strong></p>
+<h3 id="comparaison">Comparaison</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Propriétaire</th>
+<th>Libre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code source</td>
+<td>Fermé</td>
+<td>Ouvert</td>
+</tr>
+<tr>
+<td>Modification</td>
+<td>Interdite</td>
+<td>Autorisée</td>
+</tr>
+<tr>
+<td>Prix</td>
+<td>Souvent payant</td>
+<td>Souvent gratuit</td>
+</tr>
+<tr>
+<td>Exemples</td>
+<td>Windows, macOS</td>
+<td>Linux, LibreOffice</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Attention :</strong> Gratuit ≠ libre. Un logiciel peut être gratuit sans être
+libre (ex : Spotify gratuit mais propriétaire). Et un logiciel libre peut
+être payant.</p>
+</blockquote>
+<hr />
+<h2 id="larborescence-de-fichiers">L'arborescence de fichiers</h2>
+<h3 id="structure-en-arbre">Structure en arbre</h3>
+<p>Sur un système Linux, les fichiers sont organisés selon une <strong>structure
+arborescente</strong> : c'est une hiérarchie de <strong>répertoires</strong> (dossiers) et de
+<strong>fichiers</strong>, qui part d'un point unique appelé la <strong>racine</strong>, notée <code>/</code>.</p>
+<pre><code>/
+├── home/
+│   ├── alice/
+│   │   ├── documents/
+│   │   │   └── rapport.txt
+│   │   └── images/
+│   │       └── photo.jpg
+│   └── bob/
+└── etc/
+</code></pre>
+<p>Chaque élément de l'arborescence est soit :
+- un <strong>répertoire</strong> : contient d'autres fichiers ou répertoires
+- un <strong>fichier</strong> : contient des données</p>
+<h3 id="chemin-absolu">Chemin absolu</h3>
+<p>Un <strong>chemin absolu</strong> part toujours de la racine <code>/</code>. Il décrit la position
+complète d'un fichier, peu importe où on se trouve.</p>
+<p>Exemple : <code>/home/alice/documents/rapport.txt</code></p>
+<h3 id="chemin-relatif">Chemin relatif</h3>
+<p>Un <strong>chemin relatif</strong> part du <strong>répertoire courant</strong> (là où on se trouve
+actuellement). Il utilise :
+- <code>.</code> pour désigner le répertoire courant
+- <code>..</code> pour désigner le répertoire parent (remonter d'un niveau)</p>
+<p>Exemple : si on est dans <code>/home/alice/</code>, le chemin relatif vers
+<code>rapport.txt</code> est <code>documents/rapport.txt</code></p>
+<p>Pour remonter vers <code>/home/</code> depuis <code>/home/alice/documents/</code> :
+<code>../../</code></p>
+<h3 id="lire-linvite-de-commande">Lire l'invite de commande</h3>
+<p>Quand on ouvre un terminal sous Linux, on voit une ligne comme :</p>
+<pre><code>/
+└── home/
+└── elsa/
+├── lycee/
+│   ├── nsi/
+│   │   └── tp1.py
+│   └── maths/
+│       └── cours.pdf
+└── perso/
+└── photo.jpg
+</code></pre>
+<p><strong>1.</strong> Donner le chemin absolu du fichier <code>cours.pdf</code>.</p>
+<p><strong>2.</strong> On se trouve dans le répertoire <code>nsi</code>. Donner le chemin relatif
+pour accéder à <code>photo.jpg</code>.</p>
+<p><strong>3.</strong> On se trouve dans le répertoire <code>elsa</code>. Donner deux façons
+d'accéder au fichier <code>tp1.py</code> : une avec un chemin absolu, une avec un
+chemin relatif.</p>
+<p><strong>4.</strong> Quelle est la différence entre <code>/home/elsa</code> et <code>~</code> quand on est
+connecté en tant que <code>elsa</code> ?</p>
+<hr />
+<h2 id="premieres-commandes-linux">Premières commandes Linux</h2>
+<h3 id="le-terminal">Le terminal</h3>
+<p>Le <strong>terminal</strong> (ou console) est une interface en <strong>ligne de commande</strong> :
+on tape du texte, la machine répond par du texte. C'est une façon directe
+et puissante d'interagir avec le système.</p>
+<p>Contrairement à une interface graphique, le terminal permet d'effectuer des
+opérations précises, rapides et automatisables.</p>
+<h3 id="commandes-de-navigation">Commandes de navigation</h3>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Rôle</th>
+<th>Exemple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pwd</code></td>
+<td>Afficher le répertoire courant</td>
+<td><code>pwd</code></td>
+</tr>
+<tr>
+<td><code>ls</code></td>
+<td>Lister le contenu du répertoire</td>
+<td><code>ls</code></td>
+</tr>
+<tr>
+<td><code>cd chemin</code></td>
+<td>Changer de répertoire</td>
+<td><code>cd documents</code></td>
+</tr>
+<tr>
+<td><code>cd ..</code></td>
+<td>Remonter d'un niveau</td>
+<td><code>cd ..</code></td>
+</tr>
+<tr>
+<td><code>cd ~</code></td>
+<td>Aller dans son répertoire personnel</td>
+<td><code>cd ~</code></td>
+</tr>
+<tr>
+<td><code>cat fichier</code></td>
+<td>Afficher le contenu d'un fichier</td>
+<td><code>cat notes.txt</code></td>
+</tr>
+<tr>
+<td><code>man commande</code></td>
+<td>Afficher la documentation</td>
+<td><code>man ls</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Astuce :</strong> La touche <code>Tab</code> permet de compléter automatiquement un nom
+de fichier ou de répertoire. Les flèches ↑ et ↓ permettent de naviguer
+dans les commandes précédentes.</p>
+</blockquote>
+<p><span style="color:red">TP — Terminus</span></p>
+<p>Tu vas découvrir les commandes Linux en jouant à <strong>Terminus</strong>, un jeu
+d'aventure en ligne de commande.</p>
+<p>Rends-toi sur : <strong>http://luffah.xyz/bidules/Terminus/</strong></p>
+<ul>
+<li>Accepte les cookies pour sauvegarder ta progression.</li>
+<li>Commence toujours par taper <code>ls</code> pour voir ce qui t'entoure.</li>
+<li>Utilise <code>cat</code> pour lire les objets et personnages.</li>
+<li>Utilise <code>cd</code> pour te déplacer.</li>
+</ul>
+<p>Au fur et à mesure, <strong>note dans un tableau</strong> les nouvelles commandes que tu
+découvres et leur rôle.</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls</code></td>
+<td>...</td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td>...</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

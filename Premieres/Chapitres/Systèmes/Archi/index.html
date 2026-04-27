@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Architecture des ordinateurs - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Architecture des ordinateurs";
+        var mkdocs_page_input_path = "Premieres/Chapitres/Syst\u00e8mes/Archi.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Geo/Geo/">Géolocalisation</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base/">Types de base</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Bases/bases/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Algos/Algos/">Algorithmes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../A%26S/">Architecture & Systèmes d'exploitation</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/bac/">Baccalauréat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/BDD/">Base de données</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Routage/routage/">Algorithmes de Routage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/R%C3%A9cursivit%C3%A9/rec/">Récursivité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/S%C3%A9curit%C3%A9/secu/">Sécurité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Arbres%26Graphes/Arbres%26Graphes/">Arbres & Graphes</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Architecture des ordinateurs</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="architecture-des-ordinateurs">Architecture des ordinateurs</h1>
+<h2 id="quest-ce-quune-machine">Qu'est-ce qu'une machine ?</h2>
+<p>Un ordinateur, c'est avant tout un ensemble de composants électroniques qui
+travaillent ensemble. Mais comment ? Qui fait quoi ? Comment les informations
+circulent-elles ?</p>
+<p>Pour répondre à ces questions, les informaticiens utilisent un <strong>modèle</strong>,
+c'est-à-dire une représentation simplifiée de la réalité. Le modèle le plus
+célèbre est celui proposé par <strong>John von Neumann</strong> en 1945.</p>
+<hr />
+<h2 id="le-modele-de-von-neumann">Le modèle de Von Neumann</h2>
+<h3 id="lidee-fondamentale">L'idée fondamentale</h3>
+<p>Avant Von Neumann, les machines étaient <strong>câblées</strong> pour effectuer une tâche
+précise. Changer de tâche signifiait recâbler physiquement la machine. C'était
+long, coûteux, et peu pratique.</p>
+<p>Von Neumann propose une idée révolutionnaire : et si on stockait le <strong>programme
+en mémoire</strong>, au même endroit que les données ? La machine pourrait alors
+exécuter n'importe quel programme, juste en changeant ce qu'elle lit en mémoire.</p>
+<p>C'est le principe de l'<strong>ordinateur à programme enregistré</strong>, et c'est encore
+le principe de tous les ordinateurs modernes.</p>
+<h3 id="les-4-composants">Les 4 composants</h3>
+<p>Le modèle de Von Neumann décompose l'ordinateur en <strong>4 éléments</strong> :</p>
+<p><img alt="Von Neumann" src="../VonN.png" /></p>
+<h4 id="1-le-processeur-cpu">1. Le processeur (CPU)</h4>
+<p>C'est le <strong>cerveau</strong> de l'ordinateur. Il lit les instructions du programme et
+les exécute. Il se divise lui-même en deux parties :</p>
+<ul>
+<li><strong>L'Unité de Contrôle (UC)</strong> : elle lit les instructions en mémoire et
+  coordonne le travail des autres composants. C'est elle qui décide "quelle
+  est la prochaine instruction à exécuter ?"</li>
+<li><strong>L'Unité Arithmétique et Logique (UAL)</strong> : elle effectue tous les calculs
+  (additions, soustractions...) et les opérations logiques (comparaisons,
+  ET, OU...).</li>
+</ul>
+<h4 id="2-la-memoire">2. La mémoire</h4>
+<p>C'est là que sont stockés <strong>les programmes ET les données</strong> pendant l'exécution.
+C'est le principe clé de Von Neumann : tout est dans la même mémoire.</p>
+<p>On peut imaginer la mémoire comme une très longue liste de cases numérotées.
+Chaque case contient une valeur (une instruction ou une donnée), et chaque case
+a une <strong>adresse</strong> unique.</p>
+<h4 id="3-les-entreessorties">3. Les entrées/sorties</h4>
+<p>Ce sont les composants qui permettent à l'ordinateur de <strong>communiquer avec
+l'extérieur</strong> :</p>
+<ul>
+<li><strong>Entrées</strong> : clavier, souris, capteurs, microphone, webcam...</li>
+<li><strong>Sorties</strong> : écran, haut-parleurs, imprimante...</li>
+</ul>
+<p>Sans entrées/sorties, un ordinateur ne pourrait ni recevoir d'informations ni
+en communiquer.</p>
+<h4 id="4-le-bus">4. Le bus</h4>
+<p>Ce n'est pas vraiment un composant isolé, mais c'est ce qui <strong>relie tout le
+reste</strong>. Le bus est un ensemble de fils électriques qui permettent aux
+composants d'échanger des données.</p>
+<p>On distingue généralement :</p>
+<ul>
+<li>le <strong>bus de données</strong> : transporte les données</li>
+<li>le <strong>bus d'adresses</strong> : indique où lire ou écrire en mémoire</li>
+</ul>
+<hr />
+<h2 id="le-langage-machine">Le langage machine</h2>
+<h3 id="les-registres">Les registres</h3>
+<p>Pour effectuer ses calculs, le processeur dispose de petites zones de
+stockage ultrarapides appelées <strong>registres</strong>. On peut les voir comme des
+<strong>variables internes</strong> au processeur.</p>
+<p>Contrairement à la mémoire (grande mais lente), les registres sont en
+nombre limité (une dizaine en général) mais accessibles instantanément.</p>
+<p>On les nomme généralement A, B, C... ou R0, R1, R2...</p>
+<h3 id="le-compteur-de-programme-cp">Le Compteur de Programme (CP)</h3>
+<p>Le processeur dispose d'un registre spécial : le <strong>Compteur de Programme</strong>
+(CP). Il contient en permanence <strong>l'adresse de la prochaine instruction
+à exécuter</strong>.</p>
+<p>À chaque instruction exécutée, le CP s'incrémente automatiquement pour
+passer à la suivante. C'est lui qui donne au processeur sa progression dans
+le programme.</p>
+<h3 id="les-instructions-de-base">Les instructions de base</h3>
+<p>Un programme en langage machine est une suite d'instructions très simples.
+En voici les principales :</p>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LOAD R, valeur</code></td>
+<td>Charge une valeur dans le registre R</td>
+</tr>
+<tr>
+<td><code>LOAD R, @adresse</code></td>
+<td>Charge en R la valeur stockée à cette adresse mémoire</td>
+</tr>
+<tr>
+<td><code>STORE R, @adresse</code></td>
+<td>Copie la valeur de R vers cette adresse mémoire</td>
+</tr>
+<tr>
+<td><code>ADD R1, R2</code></td>
+<td>Additionne R1 et R2, stocke le résultat dans R1</td>
+</tr>
+<tr>
+<td><code>SUB R1, R2</code></td>
+<td>Soustrait R2 à R1, stocke le résultat dans R1</td>
+</tr>
+<tr>
+<td><code>JUMP @adresse</code></td>
+<td>Le CP saute à cette adresse (rupture de séquence)</td>
+</tr>
+<tr>
+<td><code>HALT</code></td>
+<td>Arrête le programme</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exemple-de-programme">Exemple de programme</h3>
+<p>On souhaite calculer 8 - 3 et stocker le résultat à l'adresse mémoire 10.</p>
+<table>
+<thead>
+<tr>
+<th>Adresse</th>
+<th>Instruction</th>
+<th>Ce qui se passe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>LOAD A, 8</code></td>
+<td>A ← 8, CP passe à 1</td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>LOAD B, 3</code></td>
+<td>B ← 3, CP passe à 2</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>SUB A, B</code></td>
+<td>A ← 8 - 3 = 5, CP passe à 3</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>STORE A, @10</code></td>
+<td>La valeur 5 est écrite à l'adresse 10, CP passe à 4</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>HALT</code></td>
+<td>Le programme s'arrête</td>
+</tr>
+</tbody>
+</table>
+<p>À la fin de l'exécution :</p>
+<ul>
+<li>Le registre A contient <strong>5</strong></li>
+<li>L'adresse mémoire 10 contient <strong>5</strong></li>
+<li>Le CP vaut <strong>4</strong></li>
+</ul>
+<p><span style="color:red">Exercices</span></p>
+<p><strong>1.</strong> Dérouler le programme suivant instruction par instruction.
+Indiquer à chaque étape la valeur du CP et le contenu des registres.</p>
+<table>
+<thead>
+<tr>
+<th>Adresse</th>
+<th>Instruction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>LOAD A, 10</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>LOAD B, 4</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>ADD A, B</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>LOAD B, 2</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>SUB A, B</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>STORE A, @20</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>HALT</code></td>
+</tr>
+</tbody>
+</table>
+<p><em>Que contient l'adresse mémoire 20 à la fin ?</em></p>
+<p><strong>2.</strong> On dispose de la mémoire suivante :</p>
+<table>
+<thead>
+<tr>
+<th>Adresse</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>12</td>
+</tr>
+<tr>
+<td>6</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<p>Dérouler le programme :</p>
+<table>
+<thead>
+<tr>
+<th>Adresse</th>
+<th>Instruction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>LOAD A, @5</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>LOAD B, @6</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>ADD A, B</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>STORE A, @7</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>HALT</code></td>
+</tr>
+</tbody>
+</table>
+<p><em>Que contient l'adresse mémoire 7 à la fin ?</em></p>
+<p><strong>3.</strong> Écrire un programme en langage machine qui calcule 3 + 5 + 2
+et stocke le résultat à l'adresse mémoire 15.</p>
+<p><strong>4.</strong> Que fait ce programme ? Expliquer son effet.</p>
+<table>
+<thead>
+<tr>
+<th>Adresse</th>
+<th>Instruction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><code>LOAD A, 1</code></td>
+</tr>
+<tr>
+<td>1</td>
+<td><code>ADD A, A</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>STORE A, @0</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>HALT</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>5.</strong> On souhaite calculer le périmètre d'un rectangle de longueur 8
+et de largeur 3. Le périmètre vaut 2 × (longueur + largeur).</p>
+<p>Écrire un programme en langage machine qui :
+- calcule ce périmètre
+- stocke le résultat à l'adresse mémoire 20</p>
+<hr />
+<h2 id="la-memoire-en-detail">La mémoire en détail</h2>
+<h3 id="memoire-vive-ram">Mémoire vive (RAM)</h3>
+<p>La <strong>RAM</strong> (Random Access Memory) est la mémoire principale de l'ordinateur.
+C'est là que sont chargés les programmes et les données <strong>en cours
+d'utilisation</strong>.</p>
+<ul>
+<li>Elle est <strong>rapide</strong> : le processeur peut y accéder en quelques nanosecondes.</li>
+<li>Elle est <strong>volatile</strong> : son contenu <strong>disparaît</strong> quand on coupe
+  l'alimentation.</li>
+<li>Sa capacité se mesure en <strong>Gio</strong> (gibioctets) sur les machines modernes.</li>
+</ul>
+<h3 id="memoire-morte-rom">Mémoire morte (ROM)</h3>
+<p>La <strong>ROM</strong> (Read Only Memory) est une mémoire <strong>non volatile</strong> : son contenu
+est conservé même sans alimentation, mais elle ne peut pas être modifiée
+(ou très difficilement).</p>
+<p>Elle contient en général les instructions de démarrage de la machine
+(le <strong>BIOS</strong> ou l'<strong>UEFI</strong>).</p>
+<h3 id="le-stockage-permanent-ssd-disque-dur">Le stockage permanent (SSD, disque dur)</h3>
+<p>Le <strong>SSD</strong> (Solid State Drive) ou le disque dur permettent de stocker des
+données <strong>de façon permanente</strong> : fichiers, programmes, système d'exploitation...</p>
+<ul>
+<li>Beaucoup plus <strong>lent</strong> que la RAM</li>
+<li>Beaucoup plus <strong>grand</strong> (des centaines de Gio, voire des Tio)</li>
+<li><strong>Non volatile</strong> : les données survivent à l'extinction</li>
+</ul>
+<h3 id="les-unites-de-mesure">Les unités de mesure</h3>
+<table>
+<thead>
+<tr>
+<th>Unité</th>
+<th>Symbole</th>
+<th>Valeur approximative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Octet</td>
+<td>o</td>
+<td>1 caractère</td>
+</tr>
+<tr>
+<td>Kibioctet</td>
+<td>Kio</td>
+<td>1 024 octets</td>
+</tr>
+<tr>
+<td>Mébioctet</td>
+<td>Mio</td>
+<td>1 024 Kio</td>
+</tr>
+<tr>
+<td>Gibioctet</td>
+<td>Gio</td>
+<td>1 024 Mio</td>
+</tr>
+<tr>
+<td>Tébioctet</td>
+<td>Tio</td>
+<td>1 024 Gio</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Attention :</strong> On voit souvent Go (gigaoctet = 10⁹ octets) dans les
+publicités, et Gio (gibioctet = 2³⁰ octets) en informatique. Ce ne sont
+pas exactement les mêmes valeurs.</p>
+</blockquote>
+<hr />
+<h2 id="monoprocesseur-et-multiprocesseur">Monoprocesseur et multiprocesseur</h2>
+<h3 id="monoprocesseur">Monoprocesseur</h3>
+<p>Un ordinateur <strong>monoprocesseur</strong> possède un seul cœur de calcul. Il ne peut
+exécuter qu'<strong>une seule instruction à la fois</strong>.</p>
+<p>Quand plusieurs programmes semblent tourner en même temps (musique +
+navigateur + traitement de texte), c'est en réalité le système d'exploitation
+qui <strong>alterne très rapidement</strong> entre les programmes, si vite que l'utilisateur
+a l'impression de simultanéité.</p>
+<h3 id="multiprocesseur">Multiprocesseur</h3>
+<p>Un ordinateur <strong>multiprocesseur</strong> (ou multi-cœurs) possède plusieurs unités
+de calcul. Il peut exécuter <strong>réellement plusieurs instructions en parallèle</strong>.</p>
+<p>Les processeurs modernes ont généralement 4, 8, voire 16 cœurs ou plus.</p>
+<hr />
+<h2 id="le-soc-system-on-chip">Le SoC (System on Chip)</h2>
+<p>Un <strong>SoC</strong> (System on Chip, ou "système sur une puce") est un circuit intégré
+qui rassemble <strong>tous les composants d'un ordinateur sur une seule puce</strong> :
+processeur, mémoire, GPU, interfaces réseau, etc.</p>
+<p><img alt="" src="soc.png" /></p>
+<p><strong>Exemples :</strong> Raspberry Pi, smartphones (Apple M1, Snapdragon...), montres
+connectées, consoles portables.</p>
+<h3 id="avantages">Avantages</h3>
+<ul>
+<li><strong>Consommation électrique très faible</strong> : idéal pour les appareils sur
+  batterie</li>
+<li><strong>Encombrement réduit</strong> : tout tient sur une puce de quelques centimètres</li>
+<li><strong>Coût de fabrication moins élevé</strong></li>
+<li><strong>Robustesse</strong> : moins de connexions entre composants = moins de pannes</li>
+</ul>
+<h3 id="inconvenients">Inconvénients</h3>
+<ul>
+<li><strong>Difficile à réparer</strong> : si un composant est défaillant, on change tout</li>
+<li><strong>Impossible à upgrader</strong> : on ne peut pas changer la RAM ou le processeur
+  séparément</li>
+<li><strong>Dissipation thermique complexe</strong> : tout chauffe au même endroit</li>
+</ul>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
