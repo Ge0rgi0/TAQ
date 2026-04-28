@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Graphes - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Graphes";
+        var mkdocs_page_input_path = "Terminales/Chapitres/Arbres\u0026Graphes/graph.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Geo/Geo/">Géolocalisation</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Types/Types_de_base/">Types de base</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Bases/bases/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Algos/Algos/">Algorithmes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Syst%C3%A8mes/A%26S/">Architecture & Systèmes d'exploitation</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../bac/">Baccalauréat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../BDD/">Base de données</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Routage/routage/">Algorithmes de Routage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9cursivit%C3%A9/rec/">Récursivité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S%C3%A9curit%C3%A9/secu/">Sécurité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Arbres%26Graphes/">Arbres & Graphes</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Graphes</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="graphes">Graphes</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Les arbres que nous avons étudiés sont des structures <strong>hiérarchiques</strong> : chaque nœud n'a qu'un seul parent, les relations vont toujours du parent vers l'enfant.</p>
+<p>Mais de nombreuses situations réelles sont plus complexes :</p>
+<ul>
+<li>Dans un <strong>réseau routier</strong>, une ville peut être reliée à plusieurs autres, dans les deux sens.</li>
+<li>Dans un <strong>réseau social</strong>, une personne peut suivre ou être suivie par de nombreuses autres.</li>
+<li>Sur <strong>Internet</strong>, un serveur peut être connecté à des dizaines d'autres.</li>
+</ul>
+<p>Pour modéliser ces situations, on utilise une structure plus générale : le <strong>graphe</strong>.</p>
+<hr />
+<h2 id="definitions">Définitions</h2>
+<p>Un <strong>graphe</strong> est un ensemble de <strong>sommets</strong> reliés entre eux par des <strong>arêtes</strong>.</p>
+<pre><code>    A --- B
+    |     |
+    C --- D
+</code></pre>
+<p>Ici, <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code> sont les <strong>sommets</strong>, et les traits sont les <strong>arêtes</strong>.</p>
+<h3 id="vocabulaire">Vocabulaire</h3>
+<ul>
+<li>Le <strong>degré</strong> d'un sommet est le nombre d'arêtes qui lui sont reliées. Dans l'exemple ci-dessus, chaque sommet a un degré de 2.</li>
+<li>Deux sommets reliés par une arête sont dits <strong>voisins</strong> ou <strong>adjacents</strong>.</li>
+<li>Un <strong>chemin</strong> est une suite de sommets reliés les uns aux autres.</li>
+<li>Un <strong>cycle</strong> est un chemin qui revient à son point de départ.</li>
+<li>Un graphe est dit <strong>connexe</strong> s'il existe un chemin entre toute paire de sommets.</li>
+</ul>
+<h3 id="exercice">Exercice</h3>
+<p>Soit le graphe suivant :</p>
+<pre><code>    A --- B --- E
+    |     |
+    C --- D
+</code></pre>
+<p>1) Quel est le degré de chaque sommet ?<br />
+2) Donner un chemin de <code>A</code> à <code>E</code>.<br />
+3) Ce graphe contient-il un cycle ? Si oui, lequel ?<br />
+4) Ce graphe est-il connexe ?  </p>
+<hr />
+<h2 id="graphes-orientes">Graphes orientés</h2>
+<p>Dans un graphe <strong>orienté</strong>, les arêtes (qu'on appelle alors des <strong>arcs</strong>) ont un sens, représenté par une flèche.</p>
+<pre><code>    A --&gt; B
+    ^     |
+    |     v
+    C &lt;-- D
+</code></pre>
+<p>Si un arc va de <code>A</code> vers <code>B</code>, on dit que :</p>
+<ul>
+<li><code>B</code> est un <strong>successeur</strong> de <code>A</code></li>
+<li><code>A</code> est un <strong>prédécesseur</strong> de <code>B</code></li>
+</ul>
+<blockquote>
+<p>Exemple : les abonnements sur un réseau social. Je peux suivre quelqu'un sans qu'il me suive en retour.</p>
+</blockquote>
+<h3 id="exercice_1">Exercice</h3>
+<p>1) Dans le graphe orienté ci-dessus, donner les successeurs et les prédécesseurs de chaque sommet.</p>
+<p>2) Modéliser les situations suivantes. Pour chacune, préciser si le graphe est orienté ou non, et identifier les sommets et les arêtes :</p>
+<p>a) Un réseau de métro avec ses stations et ses lignes.</p>
+<p>b) Les pages d'un site web avec leurs liens hypertextes.</p>
+<p>c) Un tournoi de football où chaque équipe joue contre toutes les autres.</p>
+<hr />
+<h2 id="representation-par-matrice-dadjacence">Représentation par matrice d'adjacence</h2>
+<p>Pour manipuler un graphe en Python, il faut le représenter en mémoire. La première façon est la <strong>matrice d'adjacence</strong>.</p>
+<p>On crée un tableau à deux dimensions de taille <code>n × n</code> (où <code>n</code> est le nombre de sommets). On numérote les sommets de <code>0</code> à <code>n-1</code>.</p>
+<ul>
+<li><code>matrice[i][j] = 1</code> s'il existe une arête de <code>i</code> vers <code>j</code></li>
+<li><code>matrice[i][j] = 0</code> sinon</li>
+</ul>
+<pre><code>Graphe :             Matrice d'adjacence :
+                        0  1  2  3
+    0 --- 1           0[0, 1, 1, 0]
+    |                 1[1, 0, 0, 1]
+    2 --- 3           2[1, 0, 0, 1]
+                      3[0, 1, 1, 0]
+</code></pre>
+<pre><code class="language-python">matrice = [
+    [0, 1, 1, 0],  # sommet 0
+    [1, 0, 0, 1],  # sommet 1
+    [1, 0, 0, 1],  # sommet 2
+    [0, 1, 1, 0],  # sommet 3
+]
+</code></pre>
+<p>Pour savoir si les sommets <code>i</code> et <code>j</code> sont voisins, il suffit de lire <code>matrice[i][j]</code>.</p>
+<blockquote>
+<p><strong>Avantage</strong> : tester si deux sommets sont voisins est immédiat.<br />
+<strong>Inconvénient</strong> : on réserve <code>n²</code> cases en mémoire, même si le graphe a très peu d'arêtes.</p>
+</blockquote>
+<h3 id="exercice_2">Exercice</h3>
+<p>1) Dessiner le graphe correspondant à la matrice suivante (les sommets sont numérotés 0, 1, 2, 3) :</p>
+<pre><code class="language-python">matrice = [
+    [0, 1, 0, 1],
+    [1, 0, 1, 0],
+    [0, 1, 0, 1],
+    [1, 0, 1, 0],
+]
+</code></pre>
+<p>2) Cette matrice est-elle symétrique ? Qu'est-ce que cela signifie pour le graphe ?</p>
+<p>3) Écrire une fonction <code>sont_voisins(matrice, i, j)</code> qui renvoie <code>True</code> si les sommets <code>i</code> et <code>j</code> sont voisins.</p>
+<p>4) Écrire une fonction <code>degre(matrice, i)</code> qui renvoie le degré du sommet <code>i</code>.</p>
+<p>5) Écrire une fonction <code>voisins(matrice, i)</code> qui renvoie la liste des voisins du sommet <code>i</code>.</p>
+<hr />
+<h2 id="representation-par-liste-dadjacence">Représentation par liste d'adjacence</h2>
+<p>La deuxième représentation utilise un <strong>dictionnaire</strong> : chaque sommet est associé à la liste de ses voisins (ou successeurs dans le cas orienté).</p>
+<pre><code class="language-python"># Graphe non orienté
+graphe = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D'],
+    'C': ['A', 'D'],
+    'D': ['B', 'C'],
+}
+</code></pre>
+<pre><code class="language-python"># Graphe orienté : A --&gt; B --&gt; D &lt;-- C --&gt; A
+graphe_oriente = {
+    'A': ['B'],
+    'B': ['D'],
+    'C': ['A', 'D'],
+    'D': [],
+}
+</code></pre>
+<blockquote>
+<p><strong>Avantage</strong> : économique en mémoire, surtout quand le graphe a peu d'arêtes.<br />
+<strong>Inconvénient</strong> : pour savoir si deux sommets sont voisins, il faut parcourir toute leur liste.</p>
+</blockquote>
+<h3 id="exercice_3">Exercice</h3>
+<p>1) Dessiner le graphe non orienté représenté par le dictionnaire suivant :</p>
+<pre><code class="language-python">graphe = {
+    'A': ['B', 'D'],
+    'B': ['A', 'C', 'D'],
+    'C': ['B'],
+    'D': ['A', 'B'],
+}
+</code></pre>
+<p>2) Écrire une fonction <code>sont_voisins(graphe, u, v)</code> qui renvoie <code>True</code> si <code>u</code> et <code>v</code> sont voisins dans ce graphe.</p>
+<p>3) Écrire une fonction <code>degre(graphe, u)</code> qui renvoie le degré du sommet <code>u</code>.</p>
+<p>4) Écrire une fonction <code>matrice_vers_liste(matrice)</code> qui convertit une matrice d'adjacence (avec des sommets numérotés) en dictionnaire d'adjacence.</p>
+<p>5) Écrire la fonction inverse : <code>liste_vers_matrice(graphe, sommets)</code> où <code>sommets</code> est la liste ordonnée des sommets.</p>
+<hr />
+<h2 id="parcours-de-graphes">Parcours de graphes</h2>
+<p>Comme pour les arbres, on peut <strong>parcourir</strong> tous les sommets d'un graphe. Mais attention : un graphe peut contenir des <strong>cycles</strong>. Il faut donc mémoriser les sommets déjà visités pour ne pas boucler indéfiniment.</p>
+<h3 id="parcours-en-profondeur-dfs">Parcours en profondeur (DFS)</h3>
+<p>On explore une branche aussi loin que possible avant de revenir en arrière. C'est le même principe que le parcours en profondeur d'un arbre.</p>
+<pre><code class="language-python">def dfs(graphe, depart):
+    visites = set()
+
+    def explorer(s):
+        if s in visites:
+            return
+        visites.add(s)
+        print(s)
+        for voisin in graphe[s]:
+            explorer(voisin)
+
+    explorer(depart)
+</code></pre>
+<h3 id="parcours-en-largeur-bfs">Parcours en largeur (BFS)</h3>
+<p>On explore tous les voisins d'un sommet avant de passer au niveau suivant. On utilise une <strong>file</strong>.</p>
+<pre><code class="language-python">from collections import deque
+
+def bfs(graphe, depart):
+    visites = set()
+    file = deque([depart])
+    visites.add(depart)
+
+    while file:
+        s = file.popleft()
+        print(s)
+        for voisin in graphe[s]:
+            if voisin not in visites:
+                visites.add(voisin)
+                file.append(voisin)
+</code></pre>
+<h3 id="exercice_4">Exercice</h3>
+<p>Soit le graphe suivant :</p>
+<pre><code class="language-python">graphe = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F'],
+    'D': ['B'],
+    'E': ['B'],
+    'F': ['C'],
+}
+</code></pre>
+<p>1) Dessiner ce graphe.</p>
+<p>2) Donner l'ordre de visite des sommets lors d'un parcours DFS depuis <code>A</code>.</p>
+<p>3) Donner l'ordre de visite des sommets lors d'un parcours BFS depuis <code>A</code>.</p>
+<p>4) Écrire une fonction <code>est_connexe(graphe)</code> qui renvoie <code>True</code> si le graphe est connexe. <em>(Indication : après un parcours depuis n'importe quel sommet, tous les sommets doivent avoir été visités.)</em></p>
+<p>5) Écrire une fonction <code>chemin(graphe, depart, arrivee)</code> qui renvoie une liste de sommets formant un chemin entre <code>depart</code> et <code>arrivee</code>, ou <code>None</code> s'il n'en existe pas.</p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
