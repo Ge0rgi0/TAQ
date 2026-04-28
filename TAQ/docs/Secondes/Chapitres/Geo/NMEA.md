@@ -47,32 +47,6 @@ Un point sur Terre est repéré par le **parallèle** et le **méridien** qui se
 
 ---
 
-**Question 3 :**
-
-Rendez-vous sur le site [Google Earth](https://www.arcgis.com/apps/dashboards/e24199255cb640b499af3724e9a1ba2e) puis appuyez simultanément sur **CTRL** et **G** pour afficher les paralléles et les méridiens.
-
-Donner les coordonnées approximatives des villes suivantes :
-
-- Osaka (Japon)
-- Alger (Algérie)
-- Montréal (Canada)
-
->*On se contentera de donner les degrés et des minutes approchées.*
-
-Indiquer quelle ville se trouve à ces coordonnées :
-
-- 34° 36′ 29″ S 58° 22′ 13″ O
-- 1° 17′ 00″ S 36° 49′ 00″ E
-- 6° 10′ 31″ S 106° 49′ 37″ E
-
----
-
-On peut y ajouter l'**altitude** (en mètres par rapport au niveau de la mer) pour une position en 3D.
-
-Le système de référence utilisé par le GPS et Galileo s'appelle **WGS84**.
-
----
-
 ### Deux notations
 
 1) La notation **DMS (Degré Minute Seconde)** est la notation traditionnelle, encore utilisée sur les cartes papier et les GPS de randonnée. 
@@ -104,6 +78,30 @@ $48° \ 51' \ 24'' N = 48 + \frac{51}{60} + \frac{24}{3600} = 48{,}8567° N$
 
 *On divise les minutes par 60 car 1 minute = 1/60 de degré, et les secondes par 3600 car 1 seconde = 1/3600 de degré.*
 
+---
+
+**Question 3 :**
+
+Rendez-vous sur le site [arcgis](https://www.arcgis.com/apps/dashboards/e24199255cb640b499af3724e9a1ba2e) pour voir les paralléles et les méridiens.
+
+Avec l'aide du site, donner les coordonnées approximatives des villes suivantes :
+
+- Osaka (Japon)
+- Alger (Algérie)
+- Montréal (Canada)
+
+>*On se contentera de donner les degrés et des minutes approchées.*
+
+Indiquer quelle ville se trouve à ces coordonnées :
+
+- 34° 36′ 29″ S 58° 22′ 13″ O
+- 1° 17′ 00″ S 36° 49′ 00″ E
+- 6° 10′ 31″ S 106° 49′ 37″ E
+
+>**Par soucis de simplicité, on n'utilisera plus que les degrés et les minutes pour les prochaines questions.**
+
+---
+
 **Question 4 :**
 
 Convertir les coordonnées suivantes au format **DD** :
@@ -126,23 +124,77 @@ C'est la trame principale contenant la position. Sa structure :
 
 ![](trame.png)
 
+### Lire les coordonnées dans une trame NMEA
+
+> ⚠️ Dans une trame NMEA, les coordonnées ne sont **pas** en DMS classique — elles sont en **degrés + minutes décimales**.  
+> Il n'y a pas de secondes.
+
+La formule de conversion est donc simplifiée :
+
+$DD = \text{degrés} + \frac{\text{minutes décimales}}{60}$
+
+**Comment séparer les degrés des minutes ?**
+
+- **Latitude** : les **2 premiers chiffres** sont les degrés, le reste sont les minutes
+- **Longitude** : les **3 premiers chiffres** sont les degrés, le reste sont les minutes
+
+> La longitude va jusqu'à 180°, elle a donc besoin de 3 chiffres pour les degrés.
+
+**Exemple pas à pas :**
+
+Trame : `$GPGGA,123519.00,4851.24,N,00221.03,E,...`
+
+*Latitude :* `4851.24 N`
+$$48° \ 51,24' → 48 + \frac{51,24}{60} = 48 + 0,854 = \textbf{48,854° N}$$
+
+*Longitude :* `00221.03 E`
+$$2° \ 21,03' → 2 + \frac{21,03}{60} = 2 + 0,3505 = \textbf{2,3505° E}$$
+
+---
+
 ### Exemple de trame complète
 
->$GPGGA,**123519.00**,**4851.24,N**,**00221.03,E**,1,**08**,0.9,**545.4,M**,46.9,M,,*47
+> $GPGGA,**123519.00**,**4851.24,N**,**00221.03,E**,1,**08**,0.9,**545.4,M**,46.9,M,,*47
 
 Lecture :
 
 - Heure : 12h 35min 19s UTC
-- Latitude : 48° 51' 24'' N → **48.854° N**
-- Longitude : 2° 21' 03'' E → **2.3505° E**
+- Latitude : 48° 51,24' N → **48,854° N**
+- Longitude : 2° 21,03' E → **2,3505° E**
 - 8 satellites
-- altitude 545.4 m
+- Altitude : 545,4 m
 
-**Question 5 :**
+---
 
-Voici une trame :
+**Question 5a :**
 
->``$GPGGA,143022.00,4913.37,N,00105.82,E,1,07,1.1,18.3,M,47.6,M``
+Décoder la trame suivante et identifier la ville correspondante sur [arcgis](https://www.arcgis.com/apps/dashboards/e24199255cb640b499af3724e9a1ba2e) :
 
-Quelle ville se situe à ces coordonnées ?  
-(Utilisez [Google Earth](https://earth.google.com/web/@10.74818091,150.61538624,0a,28883840.88575363d,35y,356.71520704h,0t,0r/data=CgRCAggCOgMKATBCAggASg0I____________ARAA) et expliquez comment vous avez fait en quelques lignes).
+> `$GPGGA,143022.00,4926.36,N,00105.95,E,1,07,1.1,21.0,M,47.6,M,,*XX`
+
+- Extraire la latitude et la longitude brutes
+- Les convertir en DD
+- Identifier la ville
+
+---
+
+**Question 5b :**
+
+Décoder la trame suivante et identifier la ville correspondante :
+
+> `$GPGGA,091504.00,4349.37,N,00519.83,E,1,09,0.8,12.5,M,47.2,M,,*XX`
+
+- Extraire la latitude et la longitude brutes
+- Les convertir en DD
+- Identifier la ville
+
+---
+
+**Question 6 :**
+
+Sur arcgis, trouvez les coordonnées DD de la ville de votre choix (hors France).  
+Construisez une trame NMEA fictive `$GPGGA` cohérente pour cette ville en remplissant les champs suivants (et expliquez les infos qu'elle contient) :
+
+> `$GPGGA,HHMMSS.00,LLLL.LL,N,DDDDD.DD,E,1,08,1.0,XXX.X,M,47.0,M,,*XX`
+
+*Pensez à bien respecter le format : 2 chiffres pour les degrés de latitude, 3 pour la longitude, et convertir les minutes décimales correctement.*
