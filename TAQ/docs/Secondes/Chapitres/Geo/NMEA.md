@@ -49,7 +49,7 @@ Un point sur Terre est repéré par le **parallèle** et le **méridien** qui se
 
 **Question 3 :**
 
-Rendez-vous sur le site [Google Earth](https://earth.google.com/web/@10.74818091,150.61538624,0a,28883840.88575363d,35y,356.71520704h,0t,0r/data=CgRCAggCOgMKATBCAggASg0I____________ARAA) puis appuyez simultanément sur **CTRL** et **G** pour afficher les paralléles et les méridiens.
+Rendez-vous sur le site [Google Earth](https://www.arcgis.com/apps/dashboards/e24199255cb640b499af3724e9a1ba2e) puis appuyez simultanément sur **CTRL** et **G** pour afficher les paralléles et les méridiens.
 
 Donner les coordonnées approximatives des villes suivantes :
 
