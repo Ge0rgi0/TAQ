@@ -82,7 +82,10 @@ $48° \ 51' \ 24'' N = 48 + \frac{51}{60} + \frac{24}{3600} = 48{,}8567° N$
 
 **Question 3 :**
 
-Rendez-vous sur le site [arcgis](https://www.arcgis.com/apps/dashboards/e24199255cb640b499af3724e9a1ba2e) pour voir les paralléles et les méridiens.
+Rendez-vous un des sites suivants pour voir les paralléles et les méridiens :
+- [arcgis](https://www.arcgis.com/apps/dashboards/e24199255cb640b499af3724e9a1ba2e)
+- [geoportail](https://www.geoportail.gouv.fr/carte)
+- [map-tools](https://tool-online.com/map-tools.php)
 
 Avec l'aide du site, donner les coordonnées approximatives des villes suivantes :
 

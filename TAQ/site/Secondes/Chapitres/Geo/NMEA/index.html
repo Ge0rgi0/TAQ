@@ -243,7 +243,7 @@ Le <strong>méridien de Greenwich</strong> (qui passe par Londres) est le mérid
 <p><img alt="" src="../trame.png" /></p>
 <h3 id="lire-les-coordonnees-dans-une-trame-nmea">Lire les coordonnées dans une trame NMEA</h3>
 <blockquote>
-<p>⚠️ Dans une trame NMEA, les coordonnées ne sont <strong>pas</strong> en DMS classique — elles sont en <strong>degrés + minutes décimales</strong>.<br />
+<p>Dans une trame NMEA, les coordonnées ne sont <strong>pas</strong> en DMS classique — elles sont en <strong>degrés + minutes décimales</strong>.<br />
 Il n'y a pas de secondes.</p>
 </blockquote>
 <p>La formule de conversion est donc simplifiée :</p>
@@ -259,9 +259,9 @@ Il n'y a pas de secondes.</p>
 <p><strong>Exemple pas à pas :</strong></p>
 <p>Trame : <code>$GPGGA,123519.00,4851.24,N,00221.03,E,...</code></p>
 <p><em>Latitude :</em> <code>4851.24 N</code>
-$<span class="arithmatex">\(48° \ 51,24' → 48 + \frac{51,24}{60} = 48 + 0,854 = \textbf{48,854° N}\)</span>$</p>
+<span class="arithmatex">\(48° \ 51,24' → 48 + \frac{51,24}{60} = 48 + 0,854 = \textbf{48,854° N}\)</span></p>
 <p><em>Longitude :</em> <code>00221.03 E</code>
-$<span class="arithmatex">\(2° \ 21,03' → 2 + \frac{21,03}{60} = 2 + 0,3505 = \textbf{2,3505° E}\)</span>$</p>
+<span class="arithmatex">\(2° \ 21,03' → 2 + \frac{21,03}{60} = 2 + 0,3505 = \textbf{2,3505° E}\)</span></p>
 <hr />
 <h3 id="exemple-de-trame-complete">Exemple de trame complète</h3>
 <blockquote>
@@ -300,7 +300,7 @@ $<span class="arithmatex">\(2° \ 21,03' → 2 + \frac{21,03}{60} = 2 + 0,3505 =
 <hr />
 <p><strong>Question 6 :</strong></p>
 <p>Sur arcgis, trouvez les coordonnées DD de la ville de votre choix (hors France).<br />
-Construisez une trame NMEA fictive <code>$GPGGA</code> cohérente pour cette ville en remplissant les champs suivants (et expliquez les infos qu'elle contient) :</p>
+Construire une trame NMEA fictive <code>$GPGGA</code> cohérente pour cette ville en remplissant les champs suivants (et expliquer les infos qu'elle contient) :</p>
 <blockquote>
 <p><code>$GPGGA,HHMMSS.00,LLLL.LL,N,DDDDD.DD,E,1,08,1.0,XXX.X,M,47.0,M,,*XX</code></p>
 </blockquote>
