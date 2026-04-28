@@ -22,7 +22,7 @@ Plus on monte vers le **Nord**, plus la latitude augmente (valeurs **positives**
 Plus on descend vers le **Sud**, plus la latitude diminue (valeurs **négatives**).
 
 *Exemple :* Rio se trouve environ à 22° au Sud.  
-**Question 1 :** À quel degré se situe Marrakech ?
+**Question 1 :** À quel latitude se situe Marrakech ?
 
 ### Les méridiens et la longitude
 
@@ -37,7 +37,7 @@ On les numérote par leur **longitude** : l'angle entre le méridien et celui de
 - de **0°** à **-180°** vers l'Ouest
 
 *Exemple :* Rome se trouve environ à 12° à l'Est.  
-**Question 2 :** À quel degré se situe New York ?
+**Question 2 :** À quel longitude se situe New York ?
 
 ### Repérer un point
 
@@ -67,7 +67,7 @@ Ce n'est pas du temps, c'est juste le même système de subdivision, appliqué a
 
 2) La notation **DD (Degré Décimal)** est la notation numérique, utilisée par les logiciels et les trames NMEA.
 
-Formule de conversion DMS → DD :
+**Formule de conversion DMS → DD :**
 
 On ramène tout en degrés :
 
@@ -78,13 +78,22 @@ $48° \ 51' \ 24'' N = 48 + \frac{51}{60} + \frac{24}{3600} = 48{,}8567° N$
 
 *On divise les minutes par 60 car 1 minute = 1/60 de degré, et les secondes par 3600 car 1 seconde = 1/3600 de degré.*
 
+**Formule de conversion DD → DMS :**
+
+$48{,}8567° N =  48° + 0,8567$  
+$0,8567 * 60 = 51,402 = 51' + 0,402$  
+$0,402 * 60 = 24'' + 0,12$  
+
+On retrouve bien $48°51'24''$.
+
 ---
 
 **Question 3 :**
 
-Rendez-vous sur le site [map-tools](https://tool-online.com/map-tools.php) pour voir les paralléles et les méridiens.
+Rendez-vous sur le site [map-tools](https://tool-online.com/map-tools.php) pour voir les paralléles et les méridiens.  
+*Appuyez sur le bouton à droite :* ![](bouton.png)
 
-Avec l'aide du site, donner les coordonnées approximatives des villes suivantes :
+Avec l'aide du site, donner les coordonnées des villes suivantes :
 
 - Osaka (Japon)
 - Alger (Algérie)
@@ -92,23 +101,15 @@ Avec l'aide du site, donner les coordonnées approximatives des villes suivantes
 
 >*On se contentera de donner les degrés et des minutes approchées.*
 
-Indiquer quelle ville se trouve à ces coordonnées :
-
-- 34° 36′ 29″ S 58° 22′ 13″ O
-- 1° 17′ 00″ S 36° 49′ 00″ E
-- 6° 10′ 31″ S 106° 49′ 37″ E
-
->**Par soucis de simplicité, on n'utilisera plus que les degrés et les minutes pour les prochaines questions.**
-
 ---
 
 **Question 4 :**
 
-Convertir les coordonnées suivantes au format **DD** :
+Indiquer quelle ville se trouve à ces coordonnées (vous allez devoir les convertir):
 
-- 75° 40' N 2° 0' E
-- 35° 30' N 127° 15' W
-- 13° 12' S 73° 48' W
+- 34° 36′ 29″ S 58° 22′ 13″ O
+- 1° 17′ 00″ S 36° 49′ 00″ E
+- 6° 10′ 31″ S 106° 49′ 37″ E
 
 ---
 
@@ -168,7 +169,7 @@ Lecture :
 
 **Question 5a :**
 
-Décoder la trame suivante et identifier la ville correspondante sur [arcgis](https://www.arcgis.com/apps/dashboards/e24199255cb640b499af3724e9a1ba2e) :
+Décoder la trame suivante et identifier la ville correspondante sur [map-tools](https://tool-online.com/map-tools.php) :
 
 > `$GPGGA,143022.00,4926.36,N,00105.95,E,1,07,1.1,21.0,M,47.6,M,,*XX`
 
@@ -192,7 +193,7 @@ Décoder la trame suivante et identifier la ville correspondante :
 
 **Question 6 :**
 
-Sur arcgis, trouvez les coordonnées DD de la ville de votre choix (hors France).  
+Sur [map-tools](https://tool-online.com/map-tools.php), trouvez les coordonnées DD de la ville de votre choix (hors France).  
 Construire une trame NMEA fictive `$GPGGA` cohérente pour cette ville en remplissant les champs suivants (et expliquer les infos qu'elle contient) :
 
 > `$GPGGA,HHMMSS.00,LLLL.LL,N,DDDDD.DD,E,1,08,1.0,XXX.X,M,47.0,M,,*XX`
