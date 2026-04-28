@@ -155,27 +155,6 @@ Le <strong>méridien de Greenwich</strong> (qui passe par Londres) est le mérid
 <p>Un point sur Terre est repéré par le <strong>parallèle</strong> et le <strong>méridien</strong> qui se croisent en ce point :</p>
 <p><img alt="" src="../meridian.png" /></p>
 <hr />
-<p><strong>Question 3 :</strong></p>
-<p>Rendez-vous sur le site <a href="https://www.arcgis.com/apps/dashboards/e24199255cb640b499af3724e9a1ba2e">Google Earth</a> puis appuyez simultanément sur <strong>CTRL</strong> et <strong>G</strong> pour afficher les paralléles et les méridiens.</p>
-<p>Donner les coordonnées approximatives des villes suivantes :</p>
-<ul>
-<li>Osaka (Japon)</li>
-<li>Alger (Algérie)</li>
-<li>Montréal (Canada)</li>
-</ul>
-<blockquote>
-<p><em>On se contentera de donner les degrés et des minutes approchées.</em></p>
-</blockquote>
-<p>Indiquer quelle ville se trouve à ces coordonnées :</p>
-<ul>
-<li>34° 36′ 29″ S 58° 22′ 13″ O</li>
-<li>1° 17′ 00″ S 36° 49′ 00″ E</li>
-<li>6° 10′ 31″ S 106° 49′ 37″ E</li>
-</ul>
-<hr />
-<p>On peut y ajouter l'<strong>altitude</strong> (en mètres par rapport au niveau de la mer) pour une position en 3D.</p>
-<p>Le système de référence utilisé par le GPS et Galileo s'appelle <strong>WGS84</strong>.</p>
-<hr />
 <h3 id="deux-notations">Deux notations</h3>
 <p>1) La notation <strong>DMS (Degré Minute Seconde)</strong> est la notation traditionnelle, encore utilisée sur les cartes papier et les GPS de randonnée. </p>
 <p>Comme pour les heures, les degrés peuvent être subdivisés en <strong>minutes</strong> et <strong>secondes</strong> :</p>
@@ -226,6 +205,28 @@ Le <strong>méridien de Greenwich</strong> (qui passe par Londres) est le mérid
 <p><strong>Exemple :</strong><br />
 <span class="arithmatex">\(48° \ 51' \ 24'' N = 48 + \frac{51}{60} + \frac{24}{3600} = 48{,}8567° N\)</span></p>
 <p><em>On divise les minutes par 60 car 1 minute = 1/60 de degré, et les secondes par 3600 car 1 seconde = 1/3600 de degré.</em></p>
+<hr />
+<p><strong>Question 3 :</strong></p>
+<p>Rendez-vous sur le site <a href="https://www.arcgis.com/apps/dashboards/e24199255cb640b499af3724e9a1ba2e">arcgis</a> pour voir les paralléles et les méridiens.</p>
+<p>Avec l'aide du site, donner les coordonnées approximatives des villes suivantes :</p>
+<ul>
+<li>Osaka (Japon)</li>
+<li>Alger (Algérie)</li>
+<li>Montréal (Canada)</li>
+</ul>
+<blockquote>
+<p><em>On se contentera de donner les degrés et des minutes approchées.</em></p>
+</blockquote>
+<p>Indiquer quelle ville se trouve à ces coordonnées :</p>
+<ul>
+<li>34° 36′ 29″ S 58° 22′ 13″ O</li>
+<li>1° 17′ 00″ S 36° 49′ 00″ E</li>
+<li>6° 10′ 31″ S 106° 49′ 37″ E</li>
+</ul>
+<blockquote>
+<p><strong>Par soucis de simplicité, on n'utilisera plus que les degrés et les minutes pour les prochaines questions.</strong></p>
+</blockquote>
+<hr />
 <p><strong>Question 4 :</strong></p>
 <p>Convertir les coordonnées suivantes au format <strong>DD</strong> :</p>
 <ul>
@@ -240,6 +241,28 @@ Le <strong>méridien de Greenwich</strong> (qui passe par Londres) est le mérid
 <h3 id="la-trame-gpgga">La trame $GPGGA</h3>
 <p>C'est la trame principale contenant la position. Sa structure :</p>
 <p><img alt="" src="../trame.png" /></p>
+<h3 id="lire-les-coordonnees-dans-une-trame-nmea">Lire les coordonnées dans une trame NMEA</h3>
+<blockquote>
+<p>⚠️ Dans une trame NMEA, les coordonnées ne sont <strong>pas</strong> en DMS classique — elles sont en <strong>degrés + minutes décimales</strong>.<br />
+Il n'y a pas de secondes.</p>
+</blockquote>
+<p>La formule de conversion est donc simplifiée :</p>
+<p><span class="arithmatex">\(DD = \text{degrés} + \frac{\text{minutes décimales}}{60}\)</span></p>
+<p><strong>Comment séparer les degrés des minutes ?</strong></p>
+<ul>
+<li><strong>Latitude</strong> : les <strong>2 premiers chiffres</strong> sont les degrés, le reste sont les minutes</li>
+<li><strong>Longitude</strong> : les <strong>3 premiers chiffres</strong> sont les degrés, le reste sont les minutes</li>
+</ul>
+<blockquote>
+<p>La longitude va jusqu'à 180°, elle a donc besoin de 3 chiffres pour les degrés.</p>
+</blockquote>
+<p><strong>Exemple pas à pas :</strong></p>
+<p>Trame : <code>$GPGGA,123519.00,4851.24,N,00221.03,E,...</code></p>
+<p><em>Latitude :</em> <code>4851.24 N</code>
+$<span class="arithmatex">\(48° \ 51,24' → 48 + \frac{51,24}{60} = 48 + 0,854 = \textbf{48,854° N}\)</span>$</p>
+<p><em>Longitude :</em> <code>00221.03 E</code>
+$<span class="arithmatex">\(2° \ 21,03' → 2 + \frac{21,03}{60} = 2 + 0,3505 = \textbf{2,3505° E}\)</span>$</p>
+<hr />
 <h3 id="exemple-de-trame-complete">Exemple de trame complète</h3>
 <blockquote>
 <p>$GPGGA,<strong>123519.00</strong>,<strong>4851.24,N</strong>,<strong>00221.03,E</strong>,1,<strong>08</strong>,0.9,<strong>545.4,M</strong>,46.9,M,,*47</p>
@@ -247,18 +270,41 @@ Le <strong>méridien de Greenwich</strong> (qui passe par Londres) est le mérid
 <p>Lecture :</p>
 <ul>
 <li>Heure : 12h 35min 19s UTC</li>
-<li>Latitude : 48° 51' 24'' N → <strong>48.854° N</strong></li>
-<li>Longitude : 2° 21' 03'' E → <strong>2.3505° E</strong></li>
+<li>Latitude : 48° 51,24' N → <strong>48,854° N</strong></li>
+<li>Longitude : 2° 21,03' E → <strong>2,3505° E</strong></li>
 <li>8 satellites</li>
-<li>altitude 545.4 m</li>
+<li>Altitude : 545,4 m</li>
 </ul>
-<p><strong>Question 5 :</strong></p>
-<p>Voici une trame :</p>
+<hr />
+<p><strong>Question 5a :</strong></p>
+<p>Décoder la trame suivante et identifier la ville correspondante sur <a href="https://www.arcgis.com/apps/dashboards/e24199255cb640b499af3724e9a1ba2e">arcgis</a> :</p>
 <blockquote>
-<p><code>$GPGGA,143022.00,4913.37,N,00105.82,E,1,07,1.1,18.3,M,47.6,M</code></p>
+<p><code>$GPGGA,143022.00,4926.36,N,00105.95,E,1,07,1.1,21.0,M,47.6,M,,*XX</code></p>
 </blockquote>
-<p>Quelle ville se situe à ces coordonnées ?<br />
-(Utilisez <a href="https://earth.google.com/web/@10.74818091,150.61538624,0a,28883840.88575363d,35y,356.71520704h,0t,0r/data=CgRCAggCOgMKATBCAggASg0I____________ARAA">Google Earth</a> et expliquez comment vous avez fait en quelques lignes).</p>
+<ul>
+<li>Extraire la latitude et la longitude brutes</li>
+<li>Les convertir en DD</li>
+<li>Identifier la ville</li>
+</ul>
+<hr />
+<p><strong>Question 5b :</strong></p>
+<p>Décoder la trame suivante et identifier la ville correspondante :</p>
+<blockquote>
+<p><code>$GPGGA,091504.00,4349.37,N,00519.83,E,1,09,0.8,12.5,M,47.2,M,,*XX</code></p>
+</blockquote>
+<ul>
+<li>Extraire la latitude et la longitude brutes</li>
+<li>Les convertir en DD</li>
+<li>Identifier la ville</li>
+</ul>
+<hr />
+<p><strong>Question 6 :</strong></p>
+<p>Sur arcgis, trouvez les coordonnées DD de la ville de votre choix (hors France).<br />
+Construisez une trame NMEA fictive <code>$GPGGA</code> cohérente pour cette ville en remplissant les champs suivants (et expliquez les infos qu'elle contient) :</p>
+<blockquote>
+<p><code>$GPGGA,HHMMSS.00,LLLL.LL,N,DDDDD.DD,E,1,08,1.0,XXX.X,M,47.0,M,,*XX</code></p>
+</blockquote>
+<p><em>Pensez à bien respecter le format : 2 chiffres pour les degrés de latitude, 3 pour la longitude, et convertir les minutes décimales correctement.</em></p>
               
             </div>
           </div><footer>

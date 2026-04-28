@@ -126,7 +126,7 @@ C'est la trame principale contenant la position. Sa structure :
 
 ### Lire les coordonnées dans une trame NMEA
 
-> ⚠️ Dans une trame NMEA, les coordonnées ne sont **pas** en DMS classique — elles sont en **degrés + minutes décimales**.  
+> Dans une trame NMEA, les coordonnées ne sont **pas** en DMS classique — elles sont en **degrés + minutes décimales**.  
 > Il n'y a pas de secondes.
 
 La formule de conversion est donc simplifiée :
@@ -145,10 +145,10 @@ $DD = \text{degrés} + \frac{\text{minutes décimales}}{60}$
 Trame : `$GPGGA,123519.00,4851.24,N,00221.03,E,...`
 
 *Latitude :* `4851.24 N`
-$$48° \ 51,24' → 48 + \frac{51,24}{60} = 48 + 0,854 = \textbf{48,854° N}$$
+$48° \ 51,24' → 48 + \frac{51,24}{60} = 48 + 0,854 = \textbf{48,854° N}$
 
 *Longitude :* `00221.03 E`
-$$2° \ 21,03' → 2 + \frac{21,03}{60} = 2 + 0,3505 = \textbf{2,3505° E}$$
+$2° \ 21,03' → 2 + \frac{21,03}{60} = 2 + 0,3505 = \textbf{2,3505° E}$
 
 ---
 
@@ -193,7 +193,7 @@ Décoder la trame suivante et identifier la ville correspondante :
 **Question 6 :**
 
 Sur arcgis, trouvez les coordonnées DD de la ville de votre choix (hors France).  
-Construisez une trame NMEA fictive `$GPGGA` cohérente pour cette ville en remplissant les champs suivants (et expliquez les infos qu'elle contient) :
+Construire une trame NMEA fictive `$GPGGA` cohérente pour cette ville en remplissant les champs suivants (et expliquer les infos qu'elle contient) :
 
 > `$GPGGA,HHMMSS.00,LLLL.LL,N,DDDDD.DD,E,1,08,1.0,XXX.X,M,47.0,M,,*XX`
 
