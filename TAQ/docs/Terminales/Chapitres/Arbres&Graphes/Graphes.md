@@ -55,6 +55,11 @@ Si un arc va de `A` vers `B`, on dit que :
 - `A` est un **prédécesseur** de `B`
 > Exemple : les abonnements sur un réseau social. Je peux suivre quelqu'un sans qu'il me suive en retour.
  
+Dans un graphe orienté, chaque arc ayant une direction, on distingue deux types de degrés pour un sommet :
+
+- Degré sortant : nombre d'arcs qui partent du sommet.
+- Degré entrant : nombre d'arcs qui arrivent vers le sommet.
+
 ### Chemins et cycles dans un graphe orienté
  
 L'orientation des arcs change la notion de chemin : on ne peut désormais se déplacer **que dans le sens des flèches**.
