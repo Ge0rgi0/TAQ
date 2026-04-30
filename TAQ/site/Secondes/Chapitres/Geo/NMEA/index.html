@@ -139,7 +139,7 @@ L'<strong>équateur</strong> est le parallèle de référence (0°).</p>
 <p>Plus on monte vers le <strong>Nord</strong>, plus la latitude augmente (valeurs <strong>positives</strong>).<br />
 Plus on descend vers le <strong>Sud</strong>, plus la latitude diminue (valeurs <strong>négatives</strong>).</p>
 <p><em>Exemple :</em> Rio se trouve environ à 22° au Sud.<br />
-<strong>Question 1 :</strong> À quel degré se situe Marrakech ?</p>
+<strong>Question 1 :</strong> À quel latitude se situe Marrakech ?</p>
 <h3 id="les-meridiens-et-la-longitude">Les méridiens et la longitude</h3>
 <p>Les <strong>méridiens</strong> sont des demi-cercles verticaux reliant les deux pôles.
 Le <strong>méridien de Greenwich</strong> (qui passe par Londres) est le méridien de référence (0°).</p>
@@ -150,7 +150,7 @@ Le <strong>méridien de Greenwich</strong> (qui passe par Londres) est le mérid
 <li>de <strong>0°</strong> à <strong>-180°</strong> vers l'Ouest</li>
 </ul>
 <p><em>Exemple :</em> Rome se trouve environ à 12° à l'Est.<br />
-<strong>Question 2 :</strong> À quel degré se situe New York ?</p>
+<strong>Question 2 :</strong> À quel longitude se situe New York ?</p>
 <h3 id="reperer-un-point">Repérer un point</h3>
 <p>Un point sur Terre est repéré par le <strong>parallèle</strong> et le <strong>méridien</strong> qui se croisent en ce point :</p>
 <p><img alt="" src="../meridian.png" /></p>
@@ -183,7 +183,7 @@ Le <strong>méridien de Greenwich</strong> (qui passe par Londres) est le mérid
 </table>
 <hr />
 <p>2) La notation <strong>DD (Degré Décimal)</strong> est la notation numérique, utilisée par les logiciels et les trames NMEA.</p>
-<p>Formule de conversion DMS → DD :</p>
+<p><strong>Formule de conversion DMS → DD :</strong></p>
 <p>On ramène tout en degrés :</p>
 <blockquote>
 <blockquote>
@@ -205,10 +205,16 @@ Le <strong>méridien de Greenwich</strong> (qui passe par Londres) est le mérid
 <p><strong>Exemple :</strong><br />
 <span class="arithmatex">\(48° \ 51' \ 24'' N = 48 + \frac{51}{60} + \frac{24}{3600} = 48{,}8567° N\)</span></p>
 <p><em>On divise les minutes par 60 car 1 minute = 1/60 de degré, et les secondes par 3600 car 1 seconde = 1/3600 de degré.</em></p>
+<p><strong>Formule de conversion DD → DMS :</strong></p>
+<p><span class="arithmatex">\(48{,}8567° N =  48° + 0,8567\)</span><br />
+<span class="arithmatex">\(0,8567 * 60 = 51,402 = 51' + 0,402\)</span><br />
+<span class="arithmatex">\(0,402 * 60 = 24'' + 0,12\)</span>  </p>
+<p>On retrouve bien <span class="arithmatex">\(48°51'24''\)</span>.</p>
 <hr />
 <p><strong>Question 3 :</strong></p>
-<p>Rendez-vous sur le site <a href="https://tool-online.com/map-tools.php">map-tools</a> pour voir les paralléles et les méridiens.</p>
-<p>Avec l'aide du site, donner les coordonnées approximatives des villes suivantes :</p>
+<p>Rendez-vous sur le site <a href="https://tool-online.com/map-tools.php">map-tools</a> pour voir les paralléles et les méridiens.<br />
+<em>Appuyez sur le bouton à droite :</em> <img alt="" src="../bouton.png" /></p>
+<p>Avec l'aide du site, donner les coordonnées des villes suivantes :</p>
 <ul>
 <li>Osaka (Japon)</li>
 <li>Alger (Algérie)</li>
@@ -217,22 +223,13 @@ Le <strong>méridien de Greenwich</strong> (qui passe par Londres) est le mérid
 <blockquote>
 <p><em>On se contentera de donner les degrés et des minutes approchées.</em></p>
 </blockquote>
-<p>Indiquer quelle ville se trouve à ces coordonnées :</p>
+<hr />
+<p><strong>Question 4 :</strong></p>
+<p>Indiquer quelle ville se trouve à ces coordonnées (vous allez devoir les convertir):</p>
 <ul>
 <li>34° 36′ 29″ S 58° 22′ 13″ O</li>
 <li>1° 17′ 00″ S 36° 49′ 00″ E</li>
 <li>6° 10′ 31″ S 106° 49′ 37″ E</li>
-</ul>
-<blockquote>
-<p><strong>Par soucis de simplicité, on n'utilisera plus que les degrés et les minutes pour les prochaines questions.</strong></p>
-</blockquote>
-<hr />
-<p><strong>Question 4 :</strong></p>
-<p>Convertir les coordonnées suivantes au format <strong>DD</strong> :</p>
-<ul>
-<li>75° 40' N 2° 0' E</li>
-<li>35° 30' N 127° 15' W</li>
-<li>13° 12' S 73° 48' W</li>
 </ul>
 <hr />
 <h2 id="le-protocole-nmea-0183">Le protocole NMEA 0183</h2>
@@ -277,7 +274,7 @@ Il n'y a pas de secondes.</p>
 </ul>
 <hr />
 <p><strong>Question 5a :</strong></p>
-<p>Décoder la trame suivante et identifier la ville correspondante sur <a href="https://www.arcgis.com/apps/dashboards/e24199255cb640b499af3724e9a1ba2e">arcgis</a> :</p>
+<p>Décoder la trame suivante et identifier la ville correspondante sur <a href="https://tool-online.com/map-tools.php">map-tools</a> :</p>
 <blockquote>
 <p><code>$GPGGA,143022.00,4926.36,N,00105.95,E,1,07,1.1,21.0,M,47.6,M,,*XX</code></p>
 </blockquote>
@@ -299,7 +296,7 @@ Il n'y a pas de secondes.</p>
 </ul>
 <hr />
 <p><strong>Question 6 :</strong></p>
-<p>Sur arcgis, trouvez les coordonnées DD de la ville de votre choix (hors France).<br />
+<p>Sur <a href="https://tool-online.com/map-tools.php">map-tools</a>, trouvez les coordonnées DD de la ville de votre choix (hors France).<br />
 Construire une trame NMEA fictive <code>$GPGGA</code> cohérente pour cette ville en remplissant les champs suivants (et expliquer les infos qu'elle contient) :</p>
 <blockquote>
 <p><code>$GPGGA,HHMMSS.00,LLLL.LL,N,DDDDD.DD,E,1,08,1.0,XXX.X,M,47.0,M,,*XX</code></p>

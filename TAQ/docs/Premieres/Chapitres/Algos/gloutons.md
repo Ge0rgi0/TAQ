@@ -1,39 +1,51 @@
 # Algorithmes Gloutons
 
-## Problème : le Rendu de Monnaie
+## Problème — Rendre la monnaie
 
-Vous êtes caissier. Un client doit recevoir **48 centimes** de monnaie.  
-Vous disposez de pièces de : **50c, 20c, 10c, 5c, 2c, 1c** (quantités illimitées).
+Un client paie son café 1,57 € avec un billet de 2 €.
+Vous devez lui rendre **43 centimes**.  
+Vous disposez de pièces de : **50c, 20c, 10c, 5c, 2c, 1c**.
 
-**Questions :**
+**Sans réfléchir**, quelles pièces lui donneriez-vous ? Notez-les.
 
-1. Quelle est la décomposition que vous feriez naturellement ? Combien de pièces utilisez-vous ?
+Comparez avec votre voisin. Avez-vous fait le même choix ? Utilisé le même nombre de pièces ?
 
-2. Décrivez en français la **stratégie** que vous avez utilisée, étape par étape.
-
-3. Pensez-vous que votre stratégie donne **toujours** le moins de pièces possible ? Pourquoi ?
+Décrivez maintenant votre choix ainsi que la **règle** que vous avez appliquée, comme si vous l'expliquiez à quelqu'un qui ne l'a jamais fait.
 
 ---
 
-La stratégie naturelle consiste à, à chaque étape, **prendre la plus grande pièce qui ne dépasse pas le montant restant**.
+La stratégie que vous avez décrite ressemble probablement à ceci : 
+à chaque étape, **prendre la plus grande pièce qui ne dépasse pas le montant restant**, puis recommencer avec ce qui reste.
 
-On appelle cette approche une **stratégie gloutonne** (*greedy* en anglais) : à chaque étape, on fait le choix localement optimal, sans revenir en arrière.
+C'est une idée simple, mais elle a un nom en informatique : on appelle ça une **stratégie gloutonne** (*greedy* en anglais).
+Le mot est imagé : l'algorithme est "gourmand", il veut toujours le maximum immédiatement, sans se préoccuper de la suite.
+
+Plus formellement : à chaque étape, on dit que l'on fait le **choix localement optimal**, sans jamais revenir en arrière. On ne remet jamais en question une décision prise.
 
 ### Exercice 1 — Formalisons la stratégie
 
-   | Étape | Montant restant | Pièce choisie | Montant restant après |
-   |-------|----------------|---------------|-----------------------|
-   | 1     | 63c            | ...           | ...                   |
-   | 2     | ...            | ...           | ...                   |
-   | ...   | ...            | ...           | ...                   |
+**1.** Appliquez la stratégie gloutonne pour rendre les montants suivants :
 
-1. Appliquez cette stratégie pour rendre **63 centimes**. Détaillez chaque étape dans le tableau.
+- 63c
+- 1€28
 
-2. Combien d'étapes a nécessité cet algorithme ? Est-ce prévisible ?
+Détaillez chaque étape dans un tableau :
 
-3. Que se passe-t-il si une pièce d'une certaine valeur est **absente** du système ? Essayez de rendre 30c sans pièce de 20c.
+| Étape | Pièce choisie | Montant restant |
+|-------|----------------|---------------|
+| 1     |                |               |                       
+| 2     |                |               |                       
+| ...   |                |               |                       
 
-4. L'algorithme se termine-t'il toujours ? Pourquoi ? (Sans utiliser de variant)
+**2.** Comptez le nombre d'étapes pour chaque montant.
+Pouvez-vous prévoir ce nombre **avant** d'appliquer l'algorithme ? De quoi dépend-il ?
+
+**3.** Que se passe-t-il si une pièce est absente ?
+Essayez de rendre 30c **sans utiliser la pièce de 20c**. Que remarquez-vous ?
+
+**4.** L'algorithme se termine-t-il toujours ?
+Justifiez en observant ce qui arrive au montant restant à chaque étape.
+*(On ne demande pas de variant, une explication en français suffit.)*
 
 ---
 
@@ -82,26 +94,31 @@ def rendu_monnaie(montant: int, pieces: list[int]) -> list[int]:
 
 1. Complétez la fonction `rendu_monnaie`.
 
-2. Testez-la avec les exemples de la docstring. Les résultats sont-ils ceux attendus ?
+2. Testez-la avec les exemples de la docstring.
 
 3. Proposer un invariant de boucle pour ce programme.
 
-4. La fonction se termine-t'elle toujours ? Pourquoi ? (Avec un variant cette fois)
+4. La fonction se termine-t'elle toujours ? Pourquoi ?
+*(Avec un variant cette fois)*
 
 ---
 
 ### Exercice 3 — Analyser la complexité
 
-La **complexité temporelle** mesure le nombre d'opérations en fonction de la taille de l'entrée.
+Rappel : La **complexité temporelle** mesure le nombre d'opérations en fonction de la taille de l'entrée.
 
-**Questions :**
+1) Considérons le `montant = N`. Quel est le pire cas ? Dans cette situation :
 
-1. Dans le pire cas (montant = N, uniquement des pièces de 1c), combien d'itérations effectue la boucle principale ?
+>Combien de fois la boucle principale s'exécute-t-elle ?  
+>Combien de pièces sont testées à chaque itération ?
 
-2. Donnez la complexité en notation O(...) en fonction de `montant` et de `len(pieces)`.
+2) En déduire la complexité en notation O(...) en fonction de `montant` et `len(pieces)`.
+*(Aide : les deux paramètres n'ont pas le même rôle — lequel domine ?)*
 
-3. Pour un montant de 10 000€ (1 000 000 centimes), estimez le nombre d'itérations dans le pire cas. Est-ce raisonnable ?
-   > *Un ordinateur moderne effectue ~100 millions d'opérations par seconde.*
+3) Pour un montant de 10 000 €, estimez le nombre d'itérations dans le pire cas.
+Est-ce raisonnable pour un ordinateur ?
+*(Un ordinateur moderne effectue ~100 millions d'opérations simples par seconde.)*
+
 
 ---
 
@@ -113,11 +130,9 @@ Reprenez le résultat du dernier test de votre fonction Python :
 rendu_monnaie(6, [4, 3, 1])
 ```
 
-**Questions :**
-
 1. Quelle réponse a donné votre algorithme ? Combien de pièces ?
 
-2. Trouvez **à la main** une meilleure décomposition de 6 avec les pièces {4, 3, 1}.
+2. Trouvez **à la main** une meilleure décomposition pour la valeur 6 avec les pièces {4, 3, 1}.
 
 3. L'algorithme glouton a-t-il trouvé la solution optimale ? Expliquez pourquoi il échoue ici.
 
@@ -134,41 +149,4 @@ rendu_monnaie(6, [4, 3, 1])
 
 2. Quels sont leurs **inconvénients** ?
 
-3. Comment pourrait-on résoudre le problème du rendu de monnaie de façon **toujours optimale** ?
-
----
-
-## Pour les élèves qui terminent tôt
-
-### Défi 1 — Glouton optimal : preuve empirique
-
-Écrivez une fonction `tester_optimalite(pieces: list[int], montant_max: int) -> bool` qui :
-- teste le glouton pour **tous** les montants de 1 à `montant_max`
-- pour chaque montant, compare le résultat du glouton avec une recherche exhaustive (force brute)
-- retourne `True` si le glouton est optimal sur tous ces montants, `False` sinon
-
-Testez-la sur le système euro et sur {1, 3, 4}.
-
----
-
-### Défi 2 — Rendu de monnaie par force brute
-
-Implémentez une fonction `rendu_optimal(montant: int, pieces: list[int]) -> list[int]` qui trouve la solution avec le **moins de pièces possible**, en explorant toutes les combinaisons (récursivité ou boucles imbriquées).
-
-- Spécifiez les types et écrivez la docstring complète.
-- Analysez sa complexité. Pourquoi est-elle beaucoup plus élevée que le glouton ?
-- À partir de quel montant devient-elle inutilisable en pratique ?
-
----
-
-### Défi 3 — Visualisation
-
-Écrivez un programme qui affiche, pour un montant donné et un système de pièces donné, un **tableau comparatif** :
-
-Montant : 6c 
-Pièces : [4, 3, 1]
-
-| Algorithme| Pièces  | Optimal ?|
-|-----------|---------|----------|
-| Glouton   | [4,1,1] |   NON    |
-| Optimal   | [3,3]   |   OUI    |
+3. Comment pourrait-on résoudre le problème du rendu de monnaie de façon **toujours optimale** ? Comparons l'efficacité de cette stratègie avec l'approche gloutonne.
