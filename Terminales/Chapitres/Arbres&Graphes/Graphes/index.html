@@ -295,18 +295,6 @@ Pour chacun d'entre eux dire :
 </table>
 <p>3) Comment pourrait-on reconnaitre un graphe non orienté, uniquement avec sa matrice d'adjacence ?</p>
 <p>4) Comment lire le degré d'un sommet directement sur la matrice ?</p>
-<h3 id="en-python">En Python</h3>
-<p>La matrice se traduit naturellement par une liste de listes :</p>
-<pre><code class="language-python">matrice = [
-    [0, 1, 1, 0],  # A
-    [1, 0, 0, 1],  # B
-    [1, 0, 0, 1],  # C
-    [0, 1, 1, 0],  # D
-]
-</code></pre>
-<p>5) Écrire une fonction <code>est_predecesseur(matrice, i, j)</code> qui renvoie <code>True</code> si <code>i</code> est un predecesseur de <code>j</code>.</p>
-<p>6) Écrire une fonction <code>est_successeur(matrice, i, j)</code> qui renvoie <code>True</code> si <code>i</code> est un successeur de <code>j</code>.</p>
-<p>7) Écrire une fonction <code>degre(matrice, i)</code> qui renvoie le degré du sommet <code>i</code>.</p>
 <hr />
 <h2 id="representation-par-liste-dadjacence">Représentation par liste d'adjacence</h2>
 <p>On peut aussi représenter un graphe sous forme d'un tableau à deux colonnes : pour chaque sommet, on liste ses voisins.</p>
@@ -367,19 +355,6 @@ Pour chacun d'entre eux dire :
 </tr>
 </tbody>
 </table>
-<h3 id="en-python_1">En Python</h3>
-<p>La liste d'adjacence se traduit naturellement par un dictionnaire :</p>
-<pre><code class="language-python">graphe = {
-    'A': ['B', 'C'],
-    'B': ['A', 'D'],
-    'C': ['A', 'D'],
-    'D': ['B', 'C'],
-}
-</code></pre>
-<p>3) Écrire une fonction <code>est_predecesseur(matrice, i, j)</code> qui renvoie <code>True</code> si <code>i</code> est un predecesseur de <code>j</code>.</p>
-<p>4) Écrire une fonction <code>est_successeur(matrice, i, j)</code> qui renvoie <code>True</code> si <code>i</code> est un successeur de <code>j</code>.</p>
-<p>5) Écrire une fonction <code>degre(matrice, i)</code> qui renvoie le degré du sommet <code>i</code>.</p>
-<p>6) Écrire une fonction <code>matrice_vers_liste(matrice)</code> qui convertit une matrice d'adjacence en dictionnaire d'adjacence.</p>
 <hr />
 <h3 id="quelle-representation-choisir">Quelle représentation choisir ?</h3>
 <p>Le choix dépend du graphe et de ce qu'on veut en faire.</p>
@@ -388,55 +363,235 @@ Pour chacun d'entre eux dire :
 <p>En pratique, la liste d'adjacence est la représentation la plus courante, car la plupart des graphes réels sont creux.</p>
 <hr />
 <h2 id="parcours-de-graphes">Parcours de graphes</h2>
-<p>Comme pour les arbres, on peut <strong>parcourir</strong> tous les sommets d'un graphe. Mais attention : un graphe peut contenir des <strong>cycles</strong>. Il faut donc mémoriser les sommets déjà visités pour ne pas boucler indéfiniment.</p>
-<h3 id="parcours-en-profondeur-dfs">Parcours en profondeur (DFS)</h3>
-<p>On explore une branche aussi loin que possible avant de revenir en arrière. C'est le même principe que le parcours en profondeur d'un arbre.</p>
-<pre><code class="language-python">def dfs(graphe, depart):
-    visites = set()
-
-    def explorer(s):
-        if s in visites:
-            return
-        visites.add(s)
-        print(s)
-        for voisin in graphe[s]:
-            explorer(voisin)
-
-    explorer(depart)
-</code></pre>
-<h3 id="parcours-en-largeur-bfs">Parcours en largeur (BFS)</h3>
-<p>On explore tous les voisins d'un sommet avant de passer au niveau suivant. On utilise une <strong>file</strong>.</p>
-<pre><code class="language-python">from collections import deque
-
-def bfs(graphe, depart):
-    visites = set()
-    file = deque([depart])
-    visites.add(depart)
-
-    while file:
-        s = file.popleft()
-        print(s)
-        for voisin in graphe[s]:
-            if voisin not in visites:
-                visites.add(voisin)
-                file.append(voisin)
-</code></pre>
+<p>Pour explorer un graphe, on doit visiter tous ses sommets exactement une fois. Contrairement aux arbres, un graphe peut contenir des <strong>cycles</strong> : il faut donc mémoriser les sommets déjà visités pour ne pas boucler indéfiniment.</p>
+<h3 id="parcours-en-profondeur-dfs-depth-first-search">Parcours en profondeur (DFS — <em>Depth First Search</em>)</h3>
+<p>Comme pour les arbres, on explore une direction aussi loin que possible avant de revenir en arrière.</p>
+<table>
+<thead>
+<tr>
+<th>Étapes</th>
+<th>Graphe</th>
+<th>Ont été traités</th>
+<th>Actuel</th>
+<th>À traiter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><img alt="" src="../parcours_prof_0.png" /></td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td><img alt="" src="../parcours_prof_1.png" /></td>
+<td></td>
+<td>0</td>
+<td>1 2</td>
+</tr>
+<tr>
+<td>2</td>
+<td><img alt="" src="../parcours_prof_2.png" /></td>
+<td>0</td>
+<td>1</td>
+<td>5 2</td>
+</tr>
+<tr>
+<td>3</td>
+<td><img alt="" src="../parcours_prof_3.png" /></td>
+<td>0 1</td>
+<td>5</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td><img alt="" src="../parcours_prof_4.png" /></td>
+<td>0 1 5</td>
+<td>2</td>
+<td>3 4</td>
+</tr>
+<tr>
+<td>5</td>
+<td><img alt="" src="../parcours_prof_5.png" /></td>
+<td>0 1 5 2</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>6</td>
+<td><img alt="" src="../parcours_prof_6.png" /></td>
+<td>0 1 5 2 3</td>
+<td>4</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td><img alt="" src="../parcours_prof_7.png" /></td>
+<td>0 1 5 2 3 4</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>Fin</td>
+<td><img alt="" src="../parcours_prof_8.png" /></td>
+<td>0 1 5 2 3 4 6</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ordre de visite : 0 1 5 2 3 4 6</strong></p>
+<h3 id="parcours-en-largeur-bfs-breadth-first-search">Parcours en largeur (BFS — <em>Breadth First Search</em>)</h3>
+<p>On explore tous les voisins d'un sommet avant de passer au niveau suivant, comme une onde qui se propage.</p>
+<table>
+<thead>
+<tr>
+<th>Étapes</th>
+<th>Graphe</th>
+<th>Ont été traités</th>
+<th>Actuel</th>
+<th>À traiter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td><img alt="" src="../parcours_prof_0.png" /></td>
+<td></td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td><img alt="" src="../parcours_prof_1.png" /></td>
+<td></td>
+<td>0</td>
+<td>1 2</td>
+</tr>
+<tr>
+<td>2</td>
+<td><img alt="" src="../parcours_prof_2.png" /></td>
+<td>0</td>
+<td>1</td>
+<td>2 5</td>
+</tr>
+<tr>
+<td>3</td>
+<td><img alt="" src="../parcours_larg_3.png" /></td>
+<td>0 1</td>
+<td>2</td>
+<td>5 3 4</td>
+</tr>
+<tr>
+<td>4</td>
+<td><img alt="" src="../parcours_larg_4.png" /></td>
+<td>0 1 2</td>
+<td>5</td>
+<td>3 4</td>
+</tr>
+<tr>
+<td>5</td>
+<td><img alt="" src="../parcours_prof_5.png" /></td>
+<td>0 1 2 5</td>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>6</td>
+<td><img alt="" src="../parcours_prof_6.png" /></td>
+<td>0 1 2 5 3</td>
+<td>4</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td><img alt="" src="../parcours_prof_7.png" /></td>
+<td>0 1 2 5 3 4</td>
+<td>6</td>
+<td></td>
+</tr>
+<tr>
+<td>Fin</td>
+<td><img alt="" src="../parcours_prof_8.png" /></td>
+<td>0 1 2 5 3 4 6</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ordre de visite : 0 1 2 5 3 4 6</strong></p>
+<h3 id="composantes-connexes">Composantes connexes</h3>
+<p>Un graphe n'est pas toujours connexe : il peut être composé de plusieurs "morceaux" isolés les uns des autres. Chacun de ces morceaux est appelé une <strong>composante connexe</strong>.</p>
+<p><img alt="" src="../composantes.png" /></p>
+<p>Ce graphe a trois composantes connexes : <code>{A, B, C}</code>, <code>{D, E}</code> et <code>{F}</code>.</p>
+<p><img alt="" src="../composantes_dir.png" /></p>
+<p>Ce graphe a deux composantes connexes : <code>{A, B, C, D}</code>, <code>{E, F}</code>.</p>
+<p>Un parcours (DFS ou BFS) depuis un sommet <code>s</code> ne visitera que les sommets de la composante connexe de <code>s</code>, il est impossible d'atteindre un sommet qui n'y est pas relié. Pour parcourir un graphe entier non connexe, il faut donc relancer un parcours depuis un sommet non visité de chaque composante.</p>
 <h3 id="exercice_4">Exercice</h3>
 <p>Soit le graphe suivant :</p>
-<pre><code class="language-python">graphe = {
-    'A': ['B', 'C'],
-    'B': ['A', 'D', 'E'],
-    'C': ['A', 'F'],
-    'D': ['B'],
-    'E': ['B'],
-    'F': ['C'],
+<p><img alt="" src="../graphe_parcours.png" /></p>
+<p>1) Donner l'ordre de visite des sommets pour un parcours DFS depuis <code>A</code>.<br />
+2) Donner l'ordre de visite des sommets pour un parcours BFS depuis <code>A</code>. <br />
+3) Le résultat dépend-il de l'ordre dans lequel on considère les voisins de chaque sommet ?  </p>
+<p>4) Quels sont les composantes connexes de ces graphes :
+<img alt="" src="../exo_comp.png" /></p>
+<hr />
+<h2 id="exercices-python">Exercices Python</h2>
+<p>On travaillera avec la représentation par liste d'adjacence suivante :</p>
+<pre><code class="language-python">class Graphe:
+    def __init__(self):
+        self.adjacence = {}
+
+    def ajouter_sommet(self, s):
+        if s not in self.adjacence:
+            self.adjacence[s] = []
+
+    def ajouter_arete(self, u, v):
+        self.adjacence[u].append(v)
+        self.adjacence[v].append(u)
+
+    def voisins(self, s):
+        return self.adjacence[s]
+
+    def sommets(self):
+        return list(self.adjacence.keys())
+</code></pre>
+<h3 id="prise-en-main">Prise en main</h3>
+<p>1) Écrire une fonction <code>afficher(g)</code> qui affiche pour chaque sommet la liste de ses voisins.</p>
+<p>2) Écrire une fonction <code>est_voisin(g, u, v)</code> qui renvoie <code>True</code> si <code>u</code> et <code>v</code> sont voisins.</p>
+<p>3) Écrire une fonction <code>degre(g, s)</code> qui renvoie le degré du sommet <code>s</code>.</p>
+<p>4) Écrire une fonction <code>sommet_max(g)</code> qui renvoie le sommet de plus haut degré.</p>
+<p>5) Écrire une fonction <code>nb_aretes(g)</code> qui renvoie le nombre d'arêtes du graphe.</p>
+<h3 id="parcours">Parcours</h3>
+<p>6) Écrire une fonction <code>dfs(g, depart)</code> qui affiche les sommets dans l'ordre d'un parcours en profondeur depuis <code>depart</code>.</p>
+<p>7) Écrire une fonction <code>bfs(g, depart)</code> qui affiche les sommets dans l'ordre d'un parcours en largeur depuis <code>depart</code>.</p>
+<p>8) Écrire une fonction <code>est_connexe(g)</code> qui renvoie <code>True</code> si le graphe est connexe. <em>(Indication : après un parcours depuis n'importe quel sommet, tous les sommets doivent avoir été visités.)</em></p>
+<p>9) Écrire une fonction <code>composantes(g)</code> qui renvoie la liste des composantes connexes du graphe. Chaque composante est une liste de sommets. <em>(Indication : relancer un parcours depuis chaque sommet non encore visité.)</em></p>
+<h3 id="chemins">Chemins</h3>
+<p>10) Écrire une fonction <code>chemin(g, depart, arrivee)</code> qui renvoie une liste de sommets formant un chemin entre <code>depart</code> et <code>arrivee</code>, ou <code>None</code> s'il n'en existe pas.</p>
+<p>11) Écrire une fonction <code>distance(g, depart, arrivee)</code> qui renvoie le nombre d'arêtes du plus court chemin entre <code>depart</code> et <code>arrivee</code>, ou <code>None</code> s'il n'en existe pas. <em>(Indication : utiliser un BFS en mémorisant la distance à chaque sommet visité.)</em></p>
+<p>12) Écrire une fonction <code>sont_relies(g, u, v)</code> qui renvoie <code>True</code> si <code>u</code> et <code>v</code> sont dans la même composante connexe.</p>
+<h3 id="cycles">Cycles</h3>
+<p>13) Écrire une fonction <code>contient_cycle(g)</code> qui renvoie <code>True</code> si le graphe contient au moins un cycle. <em>(Indication : lors d'un DFS, si on retombe sur un sommet déjà visité qui n'est pas le parent direct du sommet courant, c'est qu'il y a un cycle.)</em></p>
+<p>14) En déduire une fonction <code>est_arbre(g)</code> qui renvoie <code>True</code> si le graphe est un arbre. <em>(Rappel : un arbre est un graphe connexe sans cycle.)</em></p>
+<h3 id="labyrinthe">Labyrinthe</h3>
+<p>On modélise un labyrinthe comme un graphe : chaque cellule est un sommet, et deux cellules adjacentes sans mur entre elles sont reliées par une arête.</p>
+<pre><code class="language-python">labyrinthe = {
+    (0,0): [(0,1), (1,0)],
+    (0,1): [(0,0)],
+    (1,0): [(0,0), (1,1)],
+    (1,1): [(1,0), (2,1)],
+    (2,0): [(2,1)],
+    (2,1): [(1,1), (2,0)],
 }
 </code></pre>
-<p>1) Dessiner ce graphe.</p>
-<p>2) Donner l'ordre de visite des sommets lors d'un parcours DFS depuis <code>A</code>.</p>
-<p>3) Donner l'ordre de visite des sommets lors d'un parcours BFS depuis <code>A</code>.</p>
-<p>4) Écrire une fonction <code>est_connexe(graphe)</code> qui renvoie <code>True</code> si le graphe est connexe. <em>(Indication : après un parcours depuis n'importe quel sommet, tous les sommets doivent avoir été visités.)</em></p>
-<p>5) Écrire une fonction <code>chemin(graphe, depart, arrivee)</code> qui renvoie une liste de sommets formant un chemin entre <code>depart</code> et <code>arrivee</code>, ou <code>None</code> s'il n'en existe pas.</p>
+<p>15) L'entrée est <code>(0,0)</code> et la sortie est <code>(2,1)</code>. Utiliser la fonction <code>chemin</code> pour trouver un chemin entre l'entrée et la sortie.</p>
+<p>16) Utiliser la fonction <code>distance</code> pour trouver le chemin le plus court.</p>
+<p>17) Ce labyrinthe contient-il des cycles ? Qu'est-ce que cela signifie concrètement ?</p>
+<h2 id="outils">Outils</h2>
+<p><a href="https://csacademy.com/app/graph_editor/">Site de création de graphes</a></p>
               
             </div>
           </div><footer>
