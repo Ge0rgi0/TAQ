@@ -181,234 +181,6 @@ composants d'échanger des données.</p>
 <li>le <strong>bus d'adresses</strong> : indique où lire ou écrire en mémoire</li>
 </ul>
 <hr />
-<h2 id="le-langage-machine">Le langage machine</h2>
-<h3 id="les-registres">Les registres</h3>
-<p>Pour effectuer ses calculs, le processeur dispose de petites zones de
-stockage ultrarapides appelées <strong>registres</strong>. On peut les voir comme des
-<strong>variables internes</strong> au processeur.</p>
-<p>Contrairement à la mémoire (grande mais lente), les registres sont en
-nombre limité (une dizaine en général) mais accessibles instantanément.</p>
-<p>On les nomme généralement A, B, C... ou R0, R1, R2...</p>
-<h3 id="le-compteur-de-programme-cp">Le Compteur de Programme (CP)</h3>
-<p>Le processeur dispose d'un registre spécial : le <strong>Compteur de Programme</strong>
-(CP). Il contient en permanence <strong>l'adresse de la prochaine instruction
-à exécuter</strong>.</p>
-<p>À chaque instruction exécutée, le CP s'incrémente automatiquement pour
-passer à la suivante. C'est lui qui donne au processeur sa progression dans
-le programme.</p>
-<h3 id="les-instructions-de-base">Les instructions de base</h3>
-<p>Un programme en langage machine est une suite d'instructions très simples.
-En voici les principales :</p>
-<table>
-<thead>
-<tr>
-<th>Instruction</th>
-<th>Signification</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>LOAD R, valeur</code></td>
-<td>Charge une valeur dans le registre R</td>
-</tr>
-<tr>
-<td><code>LOAD R, @adresse</code></td>
-<td>Charge en R la valeur stockée à cette adresse mémoire</td>
-</tr>
-<tr>
-<td><code>STORE R, @adresse</code></td>
-<td>Copie la valeur de R vers cette adresse mémoire</td>
-</tr>
-<tr>
-<td><code>ADD R1, R2</code></td>
-<td>Additionne R1 et R2, stocke le résultat dans R1</td>
-</tr>
-<tr>
-<td><code>SUB R1, R2</code></td>
-<td>Soustrait R2 à R1, stocke le résultat dans R1</td>
-</tr>
-<tr>
-<td><code>JUMP @adresse</code></td>
-<td>Le CP saute à cette adresse (rupture de séquence)</td>
-</tr>
-<tr>
-<td><code>HALT</code></td>
-<td>Arrête le programme</td>
-</tr>
-</tbody>
-</table>
-<h3 id="exemple-de-programme">Exemple de programme</h3>
-<p>On souhaite calculer 8 - 3 et stocker le résultat à l'adresse mémoire 10.</p>
-<table>
-<thead>
-<tr>
-<th>Adresse</th>
-<th>Instruction</th>
-<th>Ce qui se passe</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td><code>LOAD A, 8</code></td>
-<td>A ← 8, CP passe à 1</td>
-</tr>
-<tr>
-<td>1</td>
-<td><code>LOAD B, 3</code></td>
-<td>B ← 3, CP passe à 2</td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>SUB A, B</code></td>
-<td>A ← 8 - 3 = 5, CP passe à 3</td>
-</tr>
-<tr>
-<td>3</td>
-<td><code>STORE A, @10</code></td>
-<td>La valeur 5 est écrite à l'adresse 10, CP passe à 4</td>
-</tr>
-<tr>
-<td>4</td>
-<td><code>HALT</code></td>
-<td>Le programme s'arrête</td>
-</tr>
-</tbody>
-</table>
-<p>À la fin de l'exécution :</p>
-<ul>
-<li>Le registre A contient <strong>5</strong></li>
-<li>L'adresse mémoire 10 contient <strong>5</strong></li>
-<li>Le CP vaut <strong>4</strong></li>
-</ul>
-<p><span style="color:red">Exercices</span></p>
-<p><strong>1.</strong> Dérouler le programme suivant instruction par instruction.
-Indiquer à chaque étape la valeur du CP et le contenu des registres.</p>
-<table>
-<thead>
-<tr>
-<th>Adresse</th>
-<th>Instruction</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td><code>LOAD A, 10</code></td>
-</tr>
-<tr>
-<td>1</td>
-<td><code>LOAD B, 4</code></td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>ADD A, B</code></td>
-</tr>
-<tr>
-<td>3</td>
-<td><code>LOAD B, 2</code></td>
-</tr>
-<tr>
-<td>4</td>
-<td><code>SUB A, B</code></td>
-</tr>
-<tr>
-<td>5</td>
-<td><code>STORE A, @20</code></td>
-</tr>
-<tr>
-<td>6</td>
-<td><code>HALT</code></td>
-</tr>
-</tbody>
-</table>
-<p><em>Que contient l'adresse mémoire 20 à la fin ?</em></p>
-<p><strong>2.</strong> On dispose de la mémoire suivante :</p>
-<table>
-<thead>
-<tr>
-<th>Adresse</th>
-<th>Valeur</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>5</td>
-<td>12</td>
-</tr>
-<tr>
-<td>6</td>
-<td>7</td>
-</tr>
-</tbody>
-</table>
-<p>Dérouler le programme :</p>
-<table>
-<thead>
-<tr>
-<th>Adresse</th>
-<th>Instruction</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td><code>LOAD A, @5</code></td>
-</tr>
-<tr>
-<td>1</td>
-<td><code>LOAD B, @6</code></td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>ADD A, B</code></td>
-</tr>
-<tr>
-<td>3</td>
-<td><code>STORE A, @7</code></td>
-</tr>
-<tr>
-<td>4</td>
-<td><code>HALT</code></td>
-</tr>
-</tbody>
-</table>
-<p><em>Que contient l'adresse mémoire 7 à la fin ?</em></p>
-<p><strong>3.</strong> Écrire un programme en langage machine qui calcule 3 + 5 + 2
-et stocke le résultat à l'adresse mémoire 15.</p>
-<p><strong>4.</strong> Que fait ce programme ? Expliquer son effet.</p>
-<table>
-<thead>
-<tr>
-<th>Adresse</th>
-<th>Instruction</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td><code>LOAD A, 1</code></td>
-</tr>
-<tr>
-<td>1</td>
-<td><code>ADD A, A</code></td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>STORE A, @0</code></td>
-</tr>
-<tr>
-<td>3</td>
-<td><code>HALT</code></td>
-</tr>
-</tbody>
-</table>
-<p><strong>5.</strong> On souhaite calculer le périmètre d'un rectangle de longueur 8
-et de largeur 3. Le périmètre vaut 2 × (longueur + largeur).</p>
-<p>Écrire un programme en langage machine qui :
-- calcule ce périmètre
-- stocke le résultat à l'adresse mémoire 20</p>
-<hr />
 <h2 id="la-memoire-en-detail">La mémoire en détail</h2>
 <h3 id="memoire-vive-ram">Mémoire vive (RAM)</h3>
 <p>La <strong>RAM</strong> (Random Access Memory) est la mémoire principale de l'ordinateur.
@@ -490,28 +262,246 @@ a l'impression de simultanéité.</p>
 de calcul. Il peut exécuter <strong>réellement plusieurs instructions en parallèle</strong>.</p>
 <p>Les processeurs modernes ont généralement 4, 8, voire 16 cœurs ou plus.</p>
 <hr />
-<h2 id="le-soc-system-on-chip">Le SoC (System on Chip)</h2>
-<p>Un <strong>SoC</strong> (System on Chip, ou "système sur une puce") est un circuit intégré
-qui rassemble <strong>tous les composants d'un ordinateur sur une seule puce</strong> :
-processeur, mémoire, GPU, interfaces réseau, etc.</p>
-<p><img alt="" src="soc.png" /></p>
-<p><strong>Exemples :</strong> Raspberry Pi, smartphones (Apple M1, Snapdragon...), montres
-connectées, consoles portables.</p>
-<h3 id="avantages">Avantages</h3>
+<h2 id="le-langage-machine">Le langage machine</h2>
+<h3 id="les-registres">Les registres</h3>
+<p>Pour effectuer ses calculs, le processeur dispose de petites zones de
+stockage ultrarapides appelées <strong>registres</strong>. On peut les voir comme des
+<strong>variables internes</strong> au processeur.</p>
+<p>Contrairement à la mémoire (grande mais lente), les registres sont en
+nombre limité (une dizaine en général) mais accessibles instantanément.</p>
+<p>On les nomme généralement A, B, C... ou R0, R1, R2...</p>
+<h3 id="le-compteur-de-programme-cp">Le Compteur de Programme (CP)</h3>
+<p>Le processeur dispose d'un registre spécial : le <strong>Compteur de Programme</strong>
+(CP). Il contient en permanence <strong>l'adresse de la prochaine instruction
+à exécuter</strong>.</p>
+<p>À chaque instruction exécutée, le CP s'incrémente automatiquement pour
+passer à la suivante. C'est lui qui donne au processeur sa progression dans
+le programme.</p>
+<h3 id="les-instructions-de-base">Les instructions de base</h3>
+<p>Un programme en langage machine est une suite d'instructions très simples.
+En voici les principales :</p>
+<table>
+<thead>
+<tr>
+<th>Instruction</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LOAD R, valeur</code></td>
+<td>Charge une valeur dans le registre R</td>
+</tr>
+<tr>
+<td><code>LOAD R, @adresse</code></td>
+<td>Charge en R la valeur stockée à cette adresse mémoire</td>
+</tr>
+<tr>
+<td><code>STORE R, @adresse</code></td>
+<td>Copie la valeur de R vers cette adresse mémoire</td>
+</tr>
+<tr>
+<td><code>ADD R1, R2</code></td>
+<td>Additionne R1 et R2, stocke le résultat dans R1</td>
+</tr>
+<tr>
+<td><code>ADD R, valeur</code></td>
+<td>Additionne une valeur directe à R, stocke le résultat dans R</td>
+</tr>
+<tr>
+<td><code>SUB R1, R2</code></td>
+<td>Soustrait R2 à R1, stocke le résultat dans R1</td>
+</tr>
+<tr>
+<td><code>CMP R1, R2</code></td>
+<td>Compare R1 et R2, met à jour les flags internes</td>
+</tr>
+<tr>
+<td><code>JE label</code></td>
+<td>Saute au label si R1 = R2 lors du dernier CMP</td>
+</tr>
+<tr>
+<td><code>JNE label</code></td>
+<td>Saute au label si R1 ≠ R2 lors du dernier CMP</td>
+</tr>
+<tr>
+<td><code>JL label</code></td>
+<td>Saute au label si R1 &lt; R2 lors du dernier CMP</td>
+</tr>
+<tr>
+<td><code>JG label</code></td>
+<td>Saute au label si R1 &gt; R2 lors du dernier CMP</td>
+</tr>
+<tr>
+<td><code>JUMP label</code></td>
+<td>Saute toujours au label</td>
+</tr>
+<tr>
+<td><code>HALT</code></td>
+<td>Arrête le programme</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Les Labels</strong></p>
+<p>Un label est un <strong>nom</strong> qu'on donne à une ligne du programme. Au lieu d'écrire "saute à l'adresse 6", on écrit "saute au label FIN". C'est le processeur qui calcule les adresses réelles, pas le programmeur. Un label se note suivi de <code>:</code> sur la ligne qu'il désigne.</p>
+<p><strong>CMP et les JUMP</strong></p>
+<p>Quand on écrit CMP A, B, le processeur compare les deux valeurs et mémorise le résultat de la comparaison dans un endroit interne invisible (on appelle ça des flags, mais ce détail n'est pas important). Ce qui compte c'est que l'instruction de saut qui suit (JE, JL...) sait automatiquement ce que CMP vient de comparer. JE saute
+si les deux valeurs étaient égales, JL saute si la première était plus petite, etc.</p>
+<p>CMP et le saut qui suit fonctionnent toujours en binôme :</p>
+<pre><code>CMP A, B    ← on compare
+JE 6        ← on agit selon le résultat
+</code></pre>
+<h3 id="exemple-de-programme-simple">Exemple de programme simple</h3>
+<p>On souhaite calculer 8 - 3 et stocker le résultat à l'adresse mémoire 10.</p>
+<pre><code>        LOAD A, 8       ; A ← 8
+        LOAD B, 3       ; B ← 3
+        SUB A, B        ; A ← A - B = 5
+        STORE A, @10    ; écrit 5 à l'adresse mémoire 10
+        HALT
+</code></pre>
+<p>À la fin de l'exécution :
+- Le registre A contient <strong>5</strong>
+- L'adresse mémoire 10 contient <strong>5</strong></p>
+<blockquote>
+<p><strong>Remarque :</strong> Le <code>;</code> introduit un commentaire, ignoré par le processeur.
+C'est une bonne habitude d'expliquer chaque ligne.</p>
+</blockquote>
+<h3 id="exemple-avec-une-boucle-while">Exemple avec une boucle while</h3>
+<p>Voici un programme Python et sa traduction en langage machine :</p>
+<pre><code class="language-python">i = 0
+while i &lt; 3:
+    i = i + 1
+</code></pre>
+<p>On utilise le registre A pour <code>i</code> et le registre B pour la limite 3.</p>
+<pre><code>        LOAD A, 0       ; A ← 0  (i = 0)
+        LOAD B, 3       ; B ← 3  (limite)
+DEBUT:  CMP A, B        ; compare A et B, met à jour les flags
+        JE FIN          ; si A = B (i = 3), saute à FIN
+        ADD A, 1        ; A ← A + 1  (i = i + 1)
+        JUMP DEBUT      ; retourne au début de la boucle
+FIN:    HALT
+</code></pre>
+<p>Déroulé de l'exécution :</p>
+<table>
+<thead>
+<tr>
+<th>Tour</th>
+<th>A</th>
+<th>B</th>
+<th>CMP</th>
+<th>Saut ?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>0 ≠ 3</td>
+<td>Non → ADD → A = 1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>3</td>
+<td>1 ≠ 3</td>
+<td>Non → ADD → A = 2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>2 ≠ 3</td>
+<td>Non → ADD → A = 3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td>3 = 3</td>
+<td>Oui → HALT</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Idée clé :</strong> Une boucle <code>while</code> en langage machine c'est toujours la
+même structure :</p>
+<ol>
+<li>un ligne au début de la boucle</li>
+<li>un <code>CMP</code> pour tester la condition</li>
+<li>un saut conditionnel vers la sortie</li>
+<li>le corps de la boucle</li>
+<li>un <code>JUMP</code> inconditionnel vers le ligne du début</li>
+</ol>
+</blockquote>
+<hr />
+<p><span style="color:red">Exercices</span></p>
+<p><strong>1.</strong> Dérouler le programme suivant instruction par instruction.
+Indiquer à chaque étape le contenu des registres A et B.</p>
+<pre><code>        LOAD A, 10
+        LOAD B, 4
+        ADD A, B
+        LOAD B, 2
+        SUB A, B
+        STORE A, @20
+        HALT
+</code></pre>
+<p><em>Que contient l'adresse mémoire 20 à la fin ?</em></p>
+<p><strong>2.</strong> On dispose de la mémoire suivante :</p>
+<table>
+<thead>
+<tr>
+<th>Adresse</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>12</td>
+</tr>
+<tr>
+<td>6</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<p>Dérouler le programme :</p>
+<pre><code>        LOAD A, @5
+        LOAD B, @6
+        ADD A, B
+        STORE A, @7
+        HALT
+</code></pre>
+<p><em>Que contient l'adresse mémoire 7 à la fin ?</em></p>
+<p><strong>3.</strong> Écrire un programme en langage machine qui calcule 3 + 5 + 2
+et stocke le résultat à l'adresse mémoire 15.</p>
+<p><strong>4.</strong> Que fait ce programme ? Expliquer son effet.</p>
+<pre><code>        LOAD A, @0
+        ADD A, A
+        STORE A, @0
+        HALT
+</code></pre>
+<p><strong>5.</strong> On souhaite calculer le périmètre d'un rectangle de longueur 8
+et de largeur 3. Le périmètre vaut 2 × (longueur + largeur).</p>
+<p>Écrire un programme en langage machine qui calcule ce périmètre et stocke
+le résultat à l'adresse mémoire 20.</p>
+<p><strong>6.</strong> On donne le code Python suivant :</p>
+<pre><code class="language-python">i = 0
+total = 0
+while i &lt; 4:
+    total = total + 2
+    i = i + 1
+</code></pre>
+<p>Traduire ce programme en langage machine en utilisant :</p>
 <ul>
-<li><strong>Consommation électrique très faible</strong> : idéal pour les appareils sur
-  batterie</li>
-<li><strong>Encombrement réduit</strong> : tout tient sur une puce de quelques centimètres</li>
-<li><strong>Coût de fabrication moins élevé</strong></li>
-<li><strong>Robustesse</strong> : moins de connexions entre composants = moins de pannes</li>
+<li>A pour <code>total</code></li>
+<li>B pour <code>i</code></li>
+<li>C pour la limite</li>
 </ul>
-<h3 id="inconvenients">Inconvénients</h3>
-<ul>
-<li><strong>Difficile à réparer</strong> : si un composant est défaillant, on change tout</li>
-<li><strong>Impossible à upgrader</strong> : on ne peut pas changer la RAM ou le processeur
-  séparément</li>
-<li><strong>Dissipation thermique complexe</strong> : tout chauffe au même endroit</li>
-</ul>
+<p><em>Que contient A à la fin ?</em></p>
+<p><strong>7.</strong> Écrire directement en langage machine un programme qui calcule
+5 × 3 en utilisant une boucle. Stocker le résultat à l'adresse mémoire 10.</p>
               
             </div>
           </div><footer>

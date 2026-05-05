@@ -253,7 +253,7 @@ Soit le graphe suivant :
 
 ## Exercices Python
 
-On travaillera avec la représentation par liste d'adjacence suivante :
+On travaillera avec la représentation par liste d'adjacence suivante pour des graphes non orientés :
 
 ```python
 class Graphe:
@@ -275,6 +275,26 @@ class Graphe:
         return list(self.adjacence.keys())
 ```
 
+On testera nos fonctions sur les deux graphes suivants :
+
+![](exo_p.png)
+
+```python
+# Graphe G1 : connexe, contient des cycles
+g1 = Graphe()
+for s in ['A', 'B', 'C', 'D', 'E', 'F']:
+    g1.ajouter_sommet(s)
+for u, v in [('A','B'), ('A','C'), ('B','C'), ('B','D'), ('C','E'), ('D','E'), ('D','F')]:
+    g1.ajouter_arete(u, v)
+
+# Graphe G2 : non connexe, deux composantes, sans cycle
+g2 = Graphe()
+for s in ['A', 'B', 'C', 'D', 'E', 'F', 'G']:
+    g2.ajouter_sommet(s)
+for u, v in [('A','B'), ('B','C'), ('C','D'), ('E','F'), ('F','G')]:
+    g2.ajouter_arete(u, v)
+```
+
 ### Prise en main
 
 1) Écrire une fonction `afficher(g)` qui affiche pour chaque sommet la liste de ses voisins.
@@ -293,23 +313,23 @@ class Graphe:
 
 7) Écrire une fonction `bfs(g, depart)` qui affiche les sommets dans l'ordre d'un parcours en largeur depuis `depart`.
 
-8) Écrire une fonction `est_connexe(g)` qui renvoie `True` si le graphe est connexe. *(Indication : après un parcours depuis n'importe quel sommet, tous les sommets doivent avoir été visités.)*
+8) Écrire une fonction `est_connexe(g)` qui renvoie `True` si le graphe est connexe. 
 
-9) Écrire une fonction `composantes(g)` qui renvoie la liste des composantes connexes du graphe. Chaque composante est une liste de sommets. *(Indication : relancer un parcours depuis chaque sommet non encore visité.)*
+9) Écrire une fonction `composantes(g)` qui renvoie la liste des composantes connexes du graphe. Chaque composante est une liste de sommets.
 
 ### Chemins
 
 10) Écrire une fonction `chemin(g, depart, arrivee)` qui renvoie une liste de sommets formant un chemin entre `depart` et `arrivee`, ou `None` s'il n'en existe pas.
 
-11) Écrire une fonction `distance(g, depart, arrivee)` qui renvoie le nombre d'arêtes du plus court chemin entre `depart` et `arrivee`, ou `None` s'il n'en existe pas. *(Indication : utiliser un BFS en mémorisant la distance à chaque sommet visité.)*
+11) Écrire une fonction `distance(g, depart, arrivee)` qui renvoie le nombre d'arêtes du plus court chemin entre `depart` et `arrivee`, ou `None` s'il n'en existe pas. 
 
 12) Écrire une fonction `sont_relies(g, u, v)` qui renvoie `True` si `u` et `v` sont dans la même composante connexe.
 
 ### Cycles
 
-13) Écrire une fonction `contient_cycle(g)` qui renvoie `True` si le graphe contient au moins un cycle. *(Indication : lors d'un DFS, si on retombe sur un sommet déjà visité qui n'est pas le parent direct du sommet courant, c'est qu'il y a un cycle.)*
+13) Écrire une fonction `contient_cycle(g)` qui renvoie `True` si le graphe contient au moins un cycle.
 
-14) En déduire une fonction `est_arbre(g)` qui renvoie `True` si le graphe est un arbre. *(Rappel : un arbre est un graphe connexe sans cycle.)*
+14) En déduire une fonction `est_arbre(g)` qui renvoie `True` si le graphe est un arbre.
 
 ### Labyrinthe
 
