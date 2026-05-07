@@ -539,7 +539,7 @@ Pour chacun d'entre eux dire :
 <img alt="" src="../exo_comp.png" /></p>
 <hr />
 <h2 id="exercices-python">Exercices Python</h2>
-<p>On travaillera avec la représentation par liste d'adjacence suivante :</p>
+<p>On travaillera avec la représentation par liste d'adjacence suivante pour des graphes non orientés :</p>
 <pre><code class="language-python">class Graphe:
     def __init__(self):
         self.adjacence = {}
@@ -558,6 +558,22 @@ Pour chacun d'entre eux dire :
     def sommets(self):
         return list(self.adjacence.keys())
 </code></pre>
+<p>On testera nos fonctions sur les deux graphes suivants :</p>
+<p><img alt="" src="../exo_p.png" /></p>
+<pre><code class="language-python"># Graphe G1 : connexe, contient des cycles
+g1 = Graphe()
+for s in ['A', 'B', 'C', 'D', 'E', 'F']:
+    g1.ajouter_sommet(s)
+for u, v in [('A','B'), ('A','C'), ('B','C'), ('B','D'), ('C','E'), ('D','E'), ('D','F')]:
+    g1.ajouter_arete(u, v)
+
+# Graphe G2 : non connexe, deux composantes, sans cycle
+g2 = Graphe()
+for s in ['A', 'B', 'C', 'D', 'E', 'F', 'G']:
+    g2.ajouter_sommet(s)
+for u, v in [('A','B'), ('B','C'), ('C','D'), ('E','F'), ('F','G')]:
+    g2.ajouter_arete(u, v)
+</code></pre>
 <h3 id="prise-en-main">Prise en main</h3>
 <p>1) Écrire une fonction <code>afficher(g)</code> qui affiche pour chaque sommet la liste de ses voisins.</p>
 <p>2) Écrire une fonction <code>est_voisin(g, u, v)</code> qui renvoie <code>True</code> si <code>u</code> et <code>v</code> sont voisins.</p>
@@ -567,15 +583,15 @@ Pour chacun d'entre eux dire :
 <h3 id="parcours">Parcours</h3>
 <p>6) Écrire une fonction <code>dfs(g, depart)</code> qui affiche les sommets dans l'ordre d'un parcours en profondeur depuis <code>depart</code>.</p>
 <p>7) Écrire une fonction <code>bfs(g, depart)</code> qui affiche les sommets dans l'ordre d'un parcours en largeur depuis <code>depart</code>.</p>
-<p>8) Écrire une fonction <code>est_connexe(g)</code> qui renvoie <code>True</code> si le graphe est connexe. <em>(Indication : après un parcours depuis n'importe quel sommet, tous les sommets doivent avoir été visités.)</em></p>
-<p>9) Écrire une fonction <code>composantes(g)</code> qui renvoie la liste des composantes connexes du graphe. Chaque composante est une liste de sommets. <em>(Indication : relancer un parcours depuis chaque sommet non encore visité.)</em></p>
+<p>8) Écrire une fonction <code>est_connexe(g)</code> qui renvoie <code>True</code> si le graphe est connexe. </p>
+<p>9) Écrire une fonction <code>composantes(g)</code> qui renvoie la liste des composantes connexes du graphe. Chaque composante est une liste de sommets.</p>
 <h3 id="chemins">Chemins</h3>
 <p>10) Écrire une fonction <code>chemin(g, depart, arrivee)</code> qui renvoie une liste de sommets formant un chemin entre <code>depart</code> et <code>arrivee</code>, ou <code>None</code> s'il n'en existe pas.</p>
-<p>11) Écrire une fonction <code>distance(g, depart, arrivee)</code> qui renvoie le nombre d'arêtes du plus court chemin entre <code>depart</code> et <code>arrivee</code>, ou <code>None</code> s'il n'en existe pas. <em>(Indication : utiliser un BFS en mémorisant la distance à chaque sommet visité.)</em></p>
+<p>11) Écrire une fonction <code>distance(g, depart, arrivee)</code> qui renvoie le nombre d'arêtes du plus court chemin entre <code>depart</code> et <code>arrivee</code>, ou <code>None</code> s'il n'en existe pas. </p>
 <p>12) Écrire une fonction <code>sont_relies(g, u, v)</code> qui renvoie <code>True</code> si <code>u</code> et <code>v</code> sont dans la même composante connexe.</p>
 <h3 id="cycles">Cycles</h3>
-<p>13) Écrire une fonction <code>contient_cycle(g)</code> qui renvoie <code>True</code> si le graphe contient au moins un cycle. <em>(Indication : lors d'un DFS, si on retombe sur un sommet déjà visité qui n'est pas le parent direct du sommet courant, c'est qu'il y a un cycle.)</em></p>
-<p>14) En déduire une fonction <code>est_arbre(g)</code> qui renvoie <code>True</code> si le graphe est un arbre. <em>(Rappel : un arbre est un graphe connexe sans cycle.)</em></p>
+<p>13) Écrire une fonction <code>contient_cycle(g)</code> qui renvoie <code>True</code> si le graphe contient au moins un cycle.</p>
+<p>14) En déduire une fonction <code>est_arbre(g)</code> qui renvoie <code>True</code> si le graphe est un arbre.</p>
 <h3 id="labyrinthe">Labyrinthe</h3>
 <p>On modélise un labyrinthe comme un graphe : chaque cellule est un sommet, et deux cellules adjacentes sans mur entre elles sont reliées par une arête.</p>
 <pre><code class="language-python">labyrinthe = {
