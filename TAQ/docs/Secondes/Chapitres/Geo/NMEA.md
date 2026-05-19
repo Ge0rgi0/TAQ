@@ -91,7 +91,6 @@ On retrouve bien $48°51'24''$.
 **Question 3 :**
 
 Rendez-vous sur le site [map-tools](https://tool-online.com/map-tools.php) pour voir les paralléles et les méridiens.  
-*Appuyez sur le bouton à droite :* ![](bouton.png)
 
 Avec l'aide du site, donner les coordonnées des villes suivantes :
 
@@ -99,7 +98,7 @@ Avec l'aide du site, donner les coordonnées des villes suivantes :
 - Alger (Algérie)
 - Montréal (Canada)
 
->*On se contentera de donner les degrés et des minutes approchées.*
+>*On se contentera de donner des valeurs approchées.*
 
 ---
 

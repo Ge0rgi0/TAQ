@@ -279,44 +279,42 @@ Sélectionnez le dossier et utiliser la commande `unzip museum.zip`. Vous êtes 
 L'arborescence souhaitée est la suivante :
 
 ```
-/home/museum/
-└── animaux/
-    └── vertebres/
-        ├── mammiferes/
-        │   ├── felins/
-        │   │   ├── lion.png
-        │   │   ├── panthere.png
-        │   │   ├── leopard.png
-        │   │   └── chat.png
-        │   └── primates/
-        │       ├── humain.png
-        │       └── chimpanze.png
-        ├── oiseaux/
-        │   ├── rapaces/
-        │   │   └── aigle_royal.png
-        │   ├── passereaux/
-        │   │   └── moineau.png
-        │   └── psittacides/
-        │       └── perroquet.png
-        ├── poissons/
-        │   ├── osseux/
-        │   │   ├── saumon.png
-        │   │   ├── truite.png
-        │   │   └── espadon.png
-        │   ├── cartilagineux/
-        │   │   └── requin_blanc.png
-        │   └── cetaces/
-        │       ├── dauphin.png
-        │       └── baleine_bleue.png
-        ├── amphibiens/
-        │   ├── grenouille_verte.png
-        │   └── crapaud.png
-        └── reptiles/
-            ├── cobra.png
-            ├── vipere.png
-            ├── gecko.png
-            ├── salamandre.png
-            └── tortue_mer.png
+/home/museum/animaux/        
+                ├── amphibiens/
+                │   ├── grenouille_verte.png
+                │   └── crapaud.png
+                ├── mammiferes/
+                │   ├── felins/
+                │   │   ├── lion.png
+                │   │   ├── panthere.png
+                │   │   ├── leopard.png
+                │   │   └── chat.png
+                │   └── primates/
+                │       ├── humain.png
+                │       └── chimpanze.png
+                ├── oiseaux/
+                │   ├── rapaces/
+                │   │   └── aigle_royal.png
+                │   ├── passereaux/
+                │   │   └── moineau.png
+                │   └── psittacides/
+                │       └── perroquet.png
+                ├── poissons/
+                │   ├── osseux/
+                │   │   ├── saumon.png
+                │   │   ├── truite.png
+                │   │   └── espadon.png
+                │   ├── cartilagineux/
+                │   │   └── requin_blanc.png
+                │   └── cetaces/
+                │       ├── dauphin.png
+                │       └── baleine_bleue.png
+                └── reptiles/
+                    ├── cobra.png
+                    ├── vipere.png
+                    ├── gecko.png
+                    ├── salamandre.png
+                    └── tortue_mer.png
 ```
 
 1) Utilise les commandes vues plus tôt pour remettre de l'ordre dans ce répertoire.
@@ -459,11 +457,13 @@ peut modifier `tp1.py` ?
 notation octale.
  
 **6.** Donner la représentation symbolique des permissions suivantes :
+
 - `chmod 777`
 - `chmod 644`
 - `chmod 700`
 - `chmod 640`
 **7.** Donner la notation octale des permissions suivantes :
+
 - `-rwxrwxrwx`
 - `-rw-r--r--`
 - `-rwx------`
