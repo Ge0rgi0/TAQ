@@ -17,6 +17,7 @@ nav:
           - Réseaux: Premieres/Chapitres/Réseaux/Réseaux.md
           - Algorithmes: Premieres/Chapitres/Algos/Algos.md 
           - Architecture & Systèmes d'exploitation: Premieres/Chapitres/Systèmes/A&S.md
+          - WEB : Premieres/Chapitres/WEB/web.md
       - Terminales:
           - Accueil: Terminales/Terminales.md
           - Baccalauréat : Terminales/bac.md

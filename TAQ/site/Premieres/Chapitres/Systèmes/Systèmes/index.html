@@ -524,44 +524,42 @@ dans les commandes précédentes.</p>
 Allez sur le site : <a href="https://bellard.org/jslinux/vm.html?cpu=x86_64&amp;url=alpine-x86_64.cfg&amp;mem=256">JSLinux</a> et cliquez sur le bouton de telechargement en bas.<br />
 Sélectionnez le dossier et utiliser la commande <code>unzip museum.zip</code>. Vous êtes prêt à y aller !</p>
 <p>L'arborescence souhaitée est la suivante :</p>
-<pre><code>/home/museum/
-└── animaux/
-    └── vertebres/
-        ├── mammiferes/
-        │   ├── felins/
-        │   │   ├── lion.png
-        │   │   ├── panthere.png
-        │   │   ├── leopard.png
-        │   │   └── chat.png
-        │   └── primates/
-        │       ├── humain.png
-        │       └── chimpanze.png
-        ├── oiseaux/
-        │   ├── rapaces/
-        │   │   └── aigle_royal.png
-        │   ├── passereaux/
-        │   │   └── moineau.png
-        │   └── psittacides/
-        │       └── perroquet.png
-        ├── poissons/
-        │   ├── osseux/
-        │   │   ├── saumon.png
-        │   │   ├── truite.png
-        │   │   └── espadon.png
-        │   ├── cartilagineux/
-        │   │   └── requin_blanc.png
-        │   └── cetaces/
-        │       ├── dauphin.png
-        │       └── baleine_bleue.png
-        ├── amphibiens/
-        │   ├── grenouille_verte.png
-        │   └── crapaud.png
-        └── reptiles/
-            ├── cobra.png
-            ├── vipere.png
-            ├── gecko.png
-            ├── salamandre.png
-            └── tortue_mer.png
+<pre><code>/home/museum/animaux/        
+                ├── amphibiens/
+                │   ├── grenouille_verte.png
+                │   └── crapaud.png
+                ├── mammiferes/
+                │   ├── felins/
+                │   │   ├── lion.png
+                │   │   ├── panthere.png
+                │   │   ├── leopard.png
+                │   │   └── chat.png
+                │   └── primates/
+                │       ├── humain.png
+                │       └── chimpanze.png
+                ├── oiseaux/
+                │   ├── rapaces/
+                │   │   └── aigle_royal.png
+                │   ├── passereaux/
+                │   │   └── moineau.png
+                │   └── psittacides/
+                │       └── perroquet.png
+                ├── poissons/
+                │   ├── osseux/
+                │   │   ├── saumon.png
+                │   │   ├── truite.png
+                │   │   └── espadon.png
+                │   ├── cartilagineux/
+                │   │   └── requin_blanc.png
+                │   └── cetaces/
+                │       ├── dauphin.png
+                │       └── baleine_bleue.png
+                └── reptiles/
+                    ├── cobra.png
+                    ├── vipere.png
+                    ├── gecko.png
+                    ├── salamandre.png
+                    └── tortue_mer.png
 </code></pre>
 <p>1) Utilise les commandes vues plus tôt pour remettre de l'ordre dans ce répertoire.</p>
 <blockquote>
@@ -767,16 +765,22 @@ peut modifier <code>tp1.py</code> ?</p>
 <p><strong>5.</strong> Alice veut que personne d'autre qu'elle ne puisse lire <code>tp2.py</code>.
 Écrire la commande <code>chmod</code> correspondante en notation symbolique puis en
 notation octale.</p>
-<p><strong>6.</strong> Donner la représentation symbolique des permissions suivantes :
-- <code>chmod 777</code>
-- <code>chmod 644</code>
-- <code>chmod 700</code>
-- <code>chmod 640</code>
-<strong>7.</strong> Donner la notation octale des permissions suivantes :
-- <code>-rwxrwxrwx</code>
-- <code>-rw-r--r--</code>
-- <code>-rwx------</code>
-- <code>-r-xr-x---</code></p>
+<p><strong>6.</strong> Donner la représentation symbolique des permissions suivantes :</p>
+<ul>
+<li><code>chmod 777</code></li>
+<li><code>chmod 644</code></li>
+<li><code>chmod 700</code></li>
+<li>
+<p><code>chmod 640</code>
+<strong>7.</strong> Donner la notation octale des permissions suivantes :</p>
+</li>
+<li>
+<p><code>-rwxrwxrwx</code></p>
+</li>
+<li><code>-rw-r--r--</code></li>
+<li><code>-rwx------</code></li>
+<li><code>-r-xr-x---</code></li>
+</ul>
 <hr />
 <p><span style="color:red">TP — Terminus</span></p>
 <p>Tu vas découvrir les commandes Linux en jouant à <strong>Terminus</strong>, un jeu d'aventure en ligne de commande.</p>

@@ -8,6 +8,7 @@
 [🟩 4 - Réseaux](Chapitres/Réseaux/Réseaux.md)  
 [🟨 5 - Algorithmique](Chapitres/Algos/Algos.md)  
 [🟩 6 - Architecture & Systèmes d'exploitation](Chapitres/Systèmes/A&S.md)  
+[🟦 7 - WEB](Chapitres/WEB/web.md)  
 
 ## Projets
 
