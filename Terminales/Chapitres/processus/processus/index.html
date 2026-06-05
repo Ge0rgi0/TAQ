@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Gestion des processus - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Gestion des processus";
+        var mkdocs_page_input_path = "Terminales/Chapitres/processus/processus.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Geo/Geo/">Géolocalisation</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Types/Types_de_base/">Types de base</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Bases/bases/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Algos/Algos/">Algorithmes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Syst%C3%A8mes/A%26S/">Architecture & Systèmes d'exploitation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/WEB/web/">WEB</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Terminales</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../bac/">Baccalauréat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../BDD/">Base de données</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Routage/routage/">Algorithmes de Routage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9cursivit%C3%A9/rec/">Récursivité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S%C3%A9curit%C3%A9/secu/">Sécurité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Arbres%26Graphes/Arbres%26Graphes/">Arbres & Graphes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Dyn/dyn/">Programmation Dynamique</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Gestion des processus</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#quest-ce-quun-processus">Qu'est-ce qu'un processus ?</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#programme-vs-processus">Programme vs Processus</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#creation-dun-processus">Création d'un processus</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#les-etats-dun-processus">Les états d'un processus</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#les-processus-zombies">Les processus zombies</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#observer-les-processus-sur-une-machine">Observer les processus sur une machine</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#la-commande-ps">La commande ps</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#la-commande-top">La commande top</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#la-commande-kill">La commande kill</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#la-commande-pstree">La commande pstree</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ordonnancement-des-processus">Ordonnancement des processus</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#le-probleme-du-partage-du-cpu">Le problème du partage du CPU</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#les-algorithmes-dordonnancement">Les algorithmes d'ordonnancement</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#comparaison-des-algorithmes">Comparaison des algorithmes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice">Exercice</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#linterblocage-deadlock">L'interblocage (Deadlock)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#le-probleme">Le problème</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exemple-concret">Exemple concret</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#les-quatre-conditions-de-coffman">Les quatre conditions de Coffman</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Terminales</li>
+      <li class="breadcrumb-item active">Gestion des processus</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="gestion-des-processus-et-des-ressources">Gestion des processus et des ressources</h1>
+<h2 id="quest-ce-quun-processus">Qu'est-ce qu'un processus ?</h2>
+<h3 id="programme-vs-processus">Programme vs Processus</h3>
+<p>Un <strong>programme</strong> est un fichier stocké sur le disque : c'est une suite d'instructions écrites par un développeur, figée, qui attend d'être exécutée. Un <strong>processus</strong>, c'est ce même programme en train de s'exécuter en mémoire. C'est une entité dynamique, qui consomme des ressources (mémoire, temps accordé par le processeur, accés à des périphériques).</p>
+<p>Concrètement, quand on double-clique sur un logiciel, le système d'exploitation crée un processus : il charge le programme en RAM, lui alloue des ressources, et lui donne la main sur le processeur.</p>
+<p>Un même programme peut donner naissance à plusieurs processus simultanément. Par exemple, si on ouvre deux fenêtres de navigateur, deux processus distincts s'exécutent en parallèle.</p>
+<hr />
+<h3 id="creation-dun-processus">Création d'un processus</h3>
+<p>Sur un système Linux, chaque processus est créé par un autre processus : c'est le mécanisme du <strong>fork</strong>. Le processus qui crée s'appelle le <strong>processus parent</strong>, celui qui est créé s'appelle le <strong>processus fils</strong>.</p>
+<p>Au démarrage de la machine, le tout premier processus lancé est <code>init</code> (ou <code>systemd</code> sur les systèmes modernes). Il a le <strong>PID 1</strong> (Process IDentifier = numéro unique attribué à chaque processus). Tous les autres processus en descendent.</p>
+<pre><code>init (PID 1)
+├── systemd-journald (PID 45)
+├── sshd (PID 312)
+│   └── bash (PID 891)
+│       └── python3 (PID 1024)
+└── Xorg (PID 502)
+    └── firefox (PID 788)
+        ├── firefox (PID 789)
+        └── firefox (PID 790)
+</code></pre>
+<p>La création d'un processus suit ces étapes :</p>
+<ol>
+<li>Le processus parent appelle la fonction <code>fork()</code> : le système crée un nouveau processus</li>
+<li>Le fils reçoit un <strong>PID</strong> unique</li>
+<li>Le fils appelle <code>exec()</code> pour exécuter son programme</li>
+<li>Le système alloue de la <strong>mémoire</strong>, des <strong>descripteurs de fichiers</strong>, un espace de <strong>pile</strong> au nouveau processus</li>
+</ol>
+<hr />
+<h3 id="les-etats-dun-processus">Les états d'un processus</h3>
+<p>Un processus ne tourne pas en permanence sur le processeur. Il passe par différents <strong>états</strong> au cours de sa vie :</p>
+<table>
+<thead>
+<tr>
+<th>État</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prêt</strong></td>
+<td>Le processus attend que le CPU soit disponible</td>
+</tr>
+<tr>
+<td><strong>Élu</strong></td>
+<td>Le processus utilise le CPU en ce moment</td>
+</tr>
+<tr>
+<td><strong>Bloqué</strong></td>
+<td>Le processus attend une ressource (lecture disque, réseau...)</td>
+</tr>
+<tr>
+<td><strong>Terminé</strong></td>
+<td>Le processus a fini son exécution</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="" src="../%C3%A9tat.png" /></p>
+<hr />
+<h3 id="les-processus-zombies">Les processus zombies</h3>
+<p>Quand un processus termine, il ne disparaît pas immédiatement. Il passe dans un état spécial appelé zombie : il n'existe plus vraiment (il n'exécute plus rien, il ne consomme plus de CPU), mais son entrée reste dans la table des processus du système.</p>
+<p>Pourquoi ? Parce que le système d'exploitation conserve son code de retour : une valeur que le processus laisse en mourant pour signaler s'il s'est terminé normalement ou avec une erreur. Ce code de retour doit être lu par le processus parent via un appel système appelé <code>wait()</code>. Tant que le parent ne l'a pas lu, le processus reste zombie.</p>
+<hr />
+<h2 id="observer-les-processus-sur-une-machine">Observer les processus sur une machine</h2>
+<h3 id="la-commande-ps">La commande <code>ps</code></h3>
+<p>La commande <code>ps</code> (process status) affiche un instantané des processus actifs.</p>
+<pre><code class="language-bash">ps aux
+</code></pre>
+<pre><code>USER       PID  %CPU %MEM    VSZ   RSS   STAT  COMMAND
+root         1   0.0  0.1  22544  4096   Ss    /sbin/init
+alice      788   2.1  3.4 512048 69120   Sl    firefox
+alice      891   0.0  0.1   8192  2048   S     bash
+alice     1024   0.8  0.5  15360  9216   R     python3 script.py
+</code></pre>
+<p>Les colonnes importantes :</p>
+<table>
+<thead>
+<tr>
+<th>Colonne</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PID</code></td>
+<td>Identifiant unique du processus</td>
+</tr>
+<tr>
+<td><code>%CPU</code></td>
+<td>Pourcentage d'utilisation du processeur</td>
+</tr>
+<tr>
+<td><code>%MEM</code></td>
+<td>Pourcentage de RAM utilisée</td>
+</tr>
+<tr>
+<td><code>STAT</code></td>
+<td>État du processus (<code>R</code>=running, <code>S</code>=sleeping, <code>Z</code>=zombie...)</td>
+</tr>
+<tr>
+<td><code>COMMAND</code></td>
+<td>Nom du programme</td>
+</tr>
+</tbody>
+</table>
+<h3 id="la-commande-top">La commande <code>top</code></h3>
+<p>La commande <code>top</code> affiche les processus en <strong>temps réel</strong>, actualisés automatiquement. Elle permet de voir les processus qui consomment le plus de ressources.</p>
+<pre><code class="language-bash">top
+</code></pre>
+<h3 id="la-commande-kill">La commande <code>kill</code></h3>
+<p>Pour arrêter un processus, on utilise la commande <code>kill</code> suivie du PID :</p>
+<pre><code class="language-bash">kill 1024        # demande au processus 1024 de se terminer proprement
+kill -9 1024     # force l'arrêt immédiat (signal SIGKILL)
+</code></pre>
+<h3 id="la-commande-pstree">La commande <code>pstree</code></h3>
+<p>La commande <code>pstree</code> affiche la hiérarchie des processus sous forme d'arbre :</p>
+<pre><code class="language-bash">pstree
+</code></pre>
+<pre><code>systemd─┬─sshd───bash───python3
+        ├─Xorg
+        └─firefox─┬─firefox
+                  └─firefox
+</code></pre>
+<hr />
+<h2 id="ordonnancement-des-processus">Ordonnancement des processus</h2>
+<h3 id="le-probleme-du-partage-du-cpu">Le problème du partage du CPU</h3>
+<p>Un ordinateur moderne peut avoir des dizaines, voire des centaines de processus actifs en même temps. Pourtant, un processeur ne peut exécuter qu'<strong>un seul processus à la fois</strong> sur chacun de ses cœurs.</p>
+<p>Le rôle de l'<strong>ordonnanceur</strong> (scheduler) est de décider quel processus a le droit d'utiliser le CPU, et pendant combien de temps. C'est l'une des fonctions les plus critiques du système d'exploitation.</p>
+<p>Deux notions importantes pour évaluer un ordonnancement :</p>
+<ul>
+<li><strong>Temps de séjour</strong> d'un processus : durée entre son arrivée et sa fin d'exécution</li>
+<li><strong>Temps d'attente</strong> d'un processus : durée pendant laquelle il a attendu sans s'exécuter (= temps de séjour − durée d'exécution)</li>
+</ul>
+<hr />
+<h3 id="les-algorithmes-dordonnancement">Les algorithmes d'ordonnancement</h3>
+<p>Plusieurs stratégies existent. On va les illustrer avec le même exemple simple dans chaque cas.</p>
+<p><strong>Exemple de référence :</strong> trois processus arrivent dans cet ordre :</p>
+<table>
+<thead>
+<tr>
+<th>Processus</th>
+<th>Arrivée</th>
+<th>Durée d'exécution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>t = 0</td>
+<td>4 cycles</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>t = 1</td>
+<td>2 cycles</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>t = 2</td>
+<td>5 cycles</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="fifo-premier-arrive-premier-servi">FIFO — Premier arrivé, premier servi</h4>
+<p>Le processus qui arrive en premier est exécuté jusqu'à la fin, puis on passe au suivant, et ainsi de suite. C'est la stratégie la plus intuitive.</p>
+<p><strong>Déroulement :</strong></p>
+<ul>
+<li>t=0 : P1 arrive → le CPU est libre, P1 s'exécute</li>
+<li>t=1 : P2 arrive → le CPU est occupé par P1, P2 attend</li>
+<li>t=2 : P3 arrive → le CPU est occupé par P1, P3 attend</li>
+<li>t=4 : P1 termine → P2 est le suivant dans la file</li>
+<li>t=6 : P2 termine → P3 s'exécute</li>
+<li>t=11 : P3 termine</li>
+</ul>
+<pre><code>t :  0    1    2    3    4    5    6    7    8    9    10   11
+     ├────┴────┴────┴────┼────┴────┼────┴────┴────┴────┴────┤
+     │       P1          │   P2    │           P3           │
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Processus</th>
+<th>Arrivée</th>
+<th>Fin</th>
+<th>Séjour</th>
+<th>Attente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+<td>0</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>1</td>
+<td>6</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>2</td>
+<td>11</td>
+<td>9</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Problème :</strong> si P1 était très long (100 cycles), P2 et P3 attendraient très longtemps même s'ils n'ont besoin que de quelques cycles. C'est le problème du <strong>convoi</strong> : les petits processus sont bloqués derrière un gros.</p>
+</blockquote>
+<hr />
+<h4 id="sjf-shortest-job-first-plus-court-en-premier">SJF — Shortest Job First (plus court en premier)</h4>
+<p>Quand le CPU se libère, l'ordonnanceur choisit parmi les processus <strong>en attente</strong> celui qui a la <strong>durée d'exécution la plus courte</strong>.</p>
+<p><strong>Déroulement :</strong></p>
+<ul>
+<li>t=0 : seul P1 est là → P1 s'exécute (pas le choix)</li>
+<li>t=1 : P2 arrive, mais P1 tourne, il attend</li>
+<li>t=2 : P3 arrive, il attend aussi</li>
+<li>t=4 : P1 termine. File d'attente : P2 (2 cycles), P3 (5 cycles) → on choisit <strong>P2</strong></li>
+<li>t=6 : P2 termine. Il ne reste que P3 → P3 s'exécute</li>
+<li>t=11 : P3 termine</li>
+</ul>
+<pre><code>t :  0    1    2    3    4    5    6    7    8    9    10   11
+     ├────┴────┴────┴────┼────┴────┼────┴────┴────┴────┴────┤
+     │       P1          │   P2    │           P3           │
+</code></pre>
+<blockquote>
+<p>Dans cet exemple FIFO et SJF donnent le même résultat car P1 est arrivé seul. L'intérêt de SJF se voit quand plusieurs processus sont déjà en attente au moment où le CPU se libère.</p>
+</blockquote>
+<hr />
+<h4 id="srt-shortest-remaining-time-plus-petit-temps-restant">SRT — Shortest Remaining Time (plus petit temps restant)</h4>
+<p>C'est une version <strong>préemptive</strong> du SJF : l'ordonnanceur peut interrompre un processus en cours si un nouveau processus arrive avec un temps restant plus court.</p>
+<p><strong>Déroulement :</strong></p>
+<ul>
+<li>t=0 : P1 (4 cycles restants) s'exécute</li>
+<li>t=1 : P2 arrive avec 2 cycles. P1 a 3 cycles restants. 2 &lt; 3 → on <strong>interrompt P1</strong>, P2 prend la main</li>
+<li>t=2 : P3 arrive avec 5 cycles. P2 a 1 cycle restant. 1 &lt; 5 → P2 continue</li>
+<li>t=3 : P2 termine. File : P1 (3 cycles), P3 (5 cycles) → P1 reprend</li>
+<li>t=6 : P1 termine → P3 s'exécute</li>
+<li>t=11 : P3 termine</li>
+</ul>
+<pre><code>t :  0    1    2    3    4    5    6    7    8    9    10   11
+     ├────┼────┴────┼────┴────┴────┼────┴────┴────┴────┴────┤
+     │ P1 │   P2    │      P1      │           P3           │
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Processus</th>
+<th>Arrivée</th>
+<th>Fin</th>
+<th>Séjour</th>
+<th>Attente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>0</td>
+<td>6</td>
+<td>6</td>
+<td>2</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>2</td>
+<td>11</td>
+<td>9</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="round-robin-tourniquet">Round Robin (tourniquet)</h4>
+<p>Chaque processus reçoit un <strong>quantum de temps</strong> fixe (par exemple 2 cycles). Quand son quantum est écoulé, il est mis en fin de file et le suivant prend la main. C'est l'algorithme le plus utilisé sur les systèmes interactifs modernes.</p>
+<p><strong>Déroulement</strong> (quantum = 2) :</p>
+<ul>
+<li>t=0 : P1 s'exécute (quantum : 2 cycles)</li>
+<li>t=2 : quantum de P1 écoulé. File : P2, P3. → P2 prend la main</li>
+<li>t=4 : P2 termine (il n'avait que 2 cycles). File : P3, P1. → P3 prend la main</li>
+<li>t=6 : quantum de P3 écoulé. File : P1, P3. → P1 prend la main</li>
+<li>t=8 : P1 termine. File : P3. → P3 reprend</li>
+<li>t=10 : quantum de P3 écoulé, mais il n'a plus qu'1 cycle → continue</li>
+<li>t=11 : P3 termine</li>
+</ul>
+<pre><code>t :  0    1    2    3    4    5    6    7    8    9    10   11
+     ├────┴────┼────┴────┼────┴────┼────┴────┼────┴────┴────┤
+     │   P1    │   P2    │   P3    │   P1    │      P3      │
+</code></pre>
+<blockquote>
+<p>L'illusion du multitâche vient de là : les changements sont si rapides (quelques millisecondes) que l'utilisateur a l'impression que tout tourne en même temps.</p>
+</blockquote>
+<hr />
+<h3 id="comparaison-des-algorithmes">Comparaison des algorithmes</h3>
+<table>
+<thead>
+<tr>
+<th>Algorithme</th>
+<th>Avantages</th>
+<th>Inconvénients</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FIFO</td>
+<td>Simple à implémenter</td>
+<td>Les processus longs bloquent les courts</td>
+</tr>
+<tr>
+<td>SJF</td>
+<td>Réduit l'attente moyenne</td>
+<td>Nécessite de connaître les durées à l'avance</td>
+</tr>
+<tr>
+<td>SRT</td>
+<td>Optimal pour le temps d'attente moyen</td>
+<td>Nombreuses interruptions, complexe</td>
+</tr>
+<tr>
+<td>Round Robin</td>
+<td>Équitable, très réactif</td>
+<td>Overhead des changements de contexte</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="exercice">Exercice</h3>
+<p>Le processeur doit exécuter les 4 processus suivants :</p>
+<table>
+<thead>
+<tr>
+<th>Processus</th>
+<th>Cycle d'arrivée</th>
+<th>Durée (en cycles)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>0</td>
+<td>8</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr>
+<td>P4</td>
+<td>4</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p><strong>1.</strong> Dessiner le chronogramme de l'ordonnancement <strong>FIFO</strong> (premier arrivé, premier servi).</p>
+<p><strong>2.</strong> Dessiner le chronogramme <strong>SJF</strong> : quand le CPU se libère, le processus en attente avec la durée la plus courte est exécuté en premier.</p>
+<p><strong>3.</strong> Dessiner le chronogramme <strong>SRT</strong> : quand un nouveau processus arrive, l'ordonnanceur compare le temps restant de chacun et peut interrompre le processus en cours si le nouveau est plus court.</p>
+<p><strong>4.</strong> Dessiner le chronogramme <strong>Round Robin</strong> avec un quantum de 3 cycles.</p>
+<p><strong>5.</strong> Pour chacune de ces quatre méthodes, calculer le temps de séjour et le temps d'attente de chaque processus, puis les moyennes.</p>
+<p><strong>6.</strong> Comparer les résultats. Quelle méthode est la plus efficace ? Quelle méthode est la plus équitable ? Expliquer pourquoi ces deux objectifs peuvent être contradictoires.</p>
+<hr />
+<h2 id="linterblocage-deadlock">L'interblocage (Deadlock)</h2>
+<h3 id="le-probleme">Le problème</h3>
+<p>Un <strong>interblocage</strong> (ou <em>deadlock</em>) survient quand deux processus ou plus se bloquent mutuellement en attendant chacun une ressource que l'autre détient. Aucun ne peut avancer, aucun ne peut libérer ce qu'il tient. Le système est figé.</p>
+<h3 id="exemple-concret">Exemple concret</h3>
+<p>Imaginons deux processus P1 et P2, et deux ressources R1 (une imprimante) et R2 (un scanner) :</p>
+<pre><code>1. P1 obtient R1 (l'imprimante)
+2. P2 obtient R2 (le scanner)
+3. P1 demande R2  → bloqué, P2 l'a déjà
+4. P2 demande R1  → bloqué, P1 l'a déjà
+   ──────────────────────────────────────
+   → Plus personne ne peut avancer !
+</code></pre>
+<p><img alt="" src="../interblocage.png" /></p>
+<h3 id="les-quatre-conditions-de-coffman">Les quatre conditions de Coffman</h3>
+<p>En 1971, Edward Coffman a montré que quatre conditions doivent être réunies <strong>simultanément</strong> pour qu'un interblocage se produise :</p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Exclusion mutuelle</strong></td>
+<td>Une ressource ne peut être utilisée que par un seul processus à la fois</td>
+</tr>
+<tr>
+<td><strong>Possession et attente</strong></td>
+<td>Un processus détient une ressource et attend d'en obtenir une autre</td>
+</tr>
+<tr>
+<td><strong>Non-préemption</strong></td>
+<td>On ne peut pas forcer un processus à libérer une ressource</td>
+</tr>
+<tr>
+<td><strong>Attente circulaire</strong></td>
+<td>Chacun attendant une ressource tenue par le suivant</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Il suffit d'<strong>empêcher l'une de ces conditions</strong> pour éviter tout interblocage.</p>
+</blockquote>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Dyn/dyn/" class="btn btn-neutral float-left" title="Programmation Dynamique"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Dyn/dyn/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

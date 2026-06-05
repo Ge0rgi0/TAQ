@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Programmation Dynamique - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Programmation Dynamique";
+        var mkdocs_page_input_path = "Terminales/Chapitres/Dyn/dyn.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Geo/Geo/">Géolocalisation</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Premières</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Types/Types_de_base/">Types de base</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Bases/bases/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Algos/Algos/">Algorithmes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/Syst%C3%A8mes/A%26S/">Architecture & Systèmes d'exploitation</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Premieres/Chapitres/WEB/web/">WEB</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Terminales</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../../Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../bac/">Baccalauréat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../BDD/">Base de données</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Routage/routage/">Algorithmes de Routage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9cursivit%C3%A9/rec/">Récursivité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../S%C3%A9curit%C3%A9/secu/">Sécurité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Arbres%26Graphes/Arbres%26Graphes/">Arbres & Graphes</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Programmation Dynamique</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#rappel-la-ou-le-glouton-a-echoue">Rappel — Là où le glouton a échoué</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#le-probleme-reformule">Le problème, reformulé</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#idee-centrale-decomposer-en-sous-problemes">Idée centrale : décomposer en sous-problèmes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-0-comprendre-la-recurrence">Exercice 0 — Comprendre la récurrence</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#naif-mais-correct-la-recursion">Naïf mais correct : la récursion</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-1-tester-et-observer">Exercice 1 — Tester et observer</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#le-probleme-des-calculs-repetes">Le problème : des calculs répétés</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#memoisation-ne-jamais-calculer-deux-fois-la-meme-chose">Mémoïsation : ne jamais calculer deux fois la même chose</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-2-comparer-naif-et-memoise">Exercice 2 — Comparer naïf et mémoïsé</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#approche-ascendante-remplir-un-tableau">Approche ascendante : remplir un tableau</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-3-comprendre-le-tableau">Exercice 3 — Comprendre le tableau</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-4-analyser-la-complexite">Exercice 4 — Analyser la complexité</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exercice-5-pour-les-rapides-retrouver-les-pieces-utilisees">Exercice 5 (pour les rapides) — Retrouver les pièces utilisées</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#conclusion-glouton-vs-programmation-dynamique">Conclusion — Glouton vs Programmation Dynamique</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../processus/processus/">Gestion des processus</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Terminales</li>
+      <li class="breadcrumb-item active">Programmation Dynamique</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="programmation-dynamique">Programmation Dynamique</h1>
+<h2 id="rappel-la-ou-le-glouton-a-echoue">Rappel — Là où le glouton a échoué</h2>
+<p>Dans le cours précédent, vous avez implémenté l'algorithme glouton pour le rendu de monnaie.
+Il donnait de bons résultats avec le système européen, mais échouait sur certains systèmes de pièces.</p>
+<p>Rappelez-vous :</p>
+<pre><code class="language-python">rendu_monnaie(6, [4, 3, 1])  # → [4, 1, 1]  (3 pièces)
+</code></pre>
+<p>Pourtant, <strong>[3, 3]</strong> suffit — seulement 2 pièces.</p>
+<p>Le glouton a fait un mauvais choix en prenant 4, et il ne peut <strong>jamais revenir en arrière</strong>.
+C'est précisément ce que la programmation dynamique va corriger.</p>
+<hr />
+<h2 id="le-probleme-reformule">Le problème, reformulé</h2>
+<p><strong>Entrée :</strong> un montant <code>n</code> (en centimes) et une liste de valeurs de pièces disponibles.</p>
+<p><strong>Sortie :</strong> le <strong>nombre minimal</strong> de pièces pour atteindre exactement <code>n</code>.</p>
+<p>On va maintenant chercher à résoudre ce problème de façon <strong>toujours optimale</strong>.</p>
+<hr />
+<h2 id="idee-centrale-decomposer-en-sous-problemes">Idée centrale : décomposer en sous-problèmes</h2>
+<p>Posons la question autrement.</p>
+<p>Pour rendre <code>n</code> centimes en un minimum de pièces, je peux choisir <strong>n'importe quelle pièce <code>p</code></strong> comme dernière pièce utilisée. Il me reste alors à rendre <code>n - p</code> centimes, toujours de façon optimale.</p>
+<p>Autrement dit :</p>
+<blockquote>
+<p><strong>Le meilleur rendu pour <code>n</code></strong> = 1 (la pièce choisie) + <strong>le meilleur rendu pour <code>n - p</code></strong></p>
+</blockquote>
+<p>Et on choisit la pièce <code>p</code> qui minimise ce total.</p>
+<p>Formellement, si on note <code>opt(n)</code> le nombre minimal de pièces pour rendre <code>n</code> :</p>
+<pre><code>opt(0) = 0
+opt(n) = 1 + min{ opt(n - p)  |  p ∈ pieces,  p ≤ n }
+</code></pre>
+<p>Cette formule s'appelle une <strong>relation de récurrence</strong> (ou équation de Bellman).</p>
+<h3 id="exercice-0-comprendre-la-recurrence">Exercice 0 — Comprendre la récurrence</h3>
+<p>Avec les pièces {4, 3, 1}, calculez <strong>à la main</strong> :</p>
+<ol>
+<li><code>opt(0)</code>, <code>opt(1)</code>, <code>opt(2)</code>, <code>opt(3)</code>, <code>opt(4)</code></li>
+<li>En utilisant ces résultats, calculez <code>opt(5)</code> et <code>opt(6)</code>.</li>
+<li>Vérifiez que <code>opt(6) = 2</code> et identifiez quelle pièce a été choisie à chaque étape.</li>
+</ol>
+<hr />
+<h2 id="naif-mais-correct-la-recursion">Naïf mais correct : la récursion</h2>
+<p>La récurrence se traduit presque directement en Python :</p>
+<pre><code class="language-python">def opt_naif(n: int, pieces: list[int]) -&gt; int:
+    &quot;&quot;&quot;
+    Retourne le nombre minimal de pièces pour rendre n centimes.
+    Approche récursive naïve (sans mémoïsation).
+
+    Préconditions :
+        - n &gt;= 0
+        - 1 doit figurer dans pieces (garantit qu'une solution existe)
+        - pieces contient des entiers strictement positifs
+
+    &gt;&gt;&gt; opt_naif(6, [4, 3, 1])
+    2
+    &gt;&gt;&gt; opt_naif(0, [4, 3, 1])
+    0
+    &gt;&gt;&gt; opt_naif(11, [10, 6, 1])
+    2
+    &quot;&quot;&quot;
+    if ... :
+        return ...
+    return ...
+</code></pre>
+<h3 id="exercice-1-tester-et-observer">Exercice 1 — Tester et observer</h3>
+<ol>
+<li>
+<p>Codez et testez <code>opt_naif</code> avec les exemples de la docstring.</p>
+</li>
+<li>
+<p>Tracez à la main <strong>l'arbre des appels récursifs</strong> pour <code>opt_naif(6, [4, 3, 1])</code> :</p>
+</li>
+</ol>
+<blockquote>
+<p>Combien d'appels sont effectués en tout ?<br />
+Certains calculs sont-ils répétés ? Lesquels ?  </p>
+</blockquote>
+<ol>
+<li>Essayez <code>opt_naif(40, [25, 10, 1])</code>. Que remarquez-vous ?
+   <em>(Attendez 10 secondes. Si rien ne s'affiche, interrompez avec Ctrl+C.)</em></li>
+</ol>
+<hr />
+<h2 id="le-probleme-des-calculs-repetes">Le problème : des calculs répétés</h2>
+<p>Vous avez sûrement observé que <code>opt_naif</code> recalcule les mêmes valeurs des dizaines, voire des milliers de fois.</p>
+<p>Par exemple, pour <code>opt(6)</code> avec les pièces {4, 3, 1} :</p>
+<ul>
+<li><code>opt(2)</code> est calculé depuis <code>opt(3)</code> (via la pièce 1), mais aussi depuis <code>opt(6)</code> (via la pièce 4, puis pièce 1, puis...).</li>
+</ul>
+<p>C'est un problème de <strong>sous-problèmes qui se chevauchent</strong> (<em>overlapping subproblems</em>).</p>
+<p>La solution : <strong>mémoriser</strong> chaque résultat dès qu'on le calcule, pour ne jamais le recalculer.
+Cette technique s'appelle la <strong>mémoïsation</strong>.</p>
+<hr />
+<h2 id="memoisation-ne-jamais-calculer-deux-fois-la-meme-chose">Mémoïsation : ne jamais calculer deux fois la même chose</h2>
+<pre><code class="language-python">def opt_memo(n: int, pieces: list[int], memo: dict = None) -&gt; int:
+    &quot;&quot;&quot;
+    Retourne le nombre minimal de pièces pour rendre n centimes.
+    Approche récursive avec mémoïsation.
+
+    &gt;&gt;&gt; opt_memo(6, [4, 3, 1])
+    2
+    &gt;&gt;&gt; opt_memo(0, [4, 3, 1])
+    0
+    &quot;&quot;&quot;
+    if memo is None:
+        ...
+    if n == ... :
+        ...
+    if n not in memo :
+        ...
+    return ...
+</code></pre>
+<h3 id="exercice-2-comparer-naif-et-memoise">Exercice 2 — Comparer naïf et mémoïsé</h3>
+<ol>
+<li>
+<p>Complétez <code>opt_memo</code> et testez-la avec les mêmes exemples qu'avant.</p>
+</li>
+<li>
+<p>Comparez le nombre d'appels pour <code>opt_naif(6, [4, 3, 1])</code> vs<code>opt_memo(6, [4, 3, 1])</code>.</p>
+</li>
+<li>
+<p>Comparez le nombre d'appels effectués pour les valeurs <code>5</code>, <code>10</code>, <code>15</code> avec les méthodes naïve et mémoïsée.</p>
+</li>
+<li>
+<p>Quelle relation observez-vous entre <code>n</code> et le nombre d'appels mémoïsés ?</p>
+</li>
+</ol>
+<hr />
+<h2 id="approche-ascendante-remplir-un-tableau">Approche ascendante : remplir un tableau</h2>
+<p>La mémoïsation part de <code>n</code> et descend vers 0. On peut aussi faire <strong>l'inverse</strong> : partir de 0 et monter jusqu'à <code>n</code>, en remplissant un tableau <code>dp</code> tel que <code>dp[i]</code> est le nombre minimal de pièces pour rendre <code>i</code> centimes.</p>
+<p>C'est l'approche <strong>tabulaire</strong> (ou <em>bottom-up</em>), la forme la plus classique de programmation dynamique.</p>
+<pre><code class="language-python">def rendu_monnaie_dp(montant: int, pieces: list[int]) -&gt; int:
+    &quot;&quot;&quot;
+    Retourne le nombre minimal de pièces pour rendre `montant` centimes.
+    Approche tabulaire (bottom-up).
+
+    Préconditions :
+        - montant &gt;= 0
+        - pieces contient des entiers strictement positifs
+        - 1 doit figurer dans pieces
+
+    Postconditions :
+        - Retourne le nombre minimal de pièces
+
+    &gt;&gt;&gt; rendu_monnaie_dp(6, [4, 3, 1])
+    2
+    &gt;&gt;&gt; rendu_monnaie_dp(0, [4, 3, 1])
+    0
+    &gt;&gt;&gt; rendu_monnaie_dp(11, [10, 6, 1])
+    2
+    &quot;&quot;&quot;
+    memo = 
+    memo[0] = ...
+
+    for i in range(...):
+        ...
+
+    return ...
+</code></pre>
+<h3 id="exercice-3-comprendre-le-tableau">Exercice 3 — Comprendre le tableau</h3>
+<ol>
+<li>
+<p>Exécutez <code>rendu_monnaie_dp</code> pour <code>montant = 6</code> et <code>pieces = [4, 3, 1]</code>.
+   Affichez le tableau <code>dp</code> complet après exécution.</p>
+</li>
+<li>
+<p>Avec cette stratégie, combien de pièces sont nécessaires pour les valeurs allant de 0 à 6.</p>
+</li>
+<li>
+<p>Proposez un <strong>invariant de boucle</strong> pour la boucle externe (<code>for i in range(...)</code>).</p>
+</li>
+<li>
+<p>La fonction se termine-t-elle toujours ? Justifiez avec un <strong>variant</strong>.</p>
+</li>
+</ol>
+<hr />
+<h3 id="exercice-4-analyser-la-complexite">Exercice 4 — Analyser la complexité</h3>
+<ol>
+<li>
+<p>Combien de cases le tableau <code>dp</code> contient-il ?</p>
+</li>
+<li>
+<p>Pour chaque case, combien d'opérations effectue-t-on ?</p>
+</li>
+<li>
+<p>En déduire la complexité en notation O(...) en fonction de <code>montant</code> et <code>len(pieces)</code>.</p>
+</li>
+<li>
+<p>Comparez avec la complexité du glouton. Lequel est plus rapide ? Lequel donne toujours la solution optimale ?</p>
+</li>
+<li>
+<p>Pour <code>montant = 10 000</code> et 6 pièces, estimez le nombre d'opérations. Est-ce raisonnable ?</p>
+</li>
+</ol>
+<hr />
+<h3 id="exercice-5-pour-les-rapides-retrouver-les-pieces-utilisees">Exercice 5 <em>(pour les rapides)</em> — Retrouver les pièces utilisées</h3>
+<p><code>rendu_monnaie_dp</code> retourne seulement le nombre de pièces.
+Écrivez <code>rendu_monnaie_dp_complet</code> qui retourne la liste des pièces utilisées.</p>
+<pre><code class="language-python">def rendu_monnaie_dp_complet(n: int, pieces: list) -&gt; list:
+    &quot;&quot;&quot;
+    &gt;&gt;&gt; rendu_monnaie_dp_complet(6, [4, 3, 1])
+    [3, 3]
+    &gt;&gt;&gt; rendu_monnaie_dp_complet(0, [4, 3, 1])
+    []
+    &quot;&quot;&quot;
+    # À compléter
+</code></pre>
+<p><strong>Aides :</strong>
+- Au lieu de stocker un entier dans <code>memo[i]</code>, stockez directement la liste des pièces.
+- <code>memo[0]</code> vaut quoi ?
+- Pour chaque montant <code>i</code>, comment obtenir <code>memo[i]</code> à partir de <code>memo[i - piece]</code> ?</p>
+<hr />
+<h2 id="conclusion-glouton-vs-programmation-dynamique">Conclusion — Glouton vs Programmation Dynamique</h2>
+<p><strong>Questions :</strong></p>
+<p><strong>Questions :</strong></p>
+<ol>
+<li>
+<p>Quels sont les <strong>avantages</strong> de la programmation dynamique par rapport au glouton ?</p>
+</li>
+<li>
+<p>Quels sont ses <strong>inconvénients</strong> ?</p>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Arbres%26Graphes/Arbres%26Graphes/" class="btn btn-neutral float-left" title="Arbres & Graphes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../processus/processus/" class="btn btn-neutral float-right" title="Gestion des processus">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Arbres%26Graphes/Arbres%26Graphes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../processus/processus/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
