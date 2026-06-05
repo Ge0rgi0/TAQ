@@ -281,14 +281,14 @@ L'arborescence souhaitée est la suivante :
 ```
 /home/museum/animaux/        
                 ├── amphibiens/
-                │   ├── grenouille_verte.png
-                │   └── crapaud.png
+                │   ├── crapaud.png
+                │   └── grenouille_verte.png
                 ├── mammiferes/
                 │   ├── felins/
-                │   │   ├── lion.png
-                │   │   ├── panthere.png
+                │   │   ├── chatn.png
                 │   │   ├── leopard.png
-                │   │   └── chat.png
+                │   │   ├── lio.png
+                │   │   └── panthere.png
                 │   └── primates/
                 │       ├── humain.png
                 │       └── chimpanze.png

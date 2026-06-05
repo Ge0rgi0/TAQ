@@ -14,6 +14,8 @@
 - [🟨 5 - Récursivité](Chapitres/Récursivité/rec.md)
 - [🟦 6 - Sécurité](Chapitres/Sécurité/secu.md)
 - [🟨 7 - Arbres binaires et Graphes](Chapitres/Arbres&Graphes/Arbres&Graphes.md)
+- [🟨 8 - Programmation Dynamique](Chapitres/Dyn/dyn.md)
+- [🟩 9 - Gestion des processus](Chapitres/processus/processus.md)
 
 ## BACCALAURÉAT GÉNÉRAL de NSI
 

@@ -28,6 +28,8 @@ nav:
           - Récursivité: Terminales/Chapitres/Récursivité/rec.md
           - Sécurité: Terminales/Chapitres/Sécurité/secu.md
           - Arbres & Graphes: Terminales/Chapitres/Arbres&Graphes/Arbres&Graphes.md
+          - Programmation Dynamique: Terminales/Chapitres/Dyn/dyn.md
+          - Gestion des processus : Terminales/Chapitres/processus/processus.md
 
 
 theme:

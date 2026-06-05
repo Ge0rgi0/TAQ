@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>WEB - TAQ</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "WEB";
+        var mkdocs_page_input_path = "Premieres/Chapitres/WEB/web.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> TAQ
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Accueil</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Cours</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Secondes</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Secondes/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/exposes/">Exposés</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Internet/Internet/">Internet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/RS/RS/">Réseaux sociaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Secondes/Chapitres/Geo/Geo/">Géolocalisation</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Premières</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../../../Premieres/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Types/Types_de_base/">Types de base</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Bases/bases/">Bases de Python</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Tableaux/Tableaux/">Tuples, Listes et Dictionnaires</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../R%C3%A9seaux/R%C3%A9seaux/">Réseaux</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Algos/Algos/">Algorithmes</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Syst%C3%A8mes/A%26S/">Architecture & Systèmes d'exploitation</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">WEB</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#1-structure-dune-page-html">1. Structure d'une page HTML</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-les-balises-html-essentielles">2. Les balises HTML essentielles</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#titres">Titres</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paragraphe-et-mise-en-forme-du-texte">Paragraphe et mise en forme du texte</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#les-commentaires">Les commentaires</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-les-liens-et-les-images">3. Les liens et les images</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#les-liens">Les liens</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#les-images">Les images</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-les-listes">4. Les listes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#liste-non-ordonnee-a-puces">Liste non ordonnée (à puces)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#liste-ordonnee-numerotee">Liste ordonnée (numérotée)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#listes-imbriquees">Listes imbriquées</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-les-tableaux">5. Les tableaux</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#6-les-formulaires">6. Les formulaires</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7-div-et-span">7. &lt;div&gt; et &lt;span&gt;</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#div-conteneur-en-bloc">&lt;div&gt; — conteneur en bloc</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#span-conteneur-en-ligne">&lt;span&gt; — conteneur en ligne</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#8-relier-le-css-au-html">8. Relier le CSS au HTML</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#methode-1-fichier-externe-recommandee">Méthode 1 — Fichier externe (recommandée)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#methode-2-balise-style-dans-le-html">Méthode 2 — Balise &lt;style&gt; dans le HTML</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#methode-3-style-en-ligne-a-eviter">Méthode 3 — Style en ligne (à éviter)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#9-les-selecteurs-css">9. Les sélecteurs CSS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#10-les-proprietes-css-de-base">10. Les propriétés CSS de base</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#texte-et-typographie">Texte et typographie</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#couleurs-et-arriere-plan">Couleurs et arrière-plan</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bordures">Bordures</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#11-le-modele-de-boite-box-model">11. Le modèle de boîte (Box Model)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#12-les-unites-css">12. Les unités CSS</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#13-flexbox">13. Flexbox</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#sur-le-conteneur-parent">Sur le conteneur parent</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sur-les-elements-enfants">Sur les éléments enfants</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exemple-pratique-3-cartes-cote-a-cote">Exemple pratique — 3 cartes côte à côte</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#14-le-responsive-design">14. Le responsive design</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#les-media-queries">Les media queries</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#points-de-rupture-courants">Points de rupture courants</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exemple-complet-navigation-responsive">Exemple complet — navigation responsive</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#15-les-pseudo-classes-et-pseudo-elements">15. Les pseudo-classes et pseudo-éléments</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pseudo-classes-etat-de-lelement">Pseudo-classes (état de l'élément)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pseudo-elements-partie-dun-element">Pseudo-éléments (partie d'un élément)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#16-projet-final-page-complete">16. Projet final — Page complète</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#indexhtml">index.html</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#stylecss">style.css</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Terminales</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Terminales/">Accueil</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/bac/">Baccalauréat</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/POO/">Programmation Orientée Objet</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Piles%26Files/Piles%26Files/">Piles et Files</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/BDD/">Base de données</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Routage/routage/">Algorithmes de Routage</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/R%C3%A9cursivit%C3%A9/rec/">Récursivité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/S%C3%A9curit%C3%A9/secu/">Sécurité</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../../Terminales/Chapitres/Arbres%26Graphes/Arbres%26Graphes/">Arbres & Graphes</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">TAQ</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Cours</li>
+          <li class="breadcrumb-item">Premières</li>
+      <li class="breadcrumb-item active">WEB</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="cours-htmlcss-niveau-terminale">Cours HTML/CSS — Niveau Terminale</h1>
+<ul>
+<li>Fichiers HTML et CSS : <a href="../web.zip">📁</a></li>
+</ul>
+<hr />
+<h2 id="1-structure-dune-page-html">1. Structure d'une page HTML</h2>
+<p>Tout fichier HTML commence par une structure de base obligatoire. Sans elle, le navigateur peut mal interpréter le code.</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Titre de la page&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;!-- Le contenu visible de la page va ici --&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong>Ce que signifie chaque ligne :</strong></p>
+<ul>
+<li><code>&lt;!DOCTYPE html&gt;</code> — indique au navigateur que c'est du HTML5</li>
+<li><code>&lt;html lang="fr"&gt;</code> — la racine du document, <code>lang</code> précise la langue</li>
+<li><code>&lt;head&gt;</code> — informations invisibles sur la page (titre, style, encodage…)</li>
+<li><code>&lt;meta charset="UTF-8"&gt;</code> — permet d'afficher les accents et caractères spéciaux</li>
+<li><code>&lt;meta name="viewport"…&gt;</code> — indispensable pour le responsive sur mobile</li>
+<li><code>&lt;title&gt;</code> — texte affiché dans l'onglet du navigateur</li>
+<li><code>&lt;link rel="stylesheet"&gt;</code> — lien vers le fichier CSS</li>
+<li><code>&lt;body&gt;</code> — tout ce qui est visible à l'écran</li>
+</ul>
+<hr />
+<h2 id="2-les-balises-html-essentielles">2. Les balises HTML essentielles</h2>
+<h3 id="titres">Titres</h3>
+<p>Il existe 6 niveaux de titres, du plus important au moins important.</p>
+<pre><code class="language-html">&lt;h1&gt;Titre principal (un seul par page)&lt;/h1&gt;
+&lt;h2&gt;Sous-titre&lt;/h2&gt;
+&lt;h3&gt;Sous-sous-titre&lt;/h3&gt;
+&lt;h4&gt;Titre de niveau 4&lt;/h4&gt;
+&lt;h5&gt;Titre de niveau 5&lt;/h5&gt;
+&lt;h6&gt;Titre de niveau 6&lt;/h6&gt;
+</code></pre>
+<h3 id="paragraphe-et-mise-en-forme-du-texte">Paragraphe et mise en forme du texte</h3>
+<pre><code class="language-html">&lt;p&gt;Ceci est un paragraphe. Il peut contenir du texte normal.&lt;/p&gt;
+
+&lt;p&gt;On peut mettre du texte en &lt;strong&gt;gras&lt;/strong&gt; ou en &lt;em&gt;italique&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;On peut aussi &lt;span style=&quot;color: red;&quot;&gt;colorier&lt;/span&gt; une partie du texte.&lt;/p&gt;
+
+&lt;!-- Retour à la ligne forcé (à utiliser avec parcimonie) --&gt;
+&lt;p&gt;Première ligne.&lt;br&gt;Deuxième ligne.&lt;/p&gt;
+
+&lt;!-- Ligne de séparation horizontale --&gt;
+&lt;hr&gt;
+</code></pre>
+<h3 id="les-commentaires">Les commentaires</h3>
+<p>Les commentaires ne s'affichent pas dans le navigateur. Ils servent à documenter le code.</p>
+<pre><code class="language-html">&lt;!-- Ceci est un commentaire HTML, invisible dans le navigateur --&gt;
+</code></pre>
+<hr />
+<h2 id="3-les-liens-et-les-images">3. Les liens et les images</h2>
+<h3 id="les-liens">Les liens</h3>
+<pre><code class="language-html">&lt;!-- Lien vers un site externe --&gt;
+&lt;a href=&quot;https://www.google.fr&quot;&gt;Aller sur Google&lt;/a&gt;
+
+&lt;!-- Lien qui s'ouvre dans un nouvel onglet --&gt;
+&lt;a href=&quot;https://www.google.fr&quot; target=&quot;_blank&quot;&gt;Ouvrir dans un nouvel onglet&lt;/a&gt;
+
+&lt;!-- Lien vers une autre page du même projet --&gt;
+&lt;a href=&quot;contact.html&quot;&gt;Page de contact&lt;/a&gt;
+
+&lt;!-- Lien vers une section de la même page --&gt;
+&lt;a href=&quot;#section2&quot;&gt;Aller à la section 2&lt;/a&gt;
+&lt;h2 id=&quot;section2&quot;&gt;Section 2&lt;/h2&gt;
+</code></pre>
+<h3 id="les-images">Les images</h3>
+<pre><code class="language-html">&lt;!-- Image locale (dans le même dossier) --&gt;
+&lt;img src=&quot;photo.jpg&quot; alt=&quot;Description de l'image&quot;&gt;
+
+&lt;!-- Image depuis internet --&gt;
+&lt;img src=&quot;https://picsum.photos/400/300&quot; alt=&quot;Image aléatoire&quot;&gt;
+
+&lt;!-- Image avec taille définie --&gt;
+&lt;img src=&quot;photo.jpg&quot; alt=&quot;Photo&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;
+</code></pre>
+<blockquote>
+<p><strong>Important :</strong> L'attribut <code>alt</code> est obligatoire. Il décrit l'image pour les moteurs de recherche et les personnes malvoyantes.</p>
+</blockquote>
+<hr />
+<h2 id="4-les-listes">4. Les listes</h2>
+<h3 id="liste-non-ordonnee-a-puces">Liste non ordonnée (à puces)</h3>
+<pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Pomme&lt;/li&gt;
+  &lt;li&gt;Banane&lt;/li&gt;
+  &lt;li&gt;Orange&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h3 id="liste-ordonnee-numerotee">Liste ordonnée (numérotée)</h3>
+<pre><code class="language-html">&lt;ol&gt;
+  &lt;li&gt;Allumer l'ordinateur&lt;/li&gt;
+  &lt;li&gt;Ouvrir le navigateur&lt;/li&gt;
+  &lt;li&gt;Aller sur le site&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<h3 id="listes-imbriquees">Listes imbriquées</h3>
+<pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Fruits
+    &lt;ul&gt;
+      &lt;li&gt;Pomme&lt;/li&gt;
+      &lt;li&gt;Banane&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Légumes&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<hr />
+<h2 id="5-les-tableaux">5. Les tableaux</h2>
+<pre><code class="language-html">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Prénom&lt;/th&gt;
+      &lt;th&gt;Nom&lt;/th&gt;
+      &lt;th&gt;Âge&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Alice&lt;/td&gt;
+      &lt;td&gt;Dupont&lt;/td&gt;
+      &lt;td&gt;17&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Bob&lt;/td&gt;
+      &lt;td&gt;Martin&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<p><strong>Les balises :</strong></p>
+<ul>
+<li><code>&lt;table&gt;</code> — le tableau</li>
+<li><code>&lt;thead&gt;</code> — l'en-tête du tableau</li>
+<li><code>&lt;tbody&gt;</code> — le corps du tableau</li>
+<li><code>&lt;tr&gt;</code> — une ligne (<em>table row</em>)</li>
+<li><code>&lt;th&gt;</code> — une cellule d'en-tête (en gras par défaut)</li>
+<li><code>&lt;td&gt;</code> — une cellule normale (<em>table data</em>)</li>
+</ul>
+<hr />
+<h2 id="6-les-formulaires">6. Les formulaires</h2>
+<pre><code class="language-html">&lt;form action=&quot;traitement.php&quot; method=&quot;post&quot;&gt;
+
+  &lt;!-- Champ texte --&gt;
+  &lt;label for=&quot;nom&quot;&gt;Nom :&lt;/label&gt;
+  &lt;input type=&quot;text&quot; id=&quot;nom&quot; name=&quot;nom&quot; placeholder=&quot;Votre nom&quot;&gt;
+
+  &lt;!-- Email --&gt;
+  &lt;label for=&quot;email&quot;&gt;Email :&lt;/label&gt;
+  &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot;&gt;
+
+  &lt;!-- Mot de passe --&gt;
+  &lt;label for=&quot;mdp&quot;&gt;Mot de passe :&lt;/label&gt;
+  &lt;input type=&quot;password&quot; id=&quot;mdp&quot; name=&quot;mdp&quot;&gt;
+
+  &lt;!-- Zone de texte multiligne --&gt;
+  &lt;label for=&quot;message&quot;&gt;Message :&lt;/label&gt;
+  &lt;textarea id=&quot;message&quot; name=&quot;message&quot; rows=&quot;4&quot;&gt;&lt;/textarea&gt;
+
+  &lt;!-- Case à cocher --&gt;
+  &lt;input type=&quot;checkbox&quot; id=&quot;cgu&quot; name=&quot;cgu&quot;&gt;
+  &lt;label for=&quot;cgu&quot;&gt;J'accepte les CGU&lt;/label&gt;
+
+  &lt;!-- Boutons radio --&gt;
+  &lt;input type=&quot;radio&quot; id=&quot;oui&quot; name=&quot;reponse&quot; value=&quot;oui&quot;&gt;
+  &lt;label for=&quot;oui&quot;&gt;Oui&lt;/label&gt;
+  &lt;input type=&quot;radio&quot; id=&quot;non&quot; name=&quot;reponse&quot; value=&quot;non&quot;&gt;
+  &lt;label for=&quot;non&quot;&gt;Non&lt;/label&gt;
+
+  &lt;!-- Liste déroulante --&gt;
+  &lt;select name=&quot;ville&quot;&gt;
+    &lt;option value=&quot;paris&quot;&gt;Paris&lt;/option&gt;
+    &lt;option value=&quot;lyon&quot;&gt;Lyon&lt;/option&gt;
+    &lt;option value=&quot;marseille&quot;&gt;Marseille&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;!-- Bouton d'envoi --&gt;
+  &lt;button type=&quot;submit&quot;&gt;Envoyer&lt;/button&gt;
+
+&lt;/form&gt;
+</code></pre>
+<hr />
+<h2 id="7-div-et-span">7. <code>&lt;div&gt;</code> et <code>&lt;span&gt;</code></h2>
+<p>Ces deux balises sont des <strong>conteneurs neutres</strong> : elles n'ont aucun sens sémantique, elles servent uniquement à appliquer du style ou à organiser le code.</p>
+<hr />
+<h3 id="div-conteneur-en-bloc"><code>&lt;div&gt;</code> — conteneur en bloc</h3>
+<p>Un <code>&lt;div&gt;</code> prend <strong>toute la largeur disponible</strong> et crée un retour à la ligne avant et après lui. On l'utilise pour regrouper plusieurs éléments ensemble.</p>
+<pre><code class="language-html">&lt;div class=&quot;carte&quot;&gt;
+  &lt;h2&gt;Mon titre&lt;/h2&gt;
+  &lt;p&gt;Mon texte...&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<hr />
+<h3 id="span-conteneur-en-ligne"><code>&lt;span&gt;</code> — conteneur en ligne</h3>
+<p>Un <code>&lt;span&gt;</code> s'insère <strong>dans une phrase</strong> sans créer de retour à la ligne. On l'utilise pour cibler un mot ou une partie d'une ligne.</p>
+<pre><code class="language-html">&lt;p&gt;Le prix est &lt;span class=&quot;prix&quot;&gt;29,90 €&lt;/span&gt; seulement.&lt;/p&gt;
+</code></pre>
+<p>Elles serviront surtour lorsqu'on incluera du CSS.</p>
+<hr />
+<h2 id="8-relier-le-css-au-html">8. Relier le CSS au HTML</h2>
+<p>Il existe trois façons d'écrire du CSS.</p>
+<h3 id="methode-1-fichier-externe-recommandee">Méthode 1 — Fichier externe (recommandée)</h3>
+<p>Dans le <code>&lt;head&gt;</code> du HTML :</p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+</code></pre>
+<p>Dans le fichier <code>style.css</code> :</p>
+<pre><code class="language-css">h1 {
+  color: blue;
+}
+</code></pre>
+<h3 id="methode-2-balise-style-dans-le-html">Méthode 2 — Balise <code>&lt;style&gt;</code> dans le HTML</h3>
+<pre><code class="language-html">&lt;head&gt;
+  &lt;style&gt;
+    h1 {
+      color: blue;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+</code></pre>
+<h3 id="methode-3-style-en-ligne-a-eviter">Méthode 3 — Style en ligne (à éviter)</h3>
+<pre><code class="language-html">&lt;h1 style=&quot;color: blue;&quot;&gt;Mon titre&lt;/h1&gt;
+</code></pre>
+<blockquote>
+<p>La méthode 1 est toujours préférée : elle sépare le fond (HTML) de la forme (CSS) et facilite la maintenance.</p>
+</blockquote>
+<hr />
+<h2 id="9-les-selecteurs-css">9. Les sélecteurs CSS</h2>
+<p>Un sélecteur CSS désigne quel(s) élément(s) on veut styliser.</p>
+<pre><code class="language-css">/* Sélecteur de balise — cible tous les &lt;p&gt; */
+p {
+  color: gray;
+}
+
+/* Sélecteur de classe — cible tous les éléments avec class=&quot;titre&quot; */
+.titre {
+  font-size: 24px;
+}
+
+/* Sélecteur d'identifiant — cible l'élément avec id=&quot;menu&quot; (unique) */
+#menu {
+  background-color: black;
+}
+
+/* Sélecteur combiné — un &lt;p&gt; à l'intérieur d'un .carte */
+.carte p {
+  color: darkgray;
+}
+
+/* Sélecteur enfant direct */
+.menu &gt; li {
+  display: inline;
+}
+
+/* Plusieurs sélecteurs en même temps */
+h1, h2, h3 {
+  font-family: Arial;
+}
+
+/* Sélecteur universel (tous les éléments) */
+* {
+  box-sizing: border-box;
+}
+</code></pre>
+<p><strong>Classes vs Identifiants :</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Classe (<code>.</code>)</th>
+<th>Identifiant (<code>#</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Utilisation</td>
+<td>Plusieurs éléments</td>
+<td>Un seul élément</td>
+</tr>
+<tr>
+<td>HTML</td>
+<td><code>class="nom"</code></td>
+<td><code>id="nom"</code></td>
+</tr>
+<tr>
+<td>CSS</td>
+<td><code>.nom { }</code></td>
+<td><code>#nom { }</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10-les-proprietes-css-de-base">10. Les propriétés CSS de base</h2>
+<h3 id="texte-et-typographie">Texte et typographie</h3>
+<pre><code class="language-css">p {
+  color: #333333;           /* Couleur du texte */
+  font-family: Arial, sans-serif; /* Police */
+  font-size: 16px;          /* Taille */
+  font-weight: bold;        /* Gras (normal, bold, 100-900) */
+  font-style: italic;       /* Italique */
+  text-align: center;       /* Alignement : left, right, center, justify */
+  text-decoration: underline; /* Soulignement */
+  line-height: 1.6;         /* Interlignage */
+  letter-spacing: 2px;      /* Espacement entre les lettres */
+  text-transform: uppercase; /* Majuscules, lowercase, capitalize */
+}
+</code></pre>
+<h3 id="couleurs-et-arriere-plan">Couleurs et arrière-plan</h3>
+<pre><code class="language-css">div {
+  color: red;                    /* Couleur du texte */
+  background-color: #f0f4ff;     /* Couleur de fond */
+  background-image: url(&quot;bg.jpg&quot;); /* Image de fond */
+  background-size: cover;        /* cover, contain, ou taille */
+  background-position: center;   /* Position de l'image */
+  background-repeat: no-repeat;  /* Répétition */
+  opacity: 0.8;                  /* Transparence (0 = invisible, 1 = opaque) */
+}
+</code></pre>
+<p><strong>Les façons d'écrire une couleur en CSS :</strong></p>
+<pre><code class="language-css">/* Nom de couleur */
+color: red;
+
+/* Hexadécimal */
+color: #ff0000;
+
+/* RGB */
+color: rgb(255, 0, 0);
+
+/* RGBA (avec transparence) */
+color: rgba(255, 0, 0, 0.5);
+
+/* HSL */
+color: hsl(0, 100%, 50%);
+</code></pre>
+<h3 id="bordures">Bordures</h3>
+<pre><code class="language-css">div {
+  border: 1px solid black;           /* Raccourci : épaisseur style couleur */
+  border-top: 2px dashed red;        /* Bordure uniquement en haut */
+  border-radius: 10px;               /* Coins arrondis */
+  border-radius: 50%;                /* Cercle parfait (si width = height) */
+}
+</code></pre>
+<hr />
+<h2 id="11-le-modele-de-boite-box-model">11. Le modèle de boîte (Box Model)</h2>
+<p>Chaque élément HTML est une boîte rectangulaire composée de 4 zones.</p>
+<p><img alt="" src="../margin_padding.png" /></p>
+<pre><code class="language-css">div {
+  width: 300px;          /* Largeur du contenu */
+  height: 150px;         /* Hauteur du contenu */
+
+  padding: 20px;         /* Espace intérieur (tous les côtés) */
+  padding: 10px 20px;    /* vertical | horizontal */
+  padding: 5px 10px 15px 20px; /* haut | droite | bas | gauche */
+
+  margin: 20px;          /* Espace extérieur (tous les côtés) */
+  margin: 0 auto;        /* Centrer un bloc horizontalement */
+
+  border: 2px solid #ccc;
+}
+
+/* Astuce importante : inclure padding et border dans width */
+* {
+  box-sizing: border-box;
+}
+</code></pre>
+<hr />
+<h2 id="12-les-unites-css">12. Les unités CSS</h2>
+<pre><code class="language-css">/* Unités absolues */
+p { font-size: 16px; }       /* pixels — la plus utilisée */
+p { font-size: 12pt; }       /* points — pour l'impression */
+
+/* Unités relatives */
+p { font-size: 1em; }        /* relatif à la taille du parent */
+p { font-size: 1rem; }       /* relatif à la taille de la racine (html) */
+div { width: 50%; }          /* pourcentage de l'élément parent */
+div { width: 50vw; }         /* pourcentage de la largeur de l'écran */
+div { height: 100vh; }       /* pourcentage de la hauteur de l'écran */
+</code></pre>
+<hr />
+<h2 id="13-flexbox">13. Flexbox</h2>
+<p>Flexbox permet de disposer les éléments en ligne ou en colonne facilement.</p>
+<h3 id="sur-le-conteneur-parent">Sur le conteneur parent</h3>
+<pre><code class="language-css">.conteneur {
+  display: flex;
+
+  /* Direction */
+  flex-direction: row;          /* en ligne (défaut) */
+  flex-direction: column;       /* en colonne */
+  flex-direction: row-reverse;  /* en ligne, inversé */
+
+  /* Alignement horizontal */
+  justify-content: flex-start;  /* au début */
+  justify-content: flex-end;    /* à la fin */
+  justify-content: center;      /* au centre */
+  justify-content: space-between; /* espace entre les éléments */
+  justify-content: space-around;  /* espace autour des éléments */
+
+  /* Alignement vertical */
+  align-items: stretch;   /* étire les éléments (défaut) */
+  align-items: flex-start;
+  align-items: flex-end;
+  align-items: center;    /* centre verticalement */
+
+  /* Retour à la ligne automatique */
+  flex-wrap: wrap;
+  gap: 16px;              /* espace entre les éléments */
+}
+</code></pre>
+<h3 id="sur-les-elements-enfants">Sur les éléments enfants</h3>
+<pre><code class="language-css">.element {
+  flex: 1;          /* prend tout l'espace disponible */
+  flex: 2;          /* prend 2 fois plus de place que flex: 1 */
+  flex: 0 0 200px;  /* taille fixe de 200px */
+}
+</code></pre>
+<h3 id="exemple-pratique-3-cartes-cote-a-cote">Exemple pratique — 3 cartes côte à côte</h3>
+<pre><code class="language-html">&lt;div class=&quot;grille&quot;&gt;
+  &lt;div class=&quot;carte&quot;&gt;Carte 1&lt;/div&gt;
+  &lt;div class=&quot;carte&quot;&gt;Carte 2&lt;/div&gt;
+  &lt;div class=&quot;carte&quot;&gt;Carte 3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-css">.grille {
+  display: flex;
+  gap: 20px;
+}
+
+.carte {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+</code></pre>
+<hr />
+<h2 id="14-le-responsive-design">14. Le responsive design</h2>
+<p>Le responsive design permet d'adapter l'affichage à toutes les tailles d'écran.</p>
+<h3 id="les-media-queries">Les media queries</h3>
+<pre><code class="language-css">/* Styles par défaut (mobile first) */
+.conteneur {
+  flex-direction: column;
+}
+
+/* Tablette (768px et plus) */
+@media (min-width: 768px) {
+  .conteneur {
+    flex-direction: row;
+  }
+}
+
+/* Desktop (1024px et plus) */
+@media (min-width: 1024px) {
+  .conteneur {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+</code></pre>
+<h3 id="points-de-rupture-courants">Points de rupture courants</h3>
+<table>
+<thead>
+<tr>
+<th>Appareil</th>
+<th>Largeur minimale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mobile</td>
+<td>&lt; 768px</td>
+</tr>
+<tr>
+<td>Tablette</td>
+<td>768px</td>
+</tr>
+<tr>
+<td>Desktop</td>
+<td>1024px</td>
+</tr>
+<tr>
+<td>Grand écran</td>
+<td>1440px</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exemple-complet-navigation-responsive">Exemple complet — navigation responsive</h3>
+<pre><code class="language-css">/* Mobile : liens empilés */
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Desktop : liens en ligne */
+@media (min-width: 768px) {
+  nav {
+    flex-direction: row;
+    gap: 24px;
+  }
+}
+</code></pre>
+<hr />
+<h2 id="15-les-pseudo-classes-et-pseudo-elements">15. Les pseudo-classes et pseudo-éléments</h2>
+<h3 id="pseudo-classes-etat-de-lelement">Pseudo-classes (état de l'élément)</h3>
+<pre><code class="language-css">/* Au survol de la souris */
+a:hover {
+  color: red;
+  text-decoration: none;
+}
+
+/* Lien déjà visité */
+a:visited {
+  color: purple;
+}
+
+/* Lien actif (au clic) */
+a:active {
+  color: orange;
+}
+
+/* Champ de formulaire sélectionné */
+input:focus {
+  border-color: blue;
+  outline: none;
+}
+
+/* Premier enfant d'un parent */
+li:first-child {
+  font-weight: bold;
+}
+
+/* Dernier enfant */
+li:last-child {
+  border-bottom: none;
+}
+
+/* Enfants alternés (lignes de tableau) */
+tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+</code></pre>
+<h3 id="pseudo-elements-partie-dun-element">Pseudo-éléments (partie d'un élément)</h3>
+<pre><code class="language-css">/* Première lettre */
+p::first-letter {
+  font-size: 48px;
+  float: left;
+}
+
+/* Première ligne */
+p::first-line {
+  font-weight: bold;
+}
+
+/* Avant le contenu de l'élément */
+.carte::before {
+  content: &quot;→ &quot;;
+  color: blue;
+}
+
+/* Après le contenu de l'élément */
+.carte::after {
+  content: &quot; ✓&quot;;
+  color: green;
+}
+</code></pre>
+<hr />
+<h2 id="16-projet-final-page-complete">16. Projet final — Page complète</h2>
+<p>Voici un exemple de page complète mettant en pratique tout le cours.</p>
+<h3 id="indexhtml">index.html</h3>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Portfolio — Alice Dupont&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;header&gt;
+    &lt;div class=&quot;header-inner&quot;&gt;
+      &lt;h1&gt;Alice Dupont&lt;/h1&gt;
+      &lt;nav&gt;
+        &lt;a href=&quot;#about&quot;&gt;À propos&lt;/a&gt;
+        &lt;a href=&quot;#projets&quot;&gt;Projets&lt;/a&gt;
+        &lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+
+    &lt;section id=&quot;about&quot;&gt;
+      &lt;h2&gt;À propos&lt;/h2&gt;
+      &lt;p&gt;Bonjour ! Je suis élève en Terminale NSI, passionnée de développement web.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;projets&quot;&gt;
+      &lt;h2&gt;Mes projets&lt;/h2&gt;
+      &lt;div class=&quot;grille&quot;&gt;
+        &lt;article class=&quot;carte&quot;&gt;
+          &lt;h3&gt;Site de recettes&lt;/h3&gt;
+          &lt;p&gt;Un site avec mes recettes préférées.&lt;/p&gt;
+          &lt;a href=&quot;#&quot;&gt;Voir le projet&lt;/a&gt;
+        &lt;/article&gt;
+        &lt;article class=&quot;carte&quot;&gt;
+          &lt;h3&gt;Jeu du pendu&lt;/h3&gt;
+          &lt;p&gt;Un jeu interactif en JavaScript.&lt;/p&gt;
+          &lt;a href=&quot;#&quot;&gt;Voir le projet&lt;/a&gt;
+        &lt;/article&gt;
+        &lt;article class=&quot;carte&quot;&gt;
+          &lt;h3&gt;Application météo&lt;/h3&gt;
+          &lt;p&gt;Affichage de la météo en temps réel.&lt;/p&gt;
+          &lt;a href=&quot;#&quot;&gt;Voir le projet&lt;/a&gt;
+        &lt;/article&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;contact&quot;&gt;
+      &lt;h2&gt;Contact&lt;/h2&gt;
+      &lt;form&gt;
+        &lt;label for=&quot;nom&quot;&gt;Nom&lt;/label&gt;
+        &lt;input type=&quot;text&quot; id=&quot;nom&quot; name=&quot;nom&quot; placeholder=&quot;Votre nom&quot;&gt;
+
+        &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
+        &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;votre@email.fr&quot;&gt;
+
+        &lt;label for=&quot;message&quot;&gt;Message&lt;/label&gt;
+        &lt;textarea id=&quot;message&quot; name=&quot;message&quot; rows=&quot;5&quot;&gt;&lt;/textarea&gt;
+
+        &lt;button type=&quot;submit&quot;&gt;Envoyer&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/section&gt;
+
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;© 2024 Alice Dupont — Tous droits réservés&lt;/p&gt;
+  &lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="stylecss">style.css</h3>
+<pre><code class="language-css">* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ---- HEADER ---- */
+header {
+  background-color: #1a1a2e;
+  color: white;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #a8d8ff;
+}
+
+/* ---- SECTIONS ---- */
+section {
+  padding: 60px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+  color: #1a1a2e;
+}
+
+/* ---- GRILLE DE CARTES ---- */
+.grille {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.carte {
+  flex: 1;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 24px;
+  transition: box-shadow 0.2s;
+}
+
+.carte:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.carte h3 {
+  margin-bottom: 10px;
+  color: #1a1a2e;
+}
+
+.carte a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ---- FORMULAIRE ---- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: Arial, sans-serif;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #0077cc;
+}
+
+button {
+  padding: 12px 24px;
+  background-color: #1a1a2e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+button:hover {
+  background-color: #0077cc;
+}
+
+/* ---- FOOTER ---- */
+footer {
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #666;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .grille {
+    flex-direction: column;
+  }
+}
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Syst%C3%A8mes/A%26S/" class="btn btn-neutral float-left" title="Architecture & Systèmes d'exploitation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../../../Terminales/Terminales/" class="btn btn-neutral float-right" title="Accueil">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Syst%C3%A8mes/A%26S/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../../../Terminales/Terminales/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
